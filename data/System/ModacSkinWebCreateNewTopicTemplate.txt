@@ -1,0 +1,112 @@
+%META:TOPICPARENT{name="PatternSkin"}%
+%TMPL:INCLUDE{"WebCreateNewTopic"}%
+
+%TMPL:DEF{"content"}%
+
+---+ %MAKETEXT{"Create New Topic"}%
+
+%TMPL:P{"createform"}%
+
+%TMPL:END%
+
+%{"hide page top controls"}%
+%TMPL:DEF{"top"}%%TMPL:END%
+%TMPL:DEF{"formandactions"}%%TMPL:END%
+%TMPL:DEF{"bottomcontent"}%%TMPL:END%
+%TMPL:DEF{"topicactionbuttonsBOTTOM"}%%TMPL:END%
+
+%TMPL:DEF{"webnamestep"}%
+<div class="foswikiFormStep">
+---+++ %MAKETEXT{"Choose Web:"}%
+%TMPL:P{"webname"}% <span id="webTopicCreatorFeedback" class="foswikiGrayText"><!--generated name will be put here--></span>
+</div>
+%TMPL:END%
+
+%TMPL:DEF{"topictemplatestep"}%<div class="foswikiFormStep">
+---+++ %MAKETEXT{"Use template:"}%
+<p>
+%TMPL:P{"topictemplate"}%
+</p>
+</div>%TMPL:END%
+
+%TMPL:DEF{"topicnamestep"}%<div class="foswikiFormStep">
+---+++ %MAKETEXT{"Topic name:"}%
+<p>
+%TMPL:P{"topicname"}% <span id="webTopicCreatorFeedback" class="foswikiGrayText"><!--generated name will be put here--></span>
+</p>%TMPL:P{"nonwikiword"}%
+</div>%TMPL:END%
+
+%TMPL:DEF{"topicparentstep"}%<div class="foswikiFormStep">
+---+++ %MAKETEXT{"Topic parent:"}%
+<p>
+%TMPL:P{"topicparent"}%
+</p>
+</div>%TMPL:END%
+
+%TMPL:DEF{"topicnowwstep"}%
+<input type="hidden" class="foswikiInputField" name="nonwikiword" id="nonwikiword" value="true">
+%TMPL:END%
+
+%TMPL:DEF{"submitstep"}%<div class="foswikiFormStep foswikiLast">
+<p>
+%TMPL:P{"submit"}%
+</p>
+</div>%TMPL:END%
+
+%TMPL:DEF{"topicparent"}%<select name='topicparent' id='topicparent' class='foswikiSelect'>%IF{"'%URLPARAM{"parenttopic"}%'" then='<option selected="selected">%URLPARAM{"parenttopic"}%</option>'}%%TOPICLIST{" <option $marker value='$topic'>$topic</option>" separator=" " selection="%TOPIC%" web="%URLPARAM{webname}%"}%</select>%TMPL:END%
+
+%TMPL:DEF{"topictemplate"}%<select name="templatetopic" id="templatetopic" class="foswikiSelect">%IF{"'%URLPARAM{"templatetopic"}%'" then='<option selected="selected">%URLPARAM{"templatetopic"}%</option>'}%%SEARCH{"name~'*Template'" scope="topic" web="Main" excludetopic="WebTopicEditTemplate,*WebCreateNewTopicTemplate,*ViewTemplate,*_Template,GroupTemplate" type="query" nonoise="on" format="<option value=\"$web.$topic\">%$topic%</option>"}%</select>%SEARCH{"name~'*Template'" scope="topic" web="%BASEWEB%" limit="1" excludetopic="WebTopicEditTemplate,*WebCreateNewTopicTemplate,*ViewTemplate,*_Template,GroupTemplate" type="query" nonoise="on" format=" <span class='foswikiUnvisited'><a id='viewtemplates' href='%SCRIPTURL{view}%/%SYSTEMWEB%/WebTemplateTopics?web=%BASEWEB%'>%MAKETEXT{"View templates"}%</a></span>"}% %TMPL:END%
+
+%TMPL:DEF{"clear"}%<input id="abort" type="button" class="foswikiSubmit" value='%MAKETEXT{"Clear all"}%' onclick='javascript:document.newtopicform.reset();' />%TMPL:END%
+
+%TMPL:DEF{"createform"}%%TMPL:P{"formstartstep"}% <div class="foswikiFormSteps"> %TMPL:P{"webnamestep"}% %TMPL:P{"topictemplatestep"}% %TMPL:P{"topicparentstep"}% %TMPL:P{"topicnamestep"}%%TMPL:P{"submitstep"}% %TMPL:P{"topicnowwstep"}% </div> %TMPL:P{"formendstep"}% %TMPL:END%
+
+%TMPL:DEF{"script:topictemplate"}%
+%TMPL:P{"JavascriptFiles/foswikiStringUnicodeChars"}%
+%TMPL:P{"LIBJS" id="JavascriptFiles/foswikiWindow" requires="JQUERYPLUGIN::FOSWIKI"}%
+%TMPL:P{"LIBJS" id="PatternSkin/webtopiccreator" requires="JavascriptFiles/foswikiString"}%
+%ADDTOZONE{"script"
+ tag="PatternSkinWebCreateNewTopicTemplate.txt"
+ text="
+<script type=\"text/javascript\">
+//<![CDATA[
+function openTemplateWindow () {
+    var window = foswiki.Window.openPopup(
+        '$percentSCRIPTURL{view}$percent/',
+            {
+                topic:'WebTemplateTopics',
+                web:'$percentSYSTEMWEB$percent',
+                template:'viewplain',
+                attributes:'resizable=1,scrollbars=1,status=1,toolbar=1',
+                urlparams:'web=$percentBASEWEB$percent'
+            }
+        );
+    return false;
+}
+function getQueryUrl() {
+	return '$percentSCRIPTURLPATH{view}$percent/$percentBASEWEB$percent/$percentBASETOPIC$percent?$percentQUERYSTRING$percent;pickparent=1'
+}
+/* Localized texts */
+var TEXT_FEEDBACK_HEADER = '$percentMAKETEXT{Topic will be named: }$percent';
+/* Url params */
+var URL_PICK_PARENT = '$percentURLPARAM{pickparent}$percent';
+var URL_TEMPLATE = '$percentURLPARAM{template}$percent';
+//]]>
+</script>" requires="JavascriptFiles/foswikiWindow"}%%TMPL:END%
+
+%TMPL:DEF{"formstartstep"}%%TMPL:P{"formstart"}%
+<div class="foswikiFormSteps">%TMPL:END%
+
+%TMPL:DEF{"formendstep"}%</div>
+%TMPL:P{"formend"}%%TMPL:END%
+
+%TMPL:DEF{"titlestep"}%<div class="foswikiFormStep">
+---++ %MAKETEXT{"Create New Topic in [_1] Web" args="<nop>%BASEWEB%"}%
+</div>%TMPL:END%
+
+%{ XXX Das muss Customizeable sein! }%
+%TMPL:DEF{"webname"}%<select marker="selected" name="webname" id="webname" class="foswikiSelect">
+%IF{"'%URLPARAM{"webname"}%'" then='<option selected="selected">%URLPARAM{"webname"}%</option>'}%
+%SEARCH{ "%HOMETOPIC%" scope="topic" web="all,-Trash,-System,-TWiki,-Sandbox,-Main" topic="%HOMETOPIC%" format="<option $marker value=\"$web\">$web - %$web%</option>" separator=" " }%</select>
+%TMPL:END%
+

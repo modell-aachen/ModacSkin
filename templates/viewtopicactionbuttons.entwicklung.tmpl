@@ -1,0 +1,211 @@
+%TMPL:DEF{"topicactionbuttons"}%%TMPL:P{"action_activatable_edit_or_create"}%%TMPL:P{"action_activatable_attach"}%%TMPL:P{"action_printable"}%%TMPL:P{"action_revisions"}%%TMPL:P{"action_backlinks_simple"}%%TMPL:P{"action_raw_or_view"}%%TMPL:P{"action_activatable_raw_edit"}%%TMPL:P{"activatable_more"}%%TMPL:END%
+
+
+%TMPL:DEF{"modacActionButtonsVIEW"}%<div id="modacButtonsLEFT">%INCLUDE{"%SYSTEMWEB%.SuckerfishDropdownLEFT"}%</div><div id="modacButtonsRIGHT">%INCLUDE{"%SYSTEMWEB%.SuckerfishDropdown"}%%TMPL:P{"SearchBox"}%</div>%TMPL:END%
+
+
+%TMPL:DEF{"modacArrowDOWN"}%<img class="modacActionButtonsARROW" src='%PUBURLPATH%/System/ModacUsabilityPlugin/images/arrow-down.png' alt''>%TMPL:END%
+%TMPL:DEF{"modacArrowRIGHT"}%<img class="modacActionButtonsARROW" src='%PUBURLPATH%/System/ModacUsabilityPlugin/images/arrow-right.png' alt''> %TMPL:END%
+
+
+%TMPL:DEF{"modacMoreLABEL"}%<a href='#'>weitere Aktionen%TMPL:P{"modacArrowDOWN"}%</a>%TMPL:END%
+
+%TMPL:DEF{"modacCopyPageLABEL"}%<a class='modacLABELwithIcon' href='%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%?template=morecopypage'><img class="modacActionButtonsICON" src='%PUBURLPATH%/System/ModacUsabilityPlugin/images/add.png' alt''>Seite kopieren</a>%TMPL:END%
+
+
+
+
+%TMPL:DEF{"modacMovePageLABEL"}%<a class='modacLABELwithIcon' href='#'><img class="modacActionButtonsICON" src='%PUBURLPATH%/System/ModacUsabilityPlugin/images/move.png' alt''>Seite verschieben</a>%TMPL:END%
+%TMPL:DEF{"modacDeletePageLABEL"}%<a class='modacLABELwithIcon' href='#'><img class="modacActionButtonsICON" src='%PUBURLPATH%/System/ModacUsabilityPlugin/images/remove.png' alt''>Seite löschen</a>%TMPL:END%
+
+%TMPL:DEF{"modacLanguageSelectorLABEL"}%<a class='modacLABELwithIcon' href='#'><img class="modacActionButtonsICON" src='%PUBURLPATH%/System/ModacUsabilityPlugin/images/flag.png' alt''>Sprachen%TMPL:P{"modacArrowRIGHT"}%</a>%TMPL:END%
+%TMPL:DEF{"modacLanguageSelector"}%%INCLUDE{"%SYSTEMWEB%.ModacLanguageSelector"}%%TMPL:END%
+
+%TMPL:DEF{"modacENGLISH"}%<a class='modacLABELwithIcon' href='#'><img class="modacActionButtonsICON" src='%PUBURLPATH%/System/ModacUsabilityPlugin/images/englisch.png' alt''>&nbsp;Englisch</a>%TMPL:END%
+%TMPL:DEF{"modacGERMAN"}%<a class='modacLABELwithIcon' href='#'><img class="modacActionButtonsICON" src='%PUBURLPATH%/System/ModacUsabilityPlugin/images/deutsch.png' alt''>&nbsp;Deutsch</a>%TMPL:END%
+
+%TMPL:DEF{"modacExportLABEL"}%<a class='modacLABELwithIcon' href='#'><img class="modacActionButtonsICON" src='%PUBURLPATH%/System/ModacUsabilityPlugin/images/icon_delete.jpg' alt''>Exportieren%TMPL:P{"modacArrowRIGHT"}%</a>%TMPL:END%
+
+%TMPL:DEF{"modacPDFPrintLABEL"}%<a class='modacLABELwithIcon' href='#'><img class="modacActionButtonsICON" src='%PUBURLPATH%/System/ModacUsabilityPlugin/images/pdf.png' alt''>PDF-Druck</a>%TMPL:END%
+%TMPL:DEF{"modacPaperPrintLABEL"}%<a class='modacLABELwithIcon' href='#'><img class="modacActionButtonsICON" src='%PUBURLPATH%/System/ModacUsabilityPlugin/images/viewtopic.png' alt''>Papier-Druck</a>%TMPL:END%
+
+
+%TMPL:DEF{"modacPrintLABEL"}%<a class='modacLABELwithIcon' href='#'><img class="modacActionButtonsICON" src='%PUBURLPATH%/System/ModacUsabilityPlugin/images/fax.png' alt''>Drucken%TMPL:P{"modacArrowRIGHT"}%</a>%TMPL:END%
+
+%TMPL:DEF{"modacRightsLABEL"}%<a class='modacLABELwithIcon' href='#'><img class="modacActionButtonsICON" src='%PUBURLPATH%/System/ModacUsabilityPlugin/images/lock.png' alt''>Rechte</a>%TMPL:END%
+
+%TMPL:DEF{"modacPreferencesLABEL"}%<a class='modacLABELwithIcon' href='#'><img class="modacActionButtonsICON" src='%PUBURLPATH%/System/ModacUsabilityPlugin/images/mechanics.png' alt''>Einstellungen</a>%TMPL:END%
+
+%TMPL:DEF{"modacWishingOnAStar"}%<a href='#'><img class="modacActionButtonsICON" src='%PUBURLPATH%/System/ModacUsabilityPlugin/images/star-none.png' alt''>&nbsp;</a>%TMPL:END%
+
+
+
+%{ ------------------------------------- old stuff ---------------------------------------------}%
+
+
+%TMPL:DEF{"modacEdit"}% %IF{"defined rev" then="" else="$percntTMPL:P{modacEditLATEST}$percnt"}%%TMPL:END%
+
+%TMPL:DEF{"modacEditLATEST"}% %IF{"context edit" then="$percntTMPL:P{modacEditLATEST_ACTIVE}$percnt" else="$percntTMPL:P{modacEditLATEST_INACTIVE}$percnt"}%%TMPL:END%
+%TMPL:DEF{"modacEditLATEST_ACTIVE"}%<div class="modacActionButtonACTIVE"><span class="foswikiRequiresChangePermission"><a href='%SCRIPTURL{"edit"}%/%BASEWEB%/%BASETOPIC%?t=%GMTIME{"$epoch"}%%TMPL:P{"url_param_editaction"}%%IF{"context CKEditorPluginEnabled" then="" else=";nowysiwyg=1"}%' rel='nofollow' %MAKETEXT{"title='Edit this topic' accesskey='e'>&Edit"}%</a></span></div>%TMPL:END%
+%TMPL:DEF{"modacEditLATEST_INACTIVE"}%<span class="foswikiRequiresChangePermission"><a href='%SCRIPTURL{"edit"}%/%BASEWEB%/%BASETOPIC%?t=%GMTIME{"$epoch"}%%TMPL:P{"url_param_editaction"}%%IF{"context CKEditorPluginEnabled" then="" else=";nowysiwyg=1"}%' rel='nofollow' %MAKETEXT{"title='Edit this topic' accesskey='e'>&Edit"}%</a></span>%TMPL:END%
+
+%TMPL:DEF{"modacAttach"}% %IF{"context attach" then="$percntTMPL:P{modacAttachACTIVE}$percnt" else="$percntTMPL:P{modacAttachINACTIVE}$percnt"}%%TMPL:END%
+%TMPL:DEF{"modacAttachACTIVE"}%<div class="modacActionButtonACTIVE"><span class="foswikiRequiresChangePermission"><a href='%SCRIPTURLPATH{"attach"}%/%BASEWEB%/%BASETOPIC%' rel='nofollow' %MAKETEXT{"title='Attach an image or document to this topic' accesskey='a'>&Attach"}%</a></span></div>%TMPL:END%
+%TMPL:DEF{"modacAttachINACTIVE"}%<span class="foswikiRequiresChangePermission"><a href='%SCRIPTURLPATH{"attach"}%/%BASEWEB%/%BASETOPIC%' rel='nofollow' %MAKETEXT{"title='Attach an image or document to this topic' accesskey='a'>&Attach"}%</a></span>%TMPL:END%
+
+%TMPL:DEF{"modacRdiff"}% %IF{"context diff or defined rev or context rdiff" then="$percntTMPL:P{modacRdiffACTIVE}$percnt" else="$percntTMPL:P{modacRdiffINACTIVE}$percnt"}%%TMPL:END%
+%TMPL:DEF{"modacRdiffACTIVE"}%<div class="modacActionButtonACTIVE"><span class="foswikiRequiresChangePermission"> %IF{"context CompareRevisionsAddonPluginEnabled" then="<a href='%SCRIPTURLPATH{"oops"}%/%BASEWEB%/%BASETOPIC%?template=oopshistory' rel='nofollow' %MAKETEXT{"title='View topic history' accesskey='h'>&History"}%</a>" else="<a href='%SCRIPTURLPATH{"rdiff"}%/%BASEWEB%/%BASETOPIC%?type=history' rel='nofollow' %MAKETEXT{"title='View topic history' accesskey='h'>&History"}%</a>"}%</span></div>%TMPL:END%
+%TMPL:DEF{"modacRdiffINACTIVE"}%<span class="foswikiRequiresChangePermission"> %IF{"context CompareRevisionsAddonPluginEnabled" then="<a href='%SCRIPTURLPATH{"oops"}%/%BASEWEB%/%BASETOPIC%?template=oopshistory' rel='nofollow' %MAKETEXT{"title='View topic history' accesskey='h'>&History"}%</a>" else="<a href='%SCRIPTURLPATH{"rdiff"}%/%BASEWEB%/%BASETOPIC%?type=history' rel='nofollow' %MAKETEXT{"title='View topic history' accesskey='h'>&History"}%</a>"}%</span>%TMPL:END%
+
+%TMPL:DEF{"modacMore"}% %IF{"$'URLPARAM{template}'='more' or $'URLPARAM{template}'='backlinksallwebs' or $'URLPARAM{template}'='backlinksweb' or context manage" then="$percntTMPL:P{modacMoreACTIVE}$percnt" else="$percntTMPL:P{modacMoreINACTIVE}$percnt"}%%TMPL:END%
+%TMPL:DEF{"modacMoreACTIVE"}%<div class="modacActionButtonACTIVE"><span><a href='%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%?template=more&maxrev=%MAXREV%&currrev=%CURRREV%' rel='nofollow' %MAKETEXT{"title='More actions for this topic' accesskey='m'>&More topic actions"}%</a></span></div>%TMPL:END%
+%TMPL:DEF{"modacMoreINACTIVE"}%<span><a href='%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%?template=more&maxrev=%MAXREV%&currrev=%CURRREV%' rel='nofollow' %MAKETEXT{"title='More actions for this topic' accesskey='m'>&More topic actions"}%</a></span>%TMPL:END%
+
+
+%TMPL:DEF{"modacActionButtonsSYSTEM"}%<div id="modacButtonsLEFT" class="modacTabs"><ul><li>%TMPL:P{"modacSystemTab"}%</ul></li></div>%TMPL:END%
+
+%TMPL:DEF{"modacSystemTab"}%<div class="modacActionButtonACTIVE"><a href='%SCRIPTURLPATH{"view"}%/%WEB%/%TOPIC%' rel='nofollow' %MAKETEXT{"title='Q.Wiki - specialpage' >specialpage"}%</a></div>%TMPL:END%
+
+
+%{ ------------------------------------ TALK --------------------------------------------------------------- }%
+
+%{ Talk Suffix definieren }%
+%TMPL:DEF{"talktopic__"}%Talk%TMPL:END%
+%TMPL:DEF{"talktopic"}%%IF{"defined TALKSUFFIX" then="%TALKSUFFIX%" else="Talk"}%%TMPL:END%
+%TMPL:DEF{talktopiccreatetemplate}%?topicparent=%WEB%.%TOPIC%;onlynewtopic=1%IF{"defined TALKTOPICTEMPLATE" then=";templatetopic=%TALKTOPICTEMPLATE%"}%%IF{"defined TALKTOPICFORMTEMPLATE" then=";formtemplate=%TALKTOPICFORMTEMPLATE%"}%%TMPL:END%
+
+%TMPL:DEF{"talktopicactionHRT"}%%IF{"$TOPIC ~ '*%TMPL:P{talktopic}%'" then="%TMPL:P{viewtopicactionbuttonactive}%" else="$percntTMPL:P{viewtopicactionbuttoninactive}$percnt"}%%TMPL:END%
+
+%{ Talk Buttons definieren }%
+%TMPL:DEF{"talktopicaction"}%<ul><li>%IF{"$TOPIC ~ '*%TMPL:P{talktopic}%'" then="%TMPL:P{viewtopicactionbuttonactive}%" else="$percntTMPL:P{viewtopicactionbuttoninactive}$percnt"}%</li><li>%TMPL:P{talktopicactionbutton}%</li></ul>%TMPL:END%
+
+%{ Link zum freigegebenen Stand je nach aktivem Bearbeitungsstand ausgeben }%
+%TMPL:DEF{viewtopicactionbuttonactive}%<a href='%SCRIPTURLPATH{"view"}%/%WEB%/%CALC{"$REPLACE(%TOPIC%,$EVAL(1+$LENGTH(%TOPIC%)-$LENGTH(%TMPL:P{talktopic}%)),$LENGTH(%TMPL:P{talktopic}%))"}%' rel='nofollow' %MAKETEXT{title='Approved Page' >Approved Page}%</a>%TMPL:END%
+%TMPL:DEF{viewtopicactionbuttoninactive}%<div class="modacActionButtonACTIVE"><a href='%SCRIPTURLPATH{"view"}%/%WEB%/%TOPIC%' rel='nofollow' %MAKETEXT{title='Approved Page' >Approved Page}%</a></div>%TMPL:END%
+
+%{ Diskussionsstand je nach Bearbeitungsstand ausgeben }%
+%TMPL:DEF{"talktopicactionbutton"}%%IF{"$TOPIC ~ '*%TMPL:P{talktopic}%'" then="$percntTMPL:P{talktopicactionviewactive}$percnt" else="%TMPL:P{talktopicactionviewinactive}%"}%%TMPL:END%
+
+%{ Anzeige im Diskussionsstand Alex: HIER MUSS NEN TAG HINZUKOMMEN}%
+%TMPL:DEF{"talktopicactionviewactive"}%<div class="modacActionButtonACTIVE"><a href='%SCRIPTURLPATH{"view"}%/%WEB%/%TOPIC%' rel='nofollow' %MAKETEXT{"title='Discussion about Improvements' >Discussion"}%</a></div>%TMPL:END%
+
+%{ Anzeige im freigegebenen Stand }%
+%TMPL:DEF{"talktopicactionviewinactive"}%%IF{"istopic '%WEB%.%TOPIC%%TMPL:P{talktopic}%'" then="$percntTMPL:P{talktopicactionviewinactivebearbeiten}$percnt" else="$percntTMPL:P{talktopicactionviewinactiveneu}$percnt"}%%TMPL:END%
+
+%{ Diskussionsstand bearbeiten }%
+%TMPL:DEF{"talktopicactionviewinactivebearbeiten"}%<a href='%SCRIPTURLPATH{"view"}%/%WEB%/%TOPIC%%TMPL:P{talktopic}%' rel='nofollow' %MAKETEXT{"title='Discussion about Improvements' >Discussion"}%</a>%TMPL:END%
+
+%{ Diskussionsstand neu erstellen }%
+%TMPL:DEF{"talktopicactionviewinactiveneu"}%%WORKFLOWFORK{newnames="%WEB%.%TOPIC%%TMPL:P{talktopic}%", label="Neue Diskussion starten", lockdown="off"}%%TMPL:END%
+
+%{ ------------------------------------ /TALK --------------------------------------------------------------- }%
+
+%TMPL:DEF{"SearchBox"}%%JQREQUIRE{"autocomplete"}%<span id="modacSearchBox"><form name="quickSearchForm" action="%SCRIPTURLPATH{view}%/%SYSTEMWEB%/SolrSearch"><input type="text" class="foswikiInputField foswikiDefaultText" title="%MAKETEXT{"Search"}%" id="quickSearchBox" name="search" value="%URLPARAM{search}%" autocomplete="%SCRIPTURL%/rest/SolrPlugin/autocomplete" size="26" /><input type="hidden" name="scope" value="all" /><input type="hidden" name="web" value="all" /><noscript>&nbsp;<input type="submit" size="5" class="foswikiButton" name="submit" value="%MAKETEXT{"Search"}%" />&nbsp;</noscript></form></span>%TMPL:END%
+
+%TMPL:DEF{"create_topic_link"}%<span class="foswikiRequiresChangePermission"><a href='%SCRIPTURL{"edit"}%/%BASEWEB%/%BASETOPIC%?t=%GMTIME{"$epoch"}%%TMPL:P{"url_param_editaction"}%%IF{"context TinyMCEPluginEnabled" else=";nowysiwyg=1"}%' rel='nofollow' %MAKETEXT{"title='Create new topic' accesskey='c'>&Create"}%</a></span>%TMPL:END%
+
+
+%TMPL:DEF{"edit_topic_link"}%<span class="foswikiRequiresChangePermission"><a href='%SCRIPTURL{"edit"}%/%BASEWEB%/%BASETOPIC%?t=%GMTIME{"$epoch"}%%TMPL:P{"url_param_editaction"}%%IF{"context TinyMCEPluginEnabled" then="" else=";nowysiwyg=1"}%' rel='nofollow' %MAKETEXT{"title='Edit this topic text' accesskey='e'>&Edit"}%</a></span>%TMPL:END%
+
+%TMPL:DEF{"raw_edit_link"}%<span class="foswikiRequiresChangePermission"><a href='%SCRIPTURL{"edit"}%/%BASEWEB%/%BASETOPIC%?t=%GMTIME{"$epoch"}%%TMPL:P{"url_param_editaction"}%;nowysiwyg=1' rel='nofollow' %MAKETEXT{"title='Edit Wiki text' accesskey='w'>Edit &wiki text"}%</a></span>%TMPL:END%
+
+%TMPL:DEF{"view_topic_link"}%<span><a href='%SCRIPTURL{"view"}%/%BASEWEB%/%BASETOPIC%' rel='nofollow' %MAKETEXT{"title='View topic' accesskey='v'>&View topic"}%</a></span>%TMPL:END%
+
+
+%TMPL:DEF{"attach_link"}%<span class="foswikiRequiresChangePermission"><a href='%SCRIPTURLPATH{"attach"}%/%BASEWEB%/%BASETOPIC%' rel='nofollow' %MAKETEXT{"title='Attach an image or document to this topic' accesskey='a'>&Attach"}%</a></span>%TMPL:END%
+
+
+%TMPL:DEF{"more_link"}%<span><a href='%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%?template=more&maxrev=%MAXREV%&currrev=%CURRREV%' rel='nofollow' %MAKETEXT{"title='Delete or rename this topic; set parent topic; view and compare revisions' accesskey='m'>&More topic actions"}%</a></span>%TMPL:END%
+
+%TMPL:DEF{"action_printable"}%%TMPL:P{"printable"}%%TMPL:P{"sep"}%%TMPL:END%
+
+%TMPL:DEF{"printable"}%<span><a href='%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%?cover=print%QUERYPARAMSTRING%%REVARG%' rel='nofollow' %MAKETEXT{"title='Printable version of this topic' accesskey='p'>&Print version"}%</a></span>%TMPL:END%
+
+%TMPL:DEF{"activatable_printable"}%%TMPL:P{"printable"}%%TMPL:END%
+
+
+%TMPL:DEF{"backlinks_web_link"}%<span><a href='%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%?template=backlinksweb' rel='nofollow' %MAKETEXT{"title='Search the [_1] Web for topics that link to here' accesskey='b'>We&b" args="<nop>%BASEWEB%"}%</a></span>%TMPL:END%
+
+%TMPL:DEF{"backlinks_all_link"}%<span><a href='%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%?template=backlinksallwebs' rel='nofollow' %MAKETEXT{"title='Search all webs for topics that link to here' accesskey='l'>A&ll Webs"}%</a></span>%TMPL:END%
+
+%TMPL:DEF{"backlinks_link"}%<span><a href='%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%?template=backlinksweb' rel='nofollow' %MAKETEXT{"title='Search the [_1] Web for topics that link to here' accesskey='b'>&Backlinks" args="<nop>%BASEWEB%"}%</a></span>%TMPL:END%
+
+
+%TMPL:DEF{"history_rdiff_link"}%<span class="foswikiRequiresChangePermission"><a href='%SCRIPTURLPATH{"rdiff"}%/%BASEWEB%/%BASETOPIC%?type=history' rel='nofollow' %MAKETEXT{"title='View total topic history' accesskey='h'>&History"}%</a></span>%TMPL:END%
+
+%TMPL:DEF{"history_history_link"}%<span class="foswikiRequiresChangePermission"><a href='%SCRIPTURLPATH{"oops"}%/%BASEWEB%/%BASETOPIC%?template=oopshistory' rel='nofollow' %MAKETEXT{"title='View total topic history' accesskey='h'>&History"}%</a></span>%TMPL:END%
+
+
+%TMPL:DEF{"raw_link"}%<span><a href='%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%?raw=on%REVARG%' rel='nofollow' %MAKETEXT{"title='View without formatting' accesskey='v'>&View wiki text"}%</a></span>%TMPL:END%
+
+
+
+
+
+
+%TMPL:DEF{"inactive_edit_with_view_topic"}%<span><strike>%MAKETEXT{"Edit"}%</strike></span>%TMPL:END%
+
+%TMPL:DEF{"url_param_editaction"}%%IF{"defined EDITACTION" then=";action=%EDITACTION%" else=""}%%TMPL:END%
+
+%TMPL:DEF{"edit_or_create"}%%TMPL:P{context="new_topic" then="create_topic_link" else="edit_topic_link"}%%TMPL:END%
+
+%TMPL:DEF{"raw_edit"}%%TMPL:P{context="new_topic" then="" else="raw_edit_link"}%%TMPL:P{context="new_topic" then="" else="sep"}%%TMPL:END%
+
+%TMPL:DEF{"action_activatable_edit_or_create"}%%TMPL:P{"activatable_edit_or_create"}%%TMPL:P{"sep"}%%TMPL:END%
+
+%TMPL:DEF{"activatable_edit_or_create"}%%TMPL:P{context="inactive" then="inactive_edit_with_view_topic" else="edit_or_create"}%%TMPL:END%
+
+%TMPL:DEF{"action_activatable_raw_edit"}%%TMPL:P{context="TinyMCEPluginEnabled" then="activatable_raw_edit"}%%TMPL:END%
+
+%TMPL:DEF{"activatable_raw_edit"}%%TMPL:P{context="inactive" then="inactive_raw_edit" else="raw_edit"}%%TMPL:END%
+
+%TMPL:DEF{"inactive_raw_edit"}%<span><strike>%MAKETEXT{"Edit Wiki<nop>Text"}%</strike></span>%TMPL:P{"sep"}%%TMPL:END%
+
+
+%TMPL:DEF{"active_attach"}%%TMPL:P{"attach_link"}%%TMPL:END%
+
+%TMPL:DEF{"inactive_attach"}%<span><strike>%MAKETEXT{"Attach"}%</strike></span>%TMPL:END%
+
+%TMPL:DEF{"action_activatable_attach"}%%TMPL:P{"activatable_attach"}%%TMPL:P{"sep"}%%TMPL:END%
+
+%TMPL:DEF{"activatable_attach"}%%TMPL:P{context="inactive" then="inactive_attach" else="active_attach"}%%TMPL:END%
+
+
+
+%TMPL:DEF{"active_more"}%%TMPL:P{"more_link"}%%TMPL:END%
+
+%TMPL:DEF{"inactive_more"}%<span><strike>%MAKETEXT{"More topic actions..."}%</strike></span>%TMPL:END%
+
+%TMPL:DEF{"action_activatable_more"}%%TMPL:P{"activatable_more"}%%TMPL:END%
+
+%TMPL:DEF{"activatable_more"}%%TMPL:P{context="inactive" then="inactive_more" else="active_more"}%%TMPL:END%
+
+
+%TMPL:DEF{"action_raw_or_view"}%%TMPL:P{"raw_or_view"}%%TMPL:P{"sep"}%%TMPL:END%
+
+%TMPL:DEF{"raw_or_view"}%%IF{"defined raw" then="%TMPL:P{"view_topic_link"}%" else="%TMPL:P{"raw_link"}%"}%%TMPL:END%
+
+%TMPL:DEF{"action_backlinks"}%%TMPL:P{"backlinks"}%%TMPL:P{"sep"}%%TMPL:END%
+
+%TMPL:DEF{"backlinks"}%%MAKETEXT{"Backlinks"}%: %TMPL:P{"backlinks_web_link"}%, %TMPL:P{"backlinks_all_link"}%%TMPL:END%
+
+%TMPL:DEF{"backlinks_simple"}%%TMPL:P{"backlinks_link"}%%TMPL:END%
+
+%TMPL:DEF{"action_backlinks_simple"}%%TMPL:P{"backlinks_simple"}%%TMPL:P{"sep"}%%TMPL:END%
+
+
+
+%TMPL:DEF{"history_rdiff"}%%TMPL:P{"history_rdiff_link"}%%TMPL:END%
+
+
+%TMPL:DEF{"history_history"}%%TMPL:P{"history_history_link"}%%TMPL:END%
+
+
+%TMPL:DEF{"revisions_rdiff"}%%REVISIONS%%TMPL:END%
+
+
+%TMPL:DEF{"revisions_compare"}%%RDIFF2COMPARE{"%REVISIONS%"}%%TMPL:END%
+
+%TMPL:DEF{"action_revisions"}%%TMPL:P{"revisions"}%%TMPL:P{"sep"}%%TMPL:END%
+
+%TMPL:DEF{"revisions"}%<span>%TMPL:P{context="HistoryPluginEnabled" then="history_history" else="history_rdiff"}%: %TMPL:P{context="CompareRevisionsAddonPluginEnabled" then="revisions_compare" else="revisions_rdiff"}%</span>%TMPL:END%

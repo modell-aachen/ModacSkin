@@ -1,0 +1,132 @@
+---+!! !ModacSkin
+<!--
+One line description, required for extensions repository catalog.
+BuildContrib will fill in the SHORTDESCRIPTION with the value of
+$SHORTDESCRIPTION from the .pm module, or you can redefine it here if you
+prefer.
+   * Set SHORTDESCRIPTION = %$SHORTDESCRIPTION%
+-->
+%SHORTDESCRIPTION%
+
+%TOC%
+
+---++ Description
+Modac skin is a Vector (the skin used for Wikipedia since Mediawiki 1.16) look-alike based on the awesome Pattern skin.
+
+---+++ 15.06.11 HRT
+---++++ modacTabs
+
+The <nop>modacActionButtonsWrapper is moved from the topbar to the content. This way it is directly connected with the content and doesn't
+need to be "pushed" from it original position. Also the blue border at the top of the content is now defined by <nop>modacActionButtonsWrapper
+<nop>foswiki.modac.tmpl calls &#37;TMPL:P{"modacTabs"}&#37;, which is defined in <nop>viewtopicactionbuttuns.modac.tmpl; 
+
+---+++ 14.06.11 HRT
+
+---++++ I'm not sure yet if the following changes will remain in the Stockholm-release
+
+The page-fade-background (from grey to white) was moved from sidebar and topbar to body --> less source code and no cut between sidebar and
+topbar's background
+
+
+---++++ style.css
+
+min-width of .foswikiPage is set to 1080px
+
+---++++ css.modac.tmpl
+
+css.modac.tmpl ask for a project.css (besides a layout.css, style.css and colors.css)
+
+
+---++++ viewtopicactionbuttons.modac.tmpl
+
+suckerfish.modac.tmpl is included
+
+---+++ 08.06.11 HRT
+
+---++++ view.modac.tmpl
+
+The extended pagetop is included from the text-file: data/System/ModacTopExtended instead of being defined in view.modac.tmpl
+--> not ready yet; see Item 282!
+
+---++++ foswiki.modac.tmpl
+
+pagetitle & breadcrumb
+
+&#37;TMPL:DEF{"top:toolbarbuttons"}&#37; deleted; &#37;TMPL:DEF{"pagetitle"}&#37; moved from view.modac.tmpl to foswiki.modac.tmpl
+
+---++++ renamebase.modac.tmpl
+
+pagehelp-twistys deleted from renamebase.modac.tmpl
+
+---++++ foswikiToc
+
+Layout of TOC is changed into Vector-style (style.css)
+
+
+---++ Usage
+
+---+++ ModacSideBar
+
+If there is a topic "ModacSideBar" within a web, it will be used to define the web's sidebar, otherwise the default sidebar defined in "System.ModacSideBarExample" 
+will be used. So if you want to create a web-specific sidebar just create a topic "ModacSideBar" within this web.
+
+---+++ ModacBottomBar
+
+Same procedure as described in chapter "ModacSideBar" above: If there's a topic "ModacBottomBar", it defines the web-specific bottom bar otherwise the topic
+"System.ModacBottomBar" is taken.
+
+---+++ ModacTopBar
+
+Same story as in "ModacSideBar" and "ModacBottomBar": Either there is a topic "ModacTopBar" within the web or "System.ModacTopBar" is used. 
+
+---++ Dependencies
+
+- FlexWebListPlugin
+- KVPPlugin
+- FamFamFamContrib???
+- CKEditorPlugin
+
+- /Data/System:
+Wie laeuft bei uns die Anmeldung? Nutzen wir die Login-Funktion von Foswiki?
+Ich hab WebLeftBarLogin und WebLeftBarPersonal aus dem Skin entfernt
+
+
+---++ Known Issues
+
+TOC_TITLE (defines the title in a page-toc) cannot be translated using the MAKETEXT-macro: FOSWiki doesn't render the macro and return &#37;MAKETEXT{"xy"}&#37; as an value.
+
+---++ Installation Instructions
+
+To enable ModacSkin you have set the following variables either in WebPreferences (to enable ModacSkin within a single web) or
+in Main/SitePreferences to enable the skin for the whole wiki.  
+
+<pre>
+   &#42; Set SKIN = modac
+
+   &#42; Set FOSWIKI_LAYOUT_URL = &#37;PUBURLPATH&#37;/&#37;SYSTEMWEB&#37;/ModacSkinTheme/layout.css
+   &#42; Set FOSWIKI_STYLE_URL = &#37;PUBURLPATH&#37;/&#37;SYSTEMWEB&#37;/ModacSkinTheme/style.css
+   &#42; Set FOSWIKI_COLORS_URL = &#37;PUBURLPATH&#37;/&#37;SYSTEMWEB&#37;/ModacSkinTheme/colors.css
+
+   &#42; Set FOSWIKI_PROJECT_URL =
+</pre>
+
+If you want to make custom modifications you can set FOSWIKI_PROJECT_URL to your css, otherwise set it to nothing.
+
+%$INSTALL_INSTRUCTIONS%
+
+---++ Info
+
+Many thanks to the following sponsors for supporting this work:
+   * Acknowledge any sponsors here
+
+|  Author(s): | |
+|  Copyright: | &copy; |
+|  License: | [[http://www.gnu.org/licenses/gpl.html][GPL (Gnu General Public License)]] |
+|  Release: | %$RELEASE% |
+|  Version: | %$VERSION% |
+|  Change History: | <!-- versions below in reverse order -->&nbsp; |
+|  Dependencies: | %$DEPENDENCIES% |
+|  Home page: | http://handbuch.open-quality.com/bin/view/Extensions/ModacSkinPlugin |
+|  Support: | http://handbuch.open-quality.com/bin/view/Support/ModacSkinPlugin |
+
+<!-- Do _not_ attempt to edit this topic; it is auto-generated. -->

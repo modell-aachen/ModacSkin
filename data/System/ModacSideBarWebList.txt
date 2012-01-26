@@ -1,0 +1,8 @@
+<!-- %META:TOPICINFO{author="BaseUserMapping_333" date="1325519092" format="1.1" version="2"}%
+%META:TOPICINFO{author="ProjectContributor" date="1168738857" format="1.1" version="$Rev: 4885 $"}%
+%META:TOPICPARENT{name="ModacSideBarExample"}% -->
+%WEBLIST{
+"	* <a $marker href=\"%SCRIPTURLPATH{"view"}%/$name/%HOMETOPIC%\">$name</a>"
+	selection="%BASEWEB%"
+	marker="style=\"font-weight:bold\""
+	}%

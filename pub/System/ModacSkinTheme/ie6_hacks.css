@@ -1,0 +1,37 @@
+.foswikiPage {
+	width:expression(document.body.clientWidth <1340? "1339px" : "auto");
+}
+.modacLoginPage #foswikiLogin {
+	padding: 4px;
+	border: 1px solid #aaa;
+}
+#modacButtonsLEFT,
+#modacButtonsRIGHT {
+    margin-top: 1.8em;
+}
+#moadcButtonsRIGHT {
+	margin-right: 1em;	
+}
+#modacLogo img {
+	display: none;
+}
+#modacLogo {
+	filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://192.168.178.36/foswiki/pub/System/ModacSkinTheme/ModacSkinLogos/qwiki-logo_small.png', sizingMethod='scale');
+	margin: 1em;
+}
+#modacLogoWrapper {
+	height: 100%;	
+}
+#modacSidebarContents {
+  margin-top:1em;
+}
+#modacSidebarIE {
+	margin-left: 2.6em;	
+}
+#modacSidebarTwisty_webs li {
+	padding-top: 4px;
+}
+#modacSidebar .modacSidebarTwisty ul {
+	margin-top: 0em;
+	margin-left: 0.6em;	
+}

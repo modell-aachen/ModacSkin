@@ -1,0 +1,2 @@
+%{ to include a bottom bar on a page, just include this template in the page template }%%TMPL:DEF{"bottombar"}%<div id="modacBottombar">%TMPL:P{"bottombarcontents"}%</div>%TMPL:END%
+%TMPL:DEF{"bottombarcontents"}%<div id="patternBottomBarContents">%IF{"istopic '%WEB%.ModacSkinWebBottomBar'" then="$percntINCLUDE{$quot%WEB%.ModacSkinWebBottomBar$quot}$percnt" else="$percntINCLUDE{$quot%SYSTEMWEB%.ModacSkinWebBottomBarDefault$quot}$percnt"}%</div>%TMPL:END%

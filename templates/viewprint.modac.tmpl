@@ -1,0 +1,84 @@
+%TMPL:INCLUDE{"viewprint"}%
+%TMPL:INCLUDE{"view"}%
+
+%TMPL:DEF{"logo"}%%TMPL:END%
+%TMPL:DEF{"bottombar"}%%TMPL:END%
+%TMPL:DEF{"topicactionbuttonsTOP"}%%TMPL:END%
+%TMPL:DEF{"sidebar"}%%TMPL:END%
+%TMPL:DEF{"topbar"}%%TMPL:END%
+
+%TMPL:DEF{"script:skintemplate"}%%TMPL:END%
+
+
+%TMPL:DEF{"bodyclassname"}%patternViewPage patternPrintPage%TMPL:END%
+
+%TMPL:DEF{"topicactionbuttons"}%%TMPL:END%
+
+%TMPL:DEF{"form"}%
+%META{"form"}%%TMPL:END%
+%TMPL:DEF{"formtop"}%%TMPL:END%
+%TMPL:DEF{"formbottom"}%%TMPL:P{"form"}%%TMPL:END%
+
+
+%TMPL:DEF{"attachments"}%
+%META{"attachments"}%%TMPL:END%
+%TMPL:DEF{"attachmentstop"}%%TMPL:END%
+%TMPL:DEF{"attachmentsbottom"}%%TMPL:P{"attachments"}%%TMPL:END%
+
+%TMPL:DEF{"defaultstyle"}%
+<style>
+@page {
+  margin: 1cm;
+  margin-left: 2cm;
+  margin-top: 3.0cm;
+  margin-bottom: 2.0cm;
+
+  @frame header {
+    -pdf-frame-content: headerContent;
+    top: 1cm;
+    margin-left: 2cm;
+    margin-right: 1cm;
+    height: 2.0cm;
+   }
+
+  @frame footer {
+   -pdf-frame-content: footerContent;
+   bottom: 0cm;
+   margin-top: 0.5cm;
+   margin-left: 2cm;
+   margin-right: 1cm;
+   height: 2.5cm;
+  }
+}
+</style>
+%TMPL:END%
+
+
+
+%{ DEPRECATED: beforetext and aftertext }%
+%{ compatibility transition older than 4.2: }%
+%TMPL:DEF{"contentheader"}%%TMPL:P{"beforetext"}%%TMPL:END%
+%TMPL:DEF{"contentfooter"}%%TMPL:P{"aftertext"}%%TMPL:END%
+%TMPL:DEF{"beforetext"}%%TMPL:END%
+%TMPL:DEF{"aftertext"}%%TMPL:END%
+
+%TMPL:DEF{"broadcastmessage"}%%TMPL:END%
+
+%TMPL:DEF{"content"}%<div class="foswikiTopic">%TMPL:P{"broadcastmessage"}% %TEXT%</div><!-- /foswikiTopic-->%TMPL:END%
+
+%TMPL:DEF{"topheaderbody"}%<div id="headerContent"> %TMPL:P{"top"}% </div>%TMPL:END%
+%TMPL:DEF{"patterntopiccontents"}%
+%TMPL:P{"topheaderbody"}%
+%TMPL:P{"contentheader"}%
+%TMPL:P{"formtop"}%
+%TMPL:P{"formtop"}%
+%TMPL:P{"attachmentstop"}%<div class="patternContent">
+%TMPL:P{"content"}%
+%TMPL:P{"bottomcontent"}%
+<div id="footerContent" style="text-align:right;">
+<img width="100%" src="http://riwiki01.de.flg.int/pub/System/ProjectLogos/Powerline.png">
+<br>
+Dieser Ausdruck ist eine Kopie und unterliegt nicht dem &Auml;nderungsdienst.<br>Der jeweilige Benutzer hat sich vor Gebrauch von der Aktualit&auml;t der Kopie zu vergewissern.</div>
+%TMPL:END%
+
+

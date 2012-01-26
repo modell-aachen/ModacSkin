@@ -1,0 +1,239 @@
+# ModacSkin translation base file
+# Modell Aachen <qm@modell-aachen.de>, 2012.
+msgid ""
+msgstr ""
+"Project-Id-Version: 1.0\n"
+"POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2012-01-24 15:48+0200\n"
+"Last-Translator: Modell Aachen <qm@modell-aachen.de>\n"
+"Language-Team: Modell Aachen Language Team <none>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: de\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Virtaal 0.5.2\n"
+
+
+#---------------------------- ModacSkin ----------------------------#
+
+#: /templates/viewtopicactionbuttons.modac.tmpl
+msgid "title='Approved Page' >Approved Page"
+msgstr "title='Freigegebener Stand' >Freigegebener Stand"
+
+#: /templates/viewtopicactionbuttons.modac.tmpl
+msgid "title='Discussion about Improvements' >Discussion"
+msgstr "title='Diskussion über Verbesserungen' >Diskussion"
+
+#: /templates/view.modac.tmpl
+msgid "Approved Page"
+msgstr "Freigegebener Stand"
+
+#: /templates/viewtopicactionbuttons.modac.tmpl
+msgid "title='Edit this topic' accesskey='e'>&Edit"
+msgstr "title='Diesen Artikel bearbeiten' >Bearbeiten"
+
+#: /templates/viewtopicactionbuttons.modac.tmpl
+msgid "title='More actions for this topic' accesskey='m'>&More topic actions"
+msgstr "title='Weitere Aktionen für diesen Artikel' accesskey='w'>&Weitere Aktionen"
+
+#: /templates/viewtopicactionbuttons.modac.tmpl
+msgid "title='View topic history' accesskey='h'>&History"
+msgstr "title='Die Versionsgeschichte dieses Artikels betrachten' accesskey='v'>&Versionsgeschichte"
+
+#: /lib/Foswiki/Plugins/KVPPlugin/KVPPlugin.pm
+msgid "title='Discussion about Improvements' >Start Discussion"
+msgstr "title='Eine neue Diskussion starten' >Diskussion starten"
+
+#: /data/System/WebTopBarExample.txt
+msgid "MyPage"
+msgstr "Meine Seite"
+
+#: /data/System/WebLeftBarExample.txt
+msgid "Webs"
+msgstr "Bereiche"
+
+#: /data/System/WebLeftBarExample.txt
+msgid "Tools"
+msgstr "Werkzeuge"
+
+#: /data/System/WebLeftBarExample.txt
+msgid "Templates"
+msgstr "Vorlagen"
+
+#: /data/System/WebLeftBarExample.txt
+msgid "PDF-Print"
+msgstr "PDF-Druck"
+
+#: /data/System/WebLeftBarExample.txt
+msgid "Recently changed"
+msgstr "Letzte Änderungen"
+
+#: /templates/oopsattention.modac.tmpl
+msgid "title='Q.Wiki - specialpage' >specialpage"
+msgstr "title='Q.Wiki - Spezialseite' >Spezialseite"
+
+#: /data/System/WebBottomBarExample.txt
+msgid "About Q.Wiki"
+msgstr "Über Q.Wiki"
+
+#: /templates/attachtables.modac.tmpl
+msgid "Filename"
+msgstr "Dateiname"
+
+#: /templates/more.modac.tmpl
+msgid "no current parent"
+msgstr "keine übergeordnete Seite zugewiesen"
+
+#: /data/System/ModacSkinSolrSearchBaseTemplate.txt
+msgid "Choosen filters"
+msgstr "Ausgewählte Filter"
+
+#: /data/System/ModacSkinSolrSearchBaseTemplate.txt
+msgid "no filters choosen"
+msgstr "Keine Filter ausgewählt"
+
+#: /data/System/ModacSkinSolrSearchBaseTemplate.txt
+msgid "remove all filters"
+msgstr "Alle Filter entfernen"
+
+#: /data/System/ModacSkinSolrSearchBaseTemplate.txt
+msgid "remove filter"
+msgstr "Filter entfernen"
+
+#: /templates/attachagain.pattern.tmpl:3
+msgid "Update attachment %1 on %2"
+msgstr "Anhang %1 aktualisieren"
+
+#: /templates/form.modac.tmpl 
+msgid "Document Control"
+msgstr "Dokumentenlenkung"
+msgstr "Dateiname"
+
+#: /templates/attach.modac.tmpl
+msgid "(attachments)"
+msgstr "(Anhänge)"
+
+#: /templates/attachagain.modac.tmpl
+msgid "Update attachment %1 on %2"
+msgstr "Anhang %1 aktualisieren"
+
+#: HistoryPlugin/templates/oopshistory.modac.tmpl 
+msgid "Please choose two revisions, which should be compared"
+msgstr "Bitte wählen Sie die zu vergleichenden Revisionen"
+
+#: HistoryPlugin/templates/oopshistory.modac.tmpl
+msgid "Revisions %1 - %2 (out of %3) are shown"
+msgstr "Aktuell werden die Revisionen <b>%1</b> bis <b>%2</b> von <b>%3</b> angezeigt."
+
+#: HistoryPlugin/templates/oopshistory.modac.tmpl
+msgid "You can also choose to see "
+msgstr "Sie können sich auch insgesamt "
+
+#: HistoryPlugin/templates/oopshistory.modac.tmpl
+msgid "Revisions."
+msgstr "Revisionen anzeigen lassen."
+
+#: HistoryPlugin/templates/oopshistory.modac.tmpl
+msgid "MS-Word-mode"
+msgstr "MS-Word-Änderungsmodus"
+
+#: HistoryPlugin/templates/oopshistory.modac.tmpl
+msgid "(history)"
+msgstr "(Versionsgeschichte)"
+
+#: /templates/oopshistory.modac.tmpl
+msgid "restore"
+msgstr "wiederherstellen"
+
+#: core/templates/attachtables.modac.tmpl
+msgid "view"
+msgstr "ansehen"
+
+#: templates/attachtables.modac.tmpl
+msgid "Update attachment"
+msgstr "Anhang aktualisieren"
+
+#: templates/attachagain.modac.tmpl
+msgid "Update existing attachment"
+msgstr "Neue Version hochladen"
+
+#: templates/attachagain.modac.tmpl
+msgid "Change comment only"
+msgstr "Nur Kommentar ändern"
+
+#: data/System/WebCreateNewTopicTemplate.txt
+msgid "Choose Web:"
+msgstr "Themenbereich auswählen:"
+
+#: core/templates/renameattachmentdelete.tmpl
+msgid ""
+"The attachment may have to be renamed if an attachment with the same name "
+"already exists in the target topic."
+msgstr ""
+"Der Anhang muss eventuell umbenannt werden, falls bereits ein Anhang mit "
+"demselben Namen an der Ziel-Seite angehangen ist."
+
+#: data/System/SolrSearchBaseTemplate.txt
+msgid "In my contributions"
+msgstr "In meinen Seiten"
+
+#: data/System/SolrSearchBaseTemplate.txt
+msgid "In current web"
+msgstr "Im aktuellen Bereich"
+
+#: data/System/SolrSearchBaseTemplate.txt
+msgid "In all webs"
+msgstr "In allen Bereichen"
+
+#: data/System/SolrSearchBaseTemplate.txt
+msgid "Results per page"
+msgstr "Ergebnisse pro Seite"
+
+#: data/System/SolrSearchBaseTemplate.txt
+msgid "Sort by"
+msgstr "Sortieren nach"
+
+#: data/System/SolrSearchBaseTemplate.txt
+msgid "Relevance"
+msgstr "Relevanz"
+
+#: data/System/SolrSearchBaseTemplate.txt
+msgid "Last changed"
+msgstr "zuletzt geändert"
+
+#: data/System/SolrSearchBaseTemplate.txt
+msgid "Display as"
+msgstr "Anzeigen als"
+
+#: data/System/SolrSearchBaseTemplate.txt
+msgid "list"
+msgstr "Liste"
+
+#: data/System/SolrSearchBaseTemplate.txt
+msgid "grid"
+msgstr "Kacheln"
+
+#: data/System/SolrSearchBaseTemplate.txt
+msgid "nothing found"
+msgstr "Keine Einträge gefunden"
+
+#: data/System/SolrSearchBaseTemplate.txt
+msgid "Results %1 of <strong>%2</strong>"
+msgstr "Ergebnisse %1 von <strong>%2</strong>"
+
+#: data/System/WebChangesViewTemplate.txt
+msgid "Recent changes in %1"
+msgstr "Letzte Änderungen im Bereich '%1'"
+
+#: data/System/WebChangesViewTemplate.txt
+msgid "Recent changes"
+msgstr "Letzte Änderungen"
+
+#: SolrPlugin/Search.pm
+msgid "Previous"
+msgstr "Vorherige"
+
+#: SolrPlugin/Search.pm
+msgid "Next"
+msgstr "Nächste"

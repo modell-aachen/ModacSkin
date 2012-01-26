@@ -1,0 +1,72 @@
+%TMPL:INCLUDE{"view"}%
+%TMPL:INCLUDE{"viewtopicactionbuttons"}%
+%TMPL:INCLUDE{"viewtopbar"}%
+%TMPL:INCLUDE{"viewsidebar"}%
+
+%TMPL:DEF{"logo"}%%TMPL:END%%{
+---------------------------------------------------
+}%%TMPL:DEF{"bodyclassname"}%modacViewPage modacView%IF{"defined raw" then=" patternRawViewPage"}%%TMPL:END%%{
+---------------------------------------------------
+}%%TMPL:DEF{"script:skintemplate"}%%IF{"defined raw" then="$percntTMPL:P{$quotscript:skintemplate:viewraw$quot}$percnt"}%%TMPL:END%%{
+---------------------------------------------------
+}%%TMPL:DEF{"script:skintemplate:viewraw"}%%TMPL:P{"JavascriptFiles/foswikiPref"}%%TMPL:P{"PatternSkin/pattern_edit"}%%TMPL:END%%{
+---------------------------------------------------
+}%%{ DEPRECATED: formattop, formatbottom, attachmentsattop and attachmentsatbottom }%
+%{ compatibility transition older than 4.2: }%
+%TMPL:DEF{"formattop"}%%TMPL:END%
+%TMPL:DEF{"formatbottom"}%%TMPL:P{"form"}%%TMPL:END%
+%TMPL:DEF{"attachmentsattop"}%%TMPL:END%
+%TMPL:DEF{"attachmentsatbottom"}%%TMPL:P{"attachments"}%%TMPL:END%
+%TMPL:DEF{"formtop"}%%TMPL:P{"formattop"}%%TMPL:END%
+%TMPL:DEF{"formbottom"}%%TMPL:P{"formatbottom"}%%TMPL:END%
+%TMPL:DEF{"attachmentstop"}%%TMPL:P{"attachmentsattop"}%%TMPL:END%
+%TMPL:DEF{"attachmentsbottom"}%%TMPL:P{"attachmentsatbottom"}%%TMPL:END%%{
+---------------------------------------------------
+}%
+
+
+%TMPL:DEF{"top_einfach"}%%IF{"'%META{"formfield" name="Titel"}%'=''" then="$percntTMPL:P{$quottop_einfach2$quot}$percnt" else="$percntTMPL:P{$quottop_einfach1$quot}$percnt"}%%TMPL:END%
+
+%TMPL:DEF{"top_einfach1"}%<div class="patternTop"><div id="modacHeading">%META{"formfield" name="Title"}%</div>
+<span class="patternHomePath">%TMPL:P{"breadcrumb"}%</span><br></div><!--/patternTop-->%TMPL:END%
+
+%TMPL:DEF{"top_einfach2"}%<div class="patternTop"><div id="modacHeading">%TOPIC%</div>
+<span class="patternHomePath">%TMPL:P{"breadcrumb"}%</span><br></div><!--/patternTop-->%TMPL:END%
+
+%TMPL:DEF{"top"}%%IF{"'%META{"formfield" name="Dokumententyp"}%'='Infoseite' or '%META{"formfield" name="Dokumententyp"}%'='Prozessbeschreibung' or '%META{"formfield" name="Dokumententyp"}%'='Checkliste' or '%META{"formfield" name="Dokumententyp"}%'='Arbeitsanweisung'" then="$percntTMPL:P{$quottop_erweitert$quot}$percnt" else="$percntTMPL:P{$quottop_einfach$quot}$percnt"}%%TMPL:END%
+
+
+%{---------------------------------------------------
+}%%{ DEPRECATED: beforetext and aftertext }%
+%{ compatibility transition older than 4.2: }%
+%TMPL:DEF{"contentheader"}%%TMPL:P{"beforetext"}%%TMPL:END%
+%TMPL:DEF{"contentfooter"}%%TMPL:P{"aftertext"}%%TMPL:END%%{
+---------------------------------------------------
+}%%TMPL:DEF{"patterntopiccontents"}%%TMPL:P{"broadcastmessage"}%%TMPL:P{"contentheaderstylewrapper"}%%TMPL:P{"formtop"}%%TMPL:P{"attachmentstop"}%<div class="patternContent"><div class="%IF{"$'GETWORKFLOWROW{istdiskussion}'='1'" then="KVPmarked "}%foswikiTopic">%TMPL:P{"content"}%</div>
+%TMPL:P{"contentfooterstylewrapper"}%%TMPL:P{"topicaction"}%</div>%TMPL:P{"footernote"}%%TMPL:END%
+
+%TMPL:DEF{"modacActionButtons"}%%TMPL:P{"modacActionButtonsVIEW"}%%TMPL:END%
+
+%TMPL:DEF{"topicaction"}%<div class="modacBorder"><div class="foswikiFormSteps">%TMPL:P{"attachmentsbottom"}%</div></div>%TMPL:P{"kvpbottom"}%%TMPL:END%%{
+---------------------------------------------------
+}%%TMPL:DEF{"standardheader"}%%TMPL:END%
+%TMPL:DEF{"simpleheader"}%%TMPL:P{"flashnote"}%%TMPL:P{"standardheader"}%%TMPL:END%%{
+---------------------------------------------------
+}%%TMPL:DEF{"broadcastmessage"}%%IF{"defined BROADCASTMESSAGE and $BROADCASTMESSAGE != ''" then="$percntTMPL:P{$quotbroadcastmessage:contents$quot}$percnt"}%%TMPL:END%
+%TMPL:DEF{"broadcastmessage:contents"}%<div class="foswikiBroadcastMessage"> %BROADCASTMESSAGE% </div>%TMPL:END%
+
+%TMPL:DEF{"flashnote"}%%IF{"defined FLASHNOTE and $FLASHNOTE != ''" then="$percntTMPL:P{$quotflashnote:contents$quot}$percnt"}%%TMPL:END%
+%TMPL:DEF{"flashnote:contents"}%<div class="foswikiNotification"> %FLASHNOTE% </div>%TMPL:END%%{
+---------------------------------------------------
+}%%TMPL:DEF{"content"}%%TMPL:P{"simpleheader"}%%TEXT% %IF{"$raw='on'" then='%TMPL:P{"sig_textareabuttons"}%'}%%TMPL:END%%{
+---------------------------------------------------
+}%%TMPL:DEF{"printaction"}%%TMPL:P{"activatable_printable"}%%TMPL:END%%{
+---------------------------------------------------
+}%%TMPL:DEF{"footernote"}%%TMPL:P{"topicinfo"}%%TMPL:END%
+%TMPL:DEF{"topicinfo"}%<div class="patternInfo"><div class="patternRevInfo">%MAKETEXT{"Topic revision:"}% %REVINFO%</div></div>%TMPL:END%%{
+---------------------------------------------------
+}%%TMPL:DEF{"sig_textareabuttons"}%<div class="patternSigLine">%TMPL:P{"textareabuttons"}%<div class="foswikiClear"></div></div>%TMPL:END%%{
+---------------------------------------------------
+}%%TMPL:DEF{"horizontalnavigation"}%%IF{"istopic '%PATTERNSKIN_NAVIGATION_TOPIC%'" then="$percntINCLUDE{$quot%PATTERNSKIN_NAVIGATION_TOPIC%$quot section=$quotmain$quot warn=$quotoff$quot}$percnt"}%%TMPL:END%%{
+---------------------------------------------------
+}%%TMPL:DEF{"metanavigation"}%%IF{"istopic '%PATTERNSKIN_NAVIGATION_TOPIC%'" then="$percntINCLUDE{$quot%PATTERNSKIN_NAVIGATION_TOPIC%$quot section=$quotmeta$quot warn=$quotoff$quot}$percnt"}%%TMPL:END%

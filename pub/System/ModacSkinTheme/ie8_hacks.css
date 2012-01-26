@@ -1,0 +1,8 @@
+.foswikiPage {
+	font-size:100%;
+	min-width: 1040px;
+}
+.modacLoginPage #foswikiLogin {
+	padding: 4px;
+	border: 1px solid #aaa;
+}
