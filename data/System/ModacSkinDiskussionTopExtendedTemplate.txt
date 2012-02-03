@@ -22,9 +22,9 @@
 			<td style='text-align: center;'>
 				Ersteller:<strong><br>%WORKFLOWMETA{"LASTPROCESSOR_DISKUSSIONSSTAND"}%</strong></td>
 			<td style='text-align: center;'>
-				Freigegeben:<strong><br><em>im Diskussionsstand</em></strong></td>
+				Freigegeben:<strong><br><em>%RED%im Diskussionsstand%ENDCOLOR%</em></strong></td>
 			<td style='text-align: center;'>
-				Freigabe Datum:<strong><br><em>im Diskussionsstand</em></strong></td>
+				Freigabe Datum:<strong><br><em>%RED%im Diskussionsstand%ENDCOLOR%</em></strong></td>
 			<td style='text-align: center;'>
 				Geprüft durch:<strong><br>%META{"formfield" name="Geprüft"}%</strong></td>
 			<td style='text-align: center;'>
