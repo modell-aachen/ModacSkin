@@ -18,7 +18,7 @@
 		</tr>
 		<tr height: 24px;>
 			<td style='text-align: center;'>
-				Ersteller:<strong><br>%WORKFLOWMETA{"LASTPROCESSOR_DISKUSSIONSSTAND"}%</strong></td>
+				Ersteller:<strong><br>%IF{"$'WORKFLOWMETA{LASTPROCESSOR_DISKUSSIONSSTAND}'" then="$percentWORKFLOWMETA{$quotLASTPROCESSOR_DISKUSSIONSSTAND$quot}$percent" else="$percentWORKFLOWMETA{$quotLASTPROCESSOR_ENTWURF$quot}$percent"</strong></td>
 			<td style='text-align: center;'>
 				Freigegeben:<strong><br>%META{"formfield" name="Prozesseigner"}%</strong></td>
 			<td style='text-align: center;'>
