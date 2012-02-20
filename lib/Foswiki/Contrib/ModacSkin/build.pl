@@ -1,9 +1,7 @@
 #!/usr/bin/perl -w
-BEGIN { 
-	#Alex: Sonst klappt´s nicht
-	$ENV{FOSWIKI_LIBS} = 'C:/EclipseWorkbench/super/foswiki1/trunk/core/lib';
-	unshift @INC, split( /:/, $ENV{FOSWIKI_LIBS} ); }
+BEGIN { unshift @INC, split( /:/, $ENV{FOSWIKI_LIBS} ); }
 use Foswiki::Contrib::Build;
+
 
 # Create the build object
 $build = new Foswiki::Contrib::Build('ModacSkin');
@@ -16,9 +14,9 @@ $build = new Foswiki::Contrib::Build('ModacSkin');
 # name of web to upload to
 $build->{UPLOADTARGETWEB} = 'Extensions';
 # Full URL of pub directory
-$build->{UPLOADTARGETPUB} = 'http://handbuch.open-quality.com/pub';
+$build->{UPLOADTARGETPUB} = 'http://extensions.open-quality.com/pub';
 # Full URL of bin directory
-$build->{UPLOADTARGETSCRIPT} = 'http://handbuch.open-quality.com/bin';
+$build->{UPLOADTARGETSCRIPT} = 'http://extensions.open-quality.com/bin';
 # Script extension
 $build->{UPLOADTARGETSUFFIX} = '';
 
