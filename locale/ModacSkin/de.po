@@ -237,3 +237,7 @@ msgstr "Vorherige"
 #: SolrPlugin/Search.pm
 msgid "Next"
 msgstr "Nächste"
+
+#: /templates/viewtopicactionbuttons.modac.tmpl
+msgid "Approved Page"
+msgstr "Freigegebener Stand"
