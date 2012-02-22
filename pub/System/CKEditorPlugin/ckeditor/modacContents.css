@@ -86,3 +86,12 @@ background: #003c89;
  }
 
 /*-------- /MA_table --------*/
+
+
+.Modac_Standard {
+  margin: 1em 0;
+  background: #f9f9f9;
+  border: 1px #AAA solid;
+  border-collapse: collapse;
+  empty-cells:show;	
+}
