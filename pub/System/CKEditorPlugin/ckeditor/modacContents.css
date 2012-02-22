@@ -95,3 +95,10 @@ background: #003c89;
   border-collapse: collapse;
   empty-cells:show;	
 }
+
+.Modac_Standard tr:first-child { 
+text-align: center; 
+font-weight: bold; 
+color: #f9f9f9; 
+background: #003c89; 
+ }
