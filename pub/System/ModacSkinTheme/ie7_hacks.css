@@ -12,4 +12,9 @@
 #modacSidebar ul {
 	margin-left: 2em;	
 }
-
+.modacTabs ul {
+	margin-left: 0;
+}
+#modacWrapper .foswikiToc ul {
+	list-style-image: none;
+}

@@ -6,3 +6,9 @@
 	padding: 4px;
 	border: 1px solid #aaa;
 }
+.modacTabs ul {
+	margin-left: 0;
+}
+#modacWrapper .foswikiToc ul {
+	list-style-image: none;
+}
