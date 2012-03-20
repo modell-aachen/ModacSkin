@@ -1,4 +1,3 @@
-%TMPL:INCLUDE{"viewprint"}%
 %TMPL:INCLUDE{"view"}%
 
 %TMPL:DEF{"logo"}%%TMPL:END%
@@ -30,30 +29,46 @@
 @page {
   margin: 1cm;
   margin-left: 2cm;
-  margin-top: 3.0cm;
+  margin-top: 5.0cm;
   margin-bottom: 2.0cm;
+  /*size: A4 landscape;*/
 
-  @frame header {
-    -pdf-frame-content: headerContent;
-    top: 1cm;
-    margin-left: 2cm;
-    margin-right: 1cm;
-    height: 2.0cm;
+  @top {
+    content: flow(Princeheader)
    }
 
-  @frame footer {
-   -pdf-frame-content: footerContent;
-   bottom: 0cm;
-   margin-top: 0.5cm;
-   margin-left: 2cm;
-   margin-right: 1cm;
-   height: 2.5cm;
+  @bottom {
+    content: flow(Princefooter)
   }
+
 }
+
+
+div.Princeheader {
+   flow: static(Princeheader)
+}
+div.Princefooter {
+   flow: static(Princefooter)
+}
+span.Seitenzahl {
+   content: "%MAKETEXT{Seite}% " counter(page) " %MAKETEXT{von}% " counter(pages)
+}
+  %IF{"'ENTWURF'='%WORKFLOWSTATE%'" then="background-image: url(/srv/www/htdocs/pub/System/GenPDFPisaPlugin/entwurf-ohneTransparens.png);"}%
+  %IF{"'DISKUSSIONSSTAND'='%WORKFLOWSTATE%'" then="background-image: url(/srv/www/htdocs/pub/System/GenPDFPisaPlugin/diskussion.png);"}%
 </style>
 %TMPL:END%
 
-
+%TMPL:DEF{"main"}%
+<div class="foswikiPage">
+        <div id="modacSidebar">
+        %TMPL:P{"sidebar"}%
+        </div>
+        <div id="modacWrapper"><div id="modacSecondWrapper">
+        <div id="modacContentsWrapper"><div id="modacContents"><div id="modacContentHeading"></div>%TMPL:P{"patterntopiccontents"}%</div></div>
+        %TMPL:P{"bottombar"}%</div>
+        </div>
+</div>
+%TMPL:END%
 
 %{ DEPRECATED: beforetext and aftertext }%
 %{ compatibility transition older than 4.2: }%
@@ -66,7 +81,13 @@
 
 %TMPL:DEF{"content"}%<div class="foswikiTopic">%TMPL:P{"broadcastmessage"}% %TEXT%</div><!-- /foswikiTopic-->%TMPL:END%
 
-%TMPL:DEF{"topheaderbody"}%<div id="headerContent"> %TMPL:P{"top"}% </div>%TMPL:END%
+%TMPL:DEF{"topheaderbody"}%
+<div class="Princeheader">%TMPL:P{"top"}%</div>
+<div class="Princefooter" style="text-align:right;font-size:73%;line-height:150%;">
+<hr>
+<!--img width="25%" src="" float="left" align="left" style="padding-top: 2px"-->
+Dieser Ausdruck ist eine Kopie und unterliegt nicht dem &Auml;nderungsdienst.<br>Der jeweilige Benutzer hat sich vor Gebrauch von der Aktualit&auml;t der Kopie zu vergewissern.<br />Druckdatum: %DATE%</div>
+%TMPL:END%
 %TMPL:DEF{"patterntopiccontents"}%
 %TMPL:P{"topheaderbody"}%
 %TMPL:P{"contentheader"}%
@@ -75,10 +96,6 @@
 %TMPL:P{"attachmentstop"}%<div class="patternContent">
 %TMPL:P{"content"}%
 %TMPL:P{"bottomcontent"}%
-<div id="footerContent" style="text-align:right;">
-<img width="100%" src="http://riwiki01.de.flg.int/pub/System/ProjectLogos/Powerline.png">
-<br>
-Dieser Ausdruck ist eine Kopie und unterliegt nicht dem &Auml;nderungsdienst.<br>Der jeweilige Benutzer hat sich vor Gebrauch von der Aktualit&auml;t der Kopie zu vergewissern.</div>
 %TMPL:END%
 
 
