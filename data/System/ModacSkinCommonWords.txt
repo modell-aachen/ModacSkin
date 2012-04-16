@@ -1,0 +1,12 @@
+---++ This Document lists some common words
+These words are often mentioned in workflows and might slip into a %MAKE%NOP%TEXT% statement. They are listed here to be included in the language file.
+
+---+++ Words
+%MAKETEXT{"Approved Page"}%
+%MAKETEXT{"Draft"}%
+%MAKETEXT{"Discussion"}%
+%MAKETEXT{"Waiting for QM"}%
+%MAKETEXT{"Waiting for PO"}%
+
+---+++ TODO: Move to KVPPlugin
+%MAKETEXT{"title='Discussion about Improvements' >Start Discussion"}%

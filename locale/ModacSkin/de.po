@@ -18,6 +18,10 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Pootle 2.0.5\n"
 
+#: lib/Foswiki/Plugins/KVPPlugin.pm
+msgid "title='Discussion about Improvements' >Start Discussion"
+msgstr "title='Diskussion über Verbesserungen' >Diskussion starten"
+
 #: data/System/ModacSkinSolrSearchBaseTemplate.txt:187
 msgid "$label"
 msgstr ""
