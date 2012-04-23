@@ -14,6 +14,7 @@ data/System/ModacSkinWebBottomBarDefault.txt 0644
 data/System/ModacSkinWebCreateNewTopicTemplate.txt 0644
 data/System/ModacSkinWebLeftBarDefault.txt 0644
 data/System/ModacSkinWebTopBarDefault.txt 0644
+data/System/ModacSkinCommonWords.txt 0644
 data/System/SuckerfishDropdown.txt 0644
 data/System/SuckerfishDropdownLEFT.txt 0644
 lib/Foswiki/Contrib/ModacSkin.pm 0644
