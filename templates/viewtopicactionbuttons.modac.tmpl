@@ -41,7 +41,7 @@
 %TMPL:DEF{"talktopicnosuffix"}%%CALC{"$REPLACE(%TOPIC%,$EVAL(1+$LENGTH(%TOPIC%)-$LENGTH(%TMPL:P{talktopic}%)),$LENGTH(%TMPL:P{talktopic}%))"}%%TMPL:END%
 
 %{ Link zum freigegebenen Stand je nach aktivem Bearbeitungsstand ausgeben }%
-%TMPL:DEF{viewtopicactionbuttonactive}%%IF{"$TOPIC ~'*%TMPL:P{talktopic}%'" then="<a href='$percentSCRIPTURLPATH{$quotview$quot}$percent/$percentWEB$percent/$dollarpercentTMPL:P{talktopicnosuffix}$dollarpercent' rel='nofollow' $percentMAKETEXT{title='$percentGETWORKFLOWROW{stategroup}$percent' >$percentGETWORKFLOWROW{stategroup}$percent}$percent</a>" else="<a><strike>%MAKETEXT{"%GETWORKFLOWROW{stategroup}%"}%</strike></a>"}%%TMPL:END%
+%TMPL:DEF{viewtopicactionbuttonactive}%%IF{"$TOPIC ~'*%TMPL:P{talktopic}%'" then="<a href='$percentSCRIPTURLPATH{$quotview$quot}$percent/$percentWEB$percent/$dollarpercentTMPL:P{talktopicnosuffix}$dollarpercent' rel='nofollow' title='$percentMAKETEXT{$percentGETWORKFLOWROW{stategroup}$percent}$percent' >$percentMAKETEXT{$percentGETWORKFLOWROW{stategroup}$percent}$percent</a>" else="<a><strike>%MAKETEXT{"%GETWORKFLOWROW{stategroup}%"}%</strike></a>"}%%TMPL:END%
 %TMPL:DEF{viewtopicactionbuttoninactive}%<div class="modacActionButtonACTIVE"><a href='%SCRIPTURLPATH{"view"}%/%WEB%/%TOPIC%' rel='nofollow' title='%MAKETEXT{%GETWORKFLOWROW{stategroup}%}%' >%MAKETEXT{%GETWORKFLOWROW{stategroup}%}%</a></div>%TMPL:END%
 
 %{ Diskussionsstand je nach Bearbeitungsstand ausgeben }%
