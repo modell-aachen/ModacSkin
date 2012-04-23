@@ -139,6 +139,10 @@ msgstr "Bild"
 msgid "topic"
 msgstr "Seite"
 
+#: data/System/ModacSkinSolrSearchViewTemplate.txt
+msgid "comment"
+msgstr "Kommentar"
+
 #: data/System/ModacSkinCommonWords.txt:6
 msgid "Approved Page"
 msgstr "Freigegebener Stand"

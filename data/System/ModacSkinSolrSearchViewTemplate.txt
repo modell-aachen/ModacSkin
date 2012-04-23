@@ -96,7 +96,8 @@
   %MAKETEXT{"under discussion"}%=DISKUSSIONSSTAND,
   %MAKETEXT{"draft"}%=ENTWURF,
   %MAKETEXT{"image"}%=image,
-  %MAKETEXT{"topic"}%=topic
+  %MAKETEXT{"topic"}%=topic,
+  %MAKETEXT{"comment"}%=comment
 %TMPL:END%
 %{</verbatim>}%
 
