@@ -84,9 +84,7 @@ templates/form.modac.tmpl 0644
 templates/formtables.modac.tmpl 0644
 templates/foswiki.modac.tmpl 0644
 templates/login.modac.tmpl 0644
-templates/more.entwicklung.tmpl 0644
 templates/more.modac.tmpl 0644
-templates/morecopypage.entwicklung.tmpl 0644
 templates/moredialog.modac.tmpl 0644
 templates/oops.modac.tmpl 0644
 templates/oopsaccessdenied.modac.tmpl 0644
@@ -112,7 +110,6 @@ templates/viewplain.modac.tmpl 0644
 templates/viewprint.modac.tmpl 0644
 templates/viewsidebar.modac.tmpl 0644
 templates/viewtopbar.modac.tmpl 0644
-templates/viewtopicactionbuttons.entwicklung.tmpl 0644
 templates/viewtopicactionbuttons.modac.tmpl 0644
 ################################################
 # Copy and paste the text between the ###### lines into the file
