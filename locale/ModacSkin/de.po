@@ -127,9 +127,17 @@ msgstr "Funktionstasten:"
 msgid "Action"
 msgstr "Aktion"
 
-#: data/System/ModacSkinSolrSearchBaseTemplate.txt:26
+#: data/System/ModacSkinSolrSearchViewTemplate.txt:26
 msgid "Application"
 msgstr "Anwendung"
+
+#: data/System/ModacSkinSolrSearchViewTemplate.txt
+msgid "image"
+msgstr "Bild"
+
+#: data/System/ModacSkinSolrSearchViewTemplate.txt
+msgid "topic"
+msgstr "Seite"
 
 #: data/System/ModacSkinCommonWords.txt:6
 msgid "Approved Page"

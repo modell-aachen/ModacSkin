@@ -94,7 +94,9 @@
   %MAKETEXT{"Turkish"}%=tr,
   %MAKETEXT{"approved"}%=FREIGEGEBEN,
   %MAKETEXT{"under discussion"}%=DISKUSSIONSSTAND,
-  %MAKETEXT{"draft"}%=ENTWURF
+  %MAKETEXT{"draft"}%=ENTWURF,
+  %MAKETEXT{"image"}%=image,
+  %MAKETEXT{"topic"}%=topic
 %TMPL:END%
 %{</verbatim>}%
 
