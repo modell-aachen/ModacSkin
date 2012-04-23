@@ -57,9 +57,9 @@
   %MAKETEXT{"Category"}%=category,
   %MAKETEXT{"Tag"}%=tag,
   %MAKETEXT{"Application"}%=field_TopicType_lst,
-  %MAKETEXT{"Dokumententyp"}%=field_Dokumententyp_lst,
+  %MAKETEXT{"document type"}%=field_Dokumententyp_lst,
   %MAKETEXT{"Process State"}%=process_state_s,
-  %MAKETEXT{"Autor"}%=field_Autor_s,
+  %MAKETEXT{"Author"}%=field_Autor_s,
   %MAKETEXT{"Prozesseigner"}%=field_Prozesseigner_s,
   %MAKETEXT{"Geltungsbereich"}%=field_Geltungsbereich_s,
 %TMPL:END%

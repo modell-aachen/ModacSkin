@@ -146,7 +146,7 @@ msgstr "Datei an die Seite %1 hängen"
 
 #: templates/attach.modac.tmpl:13
 msgid "Attach image or document on %1"
-msgstr "Bild oder Dokument an %1 hängen"
+msgstr "Bild oder Dokument an %1 anhängen"
 
 #: templates/attach.modac.tmpl:48
 msgid "Attach new file"
@@ -175,7 +175,7 @@ msgid "Attention"
 msgstr "Achtung"
 
 #: data/System/ModacSkinSolrSearchBaseTemplate.txt:28
-msgid "Autor"
+msgid "Author"
 msgstr "Autor"
 
 #: templates/changeform.modac.tmpl:18
@@ -226,7 +226,7 @@ msgstr "untergeordnete Seiten im %1 Bereich"
 
 #: data/System/ModacSkinWebCreateNewTopicTemplate.txt:21
 msgid "Choose Web:"
-msgstr "Themenbereich auswählen:"
+msgstr "Bereich wählen:"
 
 #: templates/changeform.modac.tmpl:7
 msgid "Choose a new form for %1"
@@ -253,7 +253,7 @@ msgstr "Vergleiche Revisionen"
 
 #: data/System/ModacSkinDiskussionTemplate.txt:11
 msgid "Compare with approved version"
-msgstr "Vergleiche freigegebener Version"
+msgstr "Vergleiche mit freigegebener Version"
 
 #: templates/oopshistory.modac.tmpl:67
 msgid "Context:"
@@ -353,7 +353,7 @@ msgid "Document Control"
 msgstr "Dokumentenlenkung"
 
 #: data/System/ModacSkinSolrSearchBaseTemplate.txt:27
-msgid "Dokumententyp"
+msgid "document type"
 msgstr "Dokumententyp"
 
 #: data/System/ModacSkinCommonWords.txt:7
@@ -388,7 +388,7 @@ msgstr "Einstellungen für diese Seite bearbeiten"
 
 #: templates/foswiki.modac.tmpl:75
 msgid "Enlarge edit box"
-msgstr "Editier-Box vergrößern"
+msgstr "Editor vergrößern"
 
 #: templates/attachtables.modac.tmpl:8
 msgid "Filename"
@@ -584,7 +584,7 @@ msgstr "Wählen Sie ansonsten Abbrechen."
 
 #: templates/validate.modac.tmpl:40
 msgid "Press OK to confirm that this change was intentional."
-msgstr "Bitte bestätigen Sie mit OK, wenn diese Änderung beabsichtigt ist."
+msgstr "Bitte bestätigen Sie mit OK, wenn die Änderung beabsichtigt war."
 
 #: templates/attach.modac.tmpl:65
 msgid "Properties"
@@ -733,7 +733,7 @@ msgstr "Hilfe anzeigen"
 
 #: templates/foswiki.modac.tmpl:75
 msgid "Shrink edit box"
-msgstr "Editier-Box verkleinern"
+msgstr "Editor verkleinern"
 
 #: templates/more.entwicklung.tmpl:171 templates/more.modac.tmpl:171
 #: templates/oopshistory.modac.tmpl:64
@@ -759,7 +759,7 @@ msgstr "Zeichensatz in monotype oder proportional wechseln"
 
 #: data/System/ModacSkinSolrSearchBaseTemplate.txt:25
 msgid "Tag"
-msgstr "Tag"
+msgstr "Schlagwort"
 
 #: templates/moredialog.modac.tmpl:56 templates/moredialog.modac.tmpl:68
 #, fuzzy
@@ -797,7 +797,7 @@ msgstr "Werkzeuge"
 
 #: templates/attachtables.modac.tmpl:18
 msgid "Topic attachments"
-msgstr "Seiten-Anhänge"
+msgstr "Anhänge"
 
 #: templates/oopshistory.modac.tmpl:36 templates/oopshistory.modac.tmpl:47
 msgid "Topic history"
@@ -966,7 +966,7 @@ msgstr "früher"
 
 #: templates/formtables.modac.tmpl:28
 msgid "edit"
-msgstr "editieren"
+msgstr "bearbeiten"
 
 #: templates/oopshistory.modac.tmpl:43
 msgid "first"
@@ -1029,7 +1029,7 @@ msgstr "Versionen bis zu"
 #: templates/viewtopicactionbuttons.modac.tmpl:82
 msgid "title='Attach an image or document to this topic' accesskey='a'>&Attach"
 msgstr ""
-"title='Ein Bild oder Dokument an diese Seite hängen' accesskey='a'>&Anhänge"
+"title='Ein Bild oder Dokument an diese Seite anhängen' accesskey='a'>&Anhänge"
 
 #: templates/viewtopicactionbuttons.entwicklung.tmpl:105
 #: templates/viewtopicactionbuttons.modac.tmpl:74
@@ -1042,8 +1042,8 @@ msgid ""
 "title='Delete or rename this topic; set parent topic; view and compare "
 "revisions' accesskey='m'>&More topic actions"
 msgstr ""
-"title='Seite löschen oder umbenennen; Übergeordnete Seite setzen; Revisionen "
-"anzeigen und vergleichen' accesskey='m'>&Mehr Topic-Aktionen"
+"title='Seite löschen oder umbenennen; Übergeordnete Seite festlegen; Revisionen "
+"anzeigen und vergleichen' accesskey='m'>&Weitere Aktionen"
 
 #: templates/viewtopicactionbuttons.entwicklung.tmpl:90
 #: templates/viewtopicactionbuttons.entwicklung.tmpl:96
@@ -1053,19 +1053,19 @@ msgstr "title='Diskussion über Verbesserungen' >Diskussion"
 #: templates/viewtopicactionbuttons.entwicklung.tmpl:110
 #: templates/viewtopicactionbuttons.modac.tmpl:78
 msgid "title='Edit Wiki text' accesskey='w'>Edit &wiki text"
-msgstr "title='Wiki-Text editieren' accesskey='w'>Editieren &wikitext"
+msgstr "title='Wiki-Text bearbeiten' accesskey='w'>&wikitext bearbeiten"
 
 #: templates/viewtopicactionbuttons.entwicklung.tmpl:108
 #: templates/viewtopicactionbuttons.modac.tmpl:76
 msgid "title='Edit this topic text' accesskey='e'>&Edit"
-msgstr "title='Seiten-Text editieren' accesskey='e'>&Editieren"
+msgstr "title='Seiten-Text bearbeiten' accesskey='e'>&Bearbeiten"
 
 #: templates/viewtopicactionbuttons.entwicklung.tmpl:49
 #: templates/viewtopicactionbuttons.entwicklung.tmpl:50
 #: templates/viewtopicactionbuttons.modac.tmpl:12
 #: templates/viewtopicactionbuttons.modac.tmpl:13
 msgid "title='Edit this topic' accesskey='e'>&Edit"
-msgstr "title='Diesen Artikel bearbeiten' >Bearbeiten"
+msgstr "title='Diese Seite bearbeiten' >Bearbeiten"
 
 #: templates/compare.modac.tmpl:77
 msgid "title='Interwoven' accesskey='i'>&interwoven"
@@ -1077,7 +1077,7 @@ msgstr "title='verwoben' accesskey='v'>verwoben (&v)"
 #: templates/viewtopicactionbuttons.modac.tmpl:25
 msgid "title='More actions for this topic' accesskey='m'>&More topic actions"
 msgstr ""
-"title='Weitere Aktionen für diesen Artikel' accesskey='w'>&Weitere Aktionen"
+"title='Weitere Aktionen für diese Seite' accesskey='w'>&Weitere Aktionen"
 
 #: templates/viewtopicactionbuttons.entwicklung.tmpl:122
 #: templates/viewtopicactionbuttons.modac.tmpl:88
@@ -1088,6 +1088,7 @@ msgstr "title='Druckversion dieser Seite' accesskey='p'>Druckversion (&p)"
 #: templates/viewtopicactionbuttons.modac.tmpl:68
 msgid "title='Q.Wiki - specialpage' >specialpage"
 msgstr "title='Q.Wiki - Spezialseite' >Spezialseite"
+#: xxx nennen wir das nicht jetzt auch Infoseite?
 
 #: templates/viewtopicactionbuttons.entwicklung.tmpl:129
 #: templates/viewtopicactionbuttons.modac.tmpl:95
@@ -1095,7 +1096,7 @@ msgid ""
 "title='Search all webs for topics that link to here' accesskey='l'>A&ll Webs"
 msgstr ""
 "title='Alle Bereiche nach Seiten durchsuchen, die hierher verweisen' "
-"accesskey='l'>A&lle Webs"
+"accesskey='l'>A&lle Bereiche"
 
 #: templates/viewtopicactionbuttons.entwicklung.tmpl:131
 #: templates/viewtopicactionbuttons.modac.tmpl:97
@@ -1112,7 +1113,7 @@ msgid ""
 "title='Search the %1 Web for topics that link to here' accesskey='b'>We&b"
 msgstr ""
 "title='Den %1 Bereich nach Seiten durchsuchen, die hierher verweisen' "
-"accesskey='b'>We&b"
+"accesskey='b'>Be&reich"
 
 #: templates/compare.modac.tmpl:74
 msgid "title='Side by side' accesskey='s'>&side by side"
@@ -1124,20 +1125,20 @@ msgstr "title='Seite-an-Seite' accesskey='s'>&seite-an-seite"
 #: templates/viewtopicactionbuttons.modac.tmpl:21
 msgid "title='View topic history' accesskey='h'>&History"
 msgstr ""
-"title='Die Versionsgeschichte dieses Artikels betrachten' "
+"title='Die Versionsgeschichte dieses Artikels ansehen' "
 "accesskey='v'>&Versionsgeschichte"
 
 #: templates/viewtopicactionbuttons.entwicklung.tmpl:112
 #: templates/viewtopicactionbuttons.modac.tmpl:80
 msgid "title='View topic' accesskey='v'>&View topic"
-msgstr "title='Seite anzeigen' accesskey='v'>Topic anzeigen (&v)"
+msgstr "title='Seite anzeigen' accesskey='v'>Seite anzeigen (&v)"
 
 #: templates/viewtopicactionbuttons.entwicklung.tmpl:134
 #: templates/viewtopicactionbuttons.entwicklung.tmpl:136
 #: templates/viewtopicactionbuttons.modac.tmpl:100
 #: templates/viewtopicactionbuttons.modac.tmpl:102
 msgid "title='View total topic history' accesskey='h'>&History"
-msgstr "title='Versionsgeschichte der Seite ansehen' accesskey='h'>&Historie"
+msgstr "title='Versionsgeschichte der Seite ansehen' accesskey='h'>&Versionsgeschichte"
 
 #: templates/viewtopicactionbuttons.entwicklung.tmpl:139
 #: templates/viewtopicactionbuttons.modac.tmpl:105
