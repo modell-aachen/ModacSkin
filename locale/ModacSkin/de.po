@@ -22,10 +22,6 @@ msgstr ""
 msgid "title='Discussion about Improvements' >Start Discussion"
 msgstr "title='Diskussion über Verbesserungen' >Diskussion starten"
 
-#: data/System/ModacSkinSolrSearchBaseTemplate.txt:187
-msgid "$label"
-msgstr ""
-
 #: templates/foswiki.modac.tmpl:100
 msgid "%1 Web"
 msgstr "%1 Bereich"
@@ -146,6 +142,38 @@ msgstr "Kommentar"
 #: data/System/ModacSkinCommonWords.txt:6
 msgid "Approved Page"
 msgstr "Freigegebener Stand"
+
+#: data/System/ModacSkinCommonWords.txt
+msgid "Put under CIP"
+msgstr "In KVP überführen"
+
+#: data/System/ModacSkinCommonWords.txt
+msgid "Request approval"
+msgstr "Um Freigabe bitten"
+
+#: data/System/ModacSkinCommonWords.txt
+msgid "Discard draft"
+msgstr "Entwurf verwerfen"
+
+#: data/System/ModacSkinCommonWords.txt
+msgid "Discard discussion"
+msgstr "Diskussion verwerfen"
+
+#: data/System/ModacSkinCommonWords.txt
+msgid "Discuss"
+msgstr "Diskutieren"
+
+#: data/System/ModacSkinCommonWords.txt
+msgid "Request further revision"
+msgstr "Um weitere Überarbeitung bitten"
+
+#: data/System/ModacSkinCommonWords.txt
+msgid "Start discussion"
+msgstr "Diskussion starten"
+
+#: data/System/ModacSkinCommonWords.txt
+msgid "Create"
+msgstr "Erstellen"
 
 #: templates/viewtopicactionbuttons.entwicklung.tmpl:167
 #: templates/viewtopicactionbuttons.modac.tmpl:129

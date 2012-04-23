@@ -7,6 +7,13 @@ These words are often mentioned in workflows and might slip into a %MAKE%NOP%TEX
 %MAKETEXT{"Discussion"}%
 %MAKETEXT{"Waiting for QM"}%
 %MAKETEXT{"Waiting for PO"}%
+%MAKETEXT{"Put under CIP"}%
+%MAKETEXT{"Request approval"}%
+%MAKETEXT{"Discard draft"}%
+%MAKETEXT{"Discard discussion"}%
+%MAKETEXT{"Discuss"}%
+%MAKETEXT{"Request further revision"}%
+%MAKETEXT{"Start discussion"}%
 
 ---+++ TODO: Move to KVPPlugin
 %MAKETEXT{"title='Discussion about Improvements' >Start Discussion"}%
