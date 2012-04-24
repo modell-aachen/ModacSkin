@@ -187,6 +187,10 @@ msgstr "Seitenverantwortlicher"
 msgid "Area of application"
 msgstr "Geltungsbereich"
 
+#: data/System/ModacSkinSolrSearchViewTemplate.txt
+msgid "Process State"
+msgstr "Prozess Status"
+
 #: data/System/ModacSkinCommonWords.txt
 msgid "This document is not yet in CIP."
 msgstr "Dieses Dokument befindet sich noch nicht im Freigabeprozess."
