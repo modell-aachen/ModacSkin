@@ -57,11 +57,11 @@
   %MAKETEXT{"Category"}%=category,
   %MAKETEXT{"Tag"}%=tag,
   %MAKETEXT{"Application"}%=field_TopicType_lst,
-  %MAKETEXT{"document type"}%=field_Dokumententyp_lst,
+  %MAKETEXT{"document type"}%=field_Dokumententyp_s,
   %MAKETEXT{"Process State"}%=process_state_s,
-  %MAKETEXT{"Author"}%=field_Autor_s,
-  %MAKETEXT{"Prozesseigner"}%=field_Prozesseigner_s,
-  %MAKETEXT{"Geltungsbereich"}%=field_Geltungsbereich_s,
+  %MAKETEXT{"Person in charge of page"}%=field_Freigegeben_durch_s,
+  %MAKETEXT{"Area of application"}%=field_Geltungsbereich_s,
+  %MAKETEXT{"Normchapter"}%=field_Normkapitel_s
 %TMPL:END%
 %{</verbatim>}%
 
@@ -70,7 +70,7 @@
 %{</verbatim>}%
 
 %{<verbatim class="tml">}%
-%TMPL:DEF{"solr::disjunctivefacets"}%process_state_s, web, type%TMPL:END%
+%TMPL:DEF{"solr::disjunctivefacets"}%process_state_s, web, type, field_Dokumententyp_lst, field_Freigegeben_durch, field_Geltungsbereich_s, field_Normkaptiel_s%TMPL:END%
 %{</verbatim>}%
 
 %{<verbatim class="tml">}%
@@ -95,6 +95,11 @@
   %MAKETEXT{"approved"}%=FREIGEGEBEN,
   %MAKETEXT{"under discussion"}%=DISKUSSIONSSTAND,
   %MAKETEXT{"draft"}%=ENTWURF,
+  %MAKETEXT{"discarded"}%=VERWORFEN,
+  %MAKETEXT{"formal revision"}%=FORMALE_PRUEFUNG,
+  %MAKETEXT{"formal revision (draft)"}%=FORMALE_PRUEFUNG_ENTWURF,
+  %MAKETEXT{"contentual revision"}%=INHALTLICHE_PRUEFUNG,
+  %MAKETEXT{"contentual revision (draft)"}%=INHALTLICHE_RPRUEFUNG_ENTWURF,
   %MAKETEXT{"image"}%=image,
   %MAKETEXT{"topic"}%=topic,
   %MAKETEXT{"comment"}%=comment
@@ -102,15 +107,15 @@
 %{</verbatim>}%
 
 %{<verbatim class="tml">}%
-%TMPL:DEF{"solr::facet::include::field_Dokumententyp_lst"}%%TMPL:END%
-%TMPL:DEF{"solr::facet::include::field_Autor_s"}%%TMPL:END%
-%TMPL:DEF{"solr::facet::include::field_Prozesseigner_s"}%%TMPL:END%
+%TMPL:DEF{"solr::facet::include::field_Dokumententyp_s"}%%TMPL:END%
+%TMPL:DEF{"solr::facet::include::field_Freigegeben_durch_s"}%%TMPL:END%
 %TMPL:DEF{"solr::facet::include::field_Geltungsbereich_s"}%%TMPL:END%
+%TMPL:DEF{"solr::facet::include::field_Normkapitel_s"}%%TMPL:END%
 
-%TMPL:DEF{"solr::facet::exclude::field_Dokumententyp_lst"}%%TMPL:END%
-%TMPL:DEF{"solr::facet::exclude::field_Autor_s"}%%TMPL:END%
-%TMPL:DEF{"solr::facet::exclude::field_Prozesseigner_s"}%%TMPL:END%
+%TMPL:DEF{"solr::facet::exclude::field_Dokumententyp_s"}%%TMPL:END%
+%TMPL:DEF{"solr::facet::exclude::field_Freigegeben_durch_s"}%%TMPL:END%
 %TMPL:DEF{"solr::facet::exclude::field_Geltungsbereich_s"}%%TMPL:END%
+%TMPL:DEF{"solr::facet::exclude::field_Normkapitel_s"}%%TMPL:END%
 %TMPL:DEF{"solr::facet::exclude::type"}%aqm|map%TMPL:END%
 %{</verbatim>}%
 
@@ -141,32 +146,22 @@
     pageropts=""
   }%
   %TMPL:P{"solr::facet"
-    id="field_Dokumententyp_lst"
+    id="field_Dokumententyp_s"
     format="$key&nbsp;($count)"
     value="$id:$key"
     input="checkbox"
-    include="%TMPL:P{"solr::facet::include::field_Dokumententyp_lst"}%"
-    exclude="%TMPL:P{"solr::facet::exclude::field_Dokumententyp_lst"}%"
+    include="%TMPL:P{"solr::facet::include::field_Dokumententyp_s"}%"
+    exclude="%TMPL:P{"solr::facet::exclude::field_Dokumententyp_s"}%"
     extraclass=""
     pageropts=""
   }%
   %TMPL:P{"solr::facet"
-    id="field_Prozesseigner_s"
+    id="field_Freigegeben_durch_s"
     format="$key&nbsp;($count)"
     value="$id:$key"
     input="checkbox"
-    include="%TMPL:P{"solr::facet::include::field_Prozesseigner_s"}%"
-    exclude="%TMPL:P{"solr::facet::exclude::field_Prozesseigner_s"}%"
-    extraclass=""
-    pageropts=""
-  }%
-  %TMPL:P{"solr::facet"
-    id="field_Autor_s"
-    format="$key&nbsp;($count)"
-    value="$id:$key"
-    input="checkbox"
-    include="%TMPL:P{"solr::facet::include::field_Autor_s"}%"
-    exclude="%TMPL:P{"solr::facet::exclude::field_Autor_s"}%"
+    include="%TMPL:P{"solr::facet::include::field_Freigegeben_durch_s"}%"
+    exclude="%TMPL:P{"solr::facet::exclude::field_Freigegeben_durch_s"}%"
     extraclass=""
     pageropts=""
   }%
@@ -192,12 +187,12 @@
     pageropts=""
   }%
   %TMPL:P{"solr::facet"
-    id="field_TopicType_lst"
+    id="field_Normkapitel_s"
     format="$key&nbsp;($count)"
     value="$id:$key"
     input="checkbox"
-    include="%TMPL:P{"solr::facet::include::field_TopicType_lst"}%"
-    exclude="%TMPL:P{"solr::facet::exclude::field_TopicType_lst"}%"
+    include="%TMPL:P{"solr::facet::include::field_Normkapitel_s"}%"
+    exclude="%TMPL:P{"solr::facet::exclude::field_Normkapitel_s"}%"
     extraclass="solrSort"
     pageropts=""
   }%
