@@ -6,7 +6,7 @@
 %TMPL:DEF{"kvpbottom"}%
 <div class="modacKVPtable">
 | *%MAKETEXT{"Improvement Process"}%* ||
-| %MAKETEXT{"State"}% | %WORKFLOWSTATEMESSAGE% |
+| %MAKETEXT{"State"}% | %MAKETEXT{"%WORKFLOWSTATEMESSAGE%"}% |
 | %MAKETEXT{"Difference to approved version"}% | %BUTTON{"%MAKETEXT{"Compare with approved version"}%" target="%SCRIPTURL{compare}%/%WEB%/%TOPIC%?external=%CALC{$REPLACE(%TOPIC%,$EVAL(1+$LENGTH(%TOPIC%)-$LENGTH(%TMPL:P{talktopic}%)),$LENGTH(%TMPL:P{talktopic}%))}%"}% |
 | %MAKETEXT{"Next step"}% | %WORKFLOWTRANSITION% |
 | %MAKETEXT{"Last editing person"}% | %REVINFO{format="$username"}% |

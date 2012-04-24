@@ -1,9 +1,9 @@
+%META:TOPICINFO{author="BaseUserMapping_333" comment="reprev" date="1335199636" format="1.1" reprev="9" version="9"}%
 <div id="modacSidebarIE">
    * [[Prozesse.WebHome][%MAKETEXT{"Start"}%]]
-   * [[Prozesse.Aktuelles][%MAKETEXT{"Aktuelles"}%]]
-   * [[Prozesse.Anleitung][%MAKETEXT{"Anleitung"}%]]
+   * [[Prozesse.Aktuelles][%MAKETEXT{"News"}%]]
+   * [[Anleitung.WebHome][%MAKETEXT{"Manual"}%]]
    * [[%BASEWEB%.WebTopicList][%MAKETEXT{"Index"}%]]
-   * [[Prozesse.Vorlagen][%MAKETEXT{"Vorlagen"}%]]
 </div>
 
 <div class="modacSidebarTwisty">
@@ -20,6 +20,7 @@
 }% 
    * [[%SCRIPTURLPATH{"view"}%/%BASEWEB%/WebCreateNewTopic?topicparent=%BASETOPIC%][%MAKETEXT{"Create New Topic"}%]]
    * [[%BASEWEB%.WebChanges][%MAKETEXT{"Recently changed"}%]]
+   * [[Custom.Templates][%MAKETEXT{"Templates"}%]]
    * [[%SCRIPTURLPATH{"view"}%/%INCLUDINGWEB%/%INCLUDINGTOPIC%?cover=print;contenttype=application/pdf][%MAKETEXT{"PDF-Print"}%]]
 %ENDTWISTY% 
 </div>

@@ -26,7 +26,7 @@
 			<td style='text-align: center;'>
 				Freigabe Datum:<strong><br><em>%RED%im Diskussionsstand%ENDCOLOR%</em></strong></td>
 			<td style='text-align: center;'>
-				Gepr&uuml;ft durch:<strong><br>%META{"formfield" name="Gepr&uuml;ft"}%</strong></td>
+				Gepr&uuml;ft durch:<strong><br><em>%RED%im Diskussionsstand%ENDCOLOR%</em></strong></td>
 			<td style='text-align: center;'>
 				<strong></strong></td>
 		</tr>

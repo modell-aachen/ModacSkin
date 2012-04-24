@@ -22,10 +22,6 @@ msgstr ""
 msgid "title='Discussion about Improvements' >Start Discussion"
 msgstr "title='Diskussion über Verbesserungen' >Diskussion starten"
 
-#: data/System/ModacSkinSolrSearchBaseTemplate.txt:187
-msgid "$label"
-msgstr ""
-
 #: templates/foswiki.modac.tmpl:100
 msgid "%1 Web"
 msgstr "%1 Bereich"
@@ -127,13 +123,157 @@ msgstr "Funktionstasten:"
 msgid "Action"
 msgstr "Aktion"
 
-#: data/System/ModacSkinSolrSearchBaseTemplate.txt:26
+#: data/System/ModacSkinSolrSearchViewTemplate.txt
+msgid "none"
+msgstr "(nichts)"
+
+#: data/System/ModacSkinSolrSearchViewTemplate.txt:26
 msgid "Application"
 msgstr "Anwendung"
+
+#: data/System/ModacSkinSolrSearchViewTemplate.txt
+msgid "image"
+msgstr "Bild"
+
+#: data/System/ModacSkinSolrSearchViewTemplate.txt
+msgid "topic"
+msgstr "Seite"
+
+#: data/System/ModacSkinSolrSearchViewTemplate.txt
+msgid "comment"
+msgstr "Kommentar"
+
+#: data/System/ModacSkinSolrSearchViewTemplate.txt
+msgid "draft"
+msgstr "Entwurf"
+
+#: data/System/ModacSkinSolrSearchViewTemplate.txt
+msgid "approved"
+msgstr "Freigegeben"
+
+#: data/System/ModacSkinSolrSearchViewTemplate.txt
+msgid "discarded"
+msgstr "Verworfen"
+
+#: data/System/ModacSkinSolrSearchViewTemplate.txt
+msgid "formal revision"
+msgstr "formale Prüfung"
+
+#: data/System/ModacSkinSolrSearchViewTemplate.txt
+msgid "formal revision (draft)"
+msgstr "formale Prüfung (Entwurf)"
+
+#: data/System/ModacSkinSolrSearchViewTemplate.txt
+msgid "contentual revision"
+msgstr "inhaltliche Prüfung"
+
+#: data/System/ModacSkinSolrSearchViewTemplate.txt
+msgid "contentual revision (draft)"
+msgstr "formale Prüfung (Entwurf)"
+
+#: data/System/ModacSkinSolrSearchViewTemplate.txt
+msgid "under discussion"
+msgstr "in Diskussion"
+
+#: data/System/ModacSkinSolrSearchViewTemplate.txt
+msgid "Normchapter"
+msgstr "Normkapitel"
+
+#: data/System/ModacSkinSolrSearchViewTemplate.txt
+msgid "Person in charge of page"
+msgstr "Seitenverantwortlicher"
+
+#: data/System/ModacSkinSolrSearchViewTemplate.txt
+msgid "Area of application"
+msgstr "Geltungsbereich"
+
+#: data/System/ModacSkinSolrSearchViewTemplate.txt
+msgid "Process State"
+msgstr "Prozess Status"
+
+#: data/System/ModacSkinCommonWords.txt
+msgid "This document is not yet in CIP."
+msgstr "Dieses Dokument befindet sich noch nicht im Freigabeprozess."
+
+#: data/System/ModacSkinCommonWords.txt
+msgid "This document is a draft."
+msgstr "Dieses Dokument ist ein Entwurf."
+
+#: data/System/ModacSkinCommonWords.txt
+msgid "This document has been approved."
+msgstr "Dieses Dokument ist freigegeben."
+
+#: data/System/ModacSkinCommonWords.txt
+msgid "This document is currently being revised."
+msgstr "Dieses Dokument wird zur Zeit überarbeitet."
+
+#: data/System/ModacSkinCommonWords.txt
+msgid "This document has beed discarded."
+msgstr "Dieses Dokument wurde verworfen."
+
+#: data/System/ModacSkinCommonWords.txt
+msgid "This document is waiting for approval by the QM-department."
+msgstr "Dieses Dokument wartet auf Freigabe durch die QM Abteilung."
+
+#: data/System/ModacSkinCommonWords.txt
+msgid "This document is waiting for approval by the person in charge of the page."
+msgstr "Dieses Dokument wartet auf Freigabe durch den Seitenverantwortlichen."
 
 #: data/System/ModacSkinCommonWords.txt:6
 msgid "Approved Page"
 msgstr "Freigegebener Stand"
+
+#: data/System/ModacSkinCommonWords.txt
+msgid "Put under CIP"
+msgstr "In KVP überführen"
+
+#: data/System/ModacSkinCommonWords.txt
+msgid "Request approval"
+msgstr "Um Freigabe bitten"
+
+#: data/System/ModacSkinCommonWords.txt
+msgid "Discard draft"
+msgstr "Entwurf verwerfen"
+
+#: data/System/ModacSkinCommonWords.txt
+msgid "Discard discussion"
+msgstr "Diskussion verwerfen"
+
+#: data/System/ModacSkinCommonWords.txt
+msgid "Discuss"
+msgstr "Diskutieren"
+
+#: data/System/ModacSkinCommonWords.txt
+msgid "Request further revision"
+msgstr "Um weitere Überarbeitung bitten"
+
+#: data/System/ModacSkinCommonWords.txt
+msgid "Start discussion"
+msgstr "Diskussion starten"
+
+#: data/System/ModacSkinCommonWords.txt
+msgid "Create"
+msgstr "Erstellen"
+
+#: data/System/ModacSkinCommonWords.txt
+msgid "Change status"
+msgstr "Status ändern"
+
+#: data/System/ModacSkinCommonWords.txt
+msgid "Entwurf formal freigeben"
+msgstr "Approve formal aspects of draft"
+
+#: data/System/ModacSkinCommonWords.txt
+msgid "Entwurfsstand inhaltlich freigeben"
+msgstr "Approve contentual aspects of draft"
+
+#: data/System/ModacSkinCommonWords.txt
+msgid "Diskussionsstand inhaltlich freigeben"
+msgstr "Approve contentual aspects of discussion"
+
+#: data/System/ModacSkinCommonWords.txt
+msgid "Diskussionsstand formal freigeben"
+msgstr "Approve formal aspects of discussion"
 
 #: templates/viewtopicactionbuttons.entwicklung.tmpl:167
 #: templates/viewtopicactionbuttons.modac.tmpl:129
@@ -278,6 +418,14 @@ msgstr "Seite kopieren"
 #: data/System/ModacSkinWebLeftBarDefault.txt:22
 msgid "Create New Topic"
 msgstr "Neue Seite anlegen"
+
+#: data/System/ModacSkinWebLeftBarDefault.txt:
+msgid "News"
+msgstr "Aktuelles"
+
+#: data/System/ModacSkinWebLeftBarDefault.txt:
+msgid "Manual"
+msgstr "Anleitungen"
 
 #: data/System/ModacSkinWebCreateNewTopicTemplate.txt:105
 msgid "Create New Topic in %1 Web"
