@@ -2,11 +2,13 @@
 These words are often mentioned in workflows and might slip into a %MAKE%NOP%TEXT% statement. They are listed here to be included in the language file.
 
 ---+++ Words
+<p>Tabs<br />
 %MAKETEXT{"Approved Page"}%
 %MAKETEXT{"Draft"}%
 %MAKETEXT{"Discussion"}%
 %MAKETEXT{"Waiting for QM"}%
 %MAKETEXT{"Waiting for PO"}%
+</p><p>Transitions<br />
 %MAKETEXT{"Put under CIP"}%
 %MAKETEXT{"Request approval"}%
 %MAKETEXT{"Discard draft"}%
@@ -14,6 +16,8 @@ These words are often mentioned in workflows and might slip into a %MAKE%NOP%TEX
 %MAKETEXT{"Discuss"}%
 %MAKETEXT{"Request further revision"}%
 %MAKETEXT{"Start discussion"}%
+</ p>
 
 ---+++ TODO: Move to KVPPlugin
 %MAKETEXT{"title='Discussion about Improvements' >Start Discussion"}%
+%MAKETEXT{"Change status"}%

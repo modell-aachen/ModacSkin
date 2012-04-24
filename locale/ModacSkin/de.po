@@ -175,6 +175,10 @@ msgstr "Diskussion starten"
 msgid "Create"
 msgstr "Erstellen"
 
+#: data/System/ModacSkinCommonWords.txt
+msgid "Change status"
+msgstr "Status ändern"
+
 #: templates/viewtopicactionbuttons.entwicklung.tmpl:167
 #: templates/viewtopicactionbuttons.modac.tmpl:129
 msgid "Attach"
