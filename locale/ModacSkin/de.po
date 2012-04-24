@@ -123,6 +123,10 @@ msgstr "Funktionstasten:"
 msgid "Action"
 msgstr "Aktion"
 
+#: data/System/ModacSkinSolrSearchViewTemplate.txt
+msgid "none"
+msgstr "(nichts)"
+
 #: data/System/ModacSkinSolrSearchViewTemplate.txt:26
 msgid "Application"
 msgstr "Anwendung"
@@ -138,6 +142,78 @@ msgstr "Seite"
 #: data/System/ModacSkinSolrSearchViewTemplate.txt
 msgid "comment"
 msgstr "Kommentar"
+
+#: data/System/ModacSkinSolrSearchViewTemplate.txt
+msgid "draft"
+msgstr "Entwurf"
+
+#: data/System/ModacSkinSolrSearchViewTemplate.txt
+msgid "approved"
+msgstr "Freigegeben"
+
+#: data/System/ModacSkinSolrSearchViewTemplate.txt
+msgid "discarded"
+msgstr "Verworfen"
+
+#: data/System/ModacSkinSolrSearchViewTemplate.txt
+msgid "formal revision"
+msgstr "formale Prüfung"
+
+#: data/System/ModacSkinSolrSearchViewTemplate.txt
+msgid "formal revision (draft)"
+msgstr "formale Prüfung (Entwurf)"
+
+#: data/System/ModacSkinSolrSearchViewTemplate.txt
+msgid "contentual revision"
+msgstr "inhaltliche Prüfung"
+
+#: data/System/ModacSkinSolrSearchViewTemplate.txt
+msgid "contentual revision (draft)"
+msgstr "formale Prüfung (Entwurf)"
+
+#: data/System/ModacSkinSolrSearchViewTemplate.txt
+msgid "under discussion"
+msgstr "in Diskussion"
+
+#: data/System/ModacSkinSolrSearchViewTemplate.txt
+msgid "Normchapter"
+msgstr "Normkapitel"
+
+#: data/System/ModacSkinSolrSearchViewTemplate.txt
+msgid "Person in charge of page"
+msgstr "Seitenverantwortlicher"
+
+#: data/System/ModacSkinSolrSearchViewTemplate.txt
+msgid "Area of application"
+msgstr "Geltungsbereich"
+
+#: data/System/ModacSkinCommonWords.txt
+msgid "This document is not yet in CIP."
+msgstr "Dieses Dokument befindet sich noch nicht im Freigabeprozess."
+
+#: data/System/ModacSkinCommonWords.txt
+msgid "This document is a draft."
+msgstr "Dieses Dokument ist ein Entwurf."
+
+#: data/System/ModacSkinCommonWords.txt
+msgid "This document has been approved."
+msgstr "Dieses Dokument ist freigegeben."
+
+#: data/System/ModacSkinCommonWords.txt
+msgid "This document is currently being revised."
+msgstr "Dieses Dokument wird zur Zeit überarbeitet."
+
+#: data/System/ModacSkinCommonWords.txt
+msgid "This document has beed discarded."
+msgstr "Dieses Dokument wurde verworfen."
+
+#: data/System/ModacSkinCommonWords.txt
+msgid "This document is waiting for approval by the QM-department."
+msgstr "Dieses Dokument wartet auf Freigabe durch die QM Abteilung."
+
+#: data/System/ModacSkinCommonWords.txt
+msgid "This document is waiting for approval by the person in charge of the page."
+msgstr "Dieses Dokument wartet auf Freigabe durch den Seitenverantwortlichen."
 
 #: data/System/ModacSkinCommonWords.txt:6
 msgid "Approved Page"
@@ -178,6 +254,22 @@ msgstr "Erstellen"
 #: data/System/ModacSkinCommonWords.txt
 msgid "Change status"
 msgstr "Status ändern"
+
+#: data/System/ModacSkinCommonWords.txt
+msgid "Entwurf formal freigeben"
+msgstr "Approve formal aspects of draft"
+
+#: data/System/ModacSkinCommonWords.txt
+msgid "Entwurfsstand inhaltlich freigeben"
+msgstr "Approve contentual aspects of draft"
+
+#: data/System/ModacSkinCommonWords.txt
+msgid "Diskussionsstand inhaltlich freigeben"
+msgstr "Approve contentual aspects of discussion"
+
+#: data/System/ModacSkinCommonWords.txt
+msgid "Diskussionsstand formal freigeben"
+msgstr "Approve formal aspects of discussion"
 
 #: templates/viewtopicactionbuttons.entwicklung.tmpl:167
 #: templates/viewtopicactionbuttons.modac.tmpl:129
