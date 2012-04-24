@@ -7,7 +7,7 @@
 			<td width='35%' style='text-align: center;'>
 				Nummer:<strong><br>%META{"formfield" name="Nummer"}%</strong></td>
 			<td width='12%' style='text-align: center;'>
-				Rev.:<strong><br>%META{"formfield" name="Revision"}%</strong></td>
+				Rev.:<strong><br> %REVINFO{format="$rev"}%</strong></td>
 			<td rowspan='3' width='12%'>
 				<img alt='Logo' src='%WIKILOGOIMG%' style='width: 90px; float: right;' /></td>
 		</tr>
@@ -21,11 +21,11 @@
 			<td style='text-align: center;'>
 				Ersteller:<strong><br>%IF{"$'WORKFLOWMETA{LASTPROCESSOR_DISKUSSIONSSTAND}'" then="$percentWORKFLOWMETA{$quotLASTPROCESSOR_DISKUSSIONSSTAND$quot}$percent" else="$percentWORKFLOWMETA{$quotLASTPROCESSOR_ENTWURF$quot}$percent"}%</strong></td>
 			<td style='text-align: center;'>
-				Freigegeben:<strong><br>%META{"formfield" name="Prozesseigner"}%</strong></td>
+				Freigegeben durch:<strong><br>%META{"formfield" name="Freigegeben_durch"}%</strong></td>
 			<td style='text-align: center;'>
 				Freigabe Datum:<strong><br>%WORKFLOWMETA{"LASTTIME_FREIGEGEBEN"}%</strong></td>
 			<td style='text-align: center;'>
-				Gepr&uuml;ft durch:<strong><br>%META{"formfield" name="Gepr&uuml;ft"}%</strong></td>
+				Gepr&uuml;ft durch:<strong><br>%IF{"$'WORKFLOWMETA{LASTPROCESSOR_FORMALE_PRUEFUNG}'" then="$percentWORKFLOWMETA{$quotLASTPROCESSOR_FORMALE_PRUEFUNG$quot}$percent" else="$percentWORKFLOWMETA{$quotLASTPROCESSOR_FORMALE_PRUEFUNG_ENTWURF$quot}$percent"}%</strong></td>
 			<td style='text-align: center;'>
 				<strong></strong></td>
 		</tr>
