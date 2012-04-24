@@ -323,6 +323,14 @@ msgstr "Seite kopieren"
 msgid "Create New Topic"
 msgstr "Neue Seite anlegen"
 
+#: data/System/ModacSkinWebLeftBarDefault.txt:
+msgid "News"
+msgstr "Aktuelles"
+
+#: data/System/ModacSkinWebLeftBarDefault.txt:
+msgid "Manual"
+msgstr "Anleitungen"
+
 #: data/System/ModacSkinWebCreateNewTopicTemplate.txt:105
 msgid "Create New Topic in %1 Web"
 msgstr "Neue Seite im Bereich \"%1\" anlegen"
