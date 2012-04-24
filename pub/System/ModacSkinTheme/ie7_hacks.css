@@ -1,20 +1,10 @@
 .foswikiPage {
-	font-size:100%;
 	min-width: 1040px;
 }
 .modacLoginPage #foswikiLogin {
-	padding: 4px;
+	padding-top: 0px;
+	padding-right: 4px;
+	padding-bottom: $px;
+	padding-left: 4px;
 	border: 1px solid #aaa;
-}
-#modacSidebar .modacSidebarTwisty ul {
-	margin-left: 1.1em;	
-}
-#modacSidebar ul {
-	margin-left: 2em;	
-}
-.modacTabs ul {
-	margin-left: 0;
-}
-#modacWrapper .foswikiToc ul {
-	list-style-image: none;
 }

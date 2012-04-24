@@ -300,7 +300,11 @@ html>body #modacLogoIE {
 }
 #modacSidebar ul {
 	list-style-type: none;	
-	margin-left: -1em;
+	padding-left: 1em;
+	margin-left: 0;
+}
+#modacSidebarIE ul {
+	padding-left: 2em;	
 }
 .modacSidebarTwisty {
 	background-image:url("ModacSkinLogos/portal-break.png");
@@ -310,7 +314,7 @@ html>body #modacLogoIE {
 }
 #modacSidebar .modacSidebarTwisty ul {
 	margin-top: 0em;
-	margin-left: -2em;	
+
 }
 /* -------------------------- modacTabs ----------------------------*/
 #modacActionButtonsWrapper  {
@@ -335,6 +339,7 @@ html>body #modacLogoIE {
 	float: right;
 }
 .modacTabs ul {
+	margin-left: 0;
 	padding: 0;
 }
 .modacTabs ul li {
@@ -711,7 +716,7 @@ a.foswikiSubmit:visited:active {
 	font-family:arial, verdana, sans-serif;
 	line-height:1.5em; /*S1*/
 	/* change font size here */
-	font-size:103%;
+	font-size:100%;
 	min-width: 1080px;
 }
 .foswikiPage font {
@@ -882,6 +887,7 @@ h3 .foswikiSmall {
 }
 #modacWrapper .foswikiToc ul {
 	list-style:				none;
+	list-style-image:		none; /* Bugfix for IE */
 	padding:				0;
 	margin:					0;
 }
