@@ -1,0 +1,31 @@
+%TMPL:INCLUDE{"view"}%
+%{ ################################################################################ 
+   comments::format::linear - format one comment in linear format
+}%
+%TMPL:DEF{"comments::format::linear"}%<!-- -->
+<div class='cmtCommentContainer cmtComment$evenodd' id='cmtComment$index'>
+  <div class='cmtComment $percntIF{"not('$state'=~'\bapproved\b')" then="cmtCommentNeedsApproval"}$percnt {comment_id:"$id", index:"$index", author:"$percntSPACEOUT{$author}$percnt", date:"$date"}'>
+    <a name='comment$id'></a>
+    <h3 class='foswikiRight cmtCommentNr'>$index</h3>
+    %IF{"'%ENCODE{"$title" type="entity"}%'!=''" 
+      then="<h3><noautolink>%ENCODE{"$title" type="entity"}%</noautolink></h3>"
+    }%<!-- -->
+    <div class='cmtCommentText'>$n$text</div>
+    %TMPL:P{"comments::controls"}%<!-- -->
+    $percntIF{"$COMMENTMODERATION='on' and not('$state'=~'\bapproved\b')"
+      then="<div class='foswikiRight foswikiAlert cmtAlert'>(%MAKETEXT{"needs approval"}%)</div>"
+    }$percnt<!-- -->
+    <span class='foswikiSmallish foswikiGrayText'>
+      <span class='cmtAuthor'>[[%USERINFO{"$author" format="$wikiusername"}%]]</span>
+      &#124;
+      <span class='cmtDate'>$date</span>
+    </span>
+    %CLEAR%
+  </div>
+  <a name='bottomcomment$id'></a>
+</div>
+<!-- -->%TMPL:END%
+
+%TMPL:DEF{"commenttwisty"}%<div id="modacComments">%TWISTY{id="commentlist" mode="div" remember="on" showimgleft="%ICONURLPATH{toggleopen}%" hideimgleft="%ICONURLPATH{toggleclose}%" showlink="%MAKETEXT{"Comments"}%" hidelink="%MAKETEXT{"Comments"}%" linkclass="patternTwistyButton patternAttachmentHeader"}%%TMPL:P{"metacomments"}%%ENDTWISTY%</div>%TMPL:END%
+
+%TMPL:DEF{"comments"}%%IF{"$'DISPLAYCOMMENTS'='on'" then="<div>$percentTMPL:P{$quotcommenttwisty$quot}$percent</div>"}%%TMPL:END%
