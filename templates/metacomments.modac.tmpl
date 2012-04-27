@@ -26,4 +26,15 @@
 </div>
 <!-- -->%TMPL:END%
 
+%TMPL:DEF{"comments::topbar"}%<!-- -->
+%METACOMMENTS{
+  header="<h2 class='cmtCounter'>$count </h2>"
+  singular="%MAKETEXT{"One comment"}%"
+  plural="%MAKETEXT{"[_1] comments" args="$count"}%"
+  limit="1"
+  template=""
+  %IF{"'%TMPL:P{"comments::format"}%' = 'threaded'" then="threaded=\"on\"" else="threaded=\"off\""}%
+  %IF{"$COMMENTMODERATION='on'" then="moderation=\"on\"" else="moderation=\"off\""}%
+}%<!-- -->%TMPL:END%
+
 %TMPL:DEF{"metacomments"}%<div id="modacComments">%TWISTY{id="commentlist" mode="div" remember="on" showimgleft="%ICONURLPATH{toggleopen}%" hideimgleft="%ICONURLPATH{toggleclose}%" showlink="%MAKETEXT{"Comments"}%" hidelink="%MAKETEXT{"Comments"}%" linkclass="patternTwistyButton patternAttachmentHeader"}%%TMPL:PREV%%ENDTWISTY%</div>%TMPL:END%
