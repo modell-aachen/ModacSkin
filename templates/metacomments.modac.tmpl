@@ -1,4 +1,4 @@
-%TMPL:INCLUDE{"view"}%
+%TMPL:INCLUDE{"metacomments"}%
 %{ ################################################################################ 
    comments::format::linear - format one comment in linear format
 }%
@@ -26,6 +26,4 @@
 </div>
 <!-- -->%TMPL:END%
 
-%TMPL:DEF{"commenttwisty"}%<div id="modacComments">%TWISTY{id="commentlist" mode="div" remember="on" showimgleft="%ICONURLPATH{toggleopen}%" hideimgleft="%ICONURLPATH{toggleclose}%" showlink="%MAKETEXT{"Comments"}%" hidelink="%MAKETEXT{"Comments"}%" linkclass="patternTwistyButton patternAttachmentHeader"}%%TMPL:P{"metacomments"}%%ENDTWISTY%</div>%TMPL:END%
-
-%TMPL:DEF{"comments"}%%IF{"$'DISPLAYCOMMENTS'='on'" then="<div>$percentTMPL:P{$quotcommenttwisty$quot}$percent</div>"}%%TMPL:END%
+%TMPL:DEF{"metacomments"}%<div id="modacComments">%TWISTY{id="commentlist" mode="div" remember="on" showimgleft="%ICONURLPATH{toggleopen}%" hideimgleft="%ICONURLPATH{toggleclose}%" showlink="%MAKETEXT{"Comments"}%" hidelink="%MAKETEXT{"Comments"}%" linkclass="patternTwistyButton patternAttachmentHeader"}%%TMPL:PREV%%ENDTWISTY%</div>%TMPL:END%
