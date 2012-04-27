@@ -260,20 +260,20 @@ msgid "Change status"
 msgstr "Status ändern"
 
 #: data/System/ModacSkinCommonWords.txt
-msgid "Entwurf formal freigeben"
-msgstr "Approve formal aspects of draft"
+msgid "Approve formal aspects of draft"
+msgstr "Entwurf formal freigeben"
 
 #: data/System/ModacSkinCommonWords.txt
-msgid "Entwurfsstand inhaltlich freigeben"
-msgstr "Approve contentual aspects of draft"
+msgid "Approve contentual aspects of draft"
+msgstr "Entwurfsstand inhaltlich freigeben"
 
 #: data/System/ModacSkinCommonWords.txt
-msgid "Diskussionsstand inhaltlich freigeben"
-msgstr "Approve contentual aspects of discussion"
+msgid "Approve contentual aspects of discussion"
+msgstr "Diskussionsstand inhaltlich freigeben"
 
 #: data/System/ModacSkinCommonWords.txt
-msgid "Diskussionsstand formal freigeben"
-msgstr "Approve formal aspects of discussion"
+msgid "Approve formal aspects of discussion"
+msgstr "Diskussionsstand formal freigeben"
 
 #: templates/viewtopicactionbuttons.entwicklung.tmpl:167
 #: templates/viewtopicactionbuttons.modac.tmpl:129
