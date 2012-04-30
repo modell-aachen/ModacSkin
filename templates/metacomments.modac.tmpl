@@ -37,4 +37,4 @@
   %IF{"$COMMENTMODERATION='on'" then="moderation=\"on\"" else="moderation=\"off\""}%
 }%<!-- -->%TMPL:END%
 
-%TMPL:DEF{"metacomments"}%<div id="modacComments">%TWISTY{id="commentlist" mode="div" remember="on" showimgleft="%ICONURLPATH{toggleopen}%" hideimgleft="%ICONURLPATH{toggleclose}%" showlink="%MAKETEXT{"Comments"}%" hidelink="%MAKETEXT{"Comments"}%" linkclass="patternTwistyButton patternAttachmentHeader"}%%TMPL:PREV%%ENDTWISTY%</div>%TMPL:END%
+%TMPL:DEF{"metacomments"}%%IF{"context view" then="<div id='modacComments'>$percentTWISTY{id=$quotcommentlist$quot mode=$quotdiv$quot remember=$quoton$quot showimgleft=$quot%ICONURLPATH{toggleopen}%$quot hideimgleft=$quot%ICONURLPATH{toggleclose}%$quot showlink=$quot%MAKETEXT{"Comments"}%$quot hidelink=$quot%MAKETEXT{"Comments"}%$quot linkclass=$quotpatternTwistyButton patternAttachmentHeader$quot}$percent"}%%TMPL:PREV%%IF{"context view" then="$percentENDTWISTY$percent"}%%TMPL:END%
