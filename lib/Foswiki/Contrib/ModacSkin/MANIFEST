@@ -1,7 +1,7 @@
 data/System/ModacSideBarFlexWebList.txt 0644
 data/System/ModacSideBarWebList.txt 0644
 data/System/ModacSkin.txt 0644
-data/System/ModacSkinBottomBarDefault.txt 0644
+data/System/ModacSkinBottomBarTemplate.txt 0644
 data/System/ModacSkinDiskussionTemplate.txt 0644
 data/System/ModacSkinDiskussionTopExtendedTemplate.txt 0644
 data/System/ModacSkinEntwurfTemplate.txt 0644
@@ -9,10 +9,9 @@ data/System/ModacSkinFreigegebenTemplate.txt 0644
 data/System/ModacSkinLanguageSelector.txt 0644
 data/System/ModacSkinSolrSearchViewTemplate.txt 0644
 data/System/ModacSkinTopExtendedTemplate.txt 0644
-data/System/ModacSkinWebBottomBarDefault.txt 0644
 data/System/ModacSkinWebCreateNewTopicTemplate.txt 0644
-data/System/ModacSkinWebLeftBarDefault.txt 0644
-data/System/ModacSkinWebTopBarDefault.txt 0644
+data/System/ModacSkinLeftBarTemplate.txt 0644
+data/System/ModacSkinTopBarTemplate.txt 0644
 data/System/ModacSkinCommonWords.txt 0644
 data/System/SuckerfishDropdown.txt 0644
 data/System/SuckerfishDropdownLEFT.txt 0644

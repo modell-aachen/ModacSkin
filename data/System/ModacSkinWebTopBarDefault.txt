@@ -1,1 +1,0 @@
-<div id="modacTopBarPersonal"><img src="%PUBURL%/System/ModacSkinTheme/ModacSkinLogos/user-icon.png" />&nbsp;<noautolink>%USERNAME%</noautolink> %IF{"istopic '%WIKIUSERNAME%'" then="&nbsp;&nbsp;[[%WIKIUSERNAME%][%MAKETEXT{"MyPage"}%]]"}% %IF{"$ LOGOUT != ''" then='&nbsp;&nbsp;%LOGOUT%'}% %IF{"$ LOGIN != ''" then='&nbsp;&nbsp;%LOGIN%'}%</div>
