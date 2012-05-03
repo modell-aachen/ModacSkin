@@ -35,3 +35,17 @@
 	margin-top: 0em;
 	margin-left: 0.6em;	
 }
+// TODO : Anpassen an Modell Aachen Kopf
+
+.Rittal_Kopf {
+	width: 95% ! important;
+}
+#modacSolrWrapper {
+	
+}
+#modacSolrRightBar {
+	display: none;
+}
+#modacSolrRightBarIE6 {
+	display: inline;
+}
