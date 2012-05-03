@@ -12,7 +12,7 @@
 </div>%TMPL:END%
 
 %{ Please note that there must be a new line before the include of the WebLeftBar. Other wise the first bullet will not be displayed as a bullet. See Foswiki task Item410 }%
-%TMPL:DEF{"websidebar"}%<div id="modacLogoWrapper"><div id="modacLogo"><a href="%WEBLOGOURL%"><img src="%WEBLOGOIMG%" border="0" alt="%WEBLOGOALT%" style="border:none;" /></a></div></div><div id="modacSidebarContents">%IF{"istopic 'ModacSkinWebLeftBar'" then="$percntINCLUDE{$quot%WEB%.ModacSkinWebLeftBar$quot}$percnt" else="$percntINCLUDE{$quot%SYSTEMWEB%.ModacSkinWebLeftBarDefault$quot}$percnt"}%</div>%TMPL:END%
+%TMPL:DEF{"websidebar"}%<div id="modacLogoWrapper"><div id="modacLogo"><a href="%WEBLOGOURL%"><img src="%WEBLOGOIMG%" border="0" alt="%WEBLOGOALT%" style="border:none;" /></a></div></div><div id="modacSidebarContents"><!--%IF{"istopic 'ModacSkinWebLeftBar'" then="$percntINCLUDE{$quot%WEB%.ModacSkinWebLeftBar$quot}$percnt" else="$percntINCLUDE{$quot%SYSTEMWEB%.ModacSkinWebLeftBarDefault$quot}$percnt"}%-->%TMPL:P{"leftbartemplate"}%</div>%TMPL:END%
 
 %TMPL:DEF{"startsidebarwrapper"}%<div id="patternWrapper">%TMPL:END%
 %TMPL:DEF{"endsidebarwrapper"}%</div><!-- /patternWrapper-->%TMPL:END%

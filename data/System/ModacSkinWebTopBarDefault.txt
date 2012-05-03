@@ -1,4 +1,0 @@
-%META:TOPICINFO{author="ProjectContributor" date="1138738574" format="1.1" version="$Rev: 8564 $"}%
-%META:TOPICPARENT{name="PatternSkin"}%
-
-<div id="modacTopBarPersonal"><img src="%PUBURL%/System/ModacSkinTheme/ModacSkinLogos/user-icon.png" alt=" " title="%MAKETEXT{"MyPage"}%" />&nbsp; %USERNAME% &nbsp; [[%WIKINAME%][%MAKETEXT{"MyPage"}%]] </div>

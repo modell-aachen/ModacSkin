@@ -1,172 +1,920 @@
-# ModacSkin translation base file
-# Modell Aachen <qm@modell-aachen.de>, 2012.
+# Foswiki translation for Deutsch
+# Translators:
+# ModellAachen
+# Foswiki:Main/AndreUlrich, 2006,2007,2008
+# Foswiki:Main/OliverKrueger, 2006
 msgid ""
 msgstr ""
-"Project-Id-Version: 1.0\n"
+"Project-Id-Version: Foswiki $Id\n"
+"Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2012-01-24 15:48+0200\n"
-"Last-Translator: Modell Aachen <qm@modell-aachen.de>\n"
-"Language-Team: Modell Aachen Language Team <none>\n"
+"PO-Revision-Date: 2012-04-10 22:29+0200\n"
+"Last-Translator: Modell Aachen\n"
+"Language-Team: Foswiki German Translation Team <none>\n"
+"Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: de\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Virtaal 0.5.2\n"
+"X-Generator: Pootle 2.0.5\n"
 
-
-#---------------------------- ModacSkin ----------------------------#
-
-#: /templates/viewtopicactionbuttons.modac.tmpl
-msgid "title='Approved Page' >Approved Page"
-msgstr "title='Freigegebener Stand' >Freigegebener Stand"
-
-#: /templates/viewtopicactionbuttons.modac.tmpl
-msgid "title='Discussion about Improvements' >Discussion"
-msgstr "title='Diskussion �ber Verbesserungen' >Diskussion"
-
-#: /templates/view.modac.tmpl
-msgid "Approved Page"
-msgstr "Freigegebener Stand"
-
-#: /templates/viewtopicactionbuttons.modac.tmpl
-msgid "title='Edit this topic' accesskey='e'>&Edit"
-msgstr "title='Diesen Artikel bearbeiten' >Bearbeiten"
-
-#: /templates/viewtopicactionbuttons.modac.tmpl
-msgid "title='More actions for this topic' accesskey='m'>&More topic actions"
-msgstr "title='Weitere Aktionen f�r diesen Artikel' accesskey='w'>&Weitere Aktionen"
-
-#: /templates/viewtopicactionbuttons.modac.tmpl
-msgid "title='View topic history' accesskey='h'>&History"
-msgstr "title='Die Versionsgeschichte dieses Artikels betrachten' accesskey='v'>&Versionsgeschichte"
-
-#: /lib/Foswiki/Plugins/KVPPlugin/KVPPlugin.pm
+#: lib/Foswiki/Plugins/KVPPlugin.pm
 msgid "title='Discussion about Improvements' >Start Discussion"
-msgstr "title='Eine neue Diskussion starten' >Diskussion starten"
+msgstr "title='Diskussion über Verbesserungen' >Diskussion starten"
 
-#: /data/System/WebTopBarExample.txt
-msgid "MyPage"
-msgstr "Meine Seite"
+#: templates/foswiki.modac.tmpl:100
+msgid "%1 Web"
+msgstr "%1 Bereich"
 
-#: /data/System/WebLeftBarExample.txt
-msgid "Webs"
-msgstr "Bereiche"
+#: templates/validate.modac.tmpl:29
+msgid "%1 has received a suspicious change request from your browser."
+msgstr ""
+"%1 hat eine als verdächtig eingestufte Änderungsanfrage von Ihrem Browser "
+"erhalten."
 
-#: /data/System/WebLeftBarExample.txt
-msgid "Tools"
-msgstr "Werkzeuge"
+#: templates/renameattachmentdelete.modac.tmpl:41
+msgid "%1 is the default topic for deleted attachments."
+msgstr "%1 ist die Standardseite für gelöschte Anhänge."
 
-#: /data/System/WebLeftBarExample.txt
-msgid "Templates"
-msgstr "Vorlagen"
+#: templates/foswiki.modac.tmpl:16
+msgid "&Cancel"
+msgstr "&Abbrechen"
 
-#: /data/System/WebLeftBarExample.txt
-msgid "PDF-Print"
-msgstr "PDF-Druck"
+#: templates/validate.modac.tmpl:9
+msgid "(%1 validation)"
+msgstr "(%1 Bestätigung)"
 
-#: /data/System/WebLeftBarExample.txt
-msgid "Recently changed"
-msgstr "Letzte �nderungen"
+#: templates/rdiff.modac.tmpl:6
+msgid "(%1 vs. %2)"
+msgstr "(%1 vs. %2)"
 
-#: /templates/oopsattention.modac.tmpl
-msgid "title='Q.Wiki - specialpage' >specialpage"
-msgstr "title='Q.Wiki - Spezialseite' >Spezialseite"
+#: templates/oopsaccessdenied.modac.tmpl:7
+msgid "(access denied)"
+msgstr "(Zugriff verweigert)"
 
-#: /data/System/WebBottomBarExample.txt
-msgid "About Q.Wiki"
-msgstr "�ber Q.Wiki"
-
-#: /templates/attachtables.modac.tmpl
-msgid "Filename"
-msgstr "Dateiname"
-
-#: /templates/more.modac.tmpl
-msgid "no current parent"
-msgstr "keine �bergeordnete Seite zugewiesen"
-
-#: /data/System/ModacSkinSolrSearchBaseTemplate.txt
-msgid "Choosen filters"
-msgstr "Ausgew�hlte Filter"
-
-#: /data/System/ModacSkinSolrSearchBaseTemplate.txt
-msgid "no filters choosen"
-msgstr "Keine Filter ausgew�hlt"
-
-#: /data/System/ModacSkinSolrSearchBaseTemplate.txt
-msgid "remove all filters"
-msgstr "Alle Filter entfernen"
-
-#: /data/System/ModacSkinSolrSearchBaseTemplate.txt
-msgid "remove filter"
-msgstr "Filter entfernen"
-
-#: /templates/attachagain.pattern.tmpl:3
-msgid "Update attachment %1 on %2"
-msgstr "Anhang %1 aktualisieren"
-
-#: /templates/form.modac.tmpl 
-msgid "Document Control"
-msgstr "Dokumentenlenkung"
-msgstr "Dateiname"
-
-#: /templates/attach.modac.tmpl
+#: templates/attach.modac.tmpl:10 templates/attachagain.modac.tmpl:4
 msgid "(attachments)"
-msgstr "(Anh�nge)"
+msgstr "(Anhänge)"
 
-#: /templates/attachagain.modac.tmpl
-msgid "Update attachment %1 on %2"
-msgstr "Anhang %1 aktualisieren"
+#: templates/backlinksweb.modac.tmpl:2
+msgid "(backlinks in %1 Web)"
+msgstr "(Links im %1 Bereich)"
 
-#: HistoryPlugin/templates/oopshistory.modac.tmpl 
-msgid "Please choose two revisions, which should be compared"
-msgstr "Bitte w�hlen Sie die zu vergleichenden Revisionen"
+#: templates/backlinksallwebs.modac.tmpl:2
+msgid "(backlinks in all Webs)"
+msgstr "(Links in alle Bereiche)"
 
-#: HistoryPlugin/templates/oopshistory.modac.tmpl
-msgid "Revisions %1 - %2 (out of %3) are shown"
-msgstr "Aktuell werden die Revisionen <b>%1</b> bis <b>%2</b> von <b>%3</b> angezeigt."
+#: templates/changes.modac.tmpl:2
+msgid "(changes)"
+msgstr "(Änderungen)"
 
-#: HistoryPlugin/templates/oopshistory.modac.tmpl
-msgid "You can also choose to see "
-msgstr "Sie k�nnen sich auch insgesamt "
+#: templates/compare.modac.tmpl:8
+msgid "(compare)"
+msgstr "(vergleichen)"
 
-#: HistoryPlugin/templates/oopshistory.modac.tmpl
-msgid "Revisions."
-msgstr "Revisionen anzeigen lassen."
+#: templates/renameattachmentdelete.modac.tmpl:5
+msgid "(delete attachment)"
+msgstr "(Anhang löschen)"
 
-#: HistoryPlugin/templates/oopshistory.modac.tmpl
-msgid "MS-Word-mode"
-msgstr "MS-Word-�nderungsmodus"
-
-#: HistoryPlugin/templates/oopshistory.modac.tmpl
+#: templates/oopshistory.modac.tmpl:18
 msgid "(history)"
 msgstr "(Versionsgeschichte)"
 
-#: /templates/oopshistory.modac.tmpl
-msgid "restore"
-msgstr "wiederherstellen"
+#: templates/more.entwicklung.tmpl:12 templates/more.modac.tmpl:12
+msgid "(more)"
+msgstr "(Mehr)"
 
-#: core/templates/attachtables.modac.tmpl
-msgid "view"
-msgstr "ansehen"
+#: templates/foswiki.modac.tmpl:102
+msgid "(raw view)"
+msgstr "(Quelltext-Ansicht)"
 
-#: templates/attachtables.modac.tmpl
-msgid "Update attachment"
-msgstr "Anhang aktualisieren"
+#: templates/edit.modac.tmpl:20 templates/foswiki.modac.tmpl:102
+#: templates/foswiki.modac.tmpl:82
+msgid "(revision %1)"
+msgstr "(Revision %1)"
 
-#: templates/attachagain.modac.tmpl
-msgid "Update existing attachment"
-msgstr "Neue Version hochladen"
+#: templates/settings.modac.tmpl:10
+msgid "(set preferences)"
+msgstr "(Einstellungen ändern)"
 
-#: templates/attachagain.modac.tmpl
+#: templates/more.entwicklung.tmpl:100 templates/more.modac.tmpl:100
+msgid "<em>in %1 web</em> only"
+msgstr "nur <em>im %1 Bereich</em>"
+
+#: templates/more.entwicklung.tmpl:98 templates/more.modac.tmpl:98
+msgid "<em>in all public webs</em>"
+msgstr "<em>in allen öffentlichen Bereichen</em>"
+
+#: data/System/ModacSkinBottomBarDefault.txt:3
+#: data/System/ModacSkinWebBottomBarDefault.txt:4
+msgid "About Q.Wiki"
+msgstr "Über Q.Wiki"
+
+#: templates/edit.modac.tmpl:74
+msgid "Access keys"
+msgstr "Funktionstasten"
+
+#: templates/settings.modac.tmpl:28
+msgid "Access keys:"
+msgstr "Funktionstasten:"
+
+#: templates/attachtables.modac.tmpl:34 templates/attachtables.modac.tmpl:8
+#: templates/oopshistory.modac.tmpl:52
+msgid "Action"
+msgstr "Aktion"
+
+#: data/System/ModacSkinSolrSearchViewTemplate.txt
+msgid "none"
+msgstr "(nichts)"
+
+#: data/System/ModacSkinSolrSearchViewTemplate.txt:26
+msgid "Application"
+msgstr "Anwendung"
+
+#: data/System/ModacSkinSolrSearchViewTemplate.txt
+msgid "image"
+msgstr "Bild"
+
+#: data/System/ModacSkinSolrSearchViewTemplate.txt
+msgid "topic"
+msgstr "Seite"
+
+#: data/System/ModacSkinSolrSearchViewTemplate.txt
+msgid "comment"
+msgstr "Kommentar"
+
+#: data/System/ModacSkinSolrSearchViewTemplate.txt
+msgid "draft"
+msgstr "Entwurf"
+
+#: data/System/ModacSkinSolrSearchViewTemplate.txt
+msgid "approved"
+msgstr "Freigegeben"
+
+#: data/System/ModacSkinSolrSearchViewTemplate.txt
+msgid "discarded"
+msgstr "Verworfen"
+
+#: data/System/ModacSkinSolrSearchViewTemplate.txt
+msgid "formal revision"
+msgstr "formale Prüfung"
+
+#: data/System/ModacSkinSolrSearchViewTemplate.txt
+msgid "formal revision (draft)"
+msgstr "formale Prüfung (Entwurf)"
+
+#: data/System/ModacSkinSolrSearchViewTemplate.txt
+msgid "contentual revision"
+msgstr "inhaltliche Prüfung"
+
+#: data/System/ModacSkinSolrSearchViewTemplate.txt
+msgid "contentual revision (draft)"
+msgstr "formale Prüfung (Entwurf)"
+
+#: data/System/ModacSkinSolrSearchViewTemplate.txt
+msgid "under discussion"
+msgstr "in Diskussion"
+
+#: data/System/ModacSkinSolrSearchViewTemplate.txt
+msgid "Normchapter"
+msgstr "Normkapitel"
+
+#: data/System/ModacSkinSolrSearchViewTemplate.txt
+msgid "Person in charge of page"
+msgstr "Seitenverantwortlicher"
+
+#: data/System/ModacSkinSolrSearchViewTemplate.txt
+msgid "Area of application"
+msgstr "Geltungsbereich"
+
+#: data/System/ModacSkinSolrSearchViewTemplate.txt
+msgid "Process State"
+msgstr "Prozess Status"
+
+#: data/System/ModacSkinCommonWords.txt
+msgid "This document is not yet in CIP."
+msgstr "Dieses Dokument befindet sich noch nicht im Freigabeprozess."
+
+#: data/System/ModacSkinCommonWords.txt
+msgid "This document is a draft."
+msgstr "Dieses Dokument ist ein Entwurf."
+
+#: data/System/ModacSkinCommonWords.txt
+msgid "This document has been approved."
+msgstr "Dieses Dokument ist freigegeben."
+
+#: data/System/ModacSkinCommonWords.txt
+msgid "This document is currently being revised."
+msgstr "Dieses Dokument wird zur Zeit überarbeitet."
+
+#: data/System/ModacSkinCommonWords.txt
+msgid "This document has beed discarded."
+msgstr "Dieses Dokument wurde verworfen."
+
+#: data/System/ModacSkinCommonWords.txt
+msgid "This document is waiting for approval by the QM-department."
+msgstr "Dieses Dokument wartet auf Freigabe durch die QM Abteilung."
+
+#: data/System/ModacSkinCommonWords.txt
+msgid "This document is waiting for approval by the person in charge of the page."
+msgstr "Dieses Dokument wartet auf Freigabe durch den Seitenverantwortlichen."
+
+#: data/System/ModacSkinCommonWords.txt:6
+msgid "Approved Page"
+msgstr "Freigegebener Stand"
+
+#: data/System/ModacSkinCommonWords.txt
+msgid "Put under CIP"
+msgstr "In KVP überführen"
+
+#: data/System/ModacSkinCommonWords.txt
+msgid "Request approval"
+msgstr "Um Freigabe bitten"
+
+#: data/System/ModacSkinCommonWords.txt
+msgid "Discard draft"
+msgstr "Entwurf verwerfen"
+
+#: data/System/ModacSkinCommonWords.txt
+msgid "Discard discussion"
+msgstr "Diskussion verwerfen"
+
+#: data/System/ModacSkinCommonWords.txt
+msgid "Discuss"
+msgstr "Diskutieren"
+
+#: data/System/ModacSkinCommonWords.txt
+msgid "Request further revision"
+msgstr "Um weitere Überarbeitung bitten"
+
+#: data/System/ModacSkinCommonWords.txt
+msgid "Start discussion"
+msgstr "Diskussion starten"
+
+#: data/System/ModacSkinCommonWords.txt
+msgid "Create"
+msgstr "Erstellen"
+
+#: data/System/ModacSkinCommonWords.txt
+msgid "Change status"
+msgstr "Status ändern"
+
+#: data/System/ModacSkinCommonWords.txt
+msgid "Approve formal aspects of draft"
+msgstr "Entwurf formal freigeben"
+
+#: data/System/ModacSkinCommonWords.txt
+msgid "Approve contentual aspects of draft"
+msgstr "Entwurfsstand inhaltlich freigeben"
+
+#: data/System/ModacSkinCommonWords.txt
+msgid "Approve contentual aspects of discussion"
+msgstr "Diskussionsstand inhaltlich freigeben"
+
+#: data/System/ModacSkinCommonWords.txt
+msgid "Approve formal aspects of discussion"
+msgstr "Diskussionsstand formal freigeben"
+
+#: templates/viewtopicactionbuttons.entwicklung.tmpl:167
+#: templates/viewtopicactionbuttons.modac.tmpl:129
+msgid "Attach"
+msgstr "Anhang"
+
+#: templates/attachnew.modac.tmpl:2
+msgid "Attach file to %1"
+msgstr "Datei an die Seite %1 hängen"
+
+#: templates/attach.modac.tmpl:13
+msgid "Attach image or document on %1"
+msgstr "Bild oder Dokument an %1 anhängen"
+
+#: templates/attach.modac.tmpl:48
+msgid "Attach new file"
+msgstr "Neue Datei anhängen"
+
+#: templates/attachtables.modac.tmpl:33
+msgid "Attachment history"
+msgstr "Anhangs-Versionsgeschichte"
+
+#: templates/attachtables.modac.tmpl:6
+msgid "Attachments"
+msgstr "Anhänge"
+
+#: templates/attach.modac.tmpl:23
+msgid "Attachments help"
+msgstr "Hilfe zu Anhängen"
+
+#: templates/attach.modac.tmpl:69
+msgid "Attachments will not be shown in topic view page."
+msgstr "Anhänge in der normalen Ansicht nicht anzeigen."
+
+#: templates/oopsaccessdenied.modac.tmpl:8
+#: templates/oopsattention.modac.tmpl:8
+#: templates/oopsleaseconflict.modac.tmpl:7
+msgid "Attention"
+msgstr "Achtung"
+
+#: data/System/ModacSkinSolrSearchBaseTemplate.txt:28
+msgid "Author"
+msgstr "Autor"
+
+#: templates/changeform.modac.tmpl:18
+msgid "Available form templates"
+msgstr "Verfügbare Formularvorlagen"
+
+#: templates/foswiki.modac.tmpl:16
+msgid "Back to topic"
+msgstr "Zurück zur Seite"
+
+#: templates/more.entwicklung.tmpl:96 templates/more.modac.tmpl:96
+#: templates/viewtopicactionbuttons.entwicklung.tmpl:190
+#: templates/viewtopicactionbuttons.modac.tmpl:151
+msgid "Backlinks"
+msgstr "Links"
+
+#: templates/backlinksweb.modac.tmpl:4
+msgid "Backlinks to %1 in %2 Web"
+msgstr "Links auf %1 im %2 Bereich"
+
+#: templates/backlinksallwebs.modac.tmpl:4
+msgid "Backlinks to %1 in all Webs"
+msgstr "Links auf %1 in allen Bereichen"
+
+#: templates/validate.modac.tmpl:52
+msgid "Cancel"
+msgstr "Abbrechen"
+
+#: templates/edit.modac.tmpl:48
+msgid "Cancel editing and discard changes"
+msgstr "Editieren abbrechen und Änderungen verwerfen"
+
+#: data/System/ModacSkinSolrSearchBaseTemplate.txt:24
+msgid "Category"
+msgstr "Kategorie"
+
+#: templates/validate.modac.tmpl:25
+msgid "Change cannot be completed"
+msgstr "Änderung konnte nicht vollzogen werden"
+
+#: templates/attachagain.modac.tmpl:15
 msgid "Change comment only"
-msgstr "Nur Kommentar �ndern"
+msgstr "Nur Kommentar ändern"
 
-#: data/System/WebCreateNewTopicTemplate.txt
+#: templates/more.entwicklung.tmpl:199 templates/more.modac.tmpl:199
+msgid "Child topics in %1 web"
+msgstr "untergeordnete Seiten im %1 Bereich"
+
+#: data/System/ModacSkinWebCreateNewTopicTemplate.txt:21
 msgid "Choose Web:"
-msgstr "Themenbereich ausw�hlen:"
+msgstr "Bereich wählen:"
 
-#: core/templates/renameattachmentdelete.tmpl
+#: templates/changeform.modac.tmpl:7
+msgid "Choose a new form for %1"
+msgstr "Wählen Sie eine neue Formularvorlage für %1"
+
+#: data/System/ModacSkinSolrSearchBaseTemplate.txt:158
+msgid "Choosen filters"
+msgstr "Ausgewählte Filter"
+
+#: data/System/ModacSkinWebCreateNewTopicTemplate.txt:61
+#: templates/renamebase.modac.tmpl:26
+msgid "Clear all"
+msgstr "Alles abwählen"
+
+#: templates/attach.modac.tmpl:57 templates/attachtables.modac.tmpl:8
+#: templates/oopshistory.modac.tmpl:41
+msgid "Comment"
+msgstr "Kommentar"
+
+#: templates/more.entwicklung.tmpl:162 templates/more.modac.tmpl:162
+#: templates/oopshistory.modac.tmpl:94
+msgid "Compare revisions"
+msgstr "Vergleiche Revisionen"
+
+#: data/System/ModacSkinDiskussionTemplate.txt:11
+msgid "Compare with approved version"
+msgstr "Vergleiche mit freigegebener Version"
+
+#: templates/oopshistory.modac.tmpl:67
+msgid "Context:"
+msgstr "Kontext:"
+
+#: templates/more.entwicklung.tmpl:37 templates/more.modac.tmpl:37
+#: templates/moredialog.modac.tmpl:9
+msgid "Copy this topic (and all attachments) to a new topic."
+msgstr "Kopiere diese Seite (und alle ihre Anhänge) in eine neue Seite."
+
+#: templates/more.entwicklung.tmpl:36 templates/more.modac.tmpl:36
+#: templates/moredialog.modac.tmpl:8
+msgid "Copy topic"
+msgstr "Seite kopieren"
+
+#: templates/more.entwicklung.tmpl:46 templates/more.modac.tmpl:46
+#: templates/moredialog.modac.tmpl:18
+msgid "Copy topic..."
+msgstr "Seite kopieren"
+
+#: data/System/ModacSkinWebCreateNewTopicTemplate.txt:7
+#: data/System/ModacSkinWebLeftBarDefault.txt:22
+msgid "Create New Topic"
+msgstr "Neue Seite anlegen"
+
+#: data/System/ModacSkinWebLeftBarDefault.txt:
+msgid "News"
+msgstr "Aktuelles"
+
+#: data/System/ModacSkinWebLeftBarDefault.txt:
+msgid "Manual"
+msgstr "Anleitungen"
+
+#: data/System/ModacSkinWebCreateNewTopicTemplate.txt:105
+msgid "Create New Topic in %1 Web"
+msgstr "Neue Seite im Bereich \"%1\" anlegen"
+
+#: templates/attach.modac.tmpl:67
+msgid "Create a link to the attached file"
+msgstr "Verweis auf die angehängte Datei erzeugen"
+
+#: templates/renameattachmentdelete.modac.tmpl:9
+msgid "Current location:"
+msgstr "Aktueller Ort:"
+
+#: templates/more.entwicklung.tmpl:110 templates/more.modac.tmpl:110
+msgid "Current parent:"
+msgstr "Aktuelle übergeordnete Seite:"
+
+#: templates/attachtables.modac.tmpl:34 templates/attachtables.modac.tmpl:8
+#: templates/oopshistory.modac.tmpl:39 templates/oopshistory.modac.tmpl:50
+msgid "Date"
+msgstr "Datum"
+
+#: templates/more.entwicklung.tmpl:171 templates/more.modac.tmpl:171
+msgid "Debug"
+msgstr "Fehler beheben"
+
+#: templates/attachagain.modac.tmpl:23
+#: templates/renameattachmentdelete.modac.tmpl:25
+msgid "Delete"
+msgstr "Löschen"
+
+#: templates/attachtables.modac.tmpl:45
+#: templates/renameattachmentdelete.modac.tmpl:28
+msgid "Delete attachment"
+msgstr "Anhang löschen"
+
+#: templates/more.entwicklung.tmpl:60 templates/more.modac.tmpl:60
+msgid "Delete topic"
+msgstr "Seite löschen"
+
+#: templates/more.entwicklung.tmpl:70 templates/more.modac.tmpl:70
+msgid "Delete topic..."
+msgstr "Seite löschen"
+
+#: templates/attach.modac.tmpl:59
+msgid "Describe the file so other people know what it is."
+msgstr ""
+"Beschreiben Sie die Datei, damit andere Benutzer wissen was sie beinhaltet."
+
+#: data/System/ModacSkinDiskussionTemplate.txt:11
+msgid "Difference to approved version"
+msgstr "Unterschied zu freigegebender Version"
+
+#: templates/compare.modac.tmpl:10 templates/rdiff.modac.tmpl:11
+msgid "Difference:"
+msgstr "Unterschied:"
+
+#: data/System/ModacSkinCommonWords.txt:8
+msgid "Discussion"
+msgstr "Diskussion"
+
+#: templates/viewtopicactionbuttons.modac.tmpl:51
+#: templates/viewtopicactionbuttons.modac.tmpl:57
+msgid "Discussion about Improvements"
+msgstr "Diskussion über Verbesserungen"
+
+#: templates/attach.modac.tmpl:69
+msgid "Do not show attachment in table"
+msgstr "Anhang nicht in Tabelle anzeigen"
+
+#: templates/form.modac.tmpl:10 templates/form.modac.tmpl:11
+msgid "Document Control"
+msgstr "Dokumentenlenkung"
+
+#: data/System/ModacSkinSolrSearchBaseTemplate.txt:27
+msgid "document type"
+msgstr "Dokumententyp"
+
+#: data/System/ModacSkinCommonWords.txt:7
+msgid "Draft"
+msgstr "Entwurf"
+
+#: templates/viewtopicactionbuttons.entwicklung.tmpl:146
+#: templates/viewtopicactionbuttons.modac.tmpl:108
+msgid "Edit"
+msgstr "Bearbeiten"
+
+#: templates/oopsleaseconflict.modac.tmpl:31
+msgid "Edit Anyway"
+msgstr "Trotzdem bearbeiten"
+
+#: templates/viewtopicactionbuttons.entwicklung.tmpl:162
+#: templates/viewtopicactionbuttons.modac.tmpl:124
+msgid "Edit Wiki<nop>Text"
+msgstr "Bearbeite Wiki<nop>Text"
+
+#: templates/edit.modac.tmpl:13
+msgid "Edit help"
+msgstr "Hilfe fürs Bearbeiten"
+
+#: templates/more.entwicklung.tmpl:27 templates/more.modac.tmpl:27
+msgid "Edit settings for this topic..."
+msgstr "Einstellungen bearbeiten"
+
+#: templates/more.entwicklung.tmpl:23 templates/more.modac.tmpl:23
+msgid "Edit topic preference settings"
+msgstr "Einstellungen für diese Seite bearbeiten"
+
+#: templates/foswiki.modac.tmpl:75
+msgid "Enlarge edit box"
+msgstr "Editor vergrößern"
+
+#: templates/attachtables.modac.tmpl:8
+msgid "Filename"
+msgstr "Dateiname"
+
+#: templates/more.entwicklung.tmpl:97 templates/more.entwicklung.tmpl:99
+#: templates/more.modac.tmpl:97 templates/more.modac.tmpl:99
+msgid "Find topics that link to %1 ..."
+msgstr "Seiten finden die auf %1 verweisen"
+
+#: templates/edit.modac.tmpl:29
+msgid "Force new revision"
+msgstr "Neue Revision erzwingen"
+
+#: templates/formtables.modac.tmpl:5
+msgid "Form data"
+msgstr "Formulardaten"
+
+#: templates/form.modac.tmpl:13
+msgid "Form definition"
+msgstr "Formulardefinition"
+
+#: data/System/ModacSkinSolrSearchBaseTemplate.txt:30
+msgid "area of application"
+msgstr "Geltungsbereich"
+
+#: templates/validate.modac.tmpl:37
+msgid ""
+"Go back to the previous page, and enable Cookies and Javascript before "
+"trying again"
+msgstr ""
+"Bitte gehen Sie mit Ihrem Browser zurück und aktivieren Sie vor einem neuen "
+"Versuch Cookies und Javascript"
+
+#: templates/renamebase.modac.tmpl:15
+msgid "Hide help"
+msgstr "Hilfe verstecken"
+
+#: templates/validate.modac.tmpl:44
+msgid "If you are unsure what this means, read: %1"
+msgstr "Bei Unklarheiten können Sie hier mehr erfahren: %1"
+
+#: templates/renameattachmentdelete.modac.tmpl:41
+msgid "If you enter a different name, make sure the topic exists."
+msgstr ""
+"Wenn Sie einen anderen Namen eingeben, stellen Sie sicher, dass die Seite "
+"existiert."
+
+#: templates/attach.modac.tmpl:67
+msgid "Images will be displayed, for other attachments a link will be created."
+msgstr "Bilder werden angezeigt, für andere Anhänge wird ein Link erzeugt."
+
+#: data/System/ModacSkinDiskussionTemplate.txt:9
+#: data/System/ModacSkinEntwurfTemplate.txt:9
+msgid "Improvement Process"
+msgstr "Verbesserungsprozess"
+
+#: data/System/ModacSkinWebLeftBarDefault.txt:6
+msgid "Index"
+msgstr "Index"
+
+#: templates/moredialog.modac.tmpl:43
+msgid "Insert link:"
+msgstr "Link einfügen:"
+
+#: data/System/ModacSkinDiskussionTemplate.txt:15
+#: data/System/ModacSkinEntwurfTemplate.txt:14
+msgid "Last approved revision"
+msgstr "Letzte freigegebene Revision"
+
+#: data/System/ModacSkinDiskussionTemplate.txt:14
+#: data/System/ModacSkinEntwurfTemplate.txt:13
+msgid "Last approved version"
+msgstr "Letzte freigegebene Version"
+
+#: data/System/ModacSkinDiskussionTemplate.txt:13
+#: data/System/ModacSkinEntwurfTemplate.txt:12
+msgid "Last editing person"
+msgstr "Letzter Bearbeiter"
+
+#: templates/foswiki.modac.tmpl:11
+msgid "Log In"
+msgstr "Einloggen"
+
+#: templates/foswiki.modac.tmpl:12
+msgid "Log Out"
+msgstr "Ausloggen"
+
+#: templates/oopshistory.modac.tmpl:63
+msgid "MS-Word-mode"
+msgstr "MS-Word-Änderungsmodus"
+
+#: data/System/ModacSkinSolrSearchBaseTemplate.txt:23
+msgid "Media"
+msgstr "Medien"
+
+#: templates/foswiki.modac.tmpl:45
+msgid "Modify search"
+msgstr "Suche verändern"
+
+#: templates/more.entwicklung.tmpl:16 templates/more.modac.tmpl:16
+msgid "More Actions on Topic %1"
+msgstr "Weitere Aktionen für Seite %1"
+
+#: templates/rdiff.modac.tmpl:24
+#: templates/viewtopicactionbuttons.entwicklung.tmpl:177
+#: templates/viewtopicactionbuttons.modac.tmpl:138
+msgid "More topic actions..."
+msgstr "Weitere Aktionen"
+
+#: templates/attachagain.modac.tmpl:23
+msgid "Move"
+msgstr "Verschieben"
+
+#: templates/attachtables.modac.tmpl:45
+msgid "Move attachment"
+msgstr "Anhang verschieben"
+
+#: templates/renameattachmentdelete.modac.tmpl:21
+msgid "Move to web:"
+msgstr "In folgenden Bereich verschieben:"
+
+#: data/System/ModacSkinWebTopBarDefault.txt:2
+msgid "MyPage"
+msgstr "Meine Seite"
+
+#: templates/more.entwicklung.tmpl:41 templates/more.modac.tmpl:41
+#: templates/moredialog.modac.tmpl:13
+msgid "Name of copy"
+msgstr "Name der Kopie"
+
+#: templates/more.entwicklung.tmpl:168 templates/more.modac.tmpl:168
+msgid "Newer revision:"
+msgstr "Neuere Revision:"
+
+#: data/System/ModacSkinDiskussionTemplate.txt:12
+#: data/System/ModacSkinEntwurfTemplate.txt:11
+msgid "Next step"
+msgstr "Nächster Schritt"
+
+#: templates/more.entwicklung.tmpl:200 templates/more.modac.tmpl:200
+msgid "No child topics"
+msgstr "Keine untergeordneten Seiten"
+
+#: templates/more.entwicklung.tmpl:195 templates/more.modac.tmpl:195
+msgid "No previous revision exists."
+msgstr "Es existiert keine vorherige Revision."
+
+#: templates/foswiki.modac.tmpl:44
+msgid "Number of topics:"
+msgstr "Anzahl der Seiten:"
+
+#: templates/oopsaccessdenied.modac.tmpl:9 templates/validate.modac.tmpl:52
+msgid "OK"
+msgstr "OK"
+
+#: templates/more.entwicklung.tmpl:168 templates/more.modac.tmpl:168
+msgid "Older revision:"
+msgstr "Ältere Revision:"
+
+#: templates/more.entwicklung.tmpl:66 templates/more.entwicklung.tmpl:83
+#: templates/more.modac.tmpl:66 templates/more.modac.tmpl:83
+msgid "Only update linked topics in %1 web"
+msgstr "Nur verlinkte Seiten im %1 Bereich aktualisieren"
+
+#: templates/renameattachmentdelete.modac.tmpl:34
+msgid "Optionally enter a different attachment name:"
+msgstr "Geben Sie optional einen anderen Namen für den Anhang ein:"
+
+#: templates/renameattachmentdelete.modac.tmpl:32
+msgid "Optionally enter a different topic name:"
+msgstr "Optional geben Sie einen anderen Seitennamen ein:"
+
+#: templates/more.entwicklung.tmpl:171 templates/more.modac.tmpl:171
+msgid "Options"
+msgstr "Optionen"
+
+#: data/System/ModacSkinWebLeftBarDefault.txt:24
+msgid "PDF-Print"
+msgstr "PDF-Druck"
+
+#: templates/more.entwicklung.tmpl:114 templates/more.modac.tmpl:114
+msgid "Pick from a list"
+msgstr "Von der Liste auswählen"
+
+#: templates/settings.modac.tmpl:13
+msgid "Preferences for"
+msgstr "Einstellungen für"
+
+#: templates/validate.modac.tmpl:41
+msgid "Press Cancel otherwise."
+msgstr "Wählen Sie ansonsten Abbrechen."
+
+#: templates/validate.modac.tmpl:40
+msgid "Press OK to confirm that this change was intentional."
+msgstr "Bitte bestätigen Sie mit OK, wenn die Änderung beabsichtigt war."
+
+#: templates/attach.modac.tmpl:65
+msgid "Properties"
+msgstr "Eigenschaften"
+
+#: data/System/ModacSkinSolrSearchBaseTemplate.txt:29
+msgid "Processowner"
+msgstr "Prozesseigner"
+
+#: data/System/ModacSkinSolrSearchBaseTemplate.txt:22
+msgid "Recent changes"
+msgstr "Letzte Änderungen"
+
+#: data/System/ModacSkinWebLeftBarDefault.txt:23
+msgid "Recently changed"
+msgstr "Letzte Änderungen"
+
+#: templates/oopshistory.modac.tmpl:88
+msgid "Refresh"
+msgstr "Neu laden"
+
+#: templates/more.entwicklung.tmpl:79 templates/more.modac.tmpl:79
+msgid "Rename or move topic"
+msgstr "Seite umbenennen oder verschieben"
+
+#: templates/more.entwicklung.tmpl:87 templates/more.modac.tmpl:87
+msgid "Rename or move topic..."
+msgstr "Seite umbenennen oder verschieben"
+
+#: templates/oopshistory.modac.tmpl:62
+msgid "Render style:"
+msgstr "Anzeige-Stil:"
+
+#: templates/form.modac.tmpl:1
+msgid "Replace form..."
+msgstr "Formular auswechseln"
+
+#: templates/validate.modac.tmpl:6 templates/validate.modac.tmpl:7
+msgid "Request Validation"
+msgstr "Anfrage Bestätigung"
+
+#: templates/more.entwicklung.tmpl:180 templates/more.modac.tmpl:180
+msgid "Restore topic"
+msgstr "Seite wiederherstellen"
+
+#: templates/more.entwicklung.tmpl:185 templates/more.modac.tmpl:185
+msgid "Restore topic to revision:"
+msgstr "Vorherige Revision wiederherstellen:"
+
+#: templates/more.entwicklung.tmpl:188 templates/more.modac.tmpl:188
+msgid "Restore topic to this revision"
+msgstr "Vorherige Revision wiederherstellen"
+
+#: templates/more.entwicklung.tmpl:188 templates/more.modac.tmpl:188
+msgid "Restore..."
+msgstr "Wiederherstellen"
+
+#: templates/oopshistory.modac.tmpl:38 templates/oopshistory.modac.tmpl:49
+#: templates/rdiff.modac.tmpl:17
+msgid "Revision"
+msgstr "Revision"
+
+#: templates/oopshistory.modac.tmpl:21
+msgid "Revision history of "
+msgstr "Versionsgeschichte von "
+
+#: templates/more.entwicklung.tmpl:148 templates/more.modac.tmpl:148
+msgid "Revisions"
+msgstr "Revisionen"
+
+#: templates/oopshistory.modac.tmpl:81
+msgid "Revisions %1 - %2 (out of %3) are shown"
+msgstr ""
+"Aktuell werden die Revisionen <b>%1</b> bis <b>%2</b> von <b>%3</b> "
+"angezeigt."
+
+#: templates/oopshistory.modac.tmpl:88
+msgid "Revisions."
+msgstr "Revisionen anzeigen lassen."
+
+#: templates/settings.modac.tmpl:28
+msgid "S = Save, C = Cancel"
+msgstr "S = Speichern, C = Abbrechen"
+
+#: templates/edit.modac.tmpl:74
+msgid ""
+"S = Save, Q = Quiet save, K = Save and Continue, P = Preview, C = Cancel"
+msgstr ""
+"S = Speichern, Q = Stilles Speichern, K = Zwischenspeichern, P = Vorschau, C "
+"= Abbrechen"
+
+#: templates/viewtopicactionbuttons.entwicklung.tmpl:103
+#: templates/viewtopicactionbuttons.modac.tmpl:27
+msgid "Search"
+msgstr "Suchen"
+
+#: templates/backlinksallwebs.modac.tmpl:4
+msgid "Search %1 Web only"
+msgstr "Nur Links aus dem %1 Bereich anzeigen"
+
+#: templates/backlinksweb.modac.tmpl:4
+msgid "Search all webs"
+msgstr "Links aus allen Bereichen anzeigen"
+
+#: templates/backlinksallwebs.modac.tmpl:4 templates/backlinksweb.modac.tmpl:4
+#: templates/more.entwicklung.tmpl:97 templates/more.modac.tmpl:97
+msgid "Search all webs for topics that link to here"
+msgstr "Alle Bereiche nach Seiten durchsuchen, die hierher verweisen"
+
+#: templates/more.entwicklung.tmpl:99 templates/more.modac.tmpl:99
+msgid "Search the %1 Web for topics that link to here"
+msgstr "Der %1 Bereich nach Seiten durchsuchen, die hierher verweisen"
+
+#: templates/attachagain.modac.tmpl:19
+msgid "Select a new local file to update attachment"
+msgstr ""
+"Wählen Sie eine neue Datei auf Ihrem Rechner, um den Anhang zu aktualisieren."
+
+#: templates/renamebase.modac.tmpl:26
+msgid "Select all"
+msgstr "Alles auswählen"
+
+#: templates/more.entwicklung.tmpl:113 templates/more.modac.tmpl:113
+msgid "Select topic parent"
+msgstr "übergeordnete Seite auswählen"
+
+#: templates/edit.modac.tmpl:60
+msgid "Select, copy and paste your signature text to the bottom of your entry"
+msgstr "Fügen Sie Ihre Signatur unter dem Text ein, indem Sie sie kopieren."
+
+#: templates/more.entwicklung.tmpl:171 templates/more.modac.tmpl:171
+msgid "Sequential"
+msgstr "Sequenziell"
+
+#: templates/more.entwicklung.tmpl:117 templates/more.modac.tmpl:117
+msgid "Set new parent"
+msgstr "Neue übergeordnete Seite zuordnen"
+
+#: templates/more.entwicklung.tmpl:106 templates/more.modac.tmpl:106
+msgid "Set new topic parent"
+msgstr "Neue übergeordnete Seite zuordnen"
+
+#: templates/renamebase.modac.tmpl:15
+msgid "Show help"
+msgstr "Hilfe anzeigen"
+
+#: templates/foswiki.modac.tmpl:75
+msgid "Shrink edit box"
+msgstr "Editor verkleinern"
+
+#: templates/more.entwicklung.tmpl:171 templates/more.modac.tmpl:171
+#: templates/oopshistory.modac.tmpl:64
+msgid "Side by side"
+msgstr "Seite an Seite"
+
+#: templates/attachtables.modac.tmpl:8
+msgid "Size"
+msgstr "Größe"
+
+#: data/System/ModacSkinWebLeftBarDefault.txt:3
+msgid "Start"
+msgstr "Start"
+
+#: data/System/ModacSkinDiskussionTemplate.txt:10
+#: data/System/ModacSkinEntwurfTemplate.txt:10
+msgid "State"
+msgstr "Status"
+
+#: templates/foswiki.modac.tmpl:75
+msgid "Switch to monotype or propotional font"
+msgstr "Zeichensatz in monotype oder proportional wechseln"
+
+#: data/System/ModacSkinSolrSearchBaseTemplate.txt:25
+msgid "Tag"
+msgstr "Schlagwort"
+
+#: templates/moredialog.modac.tmpl:56 templates/moredialog.modac.tmpl:68
+#, fuzzy
+msgid "Text:"
+msgstr "Kontext:"
+
+#: templates/renameattachmentdelete.modac.tmpl:43
 msgid ""
 "The attachment may have to be renamed if an attachment with the same name "
 "already exists in the target topic."
@@ -174,66 +922,411 @@ msgstr ""
 "Der Anhang muss eventuell umbenannt werden, falls bereits ein Anhang mit "
 "demselben Namen an der Ziel-Seite angehangen ist."
 
-#: data/System/SolrSearchBaseTemplate.txt
-msgid "In my contributions"
-msgstr "In meinen Seiten"
+#: templates/validate.modac.tmpl:32
+msgid ""
+"There is a risk that someone may be trying to use your identity to change "
+"content on %1 without your knowledge."
+msgstr ""
+"Es besteht ein Risiko, dass jemand versucht, unter Ihrer Identität und ohne "
+"Ihr Wissen Inhalte von %1 zu ändern."
 
-#: data/System/SolrSearchBaseTemplate.txt
-msgid "In current web"
-msgstr "Im aktuellen Bereich"
+#: templates/oopsleaseconflict.modac.tmpl:26
+msgid "To edit the topic anyway, click "
+msgstr "Um die Seite trotzdem zu bearbeiten drücken Sie "
 
-#: data/System/SolrSearchBaseTemplate.txt
-msgid "In all webs"
-msgstr "In allen Bereichen"
+#: templates/oopsleaseconflict.modac.tmpl:22
+msgid "To see if %1 has finished editing yet, click "
+msgstr "Um zu sehen, ob %1 die Bearbeitung abgeschlossen hat drücken Sie "
 
-#: data/System/SolrSearchBaseTemplate.txt
-msgid "Results per page"
-msgstr "Ergebnisse pro Seite"
+#: data/System/ModacSkinWebLeftBarDefault.txt:16
+#: data/System/ModacSkinWebLeftBarDefault.txt:17
+msgid "Tools"
+msgstr "Werkzeuge"
 
-#: data/System/SolrSearchBaseTemplate.txt
-msgid "Sort by"
-msgstr "Sortieren nach"
+#: templates/attachtables.modac.tmpl:18
+msgid "Topic attachments"
+msgstr "Anhänge"
 
-#: data/System/SolrSearchBaseTemplate.txt
-msgid "Relevance"
-msgstr "Relevanz"
+#: templates/oopshistory.modac.tmpl:36 templates/oopshistory.modac.tmpl:47
+msgid "Topic history"
+msgstr "Versionsgeschichte der Seite"
 
-#: data/System/SolrSearchBaseTemplate.txt
-msgid "Last changed"
-msgstr "zuletzt ge�ndert"
+#: data/System/ModacSkinWebCreateNewTopicTemplate.txt:34
+msgid "Topic name:"
+msgstr "Seitenname:"
 
-#: data/System/SolrSearchBaseTemplate.txt
-msgid "Display as"
-msgstr "Anzeigen als"
+#: data/System/ModacSkinWebCreateNewTopicTemplate.txt:41
+msgid "Topic parent:"
+msgstr "übergeordnete Seite:"
 
-#: data/System/SolrSearchBaseTemplate.txt
-msgid "list"
-msgstr "Liste"
+#: templates/rdiff.modac.tmpl:17 templates/view.modac.tmpl:67
+msgid "Topic revision:"
+msgstr "Revision:"
 
-#: data/System/SolrSearchBaseTemplate.txt
-msgid "grid"
-msgstr "Kacheln"
+#: templates/moredialog.modac.tmpl:52
+msgid "Topic:"
+msgstr "Topic:"
 
-#: data/System/SolrSearchBaseTemplate.txt
-msgid "nothing found"
-msgstr "Keine Eintr�ge gefunden"
+#: templates/oopsleaseconflict.modac.tmpl:23
+msgid "Try Again"
+msgstr "Nochmal versuchen"
 
-#: data/System/SolrSearchBaseTemplate.txt
-msgid "Results %1 of <strong>%2</strong>"
-msgstr "Ergebnisse %1 von <strong>%2</strong>"
+#: templates/attachtables.modac.tmpl:45
+msgid "Update attachment"
+msgstr "Anhang aktualisieren"
 
-#: data/System/WebChangesViewTemplate.txt
-msgid "Recent changes in %1"
-msgstr "Letzte �nderungen im Bereich '%1'"
+#: templates/attachagain.modac.tmpl:6
+msgid "Update attachment %1 on %2"
+msgstr "Anhang %1 aktualisieren"
 
-#: data/System/WebChangesViewTemplate.txt
-msgid "Recent changes"
-msgstr "Letzte �nderungen"
+#: templates/attachagain.modac.tmpl:29
+msgid "Update existing attachment"
+msgstr "Neue Version hochladen"
 
-#: SolrPlugin/Search.pm
-msgid "Previous"
-msgstr "Vorherige"
+#: templates/attachagain.modac.tmpl:25 templates/attachnew.modac.tmpl:5
+msgid "Upload file"
+msgstr "Datei hochladen"
 
-#: SolrPlugin/Search.pm
-msgid "Next"
-msgstr "N�chste"
+#: templates/attach.modac.tmpl:50 templates/attachagain.modac.tmpl:31
+msgid "Upload up to %1 KB."
+msgstr "Bis zu %1 KB hochladen."
+
+#: templates/moredialog.modac.tmpl:64
+msgid "Url:"
+msgstr "Url:"
+
+#: data/System/ModacSkinWebCreateNewTopicTemplate.txt:27
+msgid "Use template:"
+msgstr "Vorlagen benutzen:"
+
+#: templates/oopshistory.modac.tmpl:40 templates/oopshistory.modac.tmpl:51
+msgid "Username"
+msgstr "Benutzername"
+
+#: templates/attachtables.modac.tmpl:34
+msgid "Version"
+msgstr "Version"
+
+#: templates/attachagain.modac.tmpl:10
+msgid "Version history"
+msgstr "Versionsgeschichte"
+
+#: templates/attachagain.modac.tmpl:8
+msgid "Version history of %1"
+msgstr "Versionsgeschichte von %1"
+
+#: templates/compare.modac.tmpl:71
+msgid "View difference"
+msgstr "Unterschied anzeigen"
+
+#: templates/more.entwicklung.tmpl:174 templates/more.modac.tmpl:174
+msgid "View differences"
+msgstr "Unterschiede anzeigen"
+
+#: templates/more.entwicklung.tmpl:149 templates/more.modac.tmpl:149
+msgid "View previous topic revision"
+msgstr "Vorherige Revisionen ansehen"
+
+#: templates/oopsleaseconflict.modac.tmpl:34
+msgid "View raw text without formatting"
+msgstr "Quelltext ohne Formatierung ansehen"
+
+#: templates/more.entwicklung.tmpl:156 templates/more.modac.tmpl:156
+msgid "View revision"
+msgstr "Version ansehen"
+
+#: templates/more.entwicklung.tmpl:153 templates/more.modac.tmpl:153
+msgid "View revision:"
+msgstr "Revision ansehen:"
+
+#: data/System/ModacSkinWebCreateNewTopicTemplate.txt:59
+msgid "View templates"
+msgstr "Vorlagen anzeigen"
+
+#: templates/oopsleaseconflict.modac.tmpl:34 templates/rdiff.modac.tmpl:24
+msgid "View topic"
+msgstr "Seite ansehen"
+
+#: data/System/ModacSkinCommonWords.txt:10
+msgid "Waiting for PO"
+msgstr "Warten auf PO"
+
+#: data/System/ModacSkinCommonWords.txt:9
+msgid "Waiting for QM"
+msgstr "Warten auf QM"
+
+#: templates/validate.modac.tmpl:23
+msgid "Warning! Confirmation required"
+msgstr "Achtung! Bestätigung erforderlich"
+
+#: templates/moredialog.modac.tmpl:48
+msgid "Web:"
+msgstr "Bereich:"
+
+#: data/System/ModacSkinWebLeftBarDefault.txt:35
+#: data/System/ModacSkinWebLeftBarDefault.txt:36
+msgid "Webs"
+msgstr "Bereiche"
+
+#: templates/attachtables.modac.tmpl:34 templates/attachtables.modac.tmpl:8
+msgid "Who"
+msgstr "Hochgeladen durch"
+
+#: templates/oopshistory.modac.tmpl:68
+msgid "Whole page"
+msgstr "Gesamte Seite"
+
+#: templates/foswiki.modac.tmpl:96
+msgid "You are here:"
+msgstr "Sie sind hier:"
+
+#: templates/oopshistory.modac.tmpl:83
+msgid "You can also choose to see "
+msgstr "Sie können sich auch insgesamt "
+
+#: templates/validate.modac.tmpl:35
+msgid ""
+"You cannot manually confirm this change because either Cookies or Javascript "
+"are disabled in your browser."
+msgstr ""
+"Sie können diese Änderung nicht manuell bestätigen, da entweder Cookies oder "
+"Javascript in Ihrem Browser deaktiviert sind."
+
+#: templates/edit.modac.tmpl:60
+msgid "Your signature to copy/paste"
+msgstr "Ihre Signatur zum Kopieren/Einfügen"
+
+#: templates/foswiki.modac.tmpl:16
+msgid "accesskey='c'"
+msgstr "accesskey='c'"
+
+#: templates/search.modac.tmpl:6
+msgid "by %1 "
+msgstr "von %1"
+
+#: templates/renamebase.modac.tmpl:26
+msgid "checkboxes of referenced topics"
+msgstr "Auswahlboxen von referenzierten Seiten"
+
+#: templates/oopshistory.modac.tmpl:43
+msgid "earlier"
+msgstr "früher"
+
+#: templates/formtables.modac.tmpl:28
+msgid "edit"
+msgstr "bearbeiten"
+
+#: templates/oopshistory.modac.tmpl:43
+msgid "first"
+msgstr "erster"
+
+#: templates/edit.modac.tmpl:26 templates/edit.modac.tmpl:29
+msgid "help"
+msgstr "Hilfe"
+
+#: templates/more.entwicklung.tmpl:153 templates/more.modac.tmpl:153
+msgid "in raw text format"
+msgstr "im Quelltextformat"
+
+#: templates/form.modac.tmpl:3
+msgid "indicates mandatory fields"
+msgstr "kennzeichnet Pflichtfelder"
+
+#: templates/oopshistory.modac.tmpl:43
+msgid "last"
+msgstr "letzter"
+
+#: templates/oopshistory.modac.tmpl:43
+msgid "later"
+msgstr "später"
+
+#: templates/more.entwicklung.tmpl:110 templates/more.modac.tmpl:110
+msgid "no current parent"
+msgstr "keine übergeordnete Seite zugewiesen"
+
+#: data/System/ModacSkinSolrSearchBaseTemplate.txt:160
+msgid "no filters choosen"
+msgstr "Keine Filter ausgewählt"
+
+#: templates/attachagain.modac.tmpl:23
+#: templates/renameattachmentdelete.modac.tmpl:25
+msgid "or"
+msgstr "oder"
+
+#: data/System/ModacSkinSolrSearchBaseTemplate.txt:161
+msgid "remove all filters"
+msgstr "Alle Filter entfernen"
+
+#: data/System/ModacSkinSolrSearchBaseTemplate.txt:208
+msgid "remove filter"
+msgstr "Filter entfernen"
+
+#: templates/attachtables.modac.tmpl:39 templates/oopshistory.modac.tmpl:54
+msgid "restore"
+msgstr "wiederherstellen"
+
+#: templates/oopshistory.modac.tmpl:88
+msgid "revisions up to"
+msgstr "Versionen bis zu"
+
+#: templates/viewtopicactionbuttons.entwicklung.tmpl:115
+#: templates/viewtopicactionbuttons.entwicklung.tmpl:53
+#: templates/viewtopicactionbuttons.entwicklung.tmpl:54
+#: templates/viewtopicactionbuttons.modac.tmpl:16
+#: templates/viewtopicactionbuttons.modac.tmpl:17
+#: templates/viewtopicactionbuttons.modac.tmpl:82
+msgid "title='Attach an image or document to this topic' accesskey='a'>&Attach"
+msgstr ""
+"title='Ein Bild oder Dokument an diese Seite anhängen' accesskey='a'>&Anhänge"
+
+#: templates/viewtopicactionbuttons.entwicklung.tmpl:105
+#: templates/viewtopicactionbuttons.modac.tmpl:74
+msgid "title='Create new topic' accesskey='c'>&Create"
+msgstr "title='Neue Seite anlegen' accesskey='c'>Anlegen (&c)"
+
+#: templates/viewtopicactionbuttons.entwicklung.tmpl:118
+#: templates/viewtopicactionbuttons.modac.tmpl:84
+msgid ""
+"title='Delete or rename this topic; set parent topic; view and compare "
+"revisions' accesskey='m'>&More topic actions"
+msgstr ""
+"title='Seite löschen oder umbenennen; Übergeordnete Seite festlegen; Revisionen "
+"anzeigen und vergleichen' accesskey='m'>&Weitere Aktionen"
+
+#: templates/viewtopicactionbuttons.entwicklung.tmpl:90
+#: templates/viewtopicactionbuttons.entwicklung.tmpl:96
+msgid "title='Discussion about Improvements' >Discussion"
+msgstr "title='Diskussion über Verbesserungen' >Diskussion"
+
+#: templates/viewtopicactionbuttons.entwicklung.tmpl:110
+#: templates/viewtopicactionbuttons.modac.tmpl:78
+msgid "title='Edit Wiki text' accesskey='w'>Edit &wiki text"
+msgstr "title='Wiki-Text bearbeiten' accesskey='w'>&wikitext bearbeiten"
+
+#: templates/viewtopicactionbuttons.entwicklung.tmpl:108
+#: templates/viewtopicactionbuttons.modac.tmpl:76
+msgid "title='Edit this topic text' accesskey='e'>&Edit"
+msgstr "title='Seiten-Text bearbeiten' accesskey='e'>&Bearbeiten"
+
+#: templates/viewtopicactionbuttons.entwicklung.tmpl:49
+#: templates/viewtopicactionbuttons.entwicklung.tmpl:50
+#: templates/viewtopicactionbuttons.modac.tmpl:12
+#: templates/viewtopicactionbuttons.modac.tmpl:13
+msgid "title='Edit this topic' accesskey='e'>&Edit"
+msgstr "title='Diese Seite bearbeiten' >Bearbeiten"
+
+#: templates/compare.modac.tmpl:77
+msgid "title='Interwoven' accesskey='i'>&interwoven"
+msgstr "title='verwoben' accesskey='v'>verwoben (&v)"
+
+#: templates/viewtopicactionbuttons.entwicklung.tmpl:61
+#: templates/viewtopicactionbuttons.entwicklung.tmpl:62
+#: templates/viewtopicactionbuttons.modac.tmpl:24
+#: templates/viewtopicactionbuttons.modac.tmpl:25
+msgid "title='More actions for this topic' accesskey='m'>&More topic actions"
+msgstr ""
+"title='Weitere Aktionen für diese Seite' accesskey='w'>&Weitere Aktionen"
+
+#: templates/viewtopicactionbuttons.entwicklung.tmpl:122
+#: templates/viewtopicactionbuttons.modac.tmpl:88
+msgid "title='Printable version of this topic' accesskey='p'>&Print version"
+msgstr "title='Druckversion dieser Seite' accesskey='p'>Druckversion (&p)"
+
+#: templates/viewtopicactionbuttons.entwicklung.tmpl:67
+#: templates/viewtopicactionbuttons.modac.tmpl:68
+msgid "title='Q.Wiki - specialpage' >specialpage"
+msgstr "title='Q.Wiki - Spezialseite' >Spezialseite"
+#: xxx nennen wir das nicht jetzt auch Infoseite?
+
+#: templates/viewtopicactionbuttons.entwicklung.tmpl:129
+#: templates/viewtopicactionbuttons.modac.tmpl:95
+msgid ""
+"title='Search all webs for topics that link to here' accesskey='l'>A&ll Webs"
+msgstr ""
+"title='Alle Bereiche nach Seiten durchsuchen, die hierher verweisen' "
+"accesskey='l'>A&lle Bereiche"
+
+#: templates/viewtopicactionbuttons.entwicklung.tmpl:131
+#: templates/viewtopicactionbuttons.modac.tmpl:97
+msgid ""
+"title='Search the %1 Web for topics that link to here' "
+"accesskey='b'>&Backlinks"
+msgstr ""
+"title='Den %1 Bereich nach Seiten durchsuchen, die hierher verweisen' "
+"accesskey='b'>Links (&b)"
+
+#: templates/viewtopicactionbuttons.entwicklung.tmpl:127
+#: templates/viewtopicactionbuttons.modac.tmpl:93
+msgid ""
+"title='Search the %1 Web for topics that link to here' accesskey='b'>We&b"
+msgstr ""
+"title='Den %1 Bereich nach Seiten durchsuchen, die hierher verweisen' "
+"accesskey='b'>Be&reich"
+
+#: templates/compare.modac.tmpl:74
+msgid "title='Side by side' accesskey='s'>&side by side"
+msgstr "title='Seite-an-Seite' accesskey='s'>&seite-an-seite"
+
+#: templates/viewtopicactionbuttons.entwicklung.tmpl:57
+#: templates/viewtopicactionbuttons.entwicklung.tmpl:58
+#: templates/viewtopicactionbuttons.modac.tmpl:20
+#: templates/viewtopicactionbuttons.modac.tmpl:21
+msgid "title='View topic history' accesskey='h'>&History"
+msgstr ""
+"title='Die Versionsgeschichte dieses Artikels ansehen' "
+"accesskey='v'>&Versionsgeschichte"
+
+#: templates/viewtopicactionbuttons.entwicklung.tmpl:112
+#: templates/viewtopicactionbuttons.modac.tmpl:80
+msgid "title='View topic' accesskey='v'>&View topic"
+msgstr "title='Seite anzeigen' accesskey='v'>Seite anzeigen (&v)"
+
+#: templates/viewtopicactionbuttons.entwicklung.tmpl:134
+#: templates/viewtopicactionbuttons.entwicklung.tmpl:136
+#: templates/viewtopicactionbuttons.modac.tmpl:100
+#: templates/viewtopicactionbuttons.modac.tmpl:102
+msgid "title='View total topic history' accesskey='h'>&History"
+msgstr "title='Versionsgeschichte der Seite ansehen' accesskey='h'>&Versionsgeschichte"
+
+#: templates/viewtopicactionbuttons.entwicklung.tmpl:139
+#: templates/viewtopicactionbuttons.modac.tmpl:105
+msgid "title='View without formatting' accesskey='v'>&View wiki text"
+msgstr ""
+"title='Quelltext ohne Formatierung ansehen' accesskey='v'>Quelltext (&v)"
+
+#: templates/oopshistory.modac.tmpl:72
+msgid "unchanged sections before and after each change"
+msgstr "unveränderte Sektionen vor und nach jeder Änderung"
+
+#: templates/edit.modac.tmpl:48
+msgid "value='Cancel' accesskey='c'"
+msgstr "value='Abbrechen' accesskey='c'"
+
+#: templates/preview.modac.tmpl:19
+msgid "value='Discard' accesskey='d'"
+msgstr "value='Verwerfen' accesskey='d'"
+
+#: templates/edit.modac.tmpl:46
+msgid "value='Preview' accesskey='p'"
+msgstr "value='Vorschau' accesskey='p'"
+
+#: templates/edit.modac.tmpl:42
+msgid "value='Quiet save' accesskey='q'"
+msgstr "value='Stilles Speichern' accesskey='q'"
+
+#: templates/edit.modac.tmpl:44
+msgid "value='Save and Continue' accesskey='k'"
+msgstr "value='Zwischenspeichern' accesskey='z'"
+
+#: templates/edit.modac.tmpl:40
+msgid "value='Save' accesskey='s'"
+msgstr "value='Speichern' accesskey='s'"
+
+#: templates/attachtables.modac.tmpl:39 templates/oopshistory.modac.tmpl:54
+msgid "view"
+msgstr "ansehen"
+
+#: templates/validate.modac.tmpl:44
+msgid "why you are being asked to confirm"
+msgstr "warum Sie zur Bestätigung aufgefordert werden"
+

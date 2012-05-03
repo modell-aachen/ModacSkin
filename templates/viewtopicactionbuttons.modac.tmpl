@@ -12,7 +12,7 @@
 %TMPL:DEF{"modacEditLATEST_ACTIVE"}%<div class="modacActionButtonACTIVE"><span class="foswikiRequiresChangePermission"><a href='%SCRIPTURL{"edit"}%/%BASEWEB%/%BASETOPIC%?t=%GMTIME{"$epoch"}%%TMPL:P{"url_param_editaction"}%%IF{"context CKEditorPluginEnabled" then="" else=";nowysiwyg=1"}%' rel='nofollow' %MAKETEXT{"title='Edit this topic' accesskey='e'>&Edit"}%</a></span></div>%TMPL:END%
 %TMPL:DEF{"modacEditLATEST_INACTIVE"}%<span class="foswikiRequiresChangePermission"><a href='%SCRIPTURL{"edit"}%/%BASEWEB%/%BASETOPIC%?t=%GMTIME{"$epoch"}%%TMPL:P{"url_param_editaction"}%%IF{"context CKEditorPluginEnabled" then="" else=";nowysiwyg=1"}%' rel='nofollow' %MAKETEXT{"title='Edit this topic' accesskey='e'>&Edit"}%</a></span>%TMPL:END%
 
-%TMPL:DEF{"modacAttach"}% %IF{"context attach" then="$percntTMPL:P{modacAttachACTIVE}$percnt" else="$percntTMPL:P{modacAttachINACTIVE}$percnt"}%%TMPL:END%
+%TMPL:DEF{"modacAttach"}%%IF{"$WORKFLOWEDITPERM" then="$percentIF{$quotcontext attach$quot then=$quot$dollarpercntTMPL:P{modacAttachACTIVE}$dollarpercnt$quot else=$quot$dollarpercntTMPL:P{modacAttachINACTIVE}$dollarpercnt$quot}$percent"}%%TMPL:END%
 %TMPL:DEF{"modacAttachACTIVE"}%<div class="modacActionButtonACTIVE"><span class="foswikiRequiresChangePermission"><a href='%SCRIPTURLPATH{"attach"}%/%BASEWEB%/%BASETOPIC%' rel='nofollow' %MAKETEXT{"title='Attach an image or document to this topic' accesskey='a'>&Attach"}%</a></span></div>%TMPL:END%
 %TMPL:DEF{"modacAttachINACTIVE"}%<span class="foswikiRequiresChangePermission"><a href='%SCRIPTURLPATH{"attach"}%/%BASEWEB%/%BASETOPIC%' rel='nofollow' %MAKETEXT{"title='Attach an image or document to this topic' accesskey='a'>&Attach"}%</a></span>%TMPL:END%
 
@@ -41,20 +41,20 @@
 %TMPL:DEF{"talktopicnosuffix"}%%CALC{"$REPLACE(%TOPIC%,$EVAL(1+$LENGTH(%TOPIC%)-$LENGTH(%TMPL:P{talktopic}%)),$LENGTH(%TMPL:P{talktopic}%))"}%%TMPL:END%
 
 %{ Link zum freigegebenen Stand je nach aktivem Bearbeitungsstand ausgeben }%
-%TMPL:DEF{viewtopicactionbuttonactive}%%IF{"$TOPIC ~'*%TMPL:P{talktopic}%'" then="<a href='$percentSCRIPTURLPATH{$quotview$quot}$percent/$percentWEB$percent/$dollarpercentTMPL:P{talktopicnosuffix}$dollarpercent' rel='nofollow' $percentMAKETEXT{title='$percentGETWORKFLOWROW{stategroup}$percent' >$percentGETWORKFLOWROW{stategroup}$percent}$percent</a>" else="<a><strike>%MAKETEXT{"%GETWORKFLOWROW{stategroup}%"}%</strike></a>"}%%TMPL:END%
-%TMPL:DEF{viewtopicactionbuttoninactive}%<div class="modacActionButtonACTIVE"><a href='%SCRIPTURLPATH{"view"}%/%WEB%/%TOPIC%' rel='nofollow' %MAKETEXT{"title='%GETWORKFLOWROW{stategroup}%' >%GETWORKFLOWROW{stategroup}%"}%</a></div>%TMPL:END%
+%TMPL:DEF{viewtopicactionbuttonactive}%%IF{"$TOPIC ~'*%TMPL:P{talktopic}%'" then="<a href='$percentSCRIPTURLPATH{$quotview$quot}$percent/$percentWEB$percent/$dollarpercentTMPL:P{talktopicnosuffix}$dollarpercent' rel='nofollow' title='$percentMAKETEXT{$percentGETWORKFLOWROW{stategroup}$percent}$percent' >$percentMAKETEXT{$percentGETWORKFLOWROW{stategroup}$percent}$percent</a>" else="<a><strike>%MAKETEXT{"%GETWORKFLOWROW{stategroup}%"}%</strike></a>"}%%TMPL:END%
+%TMPL:DEF{viewtopicactionbuttoninactive}%<div class="modacActionButtonACTIVE"><a href='%SCRIPTURLPATH{"view"}%/%WEB%/%TOPIC%' rel='nofollow' title='%MAKETEXT{%GETWORKFLOWROW{stategroup}%}%' >%MAKETEXT{%GETWORKFLOWROW{stategroup}%}%</a></div>%TMPL:END%
 
 %{ Diskussionsstand je nach Bearbeitungsstand ausgeben }%
 %TMPL:DEF{"talktopicactionbutton"}%%IF{"$'GETWORKFLOWROW{istdiskussion}'=1" then="$percntTMPL:P{talktopicactionviewactive}$percnt" else="%TMPL:P{talktopicactionviewinactive}%"}%%TMPL:END%
 
 %{ Anzeige im Diskussionsstand Alex: HIER MUSS NEN TAG HINZUKOMMEN}%
-%TMPL:DEF{"talktopicactionviewactive"}%<div class="modacActionButtonACTIVE"><a href='%SCRIPTURLPATH{"view"}%/%WEB%/%TOPIC%' rel='nofollow' %MAKETEXT{"title='Discussion about Improvements' >%GETWORKFLOWROW{"discussionlabel"}%"}%</a></div>%TMPL:END%
+%TMPL:DEF{"talktopicactionviewactive"}%<div class="modacActionButtonACTIVE"><a href='%SCRIPTURLPATH{"view"}%/%WEB%/%TOPIC%' rel='nofollow' title='%MAKETEXT{"Discussion about Improvements"}%' >%MAKETEXT{%GETWORKFLOWROW{"discussionlabel"}%}%</a></div>%TMPL:END%
 
 %{ Anzeige im freigegebenen Stand }%
 %TMPL:DEF{"talktopicactionviewinactive"}%%IF{"istopic '%WEB%.%TOPIC%%TMPL:P{talktopic}%'" then="$percntTMPL:P{talktopicactionviewinactivebearbeiten}$percnt" else="$percntTMPL:P{talktopicactionviewinactiveneu}$percnt"}%%TMPL:END%
 
 %{ Diskussionsstand bearbeiten }%
-%TMPL:DEF{"talktopicactionviewinactivebearbeiten"}%<a href='%SCRIPTURLPATH{"view"}%/%WEB%/%TOPIC%%TMPL:P{talktopic}%' rel='nofollow' %MAKETEXT{"title='Discussion about Improvements' >%GETWORKFLOWROW{"discussionlabel"}%"}%</a>%TMPL:END%
+%TMPL:DEF{"talktopicactionviewinactivebearbeiten"}%<a href='%SCRIPTURLPATH{"view"}%/%WEB%/%TOPIC%%TMPL:P{talktopic}%' rel='nofollow' title='%MAKETEXT{"Discussion about Improvements"}%' >%MAKETEXT{%GETWORKFLOWROW{"discussionlabel"}%}%</a>%TMPL:END%
 
 %{ Diskussionsstand neu erstellen }%
 %TMPL:DEF{"talktopicactionviewinactiveneu"}%%WORKFLOWFORK{newnames="%WEB%.%TOPIC%%TMPL:P{talktopic}%", label="Neue Diskussion starten", lockdown="off"}%%TMPL:END%

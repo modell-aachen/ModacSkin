@@ -300,7 +300,11 @@ html>body #modacLogoIE {
 }
 #modacSidebar ul {
 	list-style-type: none;	
-	margin-left: -1em;
+	padding-left: 1em;
+	margin-left: 0;
+}
+#modacSidebarIE ul {
+	padding-left: 2em;	
 }
 .modacSidebarTwisty {
 	background-image:url("ModacSkinLogos/portal-break.png");
@@ -310,7 +314,7 @@ html>body #modacLogoIE {
 }
 #modacSidebar .modacSidebarTwisty ul {
 	margin-top: 0em;
-	margin-left: -2em;	
+
 }
 /* -------------------------- modacTabs ----------------------------*/
 #modacActionButtonsWrapper  {
@@ -335,6 +339,7 @@ html>body #modacLogoIE {
 	float: right;
 }
 .modacTabs ul {
+	margin-left: 0;
 	padding: 0;
 }
 .modacTabs ul li {
@@ -364,11 +369,58 @@ html>body #modacLogoIE {
 #modacSearchBox {
 	margin: 0.5em 0.7em 0 0.7em;
 }
-/* -------------------------- modacTabs ----------------------------*/
+/* -------------------------- /modacTabs ----------------------------*/
 
-/*-------- MA_table --------*/
+/* -------------------------- Modac Tables ----------------------------*/
 
+/*-------- Modac_Standard = MA_table --------*/
+.Modac_Standard {
+	margin: 1em 0;
+	background: #f9f9f9;
+	border-collapse: collapse;
+	empty-cells:show;
+ }
+.Modac_Standard td {
+	border: 1px #AAA solid;
+	padding-left: 3px;
+	padding-right: 3px;
+}
+.Modac_Standard tr:first-child { 
+	text-align: center; 
+	font-weight: bold; 
+	color: #f9f9f9; 
+	background: #003c89; 
+ }
+/*-------- /Modac_Standard = MA_table --------*/
 
+/*-------- Modac_Standard_Ohne --------*/
+.Modac_Standard_Ohne {
+	margin: 1em 0;
+	background: #f9f9f9;
+	border-collapse: collapse;
+	empty-cells:show;
+ }
+.Modac_Standard_Ohne td {
+	border: 1px #AAA solid;
+	padding-left: 3px;
+	padding-right: 3px;
+}
+/*-------- /Modac_Standard_Ohne --------*/
+
+/*-------- Modac_Standard_Leer --------*/
+.Modac_Standard_Leer {
+	margin: 1em 0;
+	border-width: 0px;
+	border-collapse: collapse;
+	empty-cells:show;
+ }
+.Modac_Standard_Leer td {
+	padding-left: 3px;
+	padding-right: 3px;
+}
+/*-------- /Modac_Standard_Leer --------*/
+
+/*-------- deprecated: MA_table --------*/
 .MA_table {
   margin: 1em 0;
   background: #f9f9f9;
@@ -376,19 +428,17 @@ html>body #modacLogoIE {
   border-collapse: collapse;
   empty-cells:show;
  }
-
 .MA_table td {
+	border: 1px #AAA solid;
 	padding-left: 3px;
 	padding-right: 3px;
 }
-
 .MA_table tr:first-child { 
 text-align: center; 
 font-weight: bold; 
 color: #f9f9f9; 
 background: #003c89; 
  }
-
 .MA_table_controlling {
   margin: 1em 1em 1em 0;
   background: #f9f9f9;
@@ -396,20 +446,17 @@ background: #003c89;
   border-collapse: collapse;
   empty-cells:show;
 }
-
 .MA_table_controlling tr:first-child {
 text-align: center; 
 font-weight: bold; 
 color: #f9f9f9; 
 background: #003c89; 
  }
-
-
 /*-------- /MA_table --------*/
 
+/* -------------------------- /Modac Tables ----------------------------*/
 
 /*-------- modacHeaderTable --------*/
-
 
 .modacHeaderTable {
   margin: 1em 0;
@@ -426,76 +473,6 @@ border-color: #AAA;
  .modacHeaderTable tr { 
 border-color: #AAA;
  }
- 
- 
- 
-.Rittal_Start {
-  margin: 1em 0 1em 0;
-  border: 1px #AAA solid;
-  border-color: #808080;
-  border-collapse: collapse;
-  empty-cells:show;
-  background-color: white;
- }
- 
-.Rittal_Start tr:first-child { 
-  text-align: center; 
-  font-weight: bold; 
-  color: black; 
-  background: #d9e8ff;
-  height:2.7em;
- }
-
-.Rittal_Start td { 
-  border-color: #808080;
-  padding: .4em;
- }
- 
- .Rittal_Start tr { 
-border-color: #808080;
- }
- 
- 
- 
-.Rittal_Standard {
-  margin: 1em 0 1em 0;
-  border: 1px #AAA solid;
-  border-color: #808080;
-  border-collapse: collapse;
-  empty-cells:show;
-  background-color: white;
-}
- 
-.Rittal_Standard td,
-.Rittal_Standard th { 
-border-color: #808080;
-padding: .4em;
- }
- 
- .Rittal_Standard tr { 
-border-color: #808080;
- }
-
- 
-.Rittal_Leer {
- }
- 
- .Rittal_Leer tr:first-child { 
-background: none;
-text-align: left; 
-font-weight: normal; 
-color: black; 
-height:2.7em;
- }
-
-.Rittal_Leer td { 
-border-color: #808080;
- }
- 
- .Rittal_Leer tr { 
-border-color: #808080;
- }
-
 
 /*-------- /modacHeaderTable --------*/
 
@@ -711,7 +688,7 @@ a.foswikiSubmit:visited:active {
 	font-family:arial, verdana, sans-serif;
 	line-height:1.5em; /*S1*/
 	/* change font size here */
-	font-size:103%;
+	font-size:100%;
 	min-width: 1080px;
 }
 .foswikiPage font {
@@ -882,6 +859,7 @@ h3 .foswikiSmall {
 }
 #modacWrapper .foswikiToc ul {
 	list-style:				none;
+	list-style-image:		none; /* Bugfix for IE */
 	padding:				0;
 	margin:					0;
 }
