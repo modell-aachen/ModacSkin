@@ -211,3 +211,58 @@
 </noautolink>
 <!-- -->%TMPL:END%
 %{</verbatim>}%
+
+%{Sprachanpassung}%
+%TMPL:DEF{"solr::format::list::topic"}%<!-- -->
+<div class='solrSearchHit solrTopicHit'>
+  <h3 style='background-image:url(%icon%)' title='%MAKETEXT{%type%}%'>
+    [[%web%.%topic%]]
+    <span class='foswikiGrayText'>
+      %WEBLINK{"%web%"
+        format="<a class='webLink' href='$url'>%MAKETEXT{"in [_1]" args="$title"}%</a>"
+      }%
+    </span>
+  </h3>
+  <div class='solrHilite'>
+    <literal>%hilite%</literal>
+  </div>
+  <div class='solrRevision'>
+    %date%,
+    %IF{"istopic '%USERINFO{"%author%" format="$wikiusername"}%'"
+      then="%USERINFO{"%author%" format="[[$wikiusername][$wikiname]]"}%"
+      else="%USERINFO{"%author%" format="<nop>$wikiname"}%"
+    }%
+  </div>
+</div>
+<!-- -->%TMPL:END%
+
+%TMPL:DEF{"solr::format::list::attachment"}%<!-- -->
+<div class='solrSearchHit solrAttachmentHit'>
+  <h3 style='background-image:url(%icon%)' title='%MAKETEXT{%type%}%'>
+    [[%url%][%name%]]
+    <span class='foswikiGrayText'>%MAKETEXT{"in [_1]" args="[[%web%.%topic%]]"}%</span>
+    %IF{"'%comment%'!=''" then="<div class='foswikiGrayText'>%comment%</div>" else="<!-- -->"}%
+  </h3>
+  <div class='solrHilite'>
+    <literal>%hilite%</literal>
+  </div>
+  <div class='solrRevision'>
+    %date%, %USERINFO{"%author%" format="[[$wikiusername][$wikiname]]"}%
+  </div>
+</div>
+<!-- -->%TMPL:END%
+
+%TMPL:DEF{"solr::format::list::comment"}%<!-- -->
+<div class='solrSearchHit solrCommentHot'>
+  <h3 style='background-image:url(%icon%)' type='%MAKETEXT{%type%}%'>
+    [[%url%][%title%]]
+    <span class='foswikiGrayText'>%MAKETEXT{"in [_1]" args="[[%web%.%topic%]]"}%</span>
+  </h3>
+  <div class='solrHilite'>
+    <literal>%hilite%</literal>
+  </div>
+  <div class='solrRevision'>
+    %date%, %USERINFO{"%author%" format="[[$wikiusername][$wikiname]]"}%
+  </div>
+</div>
+<!-- -->%TMPL:END%
