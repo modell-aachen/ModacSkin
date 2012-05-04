@@ -344,6 +344,14 @@ msgstr "Links auf %1 in allen Bereichen"
 msgid "Cancel"
 msgstr "Abbrechen"
 
+#: template/viewprint.modac.template
+msgid "This printout is a copy and not subject to updating service.<br />"
+"Before use, the respective user has to make sure that the copy is up to date."
+"<br />Print date:"
+msgstr "Dieser Ausdruck ist eine Kopie und unterliegt nicht dem"
+" Änderungsdienst.<br>Der jeweilige Benutzer hat sich vor Gebrauch von "
+"der Aktualität der Kopie zu vergewissern.<br />Druckdatum:"
+
 #: templates/edit.modac.tmpl:48
 msgid "Cancel editing and discard changes"
 msgstr "Editieren abbrechen und Änderungen verwerfen"
