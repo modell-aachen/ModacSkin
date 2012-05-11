@@ -25,3 +25,6 @@ These words are often mentioned in workflows and might slip into a %MAKE%NOP%TEX
 ---+++ TODO: Move to KVPPlugin
 %MAKETEXT{"title='Discussion about Improvements' >Start Discussion"}%
 %MAKETEXT{"Change status"}%
+
+---+++ WebCreateNewTopic (include)
+%MAKETEXT{"Create this topic"}%

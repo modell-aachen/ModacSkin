@@ -495,6 +495,10 @@ msgstr "Unterschied:"
 msgid "Discussion"
 msgstr "Diskussion"
 
+#: data/System/ModacSkinCommonWords.txt:8
+msgid "Create this topic"
+msgstr "Diese Seite anlegen"
+
 #: templates/viewtopicactionbuttons.modac.tmpl:51
 #: templates/viewtopicactionbuttons.modac.tmpl:57
 msgid "Discussion about Improvements"
