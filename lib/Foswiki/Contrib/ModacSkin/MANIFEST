@@ -16,7 +16,6 @@ data/System/ModacSkinCommonWords.txt 0644
 data/System/SuckerfishDropdown.txt 0644
 data/System/SuckerfishDropdownLEFT.txt 0644
 lib/Foswiki/Contrib/ModacSkin.pm 0644
-lib/Foswiki/Contrib/ModacSkin/build.linux.pl 0644
 locale/ModacSkin/de.po 0644
 pub/System/CKEditorPlugin/ckeditor/images/bullet.gif 0644
 pub/System/CKEditorPlugin/ckeditor/modacContents.css 0644
