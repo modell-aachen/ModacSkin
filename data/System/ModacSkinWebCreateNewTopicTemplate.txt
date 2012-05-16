@@ -1,112 +1,263 @@
-%META:TOPICPARENT{name="PatternSkin"}%
+%META:TOPICINFO{author="BaseUserMapping_999" comment="autosave" date="1337077586" format="1.1" version="1"}%
+%{<verbatim class="tml">}%
 %TMPL:INCLUDE{"WebCreateNewTopic"}%
+%{</verbatim>}%
 
-%TMPL:DEF{"content"}%
+%{<verbatim class="tml">}%
+%TMPL:DEF{"title"}%%HTMLTITLE{"%MAKETEXT{"Create a new topic"}%" separator=" %IF{"defined 'HTMLTITLESEP'" then="%HTMLTITLESEP%" else="-"}% "}%%TMPL:END%
+%{</verbatim>}%
 
----+ %MAKETEXT{"Create New Topic"}%
+%{<verbatim class="tml">}%
+%TMPL:DEF{"breadcrumbstail"}%%TMPL:P{"sep"}%<a href="%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%?template=newtopic" title="%TMPL:P{"NEW_HELP"}%">%MAKETEXT{"Create a new topic"}%</a>%TMPL:END%
+%TMPL:DEF{"topicactions"}%%TMPL:END%
+%TMPL:DEF{"newtopictitle"}%%URLPARAM{"newtopictitle"}%%TMPL:END%
+%TMPL:DEF{"newtopic"}%%URLPARAM{"newtopic"}%%TMPL:END%
+%{</verbatim>}%
 
+%{<verbatim class="tml">}%
+%TMPL:DEF{"dialog"}%<div class="foswikiDialog foswikiFormSteps">
+%TMPL:P{"content"}%
+%TMPL:P{"javascript"}%
+</div>%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim class="tml">}%
+%TMPL:DEF{"content"}%<!-- -->
 %TMPL:P{"createform"}%
+%ADDTOZONE{"head" 
+  requires="NATSKIN"
+  text="<literal>
+<style>
+.natRevision { display:none }
+.natViewBody .natBreadCrumbs {
+  margin-right:0px;
+}
+</style>
+</literal>"
+}%<!-- -->
+<!-- -->%TMPL:END%
+%{</verbatim>}%
 
-%TMPL:END%
+%{<verbatim class="tml">}%
+%TMPL:DEF{"createform"}%<!-- -->
+%TMPL:P{"formstartstep"}%
+%TMPL:P{"formtitlestep"}%
+%TMPL:P{"topictitlestep"}%
+%TMPL:P{"topictemplatestep"}%
+%IF{"context view"
+  then="$percntTMPL:P{\"detailedoptionsstep\"}$percnt"
+  else="$percntTMPL:P{\"hiddenoptionsstep\"}$percnt"
+}%
+%TMPL:P{"formbuttons"}%
+%TMPL:P{"formendstep"}%
+<!-- -->%TMPL:END%
+%{</verbatim>}%
 
-%{"hide page top controls"}%
-%TMPL:DEF{"top"}%%TMPL:END%
-%TMPL:DEF{"formandactions"}%%TMPL:END%
-%TMPL:DEF{"bottomcontent"}%%TMPL:END%
-%TMPL:DEF{"topicactionbuttonsBOTTOM"}%%TMPL:END%
+%{<verbatim class="tml">}%
+%TMPL:DEF{"detailedoptionsstep"}%<!-- -->
+%TWISTY{
+  showlink="%MAKETEXT{"Show advanced options"}%" 
+  hidelink="%MAKETEXT{"Hide advanced options"}%"
+  showimgleft="%TMPL:P{"iconpath:toggle"}%"
+  hideimgleft="%TMPL:P{"iconpath:toggleopen"}%"
+  mode="div"
+}%
+%TMPL:P{"topicnamestep"}%
+%TMPL:P{"topicparentstep"}%
+%ENDTWISTY%
 
-%TMPL:DEF{"webnamestep"}%
-<div class="foswikiFormStep">
----+++ %MAKETEXT{"Choose Web:"}%
-%TMPL:P{"webname"}% <span id="webTopicCreatorFeedback" class="foswikiGrayText"><!--generated name will be put here--></span>
+<!-- -->%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim class="tml">}%
+%TMPL:DEF{"hiddenoptionsstep"}%<!-- -->
+%TMPL:P{"hiddentopicnamestep"}%
+%TMPL:P{"hiddentopicparentstep"}%
+<!-- -->%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim class="tml">}%
+%TMPL:DEF{"formtitlestep"}%<!-- -->
+<h2 class="foswikiDialogTitle jqSimpleModalDraggable">%TMPL:P{"formtitle"}%</h2>
+<!-- -->%TMPL:END%
+%TMPL:DEF{"formtitle"}%%MAKETEXT{"Create a new topic in the [_1] web" args="%WEBLINK{"%BASEWEB%" format="<nop>$title"}%"}%%TMPL:END%
+%{</verbatim>}%
+
+
+%{<verbatim class="tml">}%
+%TMPL:DEF{"formstartstep"}%<!-- -->
+%TMPL:P{"formstart"}%
+<!-- -->%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim class="tml">}%
+%TMPL:DEF{"formendstep"}%<!-- -->
+%TMPL:P{"formend"}%
+<!-- -->%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim class="tml">}%
+%TMPL:DEF{"topictitlestep"}%<!-- -->
+<div class='foswikiFormStep'>
+<h3 >%MAKETEXT{"Title"}%:</h3>
+%TMPL:P{"topictitleinput"}%
 </div>
-%TMPL:END%
+<!-- -->%TMPL:END%
+%{</verbatim>}%
 
-%TMPL:DEF{"topictemplatestep"}%<div class="foswikiFormStep">
----+++ %MAKETEXT{"Use template:"}%
-<p>
-%TMPL:P{"topictemplate"}%
-</p>
-</div>%TMPL:END%
+%{<verbatim class="tml">}%
+%TMPL:DEF{"topicnamestep"}%<!-- -->
+<div class='foswikiFormStep'>
+<h3 >%MAKETEXT{"Name"}%:</h3>
+%TMPL:P{"topicname"}%%TMPL:P{"nonwikiword"}%
+</div>
+<!-- -->%TMPL:END%
+%{</verbatim>}%
 
-%TMPL:DEF{"topicnamestep"}%<div class="foswikiFormStep">
----+++ %MAKETEXT{"Topic name:"}%
-<p>
-%TMPL:P{"topicname"}% <span id="webTopicCreatorFeedback" class="foswikiGrayText"><!--generated name will be put here--></span>
-</p>%TMPL:P{"nonwikiword"}%
-</div>%TMPL:END%
-
-%TMPL:DEF{"topicparentstep"}%<div class="foswikiFormStep">
----+++ %MAKETEXT{"Topic parent:"}%
-<p>
+%{<verbatim class="tml">}%
+%TMPL:DEF{"topicparentstep"}%<!-- -->
+<div class="foswikiFormStep">
+<h3 >%MAKETEXT{"Parent"}%:</h3>
 %TMPL:P{"topicparent"}%
-</p>
-</div>%TMPL:END%
+</div>
+<!-- -->%TMPL:END%
+%{</verbatim>}%
 
-%TMPL:DEF{"topicnowwstep"}%
-<input type="hidden" class="foswikiInputField" name="nonwikiword" id="nonwikiword" value="true">
-%TMPL:END%
+%{<verbatim class="tml">}%
+%TMPL:DEF{"hiddentopicparentstep"}%<!-- -->
+<input type="hidden" name="topicparent" value="%URLPARAM{"topicparent" default="%TOPIC%"}%" />
+<!-- -->%TMPL:END%
+%{</verbatim>}%
 
-%TMPL:DEF{"submitstep"}%<div class="foswikiFormStep foswikiLast">
-<p>
-%TMPL:P{"submit"}%
-</p>
-</div>%TMPL:END%
+%{<verbatim class="tml">}%
+%TMPL:DEF{"hiddentopicnamestep"}%<!-- -->
+<input type="hidden" class="jqWikiWord {source:'#topictitle'}" name="topic" id="topic" value="%TMPL:P{"newtopic"}%"/>
+<!-- -->%TMPL:END%
+%{</verbatim>}%
 
-%TMPL:DEF{"topicparent"}%<select name='topicparent' id='topicparent' class='foswikiSelect'>%IF{"'%URLPARAM{"parenttopic"}%'" then='<option selected="selected">%URLPARAM{"parenttopic"}%</option>'}%%TOPICLIST{" <option $marker value='$topic'>$topic</option>" separator=" " selection="%TOPIC%" web="%URLPARAM{webname}%"}%</select>%TMPL:END%
+%{<verbatim class="tml">}%
+%TMPL:DEF{"topictemplatestep"}%<!-- -->
+<div class='foswikiFormStep'>
+<h3 >%MAKETEXT{"Template"}%:</h3>
+%TMPL:P{"topictemplate"}%
+</div>
+<!-- -->%TMPL:END%
+%{</verbatim>}%
 
-%TMPL:DEF{"topictemplate"}%<select name="templatetopic" id="templatetopic" class="foswikiSelect">%IF{"'%URLPARAM{"templatetopic"}%'" then='<option selected="selected">%URLPARAM{"templatetopic"}%</option>'}%%SEARCH{"name~'*Template'" scope="topic" web="Main" excludetopic="WebTopicEditTemplate,*WebCreateNewTopicTemplate,*ViewTemplate,*_Template,GroupTemplate" type="query" nonoise="on" format="<option value=\"$web.$topic\">%$topic%</option>"}%</select>%SEARCH{"name~'*Template'" scope="topic" web="%BASEWEB%" limit="1" excludetopic="WebTopicEditTemplate,*WebCreateNewTopicTemplate,*ViewTemplate,*_Template,GroupTemplate" type="query" nonoise="on" format=" <span class='foswikiUnvisited'><a id='viewtemplates' href='%SCRIPTURL{view}%/%SYSTEMWEB%/WebTemplateTopics?web=%BASEWEB%'>%MAKETEXT{"View templates"}%</a></span>"}% %TMPL:END%
+%{<verbatim class="tml">}%
+%TMPL:DEF{"formbuttons"}%<!-- -->
+<hr />
+<div class='foswikiFormStep foswikiFormLast foswikiFormButtons'>
+%TMPL:P{"submit"}%%TMPL:P{"cancel"}%%CLEAR%
+</div>
+<!-- -->%TMPL:END%
+%{</verbatim>}%
 
-%TMPL:DEF{"clear"}%<input id="abort" type="button" class="foswikiSubmit" value='%MAKETEXT{"Clear all"}%' onclick='javascript:document.newtopicform.reset();' />%TMPL:END%
+%{<verbatim class="tml">}%
+%TMPL:DEF{"formstart"}%<!-- -->
+<form name="newTopicForm" id="newTopicForm" action="%SCRIPTURLPATH{edit}%/%BASEWEB%/">
+<input type="hidden" name="t" value="%GMTIME{"$epoch"}%" />
+<input type="hidden" name="onlynewtopic" value="on" />
+<!-- -->%TMPL:END%
+%{</verbatim>}%
 
-%TMPL:DEF{"createform"}%%TMPL:P{"formstartstep"}% <div class="foswikiFormSteps"> %TMPL:P{"webnamestep"}% %TMPL:P{"topictemplatestep"}% %TMPL:P{"topicparentstep"}% %TMPL:P{"topicnamestep"}%%TMPL:P{"submitstep"}% %TMPL:P{"topicnowwstep"}% </div> %TMPL:P{"formendstep"}% %TMPL:END%
 
-%TMPL:DEF{"script:topictemplate"}%
-%TMPL:P{"JavascriptFiles/foswikiStringUnicodeChars"}%
-%TMPL:P{"LIBJS" id="JavascriptFiles/foswikiWindow" requires="JQUERYPLUGIN::FOSWIKI"}%
-%TMPL:P{"LIBJS" id="PatternSkin/webtopiccreator" requires="JavascriptFiles/foswikiString"}%
-%ADDTOZONE{"script"
- tag="PatternSkinWebCreateNewTopicTemplate.txt"
- text="
-<script type=\"text/javascript\">
-//<![CDATA[
-function openTemplateWindow () {
-    var window = foswiki.Window.openPopup(
-        '$percentSCRIPTURL{view}$percent/',
-            {
-                topic:'WebTemplateTopics',
-                web:'$percentSYSTEMWEB$percent',
-                template:'viewplain',
-                attributes:'resizable=1,scrollbars=1,status=1,toolbar=1',
-                urlparams:'web=$percentBASEWEB$percent'
-            }
-        );
-    return false;
-}
-function getQueryUrl() {
-	return '$percentSCRIPTURLPATH{view}$percent/$percentBASEWEB$percent/$percentBASETOPIC$percent?$percentQUERYSTRING$percent;pickparent=1'
-}
-/* Localized texts */
-var TEXT_FEEDBACK_HEADER = '$percentMAKETEXT{Topic will be named: }$percent';
-/* Url params */
-var URL_PICK_PARENT = '$percentURLPARAM{pickparent}$percent';
-var URL_TEMPLATE = '$percentURLPARAM{template}$percent';
-//]]>
-</script>" requires="JavascriptFiles/foswikiWindow"}%%TMPL:END%
+%{<verbatim class="tml">}%
+%TMPL:DEF{"topictitleinput"}%<!-- -->
+<input type="text" class="foswikiInputField jqFocus" name="TopicTitle" id="topictitle" size="40" value="%TMPL:P{"newtopictitle"}%" style="width:98%" />
+<div class="foswikiFormDescription">
+%MAKETEXT{"Free form topic title text. The actual topic _name_ will be derived from the title automatically."}%
+</div>
+<!--//topictitleinput -->%TMPL:END%
+%{</verbatim>}%
 
-%TMPL:DEF{"formstartstep"}%%TMPL:P{"formstart"}%
-<div class="foswikiFormSteps">%TMPL:END%
+%{<verbatim class="tml">}%
+%TMPL:DEF{"topicname"}%<!-- -->
+<input type="text" class="foswikiInputField jqWikiWord {source:'#topictitle'}" name="topic" id="topic" size="60" value="%TMPL:P{"newtopic"}%" />
+<div class="foswikiFormDescription">
+%MAKETEXT{"Topic name the new page is associated with, preferably a <nop>WikiWord."}%
+</div>
+<!--//topicname -->%TMPL:END%
+%{</verbatim>}%
 
-%TMPL:DEF{"formendstep"}%</div>
-%TMPL:P{"formend"}%%TMPL:END%
+%{<verbatim class="tml">}%
+%TMPL:DEF{"topicparent"}%<!-- -->
+%INCLUDE{
+  "%SYSTEMWEB%.JQueryAjaxHelper"
+  section="topicselector"
+  INPUT_NAME="topicparent"
+  INPUT_VALUE="%URLPARAM{"topicparent" default="%TOPIC%"}%"
+}%
+<div class="foswikiFormDescription">
+%MAKETEXT{"Topic name that the newly created topic will be a child of."}%
+</div>
+<!-- -->%TMPL:END%
+%{</verbatim>}%
 
-%TMPL:DEF{"titlestep"}%<div class="foswikiFormStep">
----++ %MAKETEXT{"Create New Topic in [_1] Web" args="<nop>%BASEWEB%"}%
-</div>%TMPL:END%
+%{<verbatim class="tml">}%
+%TMPL:DEF{"topictemplate"}%<!-- -->
+<select name="templatetopic" class="foswikiSelect">
+%IF{"'%URLPARAM{"templatetopic"}%'" 
+  then='<option selected="selected">%URLPARAM{"templatetopic"}%</option>'
+}%<option value="%IF{"istopic '%BASEWEB%.WebTopicEditTemplate'" then="WebTopicEditTemplate"}%">%MAKETEXT{"Default template"}%</option>
+%TMPL:P{context="DBCachePluginEnabled" then="templatesearch::dbcache" else="templatesearch::default"}%
+</select>
+<div class="foswikiFormDescription">
+%MAKETEXT{"Initialize the new topic using a template."}%
+</div>
+<!-- -->%TMPL:END%
+%{</verbatim>}%
 
-%{ XXX Das muss Customizeable sein! }%
-%TMPL:DEF{"webname"}%<select marker="selected" name="webname" id="webname" class="foswikiSelect">
-%IF{"'%URLPARAM{"webname"}%'" then='<option selected="selected">%URLPARAM{"webname"}%</option>'}%
-%SEARCH{ "%HOMETOPIC%" scope="topic" web="all,-Trash,-System,-TWiki,-Sandbox,-Main" topic="%HOMETOPIC%" format="<option $marker value=\"$web\">$web - %$web%</option>" separator=" " }%</select>
-%TMPL:END%
+%{<verbatim class="tml">}%
+%TMPL:DEF{"templatesearch::default"}%%SEARCH{
+  "name~'*Template'" 
+  scope="topic" 
+  web="%BASEWEB%" 
+  excludetopic="*EditTemplate,*WebCreateNewTopicTemplate,*ViewTemplate" 
+  type="query" 
+  nonoise="on" 
+  format="<option value=\"$web.$topic\">$topic</option>"
+}%%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim class="tml">}%
+%TMPL:DEF{"templatesearch::dbcache"}%%DBQUERY{
+  "topic=~'.*Template$'"
+  web="%BASEWEB%"
+  exclude="^.*(Edit|View|WebCreateNewTopic)Template$"
+  format="<option value=\"$web.$topic\">$topic</option>"
+}%%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim class="tml">}%
+%TMPL:DEF{"submit"}%<!-- -->
+%BUTTON{"%MAKETEXT{"Submit"}%" type="submit" icon="tick" class="jqSimpleModalOK"}%
+<!-- -->%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim class="tml">}%
+%TMPL:DEF{"cancel"}%<!-- -->
+%BUTTON{"%MAKETEXT{"Cancel"}%" 
+  class="jqSimpleModalCancel" 
+  icon="cross" 
+  %IF{"context view"
+    then="target=\"%URLPARAM{"origurl" default="%BASEWEB%.%BASETOPIC%"}%\""
+  }%
+}%
+<!-- -->%TMPL:END%
+%{</verbatim>}%
+
+
+%{<verbatim class="tml">}%
+%TMPL:DEF{"formend"}%</form>%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim class="tml">}%
+%TMPL:DEF{"javascript"}%<!-- -->
+%TMPL:P{"defaultjavascript"}%<!-- -->
+%JQREQUIRE{"wikiword, focus"}%<!-- -->
+<!-- -->%TMPL:END%
+%{</verbatim>}%
+
+
 
