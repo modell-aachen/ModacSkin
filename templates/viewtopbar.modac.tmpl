@@ -1,5 +1,5 @@
 %{ to include a top bar on a page, just include this template in the page template }%
 
-%TMPL:DEF{"topbar"}%<div id="modacTopbarWrapper"><div id="modacTopbar">%IF{"istopic '%WEB%.ModacSkinWebTopBar'" then="$percntINCLUDE{$quot%WEB%.ModacSkinWebTopBar$quot}$percnt" else="$percntINCLUDE{$quot%SYSTEMWEB%.ModacSkinWebTopBarDefault$quot}$percnt"}%</div><!-- /modacTopBar--></div>%TMPL:END%
+%TMPL:DEF{"topbar"}%<div id="modacTopbarWrapper"><div id="modacTopbar">%IF{"istopic '%WEB%.WebTopBar'" then="$percntINCLUDE{$quot%WEB%.WebTopBar$quot}$percnt" else="%IF{"istopic '%CUSTOMIZINGWEB{default="Custom"}%.WebTopBarDefault'" then="$dollarpercntINCLUDE{$dollarquot%CUSTOMIZINGWEB{default="Custom"}%.WebTopBarDefault$dollarquot}$dollarpercnt" else="$dollarpercntINCLUDE{$dollarquot%SYSTEMWEB%.WebTopBarDefault$dollarquot}$dollarpercnt"}%"}%</div><!-- /modacTopBar--></div>%TMPL:END%
 
 %TMPL:DEF{"topbarspacer"}%<div id="patternClearHeaderCenter"></div>%TMPL:END%
