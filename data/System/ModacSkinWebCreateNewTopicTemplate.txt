@@ -204,7 +204,7 @@
 %TMPL:DEF{"templatesearch::dbcache"}%%DBQUERY{
   "topic=~'.*Template$'"
   web="%IF{"defined 'CONTENTTEMPLATEWEB'" then="%CONTENTTEMPLATEWEB%" else="%BASEWEB%"}%"
-  exclude="^.*(Edit|View|WebCreateNewTopic|GroupTemplate)Template$"
+  exclude="^.*(Edit|View|WebCreateNewTopic|Group)Template$"
   format="<option value=\"$web.$topic\">$topic</option>"
 }%%TMPL:END%
 %{</verbatim>}%
