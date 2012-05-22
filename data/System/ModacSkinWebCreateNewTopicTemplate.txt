@@ -1,10 +1,15 @@
-%META:TOPICINFO{author="BaseUserMapping_999" comment="autosave" date="1337077586" format="1.1" version="1"}%
 %{<verbatim class="tml">}%
 %TMPL:INCLUDE{"WebCreateNewTopic"}%
 %{</verbatim>}%
 
+%TMPL:DEF{"script:topictemplate"}%
+%TMPL:P{"JavascriptFiles/foswikiStringUnicodeChars"}%
+%TMPL:P{"LIBJS" id="JavascriptFiles/foswikiWindow" requires="JQUERYPLUGIN::FOSWIKI"}%
+%TMPL:P{"LIBJS" id="PatternSkin/webtopiccreator" requires="JavascriptFiles/foswikiString"}%
+%TMPL:END%
+
 %{<verbatim class="tml">}%
-%TMPL:DEF{"title"}%%HTMLTITLE{"%MAKETEXT{"Create a new topic"}%" separator=" %IF{"defined 'HTMLTITLESEP'" then="%HTMLTITLESEP%" else="-"}% "}%%TMPL:END%
+%TMPL:DEF{"title"}%%HTMLTITLE{"%MAKETEXT{"Create New Topic in [_1] Web" args="<nop>%BASEWEB%"}%" separator=" %IF{"defined 'HTMLTITLESEP'" then="%HTMLTITLESEP%" else="-"}% "}%%TMPL:END%
 %{</verbatim>}%
 
 %{<verbatim class="tml">}%
@@ -24,48 +29,18 @@
 %{<verbatim class="tml">}%
 %TMPL:DEF{"content"}%<!-- -->
 %TMPL:P{"createform"}%
-%ADDTOZONE{"head" 
-  requires="NATSKIN"
-  text="<literal>
-<style>
-.natRevision { display:none }
-.natViewBody .natBreadCrumbs {
-  margin-right:0px;
-}
-</style>
-</literal>"
-}%<!-- -->
 <!-- -->%TMPL:END%
 %{</verbatim>}%
 
 %{<verbatim class="tml">}%
 %TMPL:DEF{"createform"}%<!-- -->
 %TMPL:P{"formstartstep"}%
-%TMPL:P{"formtitlestep"}%
-%TMPL:P{"topictitlestep"}%
 %TMPL:P{"topictemplatestep"}%
-%IF{"context view"
-  then="$percntTMPL:P{\"detailedoptionsstep\"}$percnt"
-  else="$percntTMPL:P{\"hiddenoptionsstep\"}$percnt"
-}%
+%TMPL:P{"topicparentstep"}%
+%TMPL:P{"topicnamestep"}%
+%TMPL:P{"topictitlestep"}%
 %TMPL:P{"formbuttons"}%
 %TMPL:P{"formendstep"}%
-<!-- -->%TMPL:END%
-%{</verbatim>}%
-
-%{<verbatim class="tml">}%
-%TMPL:DEF{"detailedoptionsstep"}%<!-- -->
-%TWISTY{
-  showlink="%MAKETEXT{"Show advanced options"}%" 
-  hidelink="%MAKETEXT{"Hide advanced options"}%"
-  showimgleft="%TMPL:P{"iconpath:toggle"}%"
-  hideimgleft="%TMPL:P{"iconpath:toggleopen"}%"
-  mode="div"
-}%
-%TMPL:P{"topicnamestep"}%
-%TMPL:P{"topicparentstep"}%
-%ENDTWISTY%
-
 <!-- -->%TMPL:END%
 %{</verbatim>}%
 
@@ -78,11 +53,11 @@
 
 %{<verbatim class="tml">}%
 %TMPL:DEF{"formtitlestep"}%<!-- -->
-<h2 class="foswikiDialogTitle jqSimpleModalDraggable">%TMPL:P{"formtitle"}%</h2>
+<h2 class="foswikiDialogTitle jqSimpleModalDraggable">Test</h2>
 <!-- -->%TMPL:END%
-%TMPL:DEF{"formtitle"}%%MAKETEXT{"Create a new topic in the [_1] web" args="%WEBLINK{"%BASEWEB%" format="<nop>$title"}%"}%%TMPL:END%
-%{</verbatim>}%
 
+%TMPL:DEF{"top"}%<h1>%MAKETEXT{"Create New Topic in [_1] Web" args="<nop>%BASEWEB%"}%</h1>%TMPL:END%
+%{</verbatim>}%
 
 %{<verbatim class="tml">}%
 %TMPL:DEF{"formstartstep"}%<!-- -->
@@ -108,7 +83,7 @@
 %{<verbatim class="tml">}%
 %TMPL:DEF{"topicnamestep"}%<!-- -->
 <div class='foswikiFormStep'>
-<h3 >%MAKETEXT{"Name"}%:</h3>
+<h3 >%MAKETEXT{"Topic name:"}%</h3>
 %TMPL:P{"topicname"}%%TMPL:P{"nonwikiword"}%
 </div>
 <!-- -->%TMPL:END%
@@ -117,7 +92,7 @@
 %{<verbatim class="tml">}%
 %TMPL:DEF{"topicparentstep"}%<!-- -->
 <div class="foswikiFormStep">
-<h3 >%MAKETEXT{"Parent"}%:</h3>
+<h3 >%MAKETEXT{"Topic parent:"}%</h3>
 %TMPL:P{"topicparent"}%
 </div>
 <!-- -->%TMPL:END%
@@ -138,7 +113,7 @@
 %{<verbatim class="tml">}%
 %TMPL:DEF{"topictemplatestep"}%<!-- -->
 <div class='foswikiFormStep'>
-<h3 >%MAKETEXT{"Template"}%:</h3>
+<h3 >%MAKETEXT{"Use template:"}%</h3>
 %TMPL:P{"topictemplate"}%
 </div>
 <!-- -->%TMPL:END%
@@ -173,7 +148,7 @@
 
 %{<verbatim class="tml">}%
 %TMPL:DEF{"topicname"}%<!-- -->
-<input type="text" class="foswikiInputField jqWikiWord {source:'#topictitle'}" name="topic" id="topic" size="60" value="%TMPL:P{"newtopic"}%" />
+<input type="text" class="foswikiInputField" name="topic" id="topic" size="60" value="%TMPL:P{"newtopic"}%" />
 <div class="foswikiFormDescription">
 %MAKETEXT{"Topic name the new page is associated with, preferably a <nop>WikiWord."}%
 </div>
@@ -204,7 +179,7 @@
 <select name="templatetopic" class="foswikiSelect">
 %IF{"'%URLPARAM{"templatetopic"}%'" 
   then='<option selected="selected">%URLPARAM{"templatetopic"}%</option>'
-}%<option value="%IF{"istopic '%BASEWEB%.WebTopicEditTemplate'" then="WebTopicEditTemplate"}%">%MAKETEXT{"Default template"}%</option>
+}%
 %TMPL:P{context="DBCachePluginEnabled" then="templatesearch::dbcache" else="templatesearch::default"}%
 </select>
 <div class="foswikiFormDescription">
@@ -217,8 +192,8 @@
 %TMPL:DEF{"templatesearch::default"}%%SEARCH{
   "name~'*Template'" 
   scope="topic" 
-  web="%IF{"defined 'CONTENTTEMPLATEWEB'" then="%CONTENTTEMPLATEWEB%" else="%BASEWEB%"}%"  
-  excludetopic="*EditTemplate,*WebCreateNewTopicTemplate,*ViewTemplate" 
+  web="%IF{"defined 'CONTENTTEMPLATEWEB'" then="%CONTENTTEMPLATEWEB%" else="%BASEWEB%"}%" 
+  excludetopic="*EditTemplate,*WebCreateNewTopicTemplate,*ViewTemplate,GroupTemplate" 
   type="query" 
   nonoise="on" 
   format="<option value=\"$web.$topic\">$topic</option>"
@@ -228,8 +203,8 @@
 %{<verbatim class="tml">}%
 %TMPL:DEF{"templatesearch::dbcache"}%%DBQUERY{
   "topic=~'.*Template$'"
-  web="%IF{"defined 'CONTENTTEMPLATEWEB'" then="%CONTENTTEMPLATEWEB%" else="%BASEWEB%"}%" 
-  exclude="^.*(Edit|View|WebCreateNewTopic)Template$"
+  web="%IF{"defined 'CONTENTTEMPLATEWEB'" then="%CONTENTTEMPLATEWEB%" else="%BASEWEB%"}%"
+  exclude="^.*(Edit|View|WebCreateNewTopic|GroupTemplate)Template$"
   format="<option value=\"$web.$topic\">$topic</option>"
 }%%TMPL:END%
 %{</verbatim>}%
@@ -263,6 +238,5 @@
 %JQREQUIRE{"wikiword, focus"}%<!-- -->
 <!-- -->%TMPL:END%
 %{</verbatim>}%
-
 
 

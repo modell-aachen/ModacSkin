@@ -1342,3 +1342,19 @@ msgstr "ansehen"
 msgid "why you are being asked to confirm"
 msgstr "warum Sie zur Bestätigung aufgefordert werden"
 
+#: data/System/ModacSkinWebCreateNewTopicTemplate.txt
+msgid "Free form topic title text. The actual topic _name_ will be derived from the title automatically."
+msgstr "Tragen Sie hier den Seiten-Titel ein. Der eingegebene Titel wird zur besseren Durchsuchbarkeit genutzt."
+
+#: data/System/ModacSkinWebCreateNewTopicTemplate.txt
+msgid "Topic name the new page is associated with, preferably a <nop>WikiWord."
+msgstr "Tragen Sie hier den Seiten Namen ein. Unter diesem Namen wird die Seite abgespeichert."
+
+#: data/System/ModacSkinWebCreateNewTopicTemplate.txt
+msgid "Topic name that the newly created topic will be a child of."
+msgstr "Mit Hilfe der übergeordneten Seite können Sie eine Seiten-Hierachriche aufbauen."
+
+#: data/System/ModacSkinWebCreateNewTopicTemplate.txt
+msgid "Initialize the new topic using a template"
+msgstr "Die Vorlage definiert das inhaltliche Gerüst der Seite. Nutzen Sie die Vorgaben aus der Vorlage ungedingt!"
+
