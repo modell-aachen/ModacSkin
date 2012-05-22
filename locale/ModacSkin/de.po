@@ -969,7 +969,7 @@ msgstr "Seitenname:"
 
 #: data/System/ModacSkinWebCreateNewTopicTemplate.txt:41
 msgid "Topic parent:"
-msgstr "übergeordnete Seite:"
+msgstr "Übergeordnete Seite:"
 
 #: templates/rdiff.modac.tmpl:17 templates/view.modac.tmpl:67
 msgid "Topic revision:"
@@ -1355,6 +1355,6 @@ msgid "Topic name that the newly created topic will be a child of."
 msgstr "Mit Hilfe der übergeordneten Seite können Sie eine Seiten-Hierachriche aufbauen."
 
 #: data/System/ModacSkinWebCreateNewTopicTemplate.txt
-msgid "Initialize the new topic using a template"
+msgid "Initialize the new topic using a template."
 msgstr "Die Vorlage definiert das inhaltliche Gerüst der Seite. Nutzen Sie die Vorgaben aus der Vorlage ungedingt!"
 
