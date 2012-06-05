@@ -1,0 +1,7 @@
+%TMPL:INCLUDE{"oops"}%
+
+%TMPL:DEF{"bodyclassname"}%modacViewPage modacOopsPage%TMPL:END%
+
+%TMPL:DEF{"content"}%%IF{" '%TMPL:P{"webaction"}%' = '' " then="" else="<h3>%TMPL:P{"webaction"}%</h3>"}%%TMPL:P{"message"}%%TMPL:END%
+
+%TMPL:DEF{"patterntopiccontents"}%<div class="foswikiTopic"> %TMPL:P{"content"}%</div>%TMPL:P{"topicinfo"}%%TMPL:END%

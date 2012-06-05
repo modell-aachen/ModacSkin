@@ -1,0 +1,26 @@
+%TMPL:INCLUDE{"viewtopbar"}%
+%TMPL:INCLUDE{"viewsidebar"}%
+%TMPL:INCLUDE{"viewtopicactionbuttons"}%
+%TMPL:INCLUDE{"changeform"}%
+%TMPL:DEF{"logo"}%%TMPL:END%%{ don't show a logo to make best use of screen estate }%
+
+%TMPL:DEF{"pagetitle"}%%TOPIC% - %MAKETEXT{"Choose a new form for [_1]" args="<nop>%TOPIC%"}%%TMPL:END%
+
+%TMPL:DEF{"bodyclassname"}%modacViewPage modacChangeFormPage%TMPL:END%
+
+%TMPL:DEF{"modacActionButtons"}%%TMPL:P{"modacActionButtonsVIEW"}%%TMPL:END%
+
+%TMPL:DEF{"content"}%%TMPL:P{"notes"}%
+
+%TMPL:P{"formstart"}%<div class="patternBorder">
+<div class="foswikiFormSteps">
+<div class="foswikiFormStep">
+---+++ %MAKETEXT{"Available form templates"}%   
+%FORMLIST%
+</div>
+</div>
+%TEXT% %EDITACTION%
+%TMPL:P{"hiddenformfields"}%
+%TMPL:P{"topicaction"}%
+</div>
+%TMPL:P{"formend"}%%TMPL:END%

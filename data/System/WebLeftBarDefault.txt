@@ -1,0 +1,45 @@
+%META:TOPICINFO{author="BaseUserMapping_333" comment="reprev" date="1335199636" format="1.1" reprev="9" version="9"}%
+<div id="modacSidebarIE">
+   * [[%MAINWEB%.WebHome][%MAKETEXT{"Start"}%]]
+   * [[%MAINWEB%.Aktuelles][%MAKETEXT{"News"}%]]
+   * [[Anleitung.WebHome][%MAKETEXT{"Manual"}%]]
+   * [[%BASEWEB%.WebTopicList][%MAKETEXT{"Index"}%]]
+</div>
+
+<div class="modacSidebarTwisty">
+%TWISTY{ 
+    id="modacSidebarONE" 
+    firststart="hide" 
+    remember="on" 
+	noscript="show"
+    showlink="%MAKETEXT{"Tools"}%" 
+    hidelink="%MAKETEXT{"Tools"}%" 
+	showimgleft="%ICONURLPATH{arrow-right}%"
+	hideimgleft="%ICONURLPATH{arrow-down}%" 
+	linkclass="patternTwistyButton" 
+}% 
+   * [[%SCRIPTURLPATH{"view"}%/%BASEWEB%/WebCreateNewTopic?topicparent=%BASETOPIC%][%MAKETEXT{"Create New Topic"}%]]
+   * [[%BASEWEB%.WebChanges][%MAKETEXT{"Recently changed"}%]]
+   * [[%MAINWEB%.Templates][%MAKETEXT{"Templates"}%]]
+   * [[%SCRIPTURLPATH{"view"}%/%INCLUDINGWEB%/%INCLUDINGTOPIC%?cover=print;contenttype=application/pdf][%MAKETEXT{"PDF-Print"}%]]
+%ENDTWISTY% 
+</div>
+
+
+<div class="modacSidebarTwisty">
+%TWISTY{ 
+    id="modacSidebarTWO" 
+    firststart="hide" 
+    remember="on" 
+	noscript="show"
+    showlink="%MAKETEXT{"Webs"}%" 
+    hidelink="%MAKETEXT{"Webs"}%" 
+	showimgleft="%ICONURLPATH{arrow-right}%"
+	hideimgleft="%ICONURLPATH{arrow-down}%" 
+	linkclass="patternTwistyButton" 
+}% 
+<div id="modacSidebarTwisty_webs">
+%IF{ "context FlexWebListPluginEnabled" then="$percntINCLUDE{ $quot$percntSYSTEMWEB$percnt.ModacSideBarFlexWebList$quot }$percnt" else="$percntINCLUDE{$quot$percntSYSTEMWEB$percnt.ModacSideBarWebList$quot }$percnt" }%
+</div>
+%ENDTWISTY% 
+</div>
