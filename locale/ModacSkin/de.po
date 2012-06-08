@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Foswiki $Id\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2012-06-06 15:03+0200\n"
+"PO-Revision-Date: 2012-06-08 13:53+0200\n"
 "Last-Translator: Modell Aachen\n"
 "Language-Team: Foswiki German Translation Team <none>\n"
 "Language: de\n"
@@ -1343,11 +1343,11 @@ msgid "why you are being asked to confirm"
 msgstr "warum Sie zur Bestätigung aufgefordert werden"
 
 #: data/System/ModacSkinWebCreateNewTopicTemplate.txt
-msgid "Free form topic title text. The actual topic _name_ will be derived from the title automatically."
+msgid "Free form topic title text."
 msgstr "Der Titel der Seite kann frei vergeben werden."
 
 #: data/System/ModacSkinWebCreateNewTopicTemplate.txt
-msgid "Topic name the new page is associated with, preferably a <nop>WikiWord."
+msgid "Please enter the article name without special characters."
 msgstr "Den Seitennamen bitte ohne Sonderzeichen eingeben."
 
 #: data/System/ModacSkinWebCreateNewTopicTemplate.txt

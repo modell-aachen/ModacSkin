@@ -143,7 +143,7 @@
 %TMPL:DEF{"topictitleinput"}%<!-- -->
 <input type="text" class="foswikiInputField jqFocus" name="TopicTitle" id="topictitle" size="40" value="%TMPL:P{"newtopictitle"}%" style="width:98%" />
 <div class="foswikiFormDescription">
-%MAKETEXT{"Free form topic title text. The actual topic _name_ will be derived from the title automatically."}%
+%MAKETEXT{"Free form topic title text."}%
 </div>
 <!--//topictitleinput -->%TMPL:END%
 %{</verbatim>}%
@@ -152,7 +152,7 @@
 %TMPL:DEF{"topicname"}%<!-- -->
 <input type="text" class="foswikiInputField" name="topic" id="topic" size="60" value="%TMPL:P{"newtopic"}%" />
 <div class="foswikiFormDescription">
-%MAKETEXT{"Topic name the new page is associated with, preferably a <nop>WikiWord."}%
+%MAKETEXT{"Please enter the topic name without special characters."}%
 </div>
 <!--//topicname -->%TMPL:END%
 %{</verbatim>}%
