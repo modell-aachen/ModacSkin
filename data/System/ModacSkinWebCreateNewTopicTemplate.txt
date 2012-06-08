@@ -60,13 +60,14 @@
 %{</verbatim>}%
 
 %{<verbatim class="tml">}%
-%TMPL:DEF{"formstartstep"}%<!-- -->
+%TMPL:DEF{"formstartstep"}%
 %TMPL:P{"formstart"}%
-<!-- -->%TMPL:END%
+<div class="foswikiFormSteps">
+%TMPL:END%
 %{</verbatim>}%
 
 %{<verbatim class="tml">}%
-%TMPL:DEF{"formendstep"}%<!-- -->
+%TMPL:DEF{"formendstep"}%</div>
 %TMPL:P{"formend"}%
 <!-- -->%TMPL:END%
 %{</verbatim>}%
@@ -84,7 +85,8 @@
 %TMPL:DEF{"topicnamestep"}%<!-- -->
 <div class='foswikiFormStep'>
 <h3 >%MAKETEXT{"Topic name:"}%</h3>
-%TMPL:P{"topicname"}%%TMPL:P{"nonwikiword"}%
+%TMPL:P{"topicname"}%
+<input type="checkbox" id="nonwikiword" name="nonwikiword" checked="checked" style="display: none;" />
 </div>
 <!-- -->%TMPL:END%
 %{</verbatim>}%
@@ -123,7 +125,7 @@
 %TMPL:DEF{"formbuttons"}%<!-- -->
 <hr />
 <div class='foswikiFormStep foswikiFormLast foswikiFormButtons'>
-%TMPL:P{"submit"}%%TMPL:P{"cancel"}%%CLEAR%
+%TMPL:P{"submit"}%
 </div>
 <!-- -->%TMPL:END%
 %{</verbatim>}%
@@ -207,24 +209,6 @@
   exclude="^.*(Edit|View|WebCreateNewTopic|Group)Template$"
   format="<option value=\"$web.$topic\">$topic</option>"
 }%%TMPL:END%
-%{</verbatim>}%
-
-%{<verbatim class="tml">}%
-%TMPL:DEF{"submit"}%<!-- -->
-%BUTTON{"%MAKETEXT{"Submit"}%" type="submit" icon="tick" class="jqSimpleModalOK"}%
-<!-- -->%TMPL:END%
-%{</verbatim>}%
-
-%{<verbatim class="tml">}%
-%TMPL:DEF{"cancel"}%<!-- -->
-%BUTTON{"%MAKETEXT{"Cancel"}%" 
-  class="jqSimpleModalCancel" 
-  icon="cross" 
-  %IF{"context view"
-    then="target=\"%URLPARAM{"origurl" default="%BASEWEB%.%BASETOPIC%"}%\""
-  }%
-}%
-<!-- -->%TMPL:END%
 %{</verbatim>}%
 
 
