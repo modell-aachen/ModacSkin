@@ -11,7 +11,7 @@
 %{<verbatim class="tml">}%
 %TMPL:DEF{"top:toolbarbuttons"}%%TMPL:END%
 %TMPL:DEF{"topicaction"}%%TMPL:END%
-%TMPL:DEF{"modacActionButtonsVIEW"}%%TMPL:END%
+%TMPL:DEF{"modacActionButtonsVIEW"}%%TMPL:P{"modacActionButtonsSYSTEM"}%TMPL:END%
 %{</verbatim>}%
 
 %{<verbatim class="tml">}%
