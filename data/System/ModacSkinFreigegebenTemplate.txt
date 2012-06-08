@@ -1,3 +1,0 @@
-%TMPL:INCLUDE{"view"}%
-
-%TMPL:INCLUDE{"TopExtended"}%
