@@ -2,10 +2,6 @@ data/System/ModacSideBarFlexWebList.txt 0664
 data/System/ModacSideBarWebList.txt 0664
 data/System/ModacSkin.txt 0664
 data/System/ModacSkinCommonWords.txt 0664
-data/System/ModacSkinDiskussionTemplate.txt 0664
-data/System/ModacSkinDiskussionTopExtendedTemplate.txt 0664
-data/System/ModacSkinEntwurfTemplate.txt 0664
-data/System/ModacSkinFreigegebenTemplate.txt 0664
 data/System/ModacSkinLanguageSelector.txt 0664
 data/System/ModacSkinSolrSearchViewTemplate.txt 0664
 data/System/ModacSkinTopExtendedTemplate.txt 0664
