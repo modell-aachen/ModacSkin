@@ -152,7 +152,7 @@
 %TMPL:DEF{"topicname"}%<!-- -->
 <input type="text" class="foswikiInputField" name="topic" id="topic" size="60" value="%TMPL:P{"newtopic"}%" />
 <div class="foswikiFormDescription">
-%MAKETEXT{"Please enter the topic name without special characters."}%
+%MAKETEXT{"Please enter the article name without special characters."}%
 </div>
 <!--//topicname -->%TMPL:END%
 %{</verbatim>}%
