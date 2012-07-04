@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Foswiki $Id\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2012-04-10 22:29+0200\n"
+"PO-Revision-Date: 2012-06-08 15:47+0200\n"
 "Last-Translator: Modell Aachen\n"
 "Language-Team: Foswiki German Translation Team <none>\n"
 "Language: de\n"
@@ -189,7 +189,7 @@ msgstr "Geltungsbereich"
 
 #: data/System/ModacSkinSolrSearchViewTemplate.txt
 msgid "Process State"
-msgstr "Prozess Status"
+msgstr "Prozessstatus"
 
 #: data/System/ModacSkinCommonWords.txt
 msgid "This document is not yet in CIP."
@@ -1343,18 +1343,18 @@ msgid "why you are being asked to confirm"
 msgstr "warum Sie zur Bestätigung aufgefordert werden"
 
 #: data/System/ModacSkinWebCreateNewTopicTemplate.txt
-msgid "Free form topic title text. The actual topic _name_ will be derived from the title automatically."
-msgstr "Tragen Sie hier den Seiten-Titel ein. Der eingegebene Titel wird zur besseren Durchsuchbarkeit genutzt."
+msgid "Free form topic title text."
+msgstr "Der Titel der Seite kann frei vergeben werden."
 
 #: data/System/ModacSkinWebCreateNewTopicTemplate.txt
-msgid "Topic name the new page is associated with, preferably a <nop>WikiWord."
-msgstr "Tragen Sie hier den Seiten Namen ein. Unter diesem Namen wird die Seite abgespeichert."
+msgid "Please enter the article name without special characters."
+msgstr "Den Seitennamen bitte ohne Sonderzeichen eingeben."
 
 #: data/System/ModacSkinWebCreateNewTopicTemplate.txt
 msgid "Topic name that the newly created topic will be a child of."
-msgstr "Mit Hilfe der übergeordneten Seite können Sie eine Seiten-Hierachriche aufbauen."
+msgstr "Mit Hilfe der übergeordneten Seite können Sie eine Seiten-Hierarchie aufbauen."
 
 #: data/System/ModacSkinWebCreateNewTopicTemplate.txt
 msgid "Initialize the new topic using a template."
-msgstr "Die Vorlage definiert das inhaltliche Gerüst der Seite. Nutzen Sie die Vorgaben aus der Vorlage ungedingt!"
+msgstr "Die Vorlage definiert den initialen Inhalt der Seite."
 

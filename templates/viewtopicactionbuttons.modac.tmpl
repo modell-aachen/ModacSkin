@@ -1,13 +1,8 @@
 %TMPL:DEF{"modacTabs"}%<div id="modacActionButtonsWrapper">%TMPL:P{"modacActionButtons"}%<div class="clear"></div></div> %TMPL:END%
 
 %{ --- "modacActionButtons" is defined within the particular scripts e.g. view.modac.tmpl or edt.modac.tmpl and uses either "modacActionButtonsVIEW" or "modacActionButtonsSYSTEM" --- }%
-%TMPL:DEF{"modacActionButtonsVIEW"}%<div id="modacButtonsLEFT" class="modacTabs">%TMPL:P{"talktopicaction"}%</div><div id="modacButtonsRIGHT" class="modacTabs">%TMPL:P{"modacActionButtonsJQMenu"}%</div>%TMPL:END%
-
-%{ --- Alte modacActionButtonsVIEW ohne JQMenuSkin --- }%
-%TMPL:DEF{"modacActionButtonsVIEWALT"}%<div id="modacButtonsLEFT" class="modacTabs">%TMPL:P{"talktopicaction"}%</div><div id="modacButtonsRIGHT" class="sf-menu modacTabs"><ul><li>%TMPL:P{"modacEdit"}%</li><li>%TMPL:P{"modacAttach"}%</li><li>%TMPL:P{"modacRdiff"}%</li><li>%TMPL:P{"modacMore"}%</li><li id="modacSearchBox">%TMPL:P{"SearchBox"}%</li></ul></div>%TMPL:END%
-
-
-%TMPL:DEF{"modacActionButtonsSYSTEM"}%<div id="modacButtonsLEFT" class="modacTabs"><ul><li>%TMPL:P{"modacSystemTab"}%</ul></li></div>%TMPL:END%
+%TMPL:DEF{"modacActionButtonsVIEW"}%<div id="modacButtonsLEFT" class="modacTabs">%TMPL:P{"talktopicaction"}%</div><div id="modacButtonsRIGHT" class="modacTabs"><ul><li>%TMPL:P{"modacEdit"}%</li><li>%TMPL:P{"modacAttach"}%</li><li>%TMPL:P{"modacRdiff"}%</li><li>%TMPL:P{"modacMore"}%</li><li id="modacSearchBox">%TMPL:P{"SearchBox"}%</li></ul></div>%TMPL:END%
+%TMPL:DEF{"modacActionButtonsSYSTEM"}%<div id="modacButtonsLEFT" class="modacTabs"><ul><li>%TMPL:P{"modacSystemTab"}%</li></ul></div><div id="modacButtonsRIGHT" class="modacTabs"><ul><li id="modacSearchBox">%TMPL:P{"SearchBox"}%</li></ul></div>%TMPL:END%
 
 
 %{ --- JQueryMenuSkin Integration --- }%
