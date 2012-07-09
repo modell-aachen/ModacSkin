@@ -37,6 +37,14 @@ Modac skin is a Vector (the skin used for Wikipedia since Mediawiki 1.16) look-a
 | LeftBar | The default LeftBar is defined in "%SYSTEMWEB%.ModacSkinWebLeftBarDefault.txt". To define a web-wide LeftBar, create a topic "ModacSkinWebLeftBar.txt" in the web |
 | TopBar | The default TopBar is defined in "%SYSTEMWEB%.ModacSkinWebTopBarDefault.txt". To define a web-wide TopBar, create a topic "ModacSkinWebTopBar.txt" in the web |
 | BottomBar | The default BottomBar is defined in "%SYSTEMWEB%.ModacSkinWebBottomBarDefault.txt". To define a web-wide BottomBar, create a topic "ModacSkinWebBottomBar.txt" in the web| |
+
+---+++ Content Templates
+
+<verbatim>
+* Set CONTENTTEMPLATEWEB = Prozesse
+* Set CONTENTTEMPLATEFILTER = *ViewTemplate, GroupTemplate
+* Set CONTENTTEMPLATESTUB = System.ModacSkinContentTemplateStub
+</verbatim>
  
 ---++ Installation Instructions
 

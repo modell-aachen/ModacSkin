@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Foswiki $Id\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2012-06-08 15:47+0200\n"
+"PO-Revision-Date: 2012-07-09 16:56+0200\n"
 "Last-Translator: Modell Aachen\n"
 "Language-Team: Foswiki German Translation Team <none>\n"
 "Language: de\n"
@@ -1358,3 +1358,21 @@ msgstr "Mit Hilfe der übergeordneten Seite können Sie eine Seiten-Hierarchie a
 msgid "Initialize the new topic using a template."
 msgstr "Die Vorlage definiert den initialen Inhalt der Seite."
 
+#: data/System/ModacSkinContentTemplatesViewTemplate.txt
+msgid "Content Templates in %1 Web"
+msgstr "Content-Templates im Bereich \"%1\""
+
+#: data/System/ModacSkinContentTemplatesViewTemplate.txt
+msgid "Content templates"
+msgstr "Content-Templates"
+
+#: data/System/ModacSkinContentTemplatesViewTemplate.txt
+msgid "Create new content template..."
+msgstr "Neues Content-Template anlegen..."
+
+#: data/System/ModacSkinContentTemplatesViewTemplate.txt
+msgid "Create new content template"
+msgstr "Neues Content-Template anlegen"
+
+msgid "The following content template are available for newly created topic in the %1 Web:"
+msgstr "Die folgenden Content-Templates stehen als Inhaltsvorlagen für neu angelegte Seite im Bereich '%1' zur Verfügung:"

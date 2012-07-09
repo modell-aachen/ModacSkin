@@ -1,0 +1,5 @@
+<!--
+   * Set VIEW_TEMPLATE = ContentTemplatesView
+   * Set WORKFLOW =
+   * Set ALLOWTOPICCHANGE = AdminUser
+-->
