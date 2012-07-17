@@ -11,7 +11,7 @@ use File::Copy;
 for my $web (@webs) {
 	$web =~ s{\.}{/}g;
 	my $target = $map->($root, "data/$web/WebContentTemplates.txt");
-	next if -f $map->($root, $target);
+	next if -f $target;
 	copy($source, $target);
 	push @msgs, "copying WebContentTemplates topic to $web web";
 }
