@@ -22,7 +22,7 @@
 
 
 
-%TMPL:DEF{"topicactionbuttons"}%%IF{"$WORKFLOWEDITPERM" then="<input type='submit' class='foswikiSubmit' value=' %MAKETEXT{"Delete"}% ' /> %MAKETEXT{"or"}% "}%%TMPL:P{"canceltopicaction"}%%TMPL:END%
+%TMPL:DEF{"topicactionbuttons"}%<input type='submit' class='foswikiSubmit' value=' %MAKETEXT{"Delete"}% ' /> %MAKETEXT{"or"}% %TMPL:P{"canceltopicaction"}%%TMPL:END%
 
 
 %TMPL:DEF{"pagetitle"}%%MAKETEXT{"Delete attachment"}% [[%ATTACHURL%/%ENCODE{"%FILENAME%"}%][%FILENAME%]]%TMPL:END%

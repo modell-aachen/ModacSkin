@@ -53,8 +53,6 @@ div.Princefooter {
 span.Seitenzahl {
    content: "%MAKETEXT{Seite}% " counter(page) " %MAKETEXT{von}% " counter(pages)
 }
-  %IF{"'ENTWURF'='%WORKFLOWSTATE%'" then="background-image: url(/srv/www/htdocs/pub/System/GenPDFPisaPlugin/entwurf-ohneTransparens.png);"}%
-  %IF{"'DISKUSSIONSSTAND'='%WORKFLOWSTATE%'" then="background-image: url(/srv/www/htdocs/pub/System/GenPDFPisaPlugin/diskussion.png);"}%
 </style>
 %TMPL:END%
 

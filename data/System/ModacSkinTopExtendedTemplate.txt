@@ -1,4 +1,4 @@
-%TMPL:DEF{"top_erweitert"}%
+%TMPL:DEF{"top_erweitert_standard"}%
 <div class='patternTop'>
 <table class='modacHeaderTable' border='1' cellpadding='0' cellspacing='0' style='width: 100%; height: 24px; '>
 	<tbody>
@@ -14,23 +14,13 @@
 		</tr>
 		<tr height: 24px;>
 			<td colspan='3' style='text-align: center;'>
-				<strong><font size='3'>%META{"formfield" name="Titel"}%</font></strong></td>
+				<strong><font size='3'>%META{"formfield" name="TopicTitle"}%</font></strong></td>
 			<td colspan='2' style='text-align: center;'>
 				Geltungsbereich:<strong><br>%META{"formfield" name="Geltungsbereich"}%</strong></td>
-		</tr>
-		<tr height: 24px;>
-			<td style='text-align: center;'>
-				Ersteller:<strong><br>%IF{"defined rev" then="$percentRED$percentalte Revision$percentENDCOLOR$percent<!--"}%%IF{"$'WORKFLOWMETA{LASTPROCESSOR_DISKUSSIONSSTAND}'" then="$percentWORKFLOWMETA{$quotLASTPROCESSOR_DISKUSSIONSSTAND$quot}$percent" else="$percentWORKFLOWMETA{$quotLASTPROCESSOR_ENTWURF$quot}$percent"}%%IF{"defined rev" then="-->"}%</strong></td>
-			<td style='text-align: center;'>
-				Freigegeben durch:<strong><br>%META{"formfield" name="Freigegeben_durch"}%</strong></td>
-			<td style='text-align: center;'>
-				Freigabe Datum:<strong><br>%IF{"defined rev" else="$percentWORKFLOWMETA{$quotLASTTIME_FREIGEGEBEN$quot}$percent" then="$percentRED$percentalte Revision$percentENDCOLOR$percent"}%</strong></td>
-			<td style='text-align: center;'>
-				Gepr&uuml;ft durch:<strong><br>%IF{"$'WORKFLOWMETA{LASTPROCESSOR_FORMALE_PRUEFUNG}'" then="$percentWORKFLOWMETA{$quotLASTPROCESSOR_FORMALE_PRUEFUNG$quot}$percent" else="$percentWORKFLOWMETA{$quotLASTPROCESSOR_FORMALE_PRUEFUNG_ENTWURF$quot}$percent"}%</strong></td>
-			<td style='text-align: center;'>
-				<strong></strong></td>
 		</tr>
 	</tbody>
 </table>
 <span class='patternHomePath'>%TMPL:P{"breadcrumb"}%</span></div><!--/patternTop-->
 %TMPL:END%
+
+%TMPL:DEF{"top_erweitert"}%%TMPL:P{"top_erweitert_standard"}%%TMPL:END%
