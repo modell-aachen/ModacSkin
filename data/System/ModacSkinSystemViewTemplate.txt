@@ -1,0 +1,2 @@
+%TMPL:INCLUDE{"view"}%
+%TMPL:DEF{"modacActionButtons"}%%TMPL:P{"modacActionButtonsSYSTEM"}%%TMPL:END%

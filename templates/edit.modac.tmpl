@@ -17,7 +17,9 @@
 
 %TMPL:DEF{"modacActionButtons"}%%TMPL:P{"modacActionButtonsVIEW"}%%TMPL:END%
 
-%TMPL:DEF{"pagetitle"}%%TOPIC%  <span class="foswikiGrayText">%IF{"defined rev" then=" %MAKETEXT{"(revision [_1])" args="%URLPARAM{"rev"}%"}%" else=""}%</span> %TMPL:END%
+%TMPL:DEF{"pagetitle"}%
+%JQREQUIRE{"simplemodal"}%
+%TOPIC%  <span class="foswikiGrayText">%IF{"defined rev" then=" %MAKETEXT{"(revision [_1])" args="%URLPARAM{"rev"}%"}%" else=""}%</span> %TMPL:END%
 
 %TMPL:DEF{"formstart"}%<div class="foswikiFormHolder" id="formHolder">
 <form name="main" action="%SCRIPTURLPATH{"save"}%/%WEB%/%TOPIC%" method="post">%TMPL:END%

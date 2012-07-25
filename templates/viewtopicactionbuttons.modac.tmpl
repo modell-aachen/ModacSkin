@@ -2,7 +2,38 @@
 
 %{ --- "modacActionButtons" is defined within the particular scripts e.g. view.modac.tmpl or edt.modac.tmpl and uses either "modacActionButtonsVIEW" or "modacActionButtonsSYSTEM" --- }%
 %TMPL:DEF{"modacActionButtonsVIEW"}%<div id="modacButtonsLEFT" class="modacTabs"><ul><li>%TMPL:P{"topictabaction"}%</li></ul></div><div id="modacButtonsRIGHT" class="modacTabs"><ul><li>%TMPL:P{"modacEdit"}%</li><li>%TMPL:P{"modacAttach"}%</li><li>%TMPL:P{"modacRdiff"}%</li><li>%TMPL:P{"modacMore"}%</li><li id="modacSearchBox">%TMPL:P{"SearchBox"}%</li></ul></div>%TMPL:END%
-%TMPL:DEF{"modacActionButtonsSYSTEM"}%<div id="modacButtonsLEFT" class="modacTabs"><ul><li>%TMPL:P{"modacSystemTab"}%</ul></li></div>%TMPL:END%
+%TMPL:DEF{"modacActionButtonsSYSTEM"}%<div id="modacButtonsLEFT" class="modacTabs"><ul><li>%TMPL:P{"modacSystemTab"}%</li></ul></div><div id="modacButtonsRIGHT" class="modacTabs"><ul><li id="modacSearchBox">%TMPL:P{"SearchBox"}%</li></ul></div>%TMPL:END%
+
+
+%{ --- JQueryMenuSkin Integration --- }%
+
+%TMPL:DEF{"modacActionButtonsJQMenu"}%
+%JQREQUIRE{"supersubs"}%%JQREQUIRE{"bgiframe"}%%ADDTOZONE{
+    "head" text="<link rel='stylesheet' href='%IF{"defined JQUERYMENUSKINCSS and $ JQUERYMENUSKINCSS" then="%JQUERYMENUSKINCSS%" else="%PUBURLPATH%/%SYSTEMWEB%/JQueryMenuSkinBarDefault/menu.css"}%' type='text/css'/>"}%
+%ADDTOZONE{ "script" text="<script type='text/javascript'>
+jQuery(document).ready(function(){
+    jQuery('#jqmenu').supersubs({
+        minWidth: 12, /* minimum width of sub-menus in em units */
+        maxWidth: 30, /* maximum width of sub-menus in em units */
+        extraWidth: 1 /* extra width can ensure lines don't sometimes turn over
+                         due to slight rounding differences and font-family */
+    });
+    jQuery('#jqmenu').superfish({
+        delay:  500
+    });
+    jQuery('#jqmenu').bgIframe({opacity:false});
+});
+
+</script>"
+requires="JQUERYPLUGIN::SUPERSUBS,JQUERYPLUGIN::BGIFRAME"
+}%
+<div id="menu_container">%INCLUDE{"%IF{"defined JQUERYMENUSKINBAR and $ JQUERYMENUSKINBAR" then="%JQUERYMENUSKINBAR%" else="%SYSTEMWEB%.JQueryMenuSkinBarDefault"}%" raw="on" warn="<div class='menu_missing'>The <nop>JQueryMenuSkin menu configuration topic could not be found</div>"}%</div></div>
+<div style="clear: left;" />
+%TMPL:END%
+
+
+
+
 
 
 %{ --- definitions used in "modacActionButtonsVIEW" --- }%
@@ -21,7 +52,7 @@
 %TMPL:DEF{"modacRdiffINACTIVE"}%<span class="foswikiRequiresChangePermission"> %IF{"context CompareRevisionsAddonPluginEnabled" then="<a href='%SCRIPTURLPATH{"oops"}%/%BASEWEB%/%BASETOPIC%?template=oopshistory&history=on' rel='nofollow' %MAKETEXT{"title='View topic history' accesskey='h'>&History"}%</a>" else="<a href='%SCRIPTURLPATH{"rdiff"}%/%BASEWEB%/%BASETOPIC%?type=history&history=on' rel='nofollow' %MAKETEXT{"title='View topic history' accesskey='h'>&History"}%</a>"}%</span>%TMPL:END%
 
 %TMPL:DEF{"modacMore"}% %IF{"$'URLPARAM{template}'='more' or $'URLPARAM{template}'='backlinksallwebs' or $'URLPARAM{template}'='backlinksweb' or context manage" then="$percntTMPL:P{modacMoreACTIVE}$percnt" else="$percntTMPL:P{modacMoreINACTIVE}$percnt"}%%TMPL:END%
-%TMPL:DEF{"modacMoreACTIVE"}%<div class="modacActionButtonACTIVE"><span><a href='%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%?template=more&maxrev=%MAXREV%&currrev=%CURRREV%' rel='nofollow' %MAKETEXT{"title='More actions for this topic' accesskey='m'>&More topic actions"}%</a></span></div>%TMPL:END%
+%TMPL:DEF{"modacMoreACTIVE"}%<div class="sf-menu modacActionButtonACTIVE"><span><a href='%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%?template=more&maxrev=%MAXREV%&currrev=%CURRREV%' rel='nofollow' %MAKETEXT{"title='More actions for this topic' accesskey='m'>&More topic actions"}%</a></span></div>%TMPL:END%
 %TMPL:DEF{"modacMoreINACTIVE"}%<span><a href='%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%?template=more&maxrev=%MAXREV%&currrev=%CURRREV%' rel='nofollow' %MAKETEXT{"title='More actions for this topic' accesskey='m'>&More topic actions"}%</a></span>%TMPL:END%
 
 %TMPL:DEF{"SearchBox"}%%JQREQUIRE{"UI::autocomplete"}%<form name="quickSearchForm" action="%SCRIPTURLPATH{view}%/%WEB%/WebSearch"><input type="text" class="foswikiInputField foswikiDefaultText" title="%MAKETEXT{"Search"}%" id="quickSearchBox" name="search" value="%URLPARAM{search}%" autocomplete="%SCRIPTURL%/rest/SolrPlugin/autocomplete" size="26" /><input type="hidden" name="scope" value="all" /><input type="hidden" name="web" value="all" /><noscript>&nbsp;<input type="submit" size="5" class="foswikiButton" name="submit" value="%MAKETEXT{"Search"}%" />&nbsp;</noscript></form>%TMPL:END%
