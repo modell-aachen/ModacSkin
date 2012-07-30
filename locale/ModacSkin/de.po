@@ -29,6 +29,22 @@ msgstr "title='Diskussion über Verbesserungen' >Diskussion starten"
 msgid "If you have any questions, please contact %1"
 msgstr "Wenn Sie Fragen haben wenden Sie sich bitte an %1"
 
+#: data/System/ModacSkinTopExtended.txt
+msgid "Creator"
+msgstr "Ersteller"
+
+#: data/System/ModacSkinTopExtended.txt
+msgid "Approved by"
+msgstr "Geprüft durch"
+
+#: data/System/ModacSkinTopExtended.txt
+msgid "Release date"
+msgstr "Freigabedatum"
+
+#: data/System/ModacSkinTopExtended.txt
+msgid "Responsible"
+msgstr "Seitenverantwortlicher"
+
 #: templates/foswiki.modac.tmpl:100
 msgid "%1 Web"
 msgstr "%1 Bereich"
