@@ -126,7 +126,7 @@
 %SOLRFORMAT{"solr1"
   %TMPL:P{"solr::facet"
     id="web"
-    format="$percntWEBLINK{\\"$key\\" format=\\"$dollartitle\\"}$percnt&nbsp;($count)"
+    format="$percntWEBLINK{\\"$key\\" format=\\"<span style='display: none'>$key </span>$percentSUBST{text=\\"$key\\" pattern=\\"[^.]*\.\\" format=\\"&nbsp;&nbsp;&nbsp;\\"}$percent\\"}$percnt&nbsp;($count)"
     title="$percntWEBLINK{\\"$key\\" format=\\"$dollartitle\\"}$percnt"
     value="$id:$key"
     input="checkbox"
