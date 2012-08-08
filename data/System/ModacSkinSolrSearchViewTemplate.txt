@@ -126,7 +126,7 @@
 %SOLRFORMAT{"solr1"
   %TMPL:P{"solr::facet"
     id="web"
-    format="$percntWEBLINK{\\"$key\\" format=\\"<span style='display: none'>$key </span>$percentSUBST{text=\\"$key\\" pattern=\\"[^.]*\.\\" format=\\"&nbsp;&nbsp;&nbsp;\\"}$percent\\"}$percnt&nbsp;($count)"
+    format="$percntWEBLINK{\\"$key\\" format=\\"<span style='display: none'>$key </span><div style='margin-left: $percentCALC{\\"$dollarEVAL($dollarLENGTH($percentSUBST{text=\\"$key\\" pattern=\\"[^.]\\" format=\\"\\"}$percent)*7)\\"}$percentpx;'>$dollartitle\\"}$percnt&nbsp;($count)</div>"
     title="$percntWEBLINK{\\"$key\\" format=\\"$dollartitle\\"}$percnt"
     value="$id:$key"
     input="checkbox"
