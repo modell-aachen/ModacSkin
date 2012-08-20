@@ -16,4 +16,4 @@ for my $web (@webs) {
 	push @msgs, "copying WebContentTemplates topic to $web web";
 }
 
-return 'QwikiContrib postinstall: '. join(', ', @msgs) ."\n" if @msgs;
+return 'ModacSkin postinstall: '. join(', ', @msgs) ."\n" if @msgs;
