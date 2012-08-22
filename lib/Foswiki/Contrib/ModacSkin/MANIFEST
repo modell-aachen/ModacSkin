@@ -2,6 +2,7 @@ data/_default/WebContentTemplates.txt 0664
 data/System/ModacSideBarFlexWebList.txt 0664
 data/System/ModacSideBarWebList.txt 0664
 data/System/ModacSkin.txt 0664
+data/System/ModacSkinCommentPluginTemplate.txt 0664
 data/System/ModacSkinCommonWords.txt 0664
 data/System/ModacSkinContentTemplatesViewTemplate.txt 0664
 data/System/ModacSkinContentTemplateStub.txt 0644
