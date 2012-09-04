@@ -195,7 +195,7 @@
   "name~'*Template'" 
   scope="topic" 
   web="%IF{"defined 'CONTENTTEMPLATEWEB'" then="%CONTENTTEMPLATEWEB%" else="%BASEWEB%"}%" 
-  excludetopic="*EditTemplate,*WebCreateNewTopicTemplate,*ViewTemplate,GroupTemplate" 
+  excludetopic="*EditTemplate,*WebCreateNewTopicTemplate,*ViewTemplate,GroupTemplate,CustomSkin*Template"
   type="query" 
   nonoise="on" 
   format="<option value=\"$web.$topic\">$topic</option>"
@@ -206,7 +206,7 @@
 %TMPL:DEF{"templatesearch::dbcache"}%%DBQUERY{
   "topic=~'.*Template$'"
   web="%IF{"defined 'CONTENTTEMPLATEWEB'" then="%CONTENTTEMPLATEWEB%" else="%BASEWEB%"}%"
-  exclude="^.*(Edit|View|WebCreateNewTopic|Group)Template$"
+  exclude="^.*(Edit|View|WebCreateNewTopic|Group)Template$|^CustomSkin.*Template$"
   format="<option value=\"$web.$topic\">$topic</option>"
 }%%TMPL:END%
 %{</verbatim>}%
