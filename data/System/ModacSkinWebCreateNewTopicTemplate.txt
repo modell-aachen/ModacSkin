@@ -132,7 +132,7 @@
 
 %{<verbatim class="tml">}%
 %TMPL:DEF{"formstart"}%<!-- -->
-<form name="newTopicForm" id="newTopicForm" action="%SCRIPTURLPATH{edit}%/%BASEWEB%/">
+<form name="newtopicform" id="newtopicform" action="%SCRIPTURLPATH{edit}%/%BASEWEB%/">
 <input type="hidden" name="t" value="%GMTIME{"$epoch"}%" />
 <input type="hidden" name="onlynewtopic" value="on" />
 <!-- -->%TMPL:END%
