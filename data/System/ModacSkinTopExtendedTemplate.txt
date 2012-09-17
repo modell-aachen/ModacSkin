@@ -4,9 +4,9 @@
 	<tbody>
 		<tr height: 24px;>
 			<td colspan='3' width='50%' style='text-align: center;'>
-				<strong><font size='4'>%META{"formfield" name="Dokumententyp"}% </font></strong></td>
+				<strong><font size='4'>%QUERY{"Dokumententyp"}% </font></strong></td>
 			<td width='35%' style='text-align: center;'>
-				Nummer:<strong><br>%META{"formfield" name="Nummer"}%</strong></td>
+				Nummer:<strong><br>%QUERY{"Nummer"}%</strong></td>
 			<td width='12%' style='text-align: center;'>
 				Rev.:<strong><br> %REVINFO{format="$rev"}%</strong></td>
 			<td rowspan='3' width='12%'>
@@ -14,9 +14,9 @@
 		</tr>
 		<tr height: 24px;>
 			<td colspan='3' style='text-align: center;'>
-				<strong><font size='3'>%META{"formfield" name="TopicTitle"}%</font></strong></td>
+				<strong><font size='3'>%QUERY{"TopicTitle"}%</font></strong></td>
 			<td colspan='2' style='text-align: center;'>
-				%MAKETEXT{"Area of application"}%&#58; <strong><br>%META{"formfield" name="Geltungsbereich"}%</strong></td>
+				%MAKETEXT{"Area of application"}%&#58; <strong><br>%QUERY{"Geltungsbereich"}%</strong></td>
 		</tr>
 	</tbody>
 </table>
