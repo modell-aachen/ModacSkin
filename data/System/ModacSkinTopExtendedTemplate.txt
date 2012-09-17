@@ -16,7 +16,7 @@
 			<td colspan='3' style='text-align: center;'>
 				<strong><font size='3'>%META{"formfield" name="TopicTitle"}%</font></strong></td>
 			<td colspan='2' style='text-align: center;'>
-				Geltungsbereich:<strong><br>%META{"formfield" name="Geltungsbereich"}%</strong></td>
+				%MAKETEXT{"Area of application"}%&#58; <strong><br>%META{"formfield" name="Geltungsbereich"}%</strong></td>
 		</tr>
 	</tbody>
 </table>
