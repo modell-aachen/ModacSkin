@@ -26,9 +26,9 @@
 }%
 
 
-%TMPL:DEF{"top_einfach"}%%IF{"'%META{"formfield" name="Titel"}%'=''" then="$percntTMPL:P{$quottop_einfach2$quot}$percnt" else="$percntTMPL:P{$quottop_einfach1$quot}$percnt"}%%TMPL:END%
+%TMPL:DEF{"top_einfach"}%%IF{"'%QUERY{"TopicTitle"}%'='' AND '%QUERY{"Titel"}%'='' AND '%QUERY{"Title"}%'=''" then="$percntTMPL:P{$quottop_einfach2$quot}$percnt" else="$percntTMPL:P{$quottop_einfach1$quot}$percnt"}%%TMPL:END%
 
-%TMPL:DEF{"top_einfach1"}%<div class="patternTop"><div id="modacHeading">%META{"formfield" name="Title"}%</div>
+%TMPL:DEF{"top_einfach1"}%<div class="patternTop"><div id="modacHeading">%IF{"'%QUERY{"TopicTitle"}%'!=''" then="$percntQUERY{\"TopicTitle\"}$percnt" else="$percntIF{\"'$percntQUERY{\"Titel\"}$percnt'!=''\" then=\"$percntQUERY{\"Titel\"}$percnt\" else=\"$dollarpercntQUERY{$dollarquotTitle$dollarquot}$dollarpercnt\"}$percnt"}%</div>
 <span class="patternHomePath">%TMPL:P{"breadcrumb"}%</span><br></div><!--/patternTop-->%TMPL:END%
 
 %TMPL:DEF{"top_einfach2"}%<div class="patternTop"><div id="modacHeading">%TOPIC%</div>
