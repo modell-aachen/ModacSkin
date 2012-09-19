@@ -29,7 +29,7 @@
   else="-type:map -type:aqm -field_TopicType_lst:Category"
 }% %IF{
   "not $USERNAME ingroup 'AdminGroup'"
-  then="-web_search:Applications -web_search:%SYSTEMWEB% -web_search:Sandbox -web_search:%USERSWEB%"
+  then="-web:Applications -web:%SYSTEMWEB% -web:Sandbox -web:%USERSWEB%"
 }%%TMPL:END%
 %{</verbatim>}%
 
