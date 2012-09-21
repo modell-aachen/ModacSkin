@@ -9,10 +9,11 @@ data/System/ModacSkinContentTemplateStub.txt 0644
 data/System/ModacSkinLanguageSelector.txt 0664
 data/System/ModacSkinSolrSearchViewTemplate.txt 0664
 data/System/ModacSkinSolrSearchBaseTemplate.txt 0664
+data/System/ModacSkinSystemViewTemplate.txt 0664
 data/System/ModacSkinTopExtendedTemplate.txt 0664
-data/System/WebBottomBarDefault.txt 0664
 data/System/ModacSkinWebChangesViewTemplate.txt 0664
 data/System/ModacSkinWebCreateNewTopicTemplate.txt 0664
+data/System/WebBottomBarDefault.txt 0664
 data/System/WebLeftBarDefault.txt 0664
 data/System/WebTopBarDefault.txt 0664
 lib/Foswiki/Contrib/ModacSkin.pm 0664
