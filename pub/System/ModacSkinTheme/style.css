@@ -369,6 +369,37 @@ html>body #modacLogoIE {
 #modacSearchBox {
 	margin: 0.5em 0.7em 0 0.7em;
 }
+
+.modacMoreMenu ul li {
+	width: 100%;
+	float: none;
+	position: relative;
+	display: block;
+	border: 0;
+	border-bottom: solid 1px #a7d7f9;
+}
+.modacMoreMenu li { position: relative; }
+.modacMoreMenu li ul {
+	display: none;
+	position: absolute;
+	top: -999em;
+	border: solid 1px #a7d7f9;
+	border-bottom-width: 0;
+	margin: 2px 0 0 -1px;
+}
+.modacMoreMenu li.sfHover ul {
+	display: block;
+	left: 0;
+	top: 2.5em;
+	z-index: 99;
+}
+.modacMoreMenu li.sfHover ul ul {
+	top: 0;
+	list-style-type: none;
+}
+.modacMoreMenu li ul li a { background: none !important; width: 100% !important; }
+.modacMoreMenu li ul li { background: white none !important; }
+
 /* -------------------------- /modacTabs ----------------------------*/
 
 /* -------------------------- Modac Tables ----------------------------*/

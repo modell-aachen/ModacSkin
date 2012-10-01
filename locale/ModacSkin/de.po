@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Foswiki $Id\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2012-07-09 16:56+0200\n"
+"PO-Revision-Date: 2012-10-01 13:45+0200\n"
 "Last-Translator: Modell Aachen\n"
 "Language-Team: Foswiki German Translation Team <none>\n"
 "Language: de\n"
@@ -1221,7 +1221,7 @@ msgstr "title='Diskussion über Verbesserungen' >Diskussion starten"
 
 #: templates/viewtopicactionbuttons.modac.tmpl:75
 msgid "title='Edit Wiki text' accesskey='w'>Edit &wiki text"
-msgstr "title='Wiki-Text bearbeiten' accesskey='w'>&wikitext bearbeiten"
+msgstr "title='Wiki-Text bearbeiten' accesskey='w'>&Wikitext bearbeiten"
 
 #: templates/viewtopicactionbuttons.modac.tmpl:73
 msgid "title='Edit this topic text' accesskey='e'>&Edit"
@@ -1242,7 +1242,9 @@ msgid "title='More actions for this topic' accesskey='m'>&More topic actions"
 msgstr ""
 "title='Weitere Aktionen für diese Seite' accesskey='w'>&Weitere Aktionen"
 
-#: templates/viewtopicactionbuttons.modac.tmpl:85
+msgid "Manage page"
+msgstr "Seite verwalten"
+
 msgid "title='Printable version of this topic' accesskey='p'>&Print version"
 msgstr "title='Druckversion dieser Seite' accesskey='p'>Druckversion (&p)"
 
