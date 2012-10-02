@@ -36,7 +36,7 @@
 
 %TMPL:DEF{"top_old"}%%IF{"'%META{"formfield" name="Dokumententyp"}%'='Infoseite' or '%META{"formfield" name="Dokumententyp"}%'='Prozessbeschreibung' or '%META{"formfield" name="Dokumententyp"}%'='Checkliste' or '%META{"formfield" name="Dokumententyp"}%'='Arbeitsanweisung'" then="$percntTMPL:P{$quottop_erweitert$quot}$percnt" else="$percntTMPL:P{$quottop_einfach$quot}$percnt"}%%TMPL:END%
 
-%TMPL:DEF{"top"}%%IF{"(defined NOMODACHEAD and '%NOMODACHEAD%' != '') or (defined NOMODACHEADLIST and '%NOMODACHEADLIST%' =~ '(?:\s|^|,)%TOPIC%(?:\s|$|,)')" else="$percntTMPL:P{$quot%IF{"defined NOMODACHEADLIST" then="top_erweitert" else="top_old"}%$quot}$percnt" then="$percntTMPL:P{$quottop_einfach$quot}$percnt"}%%TMPL:END%
+%TMPL:DEF{"top"}%%IF{"(defined NO_MODAC_HEAD and '%NO_MODAC_HEAD%' != '') or (defined NO_MODAC_HEADLIST and '%NO_MODAC_HEADLIST%' =~ '(?:\s|^|,)%TOPIC%(?:\s|$|,)')" else="$percntTMPL:P{$quot%IF{"defined NO_MODAC_HEADLIST" then="top_erweitert" else="top_old"}%$quot}$percnt" then="$percntTMPL:P{$quottop_einfach$quot}$percnt"}%%TMPL:END%
 
 
 %{---------------------------------------------------
