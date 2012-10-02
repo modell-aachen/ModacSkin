@@ -15,7 +15,7 @@ jQuery(function(){
     jQuery('.jqmenu').bgIframe({opacity:false});
     var menuDialogs = {};
     var menuClickHandler = function(type) {
-        var e = $(this);
+        var e = jQuery(this);
         if (menuDialogs[type]) {
             menuDialogs[type].dialog('open');
             return false;
