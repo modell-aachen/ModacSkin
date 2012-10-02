@@ -411,12 +411,12 @@ html>body #modacLogoIE {
 	border-collapse: collapse;
 	empty-cells:show;
  }
-.Modac_Standard td {
+.Modac_Standard td, .Modac_Standard th {
 	border: 1px #AAA solid;
 	padding-left: 3px;
 	padding-right: 3px;
 }
-.Modac_Standard tr:first-child { 
+.Modac_Standard tbody:first-child tr:first-child, .Modac_Standard thead tr:first-child {
 	text-align: center; 
 	font-weight: bold; 
 	color: #f9f9f9; 
@@ -431,7 +431,7 @@ html>body #modacLogoIE {
 	border-collapse: collapse;
 	empty-cells:show;
  }
-.Modac_Standard_Ohne td {
+.Modac_Standard_Ohne td, .Modac_Standard_Ohne th {
 	border: 1px #AAA solid;
 	padding-left: 3px;
 	padding-right: 3px;
@@ -445,11 +445,32 @@ html>body #modacLogoIE {
 	border-collapse: collapse;
 	empty-cells:show;
  }
-.Modac_Standard_Leer td {
+.Modac_Standard_Leer td, .Modac_Standard_Leer th {
 	padding-left: 3px;
 	padding-right: 3px;
 }
 /*-------- /Modac_Standard_Leer --------*/
+
+/*-------- Grey_Standard* --------------*/
+.Grey_Standard, .Grey_Standard_Ohne {
+	background: none repeat scroll 0 0 #ffffff;
+	border-collapse: collapse;
+	empty-cells: show;
+	margin: 1em 0;
+}
+.Grey_Standard td, .Grey_Standard th, .Grey_Standard_Ohne td, .Grey_Standard_Ohne th {
+	border: 1px solid #808080;
+	padding-left: 3px;
+	padding-right: 3px;
+}
+.Grey_Standard tbody:first-child tr:first-child, .Grey_Standard thead tr:first-child {
+	background: none repeat scroll 0 0 #cccccc;
+	color: black;
+	font-weight: bold;
+	text-align: center;
+}
+
+/*-------- /Grey_Standard* -------------*/
 
 /*-------- deprecated: MA_table --------*/
 .MA_table {
