@@ -1002,6 +1002,15 @@ msgstr "Revision:"
 msgid "Topic:"
 msgstr "Topic:"
 
+msgid "Old Discussion"
+msgstr "alte Diskussion"
+
+msgid "Topic is not under any workflow."
+msgstr "Artikel steht nicht unter einem Workflow."
+
+msgid "Infopage"
+msgstr "Infoseite"
+
 #: templates/oopsleaseconflict.modac.tmpl:23
 msgid "Try Again"
 msgstr "Nochmal versuchen"
