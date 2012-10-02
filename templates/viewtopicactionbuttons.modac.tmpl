@@ -32,10 +32,10 @@ jQuery(function(){
         } });
         return false;
     };
-    jQuery('.morelink-copy').click(function(){ menuClickHandler('copy'); });
-    jQuery('.morelink-delete').click(function(){ menuClickHandler('delete'); });
-    jQuery('.morelink-rename').click(function(){ menuClickHandler('rename'); });
-    jQuery('.morelink-setparent').click(function(){ menuClickHandler('setparent'); });
+    jQuery('.morelink-copy').click(function(){ return menuClickHandler('copy'); });
+    jQuery('.morelink-delete').click(function(){ return menuClickHandler('delete'); });
+    jQuery('.morelink-rename').click(function(){ return menuClickHandler('rename'); });
+    jQuery('.morelink-setparent').click(function(){ return menuClickHandler('setparent'); });
 }); //</script>" requires="JQUERYPLUGIN::SUPERSUBS,JQUERYPLUGIN::BGIFRAME,JQUERYPLUGIN::UI::DIALOG"
 }%<div id="modacActionButtonsWrapper">%TMPL:P{"modacActionButtons"}%<div class="clear"></div></div> %TMPL:END%
 
