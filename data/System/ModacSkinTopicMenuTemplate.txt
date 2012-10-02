@@ -1,0 +1,14 @@
+%{<verbatim class="tml">}%
+%{Do not remove the HTML comments. TML is likely to mess this up horribly otherwise. You have been warned.}%
+%TMPL:DEF{"modacMoreSubmenu"}%<ul>
+<!-- ATTACHMENTS --><li><a href="%SCRIPTURLPATH{"attach"}%/%BASEWEB%/%BASETOPIC%" rel="nofollow" %MAKETEXT{"title='Attach an image or document to this topic' accesskey='a'>&Attach"}%</a></li>
+<!-- REVISION HISTORY --><li>%IF{"context CompareRevisionsAddonPluginEnabled" then="<a href='%SCRIPTURLPATH{"oops"}%/%BASEWEB%/%BASETOPIC%?template=oopshistory&history=on' rel='nofollow' %MAKETEXT{"title='View topic history' accesskey='h'>&History"}%</a>" else="<a href='%SCRIPTURLPATH{"rdiff"}%/%BASEWEB%/%BASETOPIC%?type=history&history=on' rel='nofollow' %MAKETEXT{"title='View topic history' accesskey='h'>&History"}%</a>"}%</li>
+<!-- EDIT WIKITEXT -->%IF{"'%BASEWEB%/%BASETOPIC%' allows 'CHANGE'" then="<li><a href=\"%SCRIPTURLPATH{"edit"}%/%BASEWEB%/%BASETOPIC%?t=%GMTIME{"$epoch"}%;nowysiwyg=1\" %MAKETEXT{"title='Edit Wiki text' accesskey='w'>Edit &wiki text"}%</a></li>"}%
+<li>[[%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%?template=more][%MAKETEXT{"Manage page"}% &raquo;]]<ul>
+  <!-- TOPIC PREFERENCES -->%IF{"'%BASEWEB%/%BASETOPIC%' allows 'CHANGE'" then="<li>[[%SCRIPTURL{"view"}%/%BASEWEB%/%BASETOPIC%?template=more][%MAKETEXT{"Edit topic preference settings"}%]]</li>"}%
+  <!-- CHANGE PARENT -->%IF{"'%BASEWEB%/%BASETOPIC%' allows 'CHANGE'" then="<li><a href=\"#\" class=\"morelink-setparent\">%MAKETEXT{"Select topic parent"}%</a></li>"}%
+  <!-- COPY --><li><a href="#" class="morelink-copy">%MAKETEXT{"Copy topic"}%</a></li>
+  <!-- RENAME/MOVE -->%IF{"'%BASEWEB%/%BASETOPIC%' allows 'RENAME'" then="<li><a href=\"#\" class=\"morelink-rename\">%MAKETEXT{"Rename or move topic"}%</a></li>"}%
+  <!-- DELETE -->%IF{"'%BASEWEB%/%BASETOPIC%' allows 'RENAME'" then="<li><a href=\"#\" class=\"morelink-delete\">%MAKETEXT{"Delete topic"}%</a></li>"}%
+</ul></li></ul>%TMPL:END%
+%{</verbatim>}%
