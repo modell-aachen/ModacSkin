@@ -195,7 +195,7 @@
   "name~'*Template'" 
   scope="topic" 
   web="%CONTENTTEMPLATEWEB{default="%BASEWEB%"}%" 
-  excludetopic="*EditTemplate,*WebCreateNewTopicTemplate,*ViewTemplate,GroupTemplate,CustomSkin*Template"
+  excludetopic="*EditTemplate,*WebCreateNewTopicTemplate,*ViewTemplate,GroupTemplate,CustomSkin*Template%IF{"defined CONTENTTEMPLATEFILTER" then=",%CONTENTTEMPLATEFILTER%"}%"
   type="query" 
   nonoise="on" 
   format="<option value=\"$web.$topic\">$topic</option>"
@@ -203,10 +203,16 @@
 %{</verbatim>}%
 
 %{<verbatim class="tml">}%
+%{CONTENTTEMPLATEFILTER:
+   * first check if defined and not set to empty, or SUBST will go awry.
+   * make it a RegEx: substitute * with .*
+   * make it a RegEx: turn separating commas into &vbar;
+   * build RegEx around it
+}%
 %TMPL:DEF{"templatesearch::dbcache"}%%DBQUERY{
   "topic=~'.*Template$'"
   web="%CONTENTTEMPLATEWEB{default="%BASEWEB%"}%"
-  exclude="^.*(Edit|View|WebCreateNewTopic|Group)Template$|^CustomSkin.*Template$"
+  exclude="^.*(Edit|View|WebCreateNewTopic|Group)Template$|^CustomSkin.*Template$%IF{"defined CONTENTTEMPLATEFILTER and $CONTENTTEMPLATEFILTER != ''" then="|^($percentSUBST{text=$quot$percentSUBST{text=$quot%CONTENTTEMPLATEFILTER%$quot pattern=$quot\*$quot format=$quot.*$quot}$percent$quot pattern=$quot(\s|,)+$quot format=$quot|$quot}$percent)$dollar"}%"
   format="<option value=\"$web.$topic\">$topic</option>"
 }%%TMPL:END%
 %{</verbatim>}%
