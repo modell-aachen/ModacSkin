@@ -13,7 +13,11 @@ This version is tested with TWiki 4.2.0 and 4.1.2 and Foswiki in IE6, IE7 and FF
 %TMPL:INCLUDE{"viewtopbar"}%
 %TMPL:INCLUDE{"viewsidebar"}%
 
+%TMPL:DEF{"topictabaction"}%<div class='modacActionButtonACTIVE'><a href='%SCRIPTURL{"view"}%/%WEB%/%TOPIC%'>%MAKETEXT{"History"}%</a></div>%TMPL:END%
+
 %TMPL:DEF{"modacActionButtons"}%%TMPL:P{"modacActionButtonsVIEW"}%%TMPL:END%
+
+%TMPL:DEF{"modacEdit"}%%TMPL:END%
 
 %TMPL:DEF{"titleaction"}%%MAKETEXT{"(history)"}% %TMPL:END%
 
