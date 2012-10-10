@@ -46,7 +46,7 @@ jQuery(function(){
 
 %{ --- definitions used in "modacActionButtonsVIEW" --- }%
 
-%TMPL:DEF{"modacEdit"}%%IF{"defined rev" then="" else="$percntTMPL:P{modacEditLATEST}$percnt"}%%TMPL:END%
+%TMPL:DEF{"modacEdit"}%%IF{"defined rev or defined rev1" then="" else="$percntTMPL:P{modacEditLATEST}$percnt"}%%TMPL:END%
 %TMPL:DEF{"modacEditLATEST"}%%TMPL:P{context="edit" then="modacEditLATEST_ACTIVE" else="modacEditLATEST_INACTIVE"}%%TMPL:END%
 %TMPL:DEF{"modacEditLATEST_ACTIVE"}%<div class="modacActionButtonACTIVE"><span class="foswikiRequiresChangePermission"><a href='%SCRIPTURL{"edit"}%/%BASEWEB%/%BASETOPIC%?t=%GMTIME{"$epoch"}%%TMPL:P{"url_param_editaction"}%%IF{"context CKEditorPluginEnabled" then="" else=";nowysiwyg=1"}%' rel='nofollow' %MAKETEXT{"title='Edit this topic' accesskey='e'>&Edit"}%</a></span></div>%TMPL:END%
 %TMPL:DEF{"modacEditLATEST_INACTIVE"}%<span class="foswikiRequiresChangePermission"><a href='%SCRIPTURL{"edit"}%/%BASEWEB%/%BASETOPIC%?t=%GMTIME{"$epoch"}%%TMPL:P{"url_param_editaction"}%%IF{"context CKEditorPluginEnabled" then="" else=";nowysiwyg=1"}%' rel='nofollow' %MAKETEXT{"title='Edit this topic' accesskey='e'>&Edit"}%</a></span>%TMPL:END%
