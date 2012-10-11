@@ -25,17 +25,17 @@
 ---------------------------------------------------
 }%
 
-%TMPL:DEF{"top_einfach"}%%IF{"'%QUERY{"TopicTitle"}%'='' AND '%QUERY{"Titel"}%'='' AND '%QUERY{"Title"}%'=''" then="$percntTMPL:P{$quottop_einfach2$quot}$percnt" else="$percntTMPL:P{$quottop_einfach1$quot}$percnt"}%%TMPL:END%
+%TMPL:DEF{"top_simple"}%%IF{"'%QUERY{"TopicTitle"}%'='' AND '%QUERY{"Titel"}%'='' AND '%QUERY{"Title"}%'=''" then="$percntTMPL:P{$quottop_simple2$quot}$percnt" else="$percntTMPL:P{$quottop_simple1$quot}$percnt"}%%TMPL:END%
 
-%TMPL:DEF{"top_einfach1"}%<div class="patternTop"><div id="modacHeading">%IF{"'%QUERY{"TopicTitle"}%'!=''" then="$percntQUERY{\"TopicTitle\"}$percnt" else="$percntIF{\"'$percntQUERY{\"Titel\"}$percnt'!=''\" then=\"$percntQUERY{\"Titel\"}$percnt\" else=\"$dollarpercntQUERY{$dollarquotTitle$dollarquot}$dollarpercnt\"}$percnt"}%</div>
+%TMPL:DEF{"top_simple1"}%<div class="patternTop"><div id="modacHeading">%IF{"'%QUERY{"TopicTitle"}%'!=''" then="$percntQUERY{\"TopicTitle\"}$percnt" else="$percntIF{\"'$percntQUERY{\"Titel\"}$percnt'!=''\" then=\"$percntQUERY{\"Titel\"}$percnt\" else=\"$dollarpercntQUERY{$dollarquotTitle$dollarquot}$dollarpercnt\"}$percnt"}%</div>
 <span class="patternHomePath">%TMPL:P{"breadcrumb"}%</span><br></div><!--/patternTop-->%TMPL:END%
 
-%TMPL:DEF{"top_einfach2"}%<div class="patternTop"><div id="modacHeading">%TOPIC%</div>
+%TMPL:DEF{"top_simple2"}%<div class="patternTop"><div id="modacHeading">%TOPIC%</div>
 <span class="patternHomePath">%TMPL:P{"breadcrumb"}%</span><br></div><!--/patternTop-->%TMPL:END%
 
-%TMPL:DEF{"top_old"}%%IF{"'%META{"formfield" name="Dokumententyp"}%'='Infoseite' or '%META{"formfield" name="Dokumententyp"}%'='Prozessbeschreibung' or '%META{"formfield" name="Dokumententyp"}%'='Checkliste' or '%META{"formfield" name="Dokumententyp"}%'='Arbeitsanweisung'" then="$percntTMPL:P{$quottop_erweitert$quot}$percnt" else="$percntTMPL:P{$quottop_einfach$quot}$percnt"}%%TMPL:END%
+%TMPL:DEF{"top_old"}%%IF{"'%META{"formfield" name="Dokumententyp"}%'='Infoseite' or '%META{"formfield" name="Dokumententyp"}%'='Prozessbeschreibung' or '%META{"formfield" name="Dokumententyp"}%'='Checkliste' or '%META{"formfield" name="Dokumententyp"}%'='Arbeitsanweisung'" then="$percntTMPL:P{$quottop_erweitert$quot}$percnt" else="$percntTMPL:P{$quottop_simple$quot}$percnt"}%%TMPL:END%
 
-%TMPL:DEF{"top"}%%IF{"(defined NO_MODAC_HEAD and '%NO_MODAC_HEAD%' != '') or (defined NO_MODAC_HEADLIST and '%NO_MODAC_HEADLIST%' =~ '(?:\s|^|,)%TOPIC%(?:\s|$|,)')" else="$percntTMPL:P{$quot%IF{"defined NO_MODAC_HEADLIST" then="top_erweitert" else="top_old"}%$quot}$percnt" then="$percntTMPL:P{$quottop_einfach$quot}$percnt"}%%TMPL:END%
+%TMPL:DEF{"top"}%%IF{"(defined NO_MODAC_HEAD and '%NO_MODAC_HEAD%' != '') or (defined NO_MODAC_HEADLIST and '%NO_MODAC_HEADLIST%' =~ '(?:\s|^|,)%TOPIC%(?:\s|$|,)')" else="$percntTMPL:P{$quot%IF{"defined NO_MODAC_HEADLIST" then="top_erweitert" else="top_old"}%$quot}$percnt" then="$percntTMPL:P{$quottop_simple$quot}$percnt"}%%TMPL:END%
 
 
 %{---------------------------------------------------
