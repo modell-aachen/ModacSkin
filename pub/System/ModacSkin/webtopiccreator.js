@@ -1,1 +1,0 @@
-/srv/www/1.1.5/open/ModacSkin/pub/System/ModacSkin/webtopiccreator_src.js
