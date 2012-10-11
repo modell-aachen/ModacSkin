@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Foswiki $Id\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2012-10-01 13:45+0200\n"
+"PO-Revision-Date: 2012-10-11 11:31+0200\n"
 "Last-Translator: Modell Aachen\n"
 "Language-Team: Foswiki German Translation Team <none>\n"
 "Language: de\n"
@@ -1411,3 +1411,12 @@ msgstr "Neues Content-Template anlegen"
 
 msgid "The following content template are available for newly created topic in the %1 Web:"
 msgstr "Die folgenden Content-Templates stehen als Inhaltsvorlagen für neu angelegte Seite im Bereich '%1' zur Verfügung:"
+
+msgid "No topic parent"
+msgstr "Keine übergeordnete Seite"
+
+msgid "No matches"
+msgstr "Keine Treffer"
+
+msgid "Searching..."
+msgstr "Suche..."
