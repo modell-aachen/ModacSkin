@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Foswiki $Id\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2012-10-01 13:45+0200\n"
+"PO-Revision-Date: 2012-10-11 11:31+0200\n"
 "Last-Translator: Modell Aachen\n"
 "Language-Team: Foswiki German Translation Team <none>\n"
 "Language: de\n"
@@ -1337,3 +1337,47 @@ msgstr "ansehen"
 #: templates/validate.modac.tmpl:44
 msgid "why you are being asked to confirm"
 msgstr "warum Sie zur Bestätigung aufgefordert werden"
+
+#: data/System/ModacSkinWebCreateNewTopicTemplate.txt
+msgid "Free form topic title text."
+msgstr "Der Titel der Seite kann frei vergeben werden."
+
+#: data/System/ModacSkinWebCreateNewTopicTemplate.txt
+msgid "Please enter the article name without special characters."
+msgstr "Den Seitennamen bitte ohne Sonderzeichen eingeben."
+
+#: data/System/ModacSkinWebCreateNewTopicTemplate.txt
+msgid "Topic name that the newly created topic will be a child of."
+msgstr "Mit Hilfe der übergeordneten Seite können Sie eine Seiten-Hierarchie aufbauen."
+
+#: data/System/ModacSkinWebCreateNewTopicTemplate.txt
+msgid "Initialize the new topic using a template."
+msgstr "Die Vorlage definiert den initialen Inhalt der Seite."
+
+#: data/System/ModacSkinContentTemplatesViewTemplate.txt
+msgid "Content Templates in %1 Web"
+msgstr "Content-Templates im Bereich \"%1\""
+
+#: data/System/ModacSkinContentTemplatesViewTemplate.txt
+msgid "Content templates"
+msgstr "Content-Templates"
+
+#: data/System/ModacSkinContentTemplatesViewTemplate.txt
+msgid "Create new content template..."
+msgstr "Neues Content-Template anlegen..."
+
+#: data/System/ModacSkinContentTemplatesViewTemplate.txt
+msgid "Create new content template"
+msgstr "Neues Content-Template anlegen"
+
+msgid "The following content template are available for newly created topic in the %1 Web:"
+msgstr "Die folgenden Content-Templates stehen als Inhaltsvorlagen für neu angelegte Seite im Bereich '%1' zur Verfügung:"
+
+msgid "No topic parent"
+msgstr "Keine übergeordnete Seite"
+
+msgid "No matches"
+msgstr "Keine Treffer"
+
+msgid "Searching..."
+msgstr "Suche..."

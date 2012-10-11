@@ -1,6 +1,7 @@
 data/_default/WebContentTemplates.txt 0664
 data/System/ModacSkinFlexWebList.txt 0664
 data/System/ModacSkinWebList.txt 0664
+data/System/ModacAjaxHelper.txt 0664
 data/System/ModacSkin.txt 0664
 data/System/ModacSkinCommentPluginTemplate.txt 0664
 data/System/ModacSkinCommonWords.txt 0664
