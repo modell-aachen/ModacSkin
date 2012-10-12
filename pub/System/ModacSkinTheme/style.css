@@ -24,6 +24,7 @@ html body {
 	font-size:104%; /* to change the site's font size, change .foswikiPage below */
 	voice-family:"\"}\""; 
 	voice-family:inherit;
+	font-family:arial, verdana, sans-serif;
 	font-size:small;
 }
 html>body { /* Mozilla */
