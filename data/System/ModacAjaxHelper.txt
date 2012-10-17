@@ -6,7 +6,7 @@ The below section is used within WebCreateNewTopic to render the select box for 
 
 <verbatim>
 %STARTSECTION{"topicsinweb"}%
-[%SOLRSEARCH{"type:topic web:%URLPARAM{"web"}% -topic:*Template -topic:*Form (topic_search:*%SUBST{text="%URLPARAM{query}%" pattern="\s+" format=""}%* OR %FORMATLIST{"%URLPARAM{query}%" split="\s+" separator=" " null="*" format="title_search:*$1*"}%)" format="{\"label\":\"$title\",\"sublabel\":\"$web.$topic\",\"id\":\"$web.$topic\"}" separator="," rows="%URLPARAM{"count" default="20"}%" start="%URLPARAM{"offset" default="0"}%" sort="topic"}%]
+[%SOLRSEARCH{"type:topic web:%SUBST{text="%URLPARAM{"web"}%" pattern="/" format="."}% -topic:*Template -topic:*Form (topic_search:*%SUBST{text="%URLPARAM{query}%" pattern="\s+" format=""}%* OR %FORMATLIST{"%URLPARAM{query}%" split="\s+" separator=" " null="*" format="title_search:*$1*"}%)" format="{\"label\":\"$title\",\"sublabel\":\"$web.$topic\",\"id\":\"$web.$topic\"}" separator="," rows="%URLPARAM{"count" default="20"}%" start="%URLPARAM{"offset" default="0"}%" sort="topic"}%]
 %ENDSECTION{"topicsinweb"}%
 </verbatim>
 
@@ -46,7 +46,7 @@ jQuery(function($) {
 			},
 			results: function(data, page) {
 				if (!include_web) $.each(data, function(_idx, val) {
-					val.id = val.id.replace(/^%BASEWEB%\./, '');
+					val.id = val.id.replace(new RegExp('^%BASEWEB%\\.'), '');
 					val.sublabel = val.id;
 				});
 				return {
