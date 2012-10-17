@@ -187,7 +187,7 @@ var URL_TEMPLATE = '$percntURLPARAM{template}$percnt';
 
 %{<verbatim class="tml">}%
 %TMPL:DEF{"topicparent"}%<!-- -->
-%INCLUDE{"%SYSTEMWEB%.ModacAjaxHelper" section="selecttopic" TOPICSELECT_NAME="topicparent" TOPICSELECT_DEFAULT="%URLPARAM{"topicparent"}%" TOPICSELECT_INCLUDE_WEB="false"}%
+%INCLUDE{"%SYSTEMWEB%.ModacAjaxHelper" section="selecttopic" TOPICSELECT_NAME="topicparent" TOPICSELECT_DEFAULT="%SUBST{text="%URLPARAM{"topicparent"}%" pattern="%WORKFLOWSUFFIX%$" format=""}%" TOPICSELECT_INCLUDE_WEB="false"}%
 <div class="foswikiFormDescription">
 %MAKETEXT{"Topic name that the newly created topic will be a child of."}%
 </div>
