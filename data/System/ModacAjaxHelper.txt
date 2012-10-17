@@ -39,7 +39,7 @@ jQuery(function($) {
 					section: 'topicsinweb',
 					skin: 'text',
 					web: '%TOPICSELECT_WEBFILTER{default="%BASEWEB%"}%',
-					query: term,
+					query: term.toLowerCase(),
 					'offset': offset,
 					count: topicsparent_pagesize
 				};
