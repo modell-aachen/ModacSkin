@@ -10,4 +10,4 @@
 <h2>%MAKETEXT{"Document Control"}%</h2>
 <table class="foswikiFormTable" summary="%MAKETEXT{"Document Control"}%">
 %TMPL:P{"repeatedformrows"}%
-<tr><th>%MAKETEXT{"Form definition"}%</th><td>%FORMTITLE% <div class="modacHide">%TMPL:P{"changeform"}%</div></td></tr></table>%TMPL:P{"formtail"}%</div>
+<tr><td>%MAKETEXT{"Form definition"}%</td><td>%FORMTITLE% <div class="%IF{"not $USERNAME ingroup 'AdminGroup'" then="modacHide"}%">%TMPL:P{"changeform"}%</div></td></tr></table>%TMPL:P{"formtail"}%</div>
