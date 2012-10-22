@@ -368,6 +368,7 @@ html>body #modacLogoIE {
 }
 #modacSearchBox {
 	margin: 0.5em 0.7em 0 0.7em;
+        background-image: none!important;
 }
 
 .modacMoreMenu ul li {
