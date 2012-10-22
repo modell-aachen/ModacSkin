@@ -76,7 +76,7 @@ msgstr "(vergleichen)"
 msgid "(delete attachment)"
 msgstr "(Anhang löschen)"
 
-#: templates/oopshistory.modac.tmpl:18
+#: templates/oopshistory.modac.tmpl:22
 msgid "(history)"
 msgstr "(Versionsgeschichte)"
 
@@ -118,7 +118,7 @@ msgid "Access keys:"
 msgstr "Funktionstasten:"
 
 #: templates/attachtables.modac.tmpl:34 templates/attachtables.modac.tmpl:8
-#: templates/oopshistory.modac.tmpl:52
+#: templates/oopshistory.modac.tmpl:56
 msgid "Action"
 msgstr "Aktion"
 
@@ -146,11 +146,12 @@ msgstr "Entwurf formal freigeben"
 msgid "Approved Page"
 msgstr "Freigegebener Stand"
 
+#: data/System/ModacSkinHeadTemplate.txt:69
 #: data/System/ModacSkinSolrSearchViewTemplate.txt:63
 msgid "Area of application"
 msgstr "Geltungsbereich"
 
-#: templates/viewtopicactionbuttons.modac.tmpl:126
+#: templates/viewtopicactionbuttons.modac.tmpl:134
 msgid "Attach"
 msgstr "Anhang"
 
@@ -192,12 +193,12 @@ msgstr "Achtung"
 msgid "Available form templates"
 msgstr "Verfügbare Formularvorlagen"
 
-#: templates/foswiki.modac.tmpl:16
+#: templates/foswiki.modac.tmpl:16 templates/oopshistory.modac.tmpl:94
 msgid "Back to topic"
 msgstr "Zurück zur Seite"
 
 #: templates/more.modac.tmpl:96
-#: templates/viewtopicactionbuttons.modac.tmpl:148
+#: templates/viewtopicactionbuttons.modac.tmpl:156
 msgid "Backlinks"
 msgstr "Links"
 
@@ -250,7 +251,7 @@ msgid "Clear all"
 msgstr "Alles abwählen"
 
 #: templates/attach.modac.tmpl:57 templates/attachtables.modac.tmpl:8
-#: templates/oopshistory.modac.tmpl:41
+#: templates/oopshistory.modac.tmpl:45
 msgid "Comment"
 msgstr "Kommentar"
 
@@ -258,7 +259,7 @@ msgstr "Kommentar"
 msgid "Comments"
 msgstr "Kommentare"
 
-#: templates/more.modac.tmpl:162 templates/oopshistory.modac.tmpl:94
+#: templates/more.modac.tmpl:162 templates/oopshistory.modac.tmpl:99
 msgid "Compare revisions"
 msgstr "Vergleiche Revisionen"
 
@@ -271,7 +272,7 @@ msgstr "Content-Templates im Bereich \"%1\""
 msgid "Content templates"
 msgstr "Content-Templates"
 
-#: templates/oopshistory.modac.tmpl:67
+#: templates/oopshistory.modac.tmpl:71
 msgid "Context:"
 msgstr "Kontext:"
 
@@ -283,7 +284,8 @@ msgstr "Beitragende"
 msgid "Copy this topic (and all attachments) to a new topic."
 msgstr "Kopiere diese Seite (und alle ihre Anhänge) in eine neue Seite."
 
-#: templates/more.modac.tmpl:36 templates/moredialog.modac.tmpl:8
+#: data/System/ModacSkinTopicMenuTemplate.txt:10 templates/more.modac.tmpl:36
+#: templates/moredialog.modac.tmpl:8
 msgid "Copy topic"
 msgstr "Seite kopieren"
 
@@ -295,8 +297,8 @@ msgstr "Seite kopieren"
 msgid "Create New Topic"
 msgstr "Neue Seite anlegen"
 
-#: data/System/ModacSkinWebCreateNewTopicTemplate.txt:12
-#: data/System/ModacSkinWebCreateNewTopicTemplate.txt:59
+#: data/System/ModacSkinWebCreateNewTopicTemplate.txt:40
+#: data/System/ModacSkinWebCreateNewTopicTemplate.txt:87
 msgid "Create New Topic in %1 Web"
 msgstr "Neue Seite im Bereich \"%1\" anlegen"
 
@@ -304,7 +306,7 @@ msgstr "Neue Seite im Bereich \"%1\" anlegen"
 msgid "Create a link to the attached file"
 msgstr "Verweis auf die angehängte Datei erzeugen"
 
-#: data/System/ModacSkinWebCreateNewTopicTemplate.txt:16
+#: data/System/ModacSkinWebCreateNewTopicTemplate.txt:44
 msgid "Create a new topic"
 msgstr "Neue Seite anlegen"
 
@@ -333,7 +335,7 @@ msgid "Danish"
 msgstr "Dänisch"
 
 #: templates/attachtables.modac.tmpl:34 templates/attachtables.modac.tmpl:8
-#: templates/oopshistory.modac.tmpl:39 templates/oopshistory.modac.tmpl:50
+#: templates/oopshistory.modac.tmpl:43 templates/oopshistory.modac.tmpl:54
 msgid "Date"
 msgstr "Datum"
 
@@ -351,7 +353,7 @@ msgstr "Löschen"
 msgid "Delete attachment"
 msgstr "Anhang löschen"
 
-#: templates/more.modac.tmpl:60
+#: data/System/ModacSkinTopicMenuTemplate.txt:12 templates/more.modac.tmpl:60
 msgid "Delete topic"
 msgstr "Seite löschen"
 
@@ -400,7 +402,7 @@ msgstr "Entwurf"
 msgid "Dutch"
 msgstr "Niederländisch"
 
-#: templates/viewtopicactionbuttons.modac.tmpl:105
+#: templates/viewtopicactionbuttons.modac.tmpl:113
 msgid "Edit"
 msgstr "Bearbeiten"
 
@@ -408,7 +410,7 @@ msgstr "Bearbeiten"
 msgid "Edit Anyway"
 msgstr "Trotzdem bearbeiten"
 
-#: templates/viewtopicactionbuttons.modac.tmpl:121
+#: templates/viewtopicactionbuttons.modac.tmpl:129
 msgid "Edit Wiki<nop>Text"
 msgstr "Bearbeite Wiki<nop>Text"
 
@@ -420,7 +422,7 @@ msgstr "Hilfe fürs Bearbeiten"
 msgid "Edit settings for this topic..."
 msgstr "Einstellungen bearbeiten"
 
-#: templates/more.modac.tmpl:23
+#: data/System/ModacSkinTopicMenuTemplate.txt:8 templates/more.modac.tmpl:23
 msgid "Edit topic preference settings"
 msgstr "Einstellungen für diese Seite bearbeiten"
 
@@ -456,7 +458,7 @@ msgstr "Formulardaten"
 msgid "Form definition"
 msgstr "Formulardefinition"
 
-#: data/System/ModacSkinWebCreateNewTopicTemplate.txt:146
+#: data/System/ModacSkinWebCreateNewTopicTemplate.txt:174
 msgid "Free form topic title text."
 msgstr "Der Titel der Seite kann frei vergeben werden."
 
@@ -480,6 +482,10 @@ msgstr ""
 msgid "Hide help"
 msgstr "Hilfe verstecken"
 
+#: templates/oopshistory.modac.tmpl:16
+msgid "History"
+msgstr "Versionsgeschichte"
+
 #: templates/validate.modac.tmpl:44
 msgid "If you are unsure what this means, read: %1"
 msgstr "Bei Unklarheiten können Sie hier mehr erfahren: %1"
@@ -498,7 +504,7 @@ msgstr "Bilder werden angezeigt, für andere Anhänge wird ein Link erzeugt."
 msgid "Index"
 msgstr "Index"
 
-#: data/System/ModacSkinWebCreateNewTopicTemplate.txt:188
+#: data/System/ModacSkinWebCreateNewTopicTemplate.txt:216
 msgid "Initialize the new topic using a template."
 msgstr "Die Vorlage definiert den initialen Inhalt der Seite."
 
@@ -522,9 +528,13 @@ msgstr "Einloggen"
 msgid "Log Out"
 msgstr "Ausloggen"
 
-#: templates/oopshistory.modac.tmpl:63
+#: templates/oopshistory.modac.tmpl:67
 msgid "MS-Word-mode"
 msgstr "MS-Word-Änderungsmodus"
+
+#: data/System/ModacSkinTopicMenuTemplate.txt:7
+msgid "Manage page"
+msgstr "Seite verwalten"
 
 #: data/System/WebLeftBarDefault.txt:5
 msgid "Manual"
@@ -543,7 +553,7 @@ msgid "More Actions on Topic %1"
 msgstr "Weitere Aktionen für Seite %1"
 
 #: templates/rdiff.modac.tmpl:24
-#: templates/viewtopicactionbuttons.modac.tmpl:135
+#: templates/viewtopicactionbuttons.modac.tmpl:143
 msgid "More topic actions..."
 msgstr "Weitere Aktionen"
 
@@ -623,10 +633,6 @@ msgstr "Optionen"
 msgid "PDF-Print"
 msgstr "PDF-Druck"
 
-#: templates/viewprint.modac.tmpl:54
-msgid "Page"
-msgstr "Seite"
-
 #: data/System/ModacSkinSolrSearchViewTemplate.txt:62
 msgid "Person in charge of page"
 msgstr "Seitenverantwortlicher"
@@ -636,7 +642,7 @@ msgid "Pick from a list"
 msgstr "Von der Liste auswählen"
 
 #: data/System/ModacSkinContentTemplatesViewTemplate.txt:114
-#: data/System/ModacSkinWebCreateNewTopicTemplate.txt:155
+#: data/System/ModacSkinWebCreateNewTopicTemplate.txt:183
 msgid "Please enter the article name without special characters."
 msgstr "Den Seitennamen bitte ohne Sonderzeichen eingeben."
 
@@ -676,11 +682,11 @@ msgstr "Letzte Änderungen"
 msgid "Recently changed"
 msgstr "Letzte Änderungen"
 
-#: templates/oopshistory.modac.tmpl:88
+#: templates/oopshistory.modac.tmpl:92
 msgid "Refresh"
 msgstr "Neu laden"
 
-#: templates/more.modac.tmpl:79
+#: data/System/ModacSkinTopicMenuTemplate.txt:11 templates/more.modac.tmpl:79
 msgid "Rename or move topic"
 msgstr "Seite umbenennen oder verschieben"
 
@@ -688,7 +694,7 @@ msgstr "Seite umbenennen oder verschieben"
 msgid "Rename or move topic..."
 msgstr "Seite umbenennen oder verschieben"
 
-#: templates/oopshistory.modac.tmpl:62
+#: templates/oopshistory.modac.tmpl:66
 msgid "Render style:"
 msgstr "Anzeige-Stil:"
 
@@ -724,12 +730,12 @@ msgstr "Vorherige Revision wiederherstellen"
 msgid "Restore..."
 msgstr "Wiederherstellen"
 
-#: templates/oopshistory.modac.tmpl:38 templates/oopshistory.modac.tmpl:49
+#: templates/oopshistory.modac.tmpl:42 templates/oopshistory.modac.tmpl:53
 #: templates/rdiff.modac.tmpl:17
 msgid "Revision"
 msgstr "Revision"
 
-#: templates/oopshistory.modac.tmpl:21
+#: templates/oopshistory.modac.tmpl:25
 msgid "Revision history of "
 msgstr "Versionsgeschichte von "
 
@@ -737,13 +743,13 @@ msgstr "Versionsgeschichte von "
 msgid "Revisions"
 msgstr "Revisionen"
 
-#: templates/oopshistory.modac.tmpl:81
+#: templates/oopshistory.modac.tmpl:85
 msgid "Revisions %1 - %2 (out of %3) are shown"
 msgstr ""
 "Aktuell werden die Revisionen <b>%1</b> bis <b>%2</b> von <b>%3</b> "
 "angezeigt."
 
-#: templates/oopshistory.modac.tmpl:88
+#: templates/oopshistory.modac.tmpl:92
 msgid "Revisions."
 msgstr "Revisionen anzeigen lassen."
 
@@ -762,7 +768,7 @@ msgstr ""
 "S = Speichern, Q = Stilles Speichern, K = Zwischenspeichern, P = Vorschau, C "
 "= Abbrechen"
 
-#: templates/viewtopicactionbuttons.modac.tmpl:58
+#: templates/viewtopicactionbuttons.modac.tmpl:66
 msgid "Search"
 msgstr "Suchen"
 
@@ -792,7 +798,7 @@ msgstr ""
 msgid "Select all"
 msgstr "Alles auswählen"
 
-#: templates/more.modac.tmpl:113
+#: data/System/ModacSkinTopicMenuTemplate.txt:9 templates/more.modac.tmpl:113
 msgid "Select topic parent"
 msgstr "übergeordnete Seite auswählen"
 
@@ -820,7 +826,7 @@ msgstr "Hilfe anzeigen"
 msgid "Shrink edit box"
 msgstr "Editor verkleinern"
 
-#: templates/more.modac.tmpl:171 templates/oopshistory.modac.tmpl:64
+#: templates/more.modac.tmpl:171 templates/oopshistory.modac.tmpl:68
 msgid "Side by side"
 msgstr "Seite an Seite"
 
@@ -884,21 +890,11 @@ msgstr ""
 "Es besteht ein Risiko, dass jemand versucht, unter Ihrer Identität und ohne "
 "Ihr Wissen Inhalte von %1 zu ändern."
 
-#: templates/viewprint.modac.tmpl:87
-msgid ""
-"This printout is a copy and not subject to updating service.<br />Before "
-"use, the respective user has to make sure that the copy is up to date.<br /"
-">Print date:"
-msgstr ""
-"Dieser Ausdruck ist eine Kopie und unterliegt nicht dem Änderungsdienst."
-"<br>Der jeweilige Benutzer hat sich vor Gebrauch von der Aktualität der "
-"Kopie zu vergewissern.<br />Druckdatum:"
-
 #: data/System/ModacSkinSolrSearchViewTemplate.txt:80
 msgid "Timespan"
 msgstr "Zeitspanne"
 
-#: data/System/ModacSkinWebCreateNewTopicTemplate.txt:78
+#: data/System/ModacSkinWebCreateNewTopicTemplate.txt:106
 msgid "Title"
 msgstr "Titel"
 
@@ -914,7 +910,7 @@ msgstr "Um zu sehen, ob %1 die Bearbeitung abgeschlossen hat drücken Sie "
 msgid "Tools"
 msgstr "Werkzeuge"
 
-#: templates/viewtopicactionbuttons.modac.tmpl:61
+#: templates/viewtopicactionbuttons.modac.tmpl:69
 msgid "Topic"
 msgstr "Artikel"
 
@@ -922,22 +918,22 @@ msgstr "Artikel"
 msgid "Topic attachments"
 msgstr "Anhänge"
 
-#: templates/oopshistory.modac.tmpl:36 templates/oopshistory.modac.tmpl:47
+#: templates/oopshistory.modac.tmpl:40 templates/oopshistory.modac.tmpl:51
 msgid "Topic history"
 msgstr "Versionsgeschichte der Seite"
 
-#: data/System/ModacSkinWebCreateNewTopicTemplate.txt:174
+#: data/System/ModacSkinWebCreateNewTopicTemplate.txt:202
 msgid "Topic name that the newly created topic will be a child of."
 msgstr ""
 "Mit Hilfe der übergeordneten Seite können Sie eine Seiten-Hierarchie "
 "aufbauen."
 
 #: data/System/ModacSkinContentTemplatesViewTemplate.txt:85
-#: data/System/ModacSkinWebCreateNewTopicTemplate.txt:87
+#: data/System/ModacSkinWebCreateNewTopicTemplate.txt:115
 msgid "Topic name:"
 msgstr "Seitenname:"
 
-#: data/System/ModacSkinWebCreateNewTopicTemplate.txt:97
+#: data/System/ModacSkinWebCreateNewTopicTemplate.txt:125
 msgid "Topic parent:"
 msgstr "Übergeordnete Seite:"
 
@@ -981,11 +977,11 @@ msgstr "Bis zu %1 KB hochladen."
 msgid "Url:"
 msgstr "Url:"
 
-#: data/System/ModacSkinWebCreateNewTopicTemplate.txt:118
+#: data/System/ModacSkinWebCreateNewTopicTemplate.txt:146
 msgid "Use template:"
 msgstr "Vorlagen benutzen:"
 
-#: templates/oopshistory.modac.tmpl:40 templates/oopshistory.modac.tmpl:51
+#: templates/oopshistory.modac.tmpl:44 templates/oopshistory.modac.tmpl:55
 msgid "Username"
 msgstr "Benutzername"
 
@@ -1053,7 +1049,7 @@ msgstr "Bereiche"
 msgid "Who"
 msgstr "Hochgeladen durch"
 
-#: templates/oopshistory.modac.tmpl:68
+#: templates/oopshistory.modac.tmpl:72
 msgid "Whole page"
 msgstr "Gesamte Seite"
 
@@ -1061,7 +1057,7 @@ msgstr "Gesamte Seite"
 msgid "You are here:"
 msgstr "Sie sind hier:"
 
-#: templates/oopshistory.modac.tmpl:83
+#: templates/oopshistory.modac.tmpl:87
 msgid "You can also choose to see "
 msgstr "Sie können sich auch insgesamt "
 
@@ -1117,7 +1113,7 @@ msgstr "Dokumententyp"
 msgid "draft"
 msgstr "Entwurf"
 
-#: templates/oopshistory.modac.tmpl:43
+#: templates/oopshistory.modac.tmpl:47
 msgid "earlier"
 msgstr "früher"
 
@@ -1125,7 +1121,7 @@ msgstr "früher"
 msgid "edit"
 msgstr "bearbeiten"
 
-#: templates/oopshistory.modac.tmpl:43
+#: templates/oopshistory.modac.tmpl:47
 msgid "first"
 msgstr "erster"
 
@@ -1145,9 +1141,9 @@ msgstr "Hilfe"
 msgid "image"
 msgstr "Bild"
 
-#: data/System/ModacSkinSolrSearchViewTemplate.txt:222
-#: data/System/ModacSkinSolrSearchViewTemplate.txt:243
-#: data/System/ModacSkinSolrSearchViewTemplate.txt:259
+#: data/System/ModacSkinSolrSearchBaseTemplate.txt:14
+#: data/System/ModacSkinSolrSearchBaseTemplate.txt:35
+#: data/System/ModacSkinSolrSearchBaseTemplate.txt:51
 msgid "in %1"
 msgstr "in %1"
 
@@ -1159,11 +1155,11 @@ msgstr "im Quelltextformat"
 msgid "indicates mandatory fields"
 msgstr "kennzeichnet Pflichtfelder"
 
-#: templates/oopshistory.modac.tmpl:43
+#: templates/oopshistory.modac.tmpl:47
 msgid "last"
 msgstr "letzter"
 
-#: templates/oopshistory.modac.tmpl:43
+#: templates/oopshistory.modac.tmpl:47
 msgid "later"
 msgstr "später"
 
@@ -1179,35 +1175,32 @@ msgstr "keine übergeordnete Seite zugewiesen"
 msgid "none"
 msgstr "(nichts)"
 
-#: templates/viewprint.modac.tmpl:54
-msgid "of"
-msgstr "von"
-
 #: templates/attachagain.modac.tmpl:23
 #: templates/renameattachmentdelete.modac.tmpl:25
 msgid "or"
 msgstr "oder"
 
-#: templates/attachtables.modac.tmpl:39 templates/oopshistory.modac.tmpl:54
+#: templates/attachtables.modac.tmpl:39 templates/oopshistory.modac.tmpl:58
 msgid "restore"
 msgstr "wiederherstellen"
 
-#: templates/oopshistory.modac.tmpl:88
+#: templates/oopshistory.modac.tmpl:92
 msgid "revisions up to"
 msgstr "Versionen bis zu"
 
-#: templates/viewtopicactionbuttons.modac.tmpl:47
-#: templates/viewtopicactionbuttons.modac.tmpl:48
-#: templates/viewtopicactionbuttons.modac.tmpl:79
+#: data/System/ModacSkinTopicMenuTemplate.txt:4
+#: templates/viewtopicactionbuttons.modac.tmpl:55
+#: templates/viewtopicactionbuttons.modac.tmpl:56
+#: templates/viewtopicactionbuttons.modac.tmpl:87
 msgid "title='Attach an image or document to this topic' accesskey='a'>&Attach"
 msgstr ""
 "title='Ein Bild oder Dokument an diese Seite anhängen' accesskey='a'>&Anhänge"
 
-#: templates/viewtopicactionbuttons.modac.tmpl:71
+#: templates/viewtopicactionbuttons.modac.tmpl:79
 msgid "title='Create new topic' accesskey='c'>&Create"
 msgstr "title='Neue Seite anlegen' accesskey='c'>Anlegen (&c)"
 
-#: templates/viewtopicactionbuttons.modac.tmpl:81
+#: templates/viewtopicactionbuttons.modac.tmpl:89
 msgid ""
 "title='Delete or rename this topic; set parent topic; view and compare "
 "revisions' accesskey='m'>&More topic actions"
@@ -1219,16 +1212,17 @@ msgstr ""
 msgid "title='Discussion about Improvements' >Start Discussion"
 msgstr "title='Diskussion über Verbesserungen' >Diskussion starten"
 
-#: templates/viewtopicactionbuttons.modac.tmpl:75
+#: data/System/ModacSkinTopicMenuTemplate.txt:6
+#: templates/viewtopicactionbuttons.modac.tmpl:83
 msgid "title='Edit Wiki text' accesskey='w'>Edit &wiki text"
 msgstr "title='Wiki-Text bearbeiten' accesskey='w'>&Wikitext bearbeiten"
 
-#: templates/viewtopicactionbuttons.modac.tmpl:73
+#: templates/viewtopicactionbuttons.modac.tmpl:81
 msgid "title='Edit this topic text' accesskey='e'>&Edit"
 msgstr "title='Seiten-Text bearbeiten' accesskey='e'>&Bearbeiten"
 
-#: templates/viewtopicactionbuttons.modac.tmpl:43
-#: templates/viewtopicactionbuttons.modac.tmpl:44
+#: templates/viewtopicactionbuttons.modac.tmpl:51
+#: templates/viewtopicactionbuttons.modac.tmpl:52
 msgid "title='Edit this topic' accesskey='e'>&Edit"
 msgstr "title='Diese Seite bearbeiten' >Bearbeiten"
 
@@ -1236,30 +1230,28 @@ msgstr "title='Diese Seite bearbeiten' >Bearbeiten"
 msgid "title='Interwoven' accesskey='i'>&interwoven"
 msgstr "title='verwoben' accesskey='v'>verwoben (&v)"
 
-#: templates/viewtopicactionbuttons.modac.tmpl:55
-#: templates/viewtopicactionbuttons.modac.tmpl:56
+#: templates/viewtopicactionbuttons.modac.tmpl:63
+#: templates/viewtopicactionbuttons.modac.tmpl:64
 msgid "title='More actions for this topic' accesskey='m'>&More topic actions"
 msgstr ""
 "title='Weitere Aktionen für diese Seite' accesskey='w'>&Weitere Aktionen"
 
-msgid "Manage page"
-msgstr "Seite verwalten"
-
+#: templates/viewtopicactionbuttons.modac.tmpl:93
 msgid "title='Printable version of this topic' accesskey='p'>&Print version"
 msgstr "title='Druckversion dieser Seite' accesskey='p'>Druckversion (&p)"
 
-#: templates/viewtopicactionbuttons.modac.tmpl:65
+#: templates/viewtopicactionbuttons.modac.tmpl:73
 msgid "title='Q.Wiki - specialpage' >specialpage"
 msgstr "title='Q.Wiki - Spezialseite' >Spezialseite"
 
-#: templates/viewtopicactionbuttons.modac.tmpl:92
+#: templates/viewtopicactionbuttons.modac.tmpl:100
 msgid ""
 "title='Search all webs for topics that link to here' accesskey='l'>A&ll Webs"
 msgstr ""
 "title='Alle Bereiche nach Seiten durchsuchen, die hierher verweisen' "
 "accesskey='l'>A&lle Bereiche"
 
-#: templates/viewtopicactionbuttons.modac.tmpl:94
+#: templates/viewtopicactionbuttons.modac.tmpl:102
 msgid ""
 "title='Search the %1 Web for topics that link to here' "
 "accesskey='b'>&Backlinks"
@@ -1267,7 +1259,7 @@ msgstr ""
 "title='Den %1 Bereich nach Seiten durchsuchen, die hierher verweisen' "
 "accesskey='b'>Links (&b)"
 
-#: templates/viewtopicactionbuttons.modac.tmpl:90
+#: templates/viewtopicactionbuttons.modac.tmpl:98
 msgid ""
 "title='Search the %1 Web for topics that link to here' accesskey='b'>We&b"
 msgstr ""
@@ -1278,25 +1270,26 @@ msgstr ""
 msgid "title='Side by side' accesskey='s'>&side by side"
 msgstr "title='Seite-an-Seite' accesskey='s'>&seite-an-seite"
 
-#: templates/viewtopicactionbuttons.modac.tmpl:51
-#: templates/viewtopicactionbuttons.modac.tmpl:52
+#: data/System/ModacSkinTopicMenuTemplate.txt:5
+#: templates/viewtopicactionbuttons.modac.tmpl:59
+#: templates/viewtopicactionbuttons.modac.tmpl:60
 msgid "title='View topic history' accesskey='h'>&History"
 msgstr ""
 "title='Die Versionsgeschichte dieses Artikels ansehen' "
 "accesskey='v'>&Versionsgeschichte"
 
-#: templates/viewtopicactionbuttons.modac.tmpl:77
+#: templates/viewtopicactionbuttons.modac.tmpl:85
 msgid "title='View topic' accesskey='v'>&View topic"
 msgstr "title='Seite anzeigen' accesskey='v'>Seite anzeigen (&v)"
 
-#: templates/viewtopicactionbuttons.modac.tmpl:97
-#: templates/viewtopicactionbuttons.modac.tmpl:99
+#: templates/viewtopicactionbuttons.modac.tmpl:105
+#: templates/viewtopicactionbuttons.modac.tmpl:107
 msgid "title='View total topic history' accesskey='h'>&History"
 msgstr ""
 "title='Versionsgeschichte der Seite ansehen' "
 "accesskey='h'>&Versionsgeschichte"
 
-#: templates/viewtopicactionbuttons.modac.tmpl:102
+#: templates/viewtopicactionbuttons.modac.tmpl:110
 msgid "title='View without formatting' accesskey='v'>&View wiki text"
 msgstr ""
 "title='Quelltext ohne Formatierung ansehen' accesskey='v'>Quelltext (&v)"
@@ -1305,7 +1298,7 @@ msgstr ""
 msgid "topic"
 msgstr "Seite"
 
-#: templates/oopshistory.modac.tmpl:72
+#: templates/oopshistory.modac.tmpl:76
 msgid "unchanged sections before and after each change"
 msgstr "unveränderte Sektionen vor und nach jeder Änderung"
 
@@ -1337,11 +1330,10 @@ msgstr "value='Zwischenspeichern' accesskey='z'"
 msgid "value='Save' accesskey='s'"
 msgstr "value='Speichern' accesskey='s'"
 
-#: templates/attachtables.modac.tmpl:39 templates/oopshistory.modac.tmpl:54
+#: templates/attachtables.modac.tmpl:39 templates/oopshistory.modac.tmpl:58
 msgid "view"
 msgstr "ansehen"
 
 #: templates/validate.modac.tmpl:44
 msgid "why you are being asked to confirm"
 msgstr "warum Sie zur Bestätigung aufgefordert werden"
-
