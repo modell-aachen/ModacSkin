@@ -1,6 +1,7 @@
 %TMPL:INCLUDE{"TopicMenu"}%
 %TMPL:DEF{"modacTabs"}%%JQREQUIRE{"supersubs"}%%JQREQUIRE{"bgiframe"}%%JQREQUIRE{"ui::dialog"}%%ADDTOZONE{"script" text="<script type='text/javascript'>
 jQuery(function(){
+    if (jQuery('.modacMoreDynamic').length == 0) return;
     jQuery('.jqmenu').supersubs({
         minWidth: 12, /* minimum width of sub-menus in em units */
         maxWidth: 30, /* maximum width of sub-menus in em units */
@@ -32,6 +33,7 @@ jQuery(function(){
         } });
         return false;
     };
+    jQuery('.modacMoreDynamic > a').click(function() { return false; });
     jQuery('.morelink-copy').click(function(){ return menuClickHandler('copy'); });
     jQuery('.morelink-delete').click(function(){ return menuClickHandler('delete'); });
     jQuery('.morelink-rename').click(function(){ return menuClickHandler('rename'); });
@@ -40,9 +42,8 @@ jQuery(function(){
 }%<div id="modacActionButtonsWrapper">%TMPL:P{"modacActionButtons"}%<div class="clear"></div></div> %TMPL:END%
 
 %{ --- "modacActionButtons" is defined within the particular scripts e.g. view.modac.tmpl or edt.modac.tmpl and uses either "modacActionButtonsVIEW" or "modacActionButtonsSYSTEM" --- }%
-%TMPL:DEF{"modacActionButtonsVIEW"}%<div id="modacButtonsLEFT" class="modacTabs"><ul><li>%TMPL:P{"topictabaction"}%</li></ul></div><div id="modacButtonsRIGHT" class="modacTabs"><ul class="jqmenu modacMoreMenu"><li>%TMPL:P{"modacEdit"}%</li><li>%TMPL:P{"modacMore"}%</li><li id="modacSearchBox">%TMPL:P{"SearchBox"}%</li></ul></div>%TMPL:END%
+%TMPL:DEF{"modacActionButtonsVIEW"}%<div id="modacButtonsLEFT" class="modacTabs"><ul><li>%TMPL:P{"topictabaction"}%</li></ul></div><div id="modacButtonsRIGHT" class="modacTabs"><ul class="jqmenu modacMoreMenu"><li>%TMPL:P{"modacEdit"}%</li>%IF{"'%MODAC_NO_TOPMENU{default="0"}%'='0'" then="<li class=\"modacMoreDynamic\">$percentTMPL:P{\"modacMore\"}$percent</li>" else="<li>$percntTMPL:P{\"modacAttach\"}$percnt</li><li>$percntTMPL:P{\"modacMore\"}$percnt</li>"}%<li id="modacSearchBox">%TMPL:P{"SearchBox"}%</li></ul></div>%TMPL:END%
 %TMPL:DEF{"modacActionButtonsSYSTEM"}%<div id="modacButtonsLEFT" class="modacTabs"><ul><li>%TMPL:P{"modacSystemTab"}%</li></ul></div><div id="modacButtonsRIGHT" class="modacTabs"><ul><li id="modacSearchBox">%TMPL:P{"SearchBox"}%</li></ul></div>%TMPL:END%
-
 
 %{ --- definitions used in "modacActionButtonsVIEW" --- }%
 
