@@ -27,7 +27,7 @@ And here is the widget:
 jQuery(function($) {
 	var topicsparent_pagesize = 20;
 	var include_web = %TOPICSELECT_INCLUDE_WEB{default="true"}%;
-	$('.topicselect').select2({
+	$('#%TOPICSELECT_ID{default="topic_select"}%').select2({
 		ajax: {
 			dataType: 'json',
 			url: '%SCRIPTURLPATH{"view"}%/%WEB%/%TOPIC%',
@@ -73,6 +73,6 @@ jQuery(function($) {
 		width: 'element'
 	});
 });
-</script><input id="%TOPICSELECT_ID{default="topicparent_select"}%" name="%TOPICSELECT_NAME{default="topic"}%" class="topicselect" type="hidden" value="%TOPICSELECT_DEFAULT%" />
+</script><input id="%TOPICSELECT_ID{default="topic_select"}%" name="%TOPICSELECT_NAME{default="topic"}%" class="topicselect" type="hidden" value="%TOPICSELECT_DEFAULT%" />
 %ENDSECTION{"selecttopic"}%
 </verbatim>
