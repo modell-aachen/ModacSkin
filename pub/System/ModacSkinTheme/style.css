@@ -388,6 +388,7 @@ html>body #modacLogoIE {
 	border-bottom-width: 0;
 	margin: 2px 0 0 -1px;
 }
+.modacMoreMenu li ul li { list-style-image: none; } /* fix broken prop inheritance in IE7 */
 .modacMoreMenu li.sfHover ul {
 	display: block;
 	left: 0;
@@ -396,7 +397,6 @@ html>body #modacLogoIE {
 }
 .modacMoreMenu li.sfHover ul ul {
 	top: 0;
-	list-style-type: none;
 }
 .modacMoreMenu li ul li a { background: none !important; width: 100% !important; }
 .modacMoreMenu li ul li { background: white none !important; }
