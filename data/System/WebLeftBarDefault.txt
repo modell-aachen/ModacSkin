@@ -39,7 +39,7 @@
 	linkclass="patternTwistyButton" 
 }% 
 <div id="modacSidebarTwisty_webs">
-%IF{ "context FlexWebListPluginEnabled" then="$percntINCLUDE{ $quot$percntSYSTEMWEB$percnt.ModacSideBarFlexWebList$quot }$percnt" else="$percntINCLUDE{$quot$percntSYSTEMWEB$percnt.ModacSideBarWebList$quot }$percnt" }%
+%IF{ "context FlexWebListPluginEnabled" then="$percntINCLUDE{ $quot$percntSYSTEMWEB$percnt.ModacSkinFlexWebList$quot }$percnt" else="$percntINCLUDE{$quot$percntSYSTEMWEB$percnt.ModacSKinWebList$quot }$percnt" }%
 </div>
 %ENDTWISTY% 
 </div>
