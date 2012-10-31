@@ -28,6 +28,7 @@ These words are often mentioned in workflows and might slip into a %MAKE%NOP%TEX
 %MAKETEXT{"Old Discussion"}%
 %MAKETEXT{"Topic is not under any workflow."}%
 %MAKETEXT{"Infopage"}%
+%MAKETEXT{"in&#160;discussion"}%
 
 ---+++ WebCreateNewTopic (include)
 %MAKETEXT{"Create this topic"}%

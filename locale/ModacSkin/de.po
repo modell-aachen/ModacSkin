@@ -198,6 +198,9 @@ msgstr "formale Prüfung (Entwurf)"
 msgid "under discussion"
 msgstr "in Diskussion"
 
+msgid "under&#160;discussion"
+msgstr "in&#160;Diskussion"
+
 #: data/System/ModacSkinSolrSearchViewTemplate.txt
 msgid "Normchapter"
 msgstr "Normkapitel"
