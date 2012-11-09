@@ -5,6 +5,10 @@
 %{</verbatim>}%
 
 %{<verbatim class="tml">}%
+%TMPL:DEF{"modacActionButtons"}%<div id="modacButtonsLEFT" class="modacTabs"><ul><li>%TMPL:P{"modacSystemTab"}%</li></ul></div>%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim class="tml">}%
 %TMPL:DEF{"broadcastmessage"}%%TMPL:P{"solr::search"}%%TMPL:END%
 %{</verbatim>}%
 
