@@ -5,12 +5,12 @@
 </form><ul>
 <!-- ATTACHMENTS --><li><a href="%SCRIPTURLPATH{"attach"}%/%BASEWEB%/%BASETOPIC%" rel="nofollow" %MAKETEXT{"title='Attach an image or document to this topic' accesskey='a'>&Attach"}%</a></li>
 <!-- REVISION HISTORY --><li>%IF{"context CompareRevisionsAddonPluginEnabled" then="<a href='%SCRIPTURLPATH{"oops"}%/%BASEWEB%/%BASETOPIC%?template=oopshistory&history=on' rel='nofollow' %MAKETEXT{"title='View topic history' accesskey='h'>&History"}%</a>" else="<a href='%SCRIPTURLPATH{"rdiff"}%/%BASEWEB%/%BASETOPIC%?type=history&history=on' rel='nofollow' %MAKETEXT{"title='View topic history' accesskey='h'>&History"}%</a>"}%</li>
-<!-- EDIT WIKITEXT -->%IF{"'%BASEWEB%/%BASETOPIC%' allows 'CHANGE'" then="<li><a href=\"%SCRIPTURLPATH{"edit"}%/%BASEWEB%/%BASETOPIC%?t=%GMTIME{"$epoch"}%;nowysiwyg=1\" %MAKETEXT{"title='Edit Wiki text' accesskey='w'>Edit &wiki text"}%</a></li>"}%
+<!-- EDIT WIKITEXT --><li class='requireModacChangePermission'><a href="%SCRIPTURLPATH{"edit"}%/%BASEWEB%/%BASETOPIC%?t=%GMTIME{"$epoch"}%;nowysiwyg=1" class="modacChanging" %MAKETEXT{"title='Edit Wiki text' accesskey='w'>Edit &wiki text"}%</a></li>
 <li>[[%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%?template=more][%MAKETEXT{"Manage page"}% &raquo;]]<ul>
-  <!-- TOPIC PREFERENCES -->%IF{"'%BASEWEB%/%BASETOPIC%' allows 'CHANGE'" then="<li><a href=\"#\" onclick=\"jQuery('#more_editpref_form').submit();return false;\">%MAKETEXT{"Edit topic preference settings"}%</a></li>"}%
-  <!-- CHANGE PARENT -->%IF{"'%BASEWEB%/%BASETOPIC%' allows 'CHANGE'" then="<li><a href=\"#\" class=\"morelink-setparent\">%MAKETEXT{"Select topic parent"}%</a></li>"}%
+  <!-- TOPIC PREFERENCES --><li class="requireModacChangePermission"><a href="#" onclick="jQuery('#more_editpref_form').submit();return false;" class="modacChanging">%MAKETEXT{"Edit topic preference settings"}%</a></li>
+  <!-- CHANGE PARENT --><li class="requireModacChangePermission"><a href="#" class="morelink-setparent">%MAKETEXT{"Select topic parent"}%</a></li>
   <!-- COPY --><li><a href="#" class="morelink-copy">%MAKETEXT{"Copy topic"}%</a></li>
-  <!-- RENAME/MOVE -->%IF{"'%BASEWEB%/%BASETOPIC%' allows 'RENAME'" then="<li><a href=\"#\" class=\"morelink-rename\">%MAKETEXT{"Rename or move topic"}%</a></li>"}%
-  <!-- DELETE -->%IF{"'%BASEWEB%/%BASETOPIC%' allows 'RENAME'" then="<li><a href=\"#\" class=\"morelink-delete\">%MAKETEXT{"Delete topic"}%</a></li>"}%
+  <!-- RENAME/MOVE -->%IF{"'%BASEWEB%/%BASETOPIC%' allows 'RENAME'" then="<li class=\"requireModacChangePermission\"><a href=\"#\" class=\"morelink-rename\">%MAKETEXT{"Rename or move topic"}%</a></li>"}%
+  <!-- DELETE -->%IF{"'%BASEWEB%/%BASETOPIC%' allows 'RENAME'" then="<li class=\"requireModacChangePermisssion\"><a href=\"#\" class=\"morelink-delete\">%MAKETEXT{"Delete topic"}%</a></li>"}%
 </ul></li></ul>%TMPL:END%
 %{</verbatim>}%

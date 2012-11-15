@@ -20,8 +20,8 @@
 %TMPL:DEF{"modacActionButtons"}%%TMPL:P{"modacActionButtonsVIEW"}%%TMPL:END%
 %TMPL:DEF{"logo"}%%TMPL:END%
 
-%TMPL:DEF{"settings"}%<h2>%MAKETEXT{"Edit topic preference settings"}%</h2>
-<form action="%SCRIPTURLPATH{"manage"}%/%WEB%/%TOPIC%" method="post">
+%TMPL:DEF{"settings"}%<div class="requiremodacChangingPermission"><h2>%MAKETEXT{"Edit topic preference settings"}%</h2>
+<form action="%SCRIPTURLPATH{"manage"}%/%WEB%/%TOPIC%" method="post" class="modacChanging">
 <div class="foswikiFormSteps">
 <div class="foswikiFormStep foswikiLast">
 <p><input type="submit" value="%MAKETEXT{"Edit settings for this topic..."}%" class='foswikiButton'/></p>
@@ -29,6 +29,7 @@
 </div>
 <input type="hidden" name="action" value="editSettings" />
 </form>
+</div>
 %TMPL:END%
 
 
@@ -57,8 +58,8 @@
 
 
 
-%TMPL:DEF{"delete"}%<h2>%MAKETEXT{"Delete topic"}%</h2>
-<form name="delete" action="%SCRIPTURLPATH{"rename"}%/%WEB%/%TOPIC%" method="post">
+%TMPL:DEF{"delete"}%<div class="requiremodacChangingPermission"><h2>%MAKETEXT{"Delete topic"}%</h2>
+<form name="delete" action="%SCRIPTURLPATH{"rename"}%/%WEB%/%TOPIC%" method="post" class="modacChanging">
 <input type="hidden" name="newweb" value="%TRASHWEB%" />
 <input type="hidden" name="nonwikiword" value="on" />
 <div class="foswikiFormSteps">
@@ -72,12 +73,13 @@
 </div>
 </div>
 </form>
+</div>
 %TMPL:END%
 
 
 
-%TMPL:DEF{"rename"}%<h2>%MAKETEXT{"Rename or move topic"}%</h2>%META{"moved" prefix="<div class='foswikiMessage'>" suffix="</div>"}%
-<form name="rename" action="%SCRIPTURLPATH{"rename"}%/%WEB%/%TOPIC%" method="post">
+%TMPL:DEF{"rename"}%<div class="requiremodacChangingPermission"><h2>%MAKETEXT{"Rename or move topic"}%</h2>%META{"moved" prefix="<div class='foswikiMessage'>" suffix="</div>"}%
+<form name="rename" action="%SCRIPTURLPATH{"rename"}%/%WEB%/%TOPIC%" method="post" class="modacChanging">
 <div class="foswikiFormSteps">
 <div class="foswikiFormStep">
 <p><input type="checkbox" class="foswikiCheckbox" id="currentwebonly" name="currentwebonly" /><label for="currentwebonly">%MAKETEXT{"Only update linked topics in [_1] web" args="%WEB%"}%</label></p>
@@ -89,6 +91,7 @@
 </div>
 </div>
 </form>
+</div>
 %TMPL:END%
 
 
@@ -103,8 +106,8 @@
 
 
 %TMPL:DEF{"setparent"}%#SetParent
-<h2>%MAKETEXT{"Set new topic parent"}%</h2>
-<form name="main" action="%SCRIPTURLPATH{"save"}%/%WEB%/%TOPIC%?action_save=1" method="post">
+<div class="requiremodacChangingPermission"><h2>%MAKETEXT{"Set new topic parent"}%</h2>
+<form name="main" action="%SCRIPTURLPATH{"save"}%/%WEB%/%TOPIC%?action_save=1" method="post" class="modacChanging">
 <div class="foswikiFormSteps">
 <div class="foswikiFormStep">
 <h3>%MAKETEXT{"Current parent:"}% %IF{"'NONE%META{"parent" dontrecurse="on"}%'='NONE'" then="%MAKETEXT{"no current parent"}%" else='%SEARCH{ "name = '%TOPIC%'" scope="topic" type="query" nosearch="on" nototal="on" format="[[$parent]]" }%' }%</h3>
@@ -117,7 +120,7 @@
 <p><input type='submit' class='foswikiButton' value='%MAKETEXT{"Set new parent"}%' /></p>
 </div>
 </div>
-</form>%TMPL:END%
+</form></div>%TMPL:END%
 
 
 
@@ -177,8 +180,8 @@ id="cssFoswikiDiffOptions"}%%TMPL:END%
 </form>
 
 
-<h3>%MAKETEXT{"Restore topic"}%</h3>
-<form name="main" action="%SCRIPTURLPATH{"manage"}%/%WEB%/%TOPIC%" method="post">
+<div class="requiremodacChangingPermission"><h3>%MAKETEXT{"Restore topic"}%</h3>
+<form name="main" action="%SCRIPTURLPATH{"manage"}%/%WEB%/%TOPIC%" method="post" class="modacChanging">
 <div class="foswikiFormSteps">
 <div class="foswikiFormStep">
 <p>
@@ -191,6 +194,7 @@ id="cssFoswikiDiffOptions"}%%TMPL:END%
 <input type="hidden" name="action" value="restoreRevision" />
 <input type="hidden" name="nowysiwyg" value="1" />
 </form>
+</div>
 %IF{"$ maxrev='0'" then="-->" }%%IF{"$ maxrev!='0'" then="<!--" }%
 %MAKETEXT{"No previous revision exists."}%%IF{"$ maxrev!='0'" then="-->" }%%TMPL:END%
 
