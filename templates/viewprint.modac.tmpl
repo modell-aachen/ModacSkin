@@ -31,7 +31,7 @@
   margin-left: 2cm;
   margin-top: 5.0cm;
   margin-bottom: 2.0cm;
-  /*size: A4 landscape;*/
+  %IF{"$LANDSCAPE='1'" then="size: A4 landscape;"}%
 
   @top {
     content: flow(Princeheader)
