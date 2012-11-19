@@ -2,11 +2,11 @@
 	STYLE
 	Appearance: margins, padding, fonts, borders
 	-----------------------------------------------------------	*/
-	
+
 
 /*	----------------------------------------------------------------------------
 	CONSTANTS
-	
+
 	Sizes
 	----------------------------------------
 	S1 line-height											1.5em
@@ -22,18 +22,18 @@
 
 html body {
 	font-size:104%; /* to change the site's font size, change .foswikiPage below */
-	voice-family:"\"}\""; 
+	voice-family:"\"}\"";
 	voice-family:inherit;
 	font-family:arial, verdana, sans-serif;
 	font-size:small;
 }
 html>body { /* Mozilla */
-	font-size:small;	
+	font-size:small;
 }
 body {
 	background-image:url("ModacSkinLogos/page-fade_xlarge.png");
 	background-position:left top;
-	background-repeat:repeat-x;		
+	background-repeat:repeat-x;
 }
 th {
 	line-height:1.15em;
@@ -47,15 +47,15 @@ hr {
 }
 /* put overflow pre in a scroll area */
 pre {
-    width:auto;
-    margin:1em 0; /* Win IE tries to make this bigger otherwise */
-    border-style:solid;
-    border-width:1px;
-    padding:1em;
+	width:auto;
+	margin:1em 0; /* Win IE tries to make this bigger otherwise */
+	border-style:solid;
+	border-width:1px;
+	padding:1em;
 }
 pre, code, tt {
-    font-family: "Bitstream Vera Sans Mono","Andale Mono",Courier,monospace;
-    font-size:86%;
+	font-family: "Bitstream Vera Sans Mono","Andale Mono",Courier,monospace;
+	font-size:86%;
 }
 
 /* IE behavior for pre is defined in css.pattern.tmpl in conditional comment */
@@ -154,7 +154,7 @@ img {
 .foswikiTopic h5 { font-size:107%; }
 .foswikiTopic h6 { font-size:100%; }
 
-.foswikiTopic h3 { 
+.foswikiTopic h3 {
 	border-style: none;
 	font-weight:bold;
 }
@@ -171,7 +171,7 @@ img {
 }
 
 .historySelectTable td {
-	padding: .4em 1em ;	
+	padding: .4em 1em ;
 }
 
 
@@ -180,27 +180,27 @@ img {
 }
 
 .modacHide {
-	display:none;	
+	display:none;
 }
 
 html>body #modacLogoIE {
-	display:none;	
+	display:none;
 }
-#modacLogo {	
+#modacLogo {
 	overflow: visible;
 	height: 5em;
 	padding: 1.4em 0 0 1.3em;
 }
 #modacTopBarPersonal {
 	padding-right: 2em;
-	padding-top: .2em;	
+	padding-top: .2em;
 	text-align: right;
 }
 #modacWrapper {
-	margin-left:14em;	
+	margin-left:14em;
 }
 #modacWrapper ul {
-	list-style-image:url("ModacSkinLogos/bullet.gif");	
+	list-style-image:url("ModacSkinLogos/bullet.gif");
 }
 #modacSecondWrapper {
 	float: right;
@@ -232,7 +232,7 @@ html>body #modacLogoIE {
 }
 
 .modacBorder {
-	border: solid 1px #dddddd;	
+	border: solid 1px #dddddd;
 }
 
 .foswikiRight
@@ -241,7 +241,7 @@ html>body #modacLogoIE {
 .modacView .patternInfo,
 .modacMorePage .patternBorder,
 .patternSigLine {
-	display: none;	
+	display: none;
 }
 
 .modacNoViewPage #modacWrapper {
@@ -249,7 +249,7 @@ html>body #modacLogoIE {
 }
 .modacNoViewPage #patternMainContents,
 .modacNoViewPage #patternBottomBar {
-	background-color: #ffffff;	
+	background-color: #ffffff;
 	margin-left: 4em;
 	margin-right: 4em;
 }
@@ -263,18 +263,18 @@ html>body #modacLogoIE {
 	padding-top: .8em;
 	padding-right: 0;
 }
-.modacNoViewPage #patternMainContents {	
+.modacNoViewPage #patternMainContents {
 	margin-top: 3em;
 	padding-top: .1em;
 }
 .modacNoViewPage #modacMainContents {
-	top: 0px;	
+	top: 0px;
 }
 .modacNoViewPage #patternOuter {
 	margin-left: 0!important;
 }
 .modacComparePage .foswikiAttachments {
-	display: none;	
+	display: none;
 }
 
 #modacHeading {
@@ -287,25 +287,25 @@ html>body #modacLogoIE {
 }
 .patternLoginPage #patternOuter {
 	margin-left: 4em!important;
-	margin-right: 4em!important;	
+	margin-right: 4em!important;
 }
 #modacSidebar {
 	float:left;
-	width: 14em;	
+	width: 14em;
 }
 #modacSidebarContents {
-	margin-top: 4em;	
+	margin-top: 4em;
 }
 #modacSidebar p {
-	display: none;	
+	display: none;
 }
 #modacSidebar ul {
-	list-style-type: none;	
+	list-style-type: none;
 	padding-left: 1em;
 	margin-left: 0;
 }
 #modacSidebarIE ul {
-	padding-left: 2em;	
+	padding-left: 2em;
 }
 .modacSidebarTwisty {
 	background-image:url("ModacSkinLogos/portal-break.png");
@@ -369,7 +369,7 @@ html>body #modacLogoIE {
 }
 #modacSearchBox {
 	margin: 0.5em 0.7em 0 0.7em;
-        background-image: none!important;
+	background-image: none!important;
 }
 
 .modacMoreMenu ul { padding-left: 0px; }
@@ -413,18 +413,18 @@ html>body #modacLogoIE {
 	background: #f9f9f9;
 	border-collapse: collapse;
 	empty-cells:show;
- }
+}
 .Modac_Standard td, .Modac_Standard th {
 	border: 1px #AAA solid;
 	padding-left: 3px;
 	padding-right: 3px;
 }
 .Modac_Standard tbody:first-child tr:first-child, .Modac_Standard thead tr:first-child {
-	text-align: center; 
-	font-weight: bold; 
-	color: #f9f9f9; 
-	background: #003c89; 
- }
+	text-align: center;
+	font-weight: bold;
+	color: #f9f9f9;
+	background: #003c89;
+}
 /*-------- /Modac_Standard = MA_table --------*/
 
 /*-------- Modac_Standard_Ohne --------*/
@@ -433,7 +433,7 @@ html>body #modacLogoIE {
 	background: #f9f9f9;
 	border-collapse: collapse;
 	empty-cells:show;
- }
+}
 .Modac_Standard_Ohne td, .Modac_Standard_Ohne th {
 	border: 1px #AAA solid;
 	padding-left: 3px;
@@ -447,7 +447,7 @@ html>body #modacLogoIE {
 	border-width: 0px;
 	border-collapse: collapse;
 	empty-cells:show;
- }
+}
 .Modac_Standard_Leer td, .Modac_Standard_Leer th {
 	padding-left: 3px;
 	padding-right: 3px;
@@ -477,36 +477,36 @@ html>body #modacLogoIE {
 
 /*-------- deprecated: MA_table --------*/
 .MA_table {
-  margin: 1em 0;
-  background: #f9f9f9;
-  border: 1px #AAA solid;
-  border-collapse: collapse;
-  empty-cells:show;
- }
+	margin: 1em 0;
+	background: #f9f9f9;
+	border: 1px #AAA solid;
+	border-collapse: collapse;
+	empty-cells:show;
+}
 .MA_table td {
 	border: 1px #AAA solid;
 	padding-left: 3px;
 	padding-right: 3px;
 }
-.MA_table tr:first-child { 
-text-align: center; 
-font-weight: bold; 
-color: #f9f9f9; 
-background: #003c89; 
- }
+.MA_table tr:first-child {
+	text-align: center;
+	font-weight: bold;
+	color: #f9f9f9;
+	background: #003c89;
+}
 .MA_table_controlling {
-  margin: 1em 1em 1em 0;
-  background: #f9f9f9;
-  border: 1px #AAA solid;
-  border-collapse: collapse;
-  empty-cells:show;
+	margin: 1em 1em 1em 0;
+	background: #f9f9f9;
+	border: 1px #AAA solid;
+	border-collapse: collapse;
+	empty-cells:show;
 }
 .MA_table_controlling tr:first-child {
-text-align: center; 
-font-weight: bold; 
-color: #f9f9f9; 
-background: #003c89; 
- }
+	text-align: center;
+	font-weight: bold;
+	color: #f9f9f9;
+	background: #003c89;
+}
 /*-------- /MA_table --------*/
 
 /* -------------------------- /Modac Tables ----------------------------*/
@@ -514,20 +514,20 @@ background: #003c89;
 /*-------- modacHeaderTable --------*/
 
 .modacHeaderTable {
-  margin: 1em 0;
-  border: 1px #AAA solid;
-  border-collapse: collapse;
-  empty-cells:show;
-  background-color: #F3F3F3;
- }
+	margin: 1em 0;
+	border: 1px #AAA solid;
+	border-collapse: collapse;
+	empty-cells:show;
+	background-color: #F3F3F3;
+}
 
-.modacHeaderTable td { 
-border-color: #AAA;
- }
- 
- .modacHeaderTable tr { 
-border-color: #AAA;
- }
+.modacHeaderTable td {
+	border-color: #AAA;
+}
+
+.modacHeaderTable tr {
+	border-color: #AAA;
+}
 
 /*-------- /modacHeaderTable --------*/
 
@@ -542,10 +542,10 @@ border-color: #AAA;
 	width: 100%;
 }
 #modacSolrRightBar {
-    border: 1px solid #AAAAAA;
-    float: right;
-    width: 14.7em;
-    padding: 0 3px;
+	border: 1px solid #AAAAAA;
+	float: right;
+	width: 14.7em;
+	padding: 0 3px;
 	background-color: #f3f3f3;
 }
 #modacSolrRightBar h1 {
@@ -569,7 +569,7 @@ border-color: #AAA;
 
 
 /* Form elements */
-form { 
+form {
 	display:inline;
 	margin:0;
 	padding:0;
@@ -671,7 +671,7 @@ a.foswikiSubmit:visited:active {
 .tagMePlugin select {
 	margin:0 .25em 0 0;
 }
-.tagMePlugin input { 
+.tagMePlugin input {
 	border:0px;
 }
 
@@ -730,7 +730,7 @@ a.foswikiSubmit:visited:active {
 
 /* WYSIWYG */
 .mceContentBody {
-    padding: 1px 4px;
+	padding: 1px 4px;
 }
 
 
@@ -927,7 +927,7 @@ h3 .foswikiSmall {
 
 .foswikiSmall {
 	font-size:86%; /*S3*/
-/*	line-height:1.5em; */ /*S1*/ 
+/*	line-height:1.5em; */ /*S1*/
 }
 .foswikiSmallish {
 	font-size:94%; /*S2*/
@@ -1004,8 +1004,8 @@ a:hover .foswikiAccessKey {
 	margin:0;
 	padding-top: 1.2em;
 	padding-left: .8em;
-    border:0px;
-    display:block;
+	border:0px;
+	display:block;
 }
 .foswikiNoBreak {
 	white-space:nowrap;
@@ -1033,7 +1033,7 @@ a:hover .foswikiAccessKey {
 }
 
 #patternBottomBar {
-    background-image:url("ModacSkinLogos/border.png");
+	background-image:url("ModacSkinLogos/border.png");
 	background-position:left top;
 	background-repeat:repeat-x;
 }
@@ -1137,12 +1137,12 @@ html>body #patternSideBarContents li { /* Mozilla */
 	padding:1px 0 0 0;
 }
 .patternMetaMenu ul {
-    padding:0;
-    margin:0;
-   	list-style:none;
+	padding:0;
+	margin:0;
+	list-style:none;
 }
 .patternMetaMenu ul li {
-    padding:0;
+	padding:0;
 	display:inline;
 }
 .patternMetaMenu ul li .foswikiInputField,
@@ -1176,7 +1176,7 @@ html>body #patternSideBarContents li { /* Mozilla */
 .patternToolBar span a:active {
 	outline:none;
 }
-.patternToolBar span.foswikiAccessKey { 
+.patternToolBar span.foswikiAccessKey {
 	float:none;
 	border:none;
 }
@@ -1252,13 +1252,13 @@ html>body #patternSideBarContents li { /* Mozilla */
 	background:none;
 	border-width:1px;
 	border-style:solid none none none;
-} 
+}
 #foswikiSearchTable th,
 #foswikiSearchTable td {
 	padding:1em;
 	border-width:1px;
 	border-style:none none solid none;
-} 
+}
 #foswikiSearchTable th {
 	width:20%;
 	text-align:right;
@@ -1402,9 +1402,9 @@ h4.foswikiSearchResultsHeader {
 	border-style:solid none none none;
 }
 .foswikiDiffDebug {
-    /* same styling as pre and code */
-    font-family: "Bitstream Vera Sans Mono","Andale Mono",Courier,monospace;
-    font-size:86%;
+	/* same styling as pre and code */
+	font-family: "Bitstream Vera Sans Mono","Andale Mono",Courier,monospace;
+	font-size:86%;
 }
 td.foswikiDiffDebugLeft {
 	border-bottom:none;
