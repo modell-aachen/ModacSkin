@@ -324,33 +324,33 @@ html>body #modacLogoIE {
 	background-repeat:repeat-x;
 }
 #modacActionButtonsWrapper p {
-	display: none;	
+	display: none;
 }
 #modacButtonsLEFT,
 #modacButtonsRIGHT {
-    background-image:url("ModacSkinLogos/tab-break.png");
+	background-image:url("ModacSkinLogos/tab-break.png");
 	background-position:left bottom;
 	background-repeat:no-repeat;
-	padding-left: 1px;
+	padding: 5px 0px 0px 1px;
 }
 #modacButtonsLEFT {
-    float: left;
+	float: left;
 }
 #modacButtonsRIGHT {
 	float: right;
 }
-.modacTabs ul {
-	margin-left: 0;
+.modacTabs {
+	margin: 0;
 	padding: 0;
 }
-.modacTabs ul li {
+.modacTabs li {
 	background-image:url("ModacSkinLogos/tab-normal-fade.png");
 	background-position:left bottom;
 	background-repeat:repeat-x;
 	float: left;
 }
-.modacTabs ul li a,
-.modacTabs ul li a:hover {
+.modacTabs li a,
+.modacTabs li a:hover {
 	background-image:url("ModacSkinLogos/tab-break.png");
 	background-position:right bottom;
 	background-repeat:no-repeat;
@@ -364,15 +364,16 @@ html>body #modacLogoIE {
 	color: #333333;
 	text-decoration: none;
 }
-#modacWrapper .modacTabs ul {
-	list-style: none;	
+#modacWrapper ul.modacTabs {
+	list-style: none;
 }
 #modacSearchBox {
 	margin: 0.5em 0.7em 0 0.7em;
         background-image: none!important;
 }
 
-.modacMoreMenu ul li {
+.modacMoreMenu ul { padding-left: 0px; }
+.modacMoreMenu li ul li {
 	width: 100%;
 	float: none;
 	position: relative;
@@ -387,7 +388,7 @@ html>body #modacLogoIE {
 	top: -999em;
 	border: solid 1px #a7d7f9;
 	border-bottom-width: 0;
-	margin: 2px 0 0 -1px;
+	margin: 2px 0 0 0px;
 }
 .modacMoreMenu li ul li { list-style-image: none; } /* fix broken prop inheritance in IE7 */
 .modacMoreMenu li.sfHover ul {
