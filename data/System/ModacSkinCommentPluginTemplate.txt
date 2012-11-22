@@ -228,8 +228,7 @@ Modified actionTemplate adds action table directly below comment box
   var lngth;
   tmp= tmp.split(".")[1]; // trenne Main von Wikiname
   tmp= tmp.match(/[A-Z][a-z]*/g); // zerlege Wikiname in Vor- und Zuname
-  lngth = tmp.length;
-  krzl = tmp[0] + "&nbsp;" +  tmp[lngth-1];
+  krzl = tmp.join('&nbsp;');
 
   function disp(divs) {
     var a = [];
