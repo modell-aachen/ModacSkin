@@ -401,6 +401,10 @@ html>body #modacLogoIE {
 .modacMoreMenu li ul li a { background: none !important; width: 100% !important; }
 .modacMoreMenu li ul li { background: white none !important; }
 
+.modacMoreDynamic div a:after {
+	content: ' \bb ';
+}
+
 /* -------------------------- /modacTabs ----------------------------*/
 
 /* -------------------------- Modac Tables ----------------------------*/

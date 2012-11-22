@@ -33,7 +33,7 @@ jQuery(function($){
         } });
         return false;
     };
-    $('.modacMoreDynamic > a').click(function() { return false; });
+    $('.modacMoreDynamic div > a').click(function() { return false; });
     $('.morelink-copy').click(function(){ return menuClickHandler('copy'); });
     $('.morelink-delete').click(function(){ return menuClickHandler('delete'); });
     $('.morelink-rename').click(function(){ return menuClickHandler('rename'); });
@@ -62,7 +62,7 @@ jQuery(function($){
 
 %TMPL:DEF{"modacMore"}% %IF{"$'URLPARAM{template}'='more' or $'URLPARAM{template}'='backlinksallwebs' or $'URLPARAM{template}'='backlinksweb' or context manage" then="$percntTMPL:P{modacMoreACTIVE}$percnt" else="$percntTMPL:P{modacMoreINACTIVE}$percnt"}%%TMPL:P{"modacMoreSubmenu"}%%TMPL:END%
 %TMPL:DEF{"modacMoreACTIVE"}%<div class="modacActionButtonACTIVE"><a href='%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%?template=more&maxrev=%MAXREV%&currrev=%CURRREV%' rel='nofollow' %MAKETEXT{"title='More actions for this topic' accesskey='m'>&More topic actions"}%</a></div>%TMPL:END%
-%TMPL:DEF{"modacMoreINACTIVE"}%<a href='%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%?template=more&maxrev=%MAXREV%&currrev=%CURRREV%' rel='nofollow' %MAKETEXT{"title='More actions for this topic' accesskey='m'>&More topic actions"}% &raquo;</a>%TMPL:END%
+%TMPL:DEF{"modacMoreINACTIVE"}%<div><a href='%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%?template=more&maxrev=%MAXREV%&currrev=%CURRREV%' rel='nofollow' %MAKETEXT{"title='More actions for this topic' accesskey='m'>&More topic actions"}%</a></div>%TMPL:END%
 
 %TMPL:DEF{"SearchBox"}%%JQREQUIRE{"UI::autocomplete"}%<form name="quickSearchForm" action="%SCRIPTURLPATH{view}%/%WEB%/WebSearch"><input type="text" class="foswikiInputField foswikiDefaultText" title="%MAKETEXT{"Search"}%" id="quickSearchBox" name="search" value="%URLPARAM{search}%" autocomplete="%SCRIPTURL%/rest/SolrPlugin/autocomplete" size="26" /><input type="hidden" name="scope" value="all" /><input type="hidden" name="web" value="all" /><noscript>&nbsp;<input type="submit" size="5" class="foswikiButton" name="submit" value="%MAKETEXT{"Search"}%" />&nbsp;</noscript></form>%TMPL:END%
 
