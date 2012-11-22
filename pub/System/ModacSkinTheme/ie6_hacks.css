@@ -49,3 +49,6 @@
 #modacSolrRightBarIE6 {
 	display: inline;
 }
+.modacMoreDynamic div a {
+        background-image: expression(this.runtimeStyle.backgroundImage="none",this.innerHTML = this.innerHTML + ' &raquo;');
+}

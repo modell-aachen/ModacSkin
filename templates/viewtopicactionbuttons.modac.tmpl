@@ -62,7 +62,6 @@ jQuery(function($){
 
 %TMPL:DEF{"modacMore"}%<div %IF{"$'URLPARAM{template}'='more' or $'URLPARAM{template}'='backlinksallwebs' or $'URLPARAM{template}'='backlinksweb' or context manage or (context attach and '%MODAC_NO_TOPMENU{default="0"}%'='0')" then="class='modacActionButtonACTIVE'"}%>%TMPL:P{"more_link"}%</div>%TMPL:P{"modacMoreSubmenu"}%%TMPL:END%
 
-
 %TMPL:DEF{"SearchBox"}%%JQREQUIRE{"UI::autocomplete"}%<form name="quickSearchForm" action="%SCRIPTURLPATH{view}%/%WEB%/WebSearch"><input type="text" class="foswikiInputField foswikiDefaultText" title="%MAKETEXT{"Search"}%" id="quickSearchBox" name="search" value="%URLPARAM{search}%" autocomplete="%SCRIPTURL%/rest/SolrPlugin/autocomplete" size="26" /><input type="hidden" name="scope" value="all" /><input type="hidden" name="web" value="all" /><noscript>&nbsp;<input type="submit" size="5" class="foswikiButton" name="submit" value="%MAKETEXT{"Search"}%" />&nbsp;</noscript></form>%TMPL:END%
 
 %TMPL:DEF{"topictabaction"}%<div class='modacActionButtonACTIVE'><a href='%SCRIPTURLPATH{"view"}%/%WEB%/%TOPIC%' rel='nofollow' title='%MAKETEXT{"Topic"}%'>%MAKETEXT{"Topic"}%</a></div>%TMPL:END%

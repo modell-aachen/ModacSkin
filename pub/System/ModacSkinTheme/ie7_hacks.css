@@ -8,3 +8,6 @@
 	padding-left: 4px;
 	border: 1px solid #aaa;
 }
+.modacMoreDynamic div span a {
+        background-image: expression(this.runtimeStyle.backgroundImage="none",this.innerHTML = this.innerHTML + ' &raquo;');
+}
