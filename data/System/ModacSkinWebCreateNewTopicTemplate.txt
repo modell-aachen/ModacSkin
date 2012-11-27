@@ -63,6 +63,7 @@ var URL_TEMPLATE = '$percntURLPARAM{template}$percnt';
 
 %{<verbatim class="tml">}%
 %TMPL:DEF{"createform"}%<!-- -->
+%TMPL:P{"javascript"}%
 %TMPL:P{"formstartstep"}%
 %TMPL:P{"topictemplatestep"}%
 %TMPL:P{"topicparentstep"}%
@@ -179,7 +180,7 @@ var URL_TEMPLATE = '$percntURLPARAM{template}$percnt';
 
 %{<verbatim class="tml">}%
 %TMPL:DEF{"topicname"}%<!-- -->
-<input type="text" class="foswikiInputField" name="topic" id="topic" size="60" value="%TMPL:P{"newtopic"}%" />
+<input type="text" class="foswikiInputField jqWikiWord {source:'#topic'}" name="topic" id="topic" size="60" value="%TMPL:P{"newtopic"}%" />
 <div class="foswikiFormDescription">
 %MAKETEXT{"Please enter the article name without special characters."}%
 </div>
