@@ -6,7 +6,7 @@
 <!-- ATTACHMENTS --><li><a href="%SCRIPTURLPATH{"attach"}%/%BASEWEB%/%BASETOPIC%" rel="nofollow" %MAKETEXT{"title='Attach an image or document to this topic' accesskey='a'>&Attach"}%</a></li>
 <!-- REVISION HISTORY --><li>%IF{"context CompareRevisionsAddonPluginEnabled" then="<a href='%SCRIPTURLPATH{"oops"}%/%BASEWEB%/%BASETOPIC%?template=oopshistory&history=on' rel='nofollow' %MAKETEXT{"title='View topic history' accesskey='h'>&History"}%</a>" else="<a href='%SCRIPTURLPATH{"rdiff"}%/%BASEWEB%/%BASETOPIC%?type=history&history=on' rel='nofollow' %MAKETEXT{"title='View topic history' accesskey='h'>&History"}%</a>"}%</li>
 <!-- EDIT WIKITEXT -->%IF{"'%BASEWEB%/%BASETOPIC%' allows 'CHANGE'" then="<li><a href=\"%SCRIPTURLPATH{"edit"}%/%BASEWEB%/%BASETOPIC%?t=%GMTIME{"$epoch"}%;nowysiwyg=1\" %MAKETEXT{"title='Edit Wiki text' accesskey='w'>Edit &wiki text"}%</a></li>"}%
-<li>[[%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%?template=more][%MAKETEXT{"Manage page"}% &raquo;]]<ul>
+<li><a href="#" onclick="return false;">%MAKETEXT{"Manage page"}% &raquo;</a><ul>
   <!-- TOPIC PREFERENCES -->%IF{"'%BASEWEB%/%BASETOPIC%' allows 'CHANGE'" then="<li><a href=\"#\" onclick=\"jQuery('#more_editpref_form').submit();return false;\">%MAKETEXT{"Edit topic preference settings"}%</a></li>"}%
   <!-- CHANGE PARENT -->%IF{"'%BASEWEB%/%BASETOPIC%' allows 'CHANGE'" then="<li><a href=\"#\" class=\"morelink-setparent\">%MAKETEXT{"Select topic parent"}%</a></li>"}%
   <!-- COPY --><li><a href="#" class="morelink-copy">%MAKETEXT{"Copy topic"}%</a></li>
