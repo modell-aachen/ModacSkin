@@ -11,7 +11,7 @@
   <!-- TOPIC PREFERENCES --><li class="requireModacChangePermission"><span onclick="jQuery('#more_editpref_form').submit();return false;"><a href="javascript:void(0);" class="modacChanging">%MAKETEXT{"Edit topic preference settings"}%</a></span></li>
   <!-- CHANGE PARENT --><li class="requireModacChangePermission"><span class="morelink-setparent"><a href="javascript:void(0);" class="modacChanging">%MAKETEXT{"Select topic parent"}%</a></span></li>
   <!-- COPY --><li><a href="javascript:void(0);" class="morelink-copy">%MAKETEXT{"Copy topic"}%</a></li>
-  <!-- RENAME/MOVE -->%IF{"'%BASEWEB%/%BASETOPIC%' allows 'RENAME'" then="<li class=\"requireModacChangePermission\"><span class=\"morelink-rename\"><a href=\"javascript:void(0);\" class=\"modacChanging\">%MAKETEXT{"Rename or move topic"}%</a></span></li>"}%
-  <!-- DELETE -->%IF{"'%BASEWEB%/%BASETOPIC%' allows 'RENAME'" then="<li class=\"requireModacChangePermisssion\"><span class=\"morelink-delete\"><a href=\"javascript:void(0);\" class=\"modacChanging\">%MAKETEXT{"Delete topic"}%</a></span></li>"}%
+  <!-- RENAME/MOVE --><li class="requireModacMovePermission"><span class="morelink-rename"><a href="javascript:void(0);">%MAKETEXT{"Rename or move topic"}%</a></span></li>
+  <!-- DELETE --><li class="requireModacMovePermisssion"><span class="morelink-delete"><a href="javascript:void(0);">%MAKETEXT{"Delete topic"}%</a></span></li>
 </ul></li></ul>%TMPL:END%
 %{</verbatim>}%
