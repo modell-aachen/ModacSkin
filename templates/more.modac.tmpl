@@ -20,7 +20,7 @@
 %TMPL:DEF{"modacActionButtons"}%%TMPL:P{"modacActionButtonsVIEW"}%%TMPL:END%
 %TMPL:DEF{"logo"}%%TMPL:END%
 
-%TMPL:DEF{"settings"}%<div class="requiremodacChangingPermission"><h2>%MAKETEXT{"Edit topic preference settings"}%</h2>
+%TMPL:DEF{"settings"}%<div class="requireModacChangePermission"><h2>%MAKETEXT{"Edit topic preference settings"}%</h2>
 <form action="%SCRIPTURLPATH{"manage"}%/%WEB%/%TOPIC%" method="post" class="modacChanging">
 <div class="foswikiFormSteps">
 <div class="foswikiFormStep foswikiLast">
@@ -106,7 +106,7 @@
 
 
 %TMPL:DEF{"setparent"}%#SetParent
-<div class="requiremodacChangingPermission"><h2>%MAKETEXT{"Set new topic parent"}%</h2>
+<div class="requireModacChangePermission"><h2>%MAKETEXT{"Set new topic parent"}%</h2>
 <form name="main" action="%SCRIPTURLPATH{"save"}%/%WEB%/%TOPIC%?action_save=1" method="post" class="modacChanging">
 <div class="foswikiFormSteps">
 <div class="foswikiFormStep">
@@ -180,7 +180,7 @@ id="cssFoswikiDiffOptions"}%%TMPL:END%
 </form>
 
 
-<div class="requiremodacChangingPermission"><h3>%MAKETEXT{"Restore topic"}%</h3>
+<div class="requireModacChangePermission"><h3>%MAKETEXT{"Restore topic"}%</h3>
 <form name="main" action="%SCRIPTURLPATH{"manage"}%/%WEB%/%TOPIC%" method="post" class="modacChanging">
 <div class="foswikiFormSteps">
 <div class="foswikiFormStep">
