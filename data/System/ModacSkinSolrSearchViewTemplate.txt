@@ -55,6 +55,7 @@
   %MAKETEXT{"Recent changes"}%=facetquery,
   %MAKETEXT{"Media"}%=type,
   %MAKETEXT{"Category"}%=category,
+  %MAKETEXT{"Language"}%=language,
   %MAKETEXT{"Tag"}%=tag,
   %MAKETEXT{"Application"}%=field_TopicType_lst,
   %MAKETEXT{"document type"}%=field_Dokumententyp_s,
@@ -70,7 +71,7 @@
 %{</verbatim>}%
 
 %{<verbatim class="tml">}%
-%TMPL:DEF{"solr::disjunctivefacets"}%process_state_s, web, type, field_Dokumententyp_lst, field_Freigegeben_durch, field_Geltungsbereich_s, field_Normkaptiel_s%TMPL:END%
+%TMPL:DEF{"solr::disjunctivefacets"}%process_state_s, web, type, field_Dokumententyp_lst, field_Freigegeben_durch, field_Geltungsbereich_s, field_Normkaptiel_s, language%TMPL:END%
 %{</verbatim>}%
 
 %{<verbatim class="tml">}%
@@ -132,6 +133,16 @@
     input="checkbox"
     include="%TMPL:P{"solr::facet::include::web"}%"
     exclude="%TMPL:P{"solr::facet::exclude::web"}%"
+    extraclass="solrSort"
+    pageropts=""
+  }%
+  %TMPL:P{"solr::facet"
+    id="language"
+    format="$key&nbsp;($count)"
+    value="$id:$key"
+    input="checkbox"
+    include="%TMPL:P{"solr::facet::include::language"}%"
+    exclude="%TMPL:P{"solr::facet::exclude::language"}%"
     extraclass="solrSort"
     pageropts=""
   }%
