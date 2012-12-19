@@ -8,48 +8,211 @@ prefer.
 -->
 %SHORTDESCRIPTION%
 
-Modac skin is a Vector (the skin used for Wikipedia since Mediawiki 1.16) look-alike based on the awesome Pattern skin.
-
 %TOC%
 
 ---++ Description
 
 Modac skin is a Vector (the skin used for Wikipedia since Mediawiki 1.16) look-alike based on the awesome Pattern skin.
 
-
-
 ---++ Customization
+Many things can be customized using various settings. If everything fails you can create your own skin and overload the desired functions. You then set
+<pre>
+   &#42 Set SKIN = custom, modac
+</pre>
+
+---+++ General Advice
+   * %I% Please attach logos and other oftenly viewed pictures without access-restrictions on a =WebPreferences= topic (_not_ =SitePreferences=!). Most likely your webserver is configured to provide files quicker when they come from those topics.
+   * %I% Do not modify skin files in your SystemWeb, as those will be overwritten on the next update. See [[%TOPIC%#CustomWeb][CustomWeb]].
+   * %I% Prefer using macros like =%%NOP%PUBURL%= and =%%NOP%SYSTEMWEB%= to directly entering the path. You will be safer against configuration changes.
+
+---+++ CustomWeb
+Wiki-wide customizations should reside in a web specially reserved for that purpose. This makes migration and updating much easier. Usually this web will contain some templates, [[%TOPIC%#LeftBar_44_TopBar_44_BottomBar][left/top/bottom bars]] and skin customizations.
+
+If you do create a CustomWeb set the =%%NOP%CUSTOMIZINGWEB%= variable in your [[%USERSWEB%.SitePreferences][SitePreferences]]. For example
+<pre>
+   &#42 Set CUSTOMIZINGWEB = Custom
+</pre>
 
 ---+++ Logo, Favicon
+The logo and and favicon can be set for the whole wiki in the =SitePreferences=, or on a web-level in the web's =WebPreferences=.%BR%
+A typical configuration might look like this:
+<pre>
+   &#42 Set WIKILOGOIMG = %%NOP%PUBURL%/%%NOP%SYSTEMWEB%/ModacSkinTheme/ModacSkinLogos/qwiki-logo_small.png
+   &#42 Set WIKILOGOALT = Q.Wiki
+   &#42 Set WIKILOGOURL = %%NOP%SCRIPTURL{"view"}%/%%NOP%USERSWEB%/%%NOP%HOMETOPIC%
+   &#42 Set WIKITOOLNAME = Q.Wiki
+   &#42 Set FAVICON = %%NOP%PUBURL%/%%NOP%SYSTEMWEB%/ModacSkinTheme/ModacSkinLogos/favicon.ico 
+</pre>
+%I% Prefer using macros like =%%NOP%PUBURL%= and =%%NOP%SYSTEMWEB%= to directly entering the path (see [[%TOPIC%#General_Advice][general advices]]).%BR%
+Explainations:
+| *Item* | *Function* | *Remark* |
+| =WIKILOGOIMG= | Set the Logo. | The logo is usually displayed on the top-left of the screen.%BR%It should be attached in a =WebPreferences= topic (_not_ =SitePreferences=) or in your SystemWeb ([[%SCRIPTURL{"view"}%/%SYSTEMWEB%][%SYSTEMWEB%]]). |
+| =WIKILOGOALT= | Set an altervative text for the logo. | Shown when the logo could not be rendered, or is being processed electronically. |
+| =WIKILOGOURL= | Set the page you are beeing directed to when clicking the logo. | Is also used for some error-messages. |
+| =WIKITOOLNAME= | Give your wiki a name. | This will be displayed in some error-messages and warnings. |
+| =FAVICON= | Set the favicon. | A favicon is the little picture you see next to tabs, or bookmarks.%BR%It should be attached in a =WebPreferences= topic (_not_ =SitePreferences=) or in your SystemWeb ([[%SCRIPTURL{"view"}%/%SYSTEMWEB%][%SYSTEMWEB%]]). |
 
-<verbatim>
-* Set WIKILOGOIMG = %PUBURL%/%SYSTEMWEB%/ModacSkinTheme/ModacSkinLogos/qwiki-logo_small.png
-* Set WIKILOGOALT = Q.Wiki
-* Set WIKILOGOURL = %SCRIPTURL{"view"}%/%USERSWEB%/%HOMETOPIC%
+---+++ LeftBar, TopBar, BottomBar
+You can customize the LeftBar, TopBar and BottomBar for one web by creating the topic specified in the _Web-wide Customization_ column into that web. Or modify it side-wide by placing the topic from _Wiki-wide Customization_ column into your =CUSTOMIZING= web (see [[%TOPIC%#CustomWeb][CustomWeb]]).%BR%
+For example to customize the WebLeftBar in a web called =Processes= create =Processes.WebLeftBar=.%BR%
+To change it for the whole wiki, create =%CUSTOMIZINGWEB{default="Custom"}%.WebLeftBarDefault= (provided your customizing-web is %CUSOMIZINGWEB{default="Custom"}%).%BR%
+If you need a template, the definitions that come with the skin reside in your SystemWeb ([[%SCRIPTURL{"view"}%/%SYSTEMWEB%][%SYSTEMWEB%]]), so the original WebLeftBar is =%SYSTEMWEB%.WebLeftBarDefault=. _Please_ do not modify the skin topics in your SystemWeb.%BR%
+Explaination:
+| *Item* | *Wiki-wide Customization* | *Web-wide Customization* | *Function* |
+| LeftBar | =%CUSTOMIZINGWEB{default="Custom"}%.WebLeftBarDefault= | =WebLeftBar= | This defines the LeftBar to navigate the wiki. |
+| TopBar | =%CUSTOMIZINGWEB{default="Custom"}%.WebTopBarDefault= | =WebTopBar= | This should contain login-buttons. |
+| BottomBar | =%CUSTOMIZINGWEB{default="Custom"}%.WebBottomBarDefault= | =WebBottomBar= | This defines the BottomBar for additional logos and company information. |
+%X% You must define a customizing-web for wiki-wide customizations, see [[%TOPIC%#CustomWeb][CustomWeb]]!
 
-* Set WIKITOOLNAME = Q.Wiki
+---++++ Hiding webs from standard WebLeftBar
+In order to hide a web from the =WebLeftBar=, set =MODAC_HIDEWEBS= to a regex matching those webs. Set this on your =WebPreferences= or =SitePreferences=.%BR%
+%I% The regular expression is build like this: <pre>(SomeStuff|%%NOP%MODAC_HIDEWEBS%).*</pre>%BR%
+Example:
+<pre>
+This will hide the webs MyWeb and Secret but also SecretWeb, however not OtherWeb.Secret
+   &#42 Set MODAC_HIDEWEBS = MyWeb|Secret
+</pre>
+Further examples:
+| *%%NOP%MODAC_HIDEWEBS%* | *Hides* | *Shows* | *Comment* |
+| Secret%BR%or%BR%Secret&vbar;MyWeb | Secret, Secret.SubWeb, SecretLair | MySecret, MySecretWeb, OtherWeb.Secret | You want this if you need a simple solution to hide some webs with subwebs. |
+| .*Secret | Secret, Secret.SubWeb, MySecret, MySecretWeb, SecretLair, OtherWeb.Secret | | Hide anything secret. You rarely want this. |
+| .*Secret$ | Secret, OtherWeb.Secret, MySecret | Secret.SubWeb, MySecretWeb, SecretLair | Anything ending with 'Secret'. Your rarely want this. |
+| Secret\b | Secret, Secret.SubWeb | MySecret, MySecretWeb, SecretLair, OtherWeb.Secret | Secret and subwebs. Use this if you want to hide a web, but not another starting similarly. |
+| .*\bSecret\b | Secret, Secret.SubWeb, OtherWeb.Secret | MySecret, MySecretWeb, SecretLair | Hide web 'Secret' and any subweb called 'Secret'. |
 
-* Set FAVICON = %PUBURL%/%SYSTEMWEB%/ModacSkinTheme/ModacSkinLogos/favicon.ico 
-</verbatim>
-
----+++ LeftBar, TopBar, Bottombar
-
-| LeftBar | The default LeftBar is defined in "%SYSTEMWEB%.ModacSkinWebLeftBarDefault.txt". To define a web-wide LeftBar, create a topic "ModacSkinWebLeftBar.txt" in the web |
-| TopBar | The default TopBar is defined in "%SYSTEMWEB%.ModacSkinWebTopBarDefault.txt". To define a web-wide TopBar, create a topic "ModacSkinWebTopBar.txt" in the web |
-| BottomBar | The default BottomBar is defined in "%SYSTEMWEB%.ModacSkinWebBottomBarDefault.txt". To define a web-wide BottomBar, create a topic "ModacSkinWebBottomBar.txt" in the web| |
+---+++ TopMenue
+By default _ModacSkin_ uses pop-up window for _More topic actions_, history and attachments. You can deactivate this behaviour and switch back to single tabs for each of these items with a setting in your =WebPreferences=, =SitePreferences= or topic preferences:
+<pre>
+   &#42 Set MODAC_NO_TOPMENU = 1
+</pre>
 
 ---+++ Content Templates
+When you create a new topic using [[WebCreateNewTopic]] you can select a template.%BR%
+You can customize some parameters on a web-level using =WebPreferences=, or for the whole wiki using =SitePreferences=.%BR%
+A typical configuration might look like this:
+<pre>
+   &#42 Set CONTENTTEMPLATEWEB = Prozesse
+   &#42 Set CONTENTTEMPLATEFILTER = 
+   &#42 Set CONTENTTEMPLATESTUB = System.ModacSkinContentTemplateStub
+</pre>
+| *Setting* | *Effect* | *Remarks* |
+| =CONTENTTEMPLATEWEB= | All topics with =Template= suffix in this web will be offered as template when creating a new topic.%BR%Exceptions can be defined unsing =CONTENTTEMPLATEFILTER=. | Set to exactly one web, eg. <pre>   * Set CONTENTTEMPLATEWEB = Processes</pre>. |
+| =CONTENTTEMPLATEFILTER= | These topics will not be offered as template. | Comma-separated list.%BR%Use * as wildcard.%BR%Some topics will always be excluded:<pre>*EditTemplate, *WebCreateNewTopicTemplate, *ViewTemplate, GroupTemplate, CustomSkin*Template</pre>Example:<pre>   * Set CONTENTTEMPLATEFILTER = SpacingTemplate, *WeldingTemplate</pre> |
+| =CONTENTTEMPLATESTUB= | This topic will be used as a template for creating new templates with =WebContentTemplates=. | This template should contain a _templateonly-section_ with ACLs etc.%BR%It will default to [[%SYSTEMWEB%.ModacSkinContentTemplateStub]] |
 
-<verbatim>
-* Set CONTENTTEMPLATEWEB = Prozesse
-* Set CONTENTTEMPLATEFILTER = *ViewTemplate, GroupTemplate
-* Set CONTENTTEMPLATESTUB = System.ModacSkinContentTemplateStub
-</verbatim>
- 
+You can get an index for all available content templates in each web at =Web.WebContentTemplates=. With the appropriate permissions you can also create new templates there.
+
+---+++ Header Table
+You can have a table displayed on every page for controll of documents.%BR%
+To activate the header you must set =NO_MODAC_HEADLIST= or =MODAC_TOPHEAD_FORM=.%BR%
+%I% If you want to customize the header you should define a [[#Customization][custom skin]] for that.%BR%
+%I% The head used to be activated by setting a FormField =Dokumententyp= to specific values. However this method has been deprecated.%BR%
+A typical configuration might look like this:
+<pre>
+   &#42; Set NO_MODAC_HEADLIST =  WebPreferences, SitePreferences, WebSearch, WebSearchAdvanced, WebTopicList, WebIndex, WebHome
+</pre>
+or like this
+<pre>
+   &#42; Set MODAC_TOPHEAD_FORM = DocumentsForm|ChecklistForm
+</pre>
+Explainations:
+| *Setting* | *Effect* | *Remarks* |
+| =NO_MODAC_HEADLIST= | All topics listed here will have _no_ head displayed. | Set this setting to activate the feature (for all _other_ topics).%BR%Set it in =WebPreferences= or =SitePreferences=. |
+| =NO_MODAC_HEAD= | The head will _not_ be displayed, whenever this setting is set for a topic. | You can set this in =SitePreferences=, =WebPreferences=, or on topic-level (usually using =MoreTopicActions=).%BR%Example:<pre>   * Set NO_MODAC_HEAD = 1</pre> |
+| =MODAC_TOPHEAD_FORM= | Only show header for topics that have a form attached matching this regexp. | Does not require =NO_MODAC_HEADLIST=, but can be combined with it. Set it in =WebPreferences= or =SitePreferences=. |
+
+---+++ Solr
+%RED%TODO%ENDCOLOR% modacExtraFormat
+
+---++++ Adding facets
+%X% This explaination does not cover the basic principles of facets. You should know how to add facets _the usual way_ before using this guide. %X%
+
+If you are using SolrPlugin, you may want to add some facets. To make this task a little bit easier and in order to avoid breakage of facets from other plugins, ModacSkin provides an extra template-definitions to extend: =modacExtraFacets=, which will be appended to the list of facets in =%%NOP%TMPL:DEF{"solr:sidebar"}%=.%BR%
+   * %I% Always use =%%NOP%TMPL:PREV%= when adding to a definition.
+   * %I% In some cases you need to write a comma behind =%%NOP%TMPL:PREV%= (for example in =solr:extramapping=)
+
+Create a new SolrSearchViewTemplate for your [[%TOPIC%#Customization][CustomSkin]] (ex. =Custom.CustomSkinSolrSearchViewTemplate=).
+
+You can use the following example as a blueprint:
+
+This template creates a facet for a formfield _ISONorm_ where you can put an ISO number.%BR%
+It has some mappings for easier names (=solr::extramapping=) and you can select multiple norms (=solr::disjunctivefacets=).
+<pre>
+%%NOP%TMPL:INCLUDE{"SolrSearchView"}%
+
+%%NOP%{&lt;verbatim class="tml">}%
+%%NOP%TMPL:DEF{"solr::extramapping"}%
+  %%NOP%TMPL:PREV%,
+  %%NOP%MAKETEXT{"Quality (9000)"}%=9000,
+  %%NOP%MAKETEXT{"Environment (14000)"}%=14000,
+  %%NOP%MAKETEXT{"Energy (50001)"}%=50001
+%%NOP%TMPL:END%
+%%NOP%{&lt;/verbatim>}%
+
+%%NOP%{&lt;verbatim class="tml">}%
+%%NOP%TMPL:DEF{"solr::facets"}%
+  %%NOP%TMPL:PREV%,
+  %%NOP%MAKETEXT{"ISO norm"}%=field_ISONorm_s
+%%NOP%TMPL:END%
+%%NOP%{&lt;/verbatim>}%
+
+%%NOP%{&lt;verbatim class="tml">}%
+%%NOP%TMPL:DEF{"solr::hidesinglefacets"}%%%NOP%TMPL:PREV%, field_ISONorm_s%%NOP%TMPL:END%
+%%NOP%{&lt;/verbatim>}%
+
+%%NOP%{&lt;verbatim class="tml">}%
+%%NOP%TMPL:DEF{"solr::disjunctivefacets"}%%%NOP%TMPL:PREV%,field_ISONorm_s%%NOP%TMPL:END%
+%%NOP%{&lt;/verbatim>}%
+
+%%NOP%{&lt;verbatim class="tml">}%
+%%NOP%TMPL:DEF{"modacExtraFacets"}%%%NOP%TMPL:PREV%
+  %%NOP%TMPL:P{"solr::facet"
+    id="field_ISONorm_s"
+    format="$key&nbsp;($count)"
+    value="$id:$key"
+    input="checkbox"
+    include="%%NOP%TMPL:P{"solr::facet::include::field_ISONorm_s"}%"
+    exclude="%%NOP%TMPL:P{"solr::facet::exclude::field_ISONorm_s"}%"
+    extraclass=""
+    pageropts=""
+  }%
+%%NOP%TMPL:END%
+%%NOP%{&lt;/verbatim>}%
+</pre>
+
+---+++ =FOSWIKI_PROJECT_URL=
+Here you can define a custom css-file that can be used to customize css-rules.%BR%
+Usually those will have to be marked with =!important=.
+
+For example, if you want to increase the width of the _RightBar_ for Solr from =14.7em= to =24.7em= you can put this into your SitePreferences:
+<pre>
+   &#42; Set FOSWIKI_PROJECT_URL = %%NOP%PUBURLPATH%/%%NOP%CUSTOMIZINGWEB%/WebPreferences/custom.css
+</pre>
+and attach a _custom.css_ to =%%NOP%CUSTOMIZINGWEB%/WebPreferences= with the following contents:
+<pre>
+#modacSolrRightBar {
+    width: 24.7em !important;
+}
+#modacSolrWrapper {
+    margin-right: 26em !important;
+}
+</pre>
+
+---+++ raw-edit
+The textarea for editing in raw mode can be influenced with these settings:
+   * =EDITBOXHEIGHT=: Number of rows.
+   * =EDITBOXWIDTH=: Number of culumns (has most likely no effect, since box will be sized to full width).
+   * =EDITBOXSTYLE=: For adding custom style rules.
+Example:<pre>
+   &#42; Set EDITBOXHEIGHT = 15
+   &#42; Set EDITBOXWIDTH = 20
+   &#42; Set EDITBOXSTYLE = background-color: red;
+</pre>
+
 ---++ Installation Instructions
 
-To enable ModacSkin you have set the following variables either in WebPreferences (to enable ModacSkin within a single web) or
-in Main/SitePreferences to enable the skin for the whole wiki.  
+To enable ModacSkin you have set the following variables either in =WebPreferences= (to enable ModacSkin within a single web) or
+in =SitePreferences= to enable the skin for the whole wiki.  
 
 <pre>
    &#42; Set SKIN = modac
@@ -63,18 +226,15 @@ in Main/SitePreferences to enable the skin for the whole wiki.
 
 If you want to make custom modifications you can set FOSWIKI_PROJECT_URL to your css, otherwise set it to nothing.
 
-
 ---+++ Dependencies
 
-| CKEditorPlugin |
-| KVPPlugin |
 | FlexWeblistPlugin |
-
+| FilterPlugin |
+| Many more... TODO |
 
 ---++ Known Issues
 
 | TOC_TITLE (defines the title in a page-toc) cannot be translated using the MAKETEXT-macro: FOSWiki doesn't render the macro and return &#37;MAKETEXT{"xy"}&#37; as an value. |
-| There is no possibility to create a customized wiki-wide LeftBar without overwriting ModacSkinWebLeftBarDefault |
 
 ---++ Info
 
