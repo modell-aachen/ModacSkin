@@ -1436,3 +1436,7 @@ td.foswikiDiffDebugLeft {
 .Seitenzahl {
 	display:none;
 }
+
+.atpWarn {
+    background-color: none;
+}
