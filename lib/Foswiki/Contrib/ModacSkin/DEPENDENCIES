@@ -2,5 +2,4 @@
 # There might be some missing ones...
 Foswiki::Contrib::JQSelect2Contrib,>=0,perl,Required.
 Foswiki::Plugins::JQueryPlugin,>0,perl,Required.
-Foswiki::Plugins::KVPPlugin,>=1.3,perl,Required.
 Foswiki::Plugins::SolrPlugin,>0,perl,Required.
