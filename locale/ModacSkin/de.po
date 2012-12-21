@@ -146,7 +146,7 @@ msgstr "Entwurf formal freigeben"
 msgid "Approved Page"
 msgstr "Freigegebener Stand"
 
-#: data/System/ModacSkinHeadTemplate.txt:69
+#: data/System/ModacSkinTopHeadTemplate.txt:69
 #: data/System/ModacSkinSolrSearchViewTemplate.txt:63
 msgid "Area of application"
 msgstr "Geltungsbereich"
