@@ -1,15 +1,9 @@
 %{ This is a default template }%%{ Templates for lease conflict messages. One DEF is selected and inserted at %INSTANTIATE }%
 %TMPL:INCLUDE{"oops"}%
-%TMPL:INCLUDE{"viewtopbar"}%
-%TMPL:INCLUDE{"viewsidebar"}%
-%TMPL:INCLUDE{"viewtopicactionbuttons"}%
 
 %TMPL:DEF{"webaction"}% *%MAKETEXT{"Attention"}%* %TMPL:END%
 
 %TMPL:DEF{"heading"}%%TOPIC%%TMPL:END%
-
-%TMPL:DEF{"modacActionButtons"}%%TMPL:P{"modacActionButtonsVIEW"}%%TMPL:END%
-%TMPL:DEF{"logo"}%%TMPL:END%
 
 %TMPL:DEF{"message"}%
 %{ Instantiate either lease_active or lease_old }%
@@ -31,4 +25,3 @@
 <input type="submit" class="foswikiButton" value='%MAKETEXT{"Edit Anyway"}%' />
 </form>%TMPL:END%
 
-%TMPL:DEF{"topicactionbuttons"}%[[%WEB%.%TOPIC%][%MAKETEXT{"View topic"}%]] %TMPL:P{"sep"}% <a href="%SCRIPTURLPATH{"view"}%/%WEB%/%TOPIC%?raw=on">%MAKETEXT{"View raw text without formatting"}%</a>%TMPL:END%
