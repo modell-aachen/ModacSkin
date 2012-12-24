@@ -1,13 +1,4 @@
-%{ This is a default template }%%{ Templates for access denied messages. One DEF is selected and inserted at %INSTANTIATE }%
-%TMPL:INCLUDE{"oops"}%
+%TMPL:INCLUDE{"oopsaccessdenied"}%
 
 %TMPL:DEF{"bodyclassname"}%%TMPL:PREV% modacAccessDeniedPage%TMPL:END%
-
-%TMPL:DEF{"titleaction"}%%MAKETEXT{"(access denied)"}% %TMPL:END%
-%TMPL:DEF{"webaction"}% *%MAKETEXT{"Attention"}%* %TMPL:END%
-%TMPL:DEF{"topicactionbuttons"}% <span>[[%USERSWEB%.%HOMETOPIC%][%MAKETEXT{"OK"}%]]</span> %TMPL:END%
-
-%TMPL:DEF{"message"}%
-%INSTANTIATE%
-%TMPL:END%
 
