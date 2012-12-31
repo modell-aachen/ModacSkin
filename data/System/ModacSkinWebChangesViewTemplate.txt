@@ -1,5 +1,6 @@
 %{<verbatim class="tml">}%
 %TMPL:INCLUDE{"WebChangesView"}%
+%TMPL:INCLUDE{"SystemTabs"}%
 %{</verbatim>}%
 
 %{<verbatim class="tml">}%
