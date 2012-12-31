@@ -12,6 +12,7 @@ data/System/ModacSkinLanguageSelector.txt 0664
 data/System/ModacSkinSolrSearchViewTemplate.txt 0664
 data/System/ModacSkinSolrSearchBaseTemplate.txt 0664
 data/System/ModacSkinSystemViewTemplate.txt 0664
+data/System/ModacSkinSystemTabsTemplate.txt 0664
 data/System/ModacSkinTopHeadTemplate.txt 0664
 data/System/ModacSkinTopicMenuTemplate.txt 0664
 data/System/ModacSkinWebChangesViewTemplate.txt 0664

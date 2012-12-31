@@ -1,0 +1,1 @@
+%TMPL:DEF{"modacActionButtons"}%<ul id="modacButtonsLEFT" class="modacTabs"><li>%TMPL:P{"modacSystemTab"}%</li></ul><ul id="modacButtonsRIGHT" class="modacTabs" style="background-image: none"><li id="modacSearchBox">%TMPL:P{"SearchBox"}%</li></ul>%TMPL:END%

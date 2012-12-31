@@ -1,6 +1,6 @@
 %{<verbatim class="tml">}%
 %TMPL:INCLUDE{"WebCreateNewTopic"}%
-%TMPL:INCLUDE{"SystemView"}%
+%TMPL:INCLUDE{"SystemTabs"}%
 %{</verbatim>}%
 
 %TMPL:DEF{"script:topictemplate"}%
