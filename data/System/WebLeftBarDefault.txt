@@ -1,4 +1,5 @@
 %META:TOPICINFO{author="BaseUserMapping_333" comment="reprev" date="1335199636" format="1.1" reprev="9" version="9"}%
+%JQREQUIRE{"ui::dialog"}%
 <div id="modacSidebarIE">
    * [[%MAINWEB%.WebHome][%MAKETEXT{"Start"}%]]
    * [[%MAINWEB%.Aktuelles][%MAKETEXT{"News"}%]]
@@ -21,8 +22,8 @@
    * [[%SCRIPTURLPATH{"view"}%/%BASEWEB%/WebCreateNewTopic?topicparent=%BASETOPIC%][%MAKETEXT{"Create New Topic"}%]]
    * [[%BASEWEB%.WebChanges][%MAKETEXT{"Recently changed"}%]]
    * [[%MAINWEB%.Templates][%MAKETEXT{"Templates"}%]]
-   * [[%SCRIPTURLPATH{"view"}%/%INCLUDINGWEB%/%INCLUDINGTOPIC%?cover=print;contenttype=application/pdf][%MAKETEXT{"PDF-Print"}%]]
-%ENDTWISTY% 
+%IF{"context MAPrinceModPluginEnabled" then="   * <a href=\"%SCRIPTURL{"view"}%/%SYSTEMWEB%/MAPrinceModPrintDialog?skin=text&section=dialog&pweb=%INCLUDINGWEB%&ptopic=%INCLUDINGTOPIC%&landscape=%LANDSCAPE{default="0"}%\" class=\"jqUIDialogLink\">%MAKETEXT{"PDF-Print"}%</a>
+"}%%ENDTWISTY% 
 </div>
 
 
