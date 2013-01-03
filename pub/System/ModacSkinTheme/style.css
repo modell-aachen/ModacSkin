@@ -236,9 +236,7 @@ html>body #modacLogoIE {
 }
 
 .foswikiRight
-#patternMainContents .patternInfo,
 #modacLanguageSelector,
-.modacView .patternInfo,
 .modacMorePage .patternBorder,
 .patternSigLine {
 	display: none;
