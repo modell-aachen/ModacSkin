@@ -1117,6 +1117,11 @@ a:hover .foswikiAccessKey {
 .patternWebIndicator a {
 	font-weight:bold;
 }
+.modacWebIndicator {
+	width: 16px;
+	height: 16px;
+	margin-right: 0.3em;
+}
 .patternLeftBarPersonalContent {
 	padding:1em 0 0 0;
 }

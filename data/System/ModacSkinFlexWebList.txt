@@ -1,10 +1,6 @@
-<!-- %META:TOPICINFO{author="BaseUserMapping_333" date="1325519092" format="1.1" version="2"}%
-%META:TOPICINFO{author="ProjectContributor" date="1168738857" format="1.1" version="$Rev: 4885 $"}%
-%META:TOPICPARENT{name="ModacSideBarExample"}% -->
 %FLEXWEBLIST{
    exclude="(TestCases|Trash|TWiki%IF{"defined MODAC_HIDEWEBS" then="|%MODAC_HIDEWEBS%"}%).*"
-   format="$indent   * [[$web.%HOMETOPIC%][<img src=\"%ICONURL{web-bg}%\" border=\"0\" alt=\"\" width=\"16\" height=\"16\" style=\"background-color:#FFFFFF\" />]] [[$web.%HOMETOPIC%][$name]]$n"
-   markerformat="$indent   * [[$web.%HOMETOPIC%][<img src=\"%ICONURL{web-bg}%\" border=\"0\" alt=\"\" width=\"16\" height=\"16\" style=\"background-color:#0066CC\" />]]
-     [[$web.%HOMETOPIC%][$name]]$n"
+   format="$indent   * [[$web.%HOMETOPIC%][<img src=\"%ICONURL{web-bg}%\" alt=\"\" class=\"modacWebIndicator\" style=\"background-color:#FFFFFF;\"/>$name]]$n"
+   markerformat="$indent   * [[$web.%HOMETOPIC%][<img src=\"%ICONURL{web-bg}%\" alt=\"\" class=\"modacWebIndicator\" style=\"background-color:#0066CC;\"/>$name]]$n"
    selection="%BASEWEB%"
 }%
