@@ -1053,11 +1053,6 @@ a:hover .foswikiAccessKey {
 #patternSideBarContents {
 	padding-left:30px;
 }
-.patternLeftBarPersonal {
-	position:absolute;
-	right: 0.75em;
-	top: 0em;
-}
 
 #patternMainContents {
 	padding-right:2em;
