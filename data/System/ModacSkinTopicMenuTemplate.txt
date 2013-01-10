@@ -1,7 +1,8 @@
 %{<verbatim class="tml">}%
 %{Do not remove the HTML comments. TML is likely to mess this up horribly otherwise. You have been warned.}%
 %{All menues attach to a surrounding span, so the inner modacChanging can relyably intercept the click with jQuery}%
-%TMPL:DEF{"modacMoreSubmenu"}%<form id="more_editpref_form" method="post" action="%SCRIPTURLPATH{"manage"}%/%BASEWEB%/%BASETOPIC%">
+%TMPL:DEF{"modacMoreSubmenu"}%
+<form id="more_editpref_form" method="post" action="%SCRIPTURLPATH{"manage"}%/%BASEWEB%/%BASETOPIC%">
 <input type="hidden" name="action" value="editSettings" />
 </form><ul>
 <!-- ATTACHMENTS --><li><a href="%SCRIPTURLPATH{"attach"}%/%BASEWEB%/%BASETOPIC%" rel="nofollow" %MAKETEXT{"title='Attach an image or document to this topic' accesskey='a'>&Attach"}%</a></li>
@@ -13,5 +14,6 @@
   <!-- COPY --><li><a href="javascript:void(0);" class="morelink-copy">%MAKETEXT{"Copy topic"}%</a></li>
   <!-- RENAME/MOVE --><li class="requireModacMovePermission"><span class="morelink-rename"><a href="javascript:void(0);">%MAKETEXT{"Rename or move topic"}%</a></span></li>
   <!-- DELETE --><li class="requireModacMovePermisssion"><span class="morelink-delete"><a href="javascript:void(0);">%MAKETEXT{"Delete topic"}%</a></span></li>
-</ul></li></ul>%TMPL:END%
+</ul></li></ul>
+%TMPL:END%
 %{</verbatim>}%
