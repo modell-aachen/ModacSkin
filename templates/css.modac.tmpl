@@ -8,12 +8,6 @@
 %IF{ "defined FOSWIKI_STYLE_URL"  then="@import url('%FOSWIKI_STYLE_URL%');"}%
 %IF{ "defined FOSWIKI_COLORS_URL" then="@import url('%FOSWIKI_COLORS_URL%');"}%
 %IF{ "defined FOSWIKI_PROJECT_URL and $FOSWIKI_PROJECT_URL" then="@import url('%FOSWIKI_PROJECT_URL%');"}%
-.requireModacChangePermission {
-	%IF{ "(context modacRevokeChangePermission) OR (not '%BASEWEB%/%BASETOPIC%' allows 'CHANGE')" then="display: none !important;"}%
-}
-.requireModacMovePermission {
-	%IF{ "(context modacRevokeMovePermission) OR (not '%BASEWEB%/%BASETOPIC%' allows 'RENAME')" then="display: none !important;"}%
-}
 </style>
 %IF{ "$ USERLAYOUTURL or $ USERSTYLEURL or $ USERCOLORSURL" then="$percntTMPL:P{$quotstyles:user_defined$quot}$percnt"}%%TMPL:P{"styles:dynamic"}%%TMPL:END%
 
@@ -28,6 +22,12 @@
 	.patternWebIndicator a img,
 	.patternWebIndicator a:hover img {
 		background-color:%WEBBGCOLOR%;
+	}
+	.requireModacChangePermission {
+		%IF{ "(context modacRevokeChangePermission) OR (not '%BASEWEB%/%BASETOPIC%' allows 'CHANGE')" then="display: none !important;"}%
+	}
+	.requireModacMovePermission {
+		%IF{ "(context modacRevokeMovePermission) OR (not '%BASEWEB%/%BASETOPIC%' allows 'RENAME')" then="display: none !important;"}%
 	}
 	%TMPL:P{"styles:deprecated"}%
 </style>%TMPL:END%
