@@ -21,6 +21,7 @@ data/System/WebBottomBarDefault.txt 0664
 data/System/WebLeftBarDefault.txt 0664
 data/System/WebTopBarDefault.txt 0664
 lib/Foswiki/Contrib/ModacSkin.pm 0664
+lib/Foswiki/Plugins/SafeWikiPlugin/Signatures/ModacSkin.pm 0664
 locale/ModacSkin/de.po 0664
 pub/System/DocumentGraphics/arrow-down.png 0664
 pub/System/DocumentGraphics/arrow-right.png 0664

@@ -10,12 +10,23 @@ The below section is used within WebCreateNewTopic to render the select box for 
 %ENDSECTION{"topicsinweb"}%
 </verbatim>
 
+Alternative selector for selecting from 'most' webs:
+
+<verbatim>
+%STARTSECTION{"topics_exceptwebs"}%
+[%SOLRSEARCH{"type:topic -web:(%FORMATLIST{"%SUBST{text="%URLPARAM{"web"}%" pattern="/" format="."}%" split="," separator=" OR "}%) -topic:*%WORKFLOWSUFFIX% -topic:*Template -topic:*Form (topic_search:*%SUBST{text="%URLPARAM{query}%" pattern="\s+" format=""}%* OR %FORMATLIST{"%URLPARAM{query}%" split="\s+" separator=" " null="*" format="title_search:*$1*"}%)" format="{\"label\":\"$title\",\"sublabel\":\"$web.$topic\",\"id\":\"$web.$topic\"}" separator="," rows="%URLPARAM{"count" default="20"}%" start="%URLPARAM{"offset" default="0"}%" sort="webtopic"}%]
+%ENDSECTION{"topics_exceptwebs"}%
+</verbatim>
+
 And here is the widget:
 
 <verbatim>
 %STARTSECTION{"selecttopic"}%
 %JQREQUIRE{"select2"}%%JQREQUIRE{"tabpane"}%
-<style type="text/css">
+%ADDTOZONE{"script"
+  id="ModacAjaxHelper::selecttopic::%TOPICSELECT_ID{default="topic_select"}%"
+  requires="JQUERYPLUGIN::SELECT2,JQUERYPLUGIN::TABPANE"
+  text="<style type=\"text/css\">
 	.topicselect_container { padding: 3px; border-top: solid 1px #eee; }
 	.topicselect_container:first-child { border-top: none; }
 	.topicselect_label { font-weight: bold; margin-bottom: 2px; }
@@ -23,22 +34,22 @@ And here is the widget:
 	.select2-highlighted .topicselect_sublabel { color: #ddd; }
 	.topicselect { min-width: 60ex; }
 	.select2-drop { font-family: sans-serif; }
-</style><script type="text/javascript">
+</style><script type=\"text/javascript\">
 jQuery(function($) {
 	var topicsparent_pagesize = 20;
-	var include_web = %TOPICSELECT_INCLUDE_WEB{default="true"}%;
-	$('#%TOPICSELECT_ID{default="topic_select"}%').select2({
+	var include_web = /*safewiki:identifier*/$percntTOPICSELECT_INCLUDE_WEB{default=\"true\"}$percnt/*safewiki:end*/;
+	$('#'+/*safewiki:string*/'$percntTOPICSELECT_ID{default=\"topic_select\"}$percnt'/*safewiki:end*/).select2({
 		ajax: {
 			dataType: 'json',
-			url: '%SCRIPTURLPATH{"view"}%/%WEB%/%TOPIC%',
+			url: '$percntSCRIPTURLPATH{view}$percnt/$percntWEB$percnt/$percntTOPIC$percnt',
 			data: function(term, page) {
 				var offset = 0;
 				if (page > 1) offset = (page - 1);
 				return {
 					contenttype: 'text/plain',
-					section: 'topicsinweb',
+					section: /*safewiki:identifier*/'$percntIF{\"$'TOPICSELECT_EXCEPT'\" then=\"topics_exceptwebs\" else=\"topicsinweb\"}$percnt'/*safewiki:end*/,
 					skin: 'text',
-					web: '%TOPICSELECT_WEBFILTER{default="%BASEWEB%"}%',
+					web: /*safewiki:identifier*/'$percntTOPICSELECT_WEBFILTER{default=\"$percntBASEWEB$percnt\"}$percnt'/*safewiki:end*/,
 					query: term.toLowerCase(),
 					'offset': offset,
 					count: topicsparent_pagesize
@@ -46,7 +57,7 @@ jQuery(function($) {
 			},
 			results: function(data, page) {
 				if (!include_web) $.each(data, function(_idx, val) {
-					val.id = val.id.replace(new RegExp('^%BASEWEB%\\.'), '');
+					val.id = val.id.replace(new RegExp('^$percntBASEWEB$percnt\\.'), '');
 					val.sublabel = val.id;
 				});
 				return {
@@ -55,15 +66,15 @@ jQuery(function($) {
 				};
 			}
 		},
-		placeholder: '%MAKETEXT{"No topic parent"}%',
+		placeholder: '$percntMAKETEXT{\"No topic parent\"}$percnt',
 		formatResult: function(object, container, query) {
-			return '<div class="topicselect_label">'+object.label+'</div><div class="topicselect_sublabel">'+object.sublabel+'</div>';
+			return '<div class=\"topicselect_label\">'+object.label+'</div><div class=\"topicselect_sublabel\">'+object.sublabel+'</div>';
 		},
 		formatSelection: function(object, container) {
 			return object.sublabel;
 		},
-		formatNoMatches: function() { return '%MAKETEXT{"No matches"}%'; },
-		formatSearching: function() { return '<div class="jqAjaxLoader" style="padding-left: 20px;">%MAKETEXT{"Searching..."}%</div>'; },
+		formatNoMatches: function() { return '$percntMAKETEXT{\"No matches\"}$percnt'; },
+		formatSearching: function() { return '<div class=\"jqAjaxLoader\" style=\"padding-left: 20px;\">$percntMAKETEXT{\"Searching...\"}$percnt</div>'; },
 		formatResultCssClass: function() { return 'topicselect_container'; },
 		initSelection: function(element, callback) {
 			var val = $(element).val();
@@ -73,6 +84,7 @@ jQuery(function($) {
 		width: 'element'
 	});
 });
-</script><input id="%TOPICSELECT_ID{default="topic_select"}%" name="%TOPICSELECT_NAME{default="topic"}%" class="topicselect" type="hidden" value="%TOPICSELECT_DEFAULT%" />
+</script>"}%
+<input id="%TOPICSELECT_ID{default="topic_select"}%" name="%TOPICSELECT_NAME{default="topic"}%" class="topicselect" type="hidden" value="%TOPICSELECT_DEFAULT%" />
 %ENDSECTION{"selecttopic"}%
 </verbatim>
