@@ -1384,3 +1384,6 @@ msgstr "Suche..."
 
 msgid "Uploading file..."
 msgstr "Lade Datei hoch..."
+
+msgid "Title: "
+msgstr "Titel: "

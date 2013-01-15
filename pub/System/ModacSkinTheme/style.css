@@ -1433,6 +1433,29 @@ td.foswikiDiffDebugLeft {
 	text-align:left;
 }
 
+/* MetaCommentPlugin */
+h2.cmtCounter,
+h2.cmtAddCommentTitle {
+    margin-left: 12px;
+    margin-right: 12px;
+    margin-top: 8px;
+}
+.cmtComments {
+    border: 1px solid #DDDDDD;
+    background-color: #FFFFFF;
+}
+div.cmtAddComment {
+    border-top: 1px solid #DDDDDD;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+    margin-top: 3px;
+}
+#modacComments {
+    margin-bottom: 3px;
+}
+/* /MetaCommentPlugin */
+
 .Seitenzahl {
 	display:none;
 }
