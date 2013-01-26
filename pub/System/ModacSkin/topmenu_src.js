@@ -35,7 +35,7 @@ jQuery(function($){
         } });
         return false;
     };
-    $('.modacMoreDynamic > a').click(function() { return false; });
+    $('.modacMoreDynamicLink a').click(function() { return false; });
     $('.morelink-prefs').click(function(){ $('#more_editpref_form').submit();return false; });
     $('.morelink-copy').click(function(){ return menuClickHandler('copy'); });
     $('.morelink-delete').click(function(){ return menuClickHandler('delete'); });
