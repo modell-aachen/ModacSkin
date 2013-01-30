@@ -88,6 +88,7 @@ templates/formtables.modac.tmpl 0664
 templates/foswiki.modac.tmpl 0664
 templates/login.modac.tmpl 0664
 templates/metacomments.modac.tmpl 0664
+templates/metamaketext.modac.tmpl 0664
 templates/more.modac.tmpl 0664
 templates/moredialog.modac.tmpl 0664
 templates/oops.modac.tmpl 0664

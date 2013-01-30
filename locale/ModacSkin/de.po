@@ -1387,3 +1387,7 @@ msgstr "Lade Datei hoch..."
 
 msgid "Title: "
 msgstr "Titel: "
+
+#: templates/metatext.modac.tmpl
+msgid "Please wait..."
+msgstr "Bitte warten..."
