@@ -26,6 +26,7 @@ locale/ModacSkin/de.po 0664
 pub/System/DocumentGraphics/arrow-down.png 0664
 pub/System/DocumentGraphics/arrow-right.png 0664
 pub/System/ModacSkin/jquery.usability.js 0664
+pub/System/ModacSkin/modac.js 0664
 pub/System/ModacSkin/pattern.js 0664
 pub/System/ModacSkin/pattern_edit.js 0664
 pub/System/ModacSkin/upload.js 0664

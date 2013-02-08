@@ -41,5 +41,4 @@ jQuery(function($){
     $('.morelink-delete').click(function(){ return menuClickHandler('delete'); });
     $('.morelink-rename').click(function(){ return menuClickHandler('rename'); });
     $('.morelink-setparent').click(function(){ return menuClickHandler('setparent'); });
-    $('#quickSearchBox, .solrSearchField').autocomplete({select: function(e, ui) { e.target.value = ui.item.value; e.target.form.submit(); }});
 });
