@@ -222,60 +222,18 @@ Modified actionTemplate adds action table directly below comment box
 <verbatim>
 %TMPL:DEF{PROMPT:action2}%
 
-<script type="text/javascript"> 
-  var tmp= "%WIKIUSERNAME%"; 
-  var krzl;
-  var lngth;
-  tmp= tmp.split(".")[1]; // trenne Main von Wikiname
-  tmp= tmp.match(/[A-Z][a-z]*/g); // zerlege Wikiname in Vor- und Zuname
-  lngth = tmp.length;
-  krzl = tmp[0] + "&nbsp;" +  tmp[lngth-1];
-
-  function disp(divs) {
-    var a = [];
-    for (var i = 0; i < divs.length; i++) {
-      a.push(divs[i].value);
-    }
-    return a;
-  }
-
-  function convertTextboxlist() {
-
-   // get input from textboxlist and convert it to type Array
-    var actionTo = $('input:hidden[name=action_who2]').toArray();
-
-   // list all elements in array 
-    var changedContent= disp(actionTo);
-
-   // if textfield is not empty, add the item from textfield to array
-   if ($('#action_who2').val()) {
-      changedContent.push($('#action_who2').val());
-    }
-    
-   // Convert array into a comma-seperated list
-   changedContent = changedContent.join(", ");
-
-   // change the form-fields content
-    document.getElementById("action_who").value = changedContent;
-  }
-
-  function showStateChange(timehandle) {
-    if (timehandle.checked) {
-      document.getElementById("statusChange").style.display = 'inline';
-    } else {
-      document.getElementById("statusChange").style.display = 'none';
-    }
-  }
-
-</script>
+%JQREQUIRE{"TextboxList"}%
+%ADDTOZONE{"script" id="ModacSkin::AtpComment" requires="JQUERYPLUGIN::FOSWIKI::PREFERENCES"
+  text="<script type=\"text/javascript\" src=\"%PUBURLPATH%/%SYSTEMWEB%/ModacSkin/atp_comment.js\"></script>"
+}%
 
 %TABLE{databg="#ffffff" tableborder="0" cellborder="0"}%
-| <label for="action_kuerzel">Aufgabensteller</label>|<script type="text/javascript">  document.write( '<input class="foswikiInputField" name="action_kuerzel" id="action_kuerzel" type="text" size="50" value="' + krzl+ '" />' ); </script> |
-| <label for="action_who2">Aufgabe an</label>| <input class="foswikiInputField jqTextboxList" autocomplete="%SCRIPTURL{"view"}%/System/ModacSkinCommentPluginTemplate?skin=text;section=Teilnehmer;limit=0" name="action_who2" id="action_who2" type="text" size="50" value="%URLPARAM{"who2" multiple="on" separator=", "}%" /> <input class="foswikiInputField" name="action_who" id="action_who" type="hidden" size="50" value="%URLPARAM{"who"}%" /> |
-| <label for="action_due">Fälligkeitstermin</label>| <input id="action_due" type="text" readonly="readonly" size="10" name="action_due" class="foswikiInputField" value="%URLPARAM{"due"}%"><input type="image" title="Calendar" onclick="javascript: return showCalendar('action_due','%d %b %Y')" alt="Calendar" src="/pub/System/JSCalendarContrib/img.gif" name="calendar">|
+| <label for="action_kuerzel">Aufgabensteller</label>|<input class="foswikiInputField" name="action_kuerzel" id="action_kuerzel" type="text" size="50" /> |
+| <label for="action_who">Aufgabe an</label>| <input class="foswikiInputField jqTextboxList {useHidden: true, limit: 1}" autocomplete="%SCRIPTURL{"view"}%/System/ModacSkinCommentPluginTemplate?skin=text;section=Teilnehmer;limit=0" name="action_who" id="action_who" type="text" size="50" value="%URLPARAM{"who"}%" /> |
+| <label for="action_due">Fälligkeitstermin</label>| <input id="action_due" type="text" readonly="readonly" size="10" name="action_due" class="foswikiInputField" value="%URLPARAM{"due"}%"><input type="image" id="action_due_calendar" title="Calendar" alt="Calendar" src="%PUBURLPATH%/System/JSCalendarContrib/img.gif" name="calendar">|
 | <label for="action_task">Aufgabe</label>| <input type="text" %DISABLED% size="50" name="action_task" id="action_task" class="foswikiInputField" onfocus="if(this.value=='%MESSAGE%')this.value=''" onblur="if(this.value=='')this.value='%MESSAGE%'">%MESSAGE% |
 | <label for="action_comment">Aufgabeninhalt</label>| <textarea %DISABLED% rows="%rows|3%" cols="%cols|50%" name="action_comment" id="action_comment" class="foswikiInputField" onfocus="if(this.value=='%MESSAGE%')this.value=''" onblur="if(this.value=='')this.value='%MESSAGE%'">%MESSAGE%</textarea> |
-|<label for="action_zeiterfassung">Zeiterfassung?</label>| <input type="checkbox" onClick="showStateChange(this);" /> |
+|<label for="action_zeiterfassung">Zeiterfassung?</label>| <input type="checkbox" id="action_zeiterfassung" /> |
 <div id="statusChange" style="display:none;">
 | <label for="action_zeit">benötigte Zeit</label>|<input class="foswikiInputField" name="action_zeit" id="action_zeit" type="text" size="10" value="%URLPARAM{"zeit"}%"/> |
 | <label for="action_state">Aufgabenstatus</label>|<select class="foswikiInputField" name="action_state" id="action_state" size="1"><option value="open" selected>open</option><option value="closed">closed</option></select> |
