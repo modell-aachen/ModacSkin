@@ -18,73 +18,27 @@ Alternative selector for selecting from 'most' webs:
 %ENDSECTION{"topics_exceptwebs"}%
 </verbatim>
 
-And here is the widget:
+Include the following section anywhere to be able to put topic selectors on that page. Simple give a form field the "jqTopicSelect" CSS class, and pass any parameters in a JQueryMetadata-style class suffix.
 
 <verbatim>
 %STARTSECTION{"selecttopic"}%
 %JQREQUIRE{"select2"}%%JQREQUIRE{"tabpane"}%
+%ADDTOZONE{"head"
+  id="ModacAjaxHelper::selecttopic::l10n"
+  text="<meta name=\"l10n_modac_selecttopic_noparent\" content=\"%MAKETEXT{"No topic parent"}%\" />
+	<meta name=\"l10n_modac_selecttopic_nomatches\" content=\"%MAKETEXT{"No matches"}%\" />
+	<meta name=\"l10n_modac_selecttopic_searching\" content=\"%MAKETEXT{"Searching..."}%\" />"}%
 %ADDTOZONE{"script"
-  id="ModacAjaxHelper::selecttopic::%TOPICSELECT_ID{default="topic_select"}%"
-  requires="JQUERYPLUGIN::SELECT2,JQUERYPLUGIN::TABPANE"
+  id="ModacAjaxHelper::selecttopic"
+  requires="JQUERYPLUGIN::SELECT2,JQUERYPLUGIN::TABPANE,JQUERYPLUGIN::METADATA,JQUERYPLUGIN::FOSWIKI::PREFERENCES"
   text="<style type=\"text/css\">
 	.topicselect_container { padding: 3px; border-top: solid 1px #eee; }
 	.topicselect_container:first-child { border-top: none; }
 	.topicselect_label { font-weight: bold; margin-bottom: 2px; }
 	.topicselect_sublabel { font-size: 70%; color: #888; }
 	.select2-highlighted .topicselect_sublabel { color: #ddd; }
-	.topicselect { min-width: 60ex; }
+	.jqTopicSelect { min-width: 60ex; }
 	.select2-drop { font-family: sans-serif; }
-</style><script type=\"text/javascript\">
-jQuery(function($) {
-	var topicsparent_pagesize = 20;
-	var include_web = /*safewiki:identifier*/$percntTOPICSELECT_INCLUDE_WEB{default=\"true\"}$percnt/*safewiki:end*/;
-	$('#'+/*safewiki:string*/'$percntTOPICSELECT_ID{default=\"topic_select\"}$percnt'/*safewiki:end*/).select2({
-		ajax: {
-			dataType: 'json',
-			url: '$percntSCRIPTURLPATH{view}$percnt/$percntWEB$percnt/$percntTOPIC$percnt',
-			data: function(term, page) {
-				var offset = 0;
-				if (page > 1) offset = (page - 1);
-				return {
-					contenttype: 'text/plain',
-					section: /*safewiki:identifier*/'$percntIF{\"$'TOPICSELECT_EXCEPT'\" then=\"topics_exceptwebs\" else=\"topicsinweb\"}$percnt'/*safewiki:end*/,
-					skin: 'text',
-					web: /*safewiki:identifier*/'$percntTOPICSELECT_WEBFILTER{default=\"$percntBASEWEB$percnt\"}$percnt'/*safewiki:end*/,
-					query: term.toLowerCase(),
-					'offset': offset,
-					count: topicsparent_pagesize
-				};
-			},
-			results: function(data, page) {
-				if (!include_web) $.each(data, function(_idx, val) {
-					val.id = val.id.replace(new RegExp('^$percntBASEWEB$percnt\\.'), '');
-					val.sublabel = val.id;
-				});
-				return {
-					results: data,
-					more: (data.length >= topicsparent_pagesize)
-				};
-			}
-		},
-		placeholder: '$percntMAKETEXT{\"No topic parent\"}$percnt',
-		formatResult: function(object, container, query) {
-			return '<div class=\"topicselect_label\">'+object.label+'</div><div class=\"topicselect_sublabel\">'+object.sublabel+'</div>';
-		},
-		formatSelection: function(object, container) {
-			return object.sublabel;
-		},
-		formatNoMatches: function() { return '$percntMAKETEXT{\"No matches\"}$percnt'; },
-		formatSearching: function() { return '<div class=\"jqAjaxLoader\" style=\"padding-left: 20px;\">$percntMAKETEXT{\"Searching...\"}$percnt</div>'; },
-		formatResultCssClass: function() { return 'topicselect_container'; },
-		initSelection: function(element, callback) {
-			var val = $(element).val();
-			callback({id: val, label: val, sublabel: val});
-		},
-		allowClear: true,
-		width: 'element'
-	});
-});
-</script>"}%
-<input id="%TOPICSELECT_ID{default="topic_select"}%" name="%TOPICSELECT_NAME{default="topic"}%" class="topicselect" type="hidden" value="%TOPICSELECT_DEFAULT%" />
+</style><script type=\"text/javascript\" src=\"%PUBURLPATH%/System/ModacSkin/topicselect.js\"></script>"}%
 %ENDSECTION{"selecttopic"}%
 </verbatim>

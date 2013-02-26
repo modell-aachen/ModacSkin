@@ -188,8 +188,31 @@ var URL_TEMPLATE = '$percntURLPARAM{template}$percnt';
 %{</verbatim>}%
 
 %{<verbatim class="tml">}%
+%TMPL:DEF{"topicparent_select2"}%<!-- -->
+%INCLUDE{"%SYSTEMWEB%.ModacAjaxHelper" section="selecttopic"}%
+<input type="hidden" class="jqTopicSelect {include_web: false}" name="topicparent" id="topicparent_select" value="%SUBST{text="%URLPARAM{"topicparent"}%" pattern="%WORKFLOWSUFFIX%$" format=""}%" />
+<!-- -->%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim class="tml">}%
+%TMPL:DEF{"topicparent_select"}%<!-- -->
+<select name="topicparent" class="foswikiSelect">
+%SEARCH{
+  "1"
+  scope="topic"
+  web="%BASEWEB%"
+  excludetopic="*EditTemplate,*WebCreateNewTopicTemplate,*ViewTemplate"
+  type="query"
+  nonoise="on"
+  format="<option value=\"$web.$topic\">$topic</option>"
+}%
+</select>
+<!-- -->%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim class="tml">}%
 %TMPL:DEF{"topicparent"}%<!-- -->
-%INCLUDE{"%SYSTEMWEB%.ModacAjaxHelper" section="selecttopic" TOPICSELECT_NAME="topicparent" TOPICSELECT_DEFAULT="%SUBST{text="%URLPARAM{"topicparent"}%" pattern="%WORKFLOWSUFFIX%$" format=""}%" TOPICSELECT_INCLUDE_WEB="false"}%
+%TMPL:P{context="Select2Enabled" then="topicparent_select2" else="topicparent_select"}%
 <div class="foswikiFormDescription">
 %MAKETEXT{"Topic name that the newly created topic will be a child of."}%
 </div>
