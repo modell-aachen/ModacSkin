@@ -63,7 +63,6 @@
   %MAKETEXT{"Tag"}%=tag,
   %MAKETEXT{"Application"}%=field_TopicType_lst,
   %MAKETEXT{"document type"}%=field_Dokumententyp_s,
-  %MAKETEXT{"Process State"}%=process_state_s,
   %MAKETEXT{"Person in charge of page"}%=field_Freigegeben_durch_s,
   %MAKETEXT{"Area of application"}%=field_Geltungsbereich_s,
   %MAKETEXT{"Normchapter"}%=field_Normkapitel_s
@@ -71,11 +70,11 @@
 %{</verbatim>}%
 
 %{<verbatim class="tml">}%
-%TMPL:DEF{"solr::hidesinglefacets"}%web, type, collection, language, contributor, field_TopicType_lst, facetquery, field_Dokumententyp_lst, field_Prozesseigner_s, field_Geltungsbereich_s, field_Autor_s, process_state_s%TMPL:END%
+%TMPL:DEF{"solr::hidesinglefacets"}%web, type, collection, language, contributor, field_TopicType_lst, facetquery, field_Dokumententyp_lst, field_Prozesseigner_s, field_Geltungsbereich_s, field_Autor_s%TMPL:END%
 %{</verbatim>}%
 
 %{<verbatim class="tml">}%
-%TMPL:DEF{"solr::disjunctivefacets"}%process_state_s, web, type, field_Dokumententyp_lst, field_Freigegeben_durch, field_Geltungsbereich_s, field_Normkaptiel_s, language%TMPL:END%
+%TMPL:DEF{"solr::disjunctivefacets"}%web, type, field_Dokumententyp_lst, field_Freigegeben_durch, field_Geltungsbereich_s, field_Normkaptiel_s, language%TMPL:END%
 %{</verbatim>}%
 
 %{<verbatim class="tml">}%
@@ -97,14 +96,6 @@
   %MAKETEXT{"Russian"}%=ru,
   %MAKETEXT{"Swedish"}%=se,
   %MAKETEXT{"Turkish"}%=tr,
-  %MAKETEXT{"approved"}%=FREIGEGEBEN,
-  %MAKETEXT{"under discussion"}%=DISKUSSIONSSTAND,
-  %MAKETEXT{"draft"}%=ENTWURF,
-  %MAKETEXT{"discarded"}%=VERWORFEN,
-  %MAKETEXT{"formal revision"}%=FORMALE_PRUEFUNG,
-  %MAKETEXT{"formal revision (draft)"}%=FORMALE_PRUEFUNG_ENTWURF,
-  %MAKETEXT{"contentual revision"}%=INHALTLICHE_PRUEFUNG,
-  %MAKETEXT{"contentual revision (draft)"}%=INHALTLICHE_RPRUEFUNG_ENTWURF,
   %MAKETEXT{"image"}%=image,
   %MAKETEXT{"topic"}%=topic,
   %MAKETEXT{"comment"}%=comment
@@ -180,17 +171,6 @@
     extraclass=""
     pageropts=""
   }%
-  %TMPL:P{"solr::facet"
-    id="process_state_s"
-    format="$key&nbsp;($count)"
-    value="$id:$key"
-    input="checkbox"
-    include="%TMPL:P{"solr::facet::include::process_state_s"}%"
-    exclude="%TMPL:P{"solr::facet::exclude::process_state_s"}%"
-    extraclass=""
-    pageropts=""
-  }%
-
   %TMPL:P{"solr::facet"
     id="field_Geltungsbereich_s"
     format="$key&nbsp;($count)"

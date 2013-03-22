@@ -1077,10 +1077,6 @@ msgstr "Ihre Signatur zum Kopieren/Einfügen"
 msgid "accesskey='c'"
 msgstr "accesskey='c'"
 
-#: data/System/ModacSkinSolrSearchViewTemplate.txt:95
-msgid "approved"
-msgstr "Freigegeben"
-
 #: templates/search.modac.tmpl:6
 msgid "by %1 "
 msgstr "von %1"
@@ -1093,25 +1089,9 @@ msgstr "Auswahlboxen von referenzierten Seiten"
 msgid "comment"
 msgstr "Kommentar"
 
-#: data/System/ModacSkinSolrSearchViewTemplate.txt:101
-msgid "contentual revision"
-msgstr "inhaltliche Prüfung"
-
-#: data/System/ModacSkinSolrSearchViewTemplate.txt:102
-msgid "contentual revision (draft)"
-msgstr "formale Prüfung (Entwurf)"
-
-#: data/System/ModacSkinSolrSearchViewTemplate.txt:98
-msgid "discarded"
-msgstr "Verworfen"
-
 #: data/System/ModacSkinSolrSearchViewTemplate.txt:60
 msgid "document type"
 msgstr "Dokumententyp"
-
-#: data/System/ModacSkinSolrSearchViewTemplate.txt:97
-msgid "draft"
-msgstr "Entwurf"
 
 #: templates/oopshistory.modac.tmpl:47
 msgid "earlier"
@@ -1124,14 +1104,6 @@ msgstr "bearbeiten"
 #: templates/oopshistory.modac.tmpl:47
 msgid "first"
 msgstr "erster"
-
-#: data/System/ModacSkinSolrSearchViewTemplate.txt:99
-msgid "formal revision"
-msgstr "formale Prüfung"
-
-#: data/System/ModacSkinSolrSearchViewTemplate.txt:100
-msgid "formal revision (draft)"
-msgstr "formale Prüfung (Entwurf)"
 
 #: templates/edit.modac.tmpl:28 templates/edit.modac.tmpl:31
 msgid "help"
@@ -1301,10 +1273,6 @@ msgstr "Seite"
 #: templates/oopshistory.modac.tmpl:76
 msgid "unchanged sections before and after each change"
 msgstr "unveränderte Sektionen vor und nach jeder Änderung"
-
-#: data/System/ModacSkinSolrSearchViewTemplate.txt:96
-msgid "under discussion"
-msgstr "in Diskussion"
 
 #: templates/edit.modac.tmpl:50
 msgid "value='Cancel' accesskey='c'"
