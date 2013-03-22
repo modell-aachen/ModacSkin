@@ -201,8 +201,9 @@
     exclude=""
     extraclass=""
     pageropts=""
-  }%
+  }%%TMPL:P{"modacExtraFacets"}%
 }%<!-- -->
 </noautolink>
 <!-- -->%TMPL:END%
 %{</verbatim>}%
+
