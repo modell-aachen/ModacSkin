@@ -1451,6 +1451,9 @@ div.cmtAddComment {
     border-bottom: none;
     margin-top: 3px;
 }
+img.modacFlag {
+    vertical-align: middle;
+}
 #modacComments {
     margin-bottom: 3px;
 }

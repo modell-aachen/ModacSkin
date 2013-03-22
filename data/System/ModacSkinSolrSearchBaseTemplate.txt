@@ -13,7 +13,10 @@
       %WEBLINK{"%web%"
         format="<a class='webLink' href='$url'>%MAKETEXT{"in [_1]" args="$title"}%</a>"
       }%
-    </span>
+    </span>%{
+    }%%IF{"'%content_language%'='de'" then="<img class='modacFlag' src='%PUBURLPATH%/%SYSTEMWEB%/FamFamFamFlagIcons/de.png' alt='de.png' title='%MAKETEXT{"German"}%' />"}%%{
+    }%%IF{"'%content_language%'='en'" then="<img class='modacFlag' src='%PUBURLPATH%/%SYSTEMWEB%/FamFamFamFlagIcons/gb.png' alt='gb.png' title='%MAKETEXT{"English"}%' />"}%%{
+    }%%IF{"'%content_language%'='fr'" then="<img class='modacFlag' src='%PUBURLPATH%/%SYSTEMWEB%/FamFamFamFlagIcons/fr.png' alt='fr.png' title='%MAKETEXT{"French"}%" />"}%
   </h3>
   <div class='solrHilite'>
     <literal>%hilite%</literal>
@@ -58,6 +61,12 @@
   </div>
 </div>
 <!-- -->%TMPL:END%
+
+%{<verbatim class="tml">}%
+%TMPL:DEF{"modacExtraFormat"}%
+content_language=\"$language\"
+%TMPL:END%
+%{</verbatim>}%
 
 %{<verbatim class="tml">}%
 %TMPL:DEF{"solr::hits::list"}%<!-- -->
