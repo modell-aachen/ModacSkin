@@ -13,7 +13,7 @@
   <!-- CHANGE PARENT --><li class="requireModacChangePermission"><span class="morelink-setparent"><a href="javascript:void(0);" class="modacChanging">%MAKETEXT{"Select topic parent"}%</a></span></li>
   <!-- COPY --><li><a href="javascript:void(0);" class="morelink-copy">%MAKETEXT{"Copy topic"}%</a></li>
   <!-- RENAME/MOVE --><li class="requireModacMovePermission"><span class="morelink-rename"><a href="javascript:void(0);">%MAKETEXT{"Rename or move topic"}%</a></span></li>
-  <!-- DELETE --><li class="requireModacMovePermisssion"><span class="morelink-delete"><a href="javascript:void(0);">%MAKETEXT{"Delete topic"}%</a></span></li>
+  <!-- DELETE --><li class="requireModacMovePermission"><span class="morelink-delete"><a href="javascript:void(0);">%MAKETEXT{"Delete topic"}%</a></span></li>
 </ul></li></ul>
 %TMPL:END%
 %{</verbatim>}%
