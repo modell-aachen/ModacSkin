@@ -1,0 +1,130 @@
+%META:TOPICINFO{author="JanKrueger" comment="reprev" date="1363102083" format="1.1" reprev="6" version="8"}%
+%TMPL:INCLUDE{"SystemView"}%
+
+%TMPL:DEF{"top"}%
+<div class="patternTop">
+<div id="modacHeading">%MAKETEXT{"Personal page"}%</div>
+</div>
+%TMPL:END%
+
+%TMPL:DEF{"content"}%
+%ADDTOZONE{"script" requires="JQUERYPLUGIN" text="<script type=\"application/javascript\" src=\"%PUBURLPATH%/System/ActionTrackerPlugin/atp.js\"></script>"}%
+%ADDTOZONE{"head" text="<link rel=\"stylesheet\" type=\"text/css\" href=\"%PUBURLPATH%/System/ActionTrackerPlugin/styles_src.css\" /><style type=\"text/css\">
+  .atpSearch { width: 100%; border-color: #888; }
+  .atpSearch th { border-left: solid white 1px; background: #888; }
+  .atpSearch tr:first-child + tr td { border-top: none; }
+  .atpSearch th:first-child { border-left: none; }
+  .atpSearch td { vertical-align: top; }
+  .atpSearch .ui-icon { background-image: url('%PUBURLPATH%/System/JQueryPlugin/themes/foswiki/images/ui-icons-famfamfam.png') <nop>!important; }
+  .modacBookmarksSplit { width: 100%; }
+  .modacBookmarksSplit .splittitle { width: 100%; border-bottom: solid 1px #003c89; color: #003c89; font-weight: bold; margin-bottom: 10px; }
+  .modacBookmarksSplit td.splitright { border-left: solid 1px #ccc; padding-left: 10px; vertical-align: top; width: 50%; }
+  .modacBookmarksSplit td.splitleft { padding-right: 10px; vertical-align: top; }
+  hr.splith { border:solid 1px #ccc; }
+  .modacBookmarks { list-style: none; margin: 0; padding: 0; }
+  .modacBookmarks li { list-style: none; border-top: solid 1px #eee; margin: 5px 0 0 0; padding: 5px 0 0 0; line-height: 100%; }
+  .modacBookmarks li:first-child { border-top: none; }
+  .modacBookmarks form { float: right; }
+  .perspageBlock { border: solid 1px #003c89; padding: 10px; margin-bottom: 2em; }
+  .perspageBlockTitle { background-color: #003c89; color: white; padding: 5px; font-size: 150%; font-weight: bold; }
+  .bmsubinfo { font-size: 75%; }
+</style>"}%
+
+<div class="perspageBlockTitle">%MAKETEXT{"My bookmarks"}%</div><div class="perspageBlock">
+%TABPANE{class="simple"}%
+%TAB{"%MAKETEXT{"By web"}%"}%
+<table class="modacBookmarksSplit">
+<tr><td class="splitleft"><div class="splittitle">%ICON{viewtopic}% %MAKETEXT{Topics}%</div>
+<ul class="modacBookmarks">
+%SOLRSEARCH{"type:topic webtopic:(%FAVORITELIST{format="$swebtopic" separator=" OR " default="NOT *"}%)"
+  rows="999999" sort="webtopic"
+  format="<li>$percntFAVORITEBUTTON{web=\"$web\" topic=\"$topic\" format=\"$formstart$linkstart<img src=\\"%PUBURLPATH%/%SYSTEMWEB%/FamFamFamSilkCompanion1Icons/decline.png\\" alt=\\"%MAKETEXT{"Remove bookmark"}%\\" title=\\"%MAKETEXT{"Remove bookmark"}%\\" />$linkend$formend\"}$percnt <a href=\"%SCRIPTURL{view}%/$web/$topic\" title=\"$web.$topic\"><strong>$title</strong></a>%BR%<span class=\"bmsubinfo\">[[$web.WebHome][$web]]</span></li>"
+}%
+</ul></td>
+<td class="splitright"><div class="splittitle">%ICON{attachfile}% %MAKETEXT{Attachments}%</div>
+<ul class="modacBookmarks">
+%SOLRSEARCH{"-type:(topic OR comment OR action) (%FAVORITELIST{type="files" format="(webtopic:$swebtopic name:$file)" separator=" OR " default="NOT *"}%)"
+  rows="999999" sort="webtopic"
+  format="<li>$percntFAVORITEBUTTON{web=\"$web\" topic=\"$topic\" file=\"$name\" format=\"$formstart$linkstart<img src=\\"%PUBURLPATH%/%SYSTEMWEB%/FamFamFamSilkCompanion1Icons/decline.png\\" alt=\\"%MAKETEXT{"Remove bookmark"}%\\" title=\\"%MAKETEXT{"Remove bookmark"}%\\" />$linkend$formend\"}$percnt<a href=\"$url\"><strong>$name</strong></a>%BR%<span class=\"bmsubinfo\"><a href=\"%SCRIPTURL{view}%/$web/$topic\" title=\"$web.$topic\"><strong>$title</strong></a></span></li>"
+}%
+</ul></td></tr></table>
+%ENDTAB%
+%TAB{"%MAKETEXT{"By last change"}%"}%
+<table class="modacBookmarksSplit">
+<tr><td class="splitleft"><div class="splittitle">%ICON{viewtopic}% %MAKETEXT{Topics}%</div>
+<table class="atpSearch atpOrientCols">
+<tr><th>%MAKETEXT{"Name"}%</th><th>%MAKETEXT{"Last changed"}%</th></tr>
+%SOLRSEARCH{"type:topic webtopic:(%FAVORITELIST{format="$swebtopic" separator=" OR " default="NOT *"}%)"
+  rows="5" sort="date desc"
+  format="<tr><td><a href=\"%SCRIPTURL{view}%/$web/$topic\" title=\"$web.$topic\"><strong>$percntIF{\"'$title'='WebHome'\" then=\"$web\" else=\"$title\"}$percnt</strong></a>%BR%<span class=\"bmsubinfo\">[[$web.WebHome][$web]]</span></td><td>$date%BR%$author</td></tr>"
+}%
+</table></td>
+<td class="splitright"><div class="splittitle">%ICON{attachfile}% %MAKETEXT{Attachments}%</div>
+<table class="atpSearch atpOrientCols">
+<tr><th>%MAKETEXT{"Attachment"}%</th><th>%MAKETEXT{"Last changed"}%</th></tr>
+%SOLRSEARCH{"-type:(topic OR comment OR action) (%FAVORITELIST{type="files" format="(webtopic:$swebtopic name:$file)" separator=" OR " default="NOT *"}%)"
+  rows="5" sort="date desc"
+  format="<tr><td>[[%PUBURLPATH%/$web/$topic/$name][<strong>$title</strong>]]%BR%<span class=\"bmsubinfo\">[[$web.$topic][$percntTOPICTITLE{web=\"$web\" topic=\"$topic\"}$percnt]]</span></td><td>$date%BR%$author</td></tr>"
+}%
+</table></td></tr></table>
+%ENDTAB%
+%ENDTABPANE%
+</div>
+
+<div class="perspageBlockTitle">%MAKETEXT{"My tasks"}%</div><div class="perspageBlock">
+%TABPANE{class="simple"}%
+%TAB{"%MAKETEXT{"Open tasks"}%"}%
+<div id="ampel_open">
+<table class="atpSearch atpOrientCols" style="width: 100%;">
+<tr><th>%MAKETEXT{"Created"}%</th><th>%MAKETEXT{"Task"}%</th><th>%MAKETEXT{"Due"}%</th><th>%MAKETEXT{"Status"}%</th><th>&nbsp;</th></tr>
+%SOLRSEARCH{"type:action action_who_lst:(%USERNAME% OR %WIKINAME% OR %WIKIUSERNAME%) -action_closed_dt:?*"
+  format="<tr><td>$createdate%BR%$percntSUBST{text=\"$author\" pattern=\"^Main\.\" format=\"\"}$percnt%BR%<span class=\"bmsubinfo\">[[$webtopic][$topic]]</span></td><td><strong>$title</strong>$n$n$action_text_s</td><td>$percntIF{\"'$action_due_dt'~'$*'\" else=\"$action_due_dt\"}$percnt</td><td><span style=\"display:none;\">$state</span></td><td><a class=\"atp_edit ui-icon ui-icon-pencil\" title=\"%MAKETEXT{"Edit"}%\" href=\"%SCRIPTURL{"edit"}%/$web/$topic?nowysiwyg=1;skin=action,%SKIN%;t=%GMTIME{"$epoch"}%;atp_action=$action_uid_s\">%MAKETEXT{"Edit"}%</a></td></tr>"
+  rows="1000" sort="action_due_dt"
+}%
+</table>
+</div>
+%AMPEL{"ampel_open" WARN="%AMPELWARN{default="3"}%" DATE="%MAKETEXT{"Due"}%" DST="%MAKETEXT{"Status"}%" DONE="%MAKETEXT{"Status"}%" COND="closed"}%
+%ENDTAB%
+%TAB{"%MAKETEXT{"Finished tasks"}%"}%
+<div id="ampel_finished">
+<table class="atpSearch atpOrientCols" style="width: 100%;">
+<tr><th>%MAKETEXT{"Date"}%</th><th>%MAKETEXT{"Task"}%</th><th>%MAKETEXT{"Due"}%</th><th>%MAKETEXT{"Status"}%</th><th>&nbsp;</th></tr>
+%SOLRSEARCH{"type:action action_who_lst:(%USERNAME% OR %WIKINAME% OR %WIKIUSERNAME%) action_closed_dt:?*"
+  format="<tr><td>$createdate%BR%$percntSUBST{text=\"$author\" pattern=\"^Main\.\" format=\"\"}$percnt%BR%[[$webtopic][$webtopic]]</td><td><strong>$title</strong>%BR%$action_text_s</td><td>$percntIF{\"'$action_due_dt'~'$*'\" else=\"$action_due_dt\"}$percnt</td><td><span style=\"display:none;\">$state</span></td><td><a class=\"atp_edit ui-icon ui-icon-pencil\" title=\"%MAKETEXT{"Edit"}%\" href=\"%SCRIPTURL{"edit"}%/$web/$topic?nowysiwyg=1;skin=action,%SKIN%;t=%GMTIME{"$epoch"}%;atp_action=$action_uid_s\">%MAKETEXT{"Edit"}%</a></td></tr>"
+  rows="1000" sort="action_due_dt"
+}%
+</table>
+</div>
+%AMPEL{"ampel_finished" WARN="%AMPELWARN{default="3"}%" DATE="%MAKETEXT{"Due"}%" DST="%MAKETEXT{"Status"}%" DONE="%MAKETEXT{"Status"}%" COND="closed"}%
+%ENDTAB%
+%TAB{"%MAKETEXT{"Recently finished tasks"}%" id="recent"}%
+<div id="ampel_recent">
+<table class="atpSearch atpOrientCols" style="width: 100%;">
+<tr><th>%MAKETEXT{"Date"}%</th><th>%MAKETEXT{"Task"}%</th><th>%MAKETEXT{"Due"}%</th><th>%MAKETEXT{"Status"}%</th><th>&nbsp;</th></tr>
+%SOLRSEARCH{"type:action action_who_lst:(%USERNAME% OR %WIKINAME% OR %WIKIUSERNAME%) action_closed_dt:[%CALC{"$FORMATGMTIME($TIMEADD($TIME(), -%URLPARAM{"daysclosed" default="7"}%, day), $year-$month-$dayT00:00:00.000Z)"}% TO *]"
+  format="<tr><td>$createdate%BR%$percntSUBST{text=\"$author\" pattern=\"^Main\.\" format=\"\"}$percnt%BR%[[$webtopic][$webtopic]]</td><td><strong>$title</strong>%BR%$action_text_s</td><td>$percntIF{\"'$action_due_dt'~'$*'\" else=\"$action_due_dt\"}$percnt</td><td><span style=\"display:none;\">$state</span></td><td><a class=\"atp_edit ui-icon ui-icon-pencil\" title=\"%MAKETEXT{"Edit"}%\" href=\"%SCRIPTURL{"edit"}%/$web/$topic?nowysiwyg=1;skin=action,%SKIN%;t=%GMTIME{"$epoch"}%;atp_action=$action_uid_s\">%MAKETEXT{"Edit"}%</a></td></tr>"
+  rows="1000" sort="action_due_dt"
+}%
+</table>
+</div>
+%AMPEL{"ampel_recent" WARN="%AMPELWARN{default="3"}%" DATE="%MAKETEXT{"Due"}%" DST="%MAKETEXT{"Status"}%" DONE="%MAKETEXT{"Status"}%" COND="closed"}%
+%ENDTAB%
+%TAB{"%MAKETEXT{"Discarded tasks"}%"}%
+<div id="ampel_discarded">
+<table class="atpSearch atpOrientCols" style="width: 100%;">
+<tr><th>%MAKETEXT{"Date"}%</th><th>%MAKETEXT{"Task"}%</th><th>%MAKETEXT{"Due"}%</th><th>%MAKETEXT{"Status"}%</th><th>&nbsp;</th></tr>
+%SOLRSEARCH{"type:action action_who_lst:(%USERNAME% OR %WIKINAME% OR %WIKIUSERNAME%) state:discarded"
+  format="<tr><td>$createdate%BR%$percntSUBST{text=\"$author\" pattern=\"^Main\.\" format=\"\"}$percnt%BR%[[$webtopic][$webtopic]]</td><td><strong>$title</strong>%BR%$action_text_s</td><td>$percntIF{\"'$action_due_dt'~'$*'\" else=\"$action_due_dt\"}$percnt</td><td><span style=\"display:none;\">$state</span></td><td><a class=\"atp_edit ui-icon ui-icon-pencil\" title=\"%MAKETEXT{"Edit"}%\" href=\"%SCRIPTURL{"edit"}%/$web/$topic?nowysiwyg=1;skin=action,%SKIN%;t=%GMTIME{"$epoch"}%;atp_action=$action_uid_s\">%MAKETEXT{"Edit"}%</a></td></tr>"
+  rows="1000" sort="action_due_dt"
+}%
+</table>
+</div>
+%AMPEL{"ampel_discarded" WARN="%AMPELWARN{default="3"}%" DATE="%MAKETEXT{"Due"}%" DST="%MAKETEXT{"Status"}%" DONE="%MAKETEXT{"Status"}%" COND="closed"}%
+%ENDTAB%
+%ENDTABPANE%
+</div>
+
+<div class="perspageBlockTitle">%MAKETEXT{"My notes"}% <a href="%SCRIPTURLPATH{"edit"}%/%WEB%/%TOPIC%" title="%MAKETEXT{Edit}%">%ICON{pencil}%</a></div><div class="perspageBlock">
+%TEXT%
+</div>
+%TMPL:END%

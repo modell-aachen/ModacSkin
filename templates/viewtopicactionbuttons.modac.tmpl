@@ -3,10 +3,19 @@
 }%<div id="modacActionButtonsWrapper">%TMPL:P{"modacActionButtons"}%<div class="clear"></div></div> %TMPL:END%
 
 %{ --- "modacActionButtons" is defined within the particular scripts e.g. view.modac.tmpl or edt.modac.tmpl and uses either "modacActionButtonsVIEW" or "modacActionButtonsSYSTEM" --- }%
-%TMPL:DEF{"modacActionButtonsVIEW"}%<div id="modacButtonsLEFT" class="modacTabs">%TMPL:P{"talktopicaction"}%</div><div id="modacButtonsRIGHT" class="modacTabs"><ul class="jqmenu modacMoreMenu"><li>%TMPL:P{"modacEdit"}%</li>%IF{"'%MODAC_NO_TOPMENU{default="0"}%'='0'" then="<li class=\"modacMoreDynamic\">$percntTMPL:P{\"modacMore\"}$percnt</li>" else="<li>$percntTMPL:P{\"modacAttach\"}$percnt</li><li>$percntTMPL:P{\"modacRdiff\"}$percnt</li><li>$percntTMPL:P{\"modacMore\"}$percnt</li>"}%<li id="modacSearchBox">%TMPL:P{"SearchBox"}%</li></ul></div>%TMPL:END%
+%TMPL:DEF{"modacActionButtonsVIEW"}%<div id="modacButtonsLEFT" class="modacTabs">%TMPL:P{"talktopicaction"}%</div><div id="modacButtonsRIGHT" class="modacTabs"><ul class="jqmenu modacMoreMenu"><li>%TMPL:P{"modacFavTopic"}%</li><li>%TMPL:P{"modacEdit"}%</li>%IF{"'%MODAC_NO_TOPMENU{default="0"}%'='0'" then="<li class=\"modacMoreDynamic\">$percntTMPL:P{\"modacMore\"}$percnt</li>" else="<li>$percntTMPL:P{\"modacAttach\"}$percnt</li><li>$percntTMPL:P{\"modacRdiff\"}$percnt</li><li>$percntTMPL:P{\"modacMore\"}$percnt</li>"}%<li id="modacSearchBox">%TMPL:P{"SearchBox"}%</li></ul></div>%TMPL:END%
 %TMPL:DEF{"modacActionButtonsSYSTEM"}%<div id="modacButtonsLEFT" class="modacTabs"><ul><li>%TMPL:P{"modacSystemTab"}%</li></ul></div><div id="modacButtonsRIGHT" class="modacTabs" style="background-image: none"><ul><li id="modacSearchBox">%TMPL:P{"SearchBox"}%</li></ul></div>%TMPL:END%
 
 %{ --- definitions used in "modacActionButtonsVIEW" --- }%
+
+%TMPL:DEF{"modacFavTopic"}%%FAVORITEBUTTON{
+  cond="'%TOPIC%'='%WORKFLOWORIGIN%'"
+  inactive_suffix="grey"
+  active_suffix="gold"
+  active_label="%MAKETEXT{"Remove bookmark"}%"
+  inactive_label="%MAKETEXT{"Bookmark this page"}%"
+  format="$formstart$linkstart&nbsp;<img src=\"%PUBURLPATH%/%SYSTEMWEB%/FamFamFamSilkCompanion1Icons/star_$suffix.png\" alt=\"$label\" title=\"$label\" />&nbsp;$linkend$formend"
+}%%TMPL:END%
 
 %TMPL:DEF{"modacEdit"}% %IF{"defined rev" then="" else="$percntTMPL:P{modacEditLATEST}$percnt"}%%TMPL:END%
 %TMPL:DEF{"modacEditLATEST"}%%IF{"$WORKFLOWEDITPERM" then="$percentIF{$quotcontext edit$quot then=$quot$dollarpercntTMPL:P{modacEditLATEST_ACTIVE}$dollarpercnt$quot else=$quot$dollarpercntTMPL:P{modacEditLATEST_INACTIVE}$dollarpercnt$quot}$percent"}%%TMPL:END%
