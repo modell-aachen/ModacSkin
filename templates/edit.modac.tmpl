@@ -5,6 +5,9 @@
 %{ don't show these elements to make best use of screen estate: }%
 %TMPL:DEF{"logo"}%%TMPL:END%
 
+%ADDTOZONE{"script" id="MODAC::CALDISABLE" requires="JQUERYPLUGIN::LIVEQUERY" text="<script type=\"text/javascript\">
+  jQuery(function($) { $('.foswikiEditFormDateField').livequery(function() { $(this).attr('readonly', 'readonly'); }); });
+</script>"}%
 
 %TMPL:DEF{"script:skintemplate"}%%TMPL:P{"script:skintemplate:edit"}%%TMPL:END%
 
