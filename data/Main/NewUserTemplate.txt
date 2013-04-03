@@ -1,0 +1,6 @@
+
+%META:FORM{name="System.UserForm"}%
+%META:PREFERENCE{name="VIEW_TEMPLATE" title="VIEW_TEMPLATE" type="Local" value="UserView"}%
+%META:PREFERENCE{name="EDIT_TEMPLATE" title="EDIT_TEMPLATE" type="Local" value="UserEdit"}%
+%META:PREFERENCE{name="ALLOWTOPICVIEW" title="ALLOWTOPICVIEW" type="Set" value="%WIKIUSERNAME%"}%
+%META:PREFERENCE{name="ALLOWTOPICCHANGE" title="ALLOWTOPICCHANGE" type="Set" value="%WIKIUSERNAME%"}%

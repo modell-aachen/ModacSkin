@@ -8,9 +8,18 @@
 %TMPL:DEF{"modacButtonsLEFT"}%<li>%TMPL:P{"topictabaction"}%</li>%TMPL:END%
 
 %{ Overload this definition if you want to modyfy / additional tabs on the right side }%
-%TMPL:DEF{"modacButtonsRIGHT"}%<li>%TMPL:P{"modacEdit"}%</li>%IF{"'%MODAC_NO_TOPMENU{default="0"}%'='0'" then="<li class=\"modacMoreDynamic\">$percentTMPL:P{\"modacMore\"}$percent</li>" else="<li>$percntTMPL:P{\"modacAttach\"}$percnt</li><li>$percntTMPL:P{\"modacRdiff\"}$percnt</li><li>$percntTMPL:P{\"modacMore\"}$percnt</li>"}%<li id="modacSearchBox">%TMPL:P{"SearchBox"}%</li>%TMPL:END%
+%TMPL:DEF{"modacButtonsRIGHT"}%<li>%TMPL:P{"modacFavTopic"}%</li><li>%TMPL:P{"modacEdit"}%</li>%IF{"'%MODAC_NO_TOPMENU{default="0"}%'='0'" then="<li class=\"modacMoreDynamic\">$percentTMPL:P{\"modacMore\"}$percent</li>" else="<li>$percntTMPL:P{\"modacAttach\"}$percnt</li><li>$percntTMPL:P{\"modacRdiff\"}$percnt</li><li>$percntTMPL:P{\"modacMore\"}$percnt</li>"}%<li id="modacSearchBox">%TMPL:P{"SearchBox"}%</li>%TMPL:END%
 
 %{ --- definitions used in "modacActionButtonsVIEW" --- }%
+
+%TMPL:DEF{"modacFavTopic"}%%FAVORITEBUTTON{
+  cond="'%TOPIC%'='%WORKFLOWORIGIN%'"
+  inactive_suffix="grey"
+  active_suffix="gold"
+  active_label="%MAKETEXT{"Remove bookmark"}%"
+  inactive_label="%MAKETEXT{"Bookmark this page"}%"
+  format="$formstart$linkstart&nbsp;<img src=\"%PUBURLPATH%/%SYSTEMWEB%/FamFamFamSilkCompanion1Icons/star_$suffix.png\" alt=\"$label\" title=\"$label\" />&nbsp;$linkend$formend"
+}%%TMPL:END%
 
 %TMPL:DEF{"modacEdit"}%%IF{"defined rev or defined rev1" then="" else="$percntTMPL:P{modacEditLATEST}$percnt"}%%TMPL:END%
 %TMPL:DEF{"modacEditLATEST"}%<div class="foswikiRequiresChangePermission requireModacChangePermission %IF{"context edit" then="modacActionButtonACTIVE"}%"><a href='%SCRIPTURL{"edit"}%/%BASEWEB%/%BASETOPIC%?t=%GMTIME{"$epoch"}%%TMPL:P{"url_param_editaction"}%%IF{"context CKEditorPluginEnabled" then="" else=";nowysiwyg=1"}%' class='modacChanging' rel='nofollow' %MAKETEXT{"title='Edit this topic' accesskey='e'>&Edit"}%</a></div>%TMPL:END%
