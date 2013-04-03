@@ -238,7 +238,7 @@ Modified actionTemplate adds action table directly below comment box
 %TMPL:END%
 </verbatim>
 <verbatim>
-%TMPL:DEF{OUTPUT:action2}%%POS:AFTER%%AC%NOP%TION{who="%URLPARAM{"action_who" encode="off"}%" due="%URLPARAM{"action_due" encode="off"}%" createdate="%DATE%" kuerzel="%URLPARAM{"action_kuerzel" encode="off"}%" zeit="%URLPARAM{"action_zeit" encode="off"}%" state="%URLPARAM{"action_state" encode="off"}%" task="%URLPARAM{"action_task" encode="off"}%" }% %URLPARAM{"action_comment" encode="off"}%%ENDACTION%
+%TMPL:DEF{OUTPUT:action2}%%POS:AFTER%%AC%NOP%TION{who="%URLPARAM{"action_who" encode="quote"}%" due="%URLPARAM{"action_due" encode="off"}%" createdate="%DATE%" kuerzel="%URLPARAM{"action_kuerzel" encode="quote"}%" zeit="%URLPARAM{"action_zeit" encode="off"}%" state="%URLPARAM{"action_state" encode="off"}%" task="%URLPARAM{"action_task" encode="quote"}%" }% %URLPARAM{"action_comment" encode="off"}%%ENDACTION%
 %TMPL:END%
 </verbatim>
 
