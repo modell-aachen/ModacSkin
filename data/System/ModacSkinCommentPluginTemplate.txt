@@ -228,17 +228,12 @@ Modified actionTemplate adds action table directly below comment box
 }%
 
 %TABLE{databg="#ffffff" tableborder="0" cellborder="0"}%
-| <label for="action_kuerzel">Aufgabensteller</label>|<input class="foswikiInputField" name="action_kuerzel" id="action_kuerzel" type="text" size="50" /> |
+| <label for="action_kuerzel">Aufgabensteller</label>|<input class="foswikiInputField" name="action_kuerzel" id="action_kuerzel" type="text" size="50" value="%WIKINAME%" /> |
 | <label for="action_who">Aufgabe an</label>| <input class="foswikiInputField jqTextboxList {useHidden: true, limit: 1}" autocomplete="%SCRIPTURL{"view"}%/System/ModacSkinCommentPluginTemplate?skin=text;section=Teilnehmer;limit=0" name="action_who" id="action_who" type="text" size="50" value="%URLPARAM{"who"}%" /> |
 | <label for="action_due">Fälligkeitstermin</label>| <input id="action_due" type="text" readonly="readonly" size="10" name="action_due" class="foswikiInputField" value="%URLPARAM{"due"}%"><input type="image" id="action_due_calendar" title="Calendar" alt="Calendar" src="%PUBURLPATH%/System/JSCalendarContrib/img.gif" name="calendar">|
-| <label for="action_task">Aufgabe</label>| <input type="text" %DISABLED% size="50" name="action_task" id="action_task" class="foswikiInputField" onfocus="if(this.value=='%MESSAGE%')this.value=''" onblur="if(this.value=='')this.value='%MESSAGE%'">%MESSAGE% |
-| <label for="action_comment">Aufgabeninhalt</label>| <textarea %DISABLED% rows="%rows|3%" cols="%cols|50%" name="action_comment" id="action_comment" class="foswikiInputField" onfocus="if(this.value=='%MESSAGE%')this.value=''" onblur="if(this.value=='')this.value='%MESSAGE%'">%MESSAGE%</textarea> |
-|<label for="action_zeiterfassung">Zeiterfassung?</label>| <input type="checkbox" id="action_zeiterfassung" /> |
-<div id="statusChange" style="display:none;">
-| <label for="action_zeit">benötigte Zeit</label>|<input class="foswikiInputField" name="action_zeit" id="action_zeit" type="text" size="10" value="%URLPARAM{"zeit"}%"/> |
-| <label for="action_state">Aufgabenstatus</label>|<select class="foswikiInputField" name="action_state" id="action_state" size="1"><option value="open" selected>open</option><option value="closed">closed</option></select> |
-</div>
-|| <input %DISABLED% type="submit" class="foswikiButton" onClick="convertTextboxlist()" value="Aufgabe hinzufügen" /> |
+| <label for="action_task">Aufgabe</label>| <input type="text" %DISABLED% size="50" name="action_task" id="action_task" class="foswikiInputField">%MESSAGE% |
+| <label for="action_comment">Aufgabeninhalt</label>| <textarea %DISABLED% rows="%rows|3%" cols="%cols|50%" name="action_comment" id="action_comment" class="foswikiInputField">%MESSAGE%</textarea> |
+|| <input type="hidden" name="action_state" value="open" /><input %DISABLED% type="submit" class="foswikiButton" value="Aufgabe hinzufügen" /> |
 
 %TMPL:END%
 </verbatim>

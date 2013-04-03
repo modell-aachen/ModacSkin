@@ -1,8 +1,5 @@
 jQuery(function($) {
-  // Split wikiname into words
-  var tmp = foswiki.getPreference('WIKINAME');
-  tmp = tmp.match(/[A-Z][a-z]*/g);
-  krzl = tmp.join(' ');
+  var krzl = foswiki.getPreference('WIKINAME');
 
   $('#action_kuerzel').val(krzl);
   $('#action_zeiterfassung').click(function() {
