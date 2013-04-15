@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Foswiki $Id\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2012-10-11 11:31+0200\n"
+"PO-Revision-Date: 2013-04-15 16:34+0200\n"
 "Last-Translator: Modell Aachen\n"
 "Language-Team: Foswiki German Translation Team <none>\n"
 "Language: de\n"
@@ -1324,3 +1324,63 @@ msgstr "Titel: "
 #: templates/metatext.modac.tmpl
 msgid "Please wait..."
 msgstr "Bitte warten..."
+
+msgid "Personal page"
+msgstr "Persönliche Seite"
+
+msgid "My bookmarks"
+msgstr "Meine Favoriten"
+
+msgid "Topics"
+msgstr "Seiten"
+
+msgid "Remove bookmark"
+msgstr "Favorit entfernen"
+
+msgid "By web"
+msgstr "Nach Bereich"
+
+msgid "By last change"
+msgstr "Nach letzter Änderung"
+
+msgid "Last changed"
+msgstr "Zuletzt geändert"
+
+msgid "My tasks"
+msgstr "Meine Aufgaben"
+
+msgid "Status"
+msgstr "Status"
+
+msgid "Task"
+msgstr "Aufgabe"
+
+msgid "Due"
+msgstr "Zieltermin"
+
+msgid "Created:"
+msgstr "Erstellt:"
+
+msgid "Open tasks"
+msgstr "Offene Aufgaben"
+
+msgid "Finished tasks"
+msgstr "Abgeschlossene Aufgaben"
+
+msgid "Recently finished tasks"
+msgstr "Kürzlich abgeschlossene Aufgaben"
+
+msgid "Show tasks finished in the past %1"
+msgstr "Abgeschlossene Aufgaben der letzten %1 anzeigen"
+
+msgid "week"
+msgstr "Woche"
+
+msgid "%1 weeks"
+msgstr "%1 Wochen"
+
+msgid "Discarded tasks"
+msgstr "Verworfene Aufgaben"
+
+msgid "My notes"
+msgstr "Meine Notizen"
