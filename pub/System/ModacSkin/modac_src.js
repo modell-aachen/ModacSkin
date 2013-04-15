@@ -48,5 +48,16 @@ jQuery(function($){
             }
         });
 
+    $('.modacPersPageDaysFinishedSelect').livequery(function() {
+        $(this).change(function() {
+            var days = $(this).val();
+            var url = $(this).metadata().url || '';
+            url += days + ';t=' + (new Date()).getTime();
+            var div = $('.tab_tasks_recently .jqTabContents');
+            div.html('<span class="jqAjaxLoader">&nbsp;</span>');
+            div.load(url);
+        });
+    });
+
 });
 
