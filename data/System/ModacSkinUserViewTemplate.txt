@@ -102,7 +102,7 @@
 %ENDTABPANE%
 </div>
 
-<div class="perspageBlockTitle">%MAKETEXT{"My notes"}% <a href="%SCRIPTURLPATH{"edit"}%/%WEB%/%TOPIC%" title="%MAKETEXT{Edit}%">%ICON{pencil}%</a></div><div class="perspageBlock">
+<div class="perspageBlockTitle">%MAKETEXT{"My notes"}% <a href="%SCRIPTURLPATH{"edit"}%/%WEB%/%TOPIC%?t=%GMTIME{"$epoch"}%" title="%MAKETEXT{Edit}%">%ICON{pencil}%</a></div><div class="perspageBlock">
 %TEXT%
 </div>
 %TMPL:END%
