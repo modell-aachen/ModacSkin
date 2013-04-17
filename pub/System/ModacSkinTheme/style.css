@@ -371,6 +371,13 @@ html>body #modacLogoIE {
 	margin: 0.5em 0.7em 0 0.7em;
 }
 
+.modacBookmarkStar {
+	padding: 0 5px;
+}
+.modacFileStar {
+	padding: 0 8px 2px 0;
+}
+
 .modacMoreMenu ul li {
 	width: 100%;
 	float: none;
