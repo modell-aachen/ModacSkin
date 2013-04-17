@@ -18,7 +18,7 @@
   active_suffix="gold"
   active_label="%MAKETEXT{"Remove bookmark"}%"
   inactive_label="%MAKETEXT{"Bookmark this page"}%"
-  format="$formstart$linkstart&nbsp;<img src=\"%PUBURLPATH%/%SYSTEMWEB%/FamFamFamSilkCompanion1Icons/star_$suffix.png\" alt=\"$label\" title=\"$label\" />&nbsp;$linkend$formend"
+  format="$formstart$linkstart&zwj;<img class=\"modacBookmarkStar\" src=\"%PUBURLPATH%/%SYSTEMWEB%/FamFamFamSilkCompanion1Icons/star_$suffix.png\" alt=\"$label\" title=\"$label\" />$linkend$formend"
 }%%TMPL:END%
 
 %TMPL:DEF{"modacEdit"}%%IF{"defined rev or defined rev1" then="" else="$percntTMPL:P{modacEditLATEST}$percnt"}%%TMPL:END%
