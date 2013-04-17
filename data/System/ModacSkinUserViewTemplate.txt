@@ -16,8 +16,8 @@
   .atpSearch tr:first-child + tr td { border-top: none; }
   .atpSearch td { border: solid white; border-width: 8px 1px; padding: 8px; background: #f8fcff; color: #333; }
   .atpSearch td.secondary { color: #666; }
+  .atpSearch td.ops { background: transparent; }
   .atpSearch .ui-icon { background-image: url('%PUBURLPATH%/System/JQueryPlugin/themes/foswiki/images/ui-icons-famfamfam.png') <nop>!important; }
-  .atpSearch a.atp_edit { float: left; margin-right: 8px; }
   .modacBookmarksSplit { width: 100%; }
   .modacBookmarksSplit .splittitle { width: 100%; border-bottom: solid 1px #003c89; color: #003c89; font-weight: bold; margin-bottom: 10px; }
   .modacBookmarksSplit td.splitright { border-left: solid 1px #ccc; padding-left: 10px; vertical-align: top; width: 50%; }
@@ -27,6 +27,7 @@
   .modacBookmarks li { list-style: none; border-top: solid 1px #eee; margin: 5px 0 0 0; padding: 5px 0 0 0; line-height: 100%; }
   .modacBookmarks li:first-child { border-top: none; }
   .modacBookmarks form { float: right; }
+  .modacBookmarks div.date { float: right; text-align: right; color: #666; font-size: 75%; }
   .perspageBlock { border: solid 1px #6494c9; padding: 10px; margin-bottom: 2em; }
   .perspageBlockTitle { background-color: #6494c9; color: white; padding: 5px; font-size: 150%; font-weight: bold; }
   .bmsubinfo { font-size: 75%; }
@@ -58,21 +59,20 @@
 %TAB{"%MAKETEXT{"By last change"}%"}%
 <table class="modacBookmarksSplit">
 <tr><td class="splitleft"><div class="splittitle">%ICON{viewtopic}% %MAKETEXT{Topics}%</div>
-<table class="atpSearch atpOrientCols">
-<tr><th>%MAKETEXT{"Name"}%</th><th>%MAKETEXT{"Last changed"}%</th></tr>
+<ul class="modacBookmarks">
 %SOLRSEARCH{"type:topic webtopic:(%FAVORITELIST{format="$swebtopic" separator=" OR " default="NOT *"}%)"
   rows="5" sort="date desc"
-  format="<tr><td><a href=\"%SCRIPTURL{view}%/$web/$topic\" title=\"$web.$topic\"><strong>$percntIF{\"'$title'='WebHome'\" then=\"$web\" else=\"$title\"}$percnt</strong></a>%BR%<span class=\"bmsubinfo\">[[$web.WebHome][$web]]</span></td><td class=\"secondary\">$date%BR%$author</td></tr>"
+  format="<li><div class=\"date\">$date%BR%$author</div><a href=\"%SCRIPTURL{view}%/$web/$topic\" title=\"$web.$topic\"><strong>$percntIF{\"'$title'='WebHome'\" then=\"$web\" else=\"$title\"}$percnt</strong></a>%BR%<span class=\"bmsubinfo\">[[$web.WebHome][$web]]</span></li>"
 }%
-</table></td>
-<td class="splitright"><div class="splittitle">%ICON{attachfile}% %MAKETEXT{Attachments}%</div>
-<table class="atpSearch atpOrientCols">
-<tr><th>%MAKETEXT{"Attachment"}%</th><th>%MAKETEXT{"Last changed"}%</th></tr>
+</ul>
+</td><td class="splitright"><div class="splittitle">%ICON{attachfile}% %MAKETEXT{Attachments}%</div>
+<ul class="modacBookmarks">
 %SOLRSEARCH{"-type:(topic OR comment OR action) (%FAVORITELIST{type="files" format="(webtopic:$swebtopic name:$file)" separator=" OR " default="NOT *"}%)"
   rows="5" sort="date desc"
-  format="<tr><td>[[%PUBURLPATH%/$web/$topic/$name][<strong>$title</strong>]]%BR%<span class=\"bmsubinfo\">[[$web.$topic][$percntTOPICTITLE{web=\"$web\" topic=\"$topic\"}$percnt]]</span></td><td class=\"secondary\">$date%BR%$author</td></tr>"
+  format="<li><div class=\"date\">$date%BR%$author</div>[[%PUBURLPATH%/$web/$topic/$name][<strong>$title</strong>]]%BR%<span class=\"bmsubinfo\">[[$web.$topic][$percntTOPICTITLE{web=\"$web\" topic=\"$topic\"}$percnt]]</span></li>"
 }%
-</table></td></tr></table>
+</ul>
+</td></tr></table>
 %ENDTAB%
 %ENDTABPANE%
 </div>
@@ -82,9 +82,9 @@
 %TAB{"%MAKETEXT{"Open tasks"}%"}%
 <div id="ampel_open">
 <table class="atpSearch atpOrientCols" style="width: 100%;">
-<tr><th>%MAKETEXT{"Task"}%</th><th>%MAKETEXT{"Status"}%</th><th>%MAKETEXT{"Due"}%</th></tr>
+<tr><th>%MAKETEXT{"Created"}%</th><th>%MAKETEXT{"Context"}%</th><th>%MAKETEXT{"Task"}%</th><th>%MAKETEXT{"Due"}%</th><th>%MAKETEXT{"Status"}%</th><th>&nbsp;</th></tr>
 %SOLRSEARCH{"type:action action_who_lst:(%USERNAME% OR %WIKINAME% OR %WIKIUSERNAME%) -action_closed_dt:?*"
-  format="<tr><td class=\"taskmain\"><span class=\"tasktitle\">$title</span>$n$n$action_text_s$n$n<a class=\"atp_edit ui-icon ui-icon-pencil\" title=\"%MAKETEXT{"Edit"}%\" href=\"%SCRIPTURL{"edit"}%/$web/$topic?nowysiwyg=1;skin=action,%SKIN%;t=%GMTIME{"$epoch"}%;atp_action=$action_uid_s\">%MAKETEXT{"Edit"}%</a><span class=\"bmsubinfo disinterest\">%MAKETEXT{"Created:"}% $createdate | !$percntSUBST{text=\"$author\" pattern=\"^Main\.\" format=\"\"}$percnt | [[$webtopic][$topic]]</span></td><td><span style=\"display:none;\">$action_state_s</span></td><td class=\"taskdue taskdate secondary\">$percntIF{\"'$action_due_dt'~'$*'\" else=\"$action_due_dt\"}$percnt</td></tr>"
+  format="<tr><td style=\"white-space:nowrap;\" class=\"secondary bmsubinfo\">$createdate%BR%$percntSUBST{text=\"$author\" pattern=\"^Main\.\" format=\"\"}$percnt</td><td class=\"secondary bmsubinfo\">[[$webtopic][$topic]]</td><td class=\"taskmain\"><span class=\"tasktitle\">$title</span>$n$n$action_text_s<span class=\"bmsubinfo\"></span></td><td class=\"taskdue taskdate secondary\">$percntIF{\"'$action_due_dt'~'$*'\" else=\"$action_due_dt\"}$percnt</td><td><span style=\"display:none;\">$action_state_s</span></td><td class=\"ops\"><a class=\"atp_edit ui-icon ui-icon-pencil\" title=\"%MAKETEXT{"Edit"}%\" href=\"%SCRIPTURL{"edit"}%/$web/$topic?nowysiwyg=1;skin=action,%SKIN%;t=%GMTIME{"$epoch"}%;atp_action=$action_uid_s\">%MAKETEXT{"Edit"}%</a></td></tr>"
   rows="1000" sort="createdate"
 }%
 </table>
@@ -115,9 +115,9 @@
 %STARTSECTION{"perspage_tasks"}%
 %IF{"'%URLPARAM{"extrasection"}%'" then="$percntINCLUDE{\"%WEB%.%TOPIC%\" section=\"%URLPARAM{"extrasection"}%\"}$percnt"}%
 <table class="atpSearch atpOrientCols">
-<tr><th>%MAKETEXT{"Task"}%</th><th>%MAKETEXT{"Status"}%</th><th>%MAKETEXT{"Due"}%</th></tr>
+<tr><th>%MAKETEXT{"Created"}%</th><th>%MAKETEXT{"Context"}%</th><th>%MAKETEXT{"Task"}%</th><th>%MAKETEXT{"Due"}%</th><th>%MAKETEXT{"Status"}%</th><th>&nbsp;</th></tr>
 %SOLRSEARCH{"type:action action_who_lst:(%USERNAME% OR %WIKINAME% OR %WIKIUSERNAME%) %URLPARAM{"tasksfilter"}%"
-  format="<tr><td class=\"taskmain\"><span class=\"tasktitle\">$title</span>$n$n$action_text_s$n$n<a class=\"atp_edit ui-icon ui-icon-pencil\" title=\"%MAKETEXT{"Edit"}%\" href=\"%SCRIPTURL{"edit"}%/$web/$topic?nowysiwyg=1;skin=action,%SKIN%;t=%GMTIME{"$epoch"}%;atp_action=$action_uid_s\">%MAKETEXT{"Edit"}%</a><span class=\"bmsubinfo disinterest\">%MAKETEXT{"Created:"}% $createdate | !$percntSUBST{text=\"$author\" pattern=\"^Main\.\" format=\"\"}$percnt | [[$webtopic][$topic]]</span></td><td><img src=\"%PUBURLPATH%/%SYSTEMWEB%/FamFamFamSilkIcons/%URLPARAM{"icon"}%.png\" alt=\"%MAKETEXT{"%URLPARAM{"status"}%"}%\" /> $action_%URLPARAM{"datefield"}%_dt</td><td class=\"taskdue taskdate secondary\">$percntIF{\"'$action_due_dt'~'$*'\" else=\"$action_due_dt\"}$percnt</td></tr>"
+  format="<tr><td style=\"white-space:nowrap;\" class=\"secondary bmsubinfo\">$createdate%BR%$percntSUBST{text=\"$author\" pattern=\"^Main\.\" format=\"\"}$percnt</td><td class=\"secondary bmsubinfo\">[[$webtopic][$topic]]</td><td class=\"taskmain\"><span class=\"tasktitle\">$title</span>$n$n$action_text_s</td><td class=\"taskdue taskdate secondary\">$percntIF{\"'$action_due_dt'~'$*'\" else=\"$action_due_dt\"}$percnt</td><td><img src=\"%PUBURLPATH%/%SYSTEMWEB%/FamFamFamSilkIcons/%URLPARAM{"icon"}%.png\" alt=\"%MAKETEXT{"%URLPARAM{"status"}%"}%\" /> $action_%URLPARAM{"datefield"}%_dt</td><td class=\"ops\"><a class=\"atp_edit ui-icon ui-icon-pencil\" title=\"%MAKETEXT{"Edit"}%\" href=\"%SCRIPTURL{"edit"}%/$web/$topic?nowysiwyg=1;skin=action,%SKIN%;t=%GMTIME{"$epoch"}%;atp_action=$action_uid_s\">%MAKETEXT{"Edit"}%</a></td></tr>"
   rows="1000" sort="action_%URLPARAM{"datefield"}%_dt" reverse="on"
 }%
 </table>
