@@ -26,7 +26,7 @@ jQuery(function($){
         var d = $('<div class="jqUIDialog {width:500, position:\'center\', modal:true}" title="'+e.text()+'"><img src="'+ jqplPubUri +'/images/spinner.gif" alt="Loading..."/></div>');
         menuDialogs[type] = d;
         d.dialog({ create: function() {
-            d.load(restUri +'/RenderPlugin/template?name=more;expand='+type+';render=1;topic='+baseWeb+'.'+baseTopic, function() {
+            d.load(restUri +'/RenderPlugin/template?name=more;expand='+type+';render=1;topic='+baseWeb+'.'+encodeURIComponent(baseTopic), function() {
                 var h2 = d.find('h2');
                 if (!h2.length) return;
                 d.dialog('option', 'title', h2.html());
