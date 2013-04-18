@@ -16,7 +16,6 @@
   .atpSearch tr:first-child + tr td { border-top: none; }
   .atpSearch td { border: solid white; border-width: 8px 1px; padding: 8px; background: #f8fcff; color: #333; }
   .atpSearch td.secondary { color: #666; }
-  .atpSearch td.ops { background: transparent; }
   .atpSearch .ui-icon { background-image: url('%PUBURLPATH%/System/JQueryPlugin/themes/foswiki/images/ui-icons-famfamfam.png') <nop>!important; }
   .modacBookmarksSplit { width: 100%; }
   .modacBookmarksSplit .splittitle { width: 100%; border-bottom: solid 1px #003c89; color: #003c89; font-weight: bold; margin-bottom: 10px; }
