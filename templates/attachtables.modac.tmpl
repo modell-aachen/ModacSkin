@@ -40,7 +40,7 @@
 %TMPL:END%
 
 %TMPL:DEF{ATTACH:files:row(basic):buttons}%%FAVORITEBUTTON{
-  cond="'%TOPIC%'='%WORKFLOWORIGIN%'"
+  cond="'%TOPIC%'='%WORKFLOWORIGIN%' AND $FAVORITES='1'"
   web="%WEB%" topic="%TOPIC%" file="%A_FILE%"
   active_suffix="gold" inactive_suffix="grey"
   active_label="%MAKETEXT{"Remove bookmark"}%" inactive_label="%MAKETEXT{"Bookmark this file"}%"
