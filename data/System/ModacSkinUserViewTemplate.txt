@@ -52,7 +52,7 @@
 <ul class="modacBookmarks">
 %SOLRSEARCH{"-type:(topic OR comment OR action) (%FAVORITELIST{type="files" format="(webtopic:$swebtopic name:$file)" separator=" OR " default="NOT *"}%)"
   rows="999999" sort="webtopic"
-  format="<li>$percntFAVORITEBUTTON{web=\"$web\" topic=\"$topic\" file=\"$name\" redirectto=\"%WEB%.%TOPIC%\" format=\"$formstart$linkstart<img src=\\"%PUBURLPATH%/%SYSTEMWEB%/FamFamFamSilkCompanion1Icons/decline.png\\" alt=\\"%MAKETEXT{"Remove bookmark"}%\\" title=\\"%MAKETEXT{"Remove bookmark"}%\\" />$linkend$formend\"}$percnt<a href=\"$url\"><strong>$name</strong></a>%BR%<span class=\"bmsubinfo\"><a href=\"%SCRIPTURL{view}%/$web/$topic\" title=\"$web.$topic\"><strong>$percntTOPICTITLE{web=\"$web\" topic=\"$topic\"}$percnt</strong></a></span></li>"
+  format="<li>$percntFAVORITEBUTTON{web=\"$web\" topic=\"$topic\" file=\"$name\" redirectto=\"%WEB%.%TOPIC%\" format=\"$formstart$linkstart<img src=\\"%PUBURLPATH%/%SYSTEMWEB%/FamFamFamSilkCompanion1Icons/decline.png\\" alt=\\"%MAKETEXT{"Remove bookmark"}%\\" title=\\"%MAKETEXT{"Remove bookmark"}%\\" />$linkend$formend\"}$percnt<a href=\"$url\"><strong>$name</strong></a>%BR%<span class=\"bmsubinfo\">[[$web.WebHome][$web]] &raquo; <a href=\"%SCRIPTURL{view}%/$web/$topic\" title=\"$web.$topic\">$percntTOPICTITLE{web=\"$web\" topic=\"$topic\"}$percnt</a></span></li>"
 }%
 </ul></td></tr></table>
 %ENDTAB%
@@ -69,7 +69,7 @@
 <ul class="modacBookmarks">
 %SOLRSEARCH{"-type:(topic OR comment OR action) (%FAVORITELIST{type="files" format="(webtopic:$swebtopic name:$file)" separator=" OR " default="NOT *"}%)"
   rows="5" sort="date desc"
-  format="<li><div class=\"date\">$date%BR%$author</div>[[%PUBURLPATH%/$web/$topic/$name][<strong>$title</strong>]]%BR%<span class=\"bmsubinfo\">[[$web.$topic][$percntTOPICTITLE{web=\"$web\" topic=\"$topic\"}$percnt]]</span></li>"
+  format="<li><div class=\"date\">$date%BR%$author</div>[[%PUBURLPATH%/$web/$topic/$name][<strong>$title</strong>]]%BR%<span class=\"bmsubinfo\">[[$web.WebHome][$web]] &raquo; [[$web.$topic][$percntTOPICTITLE{web=\"$web\" topic=\"$topic\"}$percnt]]</span></li>"
 }%
 </ul>
 </td></tr></table>
