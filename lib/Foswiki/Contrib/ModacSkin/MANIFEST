@@ -19,6 +19,8 @@ data/System/ModacSkinSystemViewTemplate.txt 0664
 data/System/ModacSkinTopExtendedTemplate.txt 0664
 data/System/ModacSkinSystemTabsTemplate.txt 0664
 data/System/ModacSkinTopicMenuTemplate.txt 0664
+data/System/ModacSkinUserEditTemplate.txt 0664
+data/System/ModacSkinUserViewTemplate.txt 0664
 data/System/ModacSkinWebChangesViewTemplate.txt 0664
 data/System/ModacSkinWebCreateNewTopicTemplate.txt 0664
 data/System/WebBottomBarDefault.txt 0664
