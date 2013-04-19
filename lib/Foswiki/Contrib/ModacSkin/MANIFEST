@@ -1,4 +1,5 @@
 data/_default/WebContentTemplates.txt 0664
+data/Main/NewUserTemplate.txt 0664
 data/Main/UeberQWiki.txt 0664
 data/System/ModacAjaxHelper.txt 0664
 data/System/ModacSideBarFlexWebList.txt 0664
