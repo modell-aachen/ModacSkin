@@ -120,7 +120,6 @@ templates/validate.modac.tmpl 0664
 templates/view.modac.tmpl 0664
 templates/viewbottombar.modac.tmpl 0664
 templates/viewplain.modac.tmpl 0664
-templates/viewprint.modac.tmpl 0664
 templates/viewsidebar.modac.tmpl 0664
 templates/viewtopbar.modac.tmpl 0664
 templates/viewtopicactionbuttons.modac.tmpl 0664
