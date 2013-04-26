@@ -69,11 +69,15 @@ content_language=\"$language\"
 %{</verbatim>}%
 
 %{<verbatim class="tml">}%
+%TMPL:DEF{"modacExtraTypes"}%action%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim class="tml">}%
 %TMPL:DEF{"solr::hits::list"}%<!-- -->
 %SOLRFORMAT{"solr1"
   header="<div class='solrSearchHits solrSearchHitsList jqPrettyPhoto {itemSelector:\".solrImageFrame a\"}'>"
   footer="</div>"
-  format="$percntTMPL:P{\"solr::format::list::$format\"
+  format="$percntTMPL:P{\"solr::format::list::$percentIF{\"',$type,'~',%TMPL:P{"modacExtraTypes"}%,'\" then=\"$type\" else=\"$format\"}$percent\"
       author=\"$author\"
       comment=\"$percntENCODE{\"$comment\" type=\"html\"}$percnt\"
       date=\"$date\"
