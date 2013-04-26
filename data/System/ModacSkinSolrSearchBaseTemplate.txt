@@ -31,6 +31,22 @@
 </div>
 <!-- -->%TMPL:END%
 
+%TMPL:DEF{"solr::format::list::action"}%<!-- -->
+<div class='solrSearchHit solrActionHit'>
+  <h3 style='background-image:url(%ICONURLPATH{"target"}%)' title='%MAKETEXT{%type%}%'>
+    [[%web%.%topic%][%title%]]
+    <span class='foswikiGrayText'><em>(%MAKETEXT{%actionstate%}%)</em> %MAKETEXT{"in [_1]" args="[[%web%.%topic%]]"}%</span>
+    <!-- -->
+  </h3>
+  <div class='solrHilite'>
+    <literal>%hilite%</literal>
+  </div>
+  <div class='solrRevision'>
+    %date%, %USERINFO{"%author%" format="[[$wikiusername][$wikiname]]"}%
+  </div>
+</div>
+<!-- -->%TMPL:END%
+
 %TMPL:DEF{"solr::format::list::attachment"}%<!-- -->
 <div class='solrSearchHit solrAttachmentHit'>
   <h3 style='background-image:url(%icon%)' title='%MAKETEXT{%type%}%'>
@@ -65,6 +81,7 @@
 %{<verbatim class="tml">}%
 %TMPL:DEF{"modacExtraFormat"}%
 content_language=\"$language\"
+actionstate=\"$action_state_s\"
 %TMPL:END%
 %{</verbatim>}%
 
