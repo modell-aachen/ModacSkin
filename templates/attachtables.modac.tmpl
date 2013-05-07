@@ -40,6 +40,7 @@
 %TMPL:END%
 
 %TMPL:DEF{ATTACH:files:row(basic):buttons}%%FAVORITEBUTTON{
+  default=""
   cond="'%TOPIC%'='%WORKFLOWORIGIN%' AND $FAVORITES='1'"
   web="%WEB%" topic="%TOPIC%" file="%A_FILE%"
   active_suffix="gold" inactive_suffix="grey"
