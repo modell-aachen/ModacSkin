@@ -9,6 +9,7 @@
 %{ --- definitions used in "modacActionButtonsVIEW" --- }%
 
 %TMPL:DEF{"modacFavTopic"}%%FAVORITEBUTTON{
+  default=""
   cond="'%TOPIC%'='%WORKFLOWORIGIN%' AND $FAVORITES='1'"
   inactive_suffix="grey"
   active_suffix="gold"
