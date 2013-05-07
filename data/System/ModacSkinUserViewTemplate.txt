@@ -2,11 +2,9 @@
 %TMPL:INCLUDE{"view"}%
 %TMPL:INCLUDE{"SystemTabs"}%
 
-%TMPL:DEF{"top"}%
-<div class="patternTop">
-<div id="modacHeading">%MAKETEXT{"Personal page"}%</div>
-</div>
-%TMPL:END%
+%TMPL:DEF{"modacSystemTab"}%<div class="modacActionButtonACTIVE"><a href='%SCRIPTURLPATH{"view"}%/%WEB%/%TOPIC%' rel='nofollow' %MAKETEXT{"title='My Page' >My Page"}%</a></div>%TMPL:END%
+
+%TMPL:DEF{"top"}%%TMPL:END%
 
 %TMPL:DEF{"content"}%
 %ADDTOZONE{"script" requires="JQUERYPLUGIN" text="<script type=\"application/javascript\" src=\"%PUBURLPATH%/System/ActionTrackerPlugin/atp.js\"></script>"}%
