@@ -1,11 +1,9 @@
 %META:TOPICINFO{author="JanKrueger" comment="reprev" date="1363102083" format="1.1" reprev="6" version="8"}%
 %TMPL:INCLUDE{"SystemView"}%
 
-%TMPL:DEF{"top"}%
-<div class="patternTop">
-<div id="modacHeading">%MAKETEXT{"Personal page"}%</div>
-</div>
-%TMPL:END%
+%TMPL:DEF{"modacSystemTab"}%<div class="modacActionButtonACTIVE"><a href='%SCRIPTURLPATH{"view"}%/%WEB%/%TOPIC%' rel='nofollow' %MAKETEXT{"title='My Page' >My Page"}%</a></div>%TMPL:END%
+
+%TMPL:DEF{"top"}%%TMPL:END%
 
 %TMPL:DEF{"content"}%
 %ADDTOZONE{"script" requires="JQUERYPLUGIN" text="<script type=\"application/javascript\" src=\"%PUBURLPATH%/System/ActionTrackerPlugin/atp.js\"></script>"}%
