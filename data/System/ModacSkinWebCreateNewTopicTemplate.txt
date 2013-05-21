@@ -66,8 +66,8 @@ var URL_TEMPLATE = '$percntURLPARAM{template}$percnt';
 %TMPL:P{"formstartstep"}%
 %TMPL:P{"topictemplatestep"}%
 %TMPL:P{"topicparentstep"}%
-%TMPL:P{"topicnamestep"}%
 %TMPL:P{"topictitlestep"}%
+%TMPL:P{"topicnamestep"}%
 %TMPL:P{"formbuttons"}%
 %TMPL:P{"formendstep"}%
 <!-- -->%TMPL:END%
@@ -152,7 +152,6 @@ var URL_TEMPLATE = '$percntURLPARAM{template}$percnt';
 
 %{<verbatim class="tml">}%
 %TMPL:DEF{"formbuttons"}%<!-- -->
-<hr />
 <div class='foswikiFormStep foswikiFormLast foswikiFormButtons'>
 %TMPL:P{"submit"}%
 </div>
