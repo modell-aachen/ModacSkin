@@ -6,7 +6,6 @@
 %TMPL:DEF{"script:topictemplate"}%
 %TMPL:P{"JavascriptFiles/foswikiStringUnicodeChars"}%
 %TMPL:P{"LIBJS" id="JavascriptFiles/foswikiWindow" requires="JQUERYPLUGIN::FOSWIKI"}%
-%TMPL:P{"LIBJS" id="PatternSkin/webtopiccreator" requires="JavascriptFiles/foswikiString"}%
 %ADDTOZONE{"script"
  tag="PatternSkinWebCreateNewTopicTemplate.txt"
  text="
