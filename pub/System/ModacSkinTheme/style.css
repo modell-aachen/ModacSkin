@@ -367,6 +367,14 @@ html>body #modacLogoIE {
 	margin: 0.5em 0.7em 0 0.7em;
 	background-image: none!important;
 }
+.modacSearchIcon {
+	cursor: pointer;
+	margin-right: 3px;
+}
+.modacSearchFrame {
+	border: 1px solid #AAA;
+	padding-bottom: 2px;
+}
 
 .modacBookmarkStar {
 	padding: 0 5px;

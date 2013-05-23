@@ -60,5 +60,11 @@ jQuery(function($){
         });
     });
 
+    // quickSearch magnifying glass
+    $('.modacSearchIcon').click(function() {
+        var $form = $(this).closest('form');
+        $form.find('#quickSearchBox').focus(); // clear foswikiDefaultText
+        $form.submit();
+    });
 });
 
