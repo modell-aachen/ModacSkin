@@ -730,6 +730,7 @@ msgstr "Vorherige Revision wiederherstellen"
 msgid "Restore..."
 msgstr "Wiederherstellen"
 
+#: templates/attachtables.modac.tmpl:34
 #: templates/oopshistory.modac.tmpl:42 templates/oopshistory.modac.tmpl:53
 #: templates/rdiff.modac.tmpl:17
 msgid "Revision"
@@ -984,10 +985,6 @@ msgstr "Vorlagen benutzen:"
 #: templates/oopshistory.modac.tmpl:44 templates/oopshistory.modac.tmpl:55
 msgid "Username"
 msgstr "Benutzername"
-
-#: templates/attachtables.modac.tmpl:34
-msgid "Version"
-msgstr "Version"
 
 #: templates/attachagain.modac.tmpl:10
 msgid "Version history"
