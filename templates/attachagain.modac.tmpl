@@ -5,9 +5,9 @@
 
 %TMPL:DEF{"pagetitle"}%%MAKETEXT{"Update attachment [_1] on [_2]" args="[[%ATTACHURLPATH%/%ENCODE{%FILENAME%}%][%FILENAME%]],[[%TOPIC%]]"}%%TMPL:END%
 
-%TMPL:DEF{"versions"}%---++ %MAKETEXT{"Version history of [_1]" args="<nop>%FILENAME%"}%
+%TMPL:DEF{"versions"}%---++ %MAKETEXT{"History of [_1]" args="<nop>%FILENAME%"}%
 <div class="foswikiAttachments">
-%TABLE{%TMPL:P{"commonattachtableattributes"}% summary="%MAKETEXT{"Version history"}%" caption="%MAKETEXT{"Version history"}%"}%
+%TABLE{%TMPL:P{"commonattachtableattributes"}% summary="%MAKETEXT{"History"}%" caption="%MAKETEXT{"History"}%"}%
 %ATTACHTABLE%</div>%TMPL:END%
 
 
