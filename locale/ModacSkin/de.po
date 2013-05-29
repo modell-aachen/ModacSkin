@@ -78,7 +78,7 @@ msgstr "(Anhang löschen)"
 
 #: templates/oopshistory.modac.tmpl:22
 msgid "(history)"
-msgstr "(Versionsgeschichte)"
+msgstr "(Historie)"
 
 #: templates/more.modac.tmpl:12
 msgid "(more)"
@@ -169,7 +169,7 @@ msgstr "Neue Datei anhängen"
 
 #: templates/attachtables.modac.tmpl:33
 msgid "Attachment history"
-msgstr "Anhangs-Versionsgeschichte"
+msgstr "Anhangs-Historie"
 
 #: templates/attachtables.modac.tmpl:6
 msgid "Attachments"
@@ -484,7 +484,7 @@ msgstr "Hilfe verstecken"
 
 #: templates/oopshistory.modac.tmpl:16
 msgid "History"
-msgstr "Versionsgeschichte"
+msgstr "Historie"
 
 #: templates/validate.modac.tmpl:44
 msgid "If you are unsure what this means, read: %1"
@@ -738,7 +738,7 @@ msgstr "Revision"
 
 #: templates/oopshistory.modac.tmpl:25
 msgid "Revision history of "
-msgstr "Versionsgeschichte von "
+msgstr "Historie von "
 
 #: templates/more.modac.tmpl:148
 msgid "Revisions"
@@ -921,7 +921,7 @@ msgstr "Anhänge"
 
 #: templates/oopshistory.modac.tmpl:40 templates/oopshistory.modac.tmpl:51
 msgid "Topic history"
-msgstr "Versionsgeschichte der Seite"
+msgstr "Historie der Seite"
 
 #: data/System/ModacSkinWebCreateNewTopicTemplate.txt:202
 msgid "Topic name that the newly created topic will be a child of."
@@ -988,11 +988,11 @@ msgstr "Benutzername"
 
 #: templates/attachagain.modac.tmpl:10
 msgid "Version history"
-msgstr "Versionsgeschichte"
+msgstr "Historie"
 
 #: templates/attachagain.modac.tmpl:8
 msgid "Version history of %1"
-msgstr "Versionsgeschichte von %1"
+msgstr "Historie von %1"
 
 #: templates/compare.modac.tmpl:71
 msgid "View difference"
@@ -1244,8 +1244,8 @@ msgstr "title='Seite-an-Seite' accesskey='s'>&seite-an-seite"
 #: templates/viewtopicactionbuttons.modac.tmpl:60
 msgid "title='View topic history' accesskey='h'>&History"
 msgstr ""
-"title='Die Versionsgeschichte dieses Artikels ansehen' "
-"accesskey='v'>&Versionsgeschichte"
+"title='Die Historie dieses Artikels ansehen' "
+"accesskey='v'>&Historie"
 
 #: templates/viewtopicactionbuttons.modac.tmpl:85
 msgid "title='View topic' accesskey='v'>&View topic"
@@ -1255,8 +1255,8 @@ msgstr "title='Seite anzeigen' accesskey='v'>Seite anzeigen (&v)"
 #: templates/viewtopicactionbuttons.modac.tmpl:107
 msgid "title='View total topic history' accesskey='h'>&History"
 msgstr ""
-"title='Versionsgeschichte der Seite ansehen' "
-"accesskey='h'>&Versionsgeschichte"
+"title='Historie der Seite ansehen' "
+"accesskey='h'>&Historie"
 
 #: templates/viewtopicactionbuttons.modac.tmpl:110
 msgid "title='View without formatting' accesskey='v'>&View wiki text"
