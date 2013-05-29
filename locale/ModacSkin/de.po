@@ -986,6 +986,10 @@ msgstr "Vorlagen benutzen:"
 msgid "Username"
 msgstr "Benutzername"
 
+#: templates/attachagain.modac.tmpl:10
+msgid "Version history"
+msgstr "Historie"
+
 #: templates/attachagain.modac.tmpl:8
 msgid "History of %1"
 msgstr "Historie von %1"
