@@ -33,7 +33,6 @@ pub/System/DocumentGraphics/arrow-down.png 0664
 pub/System/DocumentGraphics/arrow-right.png 0664
 pub/System/ModacSkin/atp_comment.js 0664
 pub/System/ModacSkin/atp_comment.js.gz 0664
-pub/System/ModacSkin/jquery.usability.js 0664
 pub/System/ModacSkin/modac.js 0664
 pub/System/ModacSkin/modac.js.gz 0664
 pub/System/ModacSkin/pattern.js 0664
@@ -113,7 +112,6 @@ templates/login.modac.tmpl 0664
 templates/metacomments.modac.tmpl 0664
 templates/metamaketext.modac.tmpl 0664
 templates/more.modac.tmpl 0664
-templates/moredialog.modac.tmpl 0664
 templates/oops.modac.tmpl 0664
 templates/oopsaccessdenied.modac.tmpl 0664
 templates/oopsattention.modac.tmpl 0664
