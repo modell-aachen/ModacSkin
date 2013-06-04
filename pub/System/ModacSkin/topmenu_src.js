@@ -12,17 +12,17 @@ jQuery(function($){
         delay:  500
     });
     $('.jqmenu').bgIframe({opacity:false});
-    var restUri = foswiki.getPreference('SCRIPTURLPATH') +'/rest'+ foswiki.getPreference('SCRIPTSUFFIX');
-    var baseWeb = foswiki.getPreference('WEB');
-    var baseTopic = foswiki.getPreference('TOPIC');
-    var jqplPubUri = foswiki.getPreference('PUBURLPATH') +'/'+ foswiki.getPreference('SYSTEMWEB') +'/JQueryPlugin';
     var menuDialogs = {};
     var menuClickHandler = function(type) {
-        var e = $(this);
         if (menuDialogs[type]) {
             menuDialogs[type].dialog('open');
             return false;
         }
+        var e = $(this);
+        var restUri = foswiki.getPreference('SCRIPTURLPATH') +'/rest'+ foswiki.getPreference('SCRIPTSUFFIX');
+        var baseWeb = foswiki.getPreference('WEB');
+        var baseTopic = foswiki.getPreference('TOPIC');
+        var jqplPubUri = foswiki.getPreference('PUBURLPATH') +'/'+ foswiki.getPreference('SYSTEMWEB') +'/JQueryPlugin';
         var d = $('<div class="jqUIDialog {width:500, position:\'center\', modal:true}" title="'+e.text()+'"><img src="'+ jqplPubUri +'/images/spinner.gif" alt="Loading..."/></div>');
         menuDialogs[type] = d;
         d.dialog({ create: function() {
