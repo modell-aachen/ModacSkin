@@ -1,3 +1,4 @@
+&nbsp;
 
 %META:FORM{name="System.UserForm"}%
 %META:PREFERENCE{name="VIEW_TEMPLATE" title="VIEW_TEMPLATE" type="Local" value="UserView"}%
