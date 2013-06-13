@@ -119,6 +119,7 @@ templates/oopshistory.modac.tmpl 0664
 templates/oopsleaseconflict.modac.tmpl 0664
 templates/preview.modac.tmpl 0664
 templates/rdiff.modac.tmpl 0664
+templates/rename.modac.tmpl 0664
 templates/renameattachmentdelete.modac.tmpl 0664
 templates/renamebase.modac.tmpl 0664
 templates/renamedelete.modac.tmpl 0664

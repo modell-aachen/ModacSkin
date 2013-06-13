@@ -3,3 +3,6 @@
 
 %{ Do not update links on delete }%
 %TMPL:DEF{"searchresultsstep"}%%TMPL:END%
+
+%{ add jqWikiWord }%
+%TMPL:DEF{"newtopic"}%%JQREQUIRE{"wikiword, focus"}%<p><input name="newtopic" class="foswikiInputField modacDeleteInput jqWikiWord {source: '.modacDeleteInput'}" value="%NEW_TOPIC%" size="36" /> %TMPL:P{"namehelp"}%</p>%TMPL:P{"nonwikiword"}% %TMPL:END%
