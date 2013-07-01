@@ -1,4 +1,5 @@
 data/_default/WebContentTemplates.txt 0664
+data/Main/ModacSkinGroupViewTemplate.txt 0664
 data/Main/NewUserTemplate.txt 0664
 data/Main/UeberQWiki.txt 0664
 data/System/ModacAjaxHelper.txt 0664
@@ -22,6 +23,7 @@ data/System/ModacSkinSystemTabsTemplate.txt 0664
 data/System/ModacSkinTopicMenuTemplate.txt 0664
 data/System/ModacSkinUserEditTemplate.txt 0664
 data/System/ModacSkinUserViewTemplate.txt 0664
+data/System/ModacSkinUserAutocomplete.txt 0664
 data/System/ModacSkinWebChangesViewTemplate.txt 0664
 data/System/ModacSkinWebCreateNewTopicTemplate.txt 0664
 data/System/WebBottomBarDefault.txt 0664
