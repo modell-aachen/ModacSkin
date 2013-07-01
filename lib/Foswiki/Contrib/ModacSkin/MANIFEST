@@ -1,6 +1,5 @@
 data/_default/WebContentTemplates.txt 0664
-data/System/ModacSkinFlexWebList.txt 0664
-data/System/ModacSkinWebList.txt 0664
+data/Main/ModacSkinGroupViewTemplate.txt 0664
 data/Main/NewUserTemplate.txt 0664
 data/Main/UeberQWiki.txt 0664
 data/System/ModacAjaxHelper.txt 0664
@@ -9,6 +8,7 @@ data/System/ModacSkinCommentPluginTemplate.txt 0664
 data/System/ModacSkinCommonWords.txt 0664
 data/System/ModacSkinContentTemplatesViewTemplate.txt 0664
 data/System/ModacSkinContentTemplateStub.txt 0644
+data/System/ModacSkinFlexWebList.txt 0664
 data/System/ModacSkinLanguageSelector.txt 0664
 data/System/ModacSkinSolrSearchViewTemplate.txt 0664
 data/System/ModacSkinSolrSearchBaseTemplate.txt 0664
@@ -18,8 +18,10 @@ data/System/ModacSkinTopHeadTemplate.txt 0664
 data/System/ModacSkinTopicMenuTemplate.txt 0664
 data/System/ModacSkinUserEditTemplate.txt 0664
 data/System/ModacSkinUserViewTemplate.txt 0664
+data/System/ModacSkinUserAutocomplete.txt 0664
 data/System/ModacSkinWebChangesViewTemplate.txt 0664
 data/System/ModacSkinWebCreateNewTopicTemplate.txt 0664
+data/System/ModacSkinWebList.txt 0664
 data/System/WebBottomBarDefault.txt 0664
 data/System/WebLeftBarDefault.txt 0664
 data/System/WebTopBarDefault.txt 0664
