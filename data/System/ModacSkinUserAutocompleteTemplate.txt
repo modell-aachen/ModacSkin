@@ -1,0 +1,63 @@
+<verbatim class="tml">
+%STARTSECTION{"user"}%
+<literal>
+%LDAPUSERS{
+  include="%URLPARAM{"term"}%.*"
+  hideunknown="off"
+  casesensitive="off"
+  header="["
+  format="{\"value\":\"$wikiName\"}"
+  footer="]"
+  sep=","
+  limit="%URLPARAM{"limit" default="20"}%" 
+}%
+</literal>
+%ENDSECTION{"user"}%
+</verbatim>
+
+<verbatim>
+%STARTSECTION{"group"}%
+<literal>
+%LDAP{
+"(%QUERY{"{Ldap}{GroupFilter}"}%)"
+base="%QUERY{"{Ldap}{GroupBase}"}%"
+format="{\"value\":\"$%QUERY{"{Ldap}{GroupAttribute}"}%\"}"
+include="%URLPARAM{"term"}%.*"
+casesensitive="off"
+header="["
+footer="]"
+sep=","
+limit="%URLPARAM{"limit" default="20"}%
+}%
+</literal>
+%ENDSECTION{"group"}%
+</verbatim>
+
+<verbatim>
+%STARTSECTION{"all"}%
+<literal>
+%FORMATLIST{
+"%LDAPUSERS{
+  include="%URLPARAM{"term"}%.*"
+  hideunknown="off"
+  casesensitive="off"
+  format="$wikiName "
+  limit="%URLPARAM{"limit" default="20"}%" 
+}%
+%LDAP{
+"(%QUERY{"{Ldap}{GroupFilter}"}%)"
+base="%QUERY{"{Ldap}{GroupBase}"}%"
+format="$%QUERY{"{Ldap}{GroupAttribute}"}% "
+include="%URLPARAM{"term"}%.*"
+casesensitive="off"
+limit="%URLPARAM{"limit" default="20"}%
+}%"
+split = " "
+header="["
+footer="]"
+ format="{\"value\":\"$1\"}"
+}%
+</literal>
+%ENDSECTION{"all"}%
+</verbatim>
+
