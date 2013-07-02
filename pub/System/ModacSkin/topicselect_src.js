@@ -1,5 +1,5 @@
 jQuery(function($) {
-	$('.jqTopicSelect').each(function(i) {
+	$('.jqTopicSelect:not(div)').livequery(function(i) {
 		var opts = {
 			pagesize: 20,
 			include_web: true,
