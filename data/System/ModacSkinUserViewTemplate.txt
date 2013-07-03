@@ -33,6 +33,8 @@
   .taskdate { white-space: nowrap; }
   .hackelem { display: none; }
 </style>"}%
+%JQREQUIRE{"textboxlist"}%
+%ADDTOZONE{"script" id="JavascriptFiles/strikeone" text="<script type=\"text/javascript\" src=\"%PUBURLPATH%/%SYSTEMWEB%/JavascriptFiles/strikeone.js\"></script>"}%
 %TMPL:END%
 
 %TMPL:DEF{"perspage:bookmarks"}%
