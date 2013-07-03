@@ -6,7 +6,7 @@
 
 %TMPL:DEF{"top"}%%TMPL:END%
 
-%TMPL:DEF{"content"}%
+%TMPL:DEF{"perspage:scripts"}%
 %ADDTOZONE{"script" requires="JQUERYPLUGIN" text="<script type=\"application/javascript\" src=\"%PUBURLPATH%/System/ActionTrackerPlugin/atp.js\"></script>"}%
 %ADDTOZONE{"head" text="<link rel=\"stylesheet\" type=\"text/css\" href=\"%PUBURLPATH%/System/ActionTrackerPlugin/styles_src.css\" /><style type=\"text/css\">
   .atpSearch { width: 100%; border: none; border-collapse: collapse; }
@@ -33,7 +33,9 @@
   .taskdate { white-space: nowrap; }
   .hackelem { display: none; }
 </style>"}%
+%TMPL:END%
 
+%TMPL:DEF{"perspage:bookmarks"}%
 <div class="perspageBlockTitle">%MAKETEXT{"My bookmarks"}%</div><div class="perspageBlock">
 %TABPANE{class="simple"}%
 %TAB{"%MAKETEXT{"By web"}%"}%
@@ -73,7 +75,9 @@
 %ENDTAB%
 %ENDTABPANE%
 </div>
+%TMPL:END%
 
+%TMPL:DEF{"perspage:tasks"}%
 <div class="perspageBlockTitle">%MAKETEXT{"My tasks"}%</div><div class="perspageBlock">
 %TABPANE{class="simple"}%
 %TAB{"%MAKETEXT{"Open tasks"}%"}%
@@ -99,10 +103,19 @@
 %ENDTAB%
 %ENDTABPANE%
 </div>
+%TMPL:END%
 
+%TMPL:DEF{"perspage:mynotes"}%
 <div class="perspageBlockTitle">%MAKETEXT{"My notes"}% <a href="%SCRIPTURLPATH{"edit"}%/%WEB%/%TOPIC%?t=%GMTIME{"$epoch"}%" title="%MAKETEXT{Edit}%">%ICON{pencil}%</a></div><div class="perspageBlock">
 %TEXT%
 </div>
+%TMPL:END%
+
+%TMPL:DEF{"content"}%
+%TMPL:P{"perspage:scripts"}%
+%TMPL:P{"perspage:bookmarks"}%
+%TMPL:P{"perspage:tasks"}%
+%TMPL:P{"perspage:mynotes"}%
 %TMPL:END%
 
 %TMPL:DEF{"perspage:dummy:rendertasks"}%
