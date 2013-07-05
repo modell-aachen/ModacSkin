@@ -15,7 +15,7 @@
 
 %TMPL:DEF{"webaction"}%%TMPL:END%
 
-%TMPL:DEF{"passwordnote"}%%TMPL:END%
+%TMPL:DEF{"passwordnote"}%%IF{"not context LdapNgPluginEnabled" then="%ENCODE{"%TMPL:PREV%" type="quotes"}%"}%%TMPL:END%
 
 %TMPL:DEF{"form"}%<div id="foswikiLogin">
 <div class="foswikiFormSteps">%TMPL:P{"formstart"}%%TMPL:P{"titlestep"}%
