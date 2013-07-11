@@ -34,7 +34,6 @@ var URL_PICK_PARENT = '$percntURLPARAM{pickparent}$percnt';
 var URL_TEMPLATE = '$percntURLPARAM{template}$percnt';
 //]]>
 </script>" requires="JavascriptFiles/foswikiWindow"}%%TMPL:END%
-%TMPL:END%
 
 %{<verbatim class="tml">}%
 %TMPL:DEF{"title"}%%HTMLTITLE{"%MAKETEXT{"Create New Topic in [_1] Web" args="<nop>%BASEWEB%"}%" separator=" %IF{"defined 'HTMLTITLESEP'" then="%HTMLTITLESEP%" else="-"}% "}%%TMPL:END%
