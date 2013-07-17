@@ -113,4 +113,5 @@ actionstate=\"$action_state_s\"
       %TMPL:P{"modacExtraFormat"}%
    }$percnt%CLEAR%"
 }%
+%TMPL:END%
 %{</verbatim>}%
