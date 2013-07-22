@@ -17,6 +17,10 @@
 
 %TMPL:DEF{"passwordnote"}%%IF{"not context LdapNgPluginEnabled" then="%ENCODE{"%TMPL:PREV%" type="quotes"}%"}%%TMPL:END%
 
+%TMPL:DEF{"UNRECOGNISED_USER"}%%TMPL:P{context="LdapNgPluginEnabled" then="UNRECOGNISED_USER_noreset" else="UNRECOGNISED_USER_reset"}%%TMPL:END%
+%TMPL:DEF{"UNRECOGNISED_USER_noreset"}%%MAKETEXT{"Oops: we could not recognize you. Try again."}%%TMPL:END%
+%TMPL:DEF{"UNRECOGNISED_USER_reset"}%%MAKETEXT{"Oops: we could not recognize you. Try again or [[[_1]][reset your password]]." args="%SCRIPTURLPATH{view}%/%SYSTEMWEB%/ResetPassword?username=%URLPARAM{usernamestep}%"}%%TMPL:END%
+
 %TMPL:DEF{"form"}%<div id="foswikiLogin">
 <div class="foswikiFormSteps">%TMPL:P{"formstart"}%%TMPL:P{"titlestep"}%
 %TMPL:P{"usernamestep"}%%TMPL:P{"passwordstep"}%%TMPL:P{"submitstep"}%
