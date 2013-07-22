@@ -73,6 +73,6 @@
 <span class='patternHomePath'>%TMPL:P{"breadcrumb"}%</span></div><!--/patternTop-->
 %TMPL:END%
 
-%TMPL:DEF{"top_head_standard"}%%IF{"$CONTENT_LANGUAGE='de'" then="$percentTMPL:P{top_head_standard_de}$percent"}%%IF{"$CONTENT_LANGUAGE='en'" then="$percentTMPL:P{top_head_standard_en}$percent"}%%IF{"not defined CONTENT_LANGUAGE OR ($CONTENT_LANGUAGE!='de' AND $CONTENT_LANGUAGE!='en')" then="$percentTMPL:P{top_head_standard_auto}$percent"}%%TMPL:END%
+%TMPL:DEF{"top_head_standard"}%%SWITCHTMPL{"%CONTENT_LANGUAGE%" prefix="top_head_standard_" defaultTo="auto"}%%TMPL:END%
 
 %TMPL:DEF{"top_head"}%%TMPL:P{"top_head_standard"}%%TMPL:END%
