@@ -362,7 +362,8 @@ html>body #modacLogoIE {
 	color: #333333;
 	text-decoration: none;
 }
-#modacWrapper ul.modacTabs {
+#modacWrapper ul.modacTabs,
+#modacWrapper .registration ul {
 	list-style: none;
 }
 #modacSearchBox {
