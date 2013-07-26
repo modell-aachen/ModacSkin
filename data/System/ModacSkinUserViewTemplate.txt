@@ -79,8 +79,7 @@
 </div>
 %TMPL:END%
 
-%TMPL:DEF{"perspage:tasks"}%
-<div class="perspageBlockTitle">%MAKETEXT{"My tasks"}%</div><div class="perspageBlock">
+%TMPL:DEF{"perspage:tasks_content"}%
 %TABPANE{class="simple"}%
 %TAB{"%MAKETEXT{"Open tasks"}%"}%
 <div id="ampel_open">
@@ -104,6 +103,11 @@
 <span class="jqAjaxLoader">&nbsp;</span>
 %ENDTAB%
 %ENDTABPANE%
+%TMPL:END%
+
+%TMPL:DEF{"perspage:tasks"}%
+<div class="perspageBlockTitle">%MAKETEXT{"My tasks"}%</div><div class="perspageBlock">
+%TMPL:P{"perspage:tasks_content"}%
 </div>
 %TMPL:END%
 
