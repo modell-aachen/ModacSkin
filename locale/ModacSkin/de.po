@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Foswiki $Id\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2013-04-29 16:53+0200\n"
+"PO-Revision-Date: 2013-07-26 13:35+0200\n"
 "Last-Translator: Modell Aachen\n"
 "Language-Team: Foswiki German Translation Team <none>\n"
 "Language: de\n"
@@ -1330,6 +1330,9 @@ msgstr "Meine Favoriten"
 
 msgid "Topics"
 msgstr "Seiten"
+
+msgid "Bookmark this page"
+msgstr "Diese Seite als Favorit speichern"
 
 msgid "Remove bookmark"
 msgstr "Favorit entfernen"
