@@ -407,8 +407,8 @@ html>body #modacLogoIE {
 .modacMoreMenu li.sfHover ul ul {
 	top: 0;
 }
-.modacMoreMenu li ul li a { background: none !important; width: 100% !important; }
-.modacMoreMenu li ul li { background: white none !important; }
+.modacMoreMenu li.modacMoreDynamic ul li a { background: none; width: 100%; }
+.modacMoreMenu li ul li { background: white none; }
 
 .modacMoreDynamic div span a:after {
 	content: ' \bb ';
