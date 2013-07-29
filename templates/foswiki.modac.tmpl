@@ -81,7 +81,7 @@
 %TMPL:DEF{"pagetitle"}%%TOPIC% %IF{"defined rev" then="<span class=foswikiGrayText> %MAKETEXT{"(revision [_1])" args="%URLPARAM{"rev"}%"}%</span>" else=""}% %TMPL:END%
 
 
-%TMPL:DEF{"top"}%<div id="modacHeading">%TMPL:P{"pagetitle"}%</div><div class="patternTop"><span class="patternHomePath">%TMPL:P{"breadcrumb"}%</span></div>%TMPL:END%
+%TMPL:DEF{"top"}%<div class="patternTop"><div id="modacHeading">%TMPL:P{"pagetitle"}%</div><span class="patternHomePath">%TMPL:P{"breadcrumb"}%</span></div>%TMPL:END%
 
 
 %TMPL:DEF{"breadcrumb:separator"}%<span class='foswikiSeparator'>&gt;</span>%TMPL:END%
