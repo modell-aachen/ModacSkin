@@ -1416,3 +1416,21 @@ msgstr ""
 #: core/templates/renamedelete.tmpl:34
 msgid "Not recommended when deleting a topic."
 msgstr "Nicht empfohlen, wenn Sie die Seite löschen."
+
+#: core/templates/renamewebbase.tmpl:43
+msgid "Change links in topics that refer to !%1 in any Web:"
+msgstr "Verweise in Seiten ändern, die auf !%1 zeigen (alle Webs):"
+
+#: core/templates/renamewebbase.tmpl:40
+msgid "Change links in topics that refer to !%1 in the %2 Web:"
+msgstr "Verweise in Seiten ändern, die auf !%1 zeigen (nur im %2 Web):"
+
+#: core/templates/renamebase.tmpl:57
+msgid "Change links in topics that refer to %1 in any Web:"
+msgstr "Verweise in Seiten ändern, die auf %1 zeigen (alle Webs):"
+
+#: core/templates/renamebase.tmpl:53
+msgid "Change links in topics that refer to %1 in the %2 Web:"
+msgstr "Verweise in Seiten ändern, die auf %1 zeigen (nur im %2 Web):"
+
+
