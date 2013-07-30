@@ -1390,3 +1390,29 @@ msgstr "Meine Notizen"
 
 msgid "Oops: we could not recognize you. Try again."
 msgstr "Oops: Wir konnten Sie nicht authentifizieren. Versuchen Sie es erneut."
+
+#: core/templates/renamedelete.tmpl:15
+msgid "Move topic to web:"
+msgstr "Seite in folgendes Web verschieben:"
+
+#: core/templates/renamedelete.tmpl:18
+msgid "Optionally change topic name:"
+msgstr "Optional den Seitennamen ändern:"
+
+#: core/templates/renamedelete.tmpl:28
+msgid ""
+"This name has been chosen so it doesn't conflict with any other topics "
+"already in the %1 web."
+msgstr ""
+"Der Name wurde so ausgewählt, dass er nicht mit bereits existierenden Seiten "
+"in Web %1 kollidiert."
+
+#: core/templates/renamebase.tmpl:45 core/templates/renamedelete.tmpl:34
+msgid "Checked topics will be updated to point to the new topic location."
+msgstr ""
+"Die ausgewählten Seiten werden aktualisiert, so dass Sie auf den neuen Ort "
+"der Seite zeigen."
+
+#: core/templates/renamedelete.tmpl:34
+msgid "Not recommended when deleting a topic."
+msgstr "Nicht empfohlen, wenn Sie die Seite löschen."
