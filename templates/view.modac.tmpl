@@ -34,7 +34,7 @@
 
 %TMPL:DEF{"top_old"}%%IF{"'Infoseite,Prozessbeschreibung,Checkliste,Arbeitsanweisung'=~'(^|,)\s*%META{"formfield" name="Dokumententyp"}%\s*(,|$)'" then="$percntTMPL:P{$quottop_head$quot}$percnt" else="$percntTMPL:P{$quottop_simple$quot}$percnt"}%%TMPL:END%
 
-%TMPL:DEF{"top"}%%IF{"(defined NO_MODAC_HEAD and '%NO_MODAC_HEAD%' != '') or (defined NO_MODAC_HEADLIST and '%NO_MODAC_HEADLIST%' =~ '(?:\s|^|,)%TOPIC%(?:\s|$|,)')" else="$percntTMPL:P{$quot%IF{"defined NO_MODAC_HEADLIST" then="top_head" else="top_old"}%$quot}$percnt" then="$percntTMPL:P{$quottop_simple$quot}$percnt"}%%TMPL:END%
+%TMPL:DEF{"top"}%%IF{"(defined NO_MODAC_HEAD and '%NO_MODAC_HEAD%' != '') or (defined NO_MODAC_HEADLIST and '%NO_MODAC_HEADLIST%' =~ '(?:\s|^|,)%TOPIC%(?:\s|$|,)') or (defined MODAC_TOPHEAD_FORM and not form.name =~ $MODAC_TOPHEAD_FORM)" then="$percntTMPL:P{$quottop_simple$quot}$percnt" else="$percntTMPL:P{$quot%IF{"defined NO_MODAC_HEADLIST" then="top_head" else="top_old"}%$quot}$percnt"}%%TMPL:END%
 
 
 %{---------------------------------------------------
