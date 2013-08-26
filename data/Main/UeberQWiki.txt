@@ -1,9 +1,9 @@
 %META:TOPICINFO{author="BaseUserMapping_333" comment="reprev" date="1350307544" format="1.1" reprev="1" version="1"}%
 Das Q.Wiki ist eine Entwicklung der Modell Aachen GmbH.<br />
-<br /> <strong>Support:</strong><br /> [[mailto:support@modell-aachen.de?subject=Support-Anfrage][support@modell-aachen.de]]<br /> fon: +49 (0)241 914 88 655<br />
+<br /> <strong>Support:</strong><br /> [[mailto:support@modell-aachen.de?subject=Support-Anfrage][support@modell-aachen.de]]<br /> fon: +49 (0)241 538 08 720<br />
 <br /> <strong>Kontaktdaten:</strong><br /> Modell Aachen GmbH - Interaktive Managementsysteme<br /> Dennewartstr. 25-27<br /> 52068 Aachen<br /> fon +49 (0)173 35 22 333<br /> fax +49 (0)241 9148 8653<br /> [[http://www.modell-aachen.de]]<br />
 <br /> Geschäftsführung: Dr.-Ing. Carsten Behrens<br /> Amtsgericht Aachen, HRB 15622<br />
-<br /> Stand: 15.10.2012
+<br /> Stand: 26.08.2013
 
 %META:FORM{name="Prozesse.DokumentenForm"}%
 %META:FIELD{name="Dokumententyp" attributes="" title="Dokumententyp" value="Infoseite"}%
