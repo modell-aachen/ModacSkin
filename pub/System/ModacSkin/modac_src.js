@@ -66,5 +66,13 @@ jQuery(function($){
         $form.find('#quickSearchBox').focus(); // clear foswikiDefaultText
         $form.submit();
     });
+
+    // block UI on submit when message is provided
+    $('.modacSubmitMessage').livequery(function() {
+        var $message = $(this);
+        $message.closest('form').submit(function() {
+            if($.blockUI) $.blockUI({message: $message.text()});
+        });
+    });
 });
 

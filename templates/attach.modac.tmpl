@@ -36,7 +36,7 @@ class="foswikiHelp"
 %TMPL:P{"extranotes"}%%ENDTWISTYTOGGLE%%TMPL:END%
 
 
-%TMPL:DEF{"formstart"}%%JQREQUIRE{"blockui"}%<form name="main" enctype="multipart/form-data" action="%SCRIPTURLPATH{"upload"}%/%WEB%/%TOPIC%" method="post" class="requireModacChangePermission modacChanging modacUpload">%ADDTOZONE{"head" id="MODACSKIN::UPLOADSCRIPT" text="<meta name='TEXT_UPLOADBLOCK' content='&#60;h1&#62;%MAKETEXT{"Uploading file..."}%&#60;/h1&#62;' />"}%%ADDTOZONE{"script" id="MODACSKIN::UPLOADJS" text="<script type='text/javascript' src='%PUBURLPATH%/%SYSTEMWEB%/ModacSkin/upload.js'></script>"}%%TMPL:END%
+%TMPL:DEF{"formstart"}%%JQREQUIRE{"blockui"}%<form name="main" enctype="multipart/form-data" action="%SCRIPTURLPATH{"upload"}%/%WEB%/%TOPIC%" method="post" class="requireModacChangePermission modacChanging modacUpload"><span class="modacSubmitMessage foswikiHidden">&#60;h1&#62;%MAKETEXT{"Uploading file..."}%&#60;/h1&#62;</span>%TMPL:END%
 
 %TMPL:DEF{"formend"}%</form>%TMPL:END%
 
