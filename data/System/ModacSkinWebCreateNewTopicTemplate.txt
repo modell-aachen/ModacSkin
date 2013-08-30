@@ -44,8 +44,8 @@ var URL_TEMPLATE = '$percntURLPARAM{template}$percnt';
 %{<verbatim class="tml">}%
 %TMPL:DEF{"breadcrumbstail"}%%TMPL:P{"sep"}%<a href="%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%?template=newtopic" title="%TMPL:P{"NEW_HELP"}%">%MAKETEXT{"Create a new topic"}%</a>%TMPL:END%
 %TMPL:DEF{"topicactions"}%%TMPL:END%
-%TMPL:DEF{"newtopictitle"}%%URLPARAM{"newtopictitle"}%%TMPL:END%
-%TMPL:DEF{"newtopic"}%%URLPARAM{"newtopic"}%%TMPL:END%
+%TMPL:DEF{"newtopictitle"}%%URLPARAM{"newtopictitle" default="%TMPL:P{newtopic}%"}%%TMPL:END%
+%TMPL:DEF{"newtopic"}%%URLPARAM{"newtopic" default="%TOPIC%"}%%TMPL:END%
 %{</verbatim>}%
 
 %{<verbatim class="tml">}%
