@@ -29,21 +29,6 @@
 }
 
 
-/* FOSWiki uses the variables %WEBHEADERART% and %WEBHEADERCOLOR% to define a background-image
-/  and a background-color for the topbar. Those variables are not used by the modacSkin, so there
-/  has to be the !important-order to override all other declarations made by FOSWiki /HYK
-*/
-#patternTopBarContents {
-	background-color: #FFFFFF !important;
-	background-image:url("ModacSkinLogos/page-fade.png")!important;
-	background-position:left bottom;
-	background-repeat:repeat-x !important;
-	height:5em;
-}
-
-#patternPage {
-	border-color:#ccc;
-}
 #patternTopBar {
 	border-color:#dfdfdf;
 	background:#eeedec;
