@@ -271,9 +271,6 @@ html>body #modacLogoIE {
 .modacNoViewPage #patternOuter {
 	margin-left: 0!important;
 }
-.modacComparePage .foswikiAttachments {
-	display: none;
-}
 
 #modacHeading {
 	border-color:#AAAAAA;
