@@ -19,7 +19,7 @@
 	hideimgleft="%ICONURLPATH{arrow-down}%" 
 	linkclass="patternTwistyButton" 
 }% 
-   * [[%SCRIPTURLPATH{"view"}%/%BASEWEB%/WebCreateNewTopic?topicparent=%BASETOPIC%][%MAKETEXT{"Create New Topic"}%]]
+   * [[%SCRIPTURLPATH{"view"}%/%BASEWEB%/WebCreateNewTopic?topicparent=%BASETOPIC%;newtopic=][%MAKETEXT{"Create New Topic"}%]]
    * [[%BASEWEB%.WebChanges][%MAKETEXT{"Recently changed"}%]]
    * [[%MAINWEB%.Templates][%MAKETEXT{"Templates"}%]]
 %IF{"context MAPrinceModPluginEnabled" then="   * <a href=\"%SCRIPTURL{"view"}%/%SYSTEMWEB%/MAPrinceModPrintDialog?skin=text&section=dialog&pweb=%ENCODE{"%INCLUDINGWEB%" type="url"}%&ptopic=%ENCODE{"%INCLUDINGTOPIC%" type="url"}%&landscape=%LANDSCAPE{default="0"}%\" class=\"jqUIDialogLink\">%MAKETEXT{"PDF-Print"}%</a>
