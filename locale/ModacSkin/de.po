@@ -1388,6 +1388,12 @@ msgstr "Verworfene Aufgaben"
 msgid "My notes"
 msgstr "Meine Notizen"
 
+msgid "Tasks assigned to me"
+msgstr "Mir zugewiesene Aufgaben"
+
+msgid "Tasks created by me"
+msgstr "Von mir erstellte Aufgaben"
+
 msgid "Oops: we could not recognize you. Try again."
 msgstr "Oops: Wir konnten Sie nicht authentifizieren. Versuchen Sie es erneut."
 

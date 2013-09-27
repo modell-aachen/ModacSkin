@@ -1,4 +1,4 @@
-%META:TOPICINFO{author="JanKrueger" comment="reprev" date="1363102083" format="1.1" reprev="6" version="8"}%
+%META:TOPICINFO{author="BaseUserMapping_333" comment="save topic" date="1380270458" format="1.1" reprev="8" version="8"}%
 %TMPL:INCLUDE{"view"}%
 %TMPL:INCLUDE{"SystemTabs"}%
 
@@ -85,30 +85,28 @@
 <div id="ampel_open">
 <table class="atpSearch atpOrientCols" style="width: 100%;">
 <tr><th>%MAKETEXT{"Created"}%</th><th>%MAKETEXT{"Task"}%</th><th>%MAKETEXT{"Due"}%</th><th>%MAKETEXT{"Status"}%</th><th>&nbsp;</th></tr>
-%SOLRSEARCH{"type:action action_who_lst:(%USERNAME% OR %WIKINAME% OR %WIKIUSERNAME%) -action_closed_dt:?* -action_state_s:(closed OR discarded)"
-  format="<tr><td style=\"white-space:nowrap;\" class=\"secondary bmsubinfo\">$createdate%BR%$percntSUBST{text=\"$author\" pattern=\"^Main\.\" format=\"\"}$percnt%BR%<a href=\"%SCRIPTURL{view}%/$web/$topic\" title=\"$topic\">$web</a></td><td class=\"taskmain\"><span class=\"tasktitle\">$title</span>$n$n$action_text_s<span class=\"bmsubinfo\"></span></td><td class=\"taskdue taskdate secondary\">$percntIF{\"'$action_due_dt'~'$*'\" else=\"$action_due_dt\"}$percnt</td><td><span style=\"display:none;\">$action_state_s</span></td><td class=\"ops\"><a class=\"atp_edit ui-icon ui-icon-pencil {web: '$web', topic: '$topic'}\" title=\"%MAKETEXT{"Edit"}%\" href=\"%SCRIPTURL{"edit"}%/$web/$topic?nowysiwyg=1;skin=action,%SUBST{text="%SKIN%" pattern=" " format=""}%;t=%GMTIME{"$epoch"}%;atp_action=$action_uid_s\">%MAKETEXT{"Edit"}%</a></td></tr>"
+%SOLRSEARCH{"type:action action_creator_s:(%URLPARAM{"creator" default="*"}%) action_who_lst:(%URLPARAM{"who" default="%WIKINAME%"}%) -action_closed_dt:?* -action_state_s:(closed OR discarded)"
+  format="<tr><td style=\"white-space:nowrap;\" class=\"secondary bmsubinfo\">$createdate%BR%$percntSUBST{text=\"$author\" pattern=\"^Main\.\" format=\"\"}$percnt<img src=\"%PUBURLPATH%/%SYSTEMWEB%/FamFamFamMiniIcons/arrow_right.gif\"/>$percntSUBST{text=\"$action_who_lst\" pattern=\"^Main\.\" format=\"\"}$percnt%BR%<a href=\"%SCRIPTURL{view}%/$web/$topic\" title=\"$topic\">$web</a></td><td class=\"taskmain\"><span class=\"tasktitle\">$title</span>$n$n$action_text_s<span class=\"bmsubinfo\"></span></td><td class=\"taskdue taskdate secondary\">$percntIF{\"'$action_due_dt'~'$*'\" else=\"$action_due_dt\"}$percnt</td><td><span style=\"display:none;\">$action_state_s</span></td><td class=\"ops\"><a class=\"atp_edit ui-icon ui-icon-pencil {web: '$web', topic: '$topic'}\" title=\"%MAKETEXT{"Edit"}%\" href=\"%SCRIPTURL{"edit"}%/$web/$topic?nowysiwyg=1;skin=action,%SUBST{text="%SKIN%" pattern=" " format=""}%;t=%GMTIME{"$epoch"}%;atp_action=$action_uid_s\">%MAKETEXT{"Edit"}%</a></td></tr>"
   rows="1000" sort="createdate" reverse="on"
 }%
 </table>
 </div>
 %AMPEL{"ampel_open" WARN="%AMPELWARN{default="3"}%" DATE="%MAKETEXT{"Due"}%" DST="%MAKETEXT{"Status"}%" DONE="%MAKETEXT{"Status"}%" COND="closed"}%
 %ENDTAB%
-%TAB{"%MAKETEXT{"Finished tasks"}%" url="%SCRIPTURL{rest}%/RenderPlugin/tag?name=INCLUDE;render=on;param=%PERSPAGEHELPER{default="%SYSTEMWEB%.ModacSkinUserViewTemplate"}%;section=perspage_tasks;tasksfilter=%ENCODE{"state:closed" type="url"}%;datefield=closed;icon=tick"}%
+%TAB{"%MAKETEXT{"Finished tasks"}%" url="%SCRIPTURL{rest}%/RenderPlugin/tag?name=INCLUDE;render=on;param=%PERSPAGEHELPER{default="%SYSTEMWEB%.ModacSkinUserViewTemplate"}%;section=perspage_tasks;tasksfilter=%ENCODE{"state:closed" type="url"}%;datefield=closed;icon=tick;creator=%URLPARAM{"creator" default="*"}%;who=%URLPARAM{"who" default="%WIKINAME%"}%;"}%
 <span class="jqAjaxLoader">&nbsp;</span>
 %ENDTAB%
-%TAB{"%MAKETEXT{"Recently finished tasks"}%" id="tab_tasks_recently" url="%SCRIPTURL{rest}%/RenderPlugin/tag?name=INCLUDE;render=on;param=%PERSPAGEHELPER{default="%SYSTEMWEB%.ModacSkinUserViewTemplate"}%;section=perspage_tasks;tasksfilter=%ENCODE{"state:closed action_closed_dt:[%CALC{"$FORMATGMTIME($TIMEADD($TIME(), -%URLPARAM{"days" default="7"}%, day), $year-$month-$dayT00:00:00.000Z)"}% TO *]" type="url"}%;datefield=closed;icon=tick;extrasection=perspage_recently"}%
+%TAB{"%MAKETEXT{"Recently finished tasks"}%" id="tab_tasks_recently" url="%SCRIPTURL{rest}%/RenderPlugin/tag?name=INCLUDE;render=on;param=%PERSPAGEHELPER{default="%SYSTEMWEB%.ModacSkinUserViewTemplate"}%;section=perspage_tasks;tasksfilter=%ENCODE{"state:closed action_closed_dt:[%CALC{"$FORMATGMTIME($TIMEADD($TIME(), -%URLPARAM{"days" default="7"}%, day), $year-$month-$dayT00:00:00.000Z)"}% TO *]" type="url"}%;datefield=closed;icon=tick;extrasection=perspage_recently;creator=%URLPARAM{"creator" default="*"}%;who=%URLPARAM{"who" default="%WIKINAME%"}%;"}%
 <span class="jqAjaxLoader">&nbsp;</span>
 %ENDTAB%
-%TAB{"%MAKETEXT{"Discarded tasks"}%" url="%SCRIPTURL{rest}%/RenderPlugin/tag?name=INCLUDE;render=on;param=%PERSPAGEHELPER{default="%SYSTEMWEB%.ModacSkinUserViewTemplate"}%;section=perspage_tasks;tasksfilter=%ENCODE{"state:discarded" type="url"}%;datefield=closed;icon=cross"}%
+%TAB{"%MAKETEXT{"Discarded tasks"}%" url="%SCRIPTURL{rest}%/RenderPlugin/tag?name=INCLUDE;render=on;param=%PERSPAGEHELPER{default="%SYSTEMWEB%.ModacSkinUserViewTemplate"}%;section=perspage_tasks;tasksfilter=%ENCODE{"state:discarded" type="url"}%;datefield=closed;icon=cross;creator=%URLPARAM{"creator" default="*"}%;who=%URLPARAM{"who" default="%WIKINAME%"}%;"}%
 <span class="jqAjaxLoader">&nbsp;</span>
 %ENDTAB%
 %ENDTABPANE%
 %TMPL:END%
 
 %TMPL:DEF{"perspage:tasks"}%
-<div class="perspageBlockTitle">%MAKETEXT{"My tasks"}%</div><div class="perspageBlock">
-%TMPL:P{"perspage:tasks_content"}%
-</div>
+<div class="perspageBlockTitle">%MAKETEXT{"My tasks"}%&nbsp;<a href="%SCRIPTURLPATH{"view"}%/%WEB%/%TOPIC%?who=%WIKINAME%;creator=*" title="%MAKETEXT{Tasks assigned to me}%"><img src="%PUBURLPATH%/%SYSTEMWEB%/FamFamFamSilkIcons/user.png"/></a>&nbsp;&nbsp;<a href="%SCRIPTURLPATH{"view"}%/%WEB%/%TOPIC%?creator=%WIKINAME%;who=*" title="%MAKETEXT{Tasks created by me}%"><img src="%PUBURLPATH%/%SYSTEMWEB%/FamFamFamSilkIcons/user_go.png"/></a></div><div class="perspageBlock">%TMPL:P{"perspage:tasks_content"}%</div>
 %TMPL:END%
 
 %TMPL:DEF{"perspage:mynotes"}%
@@ -132,8 +130,8 @@
 %IF{"'%URLPARAM{"extrasection"}%'" then="$percntINCLUDE{\"%WEB%.%TOPIC%\" section=\"%URLPARAM{"extrasection"}%\"}$percnt"}%
 <table class="atpSearch atpOrientCols">
 <tr><th>%MAKETEXT{"Created"}%</th><th>%MAKETEXT{"Task"}%</th><th>%MAKETEXT{"Due"}%</th><th>%MAKETEXT{"Status"}%</th><th>&nbsp;</th></tr>
-%SOLRSEARCH{"type:action action_who_lst:(%USERNAME% OR %WIKINAME% OR %WIKIUSERNAME%) %URLPARAM{"tasksfilter"}%"
-  format="<tr><td style=\"white-space:nowrap;\" class=\"secondary bmsubinfo\">$createdate%BR%$percntSUBST{text=\"$author\" pattern=\"^Main\.\" format=\"\"}$percnt%BR%<a href=\"%SCRIPTURL{view}%/$web/$topic\" title=\"$topic\">$web</a></td><td class=\"taskmain\"><span class=\"tasktitle\">$title</span>$n$n$action_text_s</td><td class=\"taskdue taskdate secondary\">$percntIF{\"'$action_due_dt'~'$*'\" else=\"$action_due_dt\"}$percnt</td><td><img src=\"%PUBURLPATH%/%SYSTEMWEB%/FamFamFamSilkIcons/%URLPARAM{"icon"}%.png\" alt=\"%MAKETEXT{"%URLPARAM{"status"}%"}%\" /> $action_%URLPARAM{"datefield"}%_dt</td><td class=\"ops\"><a class=\"atp_edit ui-icon ui-icon-pencil\" title=\"%MAKETEXT{"Edit"}%\" href=\"%SCRIPTURL{"edit"}%/$web/$topic?nowysiwyg=1;skin=action,%SKIN%;t=%GMTIME{"$epoch"}%;atp_action=$action_uid_s\">%MAKETEXT{"Edit"}%</a></td></tr>"
+%SOLRSEARCH{"type:action action_creator_s:(%URLPARAM{"creator" default="*"}%) action_who_lst:(%URLPARAM{"who" default="%WIKINAME%"}%) %URLPARAM{"tasksfilter"}%"
+  format="<tr><td style=\"white-space:nowrap;\" class=\"secondary bmsubinfo\">$createdate%BR%$percntSUBST{text=\"$author\" pattern=\"^Main\.\" format=\"\"}$percnt<img src=\"%PUBURLPATH%/%SYSTEMWEB%/FamFamFamMiniIcons/arrow_right.gif\"/>$percntSUBST{text=\"$action_who_lst\" pattern=\"^Main\.\" format=\"\"}$percnt%BR%<a href=\"%SCRIPTURL{view}%/$web/$topic\" title=\"$topic\">$web</a></td><td class=\"taskmain\"><span class=\"tasktitle\">$title</span>$n$n$action_text_s</td><td class=\"taskdue taskdate secondary\">$percntIF{\"'$action_due_dt'~'$*'\" else=\"$action_due_dt\"}$percnt</td><td><img src=\"%PUBURLPATH%/%SYSTEMWEB%/FamFamFamSilkIcons/%URLPARAM{"icon"}%.png\" alt=\"%MAKETEXT{"%URLPARAM{"status"}%"}%\" /> $action_%URLPARAM{"datefield"}%_dt</td><td class=\"ops\"><a class=\"atp_edit ui-icon ui-icon-pencil\" title=\"%MAKETEXT{"Edit"}%\" href=\"%SCRIPTURL{"edit"}%/$web/$topic?nowysiwyg=1;skin=action,%SKIN%;t=%GMTIME{"$epoch"}%;atp_action=$action_uid_s\">%MAKETEXT{"Edit"}%</a></td></tr>"
   rows="1000" sort="action_%URLPARAM{"datefield"}%_dt" reverse="on"
 }%
 </table>
