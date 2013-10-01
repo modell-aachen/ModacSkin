@@ -33,10 +33,6 @@
 </style>%TMPL:END%
 
 
-%TMPL:DEF{"styles:user_defined"}%%{ "kept for compatibility with TWiki 4.2" }%<style type="text/css" media="all">%IF{ "$ USERLAYOUTURL" then="@import url('%USERLAYOUTURL%');"}%%IF{ "$ USERSTYLEURL"  then="@import url('%USERSTYLEURL%');"}%%IF{ "$ USERCOLORSURL" then="@import url('%USERCOLORSURL%');"}%</style>%TMPL:END%
-
-
-
 %TMPL:DEF{"styles:iespecific"}%
 <!--[if IE 8]><style type="text/css" media="screen">
 	@import url("%PUBURLPATH%/%SYSTEMWEB%/ModacSkinTheme/ie8_hacks.css");
