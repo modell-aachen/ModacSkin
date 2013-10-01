@@ -31,7 +31,7 @@
 
 %MAKETEXT{"The following content template are available for newly created topic in the [_1] Web:" args="<nop>%BASEWEB%"}%
 
-%SEARCH{"." type="regex" excludetopic="%CONTENTTEMPLATESFILTER{default=""}%" web="%CONTENTTEMPLATEWEB{default="%BASEWEB%"}%" topic="*Template" nonoise="on" format="   * [[$web.$topic][$topic]]" separator="$n"}%
+%SEARCH{"." type="regex" excludetopic="%CONTENTTEMPLATEFILTER{default=""}%" web="%CONTENTTEMPLATEWEB{default="%BASEWEB%"}%" topic="*Template" nonoise="on" format="   * [[$web.$topic][$topic]]" separator="$n"}%
 
 %TWISTY{
   id="CreateNewContentTemplate"
