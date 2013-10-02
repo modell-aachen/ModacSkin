@@ -199,7 +199,7 @@ html>body #modacLogoIE {
 #modacWrapper {
 	margin-left:14em;
 }
-#modacWrapper ul {
+#modacWrapper ul, .foswikiTopic ul {
 	list-style-image:url("ModacSkinLogos/bullet.gif");
 }
 #modacSecondWrapper {
