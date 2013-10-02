@@ -4,7 +4,7 @@ use strict;
 use warnings;
 
 our $VERSION = '$Rev: 8536 $';
-our $RELEASE = '1.4.25';
+our $RELEASE = '1.4.26';
 our $SHORTDESCRIPTION = 'Modell Aachen Skin (Mediawiki New Skin)';
 
 1;
