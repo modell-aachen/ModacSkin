@@ -9,7 +9,8 @@ jQuery(function($){
     $('.jqmenu').superfish({
         autoArrows: false, /* Default arrow color is bad anyway */
         dropShadows: false, /* Those muck up our borders */
-        delay:  500
+        delay:  500,
+        disableHI: true
     });
     $('.jqmenu').bgIframe({opacity:false});
     var menuDialogs = {};
