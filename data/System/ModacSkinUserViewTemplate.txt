@@ -96,7 +96,7 @@
 %TAB{"%MAKETEXT{"Finished tasks"}%" url="%SCRIPTURL{rest}%/RenderPlugin/tag?name=INCLUDE;render=on;param=%PERSPAGEHELPER{default="%SYSTEMWEB%.ModacSkinUserViewTemplate"}%;section=perspage_tasks;tasksfilter=%ENCODE{"state:closed" type="url"}%;datefield=closed;icon=tick"}%
 <span class="jqAjaxLoader">&nbsp;</span>
 %ENDTAB%
-%TAB{"%MAKETEXT{"Recently finished tasks"}%" id="tab_tasks_recently" url="%SCRIPTURL{rest}%/RenderPlugin/tag?name=INCLUDE;render=on;param=%PERSPAGEHELPER{default="%SYSTEMWEB%.ModacSkinUserViewTemplate"}%;section=perspage_tasks;tasksfilter=%ENCODE{"state:closed action_closed_dt:[%CALC{"$FORMATGMTIME($TIMEADD($TIME(), -%URLPARAM{"days" default="7"}%, day), $year-$month-$dayT00:00:00.000Z)"}% TO *]" type="url"}%;datefield=closed;icon=tick;extrasection=perspage_recently"}%
+%TAB{"%MAKETEXT{"Recently finished tasks"}%" id="tab_tasks_recently" url="%SCRIPTURL{rest}%/RenderPlugin/tag?name=INCLUDE;render=on;param=%PERSPAGEHELPER{default="%SYSTEMWEB%.ModacSkinUserViewTemplate"}%;section=perspage_tasks;tasksfilter=%ENCODE{"state:closed action_closed_dt:[NOW/DAY-7DAYS TO *]" type="url"}%;datefield=closed;icon=tick;extrasection=perspage_recently"}%
 <span class="jqAjaxLoader">&nbsp;</span>
 %ENDTAB%
 %TAB{"%MAKETEXT{"Discarded tasks"}%" url="%SCRIPTURL{rest}%/RenderPlugin/tag?name=INCLUDE;render=on;param=%PERSPAGEHELPER{default="%SYSTEMWEB%.ModacSkinUserViewTemplate"}%;section=perspage_tasks;tasksfilter=%ENCODE{"state:discarded" type="url"}%;datefield=closed;icon=cross"}%

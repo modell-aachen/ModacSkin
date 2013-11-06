@@ -53,6 +53,7 @@ jQuery(function($){
             var days = $(this).val();
             var url = $(this).metadata().url || '';
             url += days + ';t=' + (new Date()).getTime();
+            url = url.replace(/\d+DAYS/, days + 'DAYS');
             var div = $('.tab_tasks_recently .jqTabContents');
             div.html('<span class="jqAjaxLoader">&nbsp;</span>');
             div.load(url);
