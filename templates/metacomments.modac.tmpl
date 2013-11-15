@@ -1,0 +1,40 @@
+%TMPL:INCLUDE{"metacomments"}%
+%{ ################################################################################ 
+   comments::format::linear - format one comment in linear format
+}%
+%TMPL:DEF{"comments::format::linear"}%<!-- -->
+<div class='cmtCommentContainer cmtComment$evenodd' id='cmtComment$index'>
+  <div class='cmtComment $percntIF{"not('$state'=~'\bapproved\b')" then="cmtCommentNeedsApproval"}$percnt {comment_id:"$id", index:"$index", author:"$percntSPACEOUT{$author}$percnt", date:"$date"}'>
+    <a name='comment$id'></a>
+    <h3 class='foswikiRight cmtCommentNr'>$index</h3>
+    %IF{"'%ENCODE{"$title" type="entity"}%'!=''" 
+      then="<h3><noautolink>%ENCODE{"$title" type="entity"}%</noautolink></h3>"
+    }%<!-- -->
+    <div class='cmtCommentText'>$n$text</div>
+    %TMPL:P{"comments::controls"}%<!-- -->
+    $percntIF{"$COMMENTMODERATION='on' and not('$state'=~'\bapproved\b')"
+      then="<div class='foswikiRight foswikiAlert cmtAlert'>(%MAKETEXT{"needs approval"}%)</div>"
+    }$percnt<!-- -->
+    <span class='foswikiSmallish foswikiGrayText'>
+      <span class='cmtAuthor'>[[%USERINFO{"$author" format="$wikiusername"}%]]</span>
+      &#124;
+      <span class='cmtDate'>$date</span>
+    </span>
+    %CLEAR%
+  </div>
+  <a name='bottomcomment$id'></a>
+</div>
+<!-- -->%TMPL:END%
+
+%TMPL:DEF{"comments::topbar"}%<!-- -->
+%METACOMMENTS{
+  header="<h2 class='cmtCounter'>$count </h2>"
+  singular="%MAKETEXT{"One comment"}%"
+  plural="%MAKETEXT{"[_1] comments" args="$count"}%"
+  limit="1"
+  template=""
+  %IF{"'%TMPL:P{"comments::format"}%' = 'threaded'" then="threaded=\"on\"" else="threaded=\"off\""}%
+  %IF{"$COMMENTMODERATION='on'" then="moderation=\"on\"" else="moderation=\"off\""}%
+}%<!-- -->%TMPL:END%
+
+%TMPL:DEF{"metacomments"}%%IF{"context view" then="<div id='modacComments'>$percentTWISTY{id=$quotcommentlist$quot mode=$quotdiv$quot remember=$quoton$quot showimgleft=$quot%ICONURLPATH{toggleopen}%$quot hideimgleft=$quot%ICONURLPATH{toggleclose}%$quot showlink=$quot%MAKETEXT{"Comments"}%$quot hidelink=$quot%MAKETEXT{"Comments"}%$quot linkclass=$quotpatternTwistyButton patternAttachmentHeader$quot}$percent"}%%TMPL:PREV%%IF{"context view" then="$percentENDTWISTY$percent</div>"}%%TMPL:END%

@@ -1,0 +1,94 @@
+---+!! !ModacSkin
+<!--
+One line description, required for extensions repository catalog.
+BuildContrib will fill in the SHORTDESCRIPTION with the value of
+$SHORTDESCRIPTION from the .pm module, or you can redefine it here if you
+prefer.
+   * Set SHORTDESCRIPTION = %$SHORTDESCRIPTION%
+-->
+%SHORTDESCRIPTION%
+
+Modac skin is a Vector (the skin used for Wikipedia since Mediawiki 1.16) look-alike based on the awesome Pattern skin.
+
+%TOC%
+
+---++ Description
+
+Modac skin is a Vector (the skin used for Wikipedia since Mediawiki 1.16) look-alike based on the awesome Pattern skin.
+
+
+
+---++ Customization
+
+---+++ Logo, Favicon
+
+<verbatim>
+* Set WIKILOGOIMG = %PUBURL%/%SYSTEMWEB%/ModacSkinTheme/ModacSkinLogos/qwiki-logo_small.png
+* Set WIKILOGOALT = Q.Wiki
+* Set WIKILOGOURL = %SCRIPTURL{"view"}%/%USERSWEB%/%HOMETOPIC%
+
+* Set WIKITOOLNAME = Q.Wiki
+
+* Set FAVICON = %PUBURL%/%SYSTEMWEB%/ModacSkinTheme/ModacSkinLogos/favicon.ico 
+</verbatim>
+
+---+++ LeftBar, TopBar, Bottombar
+
+| LeftBar | The default LeftBar is defined in "%SYSTEMWEB%.ModacSkinWebLeftBarDefault.txt". To define a web-wide LeftBar, create a topic "ModacSkinWebLeftBar.txt" in the web |
+| TopBar | The default TopBar is defined in "%SYSTEMWEB%.ModacSkinWebTopBarDefault.txt". To define a web-wide TopBar, create a topic "ModacSkinWebTopBar.txt" in the web |
+| BottomBar | The default BottomBar is defined in "%SYSTEMWEB%.ModacSkinWebBottomBarDefault.txt". To define a web-wide BottomBar, create a topic "ModacSkinWebBottomBar.txt" in the web| |
+
+---+++ Content Templates
+
+<verbatim>
+* Set CONTENTTEMPLATEWEB = Prozesse
+* Set CONTENTTEMPLATEFILTER = *ViewTemplate, GroupTemplate
+* Set CONTENTTEMPLATESTUB = System.ModacSkinContentTemplateStub
+</verbatim>
+ 
+---++ Installation Instructions
+
+To enable ModacSkin you have set the following variables either in WebPreferences (to enable ModacSkin within a single web) or
+in Main/SitePreferences to enable the skin for the whole wiki.  
+
+<pre>
+   &#42; Set SKIN = modac
+
+   &#42; Set FOSWIKI_LAYOUT_URL = &#37;PUBURLPATH&#37;/&#37;SYSTEMWEB&#37;/ModacSkinTheme/layout.css
+   &#42; Set FOSWIKI_STYLE_URL = &#37;PUBURLPATH&#37;/&#37;SYSTEMWEB&#37;/ModacSkinTheme/style.css
+   &#42; Set FOSWIKI_COLORS_URL = &#37;PUBURLPATH&#37;/&#37;SYSTEMWEB&#37;/ModacSkinTheme/colors.css
+
+   &#42; Set FOSWIKI_PROJECT_URL =
+</pre>
+
+If you want to make custom modifications you can set FOSWIKI_PROJECT_URL to your css, otherwise set it to nothing.
+
+
+---+++ Dependencies
+
+| CKEditorPlugin |
+| KVPPlugin |
+| FlexWeblistPlugin |
+
+
+---++ Known Issues
+
+| TOC_TITLE (defines the title in a page-toc) cannot be translated using the MAKETEXT-macro: FOSWiki doesn't render the macro and return &#37;MAKETEXT{"xy"}&#37; as an value. |
+| There is no possibility to create a customized wiki-wide LeftBar without overwriting ModacSkinWebLeftBarDefault |
+
+---++ Info
+
+Many thanks to the following sponsors for supporting this work:
+   * Acknowledge any sponsors here
+
+|  Author(s): | |
+|  Copyright: | &copy; |
+|  License: | [[http://www.gnu.org/licenses/gpl.html][GPL (Gnu General Public License)]] |
+|  Release: | %$RELEASE% |
+|  Version: | %$VERSION% |
+|  Change History: | <!-- versions below in reverse order -->&nbsp; |
+|  Dependencies: | %$DEPENDENCIES% |
+|  Home page: | |
+|  Support: | |
+
+<!-- Do _not_ attempt to edit this topic; it is auto-generated. -->

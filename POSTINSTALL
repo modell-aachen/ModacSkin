@@ -1,0 +1,19 @@
+# vim:set ft=perl:
+my $this = shift;
+return "ModacSkin: postinstall: not in correct environment\n" if (!$this);
+my $map = \&Foswiki::Configure::Util::mapTarget;
+my $root = $this->{_rootdir};
+
+my @msgs = ();
+my @webs = grep { ! /^Trash|System|Custom|Sandbox|Main$/ } Foswiki::Func::getListOfWebs('public');
+my $source = $map->($root, "data/_default/WebContentTemplates.txt");
+use File::Copy;
+for my $web (@webs) {
+	$web =~ s{\.}{/}g;
+	my $target = $map->($root, "data/$web/WebContentTemplates.txt");
+	next if -f $target;
+	copy($source, $target);
+	push @msgs, "copying WebContentTemplates topic to $web web";
+}
+
+return 'ModacSkin postinstall: '. join(', ', @msgs) ."\n" if @msgs;

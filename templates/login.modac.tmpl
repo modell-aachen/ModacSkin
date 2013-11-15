@@ -1,0 +1,25 @@
+%TMPL:INCLUDE{"login"}%
+%TMPL:DEF{"bodyclassname"}%modacNoViewPage modacLoginPage%TMPL:END%
+
+%TMPL:DEF{"top"}%%TMPL:END%
+
+%{"This must not be empty, or the top-line will not show"}%
+%TMPL:DEF{"modacActionButtons"}%&nbsp;%TMPL:END%
+
+%TMPL:DEF{"usernamefieldhelplink"}%%TMPL:END%
+%TMPL:DEF{"usernamefieldhelpcontents"}%%TMPL:END%
+
+%{"Den Inhalt der Fusszeile darf man ohne eingeloggt zu sein eh nicht sehen."}%
+%TMPL:DEF{"bottombarcontents"}%<div id="patternBottomBarContents"></div>%TMPL:END%
+
+%TMPL:DEF{"webaction"}%%TMPL:END%
+
+%TMPL:DEF{"passwordnote"}%%TMPL:END%
+
+%TMPL:DEF{"form"}%<div id="foswikiLogin">
+<div class="foswikiFormSteps">%TMPL:P{"formstart"}%%TMPL:P{"titlestep"}%
+%TMPL:P{"usernamestep"}%%TMPL:P{"passwordstep"}%%TMPL:P{"submitstep"}%
+%TMPL:P{"formend"}%
+%TMPL:P{"seealsostep"}%
+</div>%TMPL:P{"loginasadministratorstep"}%
+</div>%TMPL:END%

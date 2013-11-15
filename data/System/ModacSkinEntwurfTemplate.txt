@@ -1,0 +1,18 @@
+%TMPL:INCLUDE{"view"}%
+%TMPL:INCLUDE{"DiskussionTopExtended"}%
+
+%{ Modell Aachen KVP Prozess }%
+
+%TMPL:DEF{"kvpbottom"}%
+<div class="modacKVPtable">
+| *%MAKETEXT{"Improvement Process"}%* ||
+| %MAKETEXT{"State"}% | %MAKETEXT{"%WORKFLOWSTATEMESSAGE%"}% |
+| %MAKETEXT{"Next step"}% | %WORKFLOWTRANSITION% |
+| %MAKETEXT{"Last editing person"}% | %REVINFO{format="$username"}% |
+| %MAKETEXT{"Last approved version"}% | %WORKFLOWLASTTIME_APPROVED% |
+| %MAKETEXT{"Last approved revision"}% | %WORKFLOWLASTVERSION_APPROVED% |
+</div>
+
+
+
+%TMPL:END%

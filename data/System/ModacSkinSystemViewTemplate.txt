@@ -1,0 +1,2 @@
+%TMPL:INCLUDE{"view"}%
+%TMPL:INCLUDE{"SystemTabs"}%

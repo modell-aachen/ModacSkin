@@ -1,0 +1,15 @@
+%{ This is a default template }%%TMPL:INCLUDE{"oops"}%
+%TMPL:INCLUDE{"viewtopbar"}%
+%TMPL:INCLUDE{"viewsidebar"}%
+%TMPL:INCLUDE{"viewtopicactionbuttons"}%
+
+%TMPL:DEF{"titleaction"}% %TMPL:END%
+%TMPL:DEF{"webaction"}%%TMPL:END%
+%TMPL:DEF{"heading"}%%MAKETEXT{"Attention"}%%TMPL:END%
+%TMPL:DEF{"topicaction"}%%TMPL:END%
+
+%TMPL:DEF{"modacActionButtons"}%%TMPL:P{"modacActionButtonsSYSTEM"}%%TMPL:END%
+
+%TMPL:DEF{"message"}%
+%INSTANTIATE%
+%TMPL:END%

@@ -1,0 +1,15 @@
+%{ This is a default template }%%{ Templates for access denied messages. One DEF is selected and inserted at %INSTANTIATE }%
+%TMPL:INCLUDE{"oops"}%
+
+%TMPL:DEF{"bodyclassname"}%modacViewPage modacOopsPage modacAccessDeniedPage%TMPL:END%
+%TMPL:DEF{"top"}%%TMPL:END%
+
+%TMPL:DEF{"titleaction"}%%MAKETEXT{"(access denied)"}% %TMPL:END%
+%TMPL:DEF{"webaction"}% *%MAKETEXT{"Attention"}%* %TMPL:END%
+%TMPL:DEF{"topicactionbuttons"}% <span>[[%USERSWEB%.%HOMETOPIC%][%MAKETEXT{"OK"}%]]</span> %TMPL:END%
+
+%TMPL:DEF{"message"}%
+%INSTANTIATE%
+%TMPL:END%
+
+%TMPL:DEF{"patterntopiccontents"}%<div class="foswikiTopic"><div id="foswikiLogin"><div class="foswikiFormSteps"> %TMPL:P{"content"}%%TMPL:P{"topicinfo"}%</div></div></div>%TMPL:END%

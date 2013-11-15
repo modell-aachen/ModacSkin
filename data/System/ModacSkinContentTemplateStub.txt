@@ -1,0 +1,9 @@
+&nbsp;
+
+%STARTSECTION{"templateonly"}%
+---+ Content template settings
+
+This section controls access rights for this content template. Please do not remove or change it.
+   * Set ALLOWTOPICCHANGE = KeyUserGroup
+   * Local WORKFLOW =
+%ENDSECTION{"templateonly"}%
