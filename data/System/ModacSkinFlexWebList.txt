@@ -1,0 +1,6 @@
+%FLEXWEBLIST{
+   exclude="(TestCases|Trash|TWiki%IF{"defined MODAC_HIDEWEBS" then="|%MODAC_HIDEWEBS%"}%).*"
+   format="$indent   * [[$web.%HOMETOPIC%][<img src=\"%ICONURL{web-bg}%\" alt=\"\" class=\"modacWebIndicator\" style=\"background-color:#FFFFFF;\"/>$name]]$n"
+   markerformat="$indent   * [[$web.%HOMETOPIC%][<img src=\"%ICONURL{web-bg}%\" alt=\"\" class=\"modacWebIndicator\" style=\"background-color:#0066CC;\"/>$name]]$n"
+   selection="%BASEWEB%"
+}%

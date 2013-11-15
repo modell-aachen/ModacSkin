@@ -1,0 +1,10 @@
+.foswikiPage {
+	min-width: 1040px;
+}
+.modacLoginPage #foswikiLogin {
+	padding-top: 0px;
+	padding-right: 4px;
+	padding-bottom: $px;
+	padding-left: 4px;
+	border: 1px solid #aaa;
+}

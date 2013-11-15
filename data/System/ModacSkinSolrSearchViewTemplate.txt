@@ -1,0 +1,209 @@
+%META:TOPICINFO{author="BaseUserMapping_333" comment="save topic" date="1292864753" format="1.1" reprev="2" version="2"}%
+%META:TOPICPARENT{name="SolrPlugin"}%
+%{<verbatim class="tml">}%
+%TMPL:INCLUDE{"SolrSearchBase"}%
+%TMPL:INCLUDE{"SystemTabs"}%
+%{</verbatim>}%
+
+%{<verbatim class="tml">}%
+%TMPL:DEF{"broadcastmessage"}%%TMPL:P{"solr::search"}%%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim class="tml">}%
+%ADDTOZONE{"script" requires="JQUERYPLUGIN" id="ModacSolrHelper" text="<script type='text/javascript' src='%PUBURLPATH%/%SYSTEMWEB%/ModacSkin/solrsearch.js'></script>"}%
+%{</verbatim>}%
+
+%{<verbatim class="tml">}%
+%TMPL:DEF{"top:toolbarbuttons"}%%TMPL:END%
+%TMPL:DEF{"topicaction"}%%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim class="tml">}%
+%TMPL:DEF{"styles:default"}%%TMPL:P{"styles:screen"}%%TMPL:P{"styles:print"}%%TMPL:P{"styles:solr"}%%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim class="tml">}%
+%TMPL:DEF{"styles:solr"}%<link rel='stylesheet' href='%PUBURLPATH%/%SYSTEMWEB%/SolrPlugin/pattern.css' type='text/css' media='all' />%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim class="tml">}%
+%TMPL:DEF{"solr::extrafilter"}%%IF{
+  "defined 'SOLR_EXTRAFILTER'" 
+  then="%SOLR_EXTRAFILTER%" 
+  else="-type:map -type:aqm -field_TopicType_lst:Category"
+}% %IF{
+  "not $USERNAME ingroup 'AdminGroup'"
+  then="-web:Applications -web:%SYSTEMWEB% -web:Sandbox -web:%USERSWEB%"
+}%%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim class="tml">}%
+%TMPL:DEF{"content"}%<div id="modacSolrWrapper"><div class='solrSearch'><noautolink>
+%TMPL:P{"solr::title"}%<!-- -->
+%TMPL:P{"solr::header"}%
+%TMPL:P{"solr::hits"}%
+%TMPL:P{"solr::footer"}%
+%TMPL:P{"solr::css"}%<!-- -->
+%JQREQUIRE{"focus, serialpager"}%<!-- -->
+%IF{"context PrettyPhotoEnabled"
+  then="$percntJQREQUIRE{\"prettyphoto\"}$percnt"
+}%<!-- -->
+%IF{"'%TMPL:P{"solr::defaultinfinitescroll"}%'='on' and context InfiniteScrollEnabled"
+  then="$percntTMPL:P{\"solr::infinitescroll\"}$percnt"
+}%<!-- -->
+</noautolink></div></div><div id="modacSolrRightBar">%TMPL:P{"solr::sidebar"}%</div>%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim class="tml">}%
+%TMPL:DEF{"solr::facets"}%
+  %MAKETEXT{"Recent changes"}%=facetquery,
+  %MAKETEXT{"Media"}%=type,
+  %MAKETEXT{"Category"}%=category,
+  %MAKETEXT{"Language"}%=language,
+  %MAKETEXT{"Tag"}%=tag,
+  %MAKETEXT{"Application"}%=field_TopicType_lst,
+  %MAKETEXT{"document type"}%=field_Dokumententyp_s,
+  %MAKETEXT{"Person in charge of page"}%=field_Freigegeben_durch_s,
+  %MAKETEXT{"Area of application"}%=field_Geltungsbereich_s,
+  %MAKETEXT{"Normchapter"}%=field_Normkapitel_s
+%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim class="tml">}%
+%TMPL:DEF{"solr::hidesinglefacets"}%web, type, collection, language, contributor, field_TopicType_lst, facetquery, field_Dokumententyp_lst, field_Prozesseigner_s, field_Geltungsbereich_s, field_Autor_s%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim class="tml">}%
+%TMPL:DEF{"solr::disjunctivefacets"}%web, type, field_Dokumententyp_lst, field_Freigegeben_durch, field_Geltungsbereich_s, field_Normkaptiel_s, language%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim class="tml">}%
+%TMPL:DEF{"solr::extramapping"}%
+  %MAKETEXT{"none"}%=-,
+  %MAKETEXT{"Contributor"}%=contributor,
+  %MAKETEXT{"Timespan"}%=date,
+  %MAKETEXT{"Keyword"}%=keyword,
+  %MAKETEXT{"English"}%=en,
+  %MAKETEXT{"German"}%=de,
+  %MAKETEXT{"Chinese/Japanese/Korean"}%=cjk,
+  %MAKETEXT{"Danish"}%=da,
+  %MAKETEXT{"Spanish"}%=es,
+  %MAKETEXT{"Finnish"}%=fi,
+  %MAKETEXT{"French"}%=fr,
+  %MAKETEXT{"Italian"}%=it,
+  %MAKETEXT{"Dutch"}%=nl,
+  %MAKETEXT{"Portuguese"}%=pt,
+  %MAKETEXT{"Russian"}%=ru,
+  %MAKETEXT{"Swedish"}%=se,
+  %MAKETEXT{"Turkish"}%=tr,
+  %MAKETEXT{"image"}%=image,
+  %MAKETEXT{"topic"}%=topic,
+  %MAKETEXT{"comment"}%=comment
+%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim class="tml">}%
+%TMPL:DEF{"solr::facet::include::field_Dokumententyp_s"}%%TMPL:END%
+%TMPL:DEF{"solr::facet::include::field_Freigegeben_durch_s"}%%TMPL:END%
+%TMPL:DEF{"solr::facet::include::field_Geltungsbereich_s"}%%TMPL:END%
+%TMPL:DEF{"solr::facet::include::field_Normkapitel_s"}%%TMPL:END%
+
+%TMPL:DEF{"solr::facet::exclude::field_Dokumententyp_s"}%%TMPL:END%
+%TMPL:DEF{"solr::facet::exclude::field_Freigegeben_durch_s"}%%TMPL:END%
+%TMPL:DEF{"solr::facet::exclude::field_Geltungsbereich_s"}%%TMPL:END%
+%TMPL:DEF{"solr::facet::exclude::field_Normkapitel_s"}%%TMPL:END%
+%TMPL:DEF{"solr::facet::exclude::type"}%aqm|map%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim class="tml">}%
+%TMPL:DEF{"solr::sidebar"}%<!-- -->
+<noautolink>
+%TMPL:P{"solr::selection"}%
+%SOLRFORMAT{"solr1"
+  %TMPL:P{"solr::facet"
+    id="web"
+    format="$percntWEBLINK{\\"$key\\" format=\\"<span style='display: none'>$key </span><div style='margin-left: $percentCALC{\\"$dollarEVAL($dollarLENGTH($percentSUBST{text=\\"$key\\" pattern=\\"[^.]\\" format=\\"\\"}$percent)*7)\\"}$percentpx;'>$dollartitle\\"}$percnt&nbsp;($count)</div>"
+    title="$percntWEBLINK{\\"$key\\" format=\\"$dollartitle\\"}$percnt"
+    value="$id:$key"
+    input="checkbox"
+    include="%TMPL:P{"solr::facet::include::web"}%"
+    exclude="%TMPL:P{"solr::facet::exclude::web"}%"
+    extraclass="solrSort"
+    pageropts=""
+  }%
+  %TMPL:P{"solr::facet"
+    id="language"
+    format="$key&nbsp;($count)"
+    value="$id:$key"
+    input="checkbox"
+    include="%TMPL:P{"solr::facet::include::language"}%"
+    exclude="%TMPL:P{"solr::facet::exclude::language"}%"
+    extraclass="solrSort"
+    pageropts=""
+  }%
+  %TMPL:P{"solr::facet"
+    id="type"
+    format="$key&nbsp;($count)"
+    value="$id:$key"
+    input="checkbox"
+    include="%TMPL:P{"solr::facet::include::type"}%"
+    exclude="%TMPL:P{"solr::facet::exclude::type"}%"
+    extraclass=""
+    pageropts=""
+  }%
+  %TMPL:P{"solr::facet"
+    id="field_Dokumententyp_s"
+    format="$key&nbsp;($count)"
+    value="$id:$key"
+    input="checkbox"
+    include="%TMPL:P{"solr::facet::include::field_Dokumententyp_s"}%"
+    exclude="%TMPL:P{"solr::facet::exclude::field_Dokumententyp_s"}%"
+    extraclass=""
+    pageropts=""
+  }%
+  %TMPL:P{"solr::facet"
+    id="field_Freigegeben_durch_s"
+    format="$key&nbsp;($count)"
+    value="$id:$key"
+    input="checkbox"
+    include="%TMPL:P{"solr::facet::include::field_Freigegeben_durch_s"}%"
+    exclude="%TMPL:P{"solr::facet::exclude::field_Freigegeben_durch_s"}%"
+    extraclass=""
+    pageropts=""
+  }%
+  %TMPL:P{"solr::facet"
+    id="field_Geltungsbereich_s"
+    format="$key&nbsp;($count)"
+    value="$id:$key"
+    input="checkbox"
+    include="%TMPL:P{"solr::facet::include::field_Geltungsbereich_s"}%"
+    exclude="%TMPL:P{"solr::facet::exclude::field_Geltungsbereich_s"}%"
+    extraclass=""
+    pageropts=""
+  }%
+  %TMPL:P{"solr::facet"
+    id="field_Normkapitel_s"
+    format="$key&nbsp;($count)"
+    value="$id:$key"
+    input="checkbox"
+    include="%TMPL:P{"solr::facet::include::field_Normkapitel_s"}%"
+    exclude="%TMPL:P{"solr::facet::exclude::field_Normkapitel_s"}%"
+    extraclass="solrSort"
+    pageropts=""
+  }%
+  %TMPL:P{"solr::facet"
+    id="facetquery"
+    format="$key&nbsp;($count)"
+    title="$key"
+    value="$query"
+    input="radio"
+    include=""
+    exclude=""
+    extraclass=""
+    pageropts=""
+  }%%TMPL:P{"modacExtraFacets"}%
+}%<!-- -->
+</noautolink>
+<!-- -->%TMPL:END%
+%{</verbatim>}%
+

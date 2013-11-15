@@ -1,0 +1,5 @@
+%TMPL:INCLUDE{"metamaketext"}%
+
+%TMPL:DEF{"MetaMakeText"}%%ADDTOZONE{"head" id="%id%" text="<meta name=\"%id%\" content=\"%MAKETEXT{"%maketext%" args="%args{default=""}%"}%\" />"}%%TMPL:END%
+
+%TMPL:DEF{"TEXT_BLOCKUI"}%%TMPL:P{"MetaMakeText" id="TEXT_BLOCKUI" maketext="Please wait..."}%%TMPL:END%

@@ -1,0 +1,143 @@
+%TMPL:INCLUDE{"TopicMenu"}%
+%TMPL:DEF{"modacTabs"}%%JQREQUIRE{"supersubs"}%%JQREQUIRE{"bgiframe"}%%JQREQUIRE{"ui::dialog"}%%ADDTOZONE{"script" text="<script type=\"text/javascript\" src=\"%PUBURLPATH%/System/ModacSkin/topmenu%FWSRC%.js\"></script>" requires="JQUERYPLUGIN::SUPERSUBS,JQUERYPLUGIN::BGIFRAME,JQUERYPLUGIN::UI::DIALOG,JQUERYPLUGIN::FOSWIKI"
+}%<div id="modacActionButtonsWrapper">%TMPL:P{"modacActionButtons"}%<div class="clear"></div></div> %TMPL:END%
+
+%TMPL:DEF{"modacActionButtonsVIEW"}%<ul id="modacButtonsLEFT" class="modacTabs">%TMPL:P{"modacButtonsLEFT"}%</ul><ul id="modacButtonsRIGHT" class="jqmenu modacMoreMenu modacTabs">%TMPL:P{"modacButtonsRIGHT"}%</ul>%TMPL:END%
+
+%{ Overload this definition if you want to modyfy / additional tabs on the left side }%
+%TMPL:DEF{"modacButtonsLEFT"}%<li>%TMPL:P{"topictabaction"}%</li>%TMPL:END%
+
+%{ Overload this definition if you want to modyfy / additional tabs on the right side }%
+%TMPL:DEF{"modacButtonsRIGHT"}%%TMPL:P{"modacFavTopic"}%<li>%TMPL:P{"modacEdit"}%</li>%IF{"'%MODAC_NO_TOPMENU{default="0"}%'='0'" then="<li class=\"modacMoreDynamic\">$percentTMPL:P{\"modacMore\"}$percent</li>" else="<li>$percntTMPL:P{\"modacAttach\"}$percnt</li><li>$percntTMPL:P{\"modacRdiff\"}$percnt</li><li>$percntTMPL:P{\"modacMore\"}$percnt</li>"}%<li id="modacSearchBox">%TMPL:P{"SearchBox"}%</li>%TMPL:END%
+
+%{ --- definitions used in "modacActionButtonsVIEW" --- }%
+
+%TMPL:DEF{"modacFavTopic"}%%FAVORITEBUTTON{
+  default=""
+  cond="'%TOPIC%'='%WORKFLOWORIGIN%' AND $FAVORITES='1'"
+  inactive_suffix="grey"
+  active_suffix="gold"
+  active_label="%MAKETEXT{"Remove bookmark"}%"
+  inactive_label="%MAKETEXT{"Bookmark this page"}%"
+  format="<li>$formstart$linkstart&#8203;<img class=\"modacBookmarkStar\" src=\"%PUBURLPATH%/%SYSTEMWEB%/FamFamFamSilkCompanion1Icons/star_$suffix.png\" alt=\"$label\" title=\"$label\" />$linkend$formend</li>"
+}%%TMPL:END%
+
+%TMPL:DEF{"modacEdit"}%%IF{"defined rev or defined rev1" then="" else="$percntTMPL:P{modacEditLATEST}$percnt"}%%TMPL:END%
+%TMPL:DEF{"modacEditLATEST"}%<div class="foswikiRequiresChangePermission requireModacChangePermission %IF{"context edit" then="modacActionButtonACTIVE"}%"><a href='%SCRIPTURL{"edit"}%/%BASEWEB%/%BASETOPIC%?t=%GMTIME{"$epoch"}%%TMPL:P{"url_param_editaction"}%%IF{"context CKEditorPluginEnabled" then="" else=";nowysiwyg=1"}%' class='modacChanging' rel='nofollow' %MAKETEXT{"title='Edit this topic' accesskey='e'>&Edit"}%</a></div>%TMPL:END%
+
+%TMPL:DEF{"modacAttach"}%<div class="foswikiRequiresChangePermission %IF{"context attach" then="modacActionButtonACTIVE"}%"><a href='%SCRIPTURLPATH{"attach"}%/%BASEWEB%/%BASETOPIC%' rel='nofollow' %MAKETEXT{"title='Attach an image or document to this topic' accesskey='a'>&Attach"}%</a></div>%TMPL:END%
+
+%TMPL:DEF{"modacRdiff"}% %IF{"context diff or defined rev or context rdiff or ( context oops and defined history )" then="$percntTMPL:P{modacRdiffACTIVE}$percnt" else="$percntTMPL:P{modacRdiffINACTIVE}$percnt"}%%TMPL:END%
+%TMPL:DEF{"modacRdiffACTIVE"}%<div class="modacActionButtonACTIVE"><span class="foswikiRequiresChangePermission"> %IF{"context CompareRevisionsAddonPluginEnabled" then="<a href='%SCRIPTURLPATH{"oops"}%/%BASEWEB%/%BASETOPIC%?template=oopshistory;history=on' rel='nofollow' %MAKETEXT{"title='View topic history' accesskey='h'>&History"}%</a>" else="<a href='%SCRIPTURLPATH{"rdiff"}%/%BASEWEB%/%BASETOPIC%?type=history' rel='nofollow' %MAKETEXT{"title='View topic history' accesskey='h'>&History"}%</a>"}%</span></div>%TMPL:END%
+%TMPL:DEF{"modacRdiffINACTIVE"}%<span class="foswikiRequiresChangePermission"> %IF{"context CompareRevisionsAddonPluginEnabled" then="<a href='%SCRIPTURLPATH{"oops"}%/%BASEWEB%/%BASETOPIC%?template=oopshistory&history=on' rel='nofollow' %MAKETEXT{"title='View topic history' accesskey='h'>&History"}%</a>" else="<a href='%SCRIPTURLPATH{"rdiff"}%/%BASEWEB%/%BASETOPIC%?type=history&history=on' rel='nofollow' %MAKETEXT{"title='View topic history' accesskey='h'>&History"}%</a>"}%</span>%TMPL:END%
+
+%TMPL:DEF{"modacMore"}%<div class='%IF{"$'URLPARAM{template}'='more' or $'URLPARAM{template}'='backlinksallwebs' or $'URLPARAM{template}'='backlinksweb' or context manage or (context attach and '%MODAC_NO_TOPMENU{default="0"}%'='0')" then="modacActionButtonACTIVE "}%modacMoreDynamicLink'>%TMPL:P{"more_link"}%</div>%TMPL:P{"modacMoreSubmenu"}%%TMPL:END%
+
+%TMPL:DEF{"SearchBox"}%%JQREQUIRE{"UI::autocomplete"}%<form name="quickSearchForm" id="quickSearchForm" action="%SCRIPTURLPATH{view}%/%WEB%/WebSearch"><input type="text" class="foswikiInputField foswikiDefaultText modacAutoSubmit jqUIAutocomplete {source:'%SCRIPTURL%/rest/SolrPlugin/autocomplete'}" title="%MAKETEXT{"Search"}%" id="quickSearchBox" name="search" value="%URLPARAM{search}%" size="26" /><input type="hidden" name="scope" value="all" /><input type="hidden" name="web" value="all" /><noscript>&nbsp;<input type="submit" size="5" class="foswikiButton" name="submit" value="%MAKETEXT{"Search"}%" />&nbsp;</noscript></form>%TMPL:END%
+
+%TMPL:DEF{"topictabaction"}%<div class='modacActionButtonACTIVE'><a href='%SCRIPTURLPATH{"view"}%/%WEB%/%TOPIC%' rel='nofollow' title='%MAKETEXT{"Topic"}%'>%MAKETEXT{"Topic"}%</a></div>%TMPL:END%
+
+%{ --- definitions used in "modacActionButtonsSYSTEM" --- }%
+
+%TMPL:DEF{"modacSystemTab"}%<div class="modacActionButtonACTIVE"><a href='%SCRIPTURLPATH{"view"}%/%WEB%/%TOPIC%' rel='nofollow' %MAKETEXT{"title='Q.Wiki - specialpage' >specialpage"}%</a></div>%TMPL:END%
+
+
+
+
+
+%TMPL:DEF{"create_topic_link"}%<span class="foswikiRequiresChangePermission"><a href='%SCRIPTURL{"edit"}%/%BASEWEB%/%BASETOPIC%?t=%GMTIME{"$epoch"}%%TMPL:P{"url_param_editaction"}%%IF{"context TinyMCEPluginEnabled" else=";nowysiwyg=1"}%' rel='nofollow' %MAKETEXT{"title='Create new topic' accesskey='c'>&Create"}%</a></span>%TMPL:END%
+
+%TMPL:DEF{"edit_topic_link"}%<span class="foswikiRequiresChangePermission"><a href='%SCRIPTURL{"edit"}%/%BASEWEB%/%BASETOPIC%?t=%GMTIME{"$epoch"}%%TMPL:P{"url_param_editaction"}%%IF{"context TinyMCEPluginEnabled" then="" else=";nowysiwyg=1"}%' class="modacChanging" rel='nofollow' %MAKETEXT{"title='Edit this topic text' accesskey='e'>&Edit"}%</a></span>%TMPL:END%
+
+%TMPL:DEF{"raw_edit_link"}%<span class="foswikiRequiresChangePermission"><a href='%SCRIPTURL{"edit"}%/%BASEWEB%/%BASETOPIC%?t=%GMTIME{"$epoch"}%%TMPL:P{"url_param_editaction"}%;nowysiwyg=1' class="modacChanging" rel='nofollow' %MAKETEXT{"title='Edit Wiki text' accesskey='w'>Edit &wiki text"}%</a></span>%TMPL:END%
+
+%TMPL:DEF{"view_topic_link"}%<span><a href='%SCRIPTURL{"view"}%/%BASEWEB%/%BASETOPIC%' rel='nofollow' %MAKETEXT{"title='View topic' accesskey='v'>&View topic"}%</a></span>%TMPL:END%
+
+%TMPL:DEF{"attach_link"}%<span class="foswikiRequiresChangePermission"><a href='%SCRIPTURLPATH{"attach"}%/%BASEWEB%/%BASETOPIC%' rel='nofollow' %MAKETEXT{"title='Attach an image or document to this topic' accesskey='a'>&Attach"}%</a></span>%TMPL:END%
+
+%TMPL:DEF{"more_link"}%<span><a href='%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%?template=more&maxrev=%MAXREV%&currrev=%CURRREV%' rel='nofollow' %MAKETEXT{"title='Delete or rename this topic; set parent topic; view and compare revisions' accesskey='m'>&More topic actions"}%</a></span>%TMPL:END%
+
+%TMPL:DEF{"action_printable"}%%TMPL:P{"printable"}%%TMPL:P{"sep"}%%TMPL:END%
+
+%TMPL:DEF{"printable"}%<span><a href='%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%?cover=print%QUERYPARAMSTRING%%REVARG%' rel='nofollow' %MAKETEXT{"title='Printable version of this topic' accesskey='p'>&Print version"}%</a></span>%TMPL:END%
+
+%TMPL:DEF{"activatable_printable"}%%TMPL:P{"printable"}%%TMPL:END%
+
+
+%TMPL:DEF{"backlinks_web_link"}%<span><a href='%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%?template=backlinksweb' rel='nofollow' %MAKETEXT{"title='Search the [_1] Web for topics that link to here' accesskey='b'>We&b" args="<nop>%BASEWEB%"}%</a></span>%TMPL:END%
+
+%TMPL:DEF{"backlinks_all_link"}%<span><a href='%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%?template=backlinksallwebs' rel='nofollow' %MAKETEXT{"title='Search all webs for topics that link to here' accesskey='l'>A&ll Webs"}%</a></span>%TMPL:END%
+
+%TMPL:DEF{"backlinks_link"}%<span><a href='%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%?template=backlinksweb' rel='nofollow' %MAKETEXT{"title='Search the [_1] Web for topics that link to here' accesskey='b'>&Backlinks" args="<nop>%BASEWEB%"}%</a></span>%TMPL:END%
+
+
+%TMPL:DEF{"history_rdiff_link"}%<span class="foswikiRequiresChangePermission"><a href='%SCRIPTURLPATH{"rdiff"}%/%BASEWEB%/%BASETOPIC%?type=history' rel='nofollow' %MAKETEXT{"title='View total topic history' accesskey='h'>&History"}%</a></span>%TMPL:END%
+
+%TMPL:DEF{"history_history_link"}%<span class="foswikiRequiresChangePermission"><a href='%SCRIPTURLPATH{"oops"}%/%BASEWEB%/%BASETOPIC%?template=oopshistory' rel='nofollow' %MAKETEXT{"title='View total topic history' accesskey='h'>&History"}%</a></span>%TMPL:END%
+
+
+%TMPL:DEF{"raw_link"}%<span><a href='%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%?raw=on%REVARG%' rel='nofollow' %MAKETEXT{"title='View without formatting' accesskey='v'>&View wiki text"}%</a></span>%TMPL:END%
+
+
+%TMPL:DEF{"inactive_edit_with_view_topic"}%<span><strike>%MAKETEXT{"Edit"}%</strike></span>%TMPL:END%
+
+%TMPL:DEF{"url_param_editaction"}%%IF{"defined EDITACTION" then=";action=%EDITACTION%" else=""}%%TMPL:END%
+
+%TMPL:DEF{"edit_or_create"}%%TMPL:P{context="new_topic" then="create_topic_link" else="edit_topic_link"}%%TMPL:END%
+
+%TMPL:DEF{"raw_edit"}%%TMPL:P{context="new_topic" then="" else="raw_edit_link"}%%TMPL:P{context="new_topic" then="" else="sep"}%%TMPL:END%
+
+%TMPL:DEF{"action_activatable_edit_or_create"}%%TMPL:P{"activatable_edit_or_create"}%%TMPL:P{"sep"}%%TMPL:END%
+
+%TMPL:DEF{"activatable_edit_or_create"}%%TMPL:P{context="inactive" then="inactive_edit_with_view_topic" else="edit_or_create"}%%TMPL:END%
+
+%TMPL:DEF{"action_activatable_raw_edit"}%%TMPL:P{context="TinyMCEPluginEnabled" then="activatable_raw_edit"}%%TMPL:END%
+
+%TMPL:DEF{"activatable_raw_edit"}%%TMPL:P{context="inactive" then="inactive_raw_edit" else="raw_edit"}%%TMPL:END%
+
+%TMPL:DEF{"inactive_raw_edit"}%<span><strike>%MAKETEXT{"Edit Wiki<nop>Text"}%</strike></span>%TMPL:P{"sep"}%%TMPL:END%
+
+
+%TMPL:DEF{"active_attach"}%%TMPL:P{"attach_link"}%%TMPL:END%
+
+%TMPL:DEF{"inactive_attach"}%<span><strike>%MAKETEXT{"Attach"}%</strike></span>%TMPL:END%
+
+%TMPL:DEF{"action_activatable_attach"}%%TMPL:P{"activatable_attach"}%%TMPL:P{"sep"}%%TMPL:END%
+
+%TMPL:DEF{"activatable_attach"}%%TMPL:P{context="inactive" then="inactive_attach" else="active_attach"}%%TMPL:END%
+
+
+%TMPL:DEF{"active_more"}%%TMPL:P{"more_link"}%%TMPL:END%
+
+%TMPL:DEF{"inactive_more"}%<span><strike>%MAKETEXT{"More topic actions..."}%</strike></span>%TMPL:END%
+
+%TMPL:DEF{"action_activatable_more"}%%TMPL:P{"activatable_more"}%%TMPL:END%
+
+%TMPL:DEF{"activatable_more"}%%TMPL:P{context="inactive" then="inactive_more" else="active_more"}%%TMPL:END%
+
+
+%TMPL:DEF{"action_raw_or_view"}%%TMPL:P{"raw_or_view"}%%TMPL:P{"sep"}%%TMPL:END%
+
+%TMPL:DEF{"raw_or_view"}%%IF{"defined raw" then="%TMPL:P{"view_topic_link"}%" else="%TMPL:P{"raw_link"}%"}%%TMPL:END%
+
+%TMPL:DEF{"action_backlinks"}%%TMPL:P{"backlinks"}%%TMPL:P{"sep"}%%TMPL:END%
+
+%TMPL:DEF{"backlinks"}%%MAKETEXT{"Backlinks"}%: %TMPL:P{"backlinks_web_link"}%, %TMPL:P{"backlinks_all_link"}%%TMPL:END%
+
+%TMPL:DEF{"backlinks_simple"}%%TMPL:P{"backlinks_link"}%%TMPL:END%
+
+%TMPL:DEF{"action_backlinks_simple"}%%TMPL:P{"backlinks_simple"}%%TMPL:P{"sep"}%%TMPL:END%
+
+
+%TMPL:DEF{"history_rdiff"}%%TMPL:P{"history_rdiff_link"}%%TMPL:END%
+
+%TMPL:DEF{"history_history"}%%TMPL:P{"history_history_link"}%%TMPL:END%
+
+%TMPL:DEF{"revisions_rdiff"}%%REVISIONS%%TMPL:END%
+
+
+%TMPL:DEF{"revisions_compare"}%%RDIFF2COMPARE{"%REVISIONS%"}%%TMPL:END%
+
+%TMPL:DEF{"action_revisions"}%%TMPL:P{"revisions"}%%TMPL:P{"sep"}%%TMPL:END%
+
+%TMPL:DEF{"revisions"}%<span>%TMPL:P{context="HistoryPluginEnabled" then="history_history" else="history_rdiff"}%: %TMPL:P{context="CompareRevisionsAddonPluginEnabled" then="revisions_compare" else="revisions_rdiff"}%</span>%TMPL:END%

@@ -1,0 +1,8 @@
+%META:TOPICINFO{author="ProjectContributor" date="1252721358" format="1.1" version="$Rev: 9238 $"}%
+%META:TOPICPARENT{name="TimeSpecifications"}%
+%LANGUAGES{
+         format="<li><a $marker href=\"#\">$langname</a></li>"
+         selection="%LANGUAGE%"
+         separator=""
+         marker="class=\"TheChoosenOne\""      
+    }%

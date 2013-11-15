@@ -1,0 +1,131 @@
+/* HRT: 07.04.2011 */
+/* This suckerfish-dropdown-menu is based on the jQuery plugin 'Superfish v1.4.8' by Joel Birch */
+/* 'Superfish v1.4.8' is using translucent arrows as indicators for submenus, while this example works with 'normal' PNGs */
+/* If you're looking for more information or the original source code visit: http://users.tpg.com.au/j_birch/plugins/superfish/
+/* Many thanks to Joel!! */
+
+
+/*** ESSENTIAL STYLES ***/
+.sf-menu, .sf-menu * {
+	margin:			0;
+	padding:		0;
+	list-style:		none;
+}
+.sf-menu {
+	line-height:	1.0;
+}
+.sf-menu ul {
+	position:		absolute;
+	top:			-999em;
+	width:			12em; /* left offset of submenus need to match (see below) */
+}
+.sf-menu ul li {
+	width:			100%;
+}
+.sf-menu li:hover {
+	visibility:		inherit; /* fixes IE7 'sticky bug' */
+}
+.sf-menu li {
+	float:			left;
+	position:		relative;
+}
+.sf-menu a {
+	display:		block;
+	position:		relative;
+}
+.sf-menu li:hover ul,
+.sf-menu li.sfHover ul {
+	left:			0;
+	top:			2.5em; /* match top ul list item height */
+	z-index:		99;
+}
+ul.sf-menu li:hover li ul,
+ul.sf-menu li.sfHover li ul {
+	top:			-999em;
+}
+ul.sf-menu li li:hover ul,
+ul.sf-menu li li.sfHover ul {
+	left:			12em; /* match ul width */
+	top:			0;
+}
+ul.sf-menu li li:hover li ul,
+ul.sf-menu li li.sfHover li ul {
+	top:			-999em;
+}
+ul.sf-menu li li li:hover ul,
+ul.sf-menu li li li.sfHover ul {
+	left:			10em; /* match ul width */
+	top:			0;
+}
+
+/*** DEMO SKIN ***/
+.sf-menu {
+	float:			left;
+}
+.sf-menu a {
+	background-image:		url("images/tab-normal-fade.png");
+	background-position:	left bottom;
+	background-repeat:		repeat-x;
+	padding: 				.75em 1em;
+	margin:					0 1px;
+}
+.sf-menu li {
+	background-image:		url("images/tab-break.png");
+	background-position:	left bottom;
+	background-repeat:		no-repeat;
+}
+.sf-menu li li,
+.sf-menu li li li {
+	background-image:		none;	
+	background:				white;
+}
+.sf-menu li li a,
+.sf-menu li li li a {
+	background-image:		none;
+}
+.sf-menu li:hover, .sf-menu li.sfHover,
+.sf-menu a:focus, .sf-menu a:hover, .sf-menu a:active {
+	background:		#CFDEFF;
+	outline:		0;
+}
+/*** arrows **/
+.sf-menu a.sf-with-ul {
+	padding-right: 	2.25em;
+	min-width:		1px; /* trigger IE7 hasLayout so spans position accurately */
+}
+
+.sf-menu a.modacActionButtonWithArrow {
+	padding-right: 	2.25em;
+	min-width:		1px; /* trigger IE7 hasLayout so spans position accurately */
+}
+.sf-menu a.modacActionButtonWithIcon {
+	padding-left: 	.9em;
+	min-width:		1px; /* trigger IE7 hasLayout so spans position accurately */
+}
+
+.sf-sub-indicator {
+	display:		none;	
+}
+.modacActionButtonsARROW {
+	position:		absolute;
+	display:		block;
+	right:			.5em;
+	top:			.7em;
+}
+.sf-menu a.modacLABELwithIcon {
+	padding-left:	2.25em;	
+}
+.modacActionButtonsICON {
+	position:		absolute;
+	display:		block;
+	left:			.5em;
+	top:			.65em;
+}
+.modacSuckerfishSeperator {
+	border-top:		1px solid #aaa;
+	height:			0;
+	margin:			4px 0;
+}
+.sf-menu li.TheChoosenOne {
+	background: #AABDE6;	
+}

@@ -1,0 +1,44 @@
+---++ Modell Aachen AJAX Helper
+
+---+++ Topic selector
+
+The below section is used within WebCreateNewTopic to render the select box for the topic's parent, and possibly other topic selection fields.
+
+<verbatim>
+%STARTSECTION{"topicsinweb"}%
+[%SOLRSEARCH{"type:topic web:%SUBST{text="%URLPARAM{"web"}%" pattern="/" format="."}% -topic:*%WORKFLOWSUFFIX% -topic:*Template -topic:*Form (topic_search:*%SUBST{text="%URLPARAM{query}%" pattern="\s+" format=""}%* OR %FORMATLIST{"%URLPARAM{query}%" split="\s+" separator=" " null="*" format="title_search:*$1*"}%)" format="{\"label\":\"$title\",\"sublabel\":\"$web.$topic\",\"id\":\"$web.$topic\"}" separator="," rows="%URLPARAM{"count" default="20"}%" start="%URLPARAM{"offset" default="0"}%" sort="topic"}%]
+%ENDSECTION{"topicsinweb"}%
+</verbatim>
+
+Alternative selector for selecting from 'most' webs:
+
+<verbatim>
+%STARTSECTION{"topics_exceptwebs"}%
+[%SOLRSEARCH{"type:topic -web:(%FORMATLIST{"%SUBST{text="%URLPARAM{"web"}%" pattern="/" format="."}%" split="," separator=" OR "}%) -topic:*%WORKFLOWSUFFIX% -topic:*Template -topic:*Form (topic_search:*%SUBST{text="%URLPARAM{query}%" pattern="\s+" format=""}%* OR %FORMATLIST{"%URLPARAM{query}%" split="\s+" separator=" " null="*" format="title_search:*$1*"}%)" format="{\"label\":\"$title\",\"sublabel\":\"$web.$topic\",\"id\":\"$web.$topic\"}" separator="," rows="%URLPARAM{"count" default="20"}%" start="%URLPARAM{"offset" default="0"}%" sort="webtopic"}%]
+%ENDSECTION{"topics_exceptwebs"}%
+</verbatim>
+
+Include the following section anywhere to be able to put topic selectors on that page. Simple give a form field the "jqTopicSelect" CSS class, and pass any parameters in a JQueryMetadata-style class suffix.
+
+<verbatim>
+%STARTSECTION{"selecttopic"}%
+%JQREQUIRE{"select2"}%%JQREQUIRE{"tabpane"}%
+%ADDTOZONE{"head"
+  id="ModacAjaxHelper::selecttopic::l10n"
+  text="<meta name=\"l10n_modac_selecttopic_noparent\" content=\"%MAKETEXT{"No topic parent"}%\" />
+	<meta name=\"l10n_modac_selecttopic_nomatches\" content=\"%MAKETEXT{"No matches"}%\" />
+	<meta name=\"l10n_modac_selecttopic_searching\" content=\"%MAKETEXT{"Searching..."}%\" />"}%
+%ADDTOZONE{"script"
+  id="ModacAjaxHelper::selecttopic"
+  requires="JQUERYPLUGIN::SELECT2,JQUERYPLUGIN::TABPANE,JQUERYPLUGIN::METADATA,JQUERYPLUGIN::FOSWIKI::PREFERENCES"
+  text="<style type=\"text/css\">
+	.topicselect_container { padding: 3px; border-top: solid 1px #eee; }
+	.topicselect_container:first-child { border-top: none; }
+	.topicselect_label { font-weight: bold; margin-bottom: 2px; }
+	.topicselect_sublabel { font-size: 70%; color: #888; }
+	.select2-highlighted .topicselect_sublabel { color: #ddd; }
+	.jqTopicSelect { min-width: 60ex; }
+	.select2-drop { font-family: sans-serif; }
+</style><script type=\"text/javascript\" src=\"%PUBURLPATH%/System/ModacSkin/topicselect.js\"></script>"}%
+%ENDSECTION{"selecttopic"}%
+</verbatim>

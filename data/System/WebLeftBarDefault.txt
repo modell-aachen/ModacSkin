@@ -1,0 +1,46 @@
+%META:TOPICINFO{author="BaseUserMapping_333" comment="reprev" date="1335199636" format="1.1" reprev="9" version="9"}%
+%JQREQUIRE{"ui::dialog"}%
+<div id="modacSidebarIE">
+   * [[%MAINWEB%.WebHome][%MAKETEXT{"Start"}%]]
+   * [[%MAINWEB%.Aktuelles][%MAKETEXT{"News"}%]]
+   * [[Anleitung.WebHome][%MAKETEXT{"Manual"}%]]
+   * [[%BASEWEB%.WebTopicList][%MAKETEXT{"Index"}%]]
+</div>
+
+<div class="modacSidebarTwisty">
+%TWISTY{ 
+    id="modacSidebarONE" 
+    firststart="hide" 
+    remember="on" 
+	noscript="show"
+    showlink="%MAKETEXT{"Tools"}%" 
+    hidelink="%MAKETEXT{"Tools"}%" 
+	showimgleft="%ICONURLPATH{arrow-right}%"
+	hideimgleft="%ICONURLPATH{arrow-down}%" 
+	linkclass="patternTwistyButton" 
+}% 
+   * [[%SCRIPTURLPATH{"view"}%/%BASEWEB%/WebCreateNewTopic?topicparent=%BASETOPIC%;newtopic=][%MAKETEXT{"Create New Topic"}%]]
+   * [[%BASEWEB%.WebChanges][%MAKETEXT{"Recently changed"}%]]
+   * [[%MAINWEB%.Templates][%MAKETEXT{"Templates"}%]]
+%IF{"context MAPrinceModPluginEnabled" then="   * <a href=\"%SCRIPTURL{"view"}%/%SYSTEMWEB%/MAPrinceModPrintDialog?skin=text&section=dialog&pweb=%ENCODE{"%INCLUDINGWEB%" type="url"}%&ptopic=%ENCODE{"%INCLUDINGTOPIC%" type="url"}%&landscape=%LANDSCAPE{default="0"}%\" class=\"jqUIDialogLink\">%MAKETEXT{"PDF-Print"}%</a>
+"}%%ENDTWISTY% 
+</div>
+
+
+<div class="modacSidebarTwisty">
+%TWISTY{ 
+    id="modacSidebarTWO" 
+    firststart="hide" 
+    remember="on" 
+	noscript="show"
+    showlink="%MAKETEXT{"Webs"}%" 
+    hidelink="%MAKETEXT{"Webs"}%" 
+	showimgleft="%ICONURLPATH{arrow-right}%"
+	hideimgleft="%ICONURLPATH{arrow-down}%" 
+	linkclass="patternTwistyButton" 
+}% 
+<div id="modacSidebarTwisty_webs">
+%IF{ "context FlexWebListPluginEnabled" then="$percntINCLUDE{ $quot$percntSYSTEMWEB$percnt.ModacSkinFlexWebList$quot }$percnt" else="$percntINCLUDE{$quot$percntSYSTEMWEB$percnt.ModacSkinWebList$quot }$percnt" }%
+</div>
+%ENDTWISTY% 
+</div>

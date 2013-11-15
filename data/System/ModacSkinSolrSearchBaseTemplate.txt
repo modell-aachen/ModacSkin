@@ -1,0 +1,117 @@
+%META:TOPICINFO{author="BaseUserMapping_333" comment="save topic" date="1292864753" format="1.1" reprev="2" version="2"}%
+%META:TOPICPARENT{name="SolrPlugin"}%
+%{<verbatim class="tml">}%
+%TMPL:INCLUDE{"SolrSearchBase"}%
+%{</verbatim>}%
+
+%{Sprachanpassung}%
+%TMPL:DEF{"solr::format::list::topic"}%<!-- -->
+<div class='solrSearchHit solrTopicHit'>
+  <h3 style='background-image:url(%icon%)' title='%MAKETEXT{%type%}%'>
+    [[%web%.%topic%]]
+    <span class='foswikiGrayText'>
+      %WEBLINK{"%web%"
+        format="<a class='webLink' href='$url'>%MAKETEXT{"in [_1]" args="$title"}%</a>"
+      }%
+    </span>%{
+    }%%IF{"'%content_language%'='de'" then="<img class='modacFlag' src='%PUBURLPATH%/%SYSTEMWEB%/FamFamFamFlagIcons/de.png' alt='de.png' title='%MAKETEXT{"German"}%' />"}%%{
+    }%%IF{"'%content_language%'='en'" then="<img class='modacFlag' src='%PUBURLPATH%/%SYSTEMWEB%/FamFamFamFlagIcons/gb.png' alt='gb.png' title='%MAKETEXT{"English"}%' />"}%%{
+    }%%IF{"'%content_language%'='fr'" then="<img class='modacFlag' src='%PUBURLPATH%/%SYSTEMWEB%/FamFamFamFlagIcons/fr.png' alt='fr.png' title='%MAKETEXT{"French"}%" />"}%
+  </h3>
+  <div class='solrHilite'>
+    <literal>%hilite%</literal>
+  </div>
+  <div class='solrRevision'>
+    %date%,
+    %IF{"istopic '%USERINFO{"%author%" format="$wikiusername"}%'"
+      then="%USERINFO{"%author%" format="[[$wikiusername][$wikiname]]"}%"
+      else="%USERINFO{"%author%" format="<nop>$wikiname"}%"
+    }%
+  </div>
+</div>
+<!-- -->%TMPL:END%
+
+%TMPL:DEF{"solr::format::list::action"}%<!-- -->
+<div class='solrSearchHit solrActionHit'>
+  <h3 style='background-image:url(%ICONURLPATH{"target"}%)' title='%MAKETEXT{%type%}%'>
+    [[%web%.%topic%][%title%]]
+    <span class='foswikiGrayText'><em>(%MAKETEXT{%actionstate%}%)</em> %MAKETEXT{"in [_1]" args="[[%web%.%topic%]]"}%</span>
+    <!-- -->
+  </h3>
+  <div class='solrHilite'>
+    <literal>%hilite%</literal>
+  </div>
+  <div class='solrRevision'>
+    %date%, %USERINFO{"%author%" format="[[$wikiusername][$wikiname]]"}%
+  </div>
+</div>
+<!-- -->%TMPL:END%
+
+%TMPL:DEF{"solr::format::list::attachment"}%<!-- -->
+<div class='solrSearchHit solrAttachmentHit'>
+  <h3 style='background-image:url(%icon%)' title='%MAKETEXT{%type%}%'>
+    [[%url%][%name%]]
+    <span class='foswikiGrayText'>%MAKETEXT{"in [_1]" args="[[%web%.%topic%]]"}%</span>
+    %IF{"'%comment%'!=''" then="<div class='foswikiGrayText'>%comment%</div>" else="<!-- -->"}%
+  </h3>
+  <div class='solrHilite'>
+    <literal>%hilite%</literal>
+  </div>
+  <div class='solrRevision'>
+    %date%, %USERINFO{"%author%" format="[[$wikiusername][$wikiname]]"}%
+  </div>
+</div>
+<!-- -->%TMPL:END%
+
+%TMPL:DEF{"solr::format::list::comment"}%<!-- -->
+<div class='solrSearchHit solrCommentHot'>
+  <h3 style='background-image:url(%icon%)' type='%MAKETEXT{%type%}%'>
+    [[%url%][%title%]]
+    <span class='foswikiGrayText'>%MAKETEXT{"in [_1]" args="[[%web%.%topic%]]"}%</span>
+  </h3>
+  <div class='solrHilite'>
+    <literal>%hilite%</literal>
+  </div>
+  <div class='solrRevision'>
+    %date%, %USERINFO{"%author%" format="[[$wikiusername][$wikiname]]"}%
+  </div>
+</div>
+<!-- -->%TMPL:END%
+
+%{<verbatim class="tml">}%
+%TMPL:DEF{"modacExtraFormat"}%
+content_language=\"$language\"
+actionstate=\"$action_state_s\"
+%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim class="tml">}%
+%TMPL:DEF{"modacExtraTypes"}%action%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim class="tml">}%
+%TMPL:DEF{"solr::hits::list"}%<!-- -->
+%SOLRFORMAT{"solr1"
+  header="<div class='solrSearchHits solrSearchHitsList jqPrettyPhoto {itemSelector:\".solrImageFrame a\"}'>"
+  footer="</div>"
+  format="$percntTMPL:P{\"solr::format::list::$percentIF{\"',$type,'~',%TMPL:P{"modacExtraTypes"}%,'\" then=\"$type\" else=\"$format\"}$percent\"
+      author=\"$author\"
+      comment=\"$percntENCODE{\"$comment\" type=\"html\"}$percnt\"
+      date=\"$date\"
+      hilite=\"$percntENCODE{\"$hilite\" type=\"quote\"}$percnt\"
+      icon=\"$icon\"
+      id=\"$id\"
+      index=\"$index\"
+      name=\"$name\"
+      score=\"$score\"
+      size=\"$size\"
+      title=\"$percntENCODE{\"$title\" type=\"html\"}$percnt\"
+      topic=\"$topic\"
+      type=\"$type\"
+      url=\"$url\"
+      web=\"$web\"
+      %TMPL:P{"modacExtraFormat"}%
+   }$percnt%CLEAR%"
+}%
+%TMPL:END%
+%{</verbatim>}%

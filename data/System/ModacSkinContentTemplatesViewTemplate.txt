@@ -1,0 +1,131 @@
+%{<verbatim class="tml">}%
+%TMPL:INCLUDE{"WebCreateNewTopic"}%
+%{</verbatim>}%
+%TMPL:DEF{"modacActionButtons"}%%TMPL:P{"modacActionButtonsSYSTEM"}%%TMPL:END%
+
+%TMPL:DEF{"script:topictemplate"}%
+%TMPL:P{"JavascriptFiles/foswikiStringUnicodeChars"}%
+%TMPL:P{"LIBJS" id="JavascriptFiles/foswikiWindow" requires="JQUERYPLUGIN::FOSWIKI"}%
+%TMPL:P{"LIBJS" id="PatternSkin/webtopiccreator" requires="JavascriptFiles/foswikiString"}%
+%TMPL:END%
+
+%{<verbatim class="tml">}%
+%TMPL:DEF{"title"}%%HTMLTITLE{"%MAKETEXT{"Content Templates in [_1] Web" args="<nop>%BASEWEB%"}%" separator=" %IF{"defined 'HTMLTITLESEP'" then="%HTMLTITLESEP%" else="-"}% "}%%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim class="tml">}%
+%TMPL:DEF{"breadcrumbstail"}%%TMPL:P{"sep"}%<a href="%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%?template=newtopic" title="%TMPL:P{"NEW_HELP"}%">%MAKETEXT{"Content templates"}%</a>%TMPL:END%
+%TMPL:DEF{"topicactions"}%%TMPL:END%
+%TMPL:DEF{"newtopictitle"}%%URLPARAM{"newtopictitle"}%%TMPL:END%
+%TMPL:DEF{"newtopic"}%%URLPARAM{"newtopic"}%%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim class="tml">}%
+%TMPL:DEF{"top"}%
+---+ %MAKETEXT{"Content Templates in [_1] Web" args="<nop>%BASEWEB%"}%
+%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim class="tml">}%
+%TMPL:DEF{"content"}%<!-- -->
+
+%MAKETEXT{"The following content template are available for newly created topic in the [_1] Web:" args="<nop>%BASEWEB%"}%
+
+%SEARCH{"." type="regex" excludetopic="%CONTENTTEMPLATEFILTER{default=""}%" web="%CONTENTTEMPLATEWEB{default="%BASEWEB%"}%" topic="*Template" nonoise="on" format="   * [[$web.$topic][$topic]]" separator="$n"}%
+
+%TWISTY{
+  id="CreateNewContentTemplate"
+  link="%MAKETEXT{"Create new content template..."}%"
+  start="hide"
+  showimgleft="%ICONURLPATH{arrow-right}%"
+  hideimgleft="%ICONURLPATH{arrow-down}%"
+  linkclass="%IF{"'%CONTENTTEMPLATESTUB{default="System.ModacSkinContentTemplateStub"}%' allows 'change'" then="" else="modacHide"}%"
+}%
+---++ %MAKETEXT{"Create new content template"}%
+
+<div class="foswikiDialog foswikiFormSteps">
+%TMPL:P{"formstartstep"}%
+%TMPL:P{"topicnamestep"}%
+%TMPL:P{"formbuttons"}%
+<input type="hidden" name="templatetopic" value="%CONTENTTEMPLATESTUB{default="System.ModacSkinContentTemplateStub"}%" />
+%TMPL:P{"formendstep"}%
+</div>
+%TMPL:P{"javascript"}%
+<script type="text/javascript"><!--
+$(function() {
+	$('#newTopicForm').submit(function() {
+		var val = $('#topic').val();
+		if (! val.match(/Template$/)) val += 'Template';
+		if (val.match(/[.\/]/)) val = val.replace(/^.+\./, '');
+		val = '%CONTENTTEMPLATEWEB{default="%BASEWEB%"}%.' + val;
+		$('#topic').val(val);
+	});
+});
+// --></script>
+%ENDTWISTY%
+%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim class="tml">}%
+%TMPL:DEF{"formstartstep"}%
+%TMPL:P{"formstart"}%
+<div class="foswikiFormSteps">
+%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim class="tml">}%
+%TMPL:DEF{"formendstep"}%</div>
+%TMPL:P{"formend"}%
+<!-- -->%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim class="tml">}%
+%TMPL:DEF{"topicnamestep"}%<!-- -->
+<div class='foswikiFormStep'>
+<h3 >%MAKETEXT{"Topic name:"}%</h3>
+%TMPL:P{"topicname"}%
+<input type="checkbox" id="nonwikiword" name="nonwikiword" checked="checked" style="display: none;" />
+</div>
+<!-- -->%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim class="tml">}%
+%TMPL:DEF{"formbuttons"}%<!-- -->
+<hr />
+<div class='foswikiFormStep foswikiFormLast foswikiFormButtons'>
+%TMPL:P{"submit"}%
+</div>
+<!-- -->%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim class="tml">}%
+%TMPL:DEF{"formstart"}%<!-- -->
+<form name="newTopicForm" id="newTopicForm" action="%SCRIPTURLPATH{edit}%/%BASEWEB%/">
+<input type="hidden" name="t" value="%GMTIME{"$epoch"}%" />
+<input type="hidden" name="onlynewtopic" value="on" />
+<!-- -->%TMPL:END%
+%{</verbatim>}%
+
+
+%{<verbatim class="tml">}%
+%TMPL:DEF{"topicname"}%<!-- -->
+<input type="text" class="foswikiInputField" name="topic" id="topic" size="60" value="%TMPL:P{"newtopic"}%" />
+<div class="foswikiFormDescription">
+%MAKETEXT{"Please enter the article name without special characters."}%
+</div>
+<!--//topicname -->%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim class="tml">}%
+%TMPL:DEF{"formend"}%</form>%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim class="tml">}%
+%TMPL:DEF{"javascript"}%<!-- -->
+%TMPL:P{"defaultjavascript"}%<!-- -->
+%JQREQUIRE{"wikiword, focus"}%<!-- -->
+<!-- -->%TMPL:END%
+%{</verbatim>}%
+
+
+

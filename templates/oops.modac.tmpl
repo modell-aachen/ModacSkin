@@ -1,0 +1,18 @@
+%TMPL:INCLUDE{"oops"}%
+%TMPL:INCLUDE{"viewtopicactionbuttons"}%
+%TMPL:INCLUDE{"viewtopbar"}%
+
+%{Need to undfine it here, because a view/edit-script might have included the sidebar}%
+%TMPL:DEF{"sidebar"}%%TMPL:END%
+
+%TMPL:DEF{"bodyclassname"}%modacNoViewPage modacOopsPage%TMPL:END%
+
+%TMPL:DEF{"breadcrumb"}%%TMPL:END%
+
+%TMPL:DEF{"patterntopiccontents"}%<div class="foswikiTopic"> %TMPL:P{"content"}%</div>%TMPL:P{"topicinfo"}%%TMPL:END%
+
+%{"This must not be empty, or the top-line will not show"}%
+%TMPL:DEF{"modacActionButtons"}%&nbsp;%TMPL:END%
+
+%TMPL:DEF{"bottombarcontents"}%<div id="patternBottomBarContents"></div>%TMPL:END%
+
