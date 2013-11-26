@@ -3,7 +3,7 @@ package Foswiki::Contrib::ModacSkin;
 use strict;
 use warnings;
 
-our $VERSION = '$Rev: 8536 $';
+our $VERSION = '1.4';
 our $RELEASE = "1.4";
 our $SHORTDESCRIPTION = 'Modell Aachen Skin (Mediawiki New Skin)';
 
