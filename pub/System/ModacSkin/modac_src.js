@@ -74,5 +74,45 @@ jQuery(function($){
             if($.blockUI) $.blockUI({message: $message.text()});
         });
     });
+
+    // hanlde modacjqWikiWord and modacjqWikiWordController
+    $('.modacjqWikiWordController').livequery(function() {
+        // This function will
+        //    * grab all modacjqWikiWord inside the controller
+        //       * make each modacjqWikiWord's child and make it a proper jqWikiWord
+        //          * replace modacjqWikiWord by it's child (in the dom)
+        //          * select all 'source' selectors relative to the controller
+        //          * make sure each source has a unique id
+        //          * rewrite each selector to that id
+        //          * write the jqWikiWord options to modacjqWikiWord's child and make it a jqWikiWord
+        //       * When the enclosing form is being submittet touch each source (to make sure jqWikiWord did it's job at least once)
+        var $controller = $(this);
+        var $form;
+        if($controller.is('form')) {
+            $form = $controller;
+        } else {
+            $form = $controller.closest('form');
+        }
+        $controller.find('.modacjqWikiWord').each(function(){
+            var $this = $(this);
+            var $child = $this.children().first();
+            $this.replaceWith($child);
+            var options = $this.metadata();
+            var s = options.source;
+            if(!s) return;
+            var $s = $(s);
+            var id = $s.attr('id');
+            if(!id) {
+                id = foswiki.getUniqueID();
+                $s.attr('id', id);
+            }
+            options.source = '#'+id;
+            if($this.hasClass('modacjqWikiWordTouch')) $form.submit(function() {
+                $s.change();
+            });
+            $child.addClass(JSON.stringify(options));
+            $child.addClass('jqWikiWord');
+        });
+    });
 });
 

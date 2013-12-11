@@ -577,6 +577,9 @@ msgstr "Meine Seite"
 msgid "Name of copy"
 msgstr "Name der Kopie"
 
+msgid "Title of copy"
+msgstr "Titel der Kopie"
+
 #: templates/more.modac.tmpl:168
 msgid "Newer revision:"
 msgstr "Neuere Revision:"

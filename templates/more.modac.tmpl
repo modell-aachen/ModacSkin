@@ -33,15 +33,38 @@
 %TMPL:END%
 
 
+%{<verbatim class="tml">}%
+%TMPL:DEF{"topicname"}%<!-- -->
+<div class="topic_manual">
+<span class="modacjqWikiWord modacjqWikiWordTouch {source:'input[name=inputtopic]'}"><input type="hidden" class="foswikiInputField inputName" name="topic" id="topic" value="%TOPIC%Copy" /></span>
+<span class="modacjqWikiWord {source:'input[name=TopicTitle]'}"><input type="text" class="foswikiInputField" name="inputtopic" size="60" /></span>
+<div class="foswikiFormDescription">
+%MAKETEXT{"Please enter the article name without special characters."}%
+</div>
+</div>
+<!--//topicname -->%TMPL:END%
+%{</verbatim>}%
 
 %TMPL:DEF{"copy"}%<h2>%MAKETEXT{"Copy topic"}%</h2>
 <p>%MAKETEXT{"Copy this topic (and all attachments) to a new topic."}%</p>
-<form action="%SCRIPTURL{manage}%/%WEB%/" method="post">
+<form action="%SCRIPTURL{manage}%/%WEB%/" method="post" class="modacjqWikiWordController">
 <div class="foswikiFormSteps">
 <div class="foswikiFormStep">
+<h3>%MAKETEXT{"Title of copy"}%</h3>
+<p><input type="text" name="TopicTitle" class="foswikiInputField" value="%TOPICTITLE% Copy" size="30" /></p>
+%TWISTY{
+    showlink="%MAKETEXT{"Advanced options..."}%"
+    hidelink="%MAKETEXT{"Hide advanced options..."}%"
+    showimgleft="%ICONURLPATH{toggleopen-small}%"
+    hideimgleft="%ICONURLPATH{toggleclose-small}%"
+    remember="off"
+    start=hide"
+}%
 <h3>%MAKETEXT{"Name of copy"}%</h3>
-<p><input type="text" name="topic" class="foswikiInputField" value="%TOPIC%Copy" size="30" /></p>
+%TMPL:P{"topicname"}%
 %TMPL:P{"nonwikiword"}%
+%ENDTWISTY%
+<input type="checkbox" id="nonwikiword" name="nonwikiword" checked="checked" style="display: none;" />
 </div>
 <div class="foswikiFormStep foswikiLast">
 <p><input type="submit" class="foswikiButton" value="%MAKETEXT{"Copy topic..."}%" /></p>
