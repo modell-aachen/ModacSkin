@@ -1508,3 +1508,39 @@ div.ajaxspinner {
     min-width: 66px;
     height: 66px;
 }
+
+.modacMoreMenu li.modacMoreDynamic ul li span a {
+	padding-left: 25px;
+	background-repeat: no-repeat;
+	background-position: 4px center;
+}
+.modacMoreMenu li ul li span.moremenue-attach a {
+	background-image: url(../FamFamFamSilkIcons/attach.png);
+}
+.modacMoreMenu li ul li span.moremenue-print a {
+	background-image: url(../FamFamFamSilkIcons/page_white_acrobat.png);
+}
+.modacMoreMenu li ul li span.moremenue-history a {
+	background-image: url(../FamFamFamSilkIcons/time.png);
+}
+.modacMoreMenu li ul li span.moremenue-wikitext a {
+	background-image: url(../FamFamFamSilkIcons/page_white_code.png);
+}
+.modacMoreMenu li ul li span.moremenue-managepage a {
+	background-image: url(../FamFamFamSilkIcons/page_white_gear.png);
+}
+.modacMoreMenu li ul li span.morelink-settings a {
+	background-image: url(../FamFamFamSilkIcons/page_white_wrench.png);
+}
+.modacMoreMenu li ul li span.morelink-setparent a {
+	background-image: url(../FamFamFamSilkIcons/chart_organisation.png);
+}
+.modacMoreMenu li ul li span.morelink-rename a {
+	background-image: url(../FamFamFamSilkIcons/page_white_go.png);
+}
+.modacMoreMenu li ul li span.morelink-copy a {
+	background-image: url(../FamFamFamSilkIcons/page_white_copy.png);
+}
+.modacMoreMenu li ul li span.morelink-delete a {
+	background-image: url(../FamFamFamSilkIcons/page_white_delete.png);
+}
