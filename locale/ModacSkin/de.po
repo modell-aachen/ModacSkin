@@ -1436,4 +1436,11 @@ msgstr "Verweise in Seiten ändern, die auf %1 zeigen (alle Webs):"
 msgid "Change links in topics that refer to %1 in the %2 Web:"
 msgstr "Verweise in Seiten ändern, die auf %1 zeigen (nur im %2 Web):"
 
+msgid "Advanced options..."
+msgstr "Erweiterte Optionen..."
 
+msgid "Hide advanced options..."
+msgstr "Erweiterte Optionen ausblenden..."
+
+msgid "The name of the topic is preset and cannot be changed."
+msgstr "Der Name der Seite ist im Vorhinein festgelegt und kann nicht geändert werden."

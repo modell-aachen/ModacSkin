@@ -105,7 +105,7 @@ jQuery(function($){
         });
     });
 
-    // hanlde modacjqWikiWord and modacjqWikiWordController
+    // handle modacjqWikiWord and modacjqWikiWordController
     $('.modacjqWikiWordController').livequery(function() {
         // This function will
         //    * grab all modacjqWikiWord inside the controller
