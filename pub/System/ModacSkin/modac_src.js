@@ -1,4 +1,14 @@
 jQuery(function($){
+    if(typeof foswiki != 'object') {
+        if(console && console.log) {
+            console.log("foswiki object not found");
+        }
+        return;
+    }
+
+    var ModacSkin = foswiki.ModacSkin = {
+    };
+
     // Auto-submit autocomplete fields depending on class
     (function($tosubmit) {
         $tosubmit.on('autocompleteselect', function(e, ui) { $(this).val(ui.item.value).closest('form').submit(); });

@@ -1,4 +1,9 @@
 jQuery(function($){
+    var ModacSkin = foswiki.ModacSkin;
+    if(typeof ModacSkin != 'object') {
+        if(console && console.log) console.log("Could not find foswiki.ModacSkin");
+        return;
+    }
     if ($('.modacMoreDynamic').length == 0) return;
     $('.jqmenu').supersubs({
         minWidth: 12, /* minimum width of sub-menus in em units */
