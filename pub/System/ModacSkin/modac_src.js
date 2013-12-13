@@ -7,6 +7,26 @@ jQuery(function($){
     }
 
     var ModacSkin = foswiki.ModacSkin = {
+        // Default 'Message' for blocking with jQuery block.
+        // Usually just a spinner of some sorts.
+        blockDefaultOptions: {
+            message: '<div class="ajaxspinner"></div>',
+            css: {width: 'auto', height: 'auto'}
+        },
+
+        // Use this function to signal a busy-state.
+        // Usually simply blocks the screen.
+        blockUI : function() {
+            var left = ($(window).width() / 2) - 33;
+            var options = $.extend(true, {css: {left: left}}, ModacSkin.blockDefaultOptions);
+            if($.blockUI) $.blockUI(options);
+        },
+
+        // Use this function to signal that you are no longer busy.
+        unblockUI: function() {
+            if($.unblockUI) $.unblockUI();
+        },
+
     };
 
     // Auto-submit autocomplete fields depending on class

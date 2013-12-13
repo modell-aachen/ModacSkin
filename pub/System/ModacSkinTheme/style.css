@@ -1476,3 +1476,11 @@ img.modacFlag {
 .atpClosed {
     background-color: transparent;
 }
+div.ajaxspinner {
+    background-color: black;
+    background-image: url('ajax-loader.gif');
+    background-repeat: no-repeat;
+    background-position: center center;
+    min-width: 66px;
+    height: 66px;
+}
