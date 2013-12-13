@@ -25,20 +25,37 @@ Include the following section anywhere to be able to put topic selectors on that
 %JQREQUIRE{"select2"}%%JQREQUIRE{"tabpane"}%
 %ADDTOZONE{"head"
   id="ModacAjaxHelper::selecttopic::l10n"
-  text="<meta name=\"l10n_modac_selecttopic_noparent\" content=\"%MAKETEXT{"No topic parent"}%\" />
-	<meta name=\"l10n_modac_selecttopic_nomatches\" content=\"%MAKETEXT{"No matches"}%\" />
-	<meta name=\"l10n_modac_selecttopic_searching\" content=\"%MAKETEXT{"Searching..."}%\" />"}%
+  text="%INCLUDE{"%TOPIC%" section="head"}%"
+}%
 %ADDTOZONE{"script"
   id="ModacAjaxHelper::selecttopic"
   requires="JQUERYPLUGIN::SELECT2,JQUERYPLUGIN::TABPANE,JQUERYPLUGIN::METADATA,JQUERYPLUGIN::FOSWIKI::PREFERENCES"
-  text="<style type=\"text/css\">
-	.topicselect_container { padding: 3px; border-top: solid 1px #eee; }
-	.topicselect_container:first-child { border-top: none; }
-	.topicselect_label { font-weight: bold; margin-bottom: 2px; }
-	.topicselect_sublabel { font-size: 70%; color: #888; }
-	.select2-highlighted .topicselect_sublabel { color: #ddd; }
-	.jqTopicSelect { min-width: 60ex; }
-	.select2-drop { font-family: sans-serif; }
-</style><script type=\"text/javascript\" src=\"%PUBURLPATH%/System/ModacSkin/topicselect.js\"></script>"}%
+  text="%INCLUDE{"%TOPIC%" section="script"}%"
+"}%
 %ENDSECTION{"selecttopic"}%
+</verbatim>
+
+The following styles and scripts will be included automatically.
+
+Please keep the comments near START-/ENDSECTION to avoid insertion of additional paragraphs in the dialog.
+
+<verbatim>
+%STARTSECTION{"head"}%<!-- section: head -->
+<meta name='l10n_modac_selecttopic_noparent' content='%MAKETEXT{"No topic parent"}%' />
+<meta name='l10n_modac_selecttopic_nomatches' content='%MAKETEXT{"No matches"}%' />
+<meta name='l10n_modac_selecttopic_searching' content='%MAKETEXT{"Searching..."}%' />
+<!-- endsection -->%ENDSECTION{"head"}%
+</verbatim>
+<verbatim>
+%STARTSECTION{"script"}%<!-- section: script -->
+<style type='text/css'>
+  .topicselect_container { padding: 3px; border-top: solid 1px #eee; }
+  .topicselect_container:first-child { border-top: none; }
+  .topicselect_label { font-weight: bold; margin-bottom: 2px; }
+  .topicselect_sublabel { font-size: 70%; color: #888; }
+  .select2-highlighted .topicselect_sublabel { color: #ddd; }
+  .jqTopicSelect { min-width: 60ex; }
+  .select2-drop { font-family: sans-serif; }
+</style><script type='text/javascript' src='%PUBURLPATH%/System/ModacSkin/topicselect.js'></script>
+<!-- endsection -->%ENDSECTION{"script"}%
 </verbatim>
