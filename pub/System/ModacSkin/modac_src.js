@@ -186,6 +186,8 @@ jQuery(function($){
         } });
         return false;
     };
+
+    // Inhibit clicks on MoreMenue und submenues
     $('.modacMoreDynamicLink a').click(function() { return false; });
     $('.morelink-prefs').click(function(){ $('#more_editpref_form').submit();return false; });
     $('.morelink-copy').click(function(){ return menuClickHandler('copy'); });
