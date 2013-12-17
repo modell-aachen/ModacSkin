@@ -9,7 +9,9 @@
 
 %TMPL:DEF{"titleaction"}%%MAKETEXT{"(compare)"}%%TMPL:END%
 
-%TMPL:DEF{"pagetitle"}% %MAKETEXT{"Difference:"}% %TOPIC% (%REVTITLE2% vs. %REVTITLE1%) %TMPL:END%
+%TMPL:DEF{"pagetitle"}%%IF{"$'URLPARAM{external}'" then="$percentTMPL:P{pagetitle_ext}$percent" else="$percentTMPL:P{pagetitle_rev}$percent"}%%TMPL:END%
+%TMPL:DEF{"pagetitle_rev"}% %MAKETEXT{"Difference:"}% %TOPIC% (%REVTITLE2% vs. %REVTITLE1%) %TMPL:END%
+%TMPL:DEF{"pagetitle_ext"}% %MAKETEXT{"Difference:"}% %TOPIC% vs. %URLPARAM{"external"}% %TMPL:END%
 
 %TMPL:DEF{"modacActionButtons"}%%TMPL:P{"modacActionButtonsVIEW"}%%TMPL:END%
 
