@@ -640,6 +640,12 @@ jQuery(function($){
         var $this = $(this);
         $this.click({link: $this}, ModacSkin.wcntHandler);
     });
+
+    // Block UI when clicking blockOnClick links
+    $('.blockOnClick a, a.blockOnClick').click(function() {
+        ModacSkin.blockUI();
+    });
+
     // block UI on submit when message is provided
     $('.modacSubmitMessage').livequery(function() {
         var $message = $(this);

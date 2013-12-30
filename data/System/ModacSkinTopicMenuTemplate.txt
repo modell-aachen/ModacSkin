@@ -4,7 +4,7 @@
 %TMPL:DEF{"modacMoreSubmenuView"}%
 <ul>
 <!-- ATTACHMENTS --><li class='modacDialogable'>%TMPL:P{"modacAttach"}%</span></li>
-<!-- REVISION HISTORY --><li><span>%IF{"context CompareRevisionsAddonPluginEnabled" then="<a href='%SCRIPTURLPATH{"oops"}%/%BASEWEB%/%BASETOPIC%?template=oopshistory&history=on' rel='nofollow' %MAKETEXT{"title='View topic history' accesskey='h'>&History"}%</a>" else="<a href='%SCRIPTURLPATH{"rdiff"}%/%BASEWEB%/%BASETOPIC%?type=history&history=on' rel='nofollow' %MAKETEXT{"title='View topic history' accesskey='h'>&History"}%</a>"}%</span></li>
+<!-- REVISION HISTORY --><li class='blockOnClick'><span>%IF{"context CompareRevisionsAddonPluginEnabled" then="<a href='%SCRIPTURLPATH{"oops"}%/%BASEWEB%/%BASETOPIC%?template=oopshistory&history=on' rel='nofollow' %MAKETEXT{"title='View topic history' accesskey='h'>&History"}%</a>" else="<a href='%SCRIPTURLPATH{"rdiff"}%/%BASEWEB%/%BASETOPIC%?type=history&history=on' rel='nofollow' %MAKETEXT{"title='View topic history' accesskey='h'>&History"}%</a>"}%</span></li>
 <!-- EDIT WIKITEXT --><li class='requireModacChangePermission'>%TMPL:P{"raw_edit_link"}%</li>
 <li><span class="modacMoreDynamicLink"><a href='%SCRIPTURLPATH{view}%/%BASEWEB%/%BASETOPIC%?template=more'>%MAKETEXT{"Manage page"}% &raquo;</a></span><ul>
   <!-- TOPIC PREFERENCES --><li class='requireModacChangePermission'><span class='modacDialogable morelink-settings'><a href=%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%?template=more' class='modacChanging'>%MAKETEXT{"Edit topic preference settings"}%</a></span></li>
