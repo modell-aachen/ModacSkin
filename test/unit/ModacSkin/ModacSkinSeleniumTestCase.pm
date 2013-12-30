@@ -310,6 +310,27 @@ sub verify_deadlink {
     $this->{selenium}->click_ok('css=span.ui-icon-cancel');
 }
 
+# Test if...
+# ...the submenue appears right of the normal menue
+sub verify_menuePosition {
+    my ( $this ) = @_;
+
+    $this->loginto(Helper::WEB, Helper::MEASURE);
+
+    my $width = $this->{selenium}->get_element_width('css=#fixedWidth11em');
+    my $extrawidth = $this->{selenium}->get_element_width('css=#fixedWidth1em');
+    my $paddingrightwidth = $this->{selenium}->get_element_width('css=#fixedWidth04em');
+    my $paddingleftwidth = 25;
+    my $roundingerr = 3;
+
+    $this->openTopicSubMenue();
+    my $leftMenue = $this->{selenium}->get_element_position_left('css=.modacMoreMenu li ul li:first');
+    my $leftSubMenue = $this->{selenium}->get_element_position_left('css=.modacMoreMenu li ul li ul li:first');
+
+    $this->assert($leftSubMenue - $leftMenue >= $width, "Submenu appears to be misplaced to the left (11em: $width menue: $leftMenue submenue: $leftSubMenue");
+    $this->assert($leftSubMenue - $leftMenue <= $width + $extrawidth + $paddingrightwidth + $paddingleftwidth + $roundingerr, "Submenu appears to be misplaced to the right (11em: $width menue: $leftMenue submenue: $leftSubMenue");
+}
+
 # Make sure there is currently no popup visible.
 # Only registers 'modacAjaxDialog' popups.
 sub assertNoPopup {

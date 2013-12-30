@@ -15,12 +15,13 @@ use constant ATTACHMENTTEXT2 => 'This is another file, that will be attached in 
 use constant NOFAV => 'FavouritesDisabled';
 use constant NOFAVVIEW => 'FavouritesDisabledView';
 use constant DEADLINKS => 'DeadLinks';
+use constant MEASURE => 'TestMeasures';
 
 our @EXPORT_OK = qw ( WEB );
 our %EXPORT_TAGS = (
     webs => [ 'WEB', 'TRASH' ],
     setup => [ 'set_up_users', 'set_up_webs' ],
-    topics => [ 'NOFAV', 'DEADLINKS' ]
+    topics => [ 'NOFAV', 'DEADLINKS', 'MEASURE' ]
 );
 
 # Creates files to attach
@@ -95,6 +96,7 @@ sub set_up_webs {
         Foswiki::Func::saveTopic( $ps, NOFAVVIEW.'Template', undef, "%TMPL:INCLUDE{\"view\"}%\n%TMPL:DEF{\"modacFavTopic\"}%%TMPL:END%" );
         Foswiki::Func::saveTopic( $ps, NOFAV, undef, "   * Set VIEW_TEMPLATE = ".NOFAVVIEW );
         Foswiki::Func::saveTopic( $ps, DEADLINKS, undef, "   * [[DoesNotExist]]\n   * [[%WEB%.DoesNotExistAsWell][DoesNotExistAsWell]]" );
+        Foswiki::Func::saveTopic( $ps, MEASURE, undef, "   * 11em: <div style=\"background-color:red; width: 11em; height: 1em;\" id=\"fixedWidth11em\"></div>\n   * 1em: <div style=\"background-color:red; width: 1em; height: 1em;\" id=\"fixedWidth1em\"></div>\n   * 0.4em: <div style=\"background-color:red; width: 0.4em; height: 1em;\" id=\"fixedWidth04em\"></div>\n" );
 
         $ps = TRASH;
         $webs->{$ps} = $other->populateNewWeb( $ps, "_default" );

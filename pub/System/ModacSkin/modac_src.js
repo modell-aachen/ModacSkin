@@ -698,8 +698,8 @@ jQuery(function($){
 
     // initialize superfish menue
     $('.jqmenu').supersubs({
-        minWidth: 12, /* minimum width of sub-menus in em units */
-        maxWidth: 30, /* maximum width of sub-menus in em units */
+        minWidth: 13, /* minimum width of sub-menus in em units */
+        maxWidth: 13, /* maximum width of sub-menus in em units */
         extraWidth: 1 /* extra width can ensure lines don't sometimes turn over
                          due to slight rounding differences and font-family */
     });
