@@ -275,6 +275,41 @@ sub verify_loginBoxAttachment {
     $this->assert( $this->{selenium}->get_eval('selenium.browserbot.getUserWindow().jQuery("div.blockUI:visible").length') == 0 );
 }
 
+# Test if...
+# ...clicking on a dead link will bring up the WCNT dialog
+# ...#topic and #topictitle will be set correctly, even if dialog was reopened
+sub verify_deadlink {
+    my ( $this ) = @_;
+
+    $this->loginto(Helper::WEB, Helper::DEADLINKS);
+
+    $this->assertNoPopup();
+    $this->{selenium}->click_ok('link=DoesNotExist');
+    $this->waitForPopup();
+    $this->{selenium}->wait_for_condition('selenium.browserbot.getCurrentWindow().jQuery(".InputsPrepared:visible").length', $this->{selenium_timeout});
+    $this->assert_equals('DoesNotExist', $this->{selenium}->get_value('css=#topictitle'));
+    $this->assert_equals(Helper::WEB.'.DoesNotExist', $this->{selenium}->get_value('css=#topic'));
+    $this->{selenium}->click_ok('css=span.ui-icon-cancel');
+
+    # same link again
+    $this->assertNoPopup();
+    $this->{selenium}->click_ok('link=DoesNotExist');
+    $this->waitForPopup();
+    $this->{selenium}->wait_for_condition('selenium.browserbot.getCurrentWindow().jQuery(".InputsPrepared:visible").length', $this->{selenium_timeout});
+    $this->assert_equals('DoesNotExist', $this->{selenium}->get_value('css=#topictitle'));
+    $this->assert_equals(Helper::WEB.'.DoesNotExist', $this->{selenium}->get_value('css=#topic'));
+    $this->{selenium}->click_ok('css=span.ui-icon-cancel');
+
+    # different link, #topictitle and #topic have to change now
+    $this->assertNoPopup();
+    $this->{selenium}->click_ok('link=DoesNotExistAsWell');
+    $this->waitForPopup();
+    $this->{selenium}->wait_for_condition('selenium.browserbot.getCurrentWindow().jQuery(".InputsPrepared:visible").length', $this->{selenium_timeout});
+    $this->assert_equals('DoesNotExistAsWell', $this->{selenium}->get_value('css=#topictitle'));
+    $this->assert_equals(Helper::WEB.'.DoesNotExistAsWell', $this->{selenium}->get_value('css=#topic'));
+    $this->{selenium}->click_ok('css=span.ui-icon-cancel');
+}
+
 # Make sure there is currently no popup visible.
 # Only registers 'modacAjaxDialog' popups.
 sub assertNoPopup {

@@ -271,6 +271,135 @@ jQuery(function($){
             };
         },
 
+        // WebCreateNewTopic-Links
+        wcntHandler : function(ev) {
+            // from http://stackoverflow.com/questions/901115/how-can-i-get-query-string-values
+            function getParameterByName(href, name) {
+                name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+                var regex = new RegExp("[\\?&;]" + name + "=([^&#;]*)"),
+                    results = regex.exec(href);
+                return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+            }
+
+            // prepare the input fields
+            //    * hide non-used fields
+            //    * set values
+            //    * reload templates if needed
+            //    * add InputsPreparedFlag when finished
+            function prepareInputs() {
+                var $dialog = jQuery('#modacWCNTDialog');
+                var wcntInfo = $dialog.data('wcntInfo');
+                if(wcntInfo === undefined) {
+                    if(console && console.log) {
+                        console.log("No wcntInfo!");
+                    }
+                    return;
+                }
+                var newtopictitle=wcntInfo.newtopictitle;
+                var newtopic=wcntInfo.newtopic || '';
+                var newweb=wcntInfo.newweb;
+
+                var active,inactive;
+                if(newtopic) {
+                    active=jQuery('.topic_static');
+                    inactive=jQuery('.topic_manual');
+                    active.find('.inputName').val(newtopic);
+                } else {
+                    active=jQuery('.topic_manual');
+                    inactive=jQuery('.topic_static');
+                }
+                active.find('.inputName').attr('name', 'topic').attr('id', 'topic_');
+                inactive.find('.inputName').attr('name', 'topicname_disabled').attr('id', 'topic_disabled');
+                active.find('.inputName').attr('id', 'topic');
+                active.show();
+                inactive.hide();
+                // touch the input field so jqWikiWord does it's job
+                jQuery('#topictitle').val(newtopictitle).change();
+
+                // reload template selector if required
+                var templatesWeb = $dialog.data('templatesWeb');
+                if(newweb !== templatesWeb) {
+                    var $tmpl = $dialog.find('.modacTopicTemplate');
+                    if($tmpl.block) $tmpl.block(ModacSkin.blockDefaultOptions);
+                    $tmpl.load(
+                        $dialog.data('restUri') + '/RenderPlugin/template?name=WebCreateNewTopicDialog;render=on;expand=topictemplatestep;topic=' + (newtopic || newweb + '.WebHome') // the topic doesn't matter so just make it 'WebHome'
+                    );
+                    $dialog.data('templatesWeb', newweb);
+                }
+                $dialog.addClass('InputsPrepared');
+            }
+            // Reset dialog for preparation
+            function unprepareInputs() {
+                var $dialog = jQuery('#modacWCNTDialog');
+                $dialog.removeClass('InputsPrepared');
+            }
+
+            var $target = $(ev.target);
+            var $dialogID = $('#modacWCNTDialog');
+
+            // Extract data from link
+            var newtopic = getParameterByName($target.attr('href'), 'newtopic');
+            var newweb = /^(.*)\.|\//.exec(newtopic);
+            if(newweb) {
+                newweb=newweb[1];
+            } else {
+                newweb = foswiki.getPreference('WEB');
+            }
+            var infodata = {
+                newtopic: newtopic,
+                newweb: newweb,
+                newtopictitle: getParameterByName($target.attr('href'), 'newtopictitle'),
+                topicparent: getParameterByName($target.attr('href'), 'topicparent')
+            }
+
+            if($dialogID.length == 0) {
+                var baseWebTopic;
+                if(infodata.newtopic) {
+                    baseWebTopic = infodata.newtopic;
+                    if(baseWebTopic.indexOf('.') < 0) baseWebTopic = encodeURIComponent(foswiki.getPreference('WEB'))+'.'+baseWebTopic; // Make sure there is a web or the rest call will fail
+                } else {
+                    baseWebTopic = encodeURIComponent(newweb + '.' + foswiki.getPreference('TOPIC'));
+                }
+
+                ModacSkin.blockUI();
+                var restUri = foswiki.getPreference('SCRIPTURL') +'/rest'+ foswiki.getPreference('SCRIPTSUFFIX');
+                $.ajax(restUri + '/RenderPlugin/template?name=WebCreateNewTopicDialog;render=on;expand=dialog;topic=' + baseWebTopic + ';topicparent='+baseWebTopic, {
+                    success: function(data) {
+                        ModacSkin.showDialog(data, function($data, $dialog) {
+                                var $form = $dialog.find('form');
+                                $form.submit(function() {
+                                    if($dialog.block) $dialog.block(ModacSkin.blockDefaultOptions);
+                                    jQuery('#inputtopic').change(); // make sure new topic name is beeing copied
+                                });
+
+                                $dialog.attr('id', 'modacWCNTDialog');
+
+                                // store stuff
+                                $dialog.data('templatesWeb', newweb);
+                                $dialog.data('restUri', restUri);
+                                $dialog.data('wcntInfo', infodata);
+
+                                $dialog.on('dialogopen', prepareInputs);
+                                $dialog.on('dialogclose', unprepareInputs);
+                                prepareInputs(); // dialog is already open, so dialogopen won't fire
+                            }, undefined, {});
+                    }
+                });
+            } else {
+                // Link was clicked before, copy new data and show it again
+                $dialogID.data('wcntInfo', infodata);
+                if($dialogID.dialog("isOpen")) {
+                    // however this has happened
+                    // close the dialog so it will readout new web.topic
+                    $dialogID.dialog("close");
+                }
+                $dialogID.dialog("open");
+            }
+
+            // alrighty, inhibit the click
+            return false;
+        },
+
         // Cache for called TopicMenue dialogs
         menuDialogs: {},
 
@@ -506,6 +635,11 @@ jQuery(function($){
         $form.submit();
     });
 
+    // attach WCNThandler
+    $('.foswikiNewLink, .modacNewLink').livequery(function() {
+        var $this = $(this);
+        $this.click({link: $this}, ModacSkin.wcntHandler);
+    });
     // block UI on submit when message is provided
     $('.modacSubmitMessage').livequery(function() {
         var $message = $(this);

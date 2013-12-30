@@ -20,6 +20,7 @@ data/System/ModacSkinUserEditTemplate.txt 0664
 data/System/ModacSkinUserViewTemplate.txt 0664
 data/System/ModacSkinUserAutocompleteTemplate.txt 0664
 data/System/ModacSkinWebChangesViewTemplate.txt 0664
+data/System/ModacSkinWebCreateNewTopicDialogTemplate.txt 0664
 data/System/ModacSkinWebCreateNewTopicTemplate.txt 0664
 data/System/ModacSkinWebList.txt 0664
 data/System/WebBottomBarDefault.txt 0664

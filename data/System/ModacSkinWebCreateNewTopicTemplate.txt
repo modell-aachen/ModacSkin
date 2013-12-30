@@ -151,9 +151,11 @@ var URL_TEMPLATE = '$percntURLPARAM{template}$percnt';
 
 %{<verbatim class="tml">}%
 %TMPL:DEF{"topictemplatestep"}%<!-- -->
+<div class='modacTopicTemplate'>
 <div class='foswikiFormStep'>
 <h3 >%MAKETEXT{"Use template:"}%</h3>
 %TMPL:P{"topictemplate"}%
+</div>
 </div>
 <!-- -->%TMPL:END%
 %{</verbatim>}%
@@ -212,6 +214,7 @@ var URL_TEMPLATE = '$percntURLPARAM{template}$percnt';
 %{<verbatim class="tml">}%
 %TMPL:DEF{"topicparent_select"}%<!-- -->
 <select name="topicparent" class="foswikiSelect">
+<option value="%SUBST{text="%URLPARAM{"topicparent" default="WebHome"}%" pattern="%WORKFLOWSUFFIX%$" format=""}%" selected="selected">%SUBST{text="%URLPARAM{"topicparent" default="WebHome"}%" pattern="%WORKFLOWSUFFIX%$" format=""}%</option>
 %SEARCH{
   "1"
   scope="topic"

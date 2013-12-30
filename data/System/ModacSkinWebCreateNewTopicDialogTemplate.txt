@@ -1,0 +1,19 @@
+%TMPL:INCLUDE{"WebCreateNewTopic"}%
+
+%{ ################################################################################ }%
+%TMPL:DEF{"dialog"}%<noautolink>
+<div class="modacDialogTitle">%MAKETEXT{"Create New Topic"}%</div>
+<div class="modacDialogContents">
+  %TMPL:P{"content"}%<!-- -->
+  %TMPL:P{"javascript"}%<!-- -->
+  %INCLUDE{"%SYSTEMWEB%.ModacAjaxHelper" section="head"}%<!-- head -->
+  %INCLUDE{"%SYSTEMWEB%.ModacAjaxHelper" section="script"}%<!-- script -->
+</div>
+</noautolink>%TMPL:END%
+
+%{ ################################################################################ }%
+%TMPL:DEF{"formbuttons"}%<!-- -->
+  <a class="jqUIDialogButton jqUIDialogSubmit {icon:'ui-icon-circle-check'}">%MAKETEXT{"Create new topic"}%</a>
+  <a class="jqUIDialogButton jqUIDialogClose {icon:'ui-icon-cancel'}">%MAKETEXT{"Cancel"}%</a>
+<!-- -->%TMPL:END%
+
