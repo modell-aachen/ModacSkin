@@ -769,6 +769,12 @@ a.foswikiSubmit:visited:active {
 #foswikiLogin .foswikiFormSteps {
 	border:none;
 }
+.ui-dialog .modacDialog.ui-dialog-content {
+	padding: 0px;
+}
+.modacDialog.ui-dialog-content .foswikiFormSteps {
+	background-color: transparent;
+}
 #foswikiLogin .patternLoginNotification {
 	padding-left:.5em;
 	padding-right:.5em;
@@ -1239,6 +1245,23 @@ html>body #patternSideBarContents li { /* Mozilla */
 .patternBorder {
 	border-style:solid;
 	border-width:1px;
+}
+.modacAjaxDialog .patternBorder,
+.modacAjaxDialog .patternBorder .patternBorder {
+	border:none;
+}
+.modacAjaxDialog .modacDialogButton,
+div.modacDialogDefaults {
+	display: none;
+}
+.modacAjaxDialog div.modacDialogContents {
+	border:1px solid #DDD;
+}
+.modacAjaxDialog div.modacDialogContents>div>p {
+	padding: 0px 5px;
+}
+.modacAjaxDialog div.foswikiTopic {
+	padding: 0px;
 }
 .patternBorder .patternBorder {
 	border-style:solid none none none;

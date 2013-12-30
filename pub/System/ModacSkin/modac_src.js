@@ -7,6 +7,208 @@ jQuery(function($){
     }
 
     var ModacSkin = foswiki.ModacSkin = {
+        // Creates a string to use with jQuery's UI Dialog widget.
+        // Just add this string to the dom and you'll get a dialog.
+        //
+        // Parameters:
+        //    * options: overrides the default options used for ModacSkin
+        makeDialogString : function(options) {
+            if(options === undefined) {
+                options = {};
+            }
+            return '<div class="jqUIDialog {width:' + ((options.width!==undefined)?options.width:'600') +
+                ', modal:' + ((options.modal!==undefined)?options.modal:'true') +
+                ',draggable:' + ((options.draggable!==undefined)?options.draggable:'true') +
+                ',autoOpen:' + ((options.autoOpen!==undefined)?options.autoOpen:'true') +
+                ',resizable:' + ((options.resizable!==undefined)?options.resizable:'true') +
+                ',closeOnEscape:' + ((options.closeOnEscape!==undefined)?options.closeOnEscape:'true') +
+                ((options.title!==undefined)?(',title:\''+options.title.replace("'","\\'")+'\''):'') +
+                '} '+((options.dialogClass!==undefined)?options.dialogClass:'modacAjaxDialog')+'"></div>';
+        },
+
+        // Display data with forms as a dialog.
+        // Creates dialog, takes care of the buttons and title, unblock screen.
+        // If there is no .modacDialogContents the first h2 element will be used
+        // as title.
+        //
+        // Parameters:
+        //    * data: html of the contents to be displayed
+        //    * beforeInit($contents, $dialog): callback function that will be
+        //       executed before the dialog will be shown.
+        //       callback parameters:
+        //          * $contents: jQuery object of the contents of the dialog
+        //          * $dialog: dialog object
+        //    * $loadingDialog: this dialog will be closed when the new dialog
+        //       is beeing shown. If the dialog has been closed in the mean time
+        //       the new dialog will not be shown.
+        //    * options: overwrite the default options for the dialog
+        showDialog : function(data, beforeInit, $loadingDialog, options) {
+            var $data = $('<div ></div>').append(data);
+
+            var $contents = $data.find('.modacDialogContents');
+            if($contents.length) {
+                options.title = $data.find('.modacDialogTitle').remove().html();
+            } else {
+                options.title = $data.find('h2:first').remove().text();
+                $contents = $('<div class="modacDialogContents"></div>').append($data);
+            }
+
+            // hide buttons
+            $data.find('.patternTopicAction').hide();
+
+            options.autoOpen = 'true';
+            if($loadingDialog !== undefined) {
+                try {
+                    if($loadingDialog.dialog('isOpen')) {
+                        $loadingDialog.dialog('close');
+                    } else {
+                        options.autoOpen = 'false';
+                    }
+                } catch(err) {
+                    // dialog not yet initialized
+                    $loadingDialog.on('dialogshow', function(){$loadingDialog.dialog('close');});
+                }
+                $loadingDialog.remove();
+            }
+            var $dialog = $(ModacSkin.makeDialogString(options)).hide();
+            $dialog.append($contents);
+            var inited = false;
+            $dialog.on('dialogopen', function(){
+                if(inited) return;
+                inited = true;
+                if(typeof beforeInit === 'function') beforeInit($contents, $dialog);
+                ModacSkin.ajaxSubmitButtons($contents,$dialog);
+            });
+            $dialog.find('.modacHideDialog').hide();
+            $('body').append($dialog);
+            ModacSkin.unblockUI();
+            return $dialog;
+        },
+
+        // Prepares data received from an ajax-call for display in a dialog:
+        //    * creates buttons
+        //    * submit form for corresponding buttons
+        //
+        // You usually want ModacSkin.showDialog instead of this method.
+        //
+        // This function should be called when the dialog is already in the dom
+        // (on dialogopen).
+        //
+        // Parameters:
+        //    * $data: data to be displayed in the dialog
+        //    * $dialog: a dialog object already in the dom
+        // All parameters must be jQuery-objects.
+        ajaxSubmitButtons: function($data, $dialog) {
+            // Prepare buttons:
+            //    * pull jqUIDialogButtons from $data and put them to the button
+            //      area of the $dialog, just like the jqDialog initializer does
+            //    * pull <input type="submit"...> and turn them into buttons
+            //      (using modacDialogDefaults)
+            //    * add a 'cancel' button if there is no button with
+            //      cancel/closing functionality (using modacDialogDefaults)
+            //    * remaining topicactionbuttons will be hidden
+            //
+            // Submit form:
+            //    * a jqUIDialogSubmit button will submit $form
+            //    * if a input:submit has the name action_cancel or action_save
+            //      the submitted form will receive a correspondig input.
+            var buttons = $dialog.dialog('option', 'buttons');
+            if(!buttons || !buttons.push) buttons = [];
+            var closable = buttons.length; // is there a button with cancel/close function
+                                           // XXX assuming if there are already buttons, they can close the dialog
+            $data.find('.jqUIDialogButton, .modacDialogButton input:submit, .patternTopicAction input:submit, #foswikiLogin input:submit').each(function(){
+                var $this = $(this);
+                var button = {};
+                $.extend(button, $this.metadata());
+                button.text = $this.text();
+                (function($formClosure){
+                    // block on submit; it doesn't need unblocking, since a new page will be loaded
+                    $formClosure.submit(function(){
+                        if($formClosure.hasClass('noBlock')) return;
+                        // if there is .modacSubmitMessage, another script will block
+                        if($formClosure.find('.modacSubmitMessage').length == 0) ModacSkin.blockUI();
+                        // close dialog, but don't let close-handler submit again
+                        $dialog.addClass('submitting');
+                        if($dialog.dialog('isOpen')) {
+                            $dialog.dialog('close');
+                        }
+                    });
+
+                    if($this.is('.jqUIDialogClose')) {
+                        closable = true;
+                        button.click = function() {
+                            $dialog.dialog('close');
+                        };
+                    } else if($this.is('input:submit')) {
+                        button.text = $this.val();
+                        var type = 'dialogOK';
+
+                        if($this.attr('name') === 'action_cancel') {
+                            closable = true;
+                            type = 'dialogClose';
+                            $formClosure.submit(function(){
+                                var $this = $(this);
+                                if($this.find('input[name="action_save"]').length === 0) {
+                                    $this.append('<input type="hidden" name="action_cancel" value="Cancel" />');
+                                }
+                            });
+                            $dialog.on('dialogclose', function() {
+                                // submit to clear the lease - unless we're already submitting
+                                if(!$dialog.hasClass('submitting')) $formClosure.submit();
+                                return true;
+                            });
+                            button.click = function(){
+                                $formClosure.submit();
+                            };
+                        } else if($this.attr('name') === 'action_save') {
+                            button.click = function(){
+                                $formClosure.append('<input type="hidden" name="action_save" value="Save" />');
+                                $formClosure.submit();
+                            }
+                        } else {
+                            button.click = function(){
+                                $formClosure.submit();
+                            };
+                        }
+                        var $def = $data.find('.modacDialogDefaults .' + type);
+                        if($def.length) {
+                            if(!button.text) {
+                                button.text = $def.html();
+                            }
+                            $.extend(button, $def.metadata());
+                        }
+                    } else if($this.is('.jqUIDialogSubmit')) {
+                        button.click = function() {
+                            $formClosure.submit();
+                        }
+                    } else {
+                        var href = $this.attr('href');
+                        if(typeof(href) !== 'undefined' && href !== '#') {
+                            button.click = function() {
+                                window.location.href = href;
+                            };
+                        }
+                    }
+                })($this.closest('form'));
+                $this.remove();
+                buttons.push(button);
+            });
+            // Make sure this dialog can be closed
+            if(!closable) {
+                var button = {text: 'close', click: function(){$dialog.dialog('close');}};
+                var $def = $data.find('.modacDialogDefaults .dialogClose');
+                if($def.length) {
+                    button.text = $def.html();
+                    $.extend(button, $def.metadata());
+                }
+                buttons.push(button);
+            }
+            // Add buttons
+            if(buttons.length) {
+                $dialog.dialog('option', 'buttons', buttons);
+            }
+        },
+
         // Default 'Message' for blocking with jQuery block.
         // Usually just a spinner of some sorts.
         blockDefaultOptions: {
@@ -27,6 +229,47 @@ jQuery(function($){
             if($.unblockUI) $.unblockUI();
         },
 
+        // Use this as callback when fetching data for dialogs in order to deal
+        // with logins.
+        //
+        // Parameters:
+        //    * callback(data, textStatus, jqXHR, $data): function to be called
+        //       upon successful ajax fetch
+        //       callback parameters:
+        //          * data: fetched data
+        //          * textStatus: status message
+        //          * jqXHR: jQuery XHR object
+        //          * $data: jQuery object with parsed data
+        //    * $loading: dialog to be closed when login-box appears
+        handleLogin : function(callback, $loading) {
+            return function(data, textStatus, jqXHR) {
+                var $data = $(data);
+                var $login = $data.find('#foswikiLogin');
+                if(!$login.length) {
+                    return callback(data, textStatus, jqXHR, $data);
+                }
+                var $form = $login.find('form:first');
+                $login.append($data.find('.modacDialogDefaults')); // this will not be inside the form
+                var $logindialog = ModacSkin.showDialog($login, function($data,$dialog){
+                    $form.ajaxForm({
+                        beforeSubmit: function(){
+                            $dialog.dialog('close');
+                            if($loading) {
+                                $loading.dialog('open');
+                            } else {
+                                ModacSkin.blockUI();
+                            }
+                        },
+                        success: ModacSkin.handleLogin(callback, $loading)
+                    });
+                    $dialog.on('dialogclose', function(){
+                        $dialog.remove();
+                        if($loading) $loading.remove();
+                    });
+                    if($loading) $loading.dialog('close');
+                }, undefined, {});
+            };
+        }
     };
 
     // Auto-submit autocomplete fields depending on class

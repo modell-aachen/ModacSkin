@@ -1,0 +1,16 @@
+%TMPL:INCLUDE{"dialogbase"}%
+
+%{ simple layout without leftbar, scripts, etc. but with modacDialogDefaults }%
+%TMPL:DEF{"main"}%
+<div class="modacDialogTitle">%TMPL:P{"titleaction"}%%TOPICTITLE%</div>
+<div class="foswikiPage">
+	<div class="modacDialogContents">%TMPL:P{"patterntopiccontents"}%%TMPL:P{"modacDialogDefaultsDiv"}%</div>
+</div>
+%TMPL:END%
+
+%TMPL:DEF{"document"}%%TMPL:P{"htmldoctype"}%%TMPL:P{"htmlstart"}%
+%TMPL:P{"bodystart"}%%TMPL:P{"main"}%%TMPL:P{"bodyend"}%%TMPL:P{"htmlend"}%%TMPL:END%
+
+%TMPL:DEF{"modacDialogDefaultsDiv"}%<div class="modacDialogDefaults" class="foswikiHidden">%TMPL:P{"modacDialogDefaults"}%</div>%TMPL:END%
+
+%TMPL:DEF{"modacDialogDefaults"}%<span class="dialogOK {icon: 'ui-icon-circle-check'}">OK</span><span class="dialogClose {icon: 'ui-icon-cancel'}">%MAKETEXT{"Cancel"}%</span>%TMPL:END%

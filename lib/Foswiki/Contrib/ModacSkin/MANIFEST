@@ -100,11 +100,13 @@ templates/changeform.modac.tmpl 0664
 templates/changes.modac.tmpl 0664
 templates/compare.modac.tmpl 0664
 templates/css.modac.tmpl 0664
+templates/dialogbase.modac.tmpl 0664
 templates/edit.modac.tmpl 0664
 templates/editform.modac.tmpl 0664
 templates/form.modac.tmpl 0664
 templates/formtables.modac.tmpl 0664
 templates/foswiki.modac.tmpl 0664
+templates/foswiki.modacdialog.tmpl 0664
 templates/login.modac.tmpl 0664
 templates/metacomments.modac.tmpl 0664
 templates/metamaketext.modac.tmpl 0664

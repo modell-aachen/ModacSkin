@@ -110,6 +110,33 @@ sub verify_SeleniumRc_config {
     $this->login();
 }
 
+# Make sure there is currently no popup visible.
+# Only registers 'modacAjaxDialog' popups.
+sub assertNoPopup {
+    my ( $this ) = @_;
+
+    if ( $this->{selenium}->is_element_present('css=div.modacAjaxDialog') ) {
+        $this->assert((not $this->{selenium}->is_visible('css=div.modacAjaxDialog')), 'There already is a popup!');
+    }
+    if ( $this->{selenium}->is_element_present('css=div.modacLoadingDialog') ) {
+        $this->assert((not $this->{selenium}->is_visible('css=div.modacLoadingDialog')), 'There already is a "Loading" popup!');
+    }
+    # the above do not work quite well, so I check with javascript as well
+    my $n = $this->{selenium}->get_eval('selenium.browserbot.getUserWindow().jQuery("div.modacLoadingDialog:visible, div.modacAjaxDialog:visible").length');
+    $this->assert_equals(0, $n, 'There are popups visible');
+}
+
+# Waits until a popup appears.
+# Only registers 'modacAjaxDialog' popups.
+sub waitForPopup {
+    my ( $this ) = @_;
+
+    # for some reason this does not work:
+    #    $this->waitFor( sub { try { return shift->{selenium}->is_visible('css=div.modacAjaxDialog'); } otherwise {return 0; }; }, 'Popup did not appear', undef, 8000 );
+
+    $this->{selenium}->wait_for_condition('selenium.browserbot.getCurrentWindow().jQuery("div.modacAjaxDialog:visible").length', $this->{selenium_timeout});
+}
+
 # Login and open the $web.$topic (defaults to TestWeb.WebHome)
 sub loginto {
     my ( $this, $web, $topic ) = @_;
@@ -123,6 +150,27 @@ sub loginto {
             $web, $topic, 'view'
         )
     );
+}
+
+# Fills out the login popup and presses the login button.
+sub loginDialog {
+    my ( $this ) = @_;
+
+    # copy/paste login
+    my $usernameInputFieldLocator = 'css=input[name="username"]';
+    $this->{selenium}->wait_for_element_present( $usernameInputFieldLocator,
+        $this->{selenium_timeout} );
+    $this->{selenium}->type_ok( $usernameInputFieldLocator,
+        $Foswiki::cfg{UnitTestContrib}{SeleniumRc}{Username} );
+
+    my $passwordInputFieldLocator = 'css=input[name="password"]';
+    $this->assertElementIsPresent($passwordInputFieldLocator);
+    $this->{selenium}->type_ok( $passwordInputFieldLocator,
+        $Foswiki::cfg{UnitTestContrib}{SeleniumRc}{Password} );
+    # /copy/paste login
+    $this->{selenium}->click_ok('css=span.ui-icon-circle-check');
+
+    $this->waitForPopup();
 }
 
 # Logout in a background window and returns to the original window.
