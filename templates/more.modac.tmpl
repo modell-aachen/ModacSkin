@@ -21,7 +21,7 @@
 %TMPL:DEF{"logo"}%%TMPL:END%
 
 %TMPL:DEF{"settings"}%<div class="requireModacChangePermission"><h2>%MAKETEXT{"Edit topic preference settings"}%</h2>
-<form action="%SCRIPTURLPATH{"manage"}%/%WEB%/%TOPIC%" method="post" class="modacChanging">
+<form action="%SCRIPTURLPATH{"manage"}%/%WEB%/%TOPIC%" method="post" class="modacChanging modacDialogAppendable modacHideDialog">
 <div class="foswikiFormSteps">
 <div class="foswikiFormStep foswikiLast">
 <p><input type="submit" value="%MAKETEXT{"Edit settings for this topic..."}%" class='foswikiButton'/></p>
@@ -66,7 +66,7 @@
 %ENDTWISTY%
 <input type="checkbox" id="nonwikiword" name="nonwikiword" checked="checked" style="display: none;" />
 </div>
-<div class="foswikiFormStep foswikiLast">
+<div class="foswikiFormStep foswikiLast modacDialogButton">
 <p><input type="submit" class="foswikiButton" value="%MAKETEXT{"Copy topic..."}%" /></p>
 </div>
 </div>
@@ -82,7 +82,7 @@
 
 
 %TMPL:DEF{"delete"}%<div class="requireModacMovePermission"><h2>%MAKETEXT{"Delete topic"}%</h2>
-<form name="delete" action="%SCRIPTURLPATH{"rename"}%/%WEB%/%TOPIC%" method="post">
+<form name="delete" class="modacDialogAppendable modacHideDialog" action="%SCRIPTURLPATH{"rename"}%/%WEB%/%TOPIC%" method="post">
 <input type="hidden" name="newweb" value="%TRASHWEB%" />
 <input type="hidden" name="nonwikiword" value="on" />
 <div class="foswikiFormSteps">
@@ -99,12 +99,12 @@
 
 
 %TMPL:DEF{"rename"}%<div class="requireModacMovePermission"><h2>%MAKETEXT{"Rename or move topic"}%</h2>
-<form name="rename" action="%SCRIPTURLPATH{"rename"}%/%WEB%/%TOPIC%" method="post">
+<form name="rename" class="modacDialogAppendable" action="%SCRIPTURLPATH{"rename"}%/%WEB%/%TOPIC%" method="post">
 <div class="foswikiFormSteps">
 <div class="foswikiFormStep">
-<p><input type="checkbox" class="foswikiCheckbox" id="currentwebonly" name="currentwebonly" /><label for="currentwebonly">%MAKETEXT{"Only update linked topics in [_1] web" args="%WEB%"}%</label></p>
+<p><input type="checkbox" class="foswikiCheckbox modacDialogFire" id="currentwebonly" name="currentwebonly" checked="checked" /><label for="currentwebonly">%MAKETEXT{"Only update linked topics in [_1] web" args="%WEB%"}%</label></p>
 </div>
-<div class="foswikiFormStep foswikiLast">
+<div class="foswikiFormStep foswikiLast modacHideDialog">
 <p>
 <input type="submit" class="foswikiButton" value="%MAKETEXT{"Rename or move topic..."}%" />
 </p>
@@ -136,7 +136,7 @@
 <h3>%MAKETEXT{"Select topic parent"}%</h3>
 <p>%IF{"defined pickparent" then="<select name='topicparent' size='10' class='foswikiSelect' tabindex='12'>$percntTOPICLIST{$quot<option $marker value='$name'>$name</option>$quot separator=$quot$quot selection=$quot$percntMETASEARCH{type=$quotparent$quot}$percnt}$percnt<option value=$quotnone$quot>$percntMAKETEXT{$quot(no parent, orphaned topic)$quot}$percnt</option></select>" else="<input type='text' name='topicparent' size='30' class='foswikiInputField' />&nbsp;<span class='foswikiUnvisited'><a href='$percntSCRIPTURLPATH{view}$percnt/$percntWEB$percnt/$percntTOPIC$percnt?template=more;$percntQUERYSTRING$percnt;pickparent=1#SetParent'>%MAKETEXT{"Pick from a list"}%</a></span>"}%</p>
 </div>
-<div class="foswikiFormStep foswikiLast">
+<div class="foswikiFormStep foswikiLast modacDialogButton">
 <p><input type='submit' class='foswikiButton' value='%MAKETEXT{"Set new parent"}%' /></p>
 </div>
 </div>

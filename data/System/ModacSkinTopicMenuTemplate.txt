@@ -1,19 +1,25 @@
 %{<verbatim class="tml">}%
 %{Do not remove the HTML comments. TML is likely to mess this up horribly otherwise. You have been warned.}%
 %{All menues attach to a surrounding span, so the inner modacChanging can relyably intercept the click with jQuery}%
-%TMPL:DEF{"modacMoreSubmenu"}%
-<form id="more_editpref_form" method="post" action="%SCRIPTURLPATH{"manage"}%/%BASEWEB%/%BASETOPIC%">
-<input type="hidden" name="action" value="editSettings" />
-</form><ul>
-<!-- ATTACHMENTS --><li><a href="%SCRIPTURLPATH{"attach"}%/%BASEWEB%/%BASETOPIC%" rel="nofollow" %MAKETEXT{"title='Attach an image or document to this topic' accesskey='a'>&Attach"}%</a></li>
-<!-- REVISION HISTORY --><li>%IF{"context CompareRevisionsAddonPluginEnabled" then="<a href='%SCRIPTURLPATH{"oops"}%/%BASEWEB%/%BASETOPIC%?template=oopshistory&history=on' rel='nofollow' %MAKETEXT{"title='View topic history' accesskey='h'>&History"}%</a>" else="<a href='%SCRIPTURLPATH{"rdiff"}%/%BASEWEB%/%BASETOPIC%?type=history&history=on' rel='nofollow' %MAKETEXT{"title='View topic history' accesskey='h'>&History"}%</a>"}%</li>
+%TMPL:DEF{"modacMoreSubmenuView"}%
+<ul>
+<!-- ATTACHMENTS --><li class='modacDialogable'>%TMPL:P{"modacAttach"}%</span></li>
+<!-- REVISION HISTORY --><li><span>%IF{"context CompareRevisionsAddonPluginEnabled" then="<a href='%SCRIPTURLPATH{"oops"}%/%BASEWEB%/%BASETOPIC%?template=oopshistory&history=on' rel='nofollow' %MAKETEXT{"title='View topic history' accesskey='h'>&History"}%</a>" else="<a href='%SCRIPTURLPATH{"rdiff"}%/%BASEWEB%/%BASETOPIC%?type=history&history=on' rel='nofollow' %MAKETEXT{"title='View topic history' accesskey='h'>&History"}%</a>"}%</span></li>
 <!-- EDIT WIKITEXT --><li class='requireModacChangePermission'>%TMPL:P{"raw_edit_link"}%</li>
 <li><span class="modacMoreDynamicLink"><a href='%SCRIPTURLPATH{view}%/%BASEWEB%/%BASETOPIC%?template=more'>%MAKETEXT{"Manage page"}% &raquo;</a></span><ul>
-  <!-- TOPIC PREFERENCES --><li class="requireModacChangePermission"><span class="morelink-prefs"><a href="javascript:void(0);" class="modacChanging">%MAKETEXT{"Edit topic preference settings"}%</a></span></li>
-  <!-- CHANGE PARENT --><li class="requireModacChangePermission"><span class="morelink-setparent"><a href="javascript:void(0);" class="modacChanging">%MAKETEXT{"Select topic parent"}%</a></span></li>
-  <!-- COPY --><li><a href="javascript:void(0);" class="morelink-copy">%MAKETEXT{"Copy topic"}%</a></li>
-  <!-- RENAME/MOVE --><li class="requireModacMovePermission"><span class="morelink-rename"><a href="javascript:void(0);">%MAKETEXT{"Rename or move topic"}%</a></span></li>
-  <!-- DELETE --><li class="requireModacMovePermission"><span class="morelink-delete"><a href="javascript:void(0);">%MAKETEXT{"Delete topic"}%</a></span></li>
+  <!-- TOPIC PREFERENCES --><li class='requireModacChangePermission'><span class='modacDialogable morelink-settings'><a href=%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%?template=more' class='modacChanging'>%MAKETEXT{"Edit topic preference settings"}%</a></span></li>
+  <!-- CHANGE PARENT --><li class='requireModacChangePermission'><span class='modacDialogable morelink-setparent'><a href=%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%?template=more' class='modacChanging'>%MAKETEXT{"Select topic parent"}%</a></span></li>
+  <!-- COPY --><li><span class='modacDialogable morelink-copy'><a href=%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%?template=more'>%MAKETEXT{"Copy topic"}%</a></span></li>
+  <!-- RENAME/MOVE --><li class='requireModacMovePermission'><span class='modacDialogable morelink-rename'><a href=%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%?template=more'>%MAKETEXT{"Rename or move topic"}%</a></span></li>
+  <!-- DELETE --><li class='requireModacMovePermission'><span class='modacDialogable morelink-delete'><a href=%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%?template=more'>%MAKETEXT{"Delete topic"}%</a></span></li>
 </ul></li></ul>
 %TMPL:END%
+
+%TMPL:DEF{"modacMoreSubmenuEdit"}%
+<ul>
+ <li>%MAKETEXT{"These actions are not available while editing"}%</li>
+</ul>
+%TMPL:END%
+
+%TMPL:DEF{"modacMoreSubmenu"}%%TMPL:P{context="edit" then="modacMoreSubmenuEdit" else="modacMoreSubmenuView"}%%TMPL:END%
 %{</verbatim>}%

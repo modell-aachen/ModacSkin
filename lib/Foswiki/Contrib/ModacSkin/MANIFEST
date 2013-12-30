@@ -111,7 +111,9 @@ templates/login.modac.tmpl 0664
 templates/metacomments.modac.tmpl 0664
 templates/metamaketext.modac.tmpl 0664
 templates/more.modac.tmpl 0664
+templates/more.modacdialog.tmpl 0664
 templates/oops.modac.tmpl 0664
+templates/oops.modacdialog.tmpl 0664
 templates/oopsaccessdenied.modac.tmpl 0664
 templates/oopsattention.modac.tmpl 0664
 templates/oopshistory.modac.tmpl 0664
@@ -129,6 +131,7 @@ templates/searchbookview.modac.tmpl 0664
 templates/searchformat.modac.tmpl 0664
 templates/searchmeta.modac.tmpl 0664
 templates/settings.modac.tmpl 0664
+templates/settings.modacdialog.tmpl 0664
 templates/validate.modac.tmpl 0664
 templates/view.modac.tmpl 0664
 templates/viewbottombar.modac.tmpl 0664

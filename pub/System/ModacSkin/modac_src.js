@@ -269,6 +269,169 @@ jQuery(function($){
                     if($loading) $loading.dialog('close');
                 }, undefined, {});
             };
+        },
+
+        // Cache for called TopicMenue dialogs
+        menuDialogs: {},
+
+        // Handles .morelink-* in topic menue.
+        //    * creates dialogs for "More topic actions" items
+        //    * caches the dialogs
+        //    * prepends modacdialog skin
+        //    * fetches correct sections
+        //    * takes care of forms and links in dialogs
+        //    * fetches contents for modacDialogAppendable
+        //    * refetches contents when .modacDialogFire was clicked
+        menuClickHandler: function(type) {
+            if (ModacSkin.menuDialogs[type]) {
+                ModacSkin.menuDialogs[type].dialog('open');
+                return false;
+            }
+            var e = $(this);
+            var restUri = foswiki.getPreference('SCRIPTURLPATH') +'/rest'+ foswiki.getPreference('SCRIPTSUFFIX');
+            var baseWeb = foswiki.getPreference('WEB');
+            var baseTopic = foswiki.getPreference('TOPIC');
+            var jqplPubUri = foswiki.getPreference('PUBURLPATH') +'/'+ foswiki.getPreference('SYSTEMWEB') +'/JQueryPlugin';
+            var skin = 'modacdialog,'+foswiki.getPreference('SKIN');
+            var d;
+            ModacSkin.blockUI();
+            $.ajax(
+                restUri +'/RenderPlugin/template?name=more;expand='+type+';render=1;topic='+baseWeb+'.'+encodeURIComponent(baseTopic) + ';skin=' + skin,
+                {
+                    success: ModacSkin.handleLogin(function(data, textStatus, jqXHR, $data) {
+                        var d;
+                        $data.find('a').click(function(ev){
+                            var $target = $(ev.target);
+                            var param = /[^?]*(\?.*name=more;expand=.*)/.exec($target.attr('href'));
+                            if(!param || param.length != 2) return true;
+                            if(d.block) {
+                                d.block();
+                                d.siblings('.ui-dialog-buttonpane').block({message: ''});
+                            }
+                            d.dialog('option', 'buttons', []);
+                            d.load(restUri +'/RenderPlugin/template' + param[1], function(){
+                                var $form = d.find('form:first');
+                                ModacSkin.ajaxSubmitButtons(d, d, $form);
+                                $form.submit(function(){
+                                    // if !modacSubmitMessage blockUI
+                                    // better do a handler for succesfull ajax
+                                    if(d.block) {
+                                        d.block();
+                                        d.siblings('.ui-dialog-buttonpane').block(ModacSkin.blockDefaultOptions);
+                                    }
+                                });
+                                if(d.dialog('isOpen')) {
+                                    d.dialog('close');
+                                    d.dialog('open');
+                                }
+                            });
+                            return false;
+                        });
+                        var ajax = $data.find('.modacDialogAppendable');
+                        if(ajax.length) {
+                            var handleOops = function(jqXHR, status, errorThrown){
+                                var response = $(jqXHR.responseText).find('.modacDialogContents');
+                                if(response.length == 0) response = $(jqXHR.responseText).find('.foswikiTopic');
+                                ModacSkin.menuDialogs[type] = $loadingDialog = ModacSkin.showDialog(response, function($data,$dialog){
+                                    $data.find('form').ajaxForm({success: handleSuccess, error: handleOops});
+                                }, undefined, {});
+                            };
+                            var handleSuccess = function(adata, status, jqXHR){
+                                var $adata = $(adata);
+                                var $contents = $adata.find(".modacDialogContents");
+                                if($contents.length) {
+                                    $contents.removeClass('modacDialogContents');
+                                } else {
+                                    $contents = $adata.find(".foswikiTopic");
+                                    if(!$contents.length) {
+                                        $contents = 'error...'; // XXX
+                                    }
+                                }
+                                ajaxArea.replaceWith($contents);
+                                ajaxArea = $contents;
+
+                                // Copying select all/none from foswikiForm, because it only binds on document.ready
+                                ajaxArea.find('.foswikiCheckAllOn').click(
+                                    function(e) {
+                                        var form = $(this).parents('form:first');
+                                        $('.foswikiCheckBox', form).attr('checked', true);
+                                    }
+                                );
+                                ajaxArea.find('.foswikiCheckAllOff').click(
+                                    function(e) {
+                                        var form = $(this).parents('form:first');
+                                        $('.foswikiCheckBox', form).attr('checked', false);
+                                    }
+                                );
+
+                                d = ModacSkin.menuDialogs[type] = ModacSkin.showDialog($data, undefined, ModacSkin.menuDialogs[type], {});
+                            };
+                            var ajaxArea = $('<div class="modacAjaxDialog"><div style="height: 150px; width: 200 px;"></div></div>');
+                            ajax.before(ajaxArea);
+                            ajax.append($('<input type="hidden" name="skin" value="' + skin + '" />'));
+                            ajax.ajaxForm({
+                                error: handleOops,
+                                success: function(jqXHR, s, errorThrown) {(ModacSkin.handleLogin(handleSuccess, d))(jqXHR,s,errorThrown)}
+                            });
+                            ajax.submit(function(){
+                                // Only block the dialog, not the whole page.
+                                // It won't need unblocking, since a new dialog will be created.
+                                if(d && d.block) {
+                                    d.block(ModacSkin.blockDefaultOptions);
+                                    d.siblings('.ui-dialog-buttonpane').block({message: ''});
+                                }
+                            });
+                            ajax.submit();
+                            $data.find('.modacDialogFire').change(function(){ajax.submit();});
+                        } else {
+                            d = ModacSkin.menuDialogs[type] = ModacSkin.showDialog($data, undefined, undefined, {});
+                        }
+                    })
+                }
+            );
+
+            return false;
+        },
+
+        // Handles clicks on "More topic actions" items
+        //    * inserts strikeone if needed
+        //    * calls menuClickHandler if morelink-... was clicked
+        //    * creates a dialog for other dialogable items
+        //       * prepends modacdialog skin
+        dialogCallback: function(){
+            var $this = $(this);
+
+            // make sure strikeone is present
+            // I don't like this.
+            if(typeof StrikeOne !== 'object') {
+                $('head').append('<script type="text/javascript" src="' + foswiki.getPreference('PUBURLPATH') + '/' + foswiki.getPreference('SYSTEMWEB') + '/JavascriptFiles/strikeone.js"></script>');
+            }
+
+            var classes = $this.attr('class');
+            var matches = /morelink-([a-z]+)/.exec(classes);
+            if(matches) {
+                return ModacSkin.menuClickHandler(matches[1]);
+            }
+            var $loading;
+            ModacSkin.blockUI();
+            var href = $this.find('a:first').attr('href');
+            href += (href.indexOf('?') > 0?';':'?') + 'skin=modacdialog,'+foswiki.getPreference('SKIN');
+            $.ajax({
+                url: href,
+                success: ModacSkin.handleLogin(function(data, st, jq, $data){
+                    var title = $data.find('div.modacDialogTitle').remove().text();
+                    var $form = $data.find('form:first');
+                    ModacSkin.showDialog($data, undefined, $loading, {
+                        width:$('#modacContents').width(),
+                        title: title,
+                        closeOnEscape: (href.match('^(?:'+foswiki.getPreference('SCRIPTURLPATH')+'|'+foswiki.getPreference('SCRIPTURL')+')'+foswiki.getPreference('SCRIPTSUFFIX')+'/edit/'))?false:true
+                    });
+                }, $loading),
+                error: function(jqXHR, statusmsg) {
+                    ModacSkin.showDialog('<span class="foswikiAlert">' + statusmsg + " fetching " + $this.attr('href') + '</span>', undefined, $loading, {});
+                }
+            });
+            return false;
         }
     };
 
@@ -393,6 +556,7 @@ jQuery(function($){
 
     // TopicMenue
 
+    // initialize superfish menue
     $('.jqmenu').supersubs({
         minWidth: 12, /* minimum width of sub-menus in em units */
         maxWidth: 30, /* maximum width of sub-menus in em units */
@@ -406,37 +570,12 @@ jQuery(function($){
         disableHI: true
     });
     $('.jqmenu').bgIframe({opacity:false});
-    var menuDialogs = {};
-    var menuClickHandler = function(type) {
-        if (menuDialogs[type]) {
-            menuDialogs[type].dialog('open');
-            return false;
-        }
-        var e = $(this);
-        var restUri = foswiki.getPreference('SCRIPTURLPATH') +'/rest'+ foswiki.getPreference('SCRIPTSUFFIX');
-        var baseWeb = foswiki.getPreference('WEB');
-        var baseTopic = foswiki.getPreference('TOPIC');
-        var jqplPubUri = foswiki.getPreference('PUBURLPATH') +'/'+ foswiki.getPreference('SYSTEMWEB') +'/JQueryPlugin';
-        var d = $('<div class="jqUIDialog {width:500, position:\'center\', modal:true}" title="'+e.text()+'"><img src="'+ jqplPubUri +'/images/spinner.gif" alt="Loading..."/></div>');
-        menuDialogs[type] = d;
-        d.dialog({ create: function() {
-            d.load(restUri +'/RenderPlugin/template?name=more;expand='+type+';render=1;topic='+baseWeb+'.'+encodeURIComponent(baseTopic), function() {
-                var h2 = d.find('h2');
-                if (!h2.length) return;
-                d.dialog('option', 'title', h2.html());
-                h2.remove();
-            });
-        } });
-        return false;
-    };
 
     // Inhibit clicks on MoreMenue und submenues
     $('.modacMoreDynamicLink a').click(function() { return false; });
-    $('.morelink-prefs').click(function(){ $('#more_editpref_form').submit();return false; });
-    $('.morelink-copy').click(function(){ return menuClickHandler('copy'); });
-    $('.morelink-delete').click(function(){ return menuClickHandler('delete'); });
-    $('.morelink-rename').click(function(){ return menuClickHandler('rename'); });
-    $('.morelink-setparent').click(function(){ return menuClickHandler('setparent'); });
+
+    // Handle Links opening dialogs
+    $('.modacDialogable').click(ModacSkin.dialogCallback);
 
     // end TopicMenue
 });
