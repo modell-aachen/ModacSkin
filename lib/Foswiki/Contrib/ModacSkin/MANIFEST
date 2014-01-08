@@ -113,6 +113,7 @@ templates/metacomments.modac.tmpl 0664
 templates/metamaketext.modac.tmpl 0664
 templates/more.modac.tmpl 0664
 templates/more.modacdialog.tmpl 0664
+templates/moveattachment.modac.tmpl 0644
 templates/oops.modac.tmpl 0664
 templates/oops.modacdialog.tmpl 0664
 templates/oopsaccessdenied.modac.tmpl 0664
