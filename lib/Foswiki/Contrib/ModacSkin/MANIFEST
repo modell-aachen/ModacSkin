@@ -88,6 +88,8 @@ pub/System/ModacSkinTheme/layout.css 0664
 pub/System/ModacSkinTheme/layout.css.gz 0664
 pub/System/ModacSkinTheme/popup.gif 0664
 pub/System/ModacSkinTheme/print.css 0664
+pub/System/ModacSkinTheme/sidebarHide.png 0644
+pub/System/ModacSkinTheme/sidebarShow.png 0644
 pub/System/ModacSkinTheme/style.css 0664
 pub/System/ModacSkinTheme/style.css.gz 0664
 templates/attach.modac.tmpl 0664

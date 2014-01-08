@@ -561,8 +561,76 @@ jQuery(function($){
                 }
             });
             return false;
+        },
+
+        // Hides WebLeftBar
+        // Parameters:
+        //     setcookie: when true, a cookie will be set so the bar remains
+        //         hidden while navigating
+        hideSidebar: function(setcookie) {
+            ModacSkin.hideSideBarData = {};
+
+            // store min-width
+            var minPage = $('.foswikiPage').css('min-width');
+            ModacSkin.hideSideBarData.foswikiPageMin = minPage;
+            minPage = minPage.replace('px', '');
+
+            // hide sidebar
+            var $sidebar = $('#modacSidebar');
+            var sideWidth = $sidebar.width();
+            $sidebar.hide();
+
+            // add expand-button
+            var $placeholder = $('<div class="modacShowSidebar"></div>');
+            $sidebar.after($placeholder);
+            var pWidth = $placeholder.width();
+
+            // expand modacWrapper
+            ModacSkin.hideSideBarData.modacWrapperMargin = $('#modacWrapper').css('margin-left');
+            $('#modacWrapper').css('margin-left', pWidth);
+            $('.foswikiPage').css('min-width', (minPage-sideWidth+pWidth)+'px'); // add recovered space to min-width
+
+            // set cookie
+            if(setcookie && $.cookie) $.cookie('modacHideSidebar', true);
+        },
+
+        // Shows WebLeftBar again, removes any .modacShowSidebar buttons
+        // Parameters:
+        //     removecookie: when true, remove cookie, so the bar remains
+        //         visible while navigating
+        showSidebar: function(removecookie) {
+            // restore sidebar, width and margins
+                $('.modacShowSidebar').remove();
+            $('#modacWrapper').css('margin-left', ModacSkin.hideSideBarData.modacWrapperMargin);
+            $('.foswikiPage').css('min-width', ModacSkin.hideSideBarData.foswikiPageMin);
+            $('#modacSidebar').show();
+
+            if(removecookie && $.cookie) $.cookie('modacHideSidebar', null);
+        },
+        hideSidebarHandler: function() {
+            ModacSkin.hideSidebar(true);
         }
     };
+
+    // Hide WebLeftBar functionality
+    $('.modacHideSidebar').livequery(function() {
+        var $this = $(this);
+        $this.css('left', $('#modacSidebar').width() + $('#modacSidebar').position().left - $this.width());
+        $this.click(ModacSkin.hideSidebarHandler);
+    });
+    $('.modacShowSidebar').livequery(function() {
+        $(this).click(function() {
+            ModacSkin.showSidebar(true);
+            return false;
+        });
+    });
+    $('#modacSidebar').hover(function(){
+        $('#modacSidebar div.modacHideSidebar').show();
+    }, function() {
+        $('#modacSidebar div.modacHideSidebar').hide();
+    });
+    // react on cookie
+    if($.cookie && $.cookie('modacHideSidebar')) ModacSkin.hideSidebar();
 
     // Auto-submit autocomplete fields depending on class
     (function($tosubmit) {

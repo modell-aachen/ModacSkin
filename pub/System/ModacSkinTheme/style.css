@@ -1544,3 +1544,24 @@ div.ajaxspinner {
 .modacMoreMenu li ul li span.morelink-delete a {
 	background-image: url(../FamFamFamSilkIcons/page_white_delete.png);
 }
+.modacHideSidebar {
+	width: 14px;
+	position: fixed;
+	left: 0px;
+	top:40px;
+	height: 150px;
+	cursor: pointer;
+	background-image: url("sidebarHide.png");
+	background-repeat: no-repeat;
+	display: none;
+}
+.modacShowSidebar {
+	width: 18px;
+	position: fixed;
+	left: 0px;
+	top:40px;
+	height: 150px;
+	cursor: pointer;
+	background-image: url("sidebarShow.png");
+	background-repeat: no-repeat;
+}

@@ -43,3 +43,4 @@
 </div>
 %ENDTWISTY% 
 </div>
+<div class="modacHideSidebar" title="%MAKETEXT{"Hide WebLeftBar"}%"></div>
