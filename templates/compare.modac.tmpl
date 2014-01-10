@@ -9,9 +9,11 @@
 
 %TMPL:DEF{"titleaction"}%%MAKETEXT{"(compare)"}%%TMPL:END%
 
-%TMPL:DEF{"pagetitle"}%%IF{"$'URLPARAM{external}'" then="$percentTMPL:P{pagetitle_ext}$percent" else="$percentTMPL:P{pagetitle_rev}$percent"}%%TMPL:END%
-%TMPL:DEF{"pagetitle_rev"}% %MAKETEXT{"Difference:"}% %TOPIC% (%REVTITLE2% vs. %REVTITLE1%) %TMPL:END%
-%TMPL:DEF{"pagetitle_ext"}% %MAKETEXT{"Difference:"}% %TOPIC% vs. %URLPARAM{"external"}% %TMPL:END%
+%TMPL:DEF{"pagetitle"}%%TMPL:P{"pagetitle_standard"}%%TMPL:END%
+
+%TMPL:DEF{"pagetitle_standard"}%<table class="modacCompareHeader modacHeaderTable" style="width: 100%;" border="1">
+<tr><td><img style="vertical-align: middle;" src="%PUBURLPATH%/%SYSTEMWEB%/FamFamFamSilkCompanion2Icons/plus_minus.png" />%MAKETEXT{"Difference:"}%</td><td><div class="compareTopic1">%TMPL:P{"topictitleDiff1"}%%BR%<em class="foswikiGrayText foswikiSmall">%TMPL:P{"topicDiff1"}%</em>%BR%%MAKETEXT{"Revision:"}%&nbsp;%TMPL:P{"revisionDiff1"}%</div></td><td style="vertical-algin: middle; text-align: center;">vs.</td><td><div class="compareTopic2">%TMPL:P{"topictitleDiff2"}%%BR%<em class="foswikiGrayText foswikiSmall">%TMPL:P{"topicDiff2"}%</em>%BR%%MAKETEXT{"Revision:"}%&nbsp;%TMPL:P{"revisionDiff2"}%</div></td></tr>
+</table>%TMPL:END%
 
 %TMPL:DEF{"modacActionButtons"}%%TMPL:P{"modacActionButtonsVIEW"}%%TMPL:END%
 
@@ -20,6 +22,12 @@
     Revision %REVTITLE1% - %REVINFO1%
 %TMPL:END%
 
+%TMPL:DEF{"topicDiff1"}%<span class="%IF{"$TOPIC1 != $TOPIC2" then="craCompareChange1"}%">(%TOPIC1%)</span>%TMPL:END%
+%TMPL:DEF{"topicDiff2"}%<span class="%IF{"$TOPIC1 != $TOPIC2" then="craCompareChange2"}%">(%TOPIC2%)</span>%TMPL:END%
+%TMPL:DEF{"topictitleDiff1"}%%IF{"$TOPICTITLE1 != $TOPICTITLE2" then="<span class=\"craCompareChange1\">$percentTOPICTITLE1$percent</span>" else="$percentTOPICTITLE1$percent"}%%TMPL:END%
+%TMPL:DEF{"topictitleDiff2"}%%IF{"$TOPICTITLE1 != $TOPICTITLE2" then="<span class=\"craCompareChange2\">$percentTOPICTITLE2$percent</span>" else="$percentTOPICTITLE2$percent"}%%TMPL:END%
+%TMPL:DEF{"revisionDiff1"}%<span class="%IF{"$ACTUALREV1 != $ACTUALREV2" then="craCompareChange1"}%">%ACTUALREV1%</span>%TMPL:END%
+%TMPL:DEF{"revisionDiff2"}%<span class="%IF{"$ACTUALREV1 != $ACTUALREV2" then="craCompareChange2"}%">%ACTUALREV2%</span>%TMPL:END%
 
 %TMPL:DEF{"script:skintemplate"}%<style type="text/css" media="all">
 .craCompareAdd {

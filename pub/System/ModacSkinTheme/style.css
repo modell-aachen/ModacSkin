@@ -268,7 +268,9 @@ html>body #modacLogoIE {
 .modacNoViewPage #modacMainContents {
 	top: 0px;
 }
-
+.modacComparePage #modacHeading {
+	border: none;
+}
 #modacHeading {
 	border-color:#AAAAAA;
 	border-style:none none solid;
@@ -525,6 +527,9 @@ html>body #modacLogoIE {
 
 /*-------- modacHeaderTable --------*/
 
+.modacComparePage #modacHeading {
+	font-size: 100%;
+}
 .modacHeaderTable {
 	margin: 1em 0;
 	border: 1px #AAA solid;
@@ -1564,4 +1569,33 @@ div.ajaxspinner {
 	cursor: pointer;
 	background-image: url("sidebarShow.png");
 	background-repeat: no-repeat;
+}
+.modacHideSidebar {
+        width: 14px;
+        position: fixed;
+        left: 0px;
+        top:40px;
+        height: 150px;
+        cursor: pointer;
+        background-image: url("sidebarHide.png");
+        background-repeat: no-repeat;
+        display: none;
+}
+.modacShowSidebar {
+        width: 18px;
+        position: fixed;
+        left: 0px;
+        top:40px;
+        height: 150px;
+        cursor: pointer;
+        background-image: url("sidebarShow.png");
+        background-repeat: no-repeat;
+}
+.compareTopic1 {
+        border: 10px solid rgb(255,204,204);
+        padding: 3px;
+}
+.compareTopic2 {
+        border: 10px solid rgb(204,255,204);
+        padding: 3px;
 }
