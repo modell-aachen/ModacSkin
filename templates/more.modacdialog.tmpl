@@ -3,3 +3,8 @@
 %{ add fancy buttons }%
 %TMPL:DEF{"setparent"}%%TMPL:PREV%%TMPL:P{"modacDialogDefaultsDiv"}%%TMPL:END%
 %TMPL:DEF{"copy"}%%TMPL:PREV%%TMPL:P{"modacDialogDefaultsDiv"}%%TMPL:END%
+
+%TMPL:DEF{"topicparent"}%%TMPL:PREV%%TMPL:P{"javascript"}%<!-- -->
+  %INCLUDE{"%SYSTEMWEB%.ModacAjaxHelper" section="head"}%<!-- head -->
+  %INCLUDE{"%SYSTEMWEB%.ModacAjaxHelper" section="script"}%<!-- script -->
+%TMPL:END%

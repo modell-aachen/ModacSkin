@@ -130,11 +130,8 @@
 <form name="main" action="%SCRIPTURLPATH{"save"}%/%WEB%/%TOPIC%?action_save=1" method="post" class="modacChanging">
 <div class="foswikiFormSteps">
 <div class="foswikiFormStep">
-<h3>%MAKETEXT{"Current parent:"}% %IF{"'NONE%META{"parent" dontrecurse="on"}%'='NONE'" then="%MAKETEXT{"no current parent"}%" else='%SEARCH{ "name = '%TOPIC%'" scope="topic" type="query" nosearch="on" nototal="on" format="[[$parent]]" }%' }%</h3>
-</div>
-<div class="foswikiFormStep">
 <h3>%MAKETEXT{"Select topic parent"}%</h3>
-<p>%IF{"defined pickparent" then="<select name='topicparent' size='10' class='foswikiSelect' tabindex='12'>$percntTOPICLIST{$quot<option $marker value='$name'>$name</option>$quot separator=$quot$quot selection=$quot$percntMETASEARCH{type=$quotparent$quot}$percnt}$percnt<option value=$quotnone$quot>$percntMAKETEXT{$quot(no parent, orphaned topic)$quot}$percnt</option></select>" else="<input type='text' name='topicparent' size='30' class='foswikiInputField' />&nbsp;<span class='foswikiUnvisited'><a href='$percntSCRIPTURLPATH{view}$percnt/$percntWEB$percnt/$percntTOPIC$percnt?template=more;$percntQUERYSTRING$percnt;pickparent=1#SetParent'>%MAKETEXT{"Pick from a list"}%</a></span>"}%</p>
+%TMPL:P{"topicparent"}%
 </div>
 <div class="foswikiFormStep foswikiLast modacDialogButton">
 <p><input type='submit' class='foswikiButton' value='%MAKETEXT{"Set new parent"}%' /></p>
@@ -246,3 +243,40 @@ id="cssFoswikiDiffOptions"}%%TMPL:END%
 %TMPL:P{"childtopics"}%
 %TMPL:P{"backlinks"}%
 %TMPL:END%
+
+%{
+  Copy/Paste/Modify ModacSkinWebCreateNewTopicTemplate
+     * Used search string instead of URLPARAM{topicparent}
+     * removed ID
+     * added a div with min-height to avoid scrollbars in dialog
+}%
+%{<verbatim class="tml">}%
+%TMPL:DEF{"topicparent_select2"}%<!-- -->
+%INCLUDE{"%SYSTEMWEB%.ModacAjaxHelper" section="selecttopic"}%
+<div class="select2minheight"><input type="hidden" class="jqTopicSelect {include_web: false}" name="topicparent" value="%SUBST{text="%SEARCH{ "name = '%TOPIC%'" scope="topic" type="query" nosearch="on" nototal="on" format="$parent"}%" pattern="%WORKFLOWSUFFIX%$" format=""}%" /></div>
+<!-- -->%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim class="tml">}%
+%TMPL:DEF{"topicparent_select"}%<!-- -->
+<select name="topicparent" class="foswikiSelect">
+<option value="%SUBST{text="%SEARCH{ "name = '%TOPIC%'" scope="topic" type="query" nosearch="on" nototal="on" format="$parent"}%" pattern="%WORKFLOWSUFFIX%$" format=""}%" selected="selected">%SUBST{text="%URLPARAM{"topicparent" default="WebHome"}%" pattern="%WORKFLOWSUFFIX%$" format=""}%</option>
+%SEARCH{
+  "1"
+  scope="topic"
+  web="%BASEWEB%"
+  excludetopic="*EditTemplate,*WebCreateNewTopicTemplate,*ViewTemplate"
+  type="query"
+  nonoise="on"
+  format="<option value=\"$web.$topic\">$topic</option>"
+}%
+</select>
+<!-- -->%TMPL:END%
+%{</verbatim>}%
+%{End Copy/Paste}%
+
+%{<verbatim class="tml">}%
+%TMPL:DEF{"topicparent"}%<!-- -->
+%TMPL:P{context="Select2Enabled" then="topicparent_select2" else="topicparent_select"}%
+<!-- -->%TMPL:END%
+%{</verbatim>}%

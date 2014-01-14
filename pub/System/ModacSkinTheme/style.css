@@ -1513,7 +1513,9 @@ div.ajaxspinner {
     min-width: 66px;
     height: 66px;
 }
-
+.modacDialogContents div.select2minheight {
+	min-height: 3em;
+}
 .modacMoreMenu li.modacMoreDynamic ul li span a {
 	padding-left: 25px;
 	background-repeat: no-repeat;
