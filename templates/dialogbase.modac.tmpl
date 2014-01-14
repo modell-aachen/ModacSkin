@@ -1,8 +1,9 @@
 %TMPL:INCLUDE{"dialogbase"}%
 
 %{ simple layout without leftbar, scripts, etc. but with modacDialogDefaults }%
+%TMPL:DEF{"modacDialogTitle"}%%TMPL:P{"titleaction"}%%TOPICTITLE%%TMPL:END%
 %TMPL:DEF{"main"}%
-<div class="modacDialogTitle">%TMPL:P{"titleaction"}%%TOPICTITLE%</div>
+<div class="modacDialogTitle">%TMPL:P{"modacDialogTitle"}%</div>
 <div class="foswikiPage">
 	<div class="modacDialogContents">%TMPL:P{"patterntopiccontents"}%%TMPL:P{"modacDialogDefaultsDiv"}%</div>
 </div>

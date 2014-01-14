@@ -47,7 +47,9 @@ jQuery(function($){
 
             var $contents = $data.find('.modacDialogContents');
             if($contents.length) {
-                options.title = $data.find('.modacDialogTitle').remove().html();
+                var escTitle = $data.find('.modacDialogTitle').remove().html();
+                escTitle = escTitle.replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&prime;').replace(/&/g, '&amp;');
+                options.title = escTitle;
             } else {
                 options.title = $data.find('h2:first').remove().text();
                 $contents = $('<div class="modacDialogContents"></div>').append($data);
