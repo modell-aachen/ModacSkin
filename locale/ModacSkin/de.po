@@ -694,8 +694,8 @@ msgid "Rename or move topic"
 msgstr "Seite umbenennen oder verschieben"
 
 #: templates/more.modac.tmpl:87
-msgid "Rename or move topic..."
-msgstr "Seite umbenennen oder verschieben"
+msgid "Move topic..."
+msgstr "Seite verschieben..."
 
 #: templates/oopshistory.modac.tmpl:66
 msgid "Render style:"
@@ -1455,3 +1455,27 @@ msgstr "Diese Aktionen stehen während der Bearbeitung nicht zur Verfügung."
 #: templates/renamedelete.modac.tmpl
 msgid "Do you really want to delete %1?"
 msgstr "Wollen Sie wirklich %1 löschen?"
+
+#: templates/more.modac.tmpl
+msgid "Move topic"
+msgstr "Seite verschieben"
+
+#: templates/renamebase.modac.tmpl
+msgid "Current web:"
+msgstr "Aktueller Bereich:"
+
+#: templates/renamebase.modac.tmpl
+msgid "Current topic:"
+msgstr "Aktuelle Seite:"
+
+#: templates/renamebase.modac.tmpl
+msgid "To topic:"
+msgstr "Zur Seite:"
+
+#: templates/renamebase.modac.tmpl
+msgid "To web:"
+msgstr "Zum Bereich:"
+
+#: templates/rename.modac.tmpl
+msgid "Move %1"
+msgstr "%1 verschieben"

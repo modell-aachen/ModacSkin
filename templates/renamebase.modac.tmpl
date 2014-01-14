@@ -25,9 +25,59 @@
 }%<div class="foswikiMakeVisibleBlock"><hr />
 <p><input type="button" class="foswikiButton foswikiCheckAllOn" value='%MAKETEXT{"Select all"}%' />&nbsp;<input type="button" class="foswikiButton foswikiCheckAllOff" value='%MAKETEXT{"Clear all"}%' /> %MAKETEXT{"checkboxes of referenced topics"}%</p></div>%TMPL:END%
 
+%TMPL:DEF{"changefrom"}%
+<table class="modacFormatOnly">
+%TMPL:P{"fromweb"}%
+%TMPL:P{"fromtopic"}%
+</table>
+%TMPL:END%
+
+%TMPL:DEF{"fromweb"}%<tr><td>
+---+++ %MAKETEXT{"Current web:"}%
+</td>
+<td>
+%WEB%
+</td></tr>%TMPL:END%
+
+%TMPL:DEF{"fromtopic"}%
+<tr><td>
+---+++ %MAKETEXT{"Current topic:"}%
+</td><td>
+%TOPIC%
+</td></tr>%TMPL:END%
+
+%TMPL:DEF{"towebtitle"}%---+++ %MAKETEXT{"To web:"}% %TMPL:END%
+%TMPL:DEF{"totopictitle"}%---+++ %MAKETEXT{"To topic:"}% %TMPL:END%
+
+%TMPL:DEF{"toweb"}%<tr><td>
+%TMPL:P{"towebtitle"}%
+</td>
+<td>
+%TMPL:P{"newweb"}%%TMPL:P{"newwebhelp"}%
+</td></tr>%TMPL:END%
+
+%TMPL:DEF{"totopic"}%
+<tr><td>
+%TMPL:P{"totopictitle"}%
+</td><td>
+%TMPL:P{"newtopic"}%%TMPL:P{"newtopichelp"}%
+</td></tr>%TMPL:END%
 
 %TMPL:DEF{"content"}%
 <div class="patternBorder">%TMPL:P{"formstart"}%
 %TMPL:P{"renameformsteps"}%
 %TMPL:P{"topicaction"}%
 %TMPL:P{"formend"}%</div>%TMPL:END%
+
+%TMPL:DEF{"pagetitle"}%%MAKETEXT{"Move [_1]" args="[[%TOPIC%]]"}%%TMPL:END%
+
+%TMPL:DEF{"renameformsteps"}%<div class="foswikiFormSteps">
+<div class="foswikiFormStep">
+%TMPL:P{"changefrom"}%
+</div>
+<div class="foswikiFormStep">
+<table class="modacFormatOnly">
+%TMPL:P{"toweb"}%
+%TMPL:P{"totopic"}%
+</table>
+</div>%TMPL:P{"searchresultsstep"}%</div>%TMPL:END%
