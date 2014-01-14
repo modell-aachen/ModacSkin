@@ -1476,6 +1476,14 @@ msgstr "Zur Seite:"
 msgid "To web:"
 msgstr "Zum Bereich:"
 
+#: data/System/ModacSkinTopicMenuTemplate.txt
+msgid "Topic preferences"
+msgstr "Seiteneinstellungen"
+
+#: data/System/ModacSkinTopicMenuTemplate.txt
+msgid "Topic parent"
+msgstr "Übergeordnete Seite"
+
 #: templates/rename.modac.tmpl
 msgid "Move %1"
 msgstr "%1 verschieben"
