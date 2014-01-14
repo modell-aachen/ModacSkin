@@ -4,5 +4,11 @@
 %{ Do not update links on delete }%
 %TMPL:DEF{"searchresultsstep"}%%TMPL:END%
 
-%{ add jqWikiWord }%
-%TMPL:DEF{"newtopic"}%%JQREQUIRE{"wikiword, focus"}%<p><input name="newtopic" class="foswikiInputField modacDeleteInput jqWikiWord {source: '.modacDeleteInput'}" value="%NEW_TOPIC%" size="36" /> %TMPL:P{"namehelp"}%</p>%TMPL:P{"nonwikiword"}% %TMPL:END%
+%TMPL:DEF{"newtopic"}%<input type="hidden" name="newtopic" class="foswikiInputField" value="%NEW_TOPIC%" size="36" />%TMPL:END%
+
+%TMPL:DEF{"renameformsteps"}%<div class="foswikiFormSteps">
+<div class="foswikiFormStep">
+---+++ %MAKETEXT{"Do you really want to delete [_1]?" args="%WEB%.%TOPIC%"}%
+%TMPL:P{"newtopic"}%
+%TMPL:P{"newweb"}%
+</div></div>%TMPL:END%

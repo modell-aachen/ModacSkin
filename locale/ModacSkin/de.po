@@ -1451,3 +1451,7 @@ msgstr "WebLeftBar ausblenden"
 #: data/System/ModacSkinTopicMenueTemplates.txt
 msgid "These actions are not available while editing."
 msgstr "Diese Aktionen stehen während der Bearbeitung nicht zur Verfügung."
+
+#: templates/renamedelete.modac.tmpl
+msgid "Do you really want to delete %1?"
+msgstr "Wollen Sie wirklich %1 löschen?"
