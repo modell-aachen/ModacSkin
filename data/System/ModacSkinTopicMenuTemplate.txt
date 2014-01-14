@@ -18,7 +18,7 @@
 
 %TMPL:DEF{"modacMoreSubmenuEdit"}%
 <ul>
- <li>%MAKETEXT{"These actions are not available while editing"}%</li>
+ <li>%MAKETEXT{"These actions are not available while editing."}%</li>
 </ul>
 %TMPL:END%
 

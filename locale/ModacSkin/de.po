@@ -1447,3 +1447,7 @@ msgstr "Der Name der Seite ist im Vorhinein festgelegt und kann nicht geändert 
 
 msgid "Hide WebLeftBar"
 msgstr "WebLeftBar ausblenden"
+
+#: data/System/ModacSkinTopicMenueTemplates.txt
+msgid "These actions are not available while editing."
+msgstr "Diese Aktionen stehen während der Bearbeitung nicht zur Verfügung."
