@@ -95,6 +95,7 @@ pub/System/ModacSkinTheme/style.css.gz 0664
 templates/attach.modac.tmpl 0664
 templates/attachagain.modac.tmpl 0664
 templates/attachnew.modac.tmpl 0664
+templates/attachnew.modacdialog.tmpl 0664
 templates/attachtables.modac.tmpl 0664
 templates/backlinks.modac.tmpl 0664
 templates/backlinksallwebs.modac.tmpl 0664
