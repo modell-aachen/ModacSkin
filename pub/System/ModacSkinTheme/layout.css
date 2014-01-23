@@ -73,3 +73,95 @@ body {
 #patternBottomBar {
 	clear:both;
 }
+
+/*------------Themes for standard applications------------*/
+.widgetBlockTitle { 
+	background-color: #6494c9; 
+	color: white; 
+	padding: 5px; 
+	font-size: 150%; 
+	font-weight: bold; 
+}
+
+.widgetBlockContent {
+	border: solid 1px #6494c9; 
+	padding: 10px; 
+	margin-bottom: 2em; 
+}
+
+.searchTable { 
+	width: 100%; 
+	border: none; 
+	border-collapse: collapse; 
+}
+
+.searchTable th { 
+	border: solid white; 
+	background:#EEEEEE ; 
+	color: #000000; 
+	padding: 8px; 
+	text-align: left; 
+}
+
+.searchTable td { 
+	border: solid white; 
+	border-width: 8px 1px; 
+	padding: 8px; 
+	background: #f8fcff; 
+}
+
+
+.metaDataHead {
+	width:100%;	
+	border-collapse: collapsed;
+	border: none;
+}
+
+.metaDataHead tr {
+	background: #f8fcff;
+}
+
+.metaDataHead td:first-child{
+	font-weight:bold;
+	color: #999;
+}
+
+.metaDataHead td { 
+        padding: 8px;
+	border-color: #f8fcff;
+	border-width: 8px 1px;
+}
+
+
+table.atpSearch { 
+	width: 100%; 
+	border: none; 
+	border-collapse: collapse; 
+}
+
+.atpSearch th { 
+	border: none;
+	background: white; 
+	color: #999; 
+	padding-bottom: 8px; 
+	text-align: left; 
+}
+
+.atpSearch tbody tr:first-child td { 
+	border-top: none; 
+}
+
+.atpSearch td { 
+	border: solid white; 
+	border-width: 8px 1px; 
+	padding: 8px; 
+	background: #f8fcff; 
+	color: #333; }
+
+.atpSearch td.secondary { 
+	color: #666; 
+}
+
+.atpSearch .ui-icon { 
+	background-image: url('%PUBURLPATH%/System/JQueryPlugin/themes/foswiki/images/ui-icons-famfamfam.png') <nop>!important; 
+}
