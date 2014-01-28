@@ -1553,7 +1553,7 @@ div.ajaxspinner {
 }
 .modacHideSidebar {
 	width: 14px;
-	position: fixed;
+	position: absolute;
 	left: 0px;
 	top:40px;
 	height: 150px;
@@ -1571,27 +1571,6 @@ div.ajaxspinner {
 	cursor: pointer;
 	background-image: url("sidebarShow.png");
 	background-repeat: no-repeat;
-}
-.modacHideSidebar {
-        width: 14px;
-        position: fixed;
-        left: 0px;
-        top:40px;
-        height: 150px;
-        cursor: pointer;
-        background-image: url("sidebarHide.png");
-        background-repeat: no-repeat;
-        display: none;
-}
-.modacShowSidebar {
-        width: 18px;
-        position: fixed;
-        left: 0px;
-        top:40px;
-        height: 150px;
-        cursor: pointer;
-        background-image: url("sidebarShow.png");
-        background-repeat: no-repeat;
 }
 .compareTopic1 {
         border: 10px solid rgb(255,204,204);

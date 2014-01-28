@@ -627,7 +627,21 @@ jQuery(function($){
         });
     });
     $('#modacSidebar').hover(function(){
-        $('#modacSidebar div.modacHideSidebar').show();
+        var icon = $('#modacSidebar div.modacHideSidebar');
+        if(!icon[0]) return;
+        var scroll;
+        if(window.pageYOffset !== undefined) {
+            scroll = window.pageYOffset;
+        } else if (document.documentElement !== undefined && document.documentElement.scrollTop) {
+            scroll = document.documentElement.scrollTop;
+        } else if (document.body !== undefined) {
+            scroll = document.body.scrollTop;
+        } else {
+            scroll = 0;
+        }
+        scroll += 40;
+        icon.css('top', scroll);
+        icon.show();
     }, function() {
         $('#modacSidebar div.modacHideSidebar').hide();
     });
