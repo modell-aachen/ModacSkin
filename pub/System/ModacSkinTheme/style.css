@@ -1572,6 +1572,9 @@ div.ajaxspinner {
 	background-image: url("sidebarShow.png");
 	background-repeat: no-repeat;
 }
+.WYSIWYG_TEXT_HIDDEN {
+	display: none;
+}
 .compareTopic1 {
         border: 10px solid rgb(255,204,204);
         padding: 3px;

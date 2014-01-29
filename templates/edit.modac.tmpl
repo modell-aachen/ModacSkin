@@ -49,11 +49,11 @@
 %TMPL:DEF{"action_buttons_SAVE"}%%TMPL:P{"button_save"}%&nbsp;%TMPL:P{"button_quietsave"}%&nbsp;%TMPL:P{"button_checkpoint"}% %TMPL:P{"button_preview"}% %TMPL:P{"button_cancel"}%%TMPL:END%
 
 
-%TMPL:DEF{"button_save"}%<input type="submit" class="foswikiSubmit" name="action_save" id="save" %MAKETEXT{"value='Save' accesskey='s'"}% />%TMPL:END%
+%TMPL:DEF{"button_save"}%<input type="submit" class="foswikiSubmit%IF{"context WYSIWYG_TEXT" then=" WYSIWYG_TEXT_HIDDEN"}%" name="action_save" id="save" %MAKETEXT{"value='Save' accesskey='s'"}% />%TMPL:END%
 
-%TMPL:DEF{"button_quietsave"}%<input type="submit" class="foswikiButton" name="action_quietsave" id="quietsave" %MAKETEXT{"value='Quiet save' accesskey='q'"}% />%TMPL:END%
+%TMPL:DEF{"button_quietsave"}%<input type="submit" class="foswikiButton%IF{"context WYSIWYG_TEXT" then=" WYSIWYG_TEXT_HIDDEN"}%" name="action_quietsave" id="quietsave" %MAKETEXT{"value='Quiet save' accesskey='q'"}% />%TMPL:END%
 
-%TMPL:DEF{"button_checkpoint"}%<input type="submit" class="foswikiButton" name="action_checkpoint" id="checkpoint" %MAKETEXT{"value='Save and Continue' accesskey='k'"}% />%TMPL:END%
+%TMPL:DEF{"button_checkpoint"}%<input type="submit" class="foswikiButton%IF{"context WYSIWYG_TEXT" then=" WYSIWYG_TEXT_HIDDEN"}%" name="action_checkpoint" id="checkpoint" %MAKETEXT{"value='Save and Continue' accesskey='k'"}% />%TMPL:END%
 
 %TMPL:DEF{"button_preview"}%<input type="submit" class="foswikiButton" name="action_preview" id="preview" %MAKETEXT{"value='Preview' accesskey='p'"}% />%TMPL:END%
 
@@ -63,7 +63,9 @@
 %TMPL:DEF{"topicinfo"}%%TMPL:P{"revCommentPluginOptions"}%<div class="patternTopicActions"><div class="patternTopicAction"><div class="patternActionButtons">%TMPL:P{"saveoptions"}%%TMPL:P{"action_buttons"}%<div class="foswikiClear"></div></div></div></div>%TMPL:END%
 
 
-%TMPL:DEF{"textarea"}%<div class="patternEditTopic"><textarea class="foswikiTextarea foswikiEditboxStyleProportional foswikiWysiwygEdit" id="topic" name="text" rows="%EDITBOXHEIGHT%" cols="%EDITBOXWIDTH%" style='%EDITBOXSTYLE%'>%TEXT%</textarea>%TMPL:P{"sig_textareabuttons"}%</div>%TMPL:END%
+%TMPL:DEF{"textarea"}%<div class="patternEditTopic">%TMPL:P{context="WYSIWYG_TEXT" then="textarea_wysiwyg" else="textarea_nowysiwyg"}%%TMPL:P{"sig_textareabuttons"}%</div>%TMPL:END%
+%TMPL:DEF{"textarea_nowysiwyg"}%<textarea class="foswikiTextarea foswikiEditboxStyleProportional foswikiWysiwygEdit" id="topic" name="text" rows="%EDITBOXHEIGHT%" cols="%EDITBOXWIDTH%" style='%EDITBOXSTYLE%'>%TEXT%</textarea>%TMPL:P{"sig_textareabuttons"}%%TMPL:END%
+%TMPL:DEF{"textarea_wysiwyg"}%<textarea class="foswikiTextarea foswikiEditboxStyleProportional foswikiWysiwygEdit WYSIWYG_TEXT WYSIWYG_TEXT_HIDDEN" id="topic" name="text" rows="%EDITBOXHEIGHT%" cols="%EDITBOXWIDTH%" style='%EDITBOXSTYLE%'>%WYSIWYG_TEXT%</textarea>%TMPL:P{"sig_textareabuttons"}%%TMPL:END%
 
 
 %TMPL:DEF{"sig_textareabuttons"}%%TMPL:END%
