@@ -35,6 +35,8 @@ pub/System/DocumentGraphics/arrow-down.png 0664
 pub/System/DocumentGraphics/arrow-right.png 0664
 pub/System/ModacSkin/atp_comment.js 0664
 pub/System/ModacSkin/atp_comment.js.gz 0664
+pub/System/ModacSkin/jsi18n.solr.de.js 0664
+pub/System/ModacSkin/jsi18n.solr.en.js 0664
 pub/System/ModacSkin/modac.js 0664
 pub/System/ModacSkin/modac.js.gz 0664
 pub/System/ModacSkin/pattern.js 0664

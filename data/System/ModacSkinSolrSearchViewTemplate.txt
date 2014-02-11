@@ -39,10 +39,15 @@
 
 %{<verbatim class="tml">}%
 %TMPL:DEF{"content"}%<div id="modacSolrWrapper"><div class='solrSearch'><noautolink>
+<div id='solrSearch' style='display:none' data-more-fields='%TMPL:P{"solr::fields"}%' data-solr-url='%SCRIPTURL{"rest"}%/SolrPlugin/proxy' data-solr-params='{"qt":"%TMPL:P{"solr::defaultquerytype"}%", "rows": %TMPL:P{"solr::defaultrows"}%}' data-extra-filter='%TMPL:P{"solr::extrafilter"}%%IF{"'%TMPL:P{"solr::defaultweb"}%'!='all'" then=" web:%TMPL:P{"solr::defaultweb"}%"}%'>
 %TMPL:P{"solr::title"}%<!-- -->
 %TMPL:P{"solr::header"}%
 %TMPL:P{"solr::hits"}%
 %TMPL:P{"solr::footer"}%
+%TMPL:P{"solr::assets"}%<!-- -->
+</div>
+%TMPL:P{"solr::templates"}%<!-- -->
+%TMPL:P{"solr::dictionary"}%<!-- -->
 %TMPL:P{"solr::css"}%<!-- -->
 %JQREQUIRE{"focus, serialpager"}%<!-- -->
 %IF{"context PrettyPhotoEnabled"
@@ -119,40 +124,48 @@
 %TMPL:DEF{"solr::sidebar"}%<!-- -->
 <noautolink>
 %TMPL:P{"solr::selection"}%
-%SOLRFORMAT{"solr1"
-  %TMPL:P{"solr::facet"
-    id="web"
-    format="$percntWEBLINK{\\"$key\\" format=\\"<span style='display: none'>$key </span><div style='margin-left: $percentCALC{\\"$dollarEVAL($dollarLENGTH($percentSUBST{text=\\"$key\\" pattern=\\"[^.]\\" format=\\"\\"}$percent)*7)\\"}$percentpx;'>$dollartitle\\"}$percnt&nbsp;($count)</div>"
-    title="$percntWEBLINK{\\"$key\\" format=\\"$dollartitle\\"}$percnt"
-    value="$id:$key"
-    input="checkbox"
-    include="%TMPL:P{"solr::facet::include::web"}%"
-    exclude="%TMPL:P{"solr::facet::exclude::web"}%"
-    extraclass="solrSort"
-    pageropts=""
-  }%
-  %TMPL:P{"solr::facet"
-    id="language"
-    format="$key&nbsp;($count)"
-    value="$id:$key"
-    input="checkbox"
-    include="%TMPL:P{"solr::facet::include::language"}%"
-    exclude="%TMPL:P{"solr::facet::exclude::language"}%"
-    extraclass="solrSort"
-    pageropts=""
-  }%
-  %TMPL:P{"solr::facet"
-    id="type"
-    format="$key&nbsp;($count)"
-    value="$id:$key"
-    input="checkbox"
-    include="%TMPL:P{"solr::facet::include::type"}%"
-    exclude="%TMPL:P{"solr::facet::exclude::type"}%"
-    extraclass=""
-    pageropts=""
-  }%
+</noautolink>
+%TMPL:P{"solr::facet"
+  id="web"
+  format="$percntWEBLINK{\\"$key\\" format=\\"<span style='display: none'>$key </span><div style='margin-left: $percentCALC{\\"$dollarEVAL($dollarLENGTH($percentSUBST{text=\\"$key\\" pattern=\\"[^.]\\" format=\\"\\"}$percent)*7)\\"}$percentpx;'>$dollartitle\\"}$percnt&nbsp;($count)</div>"
+  class="solrWebFacetField"
+  title="%MAKETEXT{"Web"}%"
+  include="%TMPL:P{"solr::facet::include::web"}%"
+  exclude="%TMPL:P{"solr::facet::exclude::web"}%"
+  multivalue="true" 
+  union="true" 
+  exclusion="true" 
+  sort="title" 
+  limit="-1"
+}%
+%TMPL:P{"solr::facet"
+  id="type"
+  exclude="%TMPL:P{"solr::facet::exclude::type"}%"
+  title="%MAKETEXT{"Media"}%"
+}%
+%TMPL:P{"solr::facetquery"
+  id="date"
+  exclusion="true" 
+  title="%MAKETEXT{"Recent changes"}%"
+  queries="[
+      { \"key\": \"%MAKETEXT{"1 hour"}%\", \"value\": \"date:[NOW-1HOUR TO NOW]\" }, 
+      { \"key\": \"%MAKETEXT{"4 hours"}%\", \"value\": \"date:[NOW-4HOUR TO NOW]\" },
+      { \"key\": \"%MAKETEXT{"today"}%\", \"value\": \"date:[NOW/DAY TO NOW]\" },
+      { \"key\": \"%MAKETEXT{"2 days"}%\", \"value\": \"date:[NOW/DAY-1DAY TO NOW]\" },
+      { \"key\": \"%MAKETEXT{"7 days"}%\", \"value\": \"date:[NOW/DAY-7DAY TO NOW]\" },
+      { \"key\": \"%MAKETEXT{"1 month"}%\", \"value\": \"date:[NOW-1MONTH TO NOW]\" },
+      { \"key\": \"%MAKETEXT{"2 months"}%\", \"value\": \"date:[NOW-2MONTH TO NOW]\" },
+      { \"key\": \"%MAKETEXT{"1 year"}%\", \"value\": \"date:[NOW-1YEAR TO NOW]\" },
+      { \"key\": \"%MAKETEXT{"older"}%\", \"value\": \"date:[* TO NOW/YEAR]\" }
+    ]"
+}%
+%TMPL:P{"solr::facet"
+  id="language"
+  title="%MAKETEXT{"Language"}%"
+}%
   %TMPL:P{"solr::facet"
     id="field_Dokumententyp_s"
+    title="%MAKETEXT{"document type"}%"
     format="$key&nbsp;($count)"
     value="$id:$key"
     input="checkbox"
@@ -163,6 +176,7 @@
   }%
   %TMPL:P{"solr::facet"
     id="field_Freigegeben_durch_s"
+    title="%MAKETEXT{"Person in charge of page"}%"
     format="$key&nbsp;($count)"
     value="$id:$key"
     input="checkbox"
@@ -173,6 +187,7 @@
   }%
   %TMPL:P{"solr::facet"
     id="field_Geltungsbereich_s"
+    title="%MAKETEXT{"Area of application"}%"
     format="$key&nbsp;($count)"
     value="$id:$key"
     input="checkbox"
@@ -183,6 +198,7 @@
   }%
   %TMPL:P{"solr::facet"
     id="field_Normkapitel_s"
+    title="%MAKETEXT{"Normchapter"}%"
     format="$key&nbsp;($count)"
     value="$id:$key"
     input="checkbox"
@@ -191,19 +207,6 @@
     extraclass="solrSort"
     pageropts=""
   }%
-  %TMPL:P{"solr::facet"
-    id="facetquery"
-    format="$key&nbsp;($count)"
-    title="$key"
-    value="$query"
-    input="radio"
-    include=""
-    exclude=""
-    extraclass=""
-    pageropts=""
-  }%%TMPL:P{"modacExtraFacets"}%
-}%<!-- -->
-</noautolink>
-<!-- -->%TMPL:END%
+%TMPL:P{"modacExtraFacets"}%<!-- -->
+%TMPL:END%
 %{</verbatim>}%
-

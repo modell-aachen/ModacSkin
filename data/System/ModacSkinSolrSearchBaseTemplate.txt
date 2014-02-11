@@ -1,117 +1,282 @@
 %META:TOPICINFO{author="BaseUserMapping_333" comment="save topic" date="1292864753" format="1.1" reprev="2" version="2"}%
 %META:TOPICPARENT{name="SolrPlugin"}%
+
 %{<verbatim class="tml">}%
 %TMPL:INCLUDE{"SolrSearchBase"}%
 %{</verbatim>}%
 
-%{Sprachanpassung}%
-%TMPL:DEF{"solr::format::list::topic"}%<!-- -->
-<div class='solrSearchHit solrTopicHit'>
-  <h3 style='background-image:url(%icon%)' title='%MAKETEXT{%type%}%'>
-    [[%web%.%topic%]]
-    <span class='foswikiGrayText'>
-      %WEBLINK{"%web%"
-        format="<a class='webLink' href='$url'>%MAKETEXT{"in [_1]" args="$title"}%</a>"
-      }%
-    </span>%{
-    }%%IF{"'%content_language%'='de'" then="<img class='modacFlag' src='%PUBURLPATH%/%SYSTEMWEB%/FamFamFamFlagIcons/de.png' alt='de.png' title='%MAKETEXT{"German"}%' />"}%%{
-    }%%IF{"'%content_language%'='en'" then="<img class='modacFlag' src='%PUBURLPATH%/%SYSTEMWEB%/FamFamFamFlagIcons/gb.png' alt='gb.png' title='%MAKETEXT{"English"}%' />"}%%{
-    }%%IF{"'%content_language%'='fr'" then="<img class='modacFlag' src='%PUBURLPATH%/%SYSTEMWEB%/FamFamFamFlagIcons/fr.png' alt='fr.png' title='%MAKETEXT{"French"}%" />"}%
-  </h3>
-  <div class='solrHilite'>
-    <literal>%hilite%</literal>
-  </div>
-  <div class='solrRevision'>
-    %date%,
-    %IF{"istopic '%USERINFO{"%author%" format="$wikiusername"}%'"
-      then="%USERINFO{"%author%" format="[[$wikiusername][$wikiname]]"}%"
-      else="%USERINFO{"%author%" format="<nop>$wikiname"}%"
-    }%
-  </div>
-</div>
-<!-- -->%TMPL:END%
-
-%TMPL:DEF{"solr::format::list::action"}%<!-- -->
-<div class='solrSearchHit solrActionHit'>
-  <h3 style='background-image:url(%ICONURLPATH{"target"}%)' title='%MAKETEXT{%type%}%'>
-    [[%web%.%topic%][%title%]]
-    <span class='foswikiGrayText'><em>(%MAKETEXT{%actionstate%}%)</em> %MAKETEXT{"in [_1]" args="[[%web%.%topic%]]"}%</span>
-    <!-- -->
-  </h3>
-  <div class='solrHilite'>
-    <literal>%hilite%</literal>
-  </div>
-  <div class='solrRevision'>
-    %date%, %USERINFO{"%author%" format="[[$wikiusername][$wikiname]]"}%
-  </div>
-</div>
-<!-- -->%TMPL:END%
-
-%TMPL:DEF{"solr::format::list::attachment"}%<!-- -->
-<div class='solrSearchHit solrAttachmentHit'>
-  <h3 style='background-image:url(%icon%)' title='%MAKETEXT{%type%}%'>
-    [[%url%][%name%]]
-    <span class='foswikiGrayText'>%MAKETEXT{"in [_1]" args="[[%web%.%topic%]]"}%</span>
-    %IF{"'%comment%'!=''" then="<div class='foswikiGrayText'>%comment%</div>" else="<!-- -->"}%
-  </h3>
-  <div class='solrHilite'>
-    <literal>%hilite%</literal>
-  </div>
-  <div class='solrRevision'>
-    %date%, %USERINFO{"%author%" format="[[$wikiusername][$wikiname]]"}%
-  </div>
-</div>
-<!-- -->%TMPL:END%
-
-%TMPL:DEF{"solr::format::list::comment"}%<!-- -->
-<div class='solrSearchHit solrCommentHot'>
-  <h3 style='background-image:url(%icon%)' type='%MAKETEXT{%type%}%'>
-    [[%url%][%title%]]
-    <span class='foswikiGrayText'>%MAKETEXT{"in [_1]" args="[[%web%.%topic%]]"}%</span>
-  </h3>
-  <div class='solrHilite'>
-    <literal>%hilite%</literal>
-  </div>
-  <div class='solrRevision'>
-    %date%, %USERINFO{"%author%" format="[[$wikiusername][$wikiname]]"}%
-  </div>
-</div>
-<!-- -->%TMPL:END%
-
 %{<verbatim class="tml">}%
-%TMPL:DEF{"modacExtraFormat"}%
-content_language=\"$language\"
-actionstate=\"$action_state_s\"
-%TMPL:END%
+%TMPL:DEF{"script:skinbase"}%%TMPL:PREV%%{
+}%%ADDTOZONE{"script" id="jsi18n::solr" requires="%JSI18NID%" text="<script src='%PUBURLPATH%/%SYSTEMWEB%/ModacSkin/jsi18n.solr.%IF{"$LANGUAGE='de'" then="de" else="en"}%.js'></script>"}%%{
+}%%ADDTOZONE{"script" id="solr:dateformat" text="<script>solrDateformat='%TMPL:P{"solr::dateformat"}%';</script>"}%%{
+}%%TMPL:END%
 %{</verbatim>}%
 
 %{<verbatim class="tml">}%
-%TMPL:DEF{"modacExtraTypes"}%action%TMPL:END%
-%{</verbatim>}%
-
-%{<verbatim class="tml">}%
-%TMPL:DEF{"solr::hits::list"}%<!-- -->
-%SOLRFORMAT{"solr1"
-  header="<div class='solrSearchHits solrSearchHitsList jqPrettyPhoto {itemSelector:\".solrImageFrame a\"}'>"
-  footer="</div>"
-  format="$percntTMPL:P{\"solr::format::list::$percentIF{\"',$type,'~',%TMPL:P{"modacExtraTypes"}%,'\" then=\"$type\" else=\"$format\"}$percent\"
-      author=\"$author\"
-      comment=\"$percntENCODE{\"$comment\" type=\"html\"}$percnt\"
-      date=\"$date\"
-      hilite=\"$percntENCODE{\"$hilite\" type=\"quote\"}$percnt\"
-      icon=\"$icon\"
-      id=\"$id\"
-      index=\"$index\"
-      name=\"$name\"
-      score=\"$score\"
-      size=\"$size\"
-      title=\"$percntENCODE{\"$title\" type=\"html\"}$percnt\"
-      topic=\"$topic\"
-      type=\"$type\"
-      url=\"$url\"
-      web=\"$web\"
-      %TMPL:P{"modacExtraFormat"}%
-   }$percnt%CLEAR%"
+%{ ###########################################################################
+   solr::inputstep - this is a part of the solr::searchform defining the 
+   actual input field, as well as some basic select and checkboxes
 }%
-%TMPL:END%
+%TMPL:DEF{"solr::inputstep"}%<!-- -->
+<div class='foswikiFormStep'>
+<div class='foswikiLeft'>
+<table class='foswikiNullTable'>
+  <tr>
+    <td>
+      <input type='text' autocomplete='off' class='foswikiInputField jqFocus solrSearchField jqUIAutocomplete {source:"%SCRIPTURL%/rest/SolrPlugin/autocomplete"}' size='50' style='margin-right:8px;' value="%URLPARAM{"search"}%" />
+    </td>
+    <td>
+      %BUTTON{"%MAKETEXT{"Search"}%" type="submit" title="%MAKETEXT{"submit the query"}%" icon="find" class="solrSubmitButton"}%
+    </td>
+  </tr>
+</table>
+%TMPL:P{"solr::input::checkboxes"}%<!-- -->
+</div>
+<div class='foswikiRight'>
+%TMPL:P{"solr::sortby"}%<!-- -->
+%TMPL:P{"solr::displayas"}%<!-- -->
+</div>
+%CLEAR%
+</div>
+<!-- -->%TMPL:END%
+%{</verbatim>}%
+
+%{country flags}%
+%{<verbatim>}%
+%TMPL:DEF{"topic_title"}% {{html modacSolr.lang(language)}} %TMPL:END%
+%{</verbatim>}%
+
+%{jsi18n, country flags}%
+%{<verbatim class="tml">}%
+%TMPL:DEF{"solr::templates::hits::topic"}%<script id="solrHitTemplate_topic" type="text/x-jquery-tmpl">
+  <div class='solrSearchHit solrTopicHit clearfix'>
+    %TMPL:P{"solr::thumbnail"}%
+    <h3 title='${jsi18n.get('solr', 'topic')}'>
+      <img src='{{if icon}}${icon}{{else}}${foswiki.getPreference('PUBURLPATH')+'/'+foswiki.getPreference('SYSTEMWEB')+'/FamFamFamSilkIcons/page_white.png'}{{/if}}' width='16' height='16' class='solrHitIcon' />
+      <a href='${url}'>${title}</a>
+      <span class='foswikiGrayText foswikiSmallish solrContainerLink'>
+        {{html jsi18n.get('solr', 'in [_1]', "<a href='"+container_url+"'>"+container_title+"</a>")}}
+      %TMPL:P{"topic_title"}%
+      </span>
+    </h3>
+    <div class='solrHilite'>
+      {{html $item.getHilite(id)}}
+    </div>
+    <div class='solrRevision'> 
+      ${$item.formatDate(date,solrDateformat)}, ${author}
+    </div>
+  </div>
+</script>%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim>}%
+%TMPL:DEF{"solr::templates::hits::action"}%<script id="solrHitTemplate_action" type="text/x-jquery-tmpl">
+  <div class='solrSearchHit solrActionHit clearfix'>
+    %TMPL:P{"solr::thumbnail"}%
+    <h3 title='${jsi18n.get('solr', 'action')}'>
+      <img src='{{if icon}}${icon}{{else}}${foswiki.getPreference('PUBURLPATH')+'/'+foswiki.getPreference('SYSTEMWEB')+'/DocumentGraphics/target.png'}{{/if}}' width='16' height='16' class='solrHitIcon' />
+    <a href='${url}'>${title}</a>
+    <span class='foswikiGrayText'><em>(${jsi18n.get('solr', action_state_s)})</em>
+      {{html jsi18n.get('solr', 'in [_1]', "<a href='"+foswiki.getPreference('SCRIPTURL')+'/view'+foswiki.getPreference('SCRIPTSUFFIX')+'/'+web+'/'+topic+"'>"+container_title+"</a>")}}
+    </span>
+  </h3>
+  <div class='solrHilite'>
+    {{html $item.getHilite(id)}}
+  </div>
+  <div class='solrRevision'>
+    ${$item.formatDate(date,solrDateformat)}, ${author}
+  </div>
+</div>
+</script>%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim class="tml">}%
+%TMPL:DEF{"solr::templates::hits::comment"}%<script id="solrHitTemplate_comment" type="text/x-jquery-tmpl">
+  <div class='solrSearchHit solrCommentHit clearfix'>
+    %TMPL:P{"solr::thumbnail"}%
+    <h3 title='${jsi18n.get('solr', 'comment')}'>
+      <img src='{{if icon}}${icon}{{else}}${foswiki.getPreference('PUBURLPATH')+'/'+foswiki.getPreference('SYSTEMWEB')+'/FamFamFamSilkIcons/comment.png'}{{/if}}' width='16' height='16' class='solrHitIcon' />
+      <a href='${url}'>${title}</a>
+      <span class='foswikiGrayText foswikiSmallish solrContainerLink'>
+        {{html jsi18n.get('solr' ,'in [_1]', "<a href='"+container_url+"'>"+container_title+"</a>")}}
+      </span>
+    </h3>
+    <div class='solrHilite'>
+      {{html $item.getHilite(id)}}
+    </div>
+    <div class='solrRevision'> 
+      ${$item.formatDate(date, solrDateformat)}, ${author}
+    </div>
+  </div>
+</script>%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim class="tml">}%
+%TMPL:DEF{"image_title"}%<!--image-->%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim class="tml">}%
+%TMPL:DEF{"solr::templates::hits::image"}%<script id="solrHitTemplate_image" type="text/x-jquery-tmpl">
+  <div class='solrSearchHit solrImageHit clearfix'>
+    <div class='solrImageFrame'>
+      <a class='imageHref imageSimple jqImageTooltip {web:"${web}", topic:"${topic}", image:"${name}"}' href='${url}' title='${name}'>
+        <img src='${foswiki.getPreference('SCRIPTURLPATH')+'/rest'+foswiki.getPreference('SCRIPTSUFFIX')}/ImagePlugin/resize?topic=${web}.${topic};file=${encodeURIComponent(name)};size=64>;crop=northwest' alt='${name}' />
+      </a>
+    </div>
+    <h3 title='${jsi18n.get('solr', 'image')}'>
+      <a href='${url}'>${name}</a>
+      <span class='foswikiGrayText foswikiSmallish solrContainerLink'>
+        {{html jsi18n.get('solr', 'in [_1]', "<a href='"+container_url+"'>"+container_title+"</a>")}}
+      %TMPL:P{"image_title"}%
+      </span>
+      {{if comment}}
+        <div class='foswikiGrayText foswikiSmallish solrSearchHitSummary'>${comment}</div>
+      {{/if}}
+    </h3>
+    <div class='solrHilite'>
+      {{html $item.getHilite(id)}}
+    </div>
+    <div class='solrRevision'> 
+      ${$item.formatDate(date,solrDateformat)}, ${author}
+    </div>
+    %CLEAR%
+  </div>
+</script>%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim class="tml">}%
+%TMPL:DEF{"misc_title"}%<!--misc-->%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim class="tml">}%
+%TMPL:DEF{"solr::templates::hits::misc"}%<script id="solrHitTemplate_misc" type="text/x-jquery-tmpl">
+  <div class='solrSearchHit solrAttachmentHit'>
+    <h3>
+      <img src='{{if icon}}${icon}{{else}}${foswiki.getPreference('PUBURLPATH')+'/'+foswiki.getPreference('SYSTEMWEB')}/FamFamFamSilkIcons/page_white.png{{/if}}'>
+      <a href='${url}'>${name}</a>
+      <span class='foswikiGrayText foswikiSmallish solrContainerLink' >
+        {{html jsi18n.get('solr', "in [_1]" ,"<a href='"+container_url+"'>"+container_title+"</a>")}}
+      %TMPL:P{"misc_title"}%
+      </span>
+      {{if comment}}
+        <div class='foswikiGrayText foswikiSmallish'>${comment}</div>
+      {{/if}}
+    </h3>
+    <div class='solrHilite'>
+      {{html $item.getHilite(id)}}
+    </div>
+    <div class='solrRevision'> 
+      ${$item.formatDate(date,solrDateformat)}, ${author}
+    </div>
+  </div>
+</script>%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim class="tml">}%
+%TMPL:DEF{"solr::templates::facetfield"}%<script id="solrFacetFieldTemplate" type="text/x-jquery-tmpl"> 
+  <div class="jqSerialPager" data-prev-text="${jsi18n.get('solr', "prev")}" data-next-text="${jsi18n.get('solr', "next")}" data-pagesize="10">
+    <ul>
+      {{each(index, value) widget.facetCounts}}
+        <li>
+          <table class='foswikiLayoutTable' width='100%'>
+            <tr>
+            <td width='12px'>
+              <input type='${widget.inputType}' name='${widget.field}' title='{{html $item.getFacetKey(facet)}}' value='{{html $item.getFacetValue(facet)}}' id='${widget.field}_${index}' autocomplete='off' class='solrFacetValue' {{html $item.checked(facet)}} />
+            </td>
+            <td><label for='${widget.field}_${index}' style='display:block'>{{html $item.getFacetKey(facet)}} (${count})</label></td>
+            </tr>
+          </table>
+        </li>
+      {{/each}}
+    </ul>
+  </div>
+</script>%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim class="tml">}%
+%TMPL:DEF{"solr::templates::resultsperpage"}%<script id="solrResultsPerPageTemplate" type="text/x-jquery-tmpl">
+<table class='foswikiNullTable' width='100%'>
+  <tr>
+    <td>
+     {{if count > 0}}
+       {{html jsi18n.get('solr', "Results [_1] - [_2] of <b>[_3]</b>" ,from, to, count)}}
+     {{else}}
+        <span class="foswikiAlert">${jsi18n.get('solr', "nothing found")}</span>
+     {{/if}}
+    </td>
+    <td align="right">
+      <table class='foswikiNullTable solrRows'>
+        <tr>
+          <th>${jsi18n.get('solr', "Results per page")}:</th>
+          <td>
+            <select class='foswikiSelect'>
+              <option class='foswikiOption' value="5">5</option>
+              <option class='foswikiOption' value="10">10</option>
+              <option class='foswikiOption' value="20">20</option>
+              <option class='foswikiOption' value="30">30</option>
+              <option class='foswikiOption' value="40">40</option>
+              <option class='foswikiOption' value="50">50</option>
+              <option class='foswikiOption' value="100">100</option>
+            </select>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+</script>%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim class="tml">}%
+%TMPL:DEF{"solr::templates::spellcorrection"}%<script id="solrSpellCorrectionTemplate" type="text/x-jquery-tmpl">
+${jsi18n.get('solr', 'Did you mean ')}{{each suggestions}}{{if $index > 0}}${jsi18n.get('solr', ' or ')}{{/if}} <a class='solrCorrection' href='#'>${$value}</a>{{/each}}${jsi18n.get('solr', '?')}
+</script>%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim class="tml">}%
+%TMPL:DEF{"solr::templates::hits::ClassifiedTopic}%<!-- no results template for ClassifiedTopic -->%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim>}%
+%TMPL:DEF{"solr::templates::hits"}%%TMPL:PREV%
+%TMPL:P{"solr::templates::hits::action"}%<!-- -->
+%{</verbatim>}%
+
+%{<verbatim>}%
+%{
+Do not modify this definition, instead do a (but unescape the $percent)
+$percentTMPL:DEF{"solr::fields::append"}$percent$percentTMPL:PREF$percent,your_solr_field$percentTMPL:END$percent
+}%
+%TMPL:DEF{"solr::fields"}%action_state_s,conatiner_title%TMPL:P{"solr::fields::append"}%%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim class="tml">}%
+%{ ###########################################################################
+   solr::dictionary - defines a set of keys to be displayed using a different lable
+}%
+%TMPL:DEF{"solr::dictionary"}%<literal>
+<div class="solrDictionary solrJsonData" data-id="default">
+{
+  %FLEXWEBLIST{
+    webs="public"
+    exclude="Trash.*"
+    format="\"$web\": \"$percntWEBLINK{\"$web\" format=\"$title\"}$percnt\""
+    subheader=",$n"
+    separator=",$n"
+  }%,
+  "Filed in": "%MAKETEXT{"Filed in [_1]"}%",
+  "Tagged": "%MAKETEXT{"Tagged [_1]"}%",
+  "tagged": "%MAKETEXT{"tagged [_1]"}%",
+  "field_TopicType_lst": "%MAKETEXT{"topic type"}%",
+  "type": "%MAKETEXT{"media"}%",
+  "date": "%MAKETEXT{"recently"}%",
+  "en": "%MAKETEXT{"English"}%",
+  "de": "%MAKETEXT{"German"}%",
+  "language": "%MAKETEXT{"language"}%",
+  "keyword": "%MAKETEXT{"keyword"}%",
+  "tag": "%MAKETEXT{"tag"}%"
+%TMPL:P{"modac::solr::dictionary"}%
+}
+</div>
+</literal>%TMPL:END%
 %{</verbatim>}%

@@ -802,5 +802,57 @@ jQuery(function($){
     $('.modacDialogable').click(ModacSkin.dialogCallback);
 
     // end TopicMenue
+
+    // handle submit in quickSearchBox
+    $('#modacSearchBox form').submit(function(){
+        // If on a Solr page
+        //    copy terms to solrSearchField and submit that instead
+        // If on a normal wiki page
+        //    Proper browser: rewrite query to link with solr4 style hashtag
+        //    IE7,8: rewrite query to query to link with hashtag stored in 'htag' parameter - some script on solr page will decode it
+        var $searchbox = $('#quickSearchBox');
+        var $searchfield = $('.solrSearchField');
+        var $forms = $('.solrSearchForm');
+        if($searchbox.length == 0) return; // XXX
+
+        if($searchfield.length == 0 || $forms == 0) {
+            // not on a SolrSearch page, change query to solr4 style and do the search
+            var $this = $(this),
+                action = $this.attr("action"),
+                search = $this.find("input[name='search']"),
+                href = action,
+                params = new Array();
+            // rewrite facet parameters
+            $this.closest('form').find('.fq').each(function(idx){ // XXX this works for web, anything else is untested
+                var each = $(this);
+                var name = encodeURIComponent(each.attr('name'));
+                var val = encodeURIComponent(each.val());
+                params.push('fq='+name+'%3A'+val);
+            });
+            // rewrite query
+            if(search && search.val()) {
+                params.push('q='+encodeURIComponent(search.val()));
+            }
+            // construct the hashtag (eventually deal with browsers feeling special)
+            if(params.length) {
+                var htag = params.join('&');
+                if(navigator.appName == 'Microsoft Internet Explorer' && navigator.userAgent.matches(/MSIE [7,8]/)) {
+                    href += 'htag='+htag;
+                }
+                href += '#'+params.join('&');
+            }
+            // do the search
+            window.location.href = href;
+            return false;
+        }
+
+        // We are on a SolrSearch page
+        // Copy
+        var query = $searchbox.val();
+        $searchfield.val(query);
+        // Submit solrSearchForm and inhibit submit of quickSearchBox
+        $searchfield.closest('form').first().submit(); // XXX could there be multiple?!?
+        return false;
+    });
 });
 

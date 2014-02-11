@@ -1,18 +1,18 @@
 jQuery(function($){
-    // copy query to solrSearchForm and submit that
-    $('#modacSearchBox form').submit(function(){
-        var $searchbox = $('#quickSearchBox');
-        var $searchfield = $('.solrSearchField');
-        var $forms = $('.solrSearchForm');
-        if($searchbox.length == 0 || $searchfield.length == 0 || $forms == 0) {
-            // this script won't work, fallback to submit of modacSearchBox
-            return;
+    // this will deal with browsers that do not understand the hashtag in links
+    if(window.location.hash == '') {
+        var ht=/\?htag=(.*)/.exec(window.location.href);
+        if(ht && ht[1]) window.location.hash=ht[1];
+    }
+    modacSolr = {
+        lang: function(language){
+            if(typeof(language)==='undefined') return '';
+            var flag, name;
+            if(language === 'de') { flag='de'; name='German'; }
+            else if(language === 'en') { flag='gb'; name='English'; }
+            else if(language === 'fr') { flag='fr'; name='French'; }
+            if(!flag) return '';
+            return "<img class='modacFlag' src='"+foswiki.getPreference('PUBURLPATH')+"/"+foswiki.getPreference('SYSTEMWEB')+"/FamFamFamFlagIcons/"+flag+".png' title='"+jsi18n.get('solr', name)+"' />";
         }
-        // Copy
-        var query = $searchbox.val();
-        $searchfield.val(query);
-        // Submit solrSearchForm and inhibit submit of quickSearchBox
-        $forms[0].submit(); // XXX could there be multiple?!?
-        return false;
-    });
+    }
 });
