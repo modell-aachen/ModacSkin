@@ -7,6 +7,10 @@
    * [[%BASEWEB%.WebTopicList][%MAKETEXT{"Index"}%]]
 </div>
 
+<div class="modacSidebarActions">
+%INCLUDE{"%IF{"istopic '%BASEWEB%/WebActions'" then="%BASEWEB%/WebActions" else="%IF{"istopic '%CUSTOMIZINGWEB{default="Custom"}%/WebActionsDefault'" then="%CUSTOMIZINGWEB{default="Custom"}%/WebActionsDefault" else="%SYSTEMWEB%/WebActionsDefault"}%"}%"}%
+</div>
+
 <div class="modacSidebarTwisty">
 %TWISTY{ 
     id="modacSidebarONE" 
@@ -19,7 +23,6 @@
 	hideimgleft="%ICONURLPATH{arrow-down}%" 
 	linkclass="patternTwistyButton" 
 }% 
-   * <a href="%SCRIPTURLPATH{"view"}%/%BASEWEB%/WebCreateNewTopic?topicparent=%BASETOPIC%" class="modacNewLink">%MAKETEXT{"Create New Topic"}%</a>
    * [[%BASEWEB%.WebChanges][%MAKETEXT{"Recently changed"}%]]
    * [[%MAINWEB%.Templates][%MAKETEXT{"Templates"}%]]
 %ENDTWISTY%

@@ -23,6 +23,7 @@ data/System/ModacSkinWebChangesViewTemplate.txt 0664
 data/System/ModacSkinWebCreateNewTopicDialogTemplate.txt 0664
 data/System/ModacSkinWebCreateNewTopicTemplate.txt 0664
 data/System/ModacSkinWebList.txt 0664
+data/System/WebActionsDefault.txt 0644
 data/System/WebBottomBarDefault.txt 0664
 data/System/WebLeftBarDefault.txt 0664
 data/System/WebTopBarDefault.txt 0664

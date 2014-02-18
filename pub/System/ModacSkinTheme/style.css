@@ -297,7 +297,7 @@ html>body #modacLogoIE {
 #modacSidebarIE ul {
 	padding-left: 2em;
 }
-.modacSidebarTwisty {
+.modacSidebarTwisty, .modacSidebarActions {
 	background-image:url("ModacSkinLogos/portal-break.png");
 	background-position:center top;
 	background-repeat:no-repeat;
@@ -306,6 +306,14 @@ html>body #modacLogoIE {
 #modacSidebar .modacSidebarTwisty ul {
 	margin-top: 0em;
 
+}
+.modacSidebarActions ul {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+.modacSidebarActions a {
+	display: inline-block;
+	margin: 0.5em 0em;
 }
 /* -------------------------- modacTabs ----------------------------*/
 #modacActionButtonsWrapper  {
