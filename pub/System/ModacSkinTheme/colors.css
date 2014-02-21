@@ -112,7 +112,6 @@ blockquote h2 {
 :visited:hover {
 	color:#06c;
 	background-color:transparent;
-	background-image:none;
 }
 :link:hover img,
 :visited:hover img {
