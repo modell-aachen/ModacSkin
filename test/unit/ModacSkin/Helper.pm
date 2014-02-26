@@ -16,12 +16,14 @@ use constant NOFAV => 'FavouritesDisabled';
 use constant NOFAVVIEW => 'FavouritesDisabledView';
 use constant DEADLINKS => 'DeadLinks';
 use constant MEASURE => 'TestMeasures';
+use constant BLOGOUT => 'BackgroundLogout';
+use constant TRANSLATIONS => 'MaketextTranslations';
 
 our @EXPORT_OK = qw ( WEB );
 our %EXPORT_TAGS = (
     webs => [ 'WEB', 'TRASH' ],
     setup => [ 'set_up_users', 'set_up_webs' ],
-    topics => [ 'NOFAV', 'DEADLINKS', 'MEASURE' ]
+    topics => [ 'NOFAV', 'DEADLINKS', 'MEASURE', 'BLOGOUT', 'TRANSLATIONS' ]
 );
 
 # Creates files to attach
@@ -96,7 +98,9 @@ sub set_up_webs {
         Foswiki::Func::saveTopic( $ps, NOFAVVIEW.'Template', undef, "%TMPL:INCLUDE{\"view\"}%\n%TMPL:DEF{\"modacFavTopic\"}%%TMPL:END%" );
         Foswiki::Func::saveTopic( $ps, NOFAV, undef, "   * Set VIEW_TEMPLATE = ".NOFAVVIEW );
         Foswiki::Func::saveTopic( $ps, DEADLINKS, undef, "   * [[DoesNotExist]]\n   * [[%WEB%.DoesNotExistAsWell][DoesNotExistAsWell]]" );
-        Foswiki::Func::saveTopic( $ps, MEASURE, undef, "   * 11em: <div style=\"background-color:red; width: 11em; height: 1em;\" id=\"fixedWidth11em\"></div>\n   * 1em: <div style=\"background-color:red; width: 1em; height: 1em;\" id=\"fixedWidth1em\"></div>\n   * 0.4em: <div style=\"background-color:red; width: 0.4em; height: 1em;\" id=\"fixedWidth04em\"></div>\n" );
+        Foswiki::Func::saveTopic( $ps, MEASURE, undef, "   * 11em: <div style=\"background-color:red; width: 11em; height: 1em;\" id=\"fixedWidthElevenem\"></div>\n   * 1em: <div style=\"background-color:red; width: 1em; height: 1em;\" id=\"fixedWidthOneem\"></div>\n   * 0.4em: <div style=\"background-color:red; width: 0.4em; height: 1em;\" id=\"fixedWidthOFourem\"></div>\n" );
+        Foswiki::Func::saveTopic( $ps, BLOGOUT, undef, "<a href='%SCRIPTURLPATH{view}%/%WEB%/%TOPIC%' target='_blank'>new window</a>" );
+        Foswiki::Func::saveTopic( $ps, TRANSLATIONS, undef, '<span id="Attach">%TMPL:P{modacAttach}%</span><br/><span id="UploadFile">%MAKETEXT{"Upload file"}%</span><br/><span id="Cancel">%MAKETEXT{"Cancel"}%</span>' );
 
         $ps = TRASH;
         $webs->{$ps} = $other->populateNewWeb( $ps, "_default" );

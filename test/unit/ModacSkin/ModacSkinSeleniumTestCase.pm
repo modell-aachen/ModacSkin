@@ -2,8 +2,8 @@
 
 package ModacSkinSeleniumTestCase;
 
-use FoswikiSeleniumTestCase();
-our @ISA = qw( FoswikiSeleniumTestCase );
+use FoswikiSeleniumWdTestCase();
+our @ISA = qw( FoswikiSeleniumWdTestCase );
 
 use strict;
 use warnings;
@@ -68,28 +68,20 @@ sub login {
     my $this = shift;
 
     #SMELL: Assumes TemplateLogin
-    $this->{selenium}->open_ok(
+    $this->{selenium}->get(
         Foswiki::Func::getScriptUrl(
             $this->{test_web}, $this->{test_topic}, 'login'
         )
     );
-    my $usernameInputFieldLocator = 'css=input[name="username"]';
-    $this->{selenium}->wait_for_element_present( $usernameInputFieldLocator,
-        $this->{selenium_timeout} );
-    $this->{selenium}->type_ok( $usernameInputFieldLocator,
-        $Foswiki::cfg{UnitTestContrib}{SeleniumRc}{Username} );
+    my $usernameInputFieldLocator = 'input[name="username"]';
+    $this->{selenium}->find_element($usernameInputFieldLocator, 'css')->send_keys($Foswiki::cfg{UnitTestContrib}{SeleniumRc}{Username});
+    my $passwordInputFieldLocator = 'input[name="password"]';
+    $this->{selenium}->find_element($passwordInputFieldLocator, 'css')->send_keys($Foswiki::cfg{UnitTestContrib}{SeleniumRc}{Password});
 
-    my $passwordInputFieldLocator = 'css=input[name="password"]';
-    $this->assertElementIsPresent($passwordInputFieldLocator);
-    $this->{selenium}->type_ok( $passwordInputFieldLocator,
-        $Foswiki::cfg{UnitTestContrib}{SeleniumRc}{Password} );
+    my $loginFormLocator = 'form[name="loginform"]';
+    $this->{selenium}->find_element('//input[@type="submit"]')->click();
 
-    my $loginFormLocator = 'css=form[name="loginform"]';
-    $this->assertElementIsPresent($loginFormLocator);
-    $this->{selenium}->click_ok('css=input.foswikiSubmit[type="submit"]');
-    $this->{selenium}->wait_for_page_to_load( $this->{selenium_timeout} );
-
-    my $postLoginLocation = $this->{selenium}->get_location();
+    my $postLoginLocation = $this->{selenium}->get_current_url();
     my $viewUrl =
       Foswiki::Func::getScriptUrl( $this->{test_web}, $this->{test_topic},
         'view' );
@@ -102,7 +94,7 @@ sub login {
 
 sub verify_SeleniumRc_config {
     my $this = shift;
-    $this->selenium->open_ok(
+    $this->selenium->get(
         Foswiki::Func::getScriptUrl(
             $this->{test_web}, $this->{test_topic}, 'view'
         )
@@ -132,7 +124,8 @@ sub verify_CopyTopicItem {
     $this->assertNoPopup();
 
     $this->openTopicSubMenue();
-    $this->{selenium}->click_ok('css=li.modacMoreDynamic ul li ul .morelink-copy:first a');
+    #$this->{selenium}->click_ok('css=li.modacMoreDynamic ul li ul .morelink-copy:first a');
+    $this->{selenium}->find_element('li.modacMoreDynamic ul li ul .morelink-copy a', 'css')->click();
     $this->waitForPopup();
 }
 
@@ -142,21 +135,25 @@ sub verify_CopyTopicItem {
 sub verify_attachItem {
     my ( $this ) = @_;
 
-    $this->loginto();
+    $this->loginto(Helper::WEB, Helper::TRANSLATIONS);
+
+    my $attachLink = $this->{selenium}->find_element('Attach', 'id')->get_text();
+    my $uploadLink = $this->{selenium}->find_element('UploadFile', 'id')->get_text();
+    my $cancelLink = $this->{selenium}->find_element('Cancel', 'id')->get_text();
 
     $this->assertNoPopup();
 
     $this->openTopicMenue();
-    $this->{selenium}->click_ok('link=Attach');
+    $this->{selenium}->find_element($attachLink, 'link')->click();
     $this->waitForPopup();
 
     # check if buttons were created correctly
-#    $this->assert( $this->{selenium}->is_element_present('css=button.ui-button span.ui-icon-circle-check') );
-    my $accept = $this->{selenium}->get_eval('selenium.browserbot.getCurrentWindow().jQuery("div.ui-dialog button.ui-button span.ui-icon-circle-check").parent().text()');
-    $this->assert_equals('Upload file', $accept);
-    my $cancel = $this->{selenium}->get_eval('selenium.browserbot.getCurrentWindow().jQuery("div.ui-dialog button.ui-button span.ui-icon-cancel").parent().text()');
-    $this->assert_equals('Cancel', $cancel);
-    my $submit= $this->{selenium}->get_eval('selenium.browserbot.getCurrentWindow().jQuery(".modacDialogContents input[type=\'submit\']").length');
+#    $this->assert( $this->{selenium}->find_element('button.ui-button span.ui-icon-circle-check', 'css') );
+    my $accept = $this->{selenium}->execute_script('return jQuery("div.ui-dialog button.ui-button span.ui-icon-circle-check").parent().text()');
+    $this->assert_equals($uploadLink, $accept);
+    my $cancel = $this->{selenium}->execute_script('return jQuery("div.ui-dialog button.ui-button span.ui-icon-cancel").parent().text()');
+    $this->assert_equals($cancelLink, $cancel);
+    my $submit= $this->{selenium}->execute_script('return jQuery(".modacDialogContents input[type=\'submit\']").length');
     $this->assert_equals(0, $submit, "Additional submit buttons found!");
 }
 
@@ -165,20 +162,22 @@ sub verify_attachItem {
 sub verify_attachItemCancelFunction {
     my ( $this ) = @_;
 
-    $this->loginto();
+    $this->loginto(Helper::WEB, Helper::TRANSLATIONS);
+
+    my $attachLink = $this->{selenium}->find_element('Attach', 'id')->get_text();
 
     $this->assertNoPopup();
 
     # press 'Cancel' button
     $this->openTopicMenue();
-    $this->{selenium}->click_ok('link=Attach');
+    $this->{selenium}->find_element($attachLink, 'link')->click();
     $this->waitForPopup();
-    $this->{selenium}->click_ok('css=span.ui-icon-cancel');
+    $this->{selenium}->find_element('span.ui-icon-cancel', 'css')->click();
     $this->assertNoPopup();
 
     # reopening it
     $this->openTopicMenue();
-    $this->{selenium}->click_ok('link=Attach');
+    $this->{selenium}->find_element($attachLink, 'link')->click();
     $this->waitForPopup();
 }
 
@@ -187,20 +186,20 @@ sub verify_attachItemCancelFunction {
 sub verify_attachItemAttachFunction {
     my ( $this ) = @_;
 
-    $this->loginto();
+    $this->loginto( Helper::WEB, Helper::TRANSLATIONS );
+
+    my $attachLink = $this->{selenium}->find_element('Attach', 'id')->get_text();
 
     $this->assertNoPopup();
 
     # press 'Attach file' button
     # XXX unfortunately there is no way to upload a file since I can't know which file I could upload.
     $this->openTopicMenue();
-    $this->{selenium}->click_ok('link=Attach');
+    $this->{selenium}->find_element($attachLink, 'link')->click();
     $this->waitForPopup();
-    $this->{selenium}->click_ok('css=span.ui-icon-circle-check');
-    $this->{selenium}->wait_for_page_to_load( $this->{selenium_timeout} );
-    my $location = $this->{selenium}->get_location();
-    my $uploadUrl = Foswiki::Func::getScriptUrl( Helper::WEB, $webhome, 'upload' );
-    $this->assert_equals( $uploadUrl, $location ); # This should be an oops page saying the file has no content
+    $this->{selenium}->find_element('span.ui-icon-circle-check', 'css')->click();
+    my $uploadUrl = Foswiki::Func::getScriptUrl( Helper::WEB, Helper::TRANSLATIONS, 'upload' );
+    $this->waitFor( sub { $this->{selenium}->get_current_url() eq $uploadUrl }, 'Failed upload did not lead to oops page' ); # This should be an oops page saying the file has no content XXX this is not a strong test
 }
 
 # Test if...
@@ -208,18 +207,22 @@ sub verify_attachItemAttachFunction {
 sub verify_strikeOne {
     my ( $this ) = @_;
 
-    $this->loginto( Helper::WEB, Helper::NOFAV );
+    $this->loginto( Helper::WEB, Helper::TRANSLATIONS );
+
+    my $attachLink = $this->{selenium}->find_element('Attach', 'id')->get_text();
+
+    $this->{selenium}->get( Foswiki::Func::getScriptUrl( Helper::WEB, Helper::NOFAV, 'view' ) );
 
     # check if there is no StrikeOne
-    my $strikeone = $this->{selenium}->get_eval('typeof selenium.browserbot.getUserWindow().StrikeOne');
+    my $strikeone = $this->{selenium}->execute_script('return typeof StrikeOne');
     $this->assert_equals( 'undefined', $strikeone, 'Test impossible, StrikeOne already loaded' );
 
     # now open any menue item and see if this enables StrikeOne
     $this->openTopicMenue();
-    $this->{selenium}->click_ok('link=Attach');
+    $this->{selenium}->find_element($attachLink, 'link')->click();
     $this->waitForPopup();
     # check StrikeOne
-    $strikeone = $this->{selenium}->get_eval('typeof selenium.browserbot.getUserWindow().StrikeOne');
+    $strikeone = $this->{selenium}->execute_script('return typeof StrikeOne');
     $this->assert_equals( 'object', $strikeone, 'StrikeOne did not load' );
 }
 
@@ -236,16 +239,16 @@ sub verify_loginBoxRenameMove {
 
     # open rename / move item
     $this->openTopicSubMenue();
-    $this->{selenium}->click_ok('css=li.modacMoreDynamic ul li ul .morelink-rename:first a');
+    $this->{selenium}->find_element('li.modacMoreDynamic ul li ul .morelink-rename a', 'css')->click();
     $this->waitForPopup();
 
     # check for login box and login
-    $this->assert( $this->{selenium}->is_element_present('css=#foswikiLogin') );
+    $this->assert( $this->{selenium}->find_element('foswikiLogin', 'id') );
     $this->loginDialog();
 
     # check UI is not blocked
     # XXX no published api
-    $this->assert( $this->{selenium}->get_eval('selenium.browserbot.getUserWindow().jQuery("div.blockUI:visible").length') == 0 );
+    $this->assert( $this->{selenium}->execute_script('return jQuery("div.blockUI:visible").length') == 0 );
 }
 
 # Test if...
@@ -256,23 +259,25 @@ sub verify_loginBoxAttachment {
     # approach: Login to a page, logout in another window, press the attach-button, a login-box should appear
 
     # Login as user with change acls
-    $this->loginto(undef);
+    $this->loginto( Helper::WEB, Helper::TRANSLATIONS );
+
+    my $attachLink = $this->{selenium}->find_element('Attach', 'id')->get_text();
 
     # Logout in background
     $this->backgroundLogout();
 
     # open attach item
     $this->openTopicMenue();
-    $this->{selenium}->click_ok('link=Attach');
+    $this->{selenium}->find_element($attachLink, 'link')->click();
     $this->waitForPopup();
 
     # check for login box and login
-    $this->assert( $this->{selenium}->is_element_present('css=#foswikiLogin') );
+    $this->{selenium}->find_element('foswikiLogin', 'id'); # check if element present
     $this->loginDialog();
 
     # check UI is not blocked
     # XXX no published api
-    $this->assert( $this->{selenium}->get_eval('selenium.browserbot.getUserWindow().jQuery("div.blockUI:visible").length') == 0 );
+    $this->assert( $this->{selenium}->execute_script('return jQuery("div.blockUI:visible").length') == 0 );
 }
 
 # Test if...
@@ -284,30 +289,30 @@ sub verify_deadlink {
     $this->loginto(Helper::WEB, Helper::DEADLINKS);
 
     $this->assertNoPopup();
-    $this->{selenium}->click_ok('link=DoesNotExist');
+    $this->{selenium}->find_element('DoesNotExist', 'link')->click();
     $this->waitForPopup();
-    $this->{selenium}->wait_for_condition('selenium.browserbot.getCurrentWindow().jQuery(".InputsPrepared:visible").length', $this->{selenium_timeout});
-    $this->assert_equals('DoesNotExist', $this->{selenium}->get_value('css=#topictitle'));
-    $this->assert_equals(Helper::WEB.'.DoesNotExist', $this->{selenium}->get_value('css=#topic'));
-    $this->{selenium}->click_ok('css=span.ui-icon-cancel');
+    $this->waitFor( sub { $this->{selenium}->execute_script('return jQuery(".InputsPrepared:visible").length') }, 'WCNT window did not initialize inputs' );
+    $this->assert_equals('DoesNotExist', $this->{selenium}->find_element('topictitle', 'id')->get_value());
+    $this->assert_equals(Helper::WEB.'.DoesNotExist', $this->{selenium}->find_element('topic', 'id')->get_value());
+    $this->{selenium}->find_element('span.ui-icon-cancel', 'css')->click();
 
     # same link again
     $this->assertNoPopup();
-    $this->{selenium}->click_ok('link=DoesNotExist');
+    $this->{selenium}->find_element('DoesNotExist', 'link')->click();
     $this->waitForPopup();
-    $this->{selenium}->wait_for_condition('selenium.browserbot.getCurrentWindow().jQuery(".InputsPrepared:visible").length', $this->{selenium_timeout});
-    $this->assert_equals('DoesNotExist', $this->{selenium}->get_value('css=#topictitle'));
-    $this->assert_equals(Helper::WEB.'.DoesNotExist', $this->{selenium}->get_value('css=#topic'));
-    $this->{selenium}->click_ok('css=span.ui-icon-cancel');
+    $this->waitFor( sub { $this->{selenium}->execute_script('return jQuery(".InputsPrepared:visible").length') }, 'WCNT window did not initialize inputs' );
+    $this->assert_equals('DoesNotExist', $this->{selenium}->find_element('topictitle', 'id')->get_value());
+    $this->assert_equals(Helper::WEB.'.DoesNotExist', $this->{selenium}->find_element('topic', 'id')->get_value());
+    $this->{selenium}->find_element('span.ui-icon-cancel', 'css')->click();
 
     # different link, #topictitle and #topic have to change now
     $this->assertNoPopup();
-    $this->{selenium}->click_ok('link=DoesNotExistAsWell');
+    $this->{selenium}->find_element('DoesNotExistAsWell', 'link')->click();
     $this->waitForPopup();
-    $this->{selenium}->wait_for_condition('selenium.browserbot.getCurrentWindow().jQuery(".InputsPrepared:visible").length', $this->{selenium_timeout});
-    $this->assert_equals('DoesNotExistAsWell', $this->{selenium}->get_value('css=#topictitle'));
-    $this->assert_equals(Helper::WEB.'.DoesNotExistAsWell', $this->{selenium}->get_value('css=#topic'));
-    $this->{selenium}->click_ok('css=span.ui-icon-cancel');
+    $this->waitFor( sub { $this->{selenium}->execute_script('return jQuery(".InputsPrepared:visible").length') }, 'WCNT window did not initialize inputs' );
+    $this->assert_equals('DoesNotExistAsWell', $this->{selenium}->find_element('topictitle', 'id')->get_value());
+    $this->assert_equals(Helper::WEB.'.DoesNotExistAsWell', $this->{selenium}->find_element('topic', 'id')->get_value());
+    $this->{selenium}->find_element('span.ui-icon-cancel', 'css')->click();
 }
 
 # Test if...
@@ -317,15 +322,18 @@ sub verify_menuePosition {
 
     $this->loginto(Helper::WEB, Helper::MEASURE);
 
-    my $width = $this->{selenium}->get_element_width('css=#fixedWidth11em');
-    my $extrawidth = $this->{selenium}->get_element_width('css=#fixedWidth1em');
-    my $paddingrightwidth = $this->{selenium}->get_element_width('css=#fixedWidth04em');
+    my $width = $this->{selenium}->find_element('fixedWidthElevenem', 'id')->get_size()->{width};
+    my $extrawidth = $this->{selenium}->find_element('fixedWidthOneem', 'id')->get_size()->{width};
+    my $paddingrightwidth = $this->{selenium}->find_element('fixedWidthOFourem', 'id')->get_size()->{width};
+#    my $width = $this->{selenium}->get_element_width('css=#fixedWidth11em');
+#    my $extrawidth = $this->{selenium}->get_element_width('css=#fixedWidth1em');
+#    my $paddingrightwidth = $this->{selenium}->get_element_width('css=#fixedWidth04em');
     my $paddingleftwidth = 25;
     my $roundingerr = 3;
 
     $this->openTopicSubMenue();
-    my $leftMenue = $this->{selenium}->get_element_position_left('css=.modacMoreMenu li ul li:first');
-    my $leftSubMenue = $this->{selenium}->get_element_position_left('css=.modacMoreMenu li ul li ul li:first');
+    my $leftMenue = $this->{selenium}->find_element('.modacMoreMenu li ul li', 'css')->get_element_location()->{x};
+    my $leftSubMenue = $this->{selenium}->find_element('.modacMoreMenu li ul li ul li', 'css')->get_element_location()->{x};
 
     $this->assert($leftSubMenue - $leftMenue >= $width, "Submenu appears to be misplaced to the left (11em: $width menue: $leftMenue submenue: $leftSubMenue");
     $this->assert($leftSubMenue - $leftMenue <= $width + $extrawidth + $paddingrightwidth + $paddingleftwidth + $roundingerr, "Submenu appears to be misplaced to the right (11em: $width menue: $leftMenue submenue: $leftSubMenue");
@@ -336,14 +344,14 @@ sub verify_menuePosition {
 sub assertNoPopup {
     my ( $this ) = @_;
 
-    if ( $this->{selenium}->is_element_present('css=div.modacAjaxDialog') ) {
-        $this->assert((not $this->{selenium}->is_visible('css=div.modacAjaxDialog')), 'There already is a popup!');
-    }
-    if ( $this->{selenium}->is_element_present('css=div.modacLoadingDialog') ) {
-        $this->assert((not $this->{selenium}->is_visible('css=div.modacLoadingDialog')), 'There already is a "Loading" popup!');
-    }
+#    if ( $this->{selenium}->is_element_present('css=div.modacAjaxDialog') ) {
+#        $this->assert((not $this->{selenium}->is_visible('css=div.modacAjaxDialog')), 'There already is a popup!');
+#    }
+#    if ( $this->{selenium}->is_element_present('css=div.modacLoadingDialog') ) {
+#        $this->assert((not $this->{selenium}->is_visible('css=div.modacLoadingDialog')), 'There already is a "Loading" popup!');
+#    }
     # the above do not work quite well, so I check with javascript as well
-    my $n = $this->{selenium}->get_eval('selenium.browserbot.getUserWindow().jQuery("div.modacLoadingDialog:visible, div.modacAjaxDialog:visible").length');
+    my $n = $this->{selenium}->execute_script('return jQuery("div.modacLoadingDialog:visible, div.modacAjaxDialog:visible").length');
     $this->assert_equals(0, $n, 'There are popups visible');
 }
 
@@ -355,7 +363,8 @@ sub waitForPopup {
     # for some reason this does not work:
     #    $this->waitFor( sub { try { return shift->{selenium}->is_visible('css=div.modacAjaxDialog'); } otherwise {return 0; }; }, 'Popup did not appear', undef, 8000 );
 
-    $this->{selenium}->wait_for_condition('selenium.browserbot.getCurrentWindow().jQuery("div.modacAjaxDialog:visible").length', $this->{selenium_timeout});
+    my $n = $this->{selenium}->execute_script('return jQuery("div.modacLoadingDialog:visible, div.modacAjaxDialog:visible").length');
+    $this->waitFor( sub { $this->{selenium}->execute_script('return jQuery("div.modacAjaxDialog:visible").length') }, 'Popup did not appear' );
 }
 
 # Login and open the $web.$topic (defaults to TestWeb.WebHome)
@@ -366,7 +375,7 @@ sub loginto {
     $topic ||= $webhome;
 
     $this->login();
-    $this->selenium->open_ok(
+    $this->selenium->get(
         Foswiki::Func::getScriptUrl(
             $web, $topic, 'view'
         )
@@ -377,19 +386,17 @@ sub loginto {
 sub loginDialog {
     my ( $this ) = @_;
 
-    # copy/paste login
-    my $usernameInputFieldLocator = 'css=input[name="username"]';
-    $this->{selenium}->wait_for_element_present( $usernameInputFieldLocator,
-        $this->{selenium_timeout} );
-    $this->{selenium}->type_ok( $usernameInputFieldLocator,
-        $Foswiki::cfg{UnitTestContrib}{SeleniumRc}{Username} );
+    # copy/paste login XXX na, it's not but should be
+    my $usernameInputFieldLocator = 'input[name="username"]';
+    $this->{selenium}->find_element( $usernameInputFieldLocator, 'css' )->send_keys(
+        $Foswiki::cfg{UnitTestContrib}{SeleniumRc}{Username}
+    );
 
-    my $passwordInputFieldLocator = 'css=input[name="password"]';
-    $this->assertElementIsPresent($passwordInputFieldLocator);
-    $this->{selenium}->type_ok( $passwordInputFieldLocator,
+    my $passwordInputFieldLocator = 'input[name="password"]';
+    $this->{selenium}->find_element($passwordInputFieldLocator, 'css')->send_keys(
         $Foswiki::cfg{UnitTestContrib}{SeleniumRc}{Password} );
     # /copy/paste login
-    $this->{selenium}->click_ok('css=span.ui-icon-circle-check');
+    $this->{selenium}->find_element('span.ui-icon-circle-check', 'css')->click();
 
     $this->waitForPopup();
 }
@@ -397,24 +404,41 @@ sub loginDialog {
 # Logout in a background window and returns to the original window.
 # As a result the user is no longer logged in, yet the old page with the former
 # users permissions is still there.
+# It will change to location BLOGOUT
 sub backgroundLogout {
-    my ( $this ) = @_;
+    my ( $this ) = @_; # One could pass a url to which to navigate after opening the popup - or return to current url
 
-    my $popup = 'logout';
+    my $handles = $this->{selenium}->get_window_handles();
+    $this->assert(scalar @$handles == 1); # we must only have one window, or we can't determine the id of the popup
+    my $currentWindow = @$handles[0];
+    $this->{selenium}->get(
+        Foswiki::Func::getScriptUrl(
+            Helper::WEB, Helper::BLOGOUT, 'view'
+        )
+    );
+    $this->{selenium}->find_element('new window', 'link')->click();
+    # get the popup, it is NOT the selected window
+    $handles = $this->{selenium}->get_window_handles();
+    $this->assert(scalar @$handles == 2, 'No popup appeared (handles: '. scalar @$handles.')');
+    my $popup;
+    foreach my $w (@$handles) {
+        $popup = $w unless $w eq $currentWindow;
+    }
+    $this->{selenium}->switch_to_window($popup);
     my $logoutURL = Foswiki::Func::getScriptUrl( Helper::WEB, $webhome, 'view' ).'?logout=1';
-    $this->{selenium}->open_window($logoutURL, $popup);
-    $this->{selenium}->wait_for_pop_up($popup, $this->{selenium_timeout});
-    $this->{selenium}->select_pop_up($popup);
+    $this->{selenium}->get($logoutURL);
     $this->{selenium}->close();
-    $this->{selenium}->select_window('null');
+    $this->{selenium}->switch_to_window($currentWindow);
 }
 
 # 'hovers' the mouse over 'More topic actions' and waits for the menue to appear.
 sub openTopicMenue {
     my ( $this ) = @_;
 
-    $this->{selenium}->mouse_over('css=li.modacMoreDynamic a:first');
-    $this->waitFor( sub { shift->{selenium}->is_visible('css=li.modacMoreDynamic ul'); }, 'menue did not appear' );
+    my $element = $this->{selenium}->find_element('li.modacMoreDynamic a', 'css');
+    $this->{selenium}->mouse_move_to_location(element => $element);
+    my $menue = $this->{selenium}->find_element('li.modacMoreDynamic ul', 'css');
+    $this->waitFor( sub { $menue->is_displayed() }, 'More-menue did not appear' );
 }
 
 # Opens the 'More topic actions' and then the submenue.
@@ -422,8 +446,10 @@ sub openTopicSubMenue {
     my ( $this ) = @_;
 
     $this->openTopicMenue();
-    $this->{selenium}->mouse_over('css=li.modacMoreDynamic .moremenue-managepage:first');
-    $this->waitFor( sub { shift->{selenium}->is_visible('css=li.modacMoreDynamic ul li ul li'); }, 'sub-menue did not appear' );
+    my $element = $this->{selenium}->find_element('li.modacMoreDynamic .moremenue-managepage', 'css');
+    $this->{selenium}->mouse_move_to_location(element => $element);
+    my $submenue = $this->{selenium}->find_element('li.modacMoreDynamic ul li ul li', 'css');
+    $this->waitFor( sub { $submenue->is_displayed() }, 'sub-menue did not appear' );
 }
 
 1;
