@@ -45,7 +45,7 @@
 
 %{country flags}%
 %{<verbatim>}%
-%TMPL:DEF{"topic_title"}% {{html modacSolr.lang(language)}} %TMPL:END%
+%TMPL:DEF{"topic_title"}% {{if typeof(language)!== 'undefined'}}{{html modacSolr.lang(language)}}{{/if}} %TMPL:END%
 %{</verbatim>}%
 
 %{jsi18n, country flags}%
@@ -249,7 +249,7 @@ ${jsi18n.get('solr', 'Did you mean ')}{{each suggestions}}{{if $index > 0}}${jsi
 Do not modify this definition, instead do a (but unescape the $percent)
 $percentTMPL:DEF{"solr::fields::append"}$percent$percentTMPL:PREF$percent,your_solr_field$percentTMPL:END$percent
 }%
-%TMPL:DEF{"solr::fields"}%action_state_s,conatiner_title%TMPL:P{"solr::fields::append"}%%TMPL:END%
+%TMPL:DEF{"solr::fields"}%action_state_s,conatiner_title,language%TMPL:P{"solr::fields::append"}%%TMPL:END%
 %{</verbatim>}%
 
 %{<verbatim class="tml">}%
