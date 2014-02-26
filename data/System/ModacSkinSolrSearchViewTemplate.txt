@@ -10,10 +10,6 @@
 %{</verbatim>}%
 
 %{<verbatim class="tml">}%
-%ADDTOZONE{"script" requires="JQUERYPLUGIN" id="ModacSolrHelper" text="<script type='text/javascript' src='%PUBURLPATH%/%SYSTEMWEB%/ModacSkin/solrsearch.js'></script>"}%
-%{</verbatim>}%
-
-%{<verbatim class="tml">}%
 %TMPL:DEF{"top:toolbarbuttons"}%%TMPL:END%
 %TMPL:DEF{"topicaction"}%%TMPL:END%
 %{</verbatim>}%

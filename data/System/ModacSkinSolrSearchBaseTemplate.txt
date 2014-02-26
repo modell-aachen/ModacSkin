@@ -9,6 +9,8 @@
 %TMPL:DEF{"script:skinbase"}%%TMPL:PREV%%{
 }%%ADDTOZONE{"script" id="jsi18n::solr" requires="%JSI18NID%" text="<script src='%PUBURLPATH%/%SYSTEMWEB%/ModacSkin/jsi18n.solr.%IF{"$LANGUAGE='de'" then="de" else="en"}%.js'></script>"}%%{
 }%%ADDTOZONE{"script" id="solr:dateformat" text="<script>solrDateformat='%TMPL:P{"solr::dateformat"}%';</script>"}%%{
+}%%ADDTOZONE{"script" requires="JQUERYPLUGIN" id="ModacSolrHelper" text="<script type='text/javascript' src='%PUBURLPATH%/%SYSTEMWEB%/ModacSkin/solrsearch.js'></script>"}%%{
+}%%JQREQUIRE{"livequery,focus, serialpager, scrollto, prettyphoto, tmpl, jqtwisty, moment, blockui, imagetooltip"}%%{
 }%%TMPL:END%
 %{</verbatim>}%
 
