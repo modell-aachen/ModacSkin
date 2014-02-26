@@ -4,7 +4,7 @@
     'Deekn20h+++EarpL0nFQLX7JSJv7s/2W9f988ZFAh14', # void(0)
 
     'wAVcRC/VazeFpoBe31NcWhjpZACOeUDQTVNyn1boCKA', # solrDateformat
-    '5iclbB52ftZu4M9ImkLzE/I6Mj9EcYw3r3TCLJZ2AOQ', # solrHitTemplate_topic
+    'hZq38oosr9GngGUyL4ncEtIG3TIR4qYHcHcVkdQe90U', # solrHitTemplate_topic
     'JP5Gy5SEeLBSEwduhaaaBF/V83Lb+oiaKYqddQ6a7J4', # solrHitTemplate_image
     'krzjDoX9FGoxtbMAkLfuGMvHvLfYivPtik7I3lYxcc8', # solrHitTemplate_comment
     'fYdbwnMc9wkKBs3trDTbrUBIq+eiE1E42F+D5QnCJwY', # solrHitTemplate_misc
