@@ -699,6 +699,15 @@ jQuery(function($){
 
     // end copied from pattern.js
 
+    // Add clear button to date fields
+    $('.foswikiEditFormDateField').livequery(function() {
+        var e = $(this);
+        e.attr('readonly', 'readonly');
+        var removeBtn = $('<img src="'+foswiki.getPreference('PUBURLPATH')+'/'+foswiki.getPreference('SYSTEMWEB')+'/DocumentGraphics/trash-small.png" alt="">');
+                removeBtn.css('cursor', 'pointer').css('padding-left', '3px').click(function() { e.val(''); });
+        e.next().after(removeBtn);
+    });
+
     // Localized error messages from form validation (overwrites code from foswiki_edit.js)
     foswiki.Edit.validateMandatoryFields = function() {
       if (foswiki.Edit.validateSuppressed) return true;

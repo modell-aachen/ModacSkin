@@ -5,16 +5,6 @@
 %{ don't show these elements to make best use of screen estate: }%
 %TMPL:DEF{"logo"}%%TMPL:END%
 
-%ADDTOZONE{"script" id="MODAC::CALDISABLE" requires="JQUERYPLUGIN::LIVEQUERY" text="<script type=\"text/javascript\">
-  jQuery(function($) { $('.foswikiEditFormDateField').livequery(function() {
-      var e = $(this);
-      e.attr('readonly', 'readonly');
-      var removeBtn = $('<img src=\"%PUBURLPATH%/%SYSTEMWEB%/DocumentGraphics/trash-small.png\" alt=\"\">');
-	      removeBtn.css('cursor', 'pointer').css('padding-left', '3px').click(function() { e.val(''); });
-      e.next().after(removeBtn);
-    });
-  });
-</script>"}%
 %TMPL:DEF{"script:skinbase"}%%TMPL:PREV%%ADDTOZONE{
   "script"
   id="jsi18n::edit"
