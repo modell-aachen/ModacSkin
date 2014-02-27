@@ -2,7 +2,6 @@
 %JQREQUIRE{"ui::dialog"}%
 <div id="modacSidebarIE">
    * [[%MAINWEB%.WebHome][%MAKETEXT{"Start"}%]]
-   * [[%MAINWEB%.Aktuelles][%MAKETEXT{"News"}%]]
    * [[Anleitung.WebHome][%MAKETEXT{"Manual"}%]]
    * [[%BASEWEB%.WebTopicList][%MAKETEXT{"Index"}%]]
 </div>
