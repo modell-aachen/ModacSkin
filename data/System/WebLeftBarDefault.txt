@@ -23,7 +23,7 @@
 	linkclass="patternTwistyButton" 
 }% 
    * [[%BASEWEB%.WebChanges][%MAKETEXT{"Recently changed"}%]]
-   * [[%MAINWEB%.Templates][%MAKETEXT{"Templates"}%]]
+   * [[%CONTENTTEMPLATEWEB%.Templates][%MAKETEXT{"Templates"}%]]
 %ENDTWISTY%
 </div>
 
