@@ -709,22 +709,22 @@ jQuery(function($){
     });
 
     // Localized error messages from form validation (overwrites code from foswiki_edit.js)
-    foswiki.Edit.validateMandatoryFields = function() {
-      if (foswiki.Edit.validateSuppressed) return true;
-      var alerts = [];
-      jQuery('select.foswikiMandatory, input.foswikiMandatory, textarea.foswikiMandatory').each(function(i,e) {
-        if (jQuery(e).val()) return;
-        alerts.push(jsi18n.get('edit', "You have not filled out the mandatory form field '[_1]'.", jQuery(e).attr('name')));
-      });
-      if (alerts.length) {
-        alerts.push(jsi18n.get('edit', 'Please check your input.'));
-        alert(alerts.join("\n"));
-        return false;
-      }
-      return true;
-    };
-
-
+    if (foswiki && foswiki.Edit) {
+      foswiki.Edit.validateMandatoryFields = function() {
+        if (foswiki.Edit.validateSuppressed) return true;
+        var alerts = [];
+        jQuery('select.foswikiMandatory, input.foswikiMandatory, textarea.foswikiMandatory').each(function(i,e) {
+          if (jQuery(e).val()) return;
+          alerts.push(jsi18n.get('edit', "You have not filled out the mandatory form field '[_1]'.", jQuery(e).attr('name')));
+        });
+        if (alerts.length) {
+          alerts.push(jsi18n.get('edit', 'Please check your input.'));
+          alert(alerts.join("\n"));
+          return false;
+        }
+        return true;
+      };
+    }
 
     $('.modacPersPageDaysFinishedSelect').livequery(function() {
         $(this).change(function() {
