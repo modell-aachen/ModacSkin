@@ -48,6 +48,18 @@
 %TMPL:DEF{"topic_title"}% {{if typeof(language)!== 'undefined'}}{{html modacSolr.lang(language)}}{{/if}} %TMPL:END%
 %{</verbatim>}%
 
+%{<verbatim class="tml">}%
+%TMPL:DEF{"solr::thumbnail"}%
+{{if thumbnail}}
+      <div class='solrThumbnail'>
+        <a class='imageHref imageSimple jqImageTooltip {web:"${web}", topic:"${topic}", image:"${thumbnail}"}' href='${url}' title='${name}'>
+          <img src='${foswiki.getPreference('SCRIPTURLPATH')}/rest${foswiki.getPreference('SCRIPTURLSUFFIX')}/ImagePlugin/resize?topic=${web}.${topic};file=${encodeURIComponent(thumbnail)};size=70>;crop=center' alt='${thumbnail}' />
+        </a>
+      </div>
+{{/if}}
+%TMPL:END%
+%{</verbatim>}%
+
 %{jsi18n, country flags}%
 %{<verbatim class="tml">}%
 %TMPL:DEF{"solr::templates::hits::topic"}%<script id="solrHitTemplate_topic" type="text/x-jquery-tmpl">

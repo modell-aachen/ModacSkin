@@ -4,12 +4,12 @@
     'Deekn20h+++EarpL0nFQLX7JSJv7s/2W9f988ZFAh14', # void(0)
 
     'wAVcRC/VazeFpoBe31NcWhjpZACOeUDQTVNyn1boCKA', # solrDateformat
-    'hZq38oosr9GngGUyL4ncEtIG3TIR4qYHcHcVkdQe90U', # solrHitTemplate_topic
+    'VIFOK8EXh1LCD3SucDZi3SffNhrTZ/+SFukKlcCe9TA', # solrHitTemplate_topic
     'JP5Gy5SEeLBSEwduhaaaBF/V83Lb+oiaKYqddQ6a7J4', # solrHitTemplate_image
-    'krzjDoX9FGoxtbMAkLfuGMvHvLfYivPtik7I3lYxcc8', # solrHitTemplate_comment
-    'fYdbwnMc9wkKBs3trDTbrUBIq+eiE1E42F+D5QnCJwY', # solrHitTemplate_misc
+    'Skr7vMAFBNZ+EeUA8wMtD01oTwnYR7WhNvgm/YvNDc4', # solrHitTemplate_comment
+    'yHiP6DxLdprsmcHhWMAsZKVbsYaF6IL/Wl8d+d8kJVc', # solrHitTemplate_misc
     '1g+YgWSZfmg8fSp/MgRO5ybKzuYkWjeR1YrFOeDgMG4', # solrHitTemplate
-    'RgpWbHBU2e26GVtZWfhU/wt2Wp6T8rV4DBqn0+pE4HE', # solrHitTemplate_action
+    'RUz+L2BBwawvJxw8KWFjFARVDO/Yg+RZRdU3VigIiiw', # solrHitTemplate_action
     'MHC85wpMTsENW8S5UDD/t+I7qIaalkXHO2Ci8uXNUI4', # solrFacetFieldTemplate
     'q92cFmTX18OCwYy8R4iK0qhGHYkz9RVyh7B7jiCrzxY', # solrCurrentSelectionTemplate
     '9o5HSqP1NM1T9fWCxjQLVuEavNiTaVMANf0znBqZvXM', # solrToggleFacetTemplate
