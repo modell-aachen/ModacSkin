@@ -862,10 +862,10 @@ jQuery(function($){
             // construct the hashtag (eventually deal with browsers feeling special)
             if(params.length) {
                 var htag = params.join('&');
-                if(navigator.appName == 'Microsoft Internet Explorer' && navigator.userAgent.matches(/MSIE [7,8]/)) {
-                    href += 'htag='+htag;
+                if(navigator && navigator.appName === 'Microsoft Internet Explorer' && /MSIE [7,8]/.exec(navigator.userAgent)) {
+                    href += '?htag='+htag;
                 }
-                href += '#'+params.join('&');
+                href += '#'+htag;
             }
             // do the search
             window.location.href = href;
