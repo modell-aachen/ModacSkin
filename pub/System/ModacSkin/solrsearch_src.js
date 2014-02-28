@@ -1,9 +1,10 @@
+// this will deal with browsers that do not understand the hashtag in links
+if(window.location.hash == '') {
+    var ht=/\?htag=(.*)/.exec(window.location.href);
+    if(ht && ht[1]) window.location.hash=ht[1];
+}
 jQuery(function($){
-    // this will deal with browsers that do not understand the hashtag in links
-    if(window.location.hash == '') {
-        var ht=/\?htag=(.*)/.exec(window.location.href);
-        if(ht && ht[1]) window.location.hash=ht[1];
-    }
+    // for displaying language flags on SolrSearch pages
     modacSolr = {
         lang: function(language){
             if(typeof(language)==='undefined') return '';
