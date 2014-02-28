@@ -1591,3 +1591,24 @@ div.ajaxspinner {
         border: 10px solid rgb(204,255,204);
         padding: 3px;
 }
+/* http://perishablepress.com/press/2008/02/05/lessons-learned-concerning-the-clearfix-css-hack */
+.clearfix:after,
+.foswikiClearFix:after {
+  clear: both;
+  content: ' ';
+  display: block;
+  font-size: 0;
+  line-height: 0;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+.clearfix,
+.foswikiClearFix {
+  *zoom:1; /* IE7 hack */
+}
+
+* html .clearfix,
+* html .foswikiClearFix {
+  height: 1%;
+}
