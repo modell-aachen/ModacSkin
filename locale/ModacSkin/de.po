@@ -20,7 +20,7 @@ msgstr ""
 
 #: templates/foswiki.modac.tmpl:100
 msgid "%1 Web"
-msgstr "%1 Bereich"
+msgstr "%1-Bereich"
 
 #: templates/metacomments.modac.tmpl:33
 msgid "%1 comments"
@@ -58,7 +58,7 @@ msgstr "(Anhänge)"
 
 #: templates/backlinksweb.modac.tmpl:2
 msgid "(backlinks in %1 Web)"
-msgstr "(Links im %1 Bereich)"
+msgstr "(Links im %1-Bereich)"
 
 #: templates/backlinksallwebs.modac.tmpl:2
 msgid "(backlinks in all Webs)"
@@ -99,7 +99,7 @@ msgstr "(Einstellungen ändern)"
 
 #: templates/more.modac.tmpl:100
 msgid "<em>in %1 web</em> only"
-msgstr "nur <em>im %1 Bereich</em>"
+msgstr "nur <em>im %1-Bereich</em>"
 
 #: templates/more.modac.tmpl:98
 msgid "<em>in all public webs</em>"
@@ -204,7 +204,7 @@ msgstr "Links"
 
 #: templates/backlinksweb.modac.tmpl:4
 msgid "Backlinks to %1 in %2 Web"
-msgstr "Links auf %1 im %2 Bereich"
+msgstr "Links auf %1 im %2-Bereich"
 
 #: templates/backlinksallwebs.modac.tmpl:4
 msgid "Backlinks to %1 in all Webs"
@@ -236,7 +236,7 @@ msgstr "Status ändern"
 
 #: templates/more.modac.tmpl:199
 msgid "Child topics in %1 web"
-msgstr "untergeordnete Seiten im %1 Bereich"
+msgstr "untergeordnete Seiten im %1-Bereich"
 
 #: data/System/ModacSkinSolrSearchViewTemplate.txt:84
 msgid "Chinese/Japanese/Korean"
