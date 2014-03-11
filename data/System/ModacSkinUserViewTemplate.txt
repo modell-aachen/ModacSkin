@@ -83,12 +83,16 @@
 %TABPANE{class="simple"}%
 %TAB{"%MAKETEXT{"Open tasks"}%"}%
 <div id="ampel_open">
-<table class="atpSearch atpOrientCols" style="width: 100%;">
+<table class="atpSearch atpOrientCols tablesorter {widgets: ['zebra'], sortList: [[0,1],[0,1]], headers: { 2: { sorter: 'qwikiDate' }, 3: { sorter: false }, 4: { sorter: false }}}" style="width: 100%;">
+<thead>
 <tr><th>%MAKETEXT{"Created"}%</th><th>%MAKETEXT{"Task"}%</th><th>%MAKETEXT{"Due"}%</th><th>%MAKETEXT{"Status"}%</th><th>&nbsp;</th></tr>
+</thead>
+<tbody>
 %SOLRSEARCH{"type:action action_who_lst:(%USERNAME% OR %WIKINAME% OR %WIKIUSERNAME%) -action_closed_dt:?* -action_state_s:(closed OR discarded)"
   format="<tr><td style=\"white-space:nowrap;\" class=\"secondary bmsubinfo\">$createdate%BR%$percntSUBST{text=\"$author\" pattern=\"^Main\.\" format=\"\"}$percnt%BR%<a href=\"%SCRIPTURL{view}%/$web/$topic\" title=\"$topic\">$web</a></td><td class=\"taskmain\"><span class=\"tasktitle\">$title</span>$n$n$action_text_s<span class=\"bmsubinfo\"></span></td><td class=\"taskdue taskdate secondary\">$percntIF{\"'$action_due_dt'~'$*'\" else=\"$action_due_dt\"}$percnt</td><td><span style=\"display:none;\">$action_state_s</span></td><td class=\"ops\"><a class=\"atp_edit ui-icon ui-icon-pencil {web: '$web', topic: '$topic'}\" title=\"%MAKETEXT{"Edit"}%\" href=\"%SCRIPTURL{"edit"}%/$web/$topic?nowysiwyg=1;skin=action,%SUBST{text="%SKIN%" pattern=" " format=""}%;t=%GMTIME{"$epoch"}%;atp_action=$action_uid_s\">%MAKETEXT{"Edit"}%</a></td></tr>"
   rows="1000" sort="createdate" reverse="on"
 }%
+</tbody>
 </table>
 </div>
 %AMPEL{"ampel_open" WARN="%AMPELWARN{default="3"}%" DATE="%MAKETEXT{"Due"}%" DST="%MAKETEXT{"Status"}%" DONE="%MAKETEXT{"Status"}%" COND="closed"}%
@@ -130,12 +134,16 @@
 %ENDSECTION{"perspage_recently"}%
 %STARTSECTION{"perspage_tasks"}%
 %IF{"'%URLPARAM{"extrasection"}%'" then="$percntINCLUDE{\"%WEB%.%TOPIC%\" section=\"%URLPARAM{"extrasection"}%\"}$percnt"}%
-<table class="atpSearch atpOrientCols">
+<table class="atpSearch atpOrientCols tablesorter {widgets: ['zebra'], sortList: [[0,1],[0,1]], headers: { 2: { sorter: 'qwikiDate' }, 3: { sorter: false }, 4: { sorter: false }}}">
+<thead>
 <tr><th>%MAKETEXT{"Created"}%</th><th>%MAKETEXT{"Task"}%</th><th>%MAKETEXT{"Due"}%</th><th>%MAKETEXT{"Status"}%</th><th>&nbsp;</th></tr>
+</thead>
+<tbody>
 %SOLRSEARCH{"type:action action_who_lst:(%USERNAME% OR %WIKINAME% OR %WIKIUSERNAME%) %URLPARAM{"tasksfilter"}%"
   format="<tr><td style=\"white-space:nowrap;\" class=\"secondary bmsubinfo\">$createdate%BR%$percntSUBST{text=\"$author\" pattern=\"^Main\.\" format=\"\"}$percnt%BR%<a href=\"%SCRIPTURL{view}%/$web/$topic\" title=\"$topic\">$web</a></td><td class=\"taskmain\"><span class=\"tasktitle\">$title</span>$n$n$action_text_s</td><td class=\"taskdue taskdate secondary\">$percntIF{\"'$action_due_dt'~'$*'\" else=\"$action_due_dt\"}$percnt</td><td><img src=\"%PUBURLPATH%/%SYSTEMWEB%/FamFamFamSilkIcons/%URLPARAM{"icon"}%.png\" alt=\"%MAKETEXT{"%URLPARAM{"status"}%"}%\" /> $action_%URLPARAM{"datefield"}%_dt</td><td class=\"ops\"><a class=\"atp_edit ui-icon ui-icon-pencil\" title=\"%MAKETEXT{"Edit"}%\" href=\"%SCRIPTURL{"edit"}%/$web/$topic?nowysiwyg=1;skin=action,%SKIN%;t=%GMTIME{"$epoch"}%;atp_action=$action_uid_s\">%MAKETEXT{"Edit"}%</a></td></tr>"
   rows="1000" sort="action_%URLPARAM{"datefield"}%_dt" reverse="on"
 }%
+</tbody>
 </table>
 %ENDSECTION{"perspage_tasks"}%
 %TMPL:END%
