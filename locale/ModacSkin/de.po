@@ -1445,8 +1445,8 @@ msgstr "Erweiterte Optionen ausblenden..."
 msgid "The name of the topic is preset and cannot be changed."
 msgstr "Der Name der Seite ist im Vorhinein festgelegt und kann nicht geändert werden."
 
-msgid "Hide WebLeftBar"
-msgstr "WebLeftBar ausblenden"
+msgid "Hide menu"
+msgstr "Menü ausblenden"
 
 #: data/System/ModacSkinTopicMenueTemplates.txt
 msgid "These actions are not available while editing."
