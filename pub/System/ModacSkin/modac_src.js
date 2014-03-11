@@ -639,7 +639,7 @@ jQuery(function($){
         } else {
             scroll = 0;
         }
-        scroll += 40;
+        scroll += 100;
         icon.css('top', scroll);
         icon.show();
     }, function() {

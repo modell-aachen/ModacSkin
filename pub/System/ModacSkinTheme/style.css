@@ -1563,8 +1563,8 @@ div.ajaxspinner {
 	width: 14px;
 	position: absolute;
 	left: 0px;
-	top:40px;
-	height: 150px;
+	top: 100px;
+	height: 62px;
 	cursor: pointer;
 	background-image: url("sidebarHide.png");
 	background-repeat: no-repeat;
@@ -1574,8 +1574,8 @@ div.ajaxspinner {
 	width: 18px;
 	position: fixed;
 	left: 0px;
-	top:40px;
-	height: 150px;
+	top: 100px;
+	height: 62px;
 	cursor: pointer;
 	background-image: url("sidebarShow.png");
 	background-repeat: no-repeat;
