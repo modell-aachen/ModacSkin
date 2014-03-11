@@ -553,7 +553,7 @@ jQuery(function($){
                     var title = $data.find('div.modacDialogTitle').remove().text();
                     var $form = $data.find('form:first');
                     ModacSkin.showDialog($data, undefined, $loading, {
-                        width:$('#modacContents').width(),
+                        width:($data.find('.contentsWidth').length?$('#modacContents').width():undefined),
                         title: title,
                         closeOnEscape: (href.match('^(?:'+foswiki.getPreference('SCRIPTURLPATH')+'|'+foswiki.getPreference('SCRIPTURL')+')'+foswiki.getPreference('SCRIPTSUFFIX')+'/edit/'))?false:true
                     });
