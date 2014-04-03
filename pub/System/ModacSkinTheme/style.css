@@ -268,9 +268,7 @@ html>body #modacLogoIE {
 .modacNoViewPage #modacMainContents {
 	top: 0px;
 }
-.modacComparePage #modacHeading {
-	border: none;
-}
+
 #modacHeading {
 	border-color:#AAAAAA;
 	border-style:none none solid;
@@ -535,9 +533,6 @@ html>body #modacLogoIE {
 
 /*-------- modacHeaderTable --------*/
 
-.modacComparePage #modacHeading {
-	font-size: 100%;
-}
 .modacHeaderTable {
 	margin: 1em 0;
 	border: 1px #AAA solid;
