@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Foswiki $Id\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2014-04-08 15:22+0200\n"
+"PO-Revision-Date: 2014-04-08 16:03+0200\n"
 "Last-Translator: Maik Glatki <glatki@modell-aachen.de>\n"
 "Language-Team: Foswiki German Translation Team <none>\n"
 "Language: de\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Pootle 2.5.1\n"
-"X-POOTLE-MTIME: 1396966958.000000\n"
+"X-POOTLE-MTIME: 1396969431.000000\n"
 
 #: templates/foswiki.modac.tmpl:100
 msgid "%1 Web"
@@ -39,6 +39,12 @@ msgstr "%1 ist die Standardseite für gelöschte Anhänge."
 
 msgid "%1 weeks"
 msgstr "%1 Wochen"
+
+msgid "%URLPARAM{"
+msgstr ""
+
+msgid "%maketext%"
+msgstr ""
 
 #: templates/foswiki.modac.tmpl:16
 msgid "&Cancel"
@@ -101,6 +107,27 @@ msgstr "(Revision %1)"
 msgid "(set preferences)"
 msgstr "(Einstellungen ändern)"
 
+msgid "1 hour"
+msgstr "1 Stunde"
+
+msgid "1 month"
+msgstr "1 Monat"
+
+msgid "1 year"
+msgstr "1 Jahr"
+
+msgid "2 days"
+msgstr "2 Tage"
+
+msgid "2 months"
+msgstr "2 Monate"
+
+msgid "4 hours"
+msgstr "4 Stunden"
+
+msgid "7 days"
+msgstr "7 Tage"
+
 #: templates/more.modac.tmpl:100
 msgid "<em>in %1 web</em> only"
 msgstr "nur <em>im %1-Bereich</em>"
@@ -125,6 +152,21 @@ msgstr "Funktionstasten:"
 #: templates/oopshistory.modac.tmpl:56
 msgid "Action"
 msgstr "Aktion"
+
+msgid "Add members"
+msgstr "Mitglieder hinzufügen"
+
+msgid "Add members..."
+msgstr "Mitglied hinzufügen..."
+
+msgid "Add user management options to this topic."
+msgstr ""
+
+msgid "Add users or groups to this group"
+msgstr ""
+
+msgid "Administration"
+msgstr ""
 
 msgid "Advanced options..."
 msgstr "Erweiterte Optionen..."
@@ -216,6 +258,10 @@ msgstr "Links auf %1 im %2-Bereich"
 #: templates/backlinksallwebs.modac.tmpl:4
 msgid "Backlinks to %1 in all Webs"
 msgstr "Links auf %1 in allen Bereichen"
+
+#, fuzzy
+msgid "Bookmark this file"
+msgstr "Diese Seite als Favorit speichern"
 
 msgid "Bookmark this page"
 msgstr "Diese Seite als Favorit speichern"
@@ -362,6 +408,10 @@ msgstr "Neues Content-Template anlegen"
 msgid "Create new content template..."
 msgstr "Neues Content-Template anlegen..."
 
+#, fuzzy
+msgid "Create new topic"
+msgstr "Neue Seite anlegen"
+
 #: data/System/ModacSkinCommonWords.txt:30
 msgid "Create this topic"
 msgstr "Diese Seite anlegen"
@@ -494,6 +544,9 @@ msgstr "Einstellungen bearbeiten"
 msgid "Edit topic preference settings"
 msgstr "Einstellungen für diese Seite bearbeiten"
 
+msgid "Energy (50001)"
+msgstr ""
+
 #: data/System/ModacSkinSolrSearchViewTemplate.txt:82
 msgid "English"
 msgstr "Englisch"
@@ -501,6 +554,9 @@ msgstr "Englisch"
 #: templates/foswiki.modac.tmpl:75
 msgid "Enlarge edit box"
 msgstr "Editor vergrößern"
+
+msgid "Environment (14000)"
+msgstr ""
 
 #: templates/attachtables.modac.tmpl:8
 msgid "Filename"
@@ -567,6 +623,9 @@ msgstr "Historie"
 msgid "History of %1"
 msgstr "Historie von %1"
 
+msgid "ISO norm"
+msgstr ""
+
 #: templates/validate.modac.tmpl:44
 msgid "If you are unsure what this means, read: %1"
 msgstr "Bei Unklarheiten können Sie hier mehr erfahren: %1"
@@ -615,6 +674,9 @@ msgstr "Einloggen"
 msgid "Log Out"
 msgstr "Ausloggen"
 
+msgid "Log in to continue."
+msgstr ""
+
 #: templates/oopshistory.modac.tmpl:67
 msgid "MS-Word-mode"
 msgstr "MS-Word-Änderungsmodus"
@@ -630,6 +692,9 @@ msgstr "Anleitungen"
 #: data/System/ModacSkinSolrSearchViewTemplate.txt:56
 msgid "Media"
 msgstr "Medien"
+
+msgid "Members"
+msgstr ""
 
 #: templates/foswiki.modac.tmpl:45
 msgid "Modify search"
@@ -697,6 +762,9 @@ msgstr "Neuere Revision:"
 msgid "News"
 msgstr "Aktuelles"
 
+msgid "No  members"
+msgstr ""
+
 #: templates/more.modac.tmpl:200
 msgid "No child topics"
 msgstr "Keine untergeordneten Seiten"
@@ -735,9 +803,16 @@ msgstr "Ältere Revision:"
 msgid "One comment"
 msgstr "Ein Kommentar"
 
+msgid "Only members or admins may update group."
+msgstr ""
+
 #: templates/more.modac.tmpl:66 templates/more.modac.tmpl:83
 msgid "Only update linked topics in %1 web"
 msgstr "Nur verlinkte Seiten im %1 Bereich aktualisieren"
+
+msgid ""
+"Oops: we could not recognize you. Try again or [[%1][reset your password]]."
+msgstr ""
 
 msgid "Oops: we could not recognize you. Try again."
 msgstr "Oops: Wir konnten Sie nicht authentifizieren. Versuchen Sie es erneut."
@@ -810,6 +885,9 @@ msgstr "Eigenschaften"
 msgid "Put under CIP"
 msgstr "In KVP überführen"
 
+msgid "Quality (9000)"
+msgstr ""
+
 #: data/System/ModacSkinSolrSearchViewTemplate.txt:55
 msgid "Recent changes"
 msgstr "Letzte Änderungen"
@@ -825,8 +903,20 @@ msgstr "Kürzlich abgeschlossene Aufgaben"
 msgid "Refresh"
 msgstr "Neu laden"
 
+msgid "Related topics:"
+msgstr ""
+
 msgid "Remove bookmark"
 msgstr "Favorit entfernen"
+
+msgid "Remove members from this group"
+msgstr ""
+
+msgid "Remove members..."
+msgstr ""
+
+msgid "Remove selected members"
+msgstr ""
 
 #: data/System/ModacSkinTopicMenuTemplate.txt:11 templates/more.modac.tmpl:79
 msgid "Rename or move topic"
@@ -1004,9 +1094,15 @@ msgstr "Schwedisch"
 msgid "Switch to monotype or propotional font"
 msgstr "Zeichensatz in monotype oder proportional wechseln"
 
+msgid "System user list."
+msgstr ""
+
 #: data/System/ModacSkinSolrSearchViewTemplate.txt:58
 msgid "Tag"
 msgstr "Schlagwort"
+
+msgid "Tagged %1"
+msgstr ""
 
 msgid "Task"
 msgstr "Aufgabe"
@@ -1051,6 +1147,9 @@ msgstr ""
 #: data/System/ModacSkinTopicMenueTemplates.txt
 msgid "These actions are not available while editing."
 msgstr "Diese Aktionen stehen während der Bearbeitung nicht zur Verfügung."
+
+msgid "This group should not have members."
+msgstr ""
 
 #: core/templates/renamedelete.tmpl:28
 msgid ""
@@ -1160,6 +1259,15 @@ msgstr "Anhang %1 aktualisieren"
 msgid "Update existing attachment"
 msgstr "Neue Version hochladen"
 
+msgid "Upgrade"
+msgstr ""
+
+msgid "Upgrade group topic"
+msgstr ""
+
+msgid "Upgrade group topic..."
+msgstr ""
+
 #: templates/attachagain.modac.tmpl:25 templates/attachnew.modac.tmpl:5
 msgid "Upload file"
 msgstr "Datei hochladen"
@@ -1229,6 +1337,10 @@ msgstr "Warten auf QM"
 #: templates/validate.modac.tmpl:23
 msgid "Warning! Confirmation required"
 msgstr "Achtung! Bestätigung erforderlich"
+
+#, fuzzy
+msgid "Web"
+msgstr "Bereich:"
 
 #: templates/moredialog.modac.tmpl:48
 msgid "Web:"
@@ -1320,6 +1432,14 @@ msgstr "im Quelltextformat"
 msgid "indicates mandatory fields"
 msgstr "kennzeichnet Pflichtfelder"
 
+#, fuzzy
+msgid "keyword"
+msgstr "Stichwort"
+
+#, fuzzy
+msgid "language"
+msgstr "Sprache"
+
 #: templates/oopshistory.modac.tmpl:47
 msgid "last"
 msgstr "letzter"
@@ -1327,6 +1447,10 @@ msgstr "letzter"
 #: templates/oopshistory.modac.tmpl:47
 msgid "later"
 msgstr "später"
+
+#, fuzzy
+msgid "media"
+msgstr "Medien"
 
 #: templates/metacomments.modac.tmpl:16
 msgid "needs approval"
@@ -1340,10 +1464,16 @@ msgstr "keine übergeordnete Seite zugewiesen"
 msgid "none"
 msgstr "(nichts)"
 
+msgid "older"
+msgstr ""
+
 #: templates/attachagain.modac.tmpl:23
 #: templates/renameattachmentdelete.modac.tmpl:25
 msgid "or"
 msgstr "oder"
+
+msgid "recently"
+msgstr ""
 
 #: templates/attachtables.modac.tmpl:39 templates/oopshistory.modac.tmpl:58
 msgid "restore"
@@ -1352,6 +1482,15 @@ msgstr "wiederherstellen"
 #: templates/oopshistory.modac.tmpl:92
 msgid "revisions up to"
 msgstr "Versionen bis zu"
+
+msgid "submit the query"
+msgstr ""
+
+msgid "tag"
+msgstr ""
+
+msgid "tagged %1"
+msgstr ""
 
 #: templates/viewtopicactionbuttons.modac.tmpl:87
 msgid "title='Attach an image or document to this topic' accesskey='a'>&Attach"
@@ -1455,9 +1594,15 @@ msgid "title='View without formatting' accesskey='v'>&View wiki text"
 msgstr ""
 "title='Quelltext ohne Formatierung ansehen' accesskey='v'>Quelltext (&v)"
 
+msgid "today"
+msgstr ""
+
 #: data/System/ModacSkinSolrSearchViewTemplate.txt:104
 msgid "topic"
 msgstr "Seite"
+
+msgid "topic type"
+msgstr ""
 
 #: templates/oopshistory.modac.tmpl:76
 msgid "unchanged sections before and after each change"
