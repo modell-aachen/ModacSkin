@@ -1,1433 +1,1550 @@
 # ModacSkin translation for Traditional Chinese
-msgid   ""
-msgstr  "Project-Id-Version: Foswiki $Id\n"
-        "Report-Msgid-Bugs-To: osthold@modell-aachen.de\n"
-        "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-        "PO-Revision-Date: 2010-11-09 08:01+0200\n"
-        "Language-Team: Modell Aachen\n"
-        "Language: zh_CN\n"
-        "MIME-Version: 1.0\n"
-        "Content-Type: text/plain; charset=UTF-8\n"
-        "Content-Transfer-Encoding: 8bit\n"
-        "Plural-Forms: nplurals=1; plural=0;\n"
-        "X-Generator: Pootle 2.0.5\n"
-        "X-Poedit-Country: Taiwan\n"
-        "X-Poedit-SourceCharset: utf-8\n"
+msgid ""
+msgstr ""
+"Project-Id-Version: Foswiki $Id\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2010-11-09 08:01+0200\n"
+"Language-Team: Modell Aachen\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Pootle 2.0.5\n"
+"X-Poedit-Country: Taiwan\n"
+"X-Poedit-SourceCharset: utf-8\n"
 
-#: templates/foswiki.modac.tmpl:99
-msgid   "%1 Web"
-msgstr  "%1 子网"
+#: templates/foswiki.modac.tmpl:100
+msgid "%1 Web"
+msgstr "%1 子网"
 
-#: templates/metacomments.modac.tmpl:65
-msgid   "%1 comments"
-msgstr  "%1评论"
-
-#: templates/validate.modac.tmpl:33
-msgid   "%1 has received a suspicious change request from your browser."
-msgstr  "％1 已收到来自您浏览器发出的可疑修改要求。"
-
-#: templates/renameattachmentdelete.modac.tmpl:41
-msgid   "%1 is the default topic for deleted attachments."
-msgstr  "%1 是附件删除后的预设主题。"
-
-#: data/System/ModacSkinUserViewTemplate.txt:129
-msgid   "%1 weeks"
-msgstr  "%1周"
-
-#: data/System/ModacSkinUserViewTemplate.txt:136
-msgid   "%URLPARAM{"
-msgstr  "%URL参数{"
-
-#: templates/metamaketext.modac.tmpl:3
-msgid   "%maketext%"
-msgstr  "%maketext%"
-
-#: templates/foswiki.modac.tmpl:14
-msgid   "&Cancel"
-msgstr  "取消(&C)"
-
-#: templates/validate.modac.tmpl:13
-msgid   "(%1 validation)"
-msgstr  "(%1 验证)"
-
-#: templates/rdiff.modac.tmpl:6
-msgid   "(%1 vs. %2)"
-msgstr  "(%1 比上 %2)"
-
-#: templates/attach.modac.tmpl:10 templates/attachagain.modac.tmpl:4
-msgid   "(attachments)"
-msgstr  "(附件)"
-
-#: templates/backlinksweb.modac.tmpl:2
-msgid   "(backlinks in %1 Web)"
-msgstr  "(%1 子网中的反向连结)"
-
-#: templates/backlinksallwebs.modac.tmpl:2
-msgid   "(backlinks in all Webs)"
-msgstr  "(所有子网中的反向连结)"
-
-#: templates/changes.modac.tmpl:2
-msgid   "(changes)"
-msgstr  "(变更)"
-
-#: templates/compare.modac.tmpl:10
-msgid   "(compare)"
-msgstr  "(比较)"
-
-#: templates/renameattachmentdelete.modac.tmpl:5
-msgid   "(delete attachment)"
-msgstr  "(删除附件)"
-
-#: templates/oopshistory.modac.tmpl:24
-msgid   "(history)"
-msgstr  "(历史记录)"
-
-#: templates/more.modac.tmpl:12
-msgid   "(more)"
-msgstr  "(更多)"
-
-#: templates/foswiki.modac.tmpl:101
-msgid   "(raw view)"
-msgstr  "(检示源码)"
-
-#: templates/edit.modac.tmpl:32 templates/foswiki.modac.tmpl:101
-#: templates/foswiki.modac.tmpl:81
-msgid   "(revision %1)"
-msgstr  "(修订版 %1)"
-
-#: templates/settings.modac.tmpl:10
-msgid   "(set preferences)"
-msgstr  "(设定属性)"
-
-#: templates/more.modac.tmpl:103
-msgid   "<em>in %1 web</em> only"
-msgstr  "只<em>在 %1 子网</em>中"
-
-#: templates/more.modac.tmpl:101
-msgid   "<em>in all public webs</em>"
-msgstr  "<em>在所有公开的子网</em>"
-
-#: data/System/WebBottomBarDefault.txt:3
-msgid   "About Q.Wiki"
-msgstr  "关于Q.Wiki"
-
-#: templates/edit.modac.tmpl:86
-msgid   "Access keys"
-msgstr  "快捷键"
-
-#: templates/settings.modac.tmpl:28
-msgid   "Access keys:"
-msgstr  "快捷键"
-
-#: templates/attachtables.modac.tmpl:34 templates/attachtables.modac.tmpl:8
-#: templates/oopshistory.modac.tmpl:58
-msgid   "Action"
-msgstr  "功能"
-
-#: data/Main/ModacSkinGroupViewTemplate.txt:240
-msgid   "Add members"
-msgstr  "新增成员"
-
-#: data/Main/ModacSkinGroupViewTemplate.txt:171
-msgid   "Add members..."
-msgstr  "新增成员……"
-
-#: data/Main/ModacSkinGroupViewTemplate.txt:218
-msgid   "Add user management options to this topic."
-msgstr  "对此主题增加用用户管理选项"
-
-#: data/Main/ModacSkinGroupViewTemplate.txt:236
-msgid   "Add users or groups to this group"
-msgstr  "对此组增加用户或组"
-
-#: data/Main/ModacSkinGroupViewTemplate.txt:146
-#: data/Main/ModacSkinGroupViewTemplate.txt:167
-msgid   "Administration"
-msgstr  "管理"
-
-#: data/System/ModacSkinSolrSearchViewTemplate.txt:64
-msgid   "Application"
-msgstr  "应用"
-
-#: data/System/ModacSkinCommonWords.txt:21
-msgid   "Approve contentual aspects of discussion"
-msgstr  "核准讨论内容"
-
-#: data/System/ModacSkinCommonWords.txt:20
-msgid   "Approve contentual aspects of draft"
-msgstr  "核准草案内容"
-
-#: data/System/ModacSkinCommonWords.txt:22
-msgid   "Approve formal aspects of discussion"
-msgstr  "核准正式讨论内容"
-
-#: data/System/ModacSkinCommonWords.txt:19
-msgid   "Approve formal aspects of draft"
-msgstr  "核准正式划案内容"
-
-#: data/System/ModacSkinCommonWords.txt:6
-msgid   "Approved Page"
-msgstr  "核准的页面"
-
-#: data/System/ModacSkinSolrSearchViewTemplate.txt:67
-#: data/System/ModacSkinTopHeadTemplate.txt:69
-msgid   "Area of application"
-msgstr  "应用范围"
-
-#: templates/viewtopicactionbuttons.modac.tmpl:103
-msgid   "Attach"
-msgstr  "附件"
-
-#: templates/attachnew.modac.tmpl:2
-msgid   "Attach file to %1"
-msgstr  "为 %1 附档"
-
-#: templates/attach.modac.tmpl:13
-msgid   "Attach image or document on %1"
-msgstr  "为 %1 附图"
-
-#: templates/attach.modac.tmpl:48
-msgid   "Attach new file"
-msgstr  "增加新档"
-
-#: templates/attachtables.modac.tmpl:33
-msgid   "Attachment history"
-msgstr  "附件历史记录"
-
-#: templates/attachtables.modac.tmpl:6
-msgid   "Attachments"
-msgstr  "附件 "
-
-#: templates/attach.modac.tmpl:23
-msgid   "Attachments help"
-msgstr  "附件说明"
-
-#: templates/attach.modac.tmpl:69
-msgid   "Attachments will not be shown in topic view page."
-msgstr  "主题浏览时将不显示附件。"
-
-#: templates/oopsleaseconflict.modac.tmpl:4
-msgid   "Attention"
-msgstr  "注意"
-
-#: templates/changeform.modac.tmpl:18
-msgid   "Available form templates"
-msgstr  "可用的表单范本"
-
-#: templates/foswiki.modac.tmpl:14 templates/oopshistory.modac.tmpl:97
-msgid   "Back to topic"
-msgstr  "回到主题"
-
-#: templates/more.modac.tmpl:99
-#: templates/viewtopicactionbuttons.modac.tmpl:125
-msgid   "Backlinks"
-msgstr  "反向连结"
-
-#: templates/backlinksweb.modac.tmpl:4
-msgid   "Backlinks to %1 in %2 Web"
-msgstr  "%2 子网中指向 %1 的反向连结"
-
-#: templates/backlinksallwebs.modac.tmpl:4
-msgid   "Backlinks to %1 in all Webs"
-msgstr  "所有子网中指向 %1 的反向连结"
-
-#: templates/attachtables.modac.tmpl:47
-msgid   "Bookmark this file"
-msgstr  "标记此文件"
-
-#: templates/viewtopicactionbuttons.modac.tmpl:21
-msgid   "Bookmark this page"
-msgstr  "标记此页面"
-
-#: data/System/ModacSkinUserViewTemplate.txt:60
-msgid   "By last change"
-msgstr  "通过最后更改"
-
-#: data/System/ModacSkinUserViewTemplate.txt:43
-msgid   "By web"
-msgstr  "通过页面"
-
-#: templates/metacomments.modac.tmpl:116 templates/metacomments.modac.tmpl:97
-#: templates/validate.modac.tmpl:56
-msgid   "Cancel"
-msgstr  "取消"
-
-#: templates/edit.modac.tmpl:60
-msgid   "Cancel editing and discard changes"
-msgstr  "取消编辑并放弃变更"
-
-#: data/System/ModacSkinSolrSearchViewTemplate.txt:61
-msgid   "Category"
-msgstr  "分类"
+#: templates/metacomments.modac.tmpl:33
+msgid "%1 comments"
+msgstr "%1评论"
 
 #: templates/validate.modac.tmpl:29
-msgid   "Change cannot be completed"
-msgstr  "未修改完成"
+msgid "%1 has received a suspicious change request from your browser."
+msgstr "％1 已收到来自您浏览器发出的可疑修改要求。"
+
+#: templates/renameattachmentdelete.modac.tmpl:41
+msgid "%1 is the default topic for deleted attachments."
+msgstr "%1 是附件删除后的预设主题。"
+
+msgid "%1 weeks"
+msgstr "%1周"
+
+#: templates/foswiki.modac.tmpl:16
+msgid "&Cancel"
+msgstr "取消(&C)"
+
+#: templates/validate.modac.tmpl:9
+msgid "(%1 validation)"
+msgstr "(%1 验证)"
+
+#: templates/rdiff.modac.tmpl:6
+msgid "(%1 vs. %2)"
+msgstr "(%1 比上 %2)"
+
+#: templates/oopsaccessdenied.modac.tmpl:7
+msgid "(access denied)"
+msgstr ""
+
+#: templates/attach.modac.tmpl:10 templates/attachagain.modac.tmpl:4
+msgid "(attachments)"
+msgstr "(附件)"
+
+#: templates/backlinksweb.modac.tmpl:2
+msgid "(backlinks in %1 Web)"
+msgstr "(%1 子网中的反向连结)"
+
+#: templates/backlinksallwebs.modac.tmpl:2
+msgid "(backlinks in all Webs)"
+msgstr "(所有子网中的反向连结)"
+
+#: templates/changes.modac.tmpl:2
+msgid "(changes)"
+msgstr "(变更)"
+
+#: templates/compare.modac.tmpl:8
+msgid "(compare)"
+msgstr "(比较)"
+
+#: templates/renameattachmentdelete.modac.tmpl:5
+msgid "(delete attachment)"
+msgstr "(删除附件)"
+
+#: templates/oopshistory.modac.tmpl:22
+msgid "(history)"
+msgstr "(历史记录)"
+
+#: templates/more.modac.tmpl:12
+msgid "(more)"
+msgstr "(更多)"
+
+#: templates/foswiki.modac.tmpl:102
+msgid "(raw view)"
+msgstr "(检示源码)"
+
+#: templates/edit.modac.tmpl:22 templates/foswiki.modac.tmpl:102
+#: templates/foswiki.modac.tmpl:82
+msgid "(revision %1)"
+msgstr "(修订版 %1)"
+
+#: templates/settings.modac.tmpl:10
+msgid "(set preferences)"
+msgstr "(设定属性)"
+
+#: templates/more.modac.tmpl:100
+msgid "<em>in %1 web</em> only"
+msgstr "只<em>在 %1 子网</em>中"
+
+#: templates/more.modac.tmpl:98
+msgid "<em>in all public webs</em>"
+msgstr "<em>在所有公开的子网</em>"
+
+#: data/System/WebBottomBarDefault.txt:3
+msgid "About Q.Wiki"
+msgstr "关于Q.Wiki"
+
+#: templates/edit.modac.tmpl:76
+msgid "Access keys"
+msgstr "快捷键"
+
+#: templates/settings.modac.tmpl:28
+msgid "Access keys:"
+msgstr "快捷键"
+
+#: templates/attachtables.modac.tmpl:34 templates/attachtables.modac.tmpl:8
+#: templates/oopshistory.modac.tmpl:56
+msgid "Action"
+msgstr "功能"
+
+#, fuzzy
+msgid "Advanced options..."
+msgstr "更多主题功能..."
+
+#: data/System/ModacSkinSolrSearchViewTemplate.txt:59
+msgid "Application"
+msgstr "应用"
+
+#: data/System/ModacSkinCommonWords.txt:21
+msgid "Approve contentual aspects of discussion"
+msgstr "核准讨论内容"
+
+#: data/System/ModacSkinCommonWords.txt:20
+msgid "Approve contentual aspects of draft"
+msgstr "核准草案内容"
+
+#: data/System/ModacSkinCommonWords.txt:22
+msgid "Approve formal aspects of discussion"
+msgstr "核准正式讨论内容"
+
+#: data/System/ModacSkinCommonWords.txt:19
+msgid "Approve formal aspects of draft"
+msgstr "核准正式划案内容"
+
+#: data/System/ModacSkinCommonWords.txt:6
+msgid "Approved Page"
+msgstr "核准的页面"
+
+#: data/System/ModacSkinTopHeadTemplate.txt:69
+#: data/System/ModacSkinSolrSearchViewTemplate.txt:63
+msgid "Area of application"
+msgstr "应用范围"
+
+#: templates/viewtopicactionbuttons.modac.tmpl:134
+msgid "Attach"
+msgstr "附件"
+
+#: templates/attachnew.modac.tmpl:2
+msgid "Attach file to %1"
+msgstr "为 %1 附档"
+
+#: templates/attach.modac.tmpl:13
+msgid "Attach image or document on %1"
+msgstr "为 %1 附图"
+
+#: templates/attach.modac.tmpl:48
+msgid "Attach new file"
+msgstr "增加新档"
+
+#: templates/attachtables.modac.tmpl:33
+msgid "Attachment history"
+msgstr "附件历史记录"
+
+#: templates/attachtables.modac.tmpl:6
+msgid "Attachments"
+msgstr "附件 "
+
+#: templates/attach.modac.tmpl:23
+msgid "Attachments help"
+msgstr "附件说明"
+
+#: templates/attach.modac.tmpl:69
+msgid "Attachments will not be shown in topic view page."
+msgstr "主题浏览时将不显示附件。"
+
+#: templates/oopsaccessdenied.modac.tmpl:8
+#: templates/oopsattention.modac.tmpl:8
+#: templates/oopsleaseconflict.modac.tmpl:7
+msgid "Attention"
+msgstr "注意"
+
+#: templates/changeform.modac.tmpl:18
+msgid "Available form templates"
+msgstr "可用的表单范本"
+
+#: templates/foswiki.modac.tmpl:16 templates/oopshistory.modac.tmpl:94
+msgid "Back to topic"
+msgstr "回到主题"
+
+#: templates/more.modac.tmpl:96
+#: templates/viewtopicactionbuttons.modac.tmpl:156
+msgid "Backlinks"
+msgstr "反向连结"
+
+#: templates/backlinksweb.modac.tmpl:4
+msgid "Backlinks to %1 in %2 Web"
+msgstr "%2 子网中指向 %1 的反向连结"
+
+#: templates/backlinksallwebs.modac.tmpl:4
+msgid "Backlinks to %1 in all Webs"
+msgstr "所有子网中指向 %1 的反向连结"
+
+msgid "Bookmark this page"
+msgstr "标记此页面"
+
+msgid "By last change"
+msgstr "通过最后更改"
+
+msgid "By web"
+msgstr "通过页面"
+
+#: templates/validate.modac.tmpl:52
+msgid "Cancel"
+msgstr "取消"
+
+#: templates/edit.modac.tmpl:50
+msgid "Cancel editing and discard changes"
+msgstr "取消编辑并放弃变更"
+
+#: data/System/ModacSkinSolrSearchViewTemplate.txt:57
+msgid "Category"
+msgstr "分类"
+
+#: templates/validate.modac.tmpl:25
+msgid "Change cannot be completed"
+msgstr "未修改完成"
 
 #: templates/attachagain.modac.tmpl:15
-msgid   "Change comment only"
-msgstr  "仅更改评论"
+msgid "Change comment only"
+msgstr "仅更改评论"
+
+#: core/templates/renamewebbase.tmpl:43
+msgid "Change links in topics that refer to !%1 in any Web:"
+msgstr ""
+
+#: core/templates/renamewebbase.tmpl:40
+msgid "Change links in topics that refer to !%1 in the %2 Web:"
+msgstr ""
+
+#: core/templates/renamebase.tmpl:57
+msgid "Change links in topics that refer to %1 in any Web:"
+msgstr ""
+
+#: core/templates/renamebase.tmpl:53
+msgid "Change links in topics that refer to %1 in the %2 Web:"
+msgstr ""
 
 #: data/System/ModacSkinCommonWords.txt:27
-msgid   "Change status"
-msgstr  "改变状态"
+msgid "Change status"
+msgstr "改变状态"
 
-#: templates/more.modac.tmpl:203
-msgid   "Child topics in %1 web"
-msgstr  "在%1子网中的子主题"
+#: core/templates/renamebase.tmpl:45 core/templates/renamedelete.tmpl:34
+msgid "Checked topics will be updated to point to the new topic location."
+msgstr ""
 
-#: data/System/ModacSkinSolrSearchViewTemplate.txt:88
-msgid   "Chinese/Japanese/Korean"
-msgstr  "中文/日文/韩文"
+#: templates/more.modac.tmpl:199
+msgid "Child topics in %1 web"
+msgstr "在%1子网中的子主题"
+
+#: data/System/ModacSkinSolrSearchViewTemplate.txt:84
+msgid "Chinese/Japanese/Korean"
+msgstr "中文/日文/韩文"
 
 #: templates/changeform.modac.tmpl:7
-msgid   "Choose a new form for %1"
-msgstr  "为 %1 选个新表单"
+msgid "Choose a new form for %1"
+msgstr "为 %1 选个新表单"
 
 #: templates/renamebase.modac.tmpl:26
-msgid   "Clear all"
-msgstr  "全部清除"
+msgid "Clear all"
+msgstr "全部清除"
 
 #: templates/attach.modac.tmpl:57 templates/attachtables.modac.tmpl:8
-#: templates/oopshistory.modac.tmpl:47
-msgid   "Comment"
-msgstr  "评论"
+#: templates/oopshistory.modac.tmpl:45
+msgid "Comment"
+msgstr "评论"
 
-#: templates/metacomments.modac.tmpl:72
-msgid   "Comments"
-msgstr  "评论"
+#: templates/metacomments.modac.tmpl:40
+msgid "Comments"
+msgstr "评论"
 
-#: templates/more.modac.tmpl:165 templates/oopshistory.modac.tmpl:101
-msgid   "Compare revisions"
-msgstr  "比较版本"
+#: templates/more.modac.tmpl:162 templates/oopshistory.modac.tmpl:99
+msgid "Compare revisions"
+msgstr "比较版本"
 
-#: templates/compare.modac.tmpl:6
-msgid   "Comparison"
-msgstr  "对照"
+msgid "Comparison"
+msgstr "对照"
 
 #: data/System/ModacSkinContentTemplatesViewTemplate.txt:13
 #: data/System/ModacSkinContentTemplatesViewTemplate.txt:25
-msgid   "Content Templates in %1 Web"
-msgstr  "在%1页面的评论模板"
+msgid "Content Templates in %1 Web"
+msgstr "在%1页面的评论模板"
 
 #: data/System/ModacSkinContentTemplatesViewTemplate.txt:17
-msgid   "Content templates"
-msgstr  "评论模板"
+msgid "Content templates"
+msgstr "评论模板"
 
-#: templates/oopshistory.modac.tmpl:73
-msgid   "Context:"
-msgstr  "语境"
+#, fuzzy
+msgid "Context"
+msgstr "语境"
 
-#: data/System/ModacSkinSolrSearchViewTemplate.txt:83
-msgid   "Contributor"
-msgstr  "搞稿者"
+#: templates/oopshistory.modac.tmpl:71
+msgid "Context:"
+msgstr "语境"
 
-#: templates/more.modac.tmpl:38
-msgid   "Copy this topic (and all attachments) to a new topic."
-msgstr  "拷贝主题（和所有附件）到新的主题"
+#: data/System/ModacSkinSolrSearchViewTemplate.txt:79
+msgid "Contributor"
+msgstr "搞稿者"
 
-#: data/System/ModacSkinTopicMenuTemplate.txt:14 templates/more.modac.tmpl:37
-msgid   "Copy topic"
-msgstr  "复制主题 "
+#: templates/more.modac.tmpl:37 templates/moredialog.modac.tmpl:9
+msgid "Copy this topic (and all attachments) to a new topic."
+msgstr "拷贝主题（和所有附件）到新的主题"
 
-#: templates/more.modac.tmpl:47
-msgid   "Copy topic..."
-msgstr  "拷贝主题……"
+#: data/System/ModacSkinTopicMenuTemplate.txt:10 templates/more.modac.tmpl:36
+#: templates/moredialog.modac.tmpl:8
+msgid "Copy topic"
+msgstr "复制主题 "
 
-#: data/System/WebLeftBarDefault.txt:22
-msgid   "Create New Topic"
-msgstr  "建立新主题"
+#: templates/more.modac.tmpl:46 templates/moredialog.modac.tmpl:18
+msgid "Copy topic..."
+msgstr "拷贝主题……"
 
-#: data/System/ModacSkinWebCreateNewTopicTemplate.txt:41
-#: data/System/ModacSkinWebCreateNewTopicTemplate.txt:89
-msgid   "Create New Topic in %1 Web"
-msgstr  "在 %1 子网中建立新主题"
+#: data/System/WebLeftBarDefault.txt:21
+msgid "Create New Topic"
+msgstr "建立新主题"
+
+#: data/System/ModacSkinWebCreateNewTopicTemplate.txt:40
+#: data/System/ModacSkinWebCreateNewTopicTemplate.txt:87
+msgid "Create New Topic in %1 Web"
+msgstr "在 %1 子网中建立新主题"
 
 #: templates/attach.modac.tmpl:67
-msgid   "Create a link to the attached file"
-msgstr  "建立附件连结"
+msgid "Create a link to the attached file"
+msgstr "建立附件连结"
 
-#: data/System/ModacSkinWebCreateNewTopicTemplate.txt:45
-msgid   "Create a new topic"
-msgstr  "创建新主题"
+#: data/System/ModacSkinWebCreateNewTopicTemplate.txt:44
+msgid "Create a new topic"
+msgstr "创建新主题"
 
 #: data/System/ModacSkinContentTemplatesViewTemplate.txt:44
-msgid   "Create new content template"
-msgstr  "创建新主题模板"
+msgid "Create new content template"
+msgstr "创建新主题模板"
 
 #: data/System/ModacSkinContentTemplatesViewTemplate.txt:38
-msgid   "Create new content template..."
-msgstr  "创建新主题模板……"
+msgid "Create new content template..."
+msgstr "创建新主题模板……"
 
 #: data/System/ModacSkinCommonWords.txt:30
-msgid   "Create this topic"
-msgstr  "建立这个主题"
+msgid "Create this topic"
+msgstr "建立这个主题"
 
-#: data/System/ModacSkinUserViewTemplate.txt:134
-#: data/System/ModacSkinUserViewTemplate.txt:87
-msgid   "Created"
-msgstr  "创建"
+msgid "Created"
+msgstr "创建"
 
 #: templates/renameattachmentdelete.modac.tmpl:9
-msgid   "Current location:"
-msgstr  "目前位置:"
+msgid "Current location:"
+msgstr "目前位置:"
 
-#: templates/more.modac.tmpl:113
-msgid   "Current parent:"
-msgstr  "目前父主题:"
+#: templates/more.modac.tmpl:110
+msgid "Current parent:"
+msgstr "目前父主题:"
 
-#: data/System/ModacSkinSolrSearchViewTemplate.txt:89
-msgid   "Danish"
-msgstr  "丹麦语"
+#: templates/renamebase.modac.tmpl
+#, fuzzy
+msgid "Current topic:"
+msgstr "目前位置:"
 
-#: templates/attachtables.modac.tmpl:34 templates/attachtables.modac.tmpl:8
-#: templates/oopshistory.modac.tmpl:45 templates/oopshistory.modac.tmpl:56
-msgid   "Date"
-msgstr  "日期"
-
-#: templates/more.modac.tmpl:174
-msgid   "Debug"
-msgstr  "除错"
-
-#: templates/attachagain.modac.tmpl:23
-#: templates/renameattachmentdelete.modac.tmpl:25
-msgid   "Delete"
-msgstr  "删除"
-
-#: templates/attachtables.modac.tmpl:49
-#: templates/renameattachmentdelete.modac.tmpl:28
-msgid   "Delete attachment"
-msgstr  "删除附件"
-
-#: data/System/ModacSkinTopicMenuTemplate.txt:16 templates/more.modac.tmpl:61
-msgid   "Delete topic"
-msgstr  "删除主题"
-
-#: templates/more.modac.tmpl:71
-msgid   "Delete topic..."
-msgstr  "删除主题..."
-
-#: templates/attach.modac.tmpl:59
-msgid   "Describe the file so other people know what it is."
-msgstr  "档案说明，方便其他人了解档案内容。"
-
-#: templates/compare.modac.tmpl:13 templates/compare.modac.tmpl:14
-#: templates/rdiff.modac.tmpl:11
-msgid   "Difference:"
-msgstr  "差异:"
-
-#: data/System/ModacSkinCommonWords.txt:15
-msgid   "Discard discussion"
-msgstr  "终止讨论"
-
-#: data/System/ModacSkinCommonWords.txt:14
-msgid   "Discard draft"
-msgstr  "终止草案"
-
-#: data/System/ModacSkinUserViewTemplate.txt:102
-msgid   "Discarded tasks"
-msgstr  "放弃的任务"
-
-#: data/System/ModacSkinCommonWords.txt:16
-msgid   "Discuss"
-msgstr  "讨论"
-
-#: data/System/ModacSkinCommonWords.txt:8
-msgid   "Discussion"
-msgstr  "讨论"
-
-#: templates/attach.modac.tmpl:69
-msgid   "Do not show attachment in table"
-msgstr  "表格内不显示附件"
-
-#: templates/form.modac.tmpl:10 templates/form.modac.tmpl:11
-msgid   "Document Control"
-msgstr  "文档控制"
-
-#: data/System/ModacSkinCommonWords.txt:7
-msgid   "Draft"
-msgstr  "草案"
-
-#: data/System/ModacSkinUserViewTemplate.txt:134
-#: data/System/ModacSkinUserViewTemplate.txt:87
-#: data/System/ModacSkinUserViewTemplate.txt:94
-msgid   "Due"
-msgstr  "由于"
-
-#: data/System/ModacSkinSolrSearchViewTemplate.txt:94
-msgid   "Dutch"
-msgstr  "荷兰语"
-
-#: data/System/ModacSkinUserViewTemplate.txt:136
-#: data/System/ModacSkinUserViewTemplate.txt:89
-#: templates/viewtopicactionbuttons.modac.tmpl:82
-msgid   "Edit"
-msgstr  "编辑"
-
-#: templates/oopsleaseconflict.modac.tmpl:25
-msgid   "Edit Anyway"
-msgstr  "强制编辑"
-
-#: templates/viewtopicactionbuttons.modac.tmpl:98
-msgid   "Edit Wiki<nop>Text"
-msgstr  "编辑 Wiki<nop>文本"
-
-#: templates/metacomments.modac.tmpl:86
-msgid   "Edit comment"
-msgstr  "编辑评论"
-
-#: templates/edit.modac.tmpl:23
-msgid   "Edit help"
-msgstr  "编辑说明"
-
-#: templates/more.modac.tmpl:27
-msgid   "Edit settings for this topic..."
-msgstr  "编辑此主题的设定……"
-
-#: data/System/ModacSkinTopicMenuTemplate.txt:12 templates/more.modac.tmpl:23
-msgid   "Edit topic preference settings"
-msgstr  "编辑主题属性设定"
-
-#: data/System/ModacSkinSolrSearchBaseTemplate.txt:18
-#: data/System/ModacSkinSolrSearchViewTemplate.txt:86
-msgid   "English"
-msgstr  "英语"
-
-#: templates/foswiki.modac.tmpl:74
-msgid   "Enlarge edit box"
-msgstr  "放大编辑框"
-
-#: templates/attachtables.modac.tmpl:8
-msgid   "Filename"
-msgstr  "文件名"
-
-#: templates/more.modac.tmpl:100 templates/more.modac.tmpl:102
-msgid   "Find topics that link to %1 ..."
-msgstr  "找连到 %1 的主题..."
-
-#: data/System/ModacSkinUserViewTemplate.txt:96
-msgid   "Finished tasks"
-msgstr  "完成的任务"
-
-#: data/System/ModacSkinSolrSearchViewTemplate.txt:91
-msgid   "Finnish"
-msgstr  "芬兰语"
-
-#: templates/edit.modac.tmpl:41
-msgid   "Force new revision"
-msgstr  "强制新版本"
-
-#: templates/formtables.modac.tmpl:5
-msgid   "Form data"
-msgstr  "表格数据"
-
-#: templates/form.modac.tmpl:13
-msgid   "Form definition"
-msgstr  "表单定义"
-
-#: data/System/ModacSkinWebCreateNewTopicTemplate.txt:176
-msgid   "Free form topic title text."
-msgstr  "自由形式的主题标题内容"
-
-#: data/System/ModacSkinSolrSearchBaseTemplate.txt:19
-#: data/System/ModacSkinSolrSearchViewTemplate.txt:92
-msgid   "French"
-msgstr  "法语"
-
-#: data/System/ModacSkinSolrSearchBaseTemplate.txt:17
-#: data/System/ModacSkinSolrSearchViewTemplate.txt:87
-msgid   "German"
-msgstr  "德语"
-
-#: templates/validate.modac.tmpl:41
-msgid   "Go back to the previous page, and enable Cookies and Javascript "
-        "before trying again"
-msgstr  "返回上层页面，并且再次访问前开启缓存及javascript"
-
-#: templates/renamebase.modac.tmpl:15
-msgid   "Hide help"
-msgstr  "隐藏说明"
-
-#: templates/oopshistory.modac.tmpl:18
-msgid   "History"
-msgstr  "历史记录"
-
-#: templates/validate.modac.tmpl:48
-msgid   "If you are unsure what this means, read: %1"
-msgstr  "如果你不能确定这是什么意思，读：%1"
-
-#: templates/renameattachmentdelete.modac.tmpl:41
-msgid   "If you enter a different name, make sure the topic exists."
-msgstr  "在输入不同的主题的名称前，请确保此主题存在。"
-
-#: templates/attach.modac.tmpl:67
-msgid   "Images will be displayed, for other attachments a link will be "
-        "created."
-msgstr  "将显示图片，或建立其他附件的连结。"
-
-#: data/System/WebLeftBarDefault.txt:7
-msgid   "Index"
-msgstr  "索引"
-
-#: data/System/ModacSkinWebCreateNewTopicTemplate.txt:231
-msgid   "Initialize the new topic using a template."
-msgstr  "使用模板初始化这个新的主题。"
-
-#: data/System/ModacSkinSolrSearchViewTemplate.txt:93
-msgid   "Italian"
-msgstr  "意大利语"
+#: templates/renamebase.modac.tmpl
+#, fuzzy
+msgid "Current web:"
+msgstr "目前父主题:"
 
 #: data/System/ModacSkinSolrSearchViewTemplate.txt:85
-msgid   "Keyword"
-msgstr  "关键字"
-
-#: data/System/ModacSkinSolrSearchViewTemplate.txt:62
-msgid   "Language"
-msgstr  "语言"
-
-#: templates/foswiki.modac.tmpl:9
-msgid   "Log In"
-msgstr  "登录"
-
-#: templates/foswiki.modac.tmpl:10
-msgid   "Log Out"
-msgstr  "登出"
-
-#: data/Main/ModacSkinGroupViewTemplate.txt:128
-msgid   "Log in to continue."
-msgstr  "继续登陆"
-
-#: templates/oopshistory.modac.tmpl:69
-msgid   "MS-Word-mode"
-msgstr  "MS-Word-mode"
-
-#: data/System/ModacSkinTopicMenuTemplate.txt:11
-msgid   "Manage page"
-msgstr  "管理页面"
-
-#: data/System/WebLeftBarDefault.txt:6
-msgid   "Manual"
-msgstr  "手册"
-
-#: data/System/ModacSkinSolrSearchViewTemplate.txt:60
-msgid   "Media"
-msgstr  "多媒体"
-
-#: data/Main/ModacSkinGroupViewTemplate.txt:7
-msgid   "Members"
-msgstr  "成员"
-
-#: templates/foswiki.modac.tmpl:46
-msgid   "Modify search"
-msgstr  "修改搜寻:"
-
-#: templates/more.modac.tmpl:16
-msgid   "More Actions on Topic %1"
-msgstr  "主题 %1 的更多功能"
-
-#: templates/rdiff.modac.tmpl:24
-#: templates/viewtopicactionbuttons.modac.tmpl:112
-msgid   "More topic actions..."
-msgstr  "更多主题功能..."
-
-#: templates/attachagain.modac.tmpl:23
-msgid   "Move"
-msgstr  "移动"
-
-#: templates/attachtables.modac.tmpl:49
-msgid   "Move attachment"
-msgstr  "移动附件"
-
-#: templates/renameattachmentdelete.modac.tmpl:21
-msgid   "Move to web:"
-msgstr  "移动到子网:"
-
-#: data/System/ModacSkinUserViewTemplate.txt:41
-msgid   "My bookmarks"
-msgstr  "我的书签"
-
-#: data/System/ModacSkinUserViewTemplate.txt:115
-msgid   "My notes"
-msgstr  "我的笔记"
-
-#: data/System/ModacSkinUserViewTemplate.txt:109
-msgid   "My tasks"
-msgstr  "我的任务"
-
-#: data/System/WebTopBarDefault.txt:1
-msgid   "MyPage"
-msgstr  "我的页面"
-
-#: templates/more.modac.tmpl:42
-msgid   "Name of copy"
-msgstr  "对拷贝命名"
-
-#: templates/more.modac.tmpl:171
-msgid   "Newer revision:"
-msgstr  "新版本:"
-
-#: data/System/WebLeftBarDefault.txt:5
-msgid   "News"
-msgstr  "新闻"
-
-#: data/Main/ModacSkinGroupViewTemplate.txt:38
-msgid   "No  members"
-msgstr  "无成员"
-
-#: templates/more.modac.tmpl:204
-msgid   "No child topics"
-msgstr  "无子主题"
-
-#: data/System/ModacAjaxHelper.txt:29
-msgid   "No matches"
-msgstr  "不匹配"
-
-#: templates/more.modac.tmpl:199
-msgid   "No previous revision exists."
-msgstr  "前一个版本不存在。"
-
-#: data/System/ModacAjaxHelper.txt:28
-msgid   "No topic parent"
-msgstr  "主题无继承来源"
-
-#: data/System/ModacSkinSolrSearchViewTemplate.txt:68
-msgid   "Normchapter"
-msgstr  "规范章节"
-
-#: templates/foswiki.modac.tmpl:45
-msgid   "Number of topics:"
-msgstr  "主题数量:"
-
-#: templates/metacomments.modac.tmpl:115 templates/metacomments.modac.tmpl:96
-#: templates/oopsattention.modac.tmpl:5 templates/validate.modac.tmpl:56
-msgid   "OK"
-msgstr  "OK"
-
-#: templates/more.modac.tmpl:171
-msgid   "Older revision:"
-msgstr  "旧版本:"
-
-#: templates/metacomments.modac.tmpl:64
-msgid   "One comment"
-msgstr  "一条评论"
-
-#: data/Main/ModacSkinGroupViewTemplate.txt:131
-msgid   "Only members or admins may update group."
-msgstr  "仅成员或管理员可以更改组"
-
-#: templates/more.modac.tmpl:67 templates/more.modac.tmpl:85
-msgid   "Only update linked topics in %1 web"
-msgstr  "在%1中仅更新链接的主题"
-
-#: templates/login.modac.tmpl:22
-msgid   "Oops: we could not recognize you. Try again or [[%1][reset your "
-        "password]]."
-msgstr  "抱歉：无法辨识您，请再试一次或 [[%1][重设密码]] 。"
-
-#: templates/login.modac.tmpl:21
-msgid   "Oops: we could not recognize you. Try again."
-msgstr  "Oops: 我们无法识别你，请重试一次。"
-
-#: data/System/ModacSkinUserViewTemplate.txt:84
-msgid   "Open tasks"
-msgstr  "打开任务"
-
-#: templates/renameattachmentdelete.modac.tmpl:34
-msgid   "Optionally enter a different attachment name:"
-msgstr  "任意输入一个不同附件名称："
-
-#: templates/renameattachmentdelete.modac.tmpl:32
-msgid   "Optionally enter a different topic name:"
-msgstr  "输入不同的主题名称（非必要）:"
-
-#: templates/more.modac.tmpl:174
-msgid   "Options"
-msgstr  "选项"
-
-#: data/System/WebLeftBarDefault.txt:25
-msgid   "PDF-Print"
-msgstr  "PDF-打印"
-
-#: data/System/ModacSkinSolrSearchViewTemplate.txt:66
-msgid   "Person in charge of page"
-msgstr  "负责此页面的用户"
-
-#: templates/more.modac.tmpl:117
-msgid   "Pick from a list"
-msgstr  "自清单中选择"
-
-#: data/System/ModacSkinContentTemplatesViewTemplate.txt:114
-#: data/System/ModacSkinWebCreateNewTopicTemplate.txt:185
-msgid   "Please enter the article name without special characters."
-msgstr  "请输入不带特列字符的文章名。"
-
-#: data/System/ModacSkinSolrSearchViewTemplate.txt:95
-msgid   "Portuguese"
-msgstr  "葡萄牙语"
-
-#: templates/settings.modac.tmpl:13
-msgid   "Preferences for"
-msgstr  "设定"
-
-#: templates/validate.modac.tmpl:45
-msgid   "Press Cancel otherwise."
-msgstr  "其他，按「取消」。"
-
-#: templates/validate.modac.tmpl:44
-msgid   "Press OK to confirm that this change was intentional."
-msgstr  "按「OK」确认此修改是故意的。"
-
-#: templates/attach.modac.tmpl:65
-msgid   "Properties"
-msgstr  "属性"
-
-#: data/System/ModacSkinCommonWords.txt:12
-msgid   "Put under CIP"
-msgstr  "放到CIP下"
-
-#: data/System/ModacSkinSolrSearchViewTemplate.txt:59
-msgid   "Recent changes"
-msgstr  "最近的更改"
-
-#: data/System/WebLeftBarDefault.txt:23
-msgid   "Recently changed"
-msgstr  "最近改变了"
-
-#: data/System/ModacSkinUserViewTemplate.txt:99
-msgid   "Recently finished tasks"
-msgstr  "最近完成的任务"
-
-#: templates/oopshistory.modac.tmpl:94
-msgid   "Refresh"
-msgstr  "更新"
-
-#: data/Main/ModacSkinGroupViewTemplate.txt:20
-msgid   "Related topics:"
-msgstr  "相关主题:"
-
-#: data/System/ModacSkinUserViewTemplate.txt:49
-#: data/System/ModacSkinUserViewTemplate.txt:56
-#: templates/attachtables.modac.tmpl:47
-#: templates/viewtopicactionbuttons.modac.tmpl:20
-msgid   "Remove bookmark"
-msgstr  "移除标签"
-
-#: data/Main/ModacSkinGroupViewTemplate.txt:262
-msgid   "Remove members from this group"
-msgstr  "从此组中移除所有成员"
-
-#: data/Main/ModacSkinGroupViewTemplate.txt:181
-msgid   "Remove members..."
-msgstr  "移除成员……"
-
-#: data/Main/ModacSkinGroupViewTemplate.txt:268
-msgid   "Remove selected members"
-msgstr  "移除选中的成员"
-
-#: data/System/ModacSkinTopicMenuTemplate.txt:15 templates/more.modac.tmpl:81
-msgid   "Rename or move topic"
-msgstr  "主题改名或移动"
-
-#: templates/more.modac.tmpl:89
-msgid   "Rename or move topic..."
-msgstr  "重命名或移动主题……"
-
-#: templates/oopshistory.modac.tmpl:68
-msgid   "Render style:"
-msgstr  "渲染样式"
-
-#: templates/form.modac.tmpl:1
-msgid   "Replace form..."
-msgstr  "取代表单..."
-
-#: templates/metacomments.modac.tmpl:106
-msgid   "Reply on comment"
-msgstr  "回复评论"
-
-#: templates/validate.modac.tmpl:10 templates/validate.modac.tmpl:11
-msgid   "Request Validation"
-msgstr  "请求验证"
-
-#: data/System/ModacSkinCommonWords.txt:13
-msgid   "Request approval"
-msgstr  "批准请求"
-
-#: data/System/ModacSkinCommonWords.txt:17
-msgid   "Request further revision"
-msgstr  "需进一步修改"
-
-#: templates/more.modac.tmpl:183
-msgid   "Restore topic"
-msgstr  "还原主题"
-
-#: templates/more.modac.tmpl:188
-msgid   "Restore topic to revision:"
-msgstr  "还原主题至版本:"
-
-#: templates/more.modac.tmpl:191
-msgid   "Restore topic to this revision"
-msgstr  "还原主题至这个版本"
-
-#: templates/more.modac.tmpl:191
-msgid   "Restore..."
-msgstr  "复原……"
-
-#: templates/attachtables.modac.tmpl:34 templates/oopshistory.modac.tmpl:44
-#: templates/oopshistory.modac.tmpl:55 templates/rdiff.modac.tmpl:17
-msgid   "Revision"
-msgstr  "修订版"
-
-#: templates/oopshistory.modac.tmpl:27
-msgid   "Revision history of "
-msgstr  "修改记录"
-
-#: templates/more.modac.tmpl:151
-msgid   "Revisions"
-msgstr  "修订版"
-
-#: templates/oopshistory.modac.tmpl:87
-msgid   "Revisions %1 - %2 (out of %3) are shown"
-msgstr  "显示从 %1 到 %2版次 (不包括 %3)"
-
-#: templates/oopshistory.modac.tmpl:94
-msgid   "Revisions."
-msgstr  "版次"
-
-#: data/System/ModacSkinSolrSearchViewTemplate.txt:96
-msgid   "Russian"
-msgstr  "俄语"
-
-#: templates/settings.modac.tmpl:28
-msgid   "S = Save, C = Cancel"
-msgstr  "S = 保存，C = 取消"
-
-#: templates/edit.modac.tmpl:86
-msgid   "S = Save, Q = Quiet save, K = Save and Continue, P = Preview, C = "
-        "Cancel"
-msgstr  "S = 保存，Q = 快速保存，K = 保存并继续编辑，P = 预览，C = 取消"
-
-#: templates/viewtopicactionbuttons.modac.tmpl:36
-msgid   "Search"
-msgstr  "搜寻"
-
-#: templates/backlinksallwebs.modac.tmpl:4
-msgid   "Search %1 Web only"
-msgstr  "只搜寻 %1 子网 "
-
-#: templates/backlinksweb.modac.tmpl:4
-msgid   "Search all webs"
-msgstr  "搜寻所有子网 "
-
-#: templates/backlinksallwebs.modac.tmpl:4 templates/backlinksweb.modac.tmpl:4
-#: templates/more.modac.tmpl:100
-msgid   "Search all webs for topics that link to here"
-msgstr  "搜寻在所有子网中连结至此的主题"
-
-#: templates/more.modac.tmpl:102
-msgid   "Search the %1 Web for topics that link to here"
-msgstr  "在 %1 子网中搜寻连结至此的主题"
-
-#: data/System/ModacAjaxHelper.txt:30
-msgid   "Searching..."
-msgstr  "搜索……"
-
-#: templates/attachagain.modac.tmpl:19
-msgid   "Select a new local file to update attachment"
-msgstr  "选择本地的新档来更新附件"
-
-#: templates/renamebase.modac.tmpl:26
-msgid   "Select all"
-msgstr  "全选"
-
-#: data/System/ModacSkinTopicMenuTemplate.txt:13 templates/more.modac.tmpl:116
-msgid   "Select topic parent"
-msgstr  "选择主题的父项"
-
-#: templates/edit.modac.tmpl:72
-msgid   "Select, copy and paste your signature text to the bottom of your "
-        "entry"
-msgstr  "在您输入的段落底部选择/复制/贴上您的签名文字"
-
-#: templates/more.modac.tmpl:174
-msgid   "Sequential"
-msgstr  "连续的"
-
-#: templates/more.modac.tmpl:120
-msgid   "Set new parent"
-msgstr  "设定新父主题 "
-
-#: templates/more.modac.tmpl:109
-msgid   "Set new topic parent"
-msgstr  "设定新父主题"
-
-#: templates/renamebase.modac.tmpl:15
-msgid   "Show help"
-msgstr  "显示说明"
-
-#: data/System/ModacSkinUserViewTemplate.txt:129
-msgid   "Show tasks finished in the past %1"
-msgstr  "显示出在过去%1完成的任务"
-
-#: templates/foswiki.modac.tmpl:74
-msgid   "Shrink edit box"
-msgstr  "缩小编辑框"
-
-#: templates/more.modac.tmpl:174 templates/oopshistory.modac.tmpl:70
-msgid   "Side by side"
-msgstr  "并列"
-
-#: templates/attachtables.modac.tmpl:8
-msgid   "Size"
-msgstr  "大小"
-
-#: data/System/ModacSkinSolrSearchViewTemplate.txt:90
-msgid   "Spanish"
-msgstr  "西班牙语"
-
-#: data/System/WebLeftBarDefault.txt:4
-msgid   "Start"
-msgstr  "开始"
-
-#: data/System/ModacSkinCommonWords.txt:18
-msgid   "Start discussion"
-msgstr  "开始讨论"
-
-#: data/System/ModacSkinUserViewTemplate.txt:134
-#: data/System/ModacSkinUserViewTemplate.txt:87
-#: data/System/ModacSkinUserViewTemplate.txt:94
-msgid   "Status"
-msgstr  "状态"
-
-#: data/System/ModacSkinSolrSearchViewTemplate.txt:97
-msgid   "Swedish"
-msgstr  "瑞典语"
-
-#: templates/foswiki.modac.tmpl:74
-msgid   "Switch to monotype or propotional font"
-msgstr  "切换到等宽或等比的字体"
-
-#: data/Main/ModacSkinGroupViewTemplate.txt:125
-msgid   "System user list."
-msgstr  "系统用户列表"
-
-#: data/System/ModacSkinSolrSearchViewTemplate.txt:63
-msgid   "Tag"
-msgstr  "标签"
-
-#: data/System/ModacSkinUserViewTemplate.txt:134
-#: data/System/ModacSkinUserViewTemplate.txt:87
-msgid   "Task"
-msgstr  "任务"
-
-#: data/System/WebLeftBarDefault.txt:24
-msgid   "Templates"
-msgstr  "模板"
-
-#: templates/renameattachmentdelete.modac.tmpl:43
-msgid   "The attachment may have to be renamed if an attachment with the same "
-        "name already exists in the target topic."
-msgstr  "如果在主题中存在同名附件，则此附件必须重命名。"
-
-#: data/System/ModacSkinContentTemplatesViewTemplate.txt:32
-msgid   "The following content template are available for newly created topic "
-        "in the %1 Web:"
-msgstr  "在%1中新创建的主题中可使用以下内容模板。"
-
-#: templates/validate.modac.tmpl:36
-msgid   "There is a risk that someone may be trying to use your identity to "
-        "change content on %1 without your knowledge."
-msgstr  "有个风险，就是在您不知情的情况下，有人可能试着以您的身份变更 %1 的内"
-        "容。"
-
-#: data/Main/ModacSkinGroupViewTemplate.txt:122
-msgid   "This group should not have members."
-msgstr  "此组无组成员。"
-
-#: data/System/ModacSkinSolrSearchViewTemplate.txt:84
-msgid   "Timespan"
-msgstr  "时间间隔"
-
-#: data/System/ModacSkinWebCreateNewTopicTemplate.txt:108
-msgid   "Title"
-msgstr  "标题"
-
-#: templates/metacomments.modac.tmpl:77
-msgid   "Title: "
-msgstr  "标题："
-
-#: templates/oopsleaseconflict.modac.tmpl:20
-msgid   "To edit the topic anyway, click "
-msgstr  "强制编辑本主题，请按"
-
-#: templates/oopsleaseconflict.modac.tmpl:16
-msgid   "To see if %1 has finished editing yet, click "
-msgstr  "检查 %1 是否已编辑完毕，请按"
-
-#: data/System/WebLeftBarDefault.txt:16 data/System/WebLeftBarDefault.txt:17
-msgid   "Tools"
-msgstr  "工具菜单"
-
-#: templates/viewtopicactionbuttons.modac.tmpl:38
-msgid   "Topic"
-msgstr  "主题"
-
-#: templates/attachtables.modac.tmpl:18
-msgid   "Topic attachments"
-msgstr  "主题附件"
-
-#: templates/oopshistory.modac.tmpl:42 templates/oopshistory.modac.tmpl:53
-msgid   "Topic history"
-msgstr  "主题历史记录"
-
-#: data/System/ModacSkinWebCreateNewTopicTemplate.txt:217
-msgid   "Topic name that the newly created topic will be a child of."
-msgstr  "新创建的主题将是子主题。"
-
-#: data/System/ModacSkinContentTemplatesViewTemplate.txt:85
-#: data/System/ModacSkinWebCreateNewTopicTemplate.txt:117
-msgid   "Topic name:"
-msgstr  "主题名称:"
-
-#: data/System/ModacSkinWebCreateNewTopicTemplate.txt:127
-msgid   "Topic parent:"
-msgstr  "父主题:"
-
-#: templates/rdiff.modac.tmpl:17
-msgid   "Topic revision:"
-msgstr  "主题版本:"
-
-#: templates/oopsleaseconflict.modac.tmpl:17
-msgid   "Try Again"
-msgstr  "再试一次"
-
-#: data/System/ModacSkinSolrSearchViewTemplate.txt:98
-msgid   "Turkish"
-msgstr  "土尔其语"
-
-#: templates/attachtables.modac.tmpl:49
-msgid   "Update attachment"
-msgstr  "更新附件"
-
-#: templates/attachagain.modac.tmpl:6
-msgid   "Update attachment %1 on %2"
-msgstr  "在 %2 更新附件 %1"
-
-#: templates/attachagain.modac.tmpl:29
-msgid   "Update existing attachment"
-msgstr  "更新已存在的附件"
-
-#: data/Main/ModacSkinGroupViewTemplate.txt:221
-msgid   "Upgrade"
-msgstr  "升级"
-
-#: data/Main/ModacSkinGroupViewTemplate.txt:217
-msgid   "Upgrade group topic"
-msgstr  "升级组主题"
-
-#: data/Main/ModacSkinGroupViewTemplate.txt:209
-msgid   "Upgrade group topic..."
-msgstr  "升级组主题……"
-
-#: templates/attachagain.modac.tmpl:25 templates/attachnew.modac.tmpl:5
-msgid   "Upload file"
-msgstr  "上传档案"
-
-#: templates/attach.modac.tmpl:50 templates/attachagain.modac.tmpl:31
-msgid   "Upload up to %1 KB."
-msgstr  "上传档案大小上限 %1 KB."
-
-#: templates/attach.modac.tmpl:39
-msgid   "Uploading file..."
-msgstr  "上传文件……"
-
-#: data/System/ModacSkinWebCreateNewTopicTemplate.txt:148
-msgid   "Use template:"
-msgstr  "使用范本:"
-
-#: templates/oopshistory.modac.tmpl:46 templates/oopshistory.modac.tmpl:57
-msgid   "Username"
-msgstr  "用户名"
-
-#: templates/attachagain.modac.tmpl:10
-msgid   "Version history"
-msgstr  "版本历史"
-
-#: templates/attachagain.modac.tmpl:8
-msgid   "Version history of %1"
-msgstr  "%1 的版本历史"
-
-#: templates/compare.modac.tmpl:75
-msgid   "View difference"
-msgstr  "检视差异"
-
-#: templates/more.modac.tmpl:177
-msgid   "View differences"
-msgstr  "查看差异"
-
-#: templates/more.modac.tmpl:152
-msgid   "View previous topic revision"
-msgstr  "检视主题的前一个版本"
-
-#: templates/more.modac.tmpl:159
-msgid   "View revision"
-msgstr  "查看版次"
-
-#: templates/more.modac.tmpl:156
-msgid   "View revision:"
-msgstr  "检视修订版:"
-
-#: templates/rdiff.modac.tmpl:24
-msgid   "View topic"
-msgstr  "检视主题"
-
-#: data/System/ModacSkinCommonWords.txt:10
-msgid   "Waiting for PO"
-msgstr  "等待采购单"
-
-#: data/System/ModacSkinCommonWords.txt:9
-msgid   "Waiting for QM"
-msgstr  "等待QM"
-
-#: templates/validate.modac.tmpl:27
-msgid   "Warning! Confirmation required"
-msgstr  "要求确认"
-
-#: data/System/WebLeftBarDefault.txt:36 data/System/WebLeftBarDefault.txt:37
-msgid   "Webs"
-msgstr  "子网"
+msgid "Danish"
+msgstr "丹麦语"
 
 #: templates/attachtables.modac.tmpl:34 templates/attachtables.modac.tmpl:8
-msgid   "Who"
-msgstr  "谁"
+#: templates/oopshistory.modac.tmpl:43 templates/oopshistory.modac.tmpl:54
+msgid "Date"
+msgstr "日期"
 
-#: templates/oopshistory.modac.tmpl:74
-msgid   "Whole page"
-msgstr  "整个页面"
-
-#: templates/foswiki.modac.tmpl:95
-msgid   "You are here:"
-msgstr  "您在:"
-
-#: templates/oopshistory.modac.tmpl:89
-msgid   "You can also choose to see "
-msgstr  "你也可以选择查看"
-
-#: templates/validate.modac.tmpl:39
-msgid   "You cannot manually confirm this change because either Cookies or "
-        "Javascript are disabled in your browser."
-msgstr  "因为浏览器缓存或Javascript不能用，所以你不能手动确认更改。"
-
-#: templates/edit.modac.tmpl:72
-msgid   "Your signature to copy/paste"
-msgstr  "复制/贴上您的签名"
-
-#: templates/foswiki.modac.tmpl:14
-msgid   "accesskey='c'"
-msgstr  "快捷键='c'"
-
-#: templates/search.modac.tmpl:6
-msgid   "by %1 "
-msgstr  "被%1"
-
-#: templates/renamebase.modac.tmpl:26
-msgid   "checkboxes of referenced topics"
-msgstr  "勾选参考主题"
-
-#: data/System/ModacSkinSolrSearchViewTemplate.txt:101
-msgid   "comment"
-msgstr  "评论"
-
-#: data/System/ModacSkinSolrSearchViewTemplate.txt:65
-msgid   "document type"
-msgstr  "文档格式"
-
-#: templates/oopshistory.modac.tmpl:49
-msgid   "earlier"
-msgstr  "早前"
-
-#: templates/formtables.modac.tmpl:28
-msgid   "edit"
-msgstr  "编辑"
-
-#: templates/oopshistory.modac.tmpl:49
-msgid   "first"
-msgstr  "第一"
-
-#: templates/edit.modac.tmpl:38 templates/edit.modac.tmpl:41
-msgid   "help"
-msgstr  "说明"
-
-#: data/System/ModacSkinSolrSearchViewTemplate.txt:99
-msgid   "image"
-msgstr  "图片"
-
-#: data/System/ModacSkinSolrSearchBaseTemplate.txt:14
-#: data/System/ModacSkinSolrSearchBaseTemplate.txt:38
-#: data/System/ModacSkinSolrSearchBaseTemplate.txt:54
-#: data/System/ModacSkinSolrSearchBaseTemplate.txt:70
-msgid   "in %1"
-msgstr  "在%1"
-
-#: templates/more.modac.tmpl:156
-msgid   "in raw text format"
-msgstr  "源码模式"
-
-#: templates/form.modac.tmpl:3
-msgid   "indicates mandatory fields"
-msgstr  "指出必填栏位"
-
-#: templates/oopshistory.modac.tmpl:49
-msgid   "last"
-msgstr  "最后"
-
-#: templates/metacomments.modac.tmpl:16 templates/metacomments.modac.tmpl:48
-msgid   "needs approval"
-msgstr  "需要核准"
-
-#: templates/more.modac.tmpl:113
-msgid   "no current parent"
-msgstr  "目前无父项"
-
-#: data/System/ModacSkinSolrSearchViewTemplate.txt:82
-msgid   "none"
-msgstr  "无"
+#: templates/more.modac.tmpl:171
+msgid "Debug"
+msgstr "除错"
 
 #: templates/attachagain.modac.tmpl:23
 #: templates/renameattachmentdelete.modac.tmpl:25
-msgid   "or"
-msgstr  "或"
+msgid "Delete"
+msgstr "删除"
 
-#: templates/attachtables.modac.tmpl:39 templates/oopshistory.modac.tmpl:60
-msgid   "restore"
-msgstr  "复原"
+#: templates/attachtables.modac.tmpl:45
+#: templates/renameattachmentdelete.modac.tmpl:28
+msgid "Delete attachment"
+msgstr "删除附件"
 
-#: data/System/ModacSkinTopicMenuTemplate.txt:8
-#: templates/viewtopicactionbuttons.modac.tmpl:28
-#: templates/viewtopicactionbuttons.modac.tmpl:56
-msgid   "title='Attach an image or document to this topic' "
-        "accesskey='a'>&Attach"
-msgstr  "title='为这个主题增加图片或档案' accesskey='a'>增加附件(&A)"
+#: data/System/ModacSkinTopicMenuTemplate.txt:12 templates/more.modac.tmpl:60
+msgid "Delete topic"
+msgstr "删除主题"
 
-#: templates/viewtopicactionbuttons.modac.tmpl:48
-msgid   "title='Create new topic' accesskey='c'>&Create"
-msgstr  "title='建立新主题' accesskey='c'>建立(&C)"
+#: templates/more.modac.tmpl:70
+msgid "Delete topic..."
+msgstr "删除主题..."
 
-#: templates/viewtopicactionbuttons.modac.tmpl:58
-msgid   "title='Delete or rename this topic; set parent topic; view and "
-        "compare revisions' accesskey='m'>&More topic actions"
-msgstr  "title='主题删除或改名；设定父主题；查看和比较版本' accesskey='m'>更多"
-        "主题功能(&M)"
+#: templates/attach.modac.tmpl:59
+msgid "Describe the file so other people know what it is."
+msgstr "档案说明，方便其他人了解档案内容。"
 
-#: data/System/ModacSkinCommonWords.txt:26
-msgid   "title='Discussion about Improvements' >Start Discussion"
-msgstr  "标题='讨论改进' >开始讨论"
+#: templates/compare.modac.tmpl:10 templates/rdiff.modac.tmpl:11
+msgid "Difference:"
+msgstr "差异:"
 
-#: templates/viewtopicactionbuttons.modac.tmpl:52
-msgid   "title='Edit Wiki text' accesskey='w'>Edit &wiki text"
-msgstr  "标题＝‘编辑Wiki文本’快捷键＝‘W’>编辑 &wiki 文本"
+#: data/System/ModacSkinCommonWords.txt:15
+msgid "Discard discussion"
+msgstr "终止讨论"
 
-#: templates/viewtopicactionbuttons.modac.tmpl:50
-msgid   "title='Edit this topic text' accesskey='e'>&Edit"
-msgstr  "title='编辑主题' accesskey='e'>编辑(&E)"
+#: data/System/ModacSkinCommonWords.txt:14
+msgid "Discard draft"
+msgstr "终止草案"
 
-#: templates/viewtopicactionbuttons.modac.tmpl:26
-msgid   "title='Edit this topic' accesskey='e'>&Edit"
-msgstr  "标题='编辑这个主题' 快捷键='e'>&编辑"
+msgid "Discarded tasks"
+msgstr "放弃的任务"
 
-#: templates/compare.modac.tmpl:81
-msgid   "title='Interwoven' accesskey='i'>&interwoven"
-msgstr  "标题='Interwoven' 快捷键='i'>&interwoven"
+#: data/System/ModacSkinCommonWords.txt:16
+msgid "Discuss"
+msgstr "讨论"
 
-#: data/System/ModacSkinUserViewTemplate.txt:5
-msgid   "title='My Page' >My Page"
-msgstr  "标题='我的页面' >我的页面"
+#: data/System/ModacSkinCommonWords.txt:8
+msgid "Discussion"
+msgstr "讨论"
 
-#: templates/viewtopicactionbuttons.modac.tmpl:62
-msgid   "title='Printable version of this topic' accesskey='p'>&Print version"
-msgstr  "title='列印本主题' accesskey='p' >列印(&P)"
+#: templates/attach.modac.tmpl:69
+msgid "Do not show attachment in table"
+msgstr "表格内不显示附件"
 
-#: templates/viewtopicactionbuttons.modac.tmpl:42
-msgid   "title='Q.Wiki - specialpage' >specialpage"
-msgstr  "标题='Q.Wiki - 特别页面' >特别页面"
+#: templates/renamedelete.modac.tmpl
+msgid "Do you really want to delete %1?"
+msgstr ""
+
+#: templates/form.modac.tmpl:10 templates/form.modac.tmpl:11
+msgid "Document Control"
+msgstr "文档控制"
+
+#: data/System/ModacSkinCommonWords.txt:7
+msgid "Draft"
+msgstr "草案"
+
+msgid "Due"
+msgstr "由于"
+
+#: data/System/ModacSkinSolrSearchViewTemplate.txt:90
+msgid "Dutch"
+msgstr "荷兰语"
+
+#: templates/viewtopicactionbuttons.modac.tmpl:113
+msgid "Edit"
+msgstr "编辑"
+
+#: templates/oopsleaseconflict.modac.tmpl:31
+msgid "Edit Anyway"
+msgstr "强制编辑"
+
+#: templates/viewtopicactionbuttons.modac.tmpl:129
+msgid "Edit Wiki<nop>Text"
+msgstr "编辑 Wiki<nop>文本"
+
+msgid "Edit comment"
+msgstr "编辑评论"
+
+#: templates/edit.modac.tmpl:13
+msgid "Edit help"
+msgstr "编辑说明"
+
+#: templates/more.modac.tmpl:27
+msgid "Edit settings for this topic..."
+msgstr "编辑此主题的设定……"
+
+#: data/System/ModacSkinTopicMenuTemplate.txt:8 templates/more.modac.tmpl:23
+msgid "Edit topic preference settings"
+msgstr "编辑主题属性设定"
+
+#: data/System/ModacSkinSolrSearchViewTemplate.txt:82
+msgid "English"
+msgstr "英语"
+
+#: templates/foswiki.modac.tmpl:75
+msgid "Enlarge edit box"
+msgstr "放大编辑框"
+
+#: templates/attachtables.modac.tmpl:8
+msgid "Filename"
+msgstr "文件名"
+
+#: templates/more.modac.tmpl:97 templates/more.modac.tmpl:99
+msgid "Find topics that link to %1 ..."
+msgstr "找连到 %1 的主题..."
+
+msgid "Finished tasks"
+msgstr "完成的任务"
+
+#: data/System/ModacSkinSolrSearchViewTemplate.txt:87
+msgid "Finnish"
+msgstr "芬兰语"
+
+#: templates/edit.modac.tmpl:31
+msgid "Force new revision"
+msgstr "强制新版本"
+
+#: templates/formtables.modac.tmpl:5
+msgid "Form data"
+msgstr "表格数据"
+
+#: templates/form.modac.tmpl:13
+msgid "Form definition"
+msgstr "表单定义"
+
+#: data/System/ModacSkinWebCreateNewTopicTemplate.txt:174
+msgid "Free form topic title text."
+msgstr "自由形式的主题标题内容"
+
+#: data/System/ModacSkinSolrSearchViewTemplate.txt:88
+msgid "French"
+msgstr "法语"
+
+#: data/System/ModacSkinSolrSearchViewTemplate.txt:83
+msgid "German"
+msgstr "德语"
+
+#: templates/validate.modac.tmpl:37
+msgid ""
+"Go back to the previous page, and enable Cookies and Javascript before "
+"trying again"
+msgstr "返回上层页面，并且再次访问前开启缓存及javascript"
+
+msgid "Hide advanced options..."
+msgstr ""
+
+#: templates/renamebase.modac.tmpl:15
+msgid "Hide help"
+msgstr "隐藏说明"
+
+#, fuzzy
+msgid "Hide menu"
+msgstr "隐藏说明"
+
+#: templates/oopshistory.modac.tmpl:16
+msgid "History"
+msgstr "历史记录"
+
+#: templates/attachagain.modac.tmpl:8
+#, fuzzy
+msgid "History of %1"
+msgstr "%1 的版本历史"
+
+#: templates/validate.modac.tmpl:44
+msgid "If you are unsure what this means, read: %1"
+msgstr "如果你不能确定这是什么意思，读：%1"
+
+#: templates/renameattachmentdelete.modac.tmpl:41
+msgid "If you enter a different name, make sure the topic exists."
+msgstr "在输入不同的主题的名称前，请确保此主题存在。"
+
+#: templates/attach.modac.tmpl:67
+msgid "Images will be displayed, for other attachments a link will be created."
+msgstr "将显示图片，或建立其他附件的连结。"
+
+#: data/System/WebLeftBarDefault.txt:6
+msgid "Index"
+msgstr "索引"
+
+#: data/System/ModacSkinWebCreateNewTopicTemplate.txt:216
+msgid "Initialize the new topic using a template."
+msgstr "使用模板初始化这个新的主题。"
+
+#: templates/moredialog.modac.tmpl:43
+msgid "Insert link:"
+msgstr ""
+
+#: data/System/ModacSkinSolrSearchViewTemplate.txt:89
+msgid "Italian"
+msgstr "意大利语"
+
+#: data/System/ModacSkinSolrSearchViewTemplate.txt:81
+msgid "Keyword"
+msgstr "关键字"
+
+msgid "Language"
+msgstr "语言"
+
+#, fuzzy
+msgid "Last changed"
+msgstr "通过最后更改"
+
+#: templates/foswiki.modac.tmpl:11
+msgid "Log In"
+msgstr "登录"
+
+#: templates/foswiki.modac.tmpl:12
+msgid "Log Out"
+msgstr "登出"
+
+#: templates/oopshistory.modac.tmpl:67
+msgid "MS-Word-mode"
+msgstr "MS-Word-mode"
+
+#: data/System/ModacSkinTopicMenuTemplate.txt:7
+msgid "Manage page"
+msgstr "管理页面"
+
+#: data/System/WebLeftBarDefault.txt:5
+msgid "Manual"
+msgstr "手册"
+
+#: data/System/ModacSkinSolrSearchViewTemplate.txt:56
+msgid "Media"
+msgstr "多媒体"
+
+#: templates/foswiki.modac.tmpl:45
+msgid "Modify search"
+msgstr "修改搜寻:"
+
+#: templates/more.modac.tmpl:16
+msgid "More Actions on Topic %1"
+msgstr "主题 %1 的更多功能"
+
+#: templates/rdiff.modac.tmpl:24
+#: templates/viewtopicactionbuttons.modac.tmpl:143
+msgid "More topic actions..."
+msgstr "更多主题功能..."
+
+#: templates/attachagain.modac.tmpl:23
+msgid "Move"
+msgstr "移动"
+
+#: templates/rename.modac.tmpl
+#, fuzzy
+msgid "Move %1"
+msgstr "移动"
+
+#: templates/attachtables.modac.tmpl:45
+msgid "Move attachment"
+msgstr "移动附件"
+
+#: templates/renameattachmentdelete.modac.tmpl:21
+msgid "Move to web:"
+msgstr "移动到子网:"
+
+#: templates/more.modac.tmpl
+#, fuzzy
+msgid "Move topic"
+msgstr "复制主题 "
+
+#: core/templates/renamedelete.tmpl:15
+#, fuzzy
+msgid "Move topic to web:"
+msgstr "移动到子网:"
+
+#: templates/more.modac.tmpl:87
+#, fuzzy
+msgid "Move topic..."
+msgstr "拷贝主题……"
+
+msgid "My bookmarks"
+msgstr "我的书签"
+
+msgid "My notes"
+msgstr "我的笔记"
+
+msgid "My tasks"
+msgstr "我的任务"
+
+#: data/System/WebTopBarDefault.txt:1
+msgid "MyPage"
+msgstr "我的页面"
+
+#: templates/more.modac.tmpl:41 templates/moredialog.modac.tmpl:13
+msgid "Name of copy"
+msgstr "对拷贝命名"
+
+#: templates/more.modac.tmpl:168
+msgid "Newer revision:"
+msgstr "新版本:"
+
+#: data/System/WebLeftBarDefault.txt:4
+msgid "News"
+msgstr "新闻"
+
+#: templates/more.modac.tmpl:200
+msgid "No child topics"
+msgstr "无子主题"
+
+msgid "No matches"
+msgstr "不匹配"
+
+#: templates/more.modac.tmpl:195
+msgid "No previous revision exists."
+msgstr "前一个版本不存在。"
+
+msgid "No topic parent"
+msgstr "主题无继承来源"
+
+#: data/System/ModacSkinSolrSearchViewTemplate.txt:64
+msgid "Normchapter"
+msgstr "规范章节"
+
+#: core/templates/renamedelete.tmpl:34
+msgid "Not recommended when deleting a topic."
+msgstr ""
+
+#: templates/foswiki.modac.tmpl:44
+msgid "Number of topics:"
+msgstr "主题数量:"
+
+#: templates/oopsaccessdenied.modac.tmpl:9 templates/validate.modac.tmpl:52
+msgid "OK"
+msgstr "OK"
+
+#: templates/more.modac.tmpl:168
+msgid "Older revision:"
+msgstr "旧版本:"
+
+#: templates/metacomments.modac.tmpl:32
+msgid "One comment"
+msgstr "一条评论"
+
+#: templates/more.modac.tmpl:66 templates/more.modac.tmpl:83
+msgid "Only update linked topics in %1 web"
+msgstr "在%1中仅更新链接的主题"
+
+msgid "Oops: we could not recognize you. Try again."
+msgstr "Oops: 我们无法识别你，请重试一次。"
+
+msgid "Open tasks"
+msgstr "打开任务"
+
+#: core/templates/renamedelete.tmpl:18
+#, fuzzy
+msgid "Optionally change topic name:"
+msgstr "输入不同的主题名称（非必要）:"
+
+#: templates/renameattachmentdelete.modac.tmpl:34
+msgid "Optionally enter a different attachment name:"
+msgstr "任意输入一个不同附件名称："
+
+#: templates/renameattachmentdelete.modac.tmpl:32
+msgid "Optionally enter a different topic name:"
+msgstr "输入不同的主题名称（非必要）:"
+
+#: templates/more.modac.tmpl:171
+msgid "Options"
+msgstr "选项"
+
+#: data/System/WebLeftBarDefault.txt:24
+msgid "PDF-Print"
+msgstr "PDF-打印"
+
+#: data/System/ModacSkinSolrSearchViewTemplate.txt:62
+msgid "Person in charge of page"
+msgstr "负责此页面的用户"
+
+#: templates/more.modac.tmpl:114
+msgid "Pick from a list"
+msgstr "自清单中选择"
+
+#: data/System/ModacSkinContentTemplatesViewTemplate.txt:114
+#: data/System/ModacSkinWebCreateNewTopicTemplate.txt:183
+msgid "Please enter the article name without special characters."
+msgstr "请输入不带特列字符的文章名。"
+
+#: templates/metatext.modac.tmpl
+msgid "Please wait..."
+msgstr ""
+
+#: data/System/ModacSkinSolrSearchViewTemplate.txt:91
+msgid "Portuguese"
+msgstr "葡萄牙语"
+
+#: templates/settings.modac.tmpl:13
+msgid "Preferences for"
+msgstr "设定"
+
+#: templates/validate.modac.tmpl:41
+msgid "Press Cancel otherwise."
+msgstr "其他，按「取消」。"
+
+#: templates/validate.modac.tmpl:40
+msgid "Press OK to confirm that this change was intentional."
+msgstr "按「OK」确认此修改是故意的。"
+
+#: data/System/ModacSkinSolrSearchViewTemplate.txt:61
+msgid "Process State"
+msgstr ""
+
+#: templates/attach.modac.tmpl:65
+msgid "Properties"
+msgstr "属性"
+
+#: data/System/ModacSkinCommonWords.txt:12
+msgid "Put under CIP"
+msgstr "放到CIP下"
+
+#: data/System/ModacSkinSolrSearchViewTemplate.txt:55
+msgid "Recent changes"
+msgstr "最近的更改"
+
+#: data/System/WebLeftBarDefault.txt:22
+msgid "Recently changed"
+msgstr "最近改变了"
+
+msgid "Recently finished tasks"
+msgstr "最近完成的任务"
+
+#: templates/oopshistory.modac.tmpl:92
+msgid "Refresh"
+msgstr "更新"
+
+msgid "Remove bookmark"
+msgstr "移除标签"
+
+#: data/System/ModacSkinTopicMenuTemplate.txt:11 templates/more.modac.tmpl:79
+msgid "Rename or move topic"
+msgstr "主题改名或移动"
+
+msgid "Rename or move topic..."
+msgstr "重命名或移动主题……"
+
+#: templates/oopshistory.modac.tmpl:66
+msgid "Render style:"
+msgstr "渲染样式"
+
+#: templates/form.modac.tmpl:1
+msgid "Replace form..."
+msgstr "取代表单..."
+
+#: templates/validate.modac.tmpl:6 templates/validate.modac.tmpl:7
+msgid "Request Validation"
+msgstr "请求验证"
+
+#: data/System/ModacSkinCommonWords.txt:13
+msgid "Request approval"
+msgstr "批准请求"
+
+#: data/System/ModacSkinCommonWords.txt:17
+msgid "Request further revision"
+msgstr "需进一步修改"
+
+#: templates/more.modac.tmpl:180
+msgid "Restore topic"
+msgstr "还原主题"
+
+#: templates/more.modac.tmpl:185
+msgid "Restore topic to revision:"
+msgstr "还原主题至版本:"
+
+#: templates/more.modac.tmpl:188
+msgid "Restore topic to this revision"
+msgstr "还原主题至这个版本"
+
+#: templates/more.modac.tmpl:188
+msgid "Restore..."
+msgstr "复原……"
+
+#: templates/attachtables.modac.tmpl:34 templates/oopshistory.modac.tmpl:42
+#: templates/oopshistory.modac.tmpl:53 templates/rdiff.modac.tmpl:17
+msgid "Revision"
+msgstr "修订版"
+
+#: templates/oopshistory.modac.tmpl:25
+msgid "Revision history of "
+msgstr "修改记录"
+
+#: templates/more.modac.tmpl:148
+msgid "Revisions"
+msgstr "修订版"
+
+#: templates/oopshistory.modac.tmpl:85
+msgid "Revisions %1 - %2 (out of %3) are shown"
+msgstr "显示从 %1 到 %2版次 (不包括 %3)"
+
+#: templates/oopshistory.modac.tmpl:92
+msgid "Revisions."
+msgstr "版次"
+
+#: data/System/ModacSkinSolrSearchViewTemplate.txt:92
+msgid "Russian"
+msgstr "俄语"
+
+#: templates/settings.modac.tmpl:28
+msgid "S = Save, C = Cancel"
+msgstr "S = 保存，C = 取消"
+
+#: templates/edit.modac.tmpl:76
+msgid ""
+"S = Save, Q = Quiet save, K = Save and Continue, P = Preview, C = Cancel"
+msgstr "S = 保存，Q = 快速保存，K = 保存并继续编辑，P = 预览，C = 取消"
+
+#: templates/viewtopicactionbuttons.modac.tmpl:66
+msgid "Search"
+msgstr "搜寻"
+
+#: templates/backlinksallwebs.modac.tmpl:4
+msgid "Search %1 Web only"
+msgstr "只搜寻 %1 子网 "
+
+#: templates/backlinksweb.modac.tmpl:4
+msgid "Search all webs"
+msgstr "搜寻所有子网 "
+
+#: templates/backlinksallwebs.modac.tmpl:4 templates/backlinksweb.modac.tmpl:4
+#: templates/more.modac.tmpl:97
+msgid "Search all webs for topics that link to here"
+msgstr "搜寻在所有子网中连结至此的主题"
+
+#: templates/more.modac.tmpl:99
+msgid "Search the %1 Web for topics that link to here"
+msgstr "在 %1 子网中搜寻连结至此的主题"
+
+msgid "Searching..."
+msgstr "搜索……"
+
+#: templates/attachagain.modac.tmpl:19
+msgid "Select a new local file to update attachment"
+msgstr "选择本地的新档来更新附件"
+
+#: templates/renamebase.modac.tmpl:26
+msgid "Select all"
+msgstr "全选"
+
+#: data/System/ModacSkinTopicMenuTemplate.txt:9 templates/more.modac.tmpl:113
+msgid "Select topic parent"
+msgstr "选择主题的父项"
+
+#: templates/edit.modac.tmpl:62
+msgid "Select, copy and paste your signature text to the bottom of your entry"
+msgstr "在您输入的段落底部选择/复制/贴上您的签名文字"
+
+#: templates/more.modac.tmpl:171
+msgid "Sequential"
+msgstr "连续的"
+
+#: templates/more.modac.tmpl:117
+msgid "Set new parent"
+msgstr "设定新父主题 "
+
+#: templates/more.modac.tmpl:106
+msgid "Set new topic parent"
+msgstr "设定新父主题"
+
+#: templates/renamebase.modac.tmpl:15
+msgid "Show help"
+msgstr "显示说明"
+
+msgid "Show tasks finished in the past %1"
+msgstr "显示出在过去%1完成的任务"
+
+#: templates/foswiki.modac.tmpl:75
+msgid "Shrink edit box"
+msgstr "缩小编辑框"
+
+#: templates/more.modac.tmpl:171 templates/oopshistory.modac.tmpl:68
+msgid "Side by side"
+msgstr "并列"
+
+#: templates/attachtables.modac.tmpl:8
+msgid "Size"
+msgstr "大小"
+
+#: data/System/ModacSkinSolrSearchViewTemplate.txt:86
+msgid "Spanish"
+msgstr "西班牙语"
+
+#: data/System/WebLeftBarDefault.txt:3
+msgid "Start"
+msgstr "开始"
+
+#: data/System/ModacSkinCommonWords.txt:18
+msgid "Start discussion"
+msgstr "开始讨论"
+
+msgid "Status"
+msgstr "状态"
+
+#: data/System/ModacSkinSolrSearchViewTemplate.txt:93
+msgid "Swedish"
+msgstr "瑞典语"
+
+#: templates/foswiki.modac.tmpl:75
+msgid "Switch to monotype or propotional font"
+msgstr "切换到等宽或等比的字体"
+
+#: data/System/ModacSkinSolrSearchViewTemplate.txt:58
+msgid "Tag"
+msgstr "标签"
+
+msgid "Task"
+msgstr "任务"
+
+#: data/System/WebLeftBarDefault.txt:23
+msgid "Templates"
+msgstr "模板"
+
+#: templates/moredialog.modac.tmpl:56 templates/moredialog.modac.tmpl:68
+#, fuzzy
+msgid "Text:"
+msgstr "语境"
+
+#: templates/renameattachmentdelete.modac.tmpl:43
+msgid ""
+"The attachment may have to be renamed if an attachment with the same name "
+"already exists in the target topic."
+msgstr "如果在主题中存在同名附件，则此附件必须重命名。"
+
+#: data/System/ModacSkinContentTemplatesViewTemplate.txt:32
+msgid ""
+"The following content template are available for newly created topic in the "
+"%1 Web:"
+msgstr "在%1中新创建的主题中可使用以下内容模板。"
+
+msgid "The name of the topic is preset and cannot be changed."
+msgstr ""
+
+#: templates/validate.modac.tmpl:32
+msgid ""
+"There is a risk that someone may be trying to use your identity to change "
+"content on %1 without your knowledge."
+msgstr ""
+"有个风险，就是在您不知情的情况下，有人可能试着以您的身份变更 %1 的内容。"
+
+#: data/System/ModacSkinTopicMenueTemplates.txt
+msgid "These actions are not available while editing."
+msgstr ""
+
+#: core/templates/renamedelete.tmpl:28
+msgid ""
+"This name has been chosen so it doesn't conflict with any other topics "
+"already in the %1 web."
+msgstr ""
+
+#: data/System/ModacSkinSolrSearchViewTemplate.txt:80
+msgid "Timespan"
+msgstr "时间间隔"
+
+#: data/System/ModacSkinWebCreateNewTopicTemplate.txt:106
+msgid "Title"
+msgstr "标题"
+
+#, fuzzy
+msgid "Title of copy"
+msgstr "对拷贝命名"
+
+msgid "Title: "
+msgstr "标题："
+
+#: templates/oopsleaseconflict.modac.tmpl:26
+msgid "To edit the topic anyway, click "
+msgstr "强制编辑本主题，请按"
+
+#: templates/oopsleaseconflict.modac.tmpl:22
+msgid "To see if %1 has finished editing yet, click "
+msgstr "检查 %1 是否已编辑完毕，请按"
+
+#: templates/renamebase.modac.tmpl
+#, fuzzy
+msgid "To topic:"
+msgstr "复制主题 "
+
+#: templates/renamebase.modac.tmpl
+#, fuzzy
+msgid "To web:"
+msgstr "移动到子网:"
+
+#: data/System/WebLeftBarDefault.txt:15 data/System/WebLeftBarDefault.txt:16
+msgid "Tools"
+msgstr "工具菜单"
 
 #: templates/viewtopicactionbuttons.modac.tmpl:69
-msgid   "title='Search all webs for topics that link to here' "
-        "accesskey='l'>A&ll Webs"
-msgstr  "title='搜寻所有子网中连结至此的主题' accesskey='l'>全站搜寻(&L)"
+msgid "Topic"
+msgstr "主题"
 
-#: templates/viewtopicactionbuttons.modac.tmpl:71
-msgid   "title='Search the %1 Web for topics that link to here' "
-        "accesskey='b'>&Backlinks"
-msgstr  "title='搜寻 %1 子网中连结至此的主题' accesskey='b'>反向连结(&B)"
+#: templates/attachtables.modac.tmpl:18
+msgid "Topic attachments"
+msgstr "主题附件"
 
-#: templates/viewtopicactionbuttons.modac.tmpl:67
-msgid   "title='Search the %1 Web for topics that link to here' "
-        "accesskey='b'>We&b"
-msgstr  "title='搜寻 %1 子网中连结至此的主题' accesskey='b'>子网搜寻(&B)"
+#: templates/oopshistory.modac.tmpl:40 templates/oopshistory.modac.tmpl:51
+msgid "Topic history"
+msgstr "主题历史记录"
 
-#: templates/compare.modac.tmpl:78
-msgid   "title='Side by side' accesskey='s'>&side by side"
-msgstr  "标题＝‘并排’快捷键＝‘s>&并排"
+#: data/System/ModacSkinWebCreateNewTopicTemplate.txt:202
+msgid "Topic name that the newly created topic will be a child of."
+msgstr "新创建的主题将是子主题。"
 
-#: data/System/ModacSkinTopicMenuTemplate.txt:9
-#: templates/viewtopicactionbuttons.modac.tmpl:31
-#: templates/viewtopicactionbuttons.modac.tmpl:32
-msgid   "title='View topic history' accesskey='h'>&History"
-msgstr  "标题='查看主题历史记录 快捷键='h'>&历史记录"
+#: data/System/ModacSkinContentTemplatesViewTemplate.txt:85
+#: data/System/ModacSkinWebCreateNewTopicTemplate.txt:115
+msgid "Topic name:"
+msgstr "主题名称:"
 
-#: templates/viewtopicactionbuttons.modac.tmpl:54
-msgid   "title='View topic' accesskey='v'>&View topic"
-msgstr  "title='浏览主题' accesskey='v'>浏览(&V)"
+#: data/System/ModacSkinTopicMenuTemplate.txt
+#, fuzzy
+msgid "Topic parent"
+msgstr "父主题:"
 
-#: templates/viewtopicactionbuttons.modac.tmpl:74
-#: templates/viewtopicactionbuttons.modac.tmpl:76
-msgid   "title='View total topic history' accesskey='h'>&History"
-msgstr  "title='浏览主题历史' accesskey='h'>历史(&H)"
+#: data/System/ModacSkinWebCreateNewTopicTemplate.txt:125
+msgid "Topic parent:"
+msgstr "父主题:"
+
+#: data/System/ModacSkinTopicMenuTemplate.txt
+#, fuzzy
+msgid "Topic preferences"
+msgstr "(设定属性)"
+
+#: templates/rdiff.modac.tmpl:17 templates/view.modac.tmpl:71
+msgid "Topic revision:"
+msgstr "主题版本:"
+
+#: templates/moredialog.modac.tmpl:52
+#, fuzzy
+msgid "Topic:"
+msgstr "主题"
+
+#, fuzzy
+msgid "Topics"
+msgstr "主题"
+
+#: templates/oopsleaseconflict.modac.tmpl:23
+msgid "Try Again"
+msgstr "再试一次"
+
+#: data/System/ModacSkinSolrSearchViewTemplate.txt:94
+msgid "Turkish"
+msgstr "土尔其语"
+
+#: templates/attachtables.modac.tmpl:45
+msgid "Update attachment"
+msgstr "更新附件"
+
+#: templates/attachagain.modac.tmpl:6
+msgid "Update attachment %1 on %2"
+msgstr "在 %2 更新附件 %1"
+
+#: templates/attachagain.modac.tmpl:29
+msgid "Update existing attachment"
+msgstr "更新已存在的附件"
+
+#: templates/attachagain.modac.tmpl:25 templates/attachnew.modac.tmpl:5
+msgid "Upload file"
+msgstr "上传档案"
+
+#: templates/attach.modac.tmpl:50 templates/attachagain.modac.tmpl:31
+msgid "Upload up to %1 KB."
+msgstr "上传档案大小上限 %1 KB."
+
+msgid "Uploading file..."
+msgstr "上传文件……"
+
+#: templates/moredialog.modac.tmpl:64
+msgid "Url:"
+msgstr ""
+
+#: data/System/ModacSkinWebCreateNewTopicTemplate.txt:146
+msgid "Use template:"
+msgstr "使用范本:"
+
+#: templates/oopshistory.modac.tmpl:44 templates/oopshistory.modac.tmpl:55
+msgid "Username"
+msgstr "用户名"
+
+#, fuzzy
+msgid "Version"
+msgstr "查看版次"
+
+#: templates/attachagain.modac.tmpl:10
+msgid "Version history"
+msgstr "版本历史"
+
+#: templates/compare.modac.tmpl:71
+msgid "View difference"
+msgstr "检视差异"
+
+#: templates/more.modac.tmpl:174
+msgid "View differences"
+msgstr "查看差异"
+
+#: templates/more.modac.tmpl:149
+msgid "View previous topic revision"
+msgstr "检视主题的前一个版本"
+
+#: templates/oopsleaseconflict.modac.tmpl:34
+#, fuzzy
+msgid "View raw text without formatting"
+msgstr "源码模式"
+
+#: templates/more.modac.tmpl:156
+msgid "View revision"
+msgstr "查看版次"
+
+#: templates/more.modac.tmpl:153
+msgid "View revision:"
+msgstr "检视修订版:"
+
+#: templates/oopsleaseconflict.modac.tmpl:34 templates/rdiff.modac.tmpl:24
+msgid "View topic"
+msgstr "检视主题"
+
+#: data/System/ModacSkinCommonWords.txt:10
+msgid "Waiting for PO"
+msgstr "等待采购单"
+
+#: data/System/ModacSkinCommonWords.txt:9
+msgid "Waiting for QM"
+msgstr "等待QM"
+
+#: templates/validate.modac.tmpl:23
+msgid "Warning! Confirmation required"
+msgstr "要求确认"
+
+#: templates/moredialog.modac.tmpl:48
+msgid "Web:"
+msgstr ""
+
+#: data/System/WebLeftBarDefault.txt:35 data/System/WebLeftBarDefault.txt:36
+msgid "Webs"
+msgstr "子网"
+
+#: templates/attachtables.modac.tmpl:34 templates/attachtables.modac.tmpl:8
+msgid "Who"
+msgstr "谁"
+
+#: templates/oopshistory.modac.tmpl:72
+msgid "Whole page"
+msgstr "整个页面"
+
+#: templates/foswiki.modac.tmpl:96
+msgid "You are here:"
+msgstr "您在:"
+
+#: templates/oopshistory.modac.tmpl:87
+msgid "You can also choose to see "
+msgstr "你也可以选择查看"
+
+#: templates/validate.modac.tmpl:35
+msgid ""
+"You cannot manually confirm this change because either Cookies or Javascript "
+"are disabled in your browser."
+msgstr "因为浏览器缓存或Javascript不能用，所以你不能手动确认更改。"
+
+#: templates/edit.modac.tmpl:62
+msgid "Your signature to copy/paste"
+msgstr "复制/贴上您的签名"
+
+#: templates/foswiki.modac.tmpl:16
+msgid "accesskey='c'"
+msgstr "快捷键='c'"
+
+#: templates/search.modac.tmpl:6
+msgid "by %1 "
+msgstr "被%1"
+
+#: templates/renamebase.modac.tmpl:26
+msgid "checkboxes of referenced topics"
+msgstr "勾选参考主题"
+
+#: data/System/ModacSkinSolrSearchViewTemplate.txt:105
+msgid "comment"
+msgstr "评论"
+
+#: data/System/ModacSkinSolrSearchViewTemplate.txt:60
+msgid "document type"
+msgstr "文档格式"
+
+#: templates/oopshistory.modac.tmpl:47
+msgid "earlier"
+msgstr "早前"
+
+#: templates/formtables.modac.tmpl:28
+msgid "edit"
+msgstr "编辑"
+
+#: templates/oopshistory.modac.tmpl:47
+msgid "first"
+msgstr "第一"
+
+#: templates/edit.modac.tmpl:28 templates/edit.modac.tmpl:31
+msgid "help"
+msgstr "说明"
+
+#: data/System/ModacSkinSolrSearchViewTemplate.txt:103
+msgid "image"
+msgstr "图片"
+
+#: data/System/ModacSkinSolrSearchBaseTemplate.txt:14
+#: data/System/ModacSkinSolrSearchBaseTemplate.txt:35
+#: data/System/ModacSkinSolrSearchBaseTemplate.txt:51
+msgid "in %1"
+msgstr "在%1"
+
+#: templates/more.modac.tmpl:153
+msgid "in raw text format"
+msgstr "源码模式"
+
+#: templates/form.modac.tmpl:3
+msgid "indicates mandatory fields"
+msgstr "指出必填栏位"
+
+#: templates/oopshistory.modac.tmpl:47
+msgid "last"
+msgstr "最后"
+
+#: templates/oopshistory.modac.tmpl:47
+msgid "later"
+msgstr ""
+
+#: templates/metacomments.modac.tmpl:16
+msgid "needs approval"
+msgstr "需要核准"
+
+#: templates/more.modac.tmpl:110
+msgid "no current parent"
+msgstr "目前无父项"
+
+#: data/System/ModacSkinSolrSearchViewTemplate.txt:78
+msgid "none"
+msgstr "无"
+
+#: templates/attachagain.modac.tmpl:23
+#: templates/renameattachmentdelete.modac.tmpl:25
+msgid "or"
+msgstr "或"
+
+#: templates/attachtables.modac.tmpl:39 templates/oopshistory.modac.tmpl:58
+msgid "restore"
+msgstr "复原"
+
+#: templates/oopshistory.modac.tmpl:92
+#, fuzzy
+msgid "revisions up to"
+msgstr "修订版"
+
+#: templates/viewtopicactionbuttons.modac.tmpl:87
+msgid "title='Attach an image or document to this topic' accesskey='a'>&Attach"
+msgstr "title='为这个主题增加图片或档案' accesskey='a'>增加附件(&A)"
 
 #: templates/viewtopicactionbuttons.modac.tmpl:79
-msgid   "title='View without formatting' accesskey='v'>&View wiki text"
-msgstr  "标题＝‘无格式查看’快捷键＝‘V’>&查看 &wiki 文本"
+msgid "title='Create new topic' accesskey='c'>&Create"
+msgstr "title='建立新主题' accesskey='c'>建立(&C)"
 
-#: data/System/ModacSkinSolrSearchViewTemplate.txt:100
-msgid   "topic"
-msgstr  "主题"
+#: templates/viewtopicactionbuttons.modac.tmpl:89
+msgid ""
+"title='Delete or rename this topic; set parent topic; view and compare "
+"revisions' accesskey='m'>&More topic actions"
+msgstr ""
+"title='主题删除或改名；设定父主题；查看和比较版本' accesskey='m'>更多主题功能"
+"(&M)"
 
-#: templates/oopshistory.modac.tmpl:78
-msgid   "unchanged sections before and after each change"
-msgstr  "之前未改变部分和之后的每一次改变"
+#: data/System/ModacSkinCommonWords.txt:26
+msgid "title='Discussion about Improvements' >Start Discussion"
+msgstr "标题='讨论改进' >开始讨论"
 
-#: templates/edit.modac.tmpl:60
-msgid   "value='Cancel' accesskey='c'"
-msgstr  "value='取消' accesskey='c'"
+#: data/System/ModacSkinTopicMenuTemplate.txt:6
+#: templates/viewtopicactionbuttons.modac.tmpl:83
+msgid "title='Edit Wiki text' accesskey='w'>Edit &wiki text"
+msgstr "标题＝‘编辑Wiki文本’快捷键＝‘W’>编辑 &wiki 文本"
+
+#: templates/viewtopicactionbuttons.modac.tmpl:81
+msgid "title='Edit this topic text' accesskey='e'>&Edit"
+msgstr "title='编辑主题' accesskey='e'>编辑(&E)"
+
+#: templates/viewtopicactionbuttons.modac.tmpl:51
+#: templates/viewtopicactionbuttons.modac.tmpl:52
+msgid "title='Edit this topic' accesskey='e'>&Edit"
+msgstr "标题='编辑这个主题' 快捷键='e'>&编辑"
+
+#: templates/compare.modac.tmpl:77
+msgid "title='Interwoven' accesskey='i'>&interwoven"
+msgstr "标题='Interwoven' 快捷键='i'>&interwoven"
+
+#: templates/viewtopicactionbuttons.modac.tmpl:63
+#: templates/viewtopicactionbuttons.modac.tmpl:64
+#, fuzzy
+msgid "title='More actions for this topic' accesskey='m'>&More topic actions"
+msgstr "title='列印本主题' accesskey='p' >列印(&P)"
+
+msgid "title='My Page' >My Page"
+msgstr "标题='我的页面' >我的页面"
+
+#: templates/viewtopicactionbuttons.modac.tmpl:93
+msgid "title='Printable version of this topic' accesskey='p'>&Print version"
+msgstr "title='列印本主题' accesskey='p' >列印(&P)"
+
+#: templates/viewtopicactionbuttons.modac.tmpl:73
+msgid "title='Q.Wiki - specialpage' >specialpage"
+msgstr "标题='Q.Wiki - 特别页面' >特别页面"
+
+#: templates/viewtopicactionbuttons.modac.tmpl:100
+msgid ""
+"title='Search all webs for topics that link to here' accesskey='l'>A&ll Webs"
+msgstr "title='搜寻所有子网中连结至此的主题' accesskey='l'>全站搜寻(&L)"
+
+#: templates/viewtopicactionbuttons.modac.tmpl:102
+msgid ""
+"title='Search the %1 Web for topics that link to here' "
+"accesskey='b'>&Backlinks"
+msgstr "title='搜寻 %1 子网中连结至此的主题' accesskey='b'>反向连结(&B)"
+
+#: templates/viewtopicactionbuttons.modac.tmpl:98
+msgid ""
+"title='Search the %1 Web for topics that link to here' accesskey='b'>We&b"
+msgstr "title='搜寻 %1 子网中连结至此的主题' accesskey='b'>子网搜寻(&B)"
+
+#: templates/compare.modac.tmpl:74
+msgid "title='Side by side' accesskey='s'>&side by side"
+msgstr "标题＝‘并排’快捷键＝‘s>&并排"
+
+#: data/System/ModacSkinTopicMenuTemplate.txt:5
+#: templates/viewtopicactionbuttons.modac.tmpl:59
+#: templates/viewtopicactionbuttons.modac.tmpl:60
+msgid "title='View topic history' accesskey='h'>&History"
+msgstr "标题='查看主题历史记录 快捷键='h'>&历史记录"
+
+#: templates/viewtopicactionbuttons.modac.tmpl:85
+msgid "title='View topic' accesskey='v'>&View topic"
+msgstr "title='浏览主题' accesskey='v'>浏览(&V)"
+
+#: templates/viewtopicactionbuttons.modac.tmpl:105
+#: templates/viewtopicactionbuttons.modac.tmpl:107
+msgid "title='View total topic history' accesskey='h'>&History"
+msgstr "title='浏览主题历史' accesskey='h'>历史(&H)"
+
+#: templates/viewtopicactionbuttons.modac.tmpl:110
+msgid "title='View without formatting' accesskey='v'>&View wiki text"
+msgstr "标题＝‘无格式查看’快捷键＝‘V’>&查看 &wiki 文本"
+
+#: data/System/ModacSkinSolrSearchViewTemplate.txt:104
+msgid "topic"
+msgstr "主题"
+
+#: templates/oopshistory.modac.tmpl:76
+msgid "unchanged sections before and after each change"
+msgstr "之前未改变部分和之后的每一次改变"
+
+#: templates/edit.modac.tmpl:50
+msgid "value='Cancel' accesskey='c'"
+msgstr "value='取消' accesskey='c'"
 
 #: templates/preview.modac.tmpl:19
-msgid   "value='Discard' accesskey='d'"
-msgstr  "value='放弃' accesskey='d'"
+msgid "value='Discard' accesskey='d'"
+msgstr "value='放弃' accesskey='d'"
 
-#: templates/edit.modac.tmpl:58
-msgid   "value='Preview' accesskey='p'"
-msgstr  "value='预览' accesskey='p'"
+#: templates/edit.modac.tmpl:48
+msgid "value='Preview' accesskey='p'"
+msgstr "value='预览' accesskey='p'"
 
-#: templates/edit.modac.tmpl:54
-msgid   "value='Quiet save' accesskey='q'"
-msgstr  "value='快速保存' accesskey='q'"
+#: templates/edit.modac.tmpl:44
+msgid "value='Quiet save' accesskey='q'"
+msgstr "value='快速保存' accesskey='q'"
 
-#: templates/edit.modac.tmpl:56
-msgid   "value='Save and Continue' accesskey='k'"
-msgstr  "value='保存并继续编辑' accesskey='k'"
+#: templates/edit.modac.tmpl:46
+msgid "value='Save and Continue' accesskey='k'"
+msgstr "value='保存并继续编辑' accesskey='k'"
 
-#: templates/edit.modac.tmpl:52
-msgid   "value='Save' accesskey='s'"
-msgstr  "value='保存' accesskey='s'"
+#: templates/edit.modac.tmpl:42
+msgid "value='Save' accesskey='s'"
+msgstr "value='保存' accesskey='s'"
 
-#: templates/attachtables.modac.tmpl:39 templates/oopshistory.modac.tmpl:60
-msgid   "view"
-msgstr  "浏览"
+#: templates/attachtables.modac.tmpl:39 templates/oopshistory.modac.tmpl:58
+msgid "view"
+msgstr "浏览"
 
-#: data/System/ModacSkinUserViewTemplate.txt:129
-msgid   "week"
-msgstr  "周"
+msgid "week"
+msgstr "周"
 
-#: templates/validate.modac.tmpl:48
-msgid   "why you are being asked to confirm"
-msgstr  "为何您被要求确认"
+#: templates/validate.modac.tmpl:44
+msgid "why you are being asked to confirm"
+msgstr "为何您被要求确认"
+
+msgid "%URLPARAM{"
+msgstr "%URL参数{"
+
+msgid "%maketext%"
+msgstr "%maketext%"
+
+msgid "Add members"
+msgstr "新增成员"
+
+msgid "Add members..."
+msgstr "新增成员……"
+
+msgid "Add user management options to this topic."
+msgstr "对此主题增加用用户管理选项"
+
+msgid "Add users or groups to this group"
+msgstr "对此组增加用户或组"
+
+msgid "Administration"
+msgstr "管理"
+
+msgid "Bookmark this file"
+msgstr "标记此文件"
+
+msgid "Log in to continue."
+msgstr "继续登陆"
+
+msgid "Members"
+msgstr "成员"
+
+msgid "No  members"
+msgstr "无成员"
+
+msgid "Only members or admins may update group."
+msgstr "仅成员或管理员可以更改组"
+
+msgid ""
+"Oops: we could not recognize you. Try again or [[%1][reset your password]]."
+msgstr "抱歉：无法辨识您，请再试一次或 [[%1][重设密码]] 。"
+
+msgid "Related topics:"
+msgstr "相关主题:"
+
+msgid "Remove members from this group"
+msgstr "从此组中移除所有成员"
+
+msgid "Remove members..."
+msgstr "移除成员……"
+
+msgid "Remove selected members"
+msgstr "移除选中的成员"
+
+msgid "System user list."
+msgstr "系统用户列表"
+
+msgid "This group should not have members."
+msgstr "此组无组成员。"
+
+msgid "Upgrade"
+msgstr "升级"
+
+msgid "Upgrade group topic"
+msgstr "升级组主题"
+
+msgid "Upgrade group topic..."
+msgstr "升级组主题……"
