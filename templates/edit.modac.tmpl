@@ -9,7 +9,7 @@
   "script"
   id="jsi18n::edit"
   requires="%JSI18NID%"
-  text="<script src='%PUBURLPATH%/%SYSTEMWEB%/ModacSkin/jsi18n.edit.%IF{"$LANGUAGE='de'" then="de" else="en"}%.js'></script>"
+  text="<script src='%PUBURLPATH%/%SYSTEMWEB%/ModacSkin/jsi18n.edit.%IF{"$LANGUAGE=~'de|fr'" then="%LANGUAGE%" else="en"}%.js'></script>"
 }%%TMPL:END%
 
 %TMPL:DEF{"script:skintemplate"}%%TMPL:P{"script:skintemplate:edit"}%%TMPL:END%
