@@ -103,7 +103,7 @@
    comments::replier - ui to reply to a comment
 }%
 %TMPL:DEF{"comments::replier"}%<!-- -->
-<div id="cmtReplyComment" class="cmtDialog jqUIDialog foswikiFormSteps {width:'auto', modal:true, draggable:true, resizable:false}" title="%MAKETEXT{"Reply on comment"}%" style="display:none">
+<div id="cmtReplyComment" class="cmtDialog jqUIDialog foswikiFormSteps {width:'auto', modal:true, draggable:true, resizable:false}" title="%MAKETEXT{"Reply to comment"}%" style="display:none">
   <form class="cmtReplyCommentForm" name="replier" action="%SCRIPTURLPATH{"jsonrpc"}%/MetaCommentPlugin/saveComment" method="post">
     <input type="hidden" name="topic" value="%BASEWEB%.%BASETOPIC%" />
     <input type="hidden" name="ref" value="" />
