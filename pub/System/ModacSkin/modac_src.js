@@ -796,8 +796,16 @@ jQuery(function($){
                 $s.attr('id', id);
             }
             options.source = '#'+id;
-            if($this.hasClass('modacjqWikiWordTouch')) $form.submit(function() {
-                $s.change();
+            $form.submit(function() {
+                if($this.hasClass('modacjqWikiWordTouch')) $s.change();
+                // Prepend web name if present in the form
+                var web = $form.find(".modacjqWikiWordWeb").val();
+                if(web) {
+                    var oldval = $child.val();
+                    if(!new RegExp('^'+web+'\\.').exec(oldval)) {
+                        $child.val(web+'.'+$child.val());
+                    }
+                }
             });
             $child.addClass(JSON.stringify(options));
             $child.addClass('jqWikiWord');

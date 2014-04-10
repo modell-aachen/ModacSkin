@@ -1642,3 +1642,6 @@ msgstr "Woche"
 #: templates/validate.modac.tmpl:44
 msgid "why you are being asked to confirm"
 msgstr "warum Sie zur Bestätigung aufgefordert werden"
+
+msgid "Select destination web"
+msgstr "Ziel Bereich auswählen"

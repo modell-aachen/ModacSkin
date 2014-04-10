@@ -47,8 +47,12 @@
 
 %TMPL:DEF{"copy"}%<h2>%MAKETEXT{"Copy topic"}%</h2>
 <p>%MAKETEXT{"Copy this topic (and all attachments) to a new topic."}%</p>
-<form action="%SCRIPTURL{manage}%/%WEB%/" method="post" class="modacjqWikiWordController">
+<form action="%SCRIPTURL{manage}%" method="post" class="modacjqWikiWordController">
 <div class="foswikiFormSteps">
+<div class="foswikiFormStep">
+<h3>%MAKETEXT{"Select destination web"}%</h3>
+<select class="foswikiSelect modacjqWikiWordWeb">%FORMATLIST{"%WEBLIST{"$name$marker" separator=";" webs="public,%WEB%" marker=" selected='selected'" selection="%WEB%"}%" pattern="(\S*)( selected='selected')?" format="$percentIF{\"'$1' allows 'CHANGE'\" then=\"<option value='$1'$2>$1</option>\"}$percent" separator=" " split=";" unique="on"}%</select>
+</div>
 <div class="foswikiFormStep">
 <h3>%MAKETEXT{"Title of copy"}%</h3>
 <p><input type="text" name="TopicTitle" class="foswikiInputField" value="%TOPICTITLE% Copy" size="30" /></p>
