@@ -2,6 +2,23 @@
 %TMPL:DEF{"parentwebstep"}%<div class="foswikiFormStep">%TMPL:P{"parentweb"}%</div>%TMPL:END%
 
 
+%{ XXX need to redefine the original foswiki template, because it has been voided in renamedelete.modac.tmpl }%
+%TMPL:DEF{"searchresultsstep"}%<div class="foswikiFormStep">
+---+++ %MAKETEXT{"Update links"}%
+%TMPL:P{"updatenote"}% %IF{"'%SEARCH_COUNT%'=0" then='<!--'}%
+<div class="foswikiFormSteps">
+<div class="foswikiFormStep">
+---++++ %MAKETEXT{"Change links in topics that refer to [_1] in the [_2] Web:" args="<nop>%TOPIC%, <nop>%WEB%"}%
+%LOCAL_SEARCH%
+</div>
+<div class="foswikiFormStep foswikiLast">
+---++++ %MAKETEXT{"Change links in topics that refer to [_1] in any Web:" args="<nop>%WEB%.%TOPIC%"}%
+%GLOBAL_SEARCH%
+</div>%TMPL:P{"checkuncheck"}%
+</div>%IF{"'%SEARCH_COUNT%'=0" then='-->'}%
+</div>%TMPL:END%
+
+
 %TMPL:DEF{"renameformsteps"}%<div class="foswikiFormSteps">
 <div class="foswikiFormStep foswikiLast">%TMPL:P{"toweb"}%</div>
 %IF{"{EnableHierarchicalWebs}" then='%TMPL:P{"parentwebstep"}%'}%%TMPL:P{"searchresultsstep"}%</div>%TMPL:END%

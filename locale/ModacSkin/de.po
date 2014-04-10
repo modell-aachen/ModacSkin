@@ -1645,3 +1645,15 @@ msgstr "warum Sie zur Bestätigung aufgefordert werden"
 
 msgid "Select destination web"
 msgstr "Ziel Bereich auswählen"
+
+#: core/templates/renamewebbase.modac.tmpl
+msgid "Update links"
+msgstr "Verweise aktualisieren"
+
+#: core/templates/renamewebbase.modac.tmpl
+msgid "Change links in topics that refer to %1 in any Web:"
+msgstr "Verweise in Topics ändern, die aus allen Webs auf %1 zeigen:"
+
+#: core/templates/renamewebbase.modac.tmpl
+msgid "Change links in topics that refer to %1 in the %2 Web:"
+msgstr "Verweise in Topics ändern, die aus dem %2 Web auf %1 zeigen:"

@@ -296,13 +296,13 @@ msgstr ""
 msgid "Change links in topics that refer to !%1 in the %2 Web:"
 msgstr ""
 
-#: core/templates/renamebase.tmpl:57
+#: core/templates/renamewebbase.modac.tmpl
 msgid "Change links in topics that refer to %1 in any Web:"
-msgstr ""
+msgstr "Modifier les liens pointant vers %1, sur les pages de tous les Webs :"
 
-#: core/templates/renamebase.tmpl:53
+#: core/templates/renamewebbase.modac.tmpl
 msgid "Change links in topics that refer to %1 in the %2 Web:"
-msgstr ""
+msgstr "Modifier les liens pointant vers %1, sur les pages du Web %2 :"
 
 #: data/System/ModacSkinCommonWords.txt:27
 msgid "Change status"
@@ -1654,3 +1654,7 @@ msgstr "Semaine"
 #: templates/validate.modac.tmpl:44
 msgid "why you are being asked to confirm"
 msgstr "pourquoi il vous est demandé de confirmer"
+
+#: core/templates/renamebase.modac.tmpl:
+msgid "Update links"
+msgstr "Mettre à jour les liens"
