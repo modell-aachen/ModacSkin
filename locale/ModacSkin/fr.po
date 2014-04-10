@@ -1606,7 +1606,7 @@ msgstr ""
 "accesskey='v'>&Voir wiki text"
 
 msgid "today"
-msgstr "Aujourd'hui"
+msgstr "Aujourd\\\\\\'hui"
 
 # OlivierRaginel proposait la traduction "Cette page", toutefois nous n'avons pas pu vérifier le contexte exact d'affichage de cette chaîne. En l'absence de cette référence, nous avons décidé de garder une traduction littérale.
 #: data/System/ModacSkinSolrSearchViewTemplate.txt:104
