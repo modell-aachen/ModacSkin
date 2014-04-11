@@ -365,7 +365,7 @@ jQuery(function($){
 
                 ModacSkin.blockUI();
                 var restUri = foswiki.getPreference('SCRIPTURL') +'/rest'+ foswiki.getPreference('SCRIPTSUFFIX');
-                $.ajax(restUri + '/RenderPlugin/template?name=WebCreateNewTopicDialog;render=on;expand=dialog;topic=' + baseWebTopic + ';topicparent='+baseWebTopic, {
+                $.ajax(restUri + '/RenderPlugin/template?name=WebCreateNewTopicDialog;render=on;expand=dialog;topic=' + baseWebTopic + ';topicparent='+infodata.topicparent+';newtopictitle='+infodata.newtopictitle, {
                     success: function(data) {
                         ModacSkin.showDialog(data, function($data, $dialog) {
                                 var $form = $dialog.find('form');
