@@ -7,7 +7,7 @@
 %TMPL:DEF{"modacButtonsLEFT"}%<li>%TMPL:P{"topictabaction"}%</li>%TMPL:END%
 
 %{ Overload this definition if you want to modyfy / additional tabs on the right side }%
-%TMPL:DEF{"modacButtonsRIGHT"}%%TMPL:P{"modacFavTopic"}%<li>%TMPL:P{"modacEdit"}%</li>%IF{"'%MODAC_NO_TOPMENU{default="0"}%'='0'" then="<li class=\"modacMoreDynamic\">$percentTMPL:P{\"modacMore\"}$percent</li>" else="<li>$percntTMPL:P{\"modacAttach\"}$percnt</li><li>$percntTMPL:P{\"modacRdiff\"}$percnt</li><li>$percntTMPL:P{\"modacMore\"}$percnt</li>"}%<li id="modacSearchBox">%TMPL:P{"SearchBox"}%</li>%TMPL:END%
+%TMPL:DEF{"modacButtonsRIGHT"}%%TMPL:P{"modacFavTopic"}%<li>%TMPL:P{"modacEdit"}%</li>%IF{"'%MODAC_NO_TOPMENU{default="0"}%'='0'" then="<li class=\"modacMoreDynamic\">$percentTMPL:P{\"modacMore\"}$percent</li>" else="<li>$percentTMPL:P{pdfexport}$percent</li><li>$percntTMPL:P{\"modacAttach\"}$percnt</li><li>$percntTMPL:P{\"modacRdiff\"}$percnt</li><li>$percntTMPL:P{\"more_link\"}$percnt</li>"}%<li id="modacSearchBox">%TMPL:P{"SearchBox"}%</li>%TMPL:END%
 
 %{ --- definitions used in "modacActionButtonsVIEW" --- }%
 
