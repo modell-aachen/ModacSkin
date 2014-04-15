@@ -143,7 +143,7 @@
   }%
   %TMPL:P{"solr::facet"
     id="type"
-    format="$key&nbsp;($count)"
+    format="$percentMAKETEXT{$key}$percent&nbsp;($count)"
     value="$id:$key"
     input="checkbox"
     include="%TMPL:P{"solr::facet::include::type"}%"
