@@ -355,6 +355,10 @@ jQuery(function($){
             }
 
             if($dialogID.length == 0) {
+                if($('#topic').length) {
+                    // there is already something wcnt-like present, so do not attempt to load the dialog
+                    return true;
+                }
                 var baseWebTopic;
                 if(infodata.newtopic) {
                     baseWebTopic = infodata.newtopic;
