@@ -61,7 +61,7 @@
 
 %TMPL:DEF{"textarea"}%<div class="patternEditTopic">%TMPL:P{context="WYSIWYG_TEXT" then="textarea_wysiwyg" else="textarea_nowysiwyg"}%%TMPL:P{"sig_textareabuttons"}%</div>%TMPL:END%
 %TMPL:DEF{"textarea_nowysiwyg"}%<textarea class="foswikiTextarea foswikiEditboxStyleProportional foswikiWysiwygEdit" id="topic" name="text" rows="%EDITBOXHEIGHT%" cols="%EDITBOXWIDTH%" style='%EDITBOXSTYLE%'>%TEXT%</textarea>%TMPL:P{"sig_textareabuttons"}%%TMPL:END%
-%TMPL:DEF{"textarea_wysiwyg"}%<textarea class="foswikiTextarea foswikiEditboxStyleProportional foswikiWysiwygEdit WYSIWYG_TEXT WYSIWYG_TEXT_HIDDEN" id="topic" name="text" rows="%EDITBOXHEIGHT%" cols="%EDITBOXWIDTH%" style='%EDITBOXSTYLE%'>%WYSIWYG_TEXT%</textarea>%TMPL:P{"sig_textareabuttons"}%%TMPL:END%
+%TMPL:DEF{"textarea_wysiwyg"}%<input type="hidden" name="WYSIWYG_TEXT" value="1" /><textarea class="foswikiTextarea foswikiEditboxStyleProportional foswikiWysiwygEdit WYSIWYG_TEXT WYSIWYG_TEXT_HIDDEN" id="topic" name="text" rows="%EDITBOXHEIGHT%" cols="%EDITBOXWIDTH%" style='%EDITBOXSTYLE%'>%WYSIWYG_TEXT%</textarea>%TMPL:P{"sig_textareabuttons"}%%TMPL:END%
 
 
 %TMPL:DEF{"sig_textareabuttons"}%%TMPL:END%
