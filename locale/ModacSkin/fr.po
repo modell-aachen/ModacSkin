@@ -1554,7 +1554,7 @@ msgid "title='Printable version of this topic' accesskey='p'>&Print version"
 msgstr "title='Version imprimable de cette page' accesskey='p'>Im&primer"
 
 #: templates/viewtopicactionbuttons.modac.tmpl:73
-msgid "title='Q.Wiki - specialpage' >specialpage"
+msgid "title='Q.Wiki - Special page' >Special page"
 msgstr "title='Q.Wiki - pagespeciale' >pagespeciale"
 
 #: templates/viewtopicactionbuttons.modac.tmpl:100
