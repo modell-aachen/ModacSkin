@@ -892,5 +892,8 @@ jQuery(function($){
         $searchfield.closest('form').first().submit(); // XXX could there be multiple?!?
         return false;
     });
+
+    // preload spinner
+    $('.foswikiPage').append('<div style="height:0; width:0;" class="ajaxspinner"></div>');
 });
 
