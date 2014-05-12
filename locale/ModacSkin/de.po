@@ -294,19 +294,19 @@ msgstr "Nur Kommentar ändern"
 
 #: core/templates/renamewebbase.tmpl:43
 msgid "Change links in topics that refer to !%1 in any Web:"
-msgstr "Verweise in Seiten ändern, die auf !%1 zeigen (alle Webs):"
+msgstr "Verweise in Seiten ändern, die auf !%1 zeigen (alle Bereiche):"
 
 #: core/templates/renamewebbase.tmpl:40
 msgid "Change links in topics that refer to !%1 in the %2 Web:"
-msgstr "Verweise in Seiten ändern, die auf !%1 zeigen (nur im %2 Web):"
+msgstr "Verweise in Seiten ändern, die auf !%1 zeigen (nur im %2-Bereich):"
 
 #: core/templates/renamebase.tmpl:57
 msgid "Change links in topics that refer to %1 in any Web:"
-msgstr "Verweise in Seiten ändern, die auf %1 zeigen (alle Webs):"
+msgstr "Verweise in Seiten ändern, die auf %1 zeigen (alle Bereiche):"
 
 #: core/templates/renamebase.tmpl:53
 msgid "Change links in topics that refer to %1 in the %2 Web:"
-msgstr "Verweise in Seiten ändern, die auf %1 zeigen (nur im %2 Web):"
+msgstr "Verweise in Seiten ändern, die auf %1 zeigen (nur im %2-Bereich):"
 
 #: data/System/ModacSkinCommonWords.txt:27
 msgid "Change status"
@@ -731,7 +731,7 @@ msgstr "Seite verschieben"
 
 #: core/templates/renamedelete.tmpl:15
 msgid "Move topic to web:"
-msgstr "Seite in folgendes Web verschieben:"
+msgstr "Seite in folgenden Bereich verschieben:"
 
 #: templates/more.modac.tmpl:87
 msgid "Move topic..."
@@ -1234,7 +1234,7 @@ msgstr "Revision:"
 
 #: templates/moredialog.modac.tmpl:52
 msgid "Topic:"
-msgstr "Topic:"
+msgstr "Seite:"
 
 msgid "Topics"
 msgstr "Seiten"
@@ -1652,8 +1652,26 @@ msgstr "Verweise aktualisieren"
 
 #: core/templates/renamewebbase.modac.tmpl
 msgid "Change links in topics that refer to %1 in any Web:"
-msgstr "Verweise in Topics ändern, die aus allen Webs auf %1 zeigen:"
+msgstr "Verweise in Seiten ändern, die aus allen Bereichen auf %1 zeigen:"
 
 #: core/templates/renamewebbase.modac.tmpl
 msgid "Change links in topics that refer to %1 in the %2 Web:"
-msgstr "Verweise in Topics ändern, die aus dem %2 Web auf %1 zeigen:"
+msgstr "Verweise in Seiten ändern, die aus dem %2-Bereich auf %1 zeigen:"
+
+# overwrite foswiki core stuff:
+#: core/data/System/WebTopicCreator.txt:3
+msgid "'Create New Topic' page has moved"
+msgstr "'Neue Seite anleten anlegen'-Seite wurde verschoben"
+
+msgid "Create New Topic"
+msgstr "Neue Seite anlegen"
+
+#: core/data/System/WebCreateNewTopicTemplate.txt:12
+msgid "Create New Topic in %1 Web"
+msgstr "Neue Seite im %1-Bereich anlegen"
+
+msgid "Create new topic"
+msgstr "Neue Seite anlegen"
+
+msgid "title='Create new topic' accesskey='c'>&Create"
+msgstr "title='Neue Seite anlegen' accesskey='c'>Anlegen (&c)" 
