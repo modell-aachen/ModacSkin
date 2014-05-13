@@ -1675,3 +1675,15 @@ msgstr "Neue Seite anlegen"
 
 msgid "title='Create new topic' accesskey='c'>&Create"
 msgstr "title='Neue Seite anlegen' accesskey='c'>Anlegen (&c)" 
+
+msgid "Document type"
+msgstr "Dokumententyp"
+
+msgid "Topic title"
+msgstr "Topic-Titel"
+
+msgid "Responsible"
+msgstr "Verantwortlich"
+
+msgid "Area of application"
+msgstr "Geltungsbereich"

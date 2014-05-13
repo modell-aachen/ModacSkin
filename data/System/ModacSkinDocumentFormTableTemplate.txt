@@ -1,0 +1,7 @@
+%TMPL:DEF{"modacformtable"}%
+%RENDERFOREDIT{
+form="DocumentForm" 
+format="<tr><td>$title</td><td>$edit</td></tr>" 
+map="DocumentType=%MAKETEXT{Document type}%,TopicTitle=%MAKETEXT{Topic title}%,Responsible=%MAKETEXT{Responsible}%,AreaOfApplication=%MAKETEXT{Area of application}%,ISO9001=%MAKETEXT{ISO 9001}%,ISO14001=%MAKETEXT{ISO 14001}%"
+}%
+%TMPL:END%
