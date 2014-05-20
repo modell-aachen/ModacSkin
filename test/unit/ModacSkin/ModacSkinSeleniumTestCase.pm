@@ -89,7 +89,12 @@ sub login {
     # XXX change here, so short urls work
     my $viewUrlShort = $viewUrl;
     $viewUrlShort =~ s#/bin/view##;
-    $this->assert_matches( qr/\Q$viewUrl\E|\Q$viewUrlShort\E$/, $postLoginLocation );
+    my $urlTest = qr/^(?:\Q$viewUrl\E|\Q$viewUrlShort\E)$/;
+    unless($postLoginLocation=~m/$urlTest/) {
+        sleep(5); # maybe the page didn't load yet
+        $postLoginLocation = $this->{selenium}->get_current_url();
+    }
+    $this->assert_matches( $urlTest, $postLoginLocation );
 }
 
 sub verify_SeleniumRc_config {
