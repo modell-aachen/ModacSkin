@@ -430,7 +430,7 @@ sub backgroundLogout {
         $popup = $w unless $w eq $currentWindow;
     }
     $this->{selenium}->switch_to_window($popup);
-    my $logoutURL = Foswiki::Func::getScriptUrl( Helper::WEB, $webhome, 'view' ).'?logout=1';
+    my $logoutURL = Foswiki::Func::getScriptUrl( Helper::WEB, $webhome, 'view' ).'?logout=1&t='.time();
     $this->{selenium}->get($logoutURL);
     $this->{selenium}->close();
     $this->{selenium}->switch_to_window($currentWindow);
