@@ -1680,7 +1680,7 @@ msgid "Document type"
 msgstr "Dokumententyp"
 
 msgid "Topic title"
-msgstr "Topic-Titel"
+msgstr "Seitenname"
 
 msgid "Responsible"
 msgstr "Verantwortlich"
