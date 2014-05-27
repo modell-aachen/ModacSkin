@@ -93,6 +93,10 @@ sub login {
     unless($postLoginLocation=~m/$urlTest/) {
         sleep(5); # maybe the page didn't load yet
         $postLoginLocation = $this->{selenium}->get_current_url();
+        my $attempt = shift || 0;
+        if(not $postLoginLocation=~m/$urlTest/ && $attempt < 5) {
+            return $this->login($attempt++);
+        }
     }
     $this->assert_matches( $urlTest, $postLoginLocation );
 }
