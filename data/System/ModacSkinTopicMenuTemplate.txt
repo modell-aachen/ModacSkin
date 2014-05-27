@@ -8,11 +8,11 @@
 <!-- REVISION HISTORY --><li class='blockOnClick'><span class="moremenue-history">%IF{"context CompareRevisionsAddonPluginEnabled" then="<a href='%SCRIPTURLPATH{"oops"}%/%BASEWEB%/%BASETOPIC%?template=oopshistory&history=on' rel='nofollow' %MAKETEXT{"title='View topic history' accesskey='h'>&History"}%</a>" else="<a href='%SCRIPTURLPATH{"rdiff"}%/%BASEWEB%/%BASETOPIC%?type=history&history=on' rel='nofollow' %MAKETEXT{"title='View topic history' accesskey='h'>&History"}%</a>"}%</span></li>
 <!-- EDIT WIKITEXT --><li class='requireModacChangePermission'><span class='moremenue-wikitext'>%TMPL:P{"raw_edit_link"}%</span></li>
 <li><span class="modacMoreDynamicLink moremenue-managepage"><a href='%SCRIPTURLPATH{view}%/%WEB%/%TOPIC%?template=more'>%MAKETEXT{"Manage page"}% &raquo;</a></span><ul>
-  <!-- TOPIC PREFERENCES --><li class='requireModacChangePermission'><span class='modacDialogable morelink-settings'><a href=%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%?template=more' class='modacChanging'>%MAKETEXT{"Topic preferences"}%</a></span></li>
-  <!-- CHANGE PARENT --><li class='requireModacChangePermission'><span class='modacDialogable morelink-setparent'><a href=%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%?template=more' class='modacChanging'>%MAKETEXT{"Topic parent"}%</a></span></li>
-  <!-- COPY --><li><span class='modacDialogable morelink-copy'><a href=%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%?template=more'>%MAKETEXT{"Copy topic"}%</a></span></li>
-  <!-- RENAME/MOVE --><li class='requireModacMovePermission'><span class='modacDialogable morelink-rename'><a href=%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%?template=more'>%MAKETEXT{"Move topic"}%</a></span></li>
-  <!-- DELETE --><li class='requireModacMovePermission'><span class='modacDialogable morelink-delete'><a href=%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%?template=more'>%MAKETEXT{"Delete topic"}%</a></span></li>
+  <!-- TOPIC PREFERENCES --><li class='requireModacChangePermission'><span class='modacDialogable morelink-settings'><a href='%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%?template=more' class='modacChanging'>%MAKETEXT{"Topic preferences"}%</a></span></li>
+  <!-- CHANGE PARENT --><li class='requireModacChangePermission'><span class='modacDialogable morelink-setparent'><a href='%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%?template=more' class='modacChanging'>%MAKETEXT{"Topic parent"}%</a></span></li>
+  <!-- COPY --><li><span class='modacDialogable morelink-copy'><a href='%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%?template=more'>%MAKETEXT{"Copy topic"}%</a></span></li>
+  <!-- RENAME/MOVE --><li class='requireModacMovePermission'><span class='modacDialogable morelink-rename'><a href='%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%?template=more'>%MAKETEXT{"Move topic"}%</a></span></li>
+  <!-- DELETE --><li class='requireModacMovePermission'><span class='modacDialogable morelink-delete'><a href='%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%?template=more'>%MAKETEXT{"Delete topic"}%</a></span></li>
 </ul></li></ul>
 %TMPL:END%
 
