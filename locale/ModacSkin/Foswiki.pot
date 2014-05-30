@@ -492,6 +492,9 @@ msgstr ""
 msgid "Document Control"
 msgstr ""
 
+msgid "Document type"
+msgstr ""
+
 #: data/System/ModacSkinCommonWords.txt:7
 msgid "Draft"
 msgstr ""
@@ -738,14 +741,14 @@ msgstr ""
 msgid "News"
 msgstr ""
 
-msgid "No members"
-msgstr ""
-
 #: templates/more.modac.tmpl:200
 msgid "No child topics"
 msgstr ""
 
 msgid "No matches"
+msgstr ""
+
+msgid "No members"
 msgstr ""
 
 #: templates/more.modac.tmpl:195
@@ -916,6 +919,9 @@ msgstr ""
 
 #: data/System/ModacSkinCommonWords.txt:17
 msgid "Request further revision"
+msgstr ""
+
+msgid "Responsible"
 msgstr ""
 
 #: templates/more.modac.tmpl:180
@@ -1186,6 +1192,9 @@ msgstr ""
 
 #: templates/rdiff.modac.tmpl:17 templates/view.modac.tmpl:71
 msgid "Topic revision:"
+msgstr ""
+
+msgid "Topic title"
 msgstr ""
 
 #: templates/moredialog.modac.tmpl:52
@@ -1581,13 +1590,3 @@ msgstr ""
 #: templates/validate.modac.tmpl:44
 msgid "why you are being asked to confirm"
 msgstr ""
-
-msgid "Document type"
-msgstr ""
-
-msgid "Topic title"
-msgstr ""
-
-msgid "Responsible"
-msgstr ""
-

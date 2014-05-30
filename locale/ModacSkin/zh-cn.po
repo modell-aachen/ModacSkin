@@ -95,6 +95,27 @@ msgstr "(修订版 %1)"
 msgid "(set preferences)"
 msgstr "(设定属性)"
 
+msgid "1 hour"
+msgstr ""
+
+msgid "1 month"
+msgstr ""
+
+msgid "1 year"
+msgstr ""
+
+msgid "2 days"
+msgstr ""
+
+msgid "2 months"
+msgstr ""
+
+msgid "4 hours"
+msgstr ""
+
+msgid "7 days"
+msgstr ""
+
 #: templates/more.modac.tmpl:100
 msgid "<em>in %1 web</em> only"
 msgstr "只<em>在 %1 子网</em>中"
@@ -119,6 +140,21 @@ msgstr "快捷键"
 #: templates/oopshistory.modac.tmpl:56
 msgid "Action"
 msgstr "功能"
+
+msgid "Add members"
+msgstr "新增成员"
+
+msgid "Add members..."
+msgstr "新增成员……"
+
+msgid "Add user management options to this topic."
+msgstr "对此主题增加用用户管理选项"
+
+msgid "Add users or groups to this group"
+msgstr "对此组增加用户或组"
+
+msgid "Administration"
+msgstr "管理"
 
 #, fuzzy
 msgid "Advanced options..."
@@ -211,6 +247,9 @@ msgstr "%2 子网中指向 %1 的反向连结"
 #: templates/backlinksallwebs.modac.tmpl:4
 msgid "Backlinks to %1 in all Webs"
 msgstr "所有子网中指向 %1 的反向连结"
+
+msgid "Bookmark this file"
+msgstr "标记此文件"
 
 msgid "Bookmark this page"
 msgstr "标记此页面"
@@ -356,6 +395,10 @@ msgstr "创建新主题模板"
 msgid "Create new content template..."
 msgstr "创建新主题模板……"
 
+#, fuzzy
+msgid "Create new topic"
+msgstr "创建新主题"
+
 #: data/System/ModacSkinCommonWords.txt:30
 msgid "Create this topic"
 msgstr "建立这个主题"
@@ -450,6 +493,10 @@ msgstr ""
 #: templates/form.modac.tmpl:10 templates/form.modac.tmpl:11
 msgid "Document Control"
 msgstr "文档控制"
+
+#, fuzzy
+msgid "Document type"
+msgstr "文档格式"
 
 #: data/System/ModacSkinCommonWords.txt:7
 msgid "Draft"
@@ -562,6 +609,9 @@ msgstr "历史记录"
 msgid "History of %1"
 msgstr "%1 的版本历史"
 
+msgid "ISO norm"
+msgstr ""
+
 #: templates/validate.modac.tmpl:44
 msgid "If you are unsure what this means, read: %1"
 msgstr "如果你不能确定这是什么意思，读：%1"
@@ -609,6 +659,9 @@ msgstr "登录"
 msgid "Log Out"
 msgstr "登出"
 
+msgid "Log in to continue."
+msgstr "继续登陆"
+
 #: templates/oopshistory.modac.tmpl:67
 msgid "MS-Word-mode"
 msgstr "MS-Word-mode"
@@ -624,6 +677,9 @@ msgstr "手册"
 #: data/System/ModacSkinSolrSearchViewTemplate.txt:56
 msgid "Media"
 msgstr "多媒体"
+
+msgid "Members"
+msgstr "成员"
 
 #: templates/foswiki.modac.tmpl:45
 msgid "Modify search"
@@ -702,6 +758,10 @@ msgstr "无子主题"
 msgid "No matches"
 msgstr "不匹配"
 
+#, fuzzy
+msgid "No members"
+msgstr "无成员"
+
 #: templates/more.modac.tmpl:195
 msgid "No previous revision exists."
 msgstr "前一个版本不存在。"
@@ -733,9 +793,16 @@ msgstr "旧版本:"
 msgid "One comment"
 msgstr "一条评论"
 
+msgid "Only members or admins may update group."
+msgstr "仅成员或管理员可以更改组"
+
 #: templates/more.modac.tmpl:66 templates/more.modac.tmpl:83
 msgid "Only update linked topics in %1 web"
 msgstr "在%1中仅更新链接的主题"
+
+msgid ""
+"Oops: we could not recognize you. Try again or [[%1][reset your password]]."
+msgstr "抱歉：无法辨识您，请再试一次或 [[%1][重设密码]] 。"
 
 msgid "Oops: we could not recognize you. Try again."
 msgstr "Oops: 我们无法识别你，请重试一次。"
@@ -824,8 +891,20 @@ msgstr "最近完成的任务"
 msgid "Refresh"
 msgstr "更新"
 
+msgid "Related topics:"
+msgstr "相关主题:"
+
 msgid "Remove bookmark"
 msgstr "移除标签"
+
+msgid "Remove members from this group"
+msgstr "从此组中移除所有成员"
+
+msgid "Remove members..."
+msgstr "移除成员……"
+
+msgid "Remove selected members"
+msgstr "移除选中的成员"
 
 #: data/System/ModacSkinTopicMenuTemplate.txt:11 templates/more.modac.tmpl:79
 msgid "Rename or move topic"
@@ -853,6 +932,9 @@ msgstr "批准请求"
 #: data/System/ModacSkinCommonWords.txt:17
 msgid "Request further revision"
 msgstr "需进一步修改"
+
+msgid "Responsible"
+msgstr ""
 
 #: templates/more.modac.tmpl:180
 msgid "Restore topic"
@@ -998,9 +1080,15 @@ msgstr "瑞典语"
 msgid "Switch to monotype or propotional font"
 msgstr "切换到等宽或等比的字体"
 
+msgid "System user list."
+msgstr "系统用户列表"
+
 #: data/System/ModacSkinSolrSearchViewTemplate.txt:58
 msgid "Tag"
 msgstr "标签"
+
+msgid "Tagged %1"
+msgstr ""
 
 msgid "Task"
 msgstr "任务"
@@ -1039,6 +1127,9 @@ msgstr ""
 #: data/System/ModacSkinTopicMenueTemplates.txt
 msgid "These actions are not available while editing."
 msgstr ""
+
+msgid "This group should not have members."
+msgstr "此组无组成员。"
 
 #: core/templates/renamedelete.tmpl:28
 msgid ""
@@ -1122,6 +1213,10 @@ msgstr "(设定属性)"
 msgid "Topic revision:"
 msgstr "主题版本:"
 
+#, fuzzy
+msgid "Topic title"
+msgstr "主题历史记录"
+
 #: templates/moredialog.modac.tmpl:52
 #, fuzzy
 msgid "Topic:"
@@ -1150,6 +1245,15 @@ msgstr "在 %2 更新附件 %1"
 #: templates/attachagain.modac.tmpl:29
 msgid "Update existing attachment"
 msgstr "更新已存在的附件"
+
+msgid "Upgrade"
+msgstr "升级"
+
+msgid "Upgrade group topic"
+msgstr "升级组主题"
+
+msgid "Upgrade group topic..."
+msgstr "升级组主题……"
 
 #: templates/attachagain.modac.tmpl:25 templates/attachnew.modac.tmpl:5
 msgid "Upload file"
@@ -1222,6 +1326,10 @@ msgstr "等待QM"
 #: templates/validate.modac.tmpl:23
 msgid "Warning! Confirmation required"
 msgstr "要求确认"
+
+#, fuzzy
+msgid "Web"
+msgstr "子网"
 
 #: templates/moredialog.modac.tmpl:48
 msgid "Web:"
@@ -1311,6 +1419,14 @@ msgstr "源码模式"
 msgid "indicates mandatory fields"
 msgstr "指出必填栏位"
 
+#, fuzzy
+msgid "keyword"
+msgstr "关键字"
+
+#, fuzzy
+msgid "language"
+msgstr "语言"
+
 #: templates/oopshistory.modac.tmpl:47
 msgid "last"
 msgstr "最后"
@@ -1318,6 +1434,10 @@ msgstr "最后"
 #: templates/oopshistory.modac.tmpl:47
 msgid "later"
 msgstr ""
+
+#, fuzzy
+msgid "media"
+msgstr "多媒体"
 
 #: templates/metacomments.modac.tmpl:16
 msgid "needs approval"
@@ -1331,10 +1451,16 @@ msgstr "目前无父项"
 msgid "none"
 msgstr "无"
 
+msgid "older"
+msgstr ""
+
 #: templates/attachagain.modac.tmpl:23
 #: templates/renameattachmentdelete.modac.tmpl:25
 msgid "or"
 msgstr "或"
+
+msgid "recently"
+msgstr ""
 
 #: templates/attachtables.modac.tmpl:39 templates/oopshistory.modac.tmpl:58
 msgid "restore"
@@ -1344,6 +1470,16 @@ msgstr "复原"
 #, fuzzy
 msgid "revisions up to"
 msgstr "修订版"
+
+msgid "submit the query"
+msgstr ""
+
+#, fuzzy
+msgid "tag"
+msgstr "标签"
+
+msgid "tagged %1"
+msgstr ""
 
 #: templates/viewtopicactionbuttons.modac.tmpl:87
 msgid "title='Attach an image or document to this topic' accesskey='a'>&Attach"
@@ -1439,8 +1575,15 @@ msgstr "title='浏览主题历史' accesskey='h'>历史(&H)"
 msgid "title='View without formatting' accesskey='v'>&View wiki text"
 msgstr "标题＝‘无格式查看’快捷键＝‘V’>&查看 &wiki 文本"
 
+msgid "today"
+msgstr ""
+
 #: data/System/ModacSkinSolrSearchViewTemplate.txt:104
 msgid "topic"
+msgstr "主题"
+
+#, fuzzy
+msgid "topic type"
 msgstr "主题"
 
 #: templates/oopshistory.modac.tmpl:76
@@ -1482,69 +1625,8 @@ msgstr "周"
 msgid "why you are being asked to confirm"
 msgstr "为何您被要求确认"
 
-msgid "%URLPARAM{"
-msgstr "%URL参数{"
+#~ msgid "%URLPARAM{"
+#~ msgstr "%URL参数{"
 
-msgid "%maketext%"
-msgstr "%maketext%"
-
-msgid "Add members"
-msgstr "新增成员"
-
-msgid "Add members..."
-msgstr "新增成员……"
-
-msgid "Add user management options to this topic."
-msgstr "对此主题增加用用户管理选项"
-
-msgid "Add users or groups to this group"
-msgstr "对此组增加用户或组"
-
-msgid "Administration"
-msgstr "管理"
-
-msgid "Bookmark this file"
-msgstr "标记此文件"
-
-msgid "Log in to continue."
-msgstr "继续登陆"
-
-msgid "Members"
-msgstr "成员"
-
-msgid "No  members"
-msgstr "无成员"
-
-msgid "Only members or admins may update group."
-msgstr "仅成员或管理员可以更改组"
-
-msgid ""
-"Oops: we could not recognize you. Try again or [[%1][reset your password]]."
-msgstr "抱歉：无法辨识您，请再试一次或 [[%1][重设密码]] 。"
-
-msgid "Related topics:"
-msgstr "相关主题:"
-
-msgid "Remove members from this group"
-msgstr "从此组中移除所有成员"
-
-msgid "Remove members..."
-msgstr "移除成员……"
-
-msgid "Remove selected members"
-msgstr "移除选中的成员"
-
-msgid "System user list."
-msgstr "系统用户列表"
-
-msgid "This group should not have members."
-msgstr "此组无组成员。"
-
-msgid "Upgrade"
-msgstr "升级"
-
-msgid "Upgrade group topic"
-msgstr "升级组主题"
-
-msgid "Upgrade group topic..."
-msgstr "升级组主题……"
+#~ msgid "%maketext%"
+#~ msgstr "%maketext%"

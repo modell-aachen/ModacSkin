@@ -37,12 +37,6 @@ msgstr ""
 msgid "%1 weeks"
 msgstr "%1 semaines"
 
-msgid "%URLPARAM{"
-msgstr ""
-
-msgid "%maketext%"
-msgstr ""
-
 #: templates/foswiki.modac.tmpl:16
 msgid "&Cancel"
 msgstr "Annuler"
@@ -296,11 +290,11 @@ msgstr ""
 msgid "Change links in topics that refer to !%1 in the %2 Web:"
 msgstr ""
 
-#: core/templates/renamewebbase.modac.tmpl
+#: core/templates/renamebase.tmpl:57
 msgid "Change links in topics that refer to %1 in any Web:"
 msgstr "Modifier les liens pointant vers %1, sur les pages de tous les Webs :"
 
-#: core/templates/renamewebbase.modac.tmpl
+#: core/templates/renamebase.tmpl:53
 msgid "Change links in topics that refer to %1 in the %2 Web:"
 msgstr "Modifier les liens pointant vers %1, sur les pages du Web %2 :"
 
@@ -502,6 +496,10 @@ msgstr "Voulez-vous vraiment supprimer% 1?"
 msgid "Document Control"
 msgstr "contrôle des documents"
 
+#, fuzzy
+msgid "Document type"
+msgstr "Type du document"
+
 #: data/System/ModacSkinCommonWords.txt:7
 msgid "Draft"
 msgstr "Projet"
@@ -540,9 +538,6 @@ msgstr "Modifier les paramètres de cette page..."
 msgid "Edit topic preference settings"
 msgstr "Modifier les paramètres de la page"
 
-msgid "Energy (50001)"
-msgstr "ènergie (50001)"
-
 #: data/System/ModacSkinSolrSearchViewTemplate.txt:82
 msgid "English"
 msgstr "Anglais"
@@ -550,9 +545,6 @@ msgstr "Anglais"
 #: templates/foswiki.modac.tmpl:75
 msgid "Enlarge edit box"
 msgstr "Agrandir le cadre d'édition."
-
-msgid "Environment (14000)"
-msgstr "Envionnement (14000)"
 
 #: templates/attachtables.modac.tmpl:8
 msgid "Filename"
@@ -760,15 +752,16 @@ msgstr "Nouvelle version :"
 msgid "News"
 msgstr ""
 
-msgid "No  members"
-msgstr "Aucun membre"
-
 #: templates/more.modac.tmpl:200
 msgid "No child topics"
 msgstr "Pas de pages filles"
 
 msgid "No matches"
 msgstr "aucune correspondance"
+
+#, fuzzy
+msgid "No members"
+msgstr "Aucun membre"
 
 #: templates/more.modac.tmpl:195
 msgid "No previous revision exists."
@@ -886,9 +879,6 @@ msgstr "Propriétés"
 msgid "Put under CIP"
 msgstr "Mettre sous CIP"
 
-msgid "Quality (9000)"
-msgstr "Qualité (9000)"
-
 #: data/System/ModacSkinSolrSearchViewTemplate.txt:55
 msgid "Recent changes"
 msgstr "Les changements récents"
@@ -947,6 +937,9 @@ msgstr "approbation de la demande"
 #: data/System/ModacSkinCommonWords.txt:17
 msgid "Request further revision"
 msgstr "Demander d´autre version"
+
+msgid "Responsible"
+msgstr ""
 
 #: templates/more.modac.tmpl:180
 msgid "Restore topic"
@@ -1232,6 +1225,10 @@ msgstr ""
 #: templates/rdiff.modac.tmpl:17 templates/view.modac.tmpl:71
 msgid "Topic revision:"
 msgstr "Version de la page :"
+
+#, fuzzy
+msgid "Topic title"
+msgstr "Historique de la page"
 
 # OlivierRaginel proposait la traduction "Cette page", toutefois nous n'avons pas pu vérifier le contexte exact d'affichage de cette chaîne. En l'absence de cette référence, nous avons décidé de garder une traduction littérale.
 #: templates/moredialog.modac.tmpl:52
@@ -1655,6 +1652,14 @@ msgstr "Semaine"
 msgid "why you are being asked to confirm"
 msgstr "pourquoi il vous est demandé de confirmer"
 
-#: core/templates/renamebase.modac.tmpl:
-msgid "Update links"
-msgstr "Mettre à jour les liens"
+#~ msgid "Energy (50001)"
+#~ msgstr "ènergie (50001)"
+
+#~ msgid "Environment (14000)"
+#~ msgstr "Envionnement (14000)"
+
+#~ msgid "Quality (9000)"
+#~ msgstr "Qualité (9000)"
+
+#~ msgid "Update links"
+#~ msgstr "Mettre à jour les liens"
