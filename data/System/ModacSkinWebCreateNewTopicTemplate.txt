@@ -36,7 +36,7 @@ var URL_TEMPLATE = '$percntURLPARAM{template}$percnt';
 </script>" requires="JavascriptFiles/foswikiWindow"}%%TMPL:END%
 
 %{<verbatim class="tml">}%
-%TMPL:DEF{"title"}%%HTMLTITLE{"%MAKETEXT{"Create New Topic in [_1] Web" args="<nop>%BASEWEB%"}%" separator=" %IF{"defined 'HTMLTITLESEP'" then="%HTMLTITLESEP%" else="-"}% "}%%TMPL:END%
+%TMPL:DEF{"title"}%%HTMLTITLE{"%MAKETEXT{"Create new topic in [_1] Web" args="<nop>%BASEWEB%"}%" separator=" %IF{"defined 'HTMLTITLESEP'" then="%HTMLTITLESEP%" else="-"}% "}%%TMPL:END%
 %{</verbatim>}%
 
 %{<verbatim class="tml">}%
@@ -84,7 +84,7 @@ var URL_TEMPLATE = '$percntURLPARAM{template}$percnt';
 <h2 class="foswikiDialogTitle jqSimpleModalDraggable">Test</h2>
 <!-- -->%TMPL:END%
 
-%TMPL:DEF{"top"}%<h1>%MAKETEXT{"Create New Topic in [_1] Web" args="<nop>%BASEWEB%"}%</h1>%TMPL:END%
+%TMPL:DEF{"top"}%<h1>%MAKETEXT{"Create new topic in [_1] Web" args="<nop>%BASEWEB%"}%</h1>%TMPL:END%
 %{</verbatim>}%
 
 %{<verbatim class="tml">}%

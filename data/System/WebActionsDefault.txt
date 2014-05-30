@@ -1,1 +1,1 @@
-   * <a href="%SCRIPTURLPATH{"view"}%/%BASEWEB%/WebCreateNewTopic?topicparent=%BASETOPIC%" class="modacNewLink">%MAKETEXT{"Create New Topic"}%</a>
+   * <a href="%SCRIPTURLPATH{"view"}%/%BASEWEB%/WebCreateNewTopic?topicparent=%BASETOPIC%" class="modacNewLink">%MAKETEXT{"Create new topic"}%</a>

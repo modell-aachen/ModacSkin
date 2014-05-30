@@ -384,12 +384,12 @@ msgid "Copy topic..."
 msgstr "Seite kopieren"
 
 #: data/System/WebLeftBarDefault.txt:21
-msgid "Create New Topic"
+msgid "Create new topic"
 msgstr "Neue Seite anlegen"
 
 #: data/System/ModacSkinWebCreateNewTopicTemplate.txt:40
 #: data/System/ModacSkinWebCreateNewTopicTemplate.txt:87
-msgid "Create New Topic in %1 Web"
+msgid "Create new topic in %1 Web"
 msgstr "Neue Seite im Bereich \"%1\" anlegen"
 
 #: templates/attach.modac.tmpl:67
@@ -408,7 +408,6 @@ msgstr "Neues Content-Template anlegen"
 msgid "Create new content template..."
 msgstr "Neues Content-Template anlegen..."
 
-#, fuzzy
 msgid "Create new topic"
 msgstr "Neue Seite anlegen"
 

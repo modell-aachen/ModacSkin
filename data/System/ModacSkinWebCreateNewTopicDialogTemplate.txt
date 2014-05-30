@@ -2,7 +2,7 @@
 
 %{ ################################################################################ }%
 %TMPL:DEF{"dialog"}%<noautolink>
-<div class="modacDialogTitle">%MAKETEXT{"Create New Topic"}%</div>
+<div class="modacDialogTitle">%MAKETEXT{"Create new topic"}%</div>
 <div class="modacDialogContents">
   %TMPL:P{"content"}%<!-- -->
   %TMPL:P{"javascript"}%<!-- -->
