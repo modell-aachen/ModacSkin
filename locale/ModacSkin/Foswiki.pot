@@ -37,12 +37,6 @@ msgstr ""
 msgid "%1 weeks"
 msgstr ""
 
-msgid "%URLPARAM{"
-msgstr ""
-
-msgid "%maketext%"
-msgstr ""
-
 #: templates/foswiki.modac.tmpl:16
 msgid "&Cancel"
 msgstr ""
@@ -536,18 +530,12 @@ msgstr ""
 msgid "Edit topic preference settings"
 msgstr ""
 
-msgid "Energy (50001)"
-msgstr ""
-
 #: data/System/ModacSkinSolrSearchViewTemplate.txt:82
 msgid "English"
 msgstr ""
 
 #: templates/foswiki.modac.tmpl:75
 msgid "Enlarge edit box"
-msgstr ""
-
-msgid "Environment (14000)"
 msgstr ""
 
 #: templates/attachtables.modac.tmpl:8
@@ -750,7 +738,7 @@ msgstr ""
 msgid "News"
 msgstr ""
 
-msgid "No  members"
+msgid "No members"
 msgstr ""
 
 #: templates/more.modac.tmpl:200
@@ -871,9 +859,6 @@ msgstr ""
 
 #: data/System/ModacSkinCommonWords.txt:12
 msgid "Put under CIP"
-msgstr ""
-
-msgid "Quality (9000)"
 msgstr ""
 
 #: data/System/ModacSkinSolrSearchViewTemplate.txt:55
@@ -1595,5 +1580,14 @@ msgstr ""
 
 #: templates/validate.modac.tmpl:44
 msgid "why you are being asked to confirm"
+msgstr ""
+
+msgid "Document type"
+msgstr ""
+
+msgid "Topic title"
+msgstr ""
+
+msgid "Responsible"
 msgstr ""
 

@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Foswiki $Id\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2014-04-08 16:03+0200\n"
+"PO-Revision-Date: 2014-05-30 14:33+0200\n"
 "Last-Translator: Maik Glatki <glatki@modell-aachen.de>\n"
 "Language-Team: Foswiki German Translation Team <none>\n"
 "Language: de\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Pootle 2.5.1\n"
-"X-POOTLE-MTIME: 1396969431.000000\n"
+"X-POOTLE-MTIME: 1401456839.000000\n"
 
 #: templates/foswiki.modac.tmpl:100
 msgid "%1 Web"
@@ -39,12 +39,6 @@ msgstr "%1 ist die Standardseite für gelöschte Anhänge."
 
 msgid "%1 weeks"
 msgstr "%1 Wochen"
-
-msgid "%URLPARAM{"
-msgstr ""
-
-msgid "%maketext%"
-msgstr ""
 
 #: templates/foswiki.modac.tmpl:16
 msgid "&Cancel"
@@ -166,7 +160,7 @@ msgid "Add users or groups to this group"
 msgstr ""
 
 msgid "Administration"
-msgstr ""
+msgstr "Verwaltung"
 
 msgid "Advanced options..."
 msgstr "Erweiterte Optionen..."
@@ -259,9 +253,8 @@ msgstr "Links auf %1 im %2-Bereich"
 msgid "Backlinks to %1 in all Webs"
 msgstr "Links auf %1 in allen Bereichen"
 
-#, fuzzy
 msgid "Bookmark this file"
-msgstr "Diese Seite als Favorit speichern"
+msgstr "Lesezeichen für diesen Anhang setzen"
 
 msgid "Bookmark this page"
 msgstr "Diese Seite als Favorit speichern"
@@ -384,13 +377,13 @@ msgid "Copy topic..."
 msgstr "Seite kopieren"
 
 #: data/System/WebLeftBarDefault.txt:21
-msgid "Create new topic"
+msgid "Create New Topic"
 msgstr "Neue Seite anlegen"
 
 #: data/System/ModacSkinWebCreateNewTopicTemplate.txt:40
 #: data/System/ModacSkinWebCreateNewTopicTemplate.txt:87
-msgid "Create new topic in %1 Web"
-msgstr "Neue Seite im Bereich \"%1\" anlegen"
+msgid "Create New Topic in %1 Web"
+msgstr "Neue Seite im %1-Bereich anlegen"
 
 #: templates/attach.modac.tmpl:67
 msgid "Create a link to the attached file"
@@ -505,6 +498,9 @@ msgstr "Wollen Sie wirklich %1 löschen?"
 msgid "Document Control"
 msgstr "Dokumentenlenkung"
 
+msgid "Document type"
+msgstr "Dokumententyp"
+
 #: data/System/ModacSkinCommonWords.txt:7
 msgid "Draft"
 msgstr "Entwurf"
@@ -543,9 +539,6 @@ msgstr "Einstellungen bearbeiten"
 msgid "Edit topic preference settings"
 msgstr "Einstellungen für diese Seite bearbeiten"
 
-msgid "Energy (50001)"
-msgstr ""
-
 #: data/System/ModacSkinSolrSearchViewTemplate.txt:82
 msgid "English"
 msgstr "Englisch"
@@ -553,9 +546,6 @@ msgstr "Englisch"
 #: templates/foswiki.modac.tmpl:75
 msgid "Enlarge edit box"
 msgstr "Editor vergrößern"
-
-msgid "Environment (14000)"
-msgstr ""
 
 #: templates/attachtables.modac.tmpl:8
 msgid "Filename"
@@ -623,7 +613,7 @@ msgid "History of %1"
 msgstr "Historie von %1"
 
 msgid "ISO norm"
-msgstr ""
+msgstr "ISO-Norm"
 
 #: templates/validate.modac.tmpl:44
 msgid "If you are unsure what this means, read: %1"
@@ -674,7 +664,7 @@ msgid "Log Out"
 msgstr "Ausloggen"
 
 msgid "Log in to continue."
-msgstr ""
+msgstr "Melden Sie sich an, um fortzusetzen."
 
 #: templates/oopshistory.modac.tmpl:67
 msgid "MS-Word-mode"
@@ -693,7 +683,7 @@ msgid "Media"
 msgstr "Medien"
 
 msgid "Members"
-msgstr ""
+msgstr "Mitglieder"
 
 #: templates/foswiki.modac.tmpl:45
 msgid "Modify search"
@@ -761,15 +751,15 @@ msgstr "Neuere Revision:"
 msgid "News"
 msgstr "Aktuelles"
 
-msgid "No  members"
-msgstr ""
-
 #: templates/more.modac.tmpl:200
 msgid "No child topics"
 msgstr "Keine untergeordneten Seiten"
 
 msgid "No matches"
 msgstr "Keine Treffer"
+
+msgid "No members"
+msgstr "Keine Mitglieder"
 
 #: templates/more.modac.tmpl:195
 msgid "No previous revision exists."
@@ -884,9 +874,6 @@ msgstr "Eigenschaften"
 msgid "Put under CIP"
 msgstr "In KVP überführen"
 
-msgid "Quality (9000)"
-msgstr ""
-
 #: data/System/ModacSkinSolrSearchViewTemplate.txt:55
 msgid "Recent changes"
 msgstr "Letzte Änderungen"
@@ -903,13 +890,13 @@ msgid "Refresh"
 msgstr "Neu laden"
 
 msgid "Related topics:"
-msgstr ""
+msgstr "Verwandte Seiten:"
 
 msgid "Remove bookmark"
 msgstr "Favorit entfernen"
 
 msgid "Remove members from this group"
-msgstr ""
+msgstr "Entferne Mitglieder aus dieser Gruppe"
 
 msgid "Remove members..."
 msgstr ""
@@ -943,6 +930,9 @@ msgstr "Um Freigabe bitten"
 #: data/System/ModacSkinCommonWords.txt:17
 msgid "Request further revision"
 msgstr "Um weitere Überarbeitung bitten"
+
+msgid "Responsible"
+msgstr "Verantwortlich"
 
 #: templates/more.modac.tmpl:180
 msgid "Restore topic"
@@ -1231,6 +1221,9 @@ msgstr "Seiteneinstellungen"
 msgid "Topic revision:"
 msgstr "Revision:"
 
+msgid "Topic title"
+msgstr "Seitenname"
+
 #: templates/moredialog.modac.tmpl:52
 msgid "Topic:"
 msgstr "Seite:"
@@ -1337,9 +1330,8 @@ msgstr "Warten auf QM"
 msgid "Warning! Confirmation required"
 msgstr "Achtung! Bestätigung erforderlich"
 
-#, fuzzy
 msgid "Web"
-msgstr "Bereich:"
+msgstr "Bereich"
 
 #: templates/moredialog.modac.tmpl:48
 msgid "Web:"
@@ -1433,7 +1425,7 @@ msgstr "kennzeichnet Pflichtfelder"
 
 #, fuzzy
 msgid "keyword"
-msgstr "Stichwort"
+msgstr "Schlagwort"
 
 #, fuzzy
 msgid "language"
@@ -1464,7 +1456,7 @@ msgid "none"
 msgstr "(nichts)"
 
 msgid "older"
-msgstr ""
+msgstr "älter"
 
 #: templates/attachagain.modac.tmpl:23
 #: templates/renameattachmentdelete.modac.tmpl:25
@@ -1472,7 +1464,7 @@ msgid "or"
 msgstr "oder"
 
 msgid "recently"
-msgstr ""
+msgstr "kürzlich"
 
 #: templates/attachtables.modac.tmpl:39 templates/oopshistory.modac.tmpl:58
 msgid "restore"
@@ -1594,14 +1586,14 @@ msgstr ""
 "title='Quelltext ohne Formatierung ansehen' accesskey='v'>Quelltext (&v)"
 
 msgid "today"
-msgstr ""
+msgstr "heute"
 
 #: data/System/ModacSkinSolrSearchViewTemplate.txt:104
 msgid "topic"
 msgstr "Seite"
 
 msgid "topic type"
-msgstr ""
+msgstr "Seitentyp"
 
 #: templates/oopshistory.modac.tmpl:76
 msgid "unchanged sections before and after each change"
@@ -1642,47 +1634,15 @@ msgstr "Woche"
 msgid "why you are being asked to confirm"
 msgstr "warum Sie zur Bestätigung aufgefordert werden"
 
-msgid "Select destination web"
-msgstr "Ziel Bereich auswählen"
-
-#: core/templates/renamewebbase.modac.tmpl
-msgid "Update links"
-msgstr "Verweise aktualisieren"
-
-#: core/templates/renamewebbase.modac.tmpl
-msgid "Change links in topics that refer to %1 in any Web:"
-msgstr "Verweise in Seiten ändern, die aus allen Bereichen auf %1 zeigen:"
-
-#: core/templates/renamewebbase.modac.tmpl
-msgid "Change links in topics that refer to %1 in the %2 Web:"
-msgstr "Verweise in Seiten ändern, die aus dem %2-Bereich auf %1 zeigen:"
-
 # overwrite foswiki core stuff:
-#: core/data/System/WebTopicCreator.txt:3
-msgid "'Create New Topic' page has moved"
-msgstr "'Neue Seite anleten anlegen'-Seite wurde verschoben"
+#~ msgid "'Create New Topic' page has moved"
+#~ msgstr "'Neue Seite anleten anlegen'-Seite wurde verschoben"
 
-msgid "Create New Topic"
-msgstr "Neue Seite anlegen"
+#~ msgid "Create new topic in %1 Web"
+#~ msgstr "Neue Seite im Bereich \"%1\" anlegen"
 
-#: core/data/System/WebCreateNewTopicTemplate.txt:12
-msgid "Create New Topic in %1 Web"
-msgstr "Neue Seite im %1-Bereich anlegen"
+#~ msgid "Select destination web"
+#~ msgstr "Ziel Bereich auswählen"
 
-msgid "Create new topic"
-msgstr "Neue Seite anlegen"
-
-msgid "title='Create new topic' accesskey='c'>&Create"
-msgstr "title='Neue Seite anlegen' accesskey='c'>Anlegen (&c)" 
-
-msgid "Document type"
-msgstr "Dokumententyp"
-
-msgid "Topic title"
-msgstr "Seitenname"
-
-msgid "Responsible"
-msgstr "Verantwortlich"
-
-msgid "Area of application"
-msgstr "Geltungsbereich"
+#~ msgid "Update links"
+#~ msgstr "Verweise aktualisieren"
