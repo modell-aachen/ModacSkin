@@ -209,6 +209,23 @@ Example:<pre>
    &#42; Set EDITBOXSTYLE = background-color: red;
 </pre>
 
+---+++ Allowing special characters in topic names
+Usually only lowercase/uppercase letters from _a_ to _z_ and numbers are allowed in topic names. You can change this by setting =WIKIWORD_FORBIDDEN= to a regex matching all forbidden characters.
+
+For example, if you want to allow _minuses_ =-= in topic names put this into your =SitePreferences=:
+<pre>
+   %NOP%* Set WIKIWORD_FORBIDDEN = [^a-zA-Z\\d-]
+</pre>
+
+%X% Excape _backslashes_ =\= for character groups etc.!
+
+%X% Escape _apostrophes_ ='= like this:
+<pre>
+   %NOP%* Set WIKIWORD_FORBIDDEN = [^a-zA-Z\\d\']
+</pre>
+
+%X% Do not use quotes ="=!
+
 ---++ Installation Instructions
 
 To enable ModacSkin you have set the following variables either in =WebPreferences= (to enable ModacSkin within a single web) or
