@@ -1,8 +1,5 @@
-# Foswiki translation for Deutsch
-# Translators:
-# ModellAachen
-# Foswiki:Main/AndreUlrich, 2006,2007,2008
-# Foswiki:Main/OliverKrueger, 2006
+# Foswiki translation
+# Translators: ModellAachen
 msgid ""
 msgstr ""
 "Project-Id-Version: Foswiki $Id\n"

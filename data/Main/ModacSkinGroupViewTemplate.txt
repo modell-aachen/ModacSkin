@@ -35,7 +35,7 @@
   expand="0"
   format="$percntIF{\"istopic '%USERSWEB%.$wikiname'\" then=\"%USERSWEB%.$wikiname\" else=\"<nop>$wikiname\"}$percnt" 
   separator=", "
-  zeroresults="%IF{"'%groupname%' != 'NobodyGroup'" then="%MAKETEXT{"No  members"}%$n()"}%"
+  zeroresults="%IF{"'%groupname%' != 'NobodyGroup'" then="%MAKETEXT{"No members"}%$n()"}%"
 }%<!-- -->
 <!-- -->%ENDSECTION{"rendergroup"}%
 </verbatim>
