@@ -145,7 +145,7 @@ var URL_TEMPLATE = '$percntURLPARAM{template}$percnt';
 
 %{<verbatim class="tml">}%
 %TMPL:DEF{"hiddentopicnamestep"}%<!-- -->
-<span class="modacjqWikiWord {source:'#topictitle'%IF{"defined WIKIWORD_FORBIDDEN" then=", forbidden:'$percentWIKIWORD_FORBIDDEN$percent'"}%}"><input type="hidden" name="topic" id="topic" value="%TMPL:P{"newtopic"}%"/></span>
+<span class="modacjqWikiWord {source:'#topictitle'%IF{"defined WIKIWORD_ALLOWED" then=", allow:'$percentWIKIWORD_ALLOWED$percent'"}%}"><input type="hidden" name="topic" id="topic" value="%TMPL:P{"newtopic"}%"/></span>
 <!-- -->%TMPL:END%
 %{</verbatim>}%
 
@@ -189,8 +189,8 @@ var URL_TEMPLATE = '$percntURLPARAM{template}$percnt';
 %{<verbatim class="tml">}%
 %TMPL:DEF{"topicname"}%<!-- -->
 <div class="topic_manual">
-<span class="modacjqWikiWord modacjqWikiWordTouch {source:'#inputtopic'%IF{"defined WIKIWORD_FORBIDDEN" then=", forbidden:'$percentWIKIWORD_FORBIDDEN$percent'"}%}"><input type="hidden" class="foswikiInputField inputName" name="topic" id="topic" value="%TMPL:P{"newtopic"}%" /></span>
-<span class="modacjqWikiWord {source:'#topictitle'%IF{"defined WIKIWORD_FORBIDDEN" then=", forbidden:'$percentWIKIWORD_FORBIDDEN$percent'"}%}"><input type="text" class="foswikiInputField" name="inputtopic" id="inputtopic" size="60" /></span>
+<span class="modacjqWikiWord modacjqWikiWordTouch {source:'#inputtopic'%IF{"defined WIKIWORD_ALLOWED" then=", allow:'$percentWIKIWORD_ALLOWED$percent'"}%}"><input type="hidden" class="foswikiInputField inputName" name="topic" id="topic" value="%TMPL:P{"newtopic"}%" /></span>
+<span class="modacjqWikiWord {source:'#topictitle'%IF{"defined WIKIWORD_ALLOWED" then=", allow:'$percentWIKIWORD_ALLOWED$percent'"}%}"><input type="text" class="foswikiInputField" name="inputtopic" id="inputtopic" size="60" /></span>
 <div class="foswikiFormDescription">
 %MAKETEXT{"Please enter the article name without special characters."}%
 </div>
