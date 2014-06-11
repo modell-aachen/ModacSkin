@@ -23,8 +23,8 @@
 	linkclass="patternTwistyButton" 
 }% 
    * [[%BASEWEB%.WebChanges][%MAKETEXT{"Recently changed"}%]]
-%IF{ "$CONTENTTEMPLATEWEB=''" else="   * [[%CONTENTTEMPLATEWEB%.Templates][Templates]]"
-}%%ENDTWISTY% 
+%IF{ "$CONTENTTEMPLATEWEB=''" else="   * [[%CONTENTTEMPLATEWEB%.Templates][Templates]]
+"}%%ENDTWISTY%
 </div>
 
 
