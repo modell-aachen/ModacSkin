@@ -1423,11 +1423,9 @@ msgstr "im Quelltextformat"
 msgid "indicates mandatory fields"
 msgstr "kennzeichnet Pflichtfelder"
 
-#, fuzzy
 msgid "keyword"
 msgstr "Schlagwort"
 
-#, fuzzy
 msgid "language"
 msgstr "Sprache"
 
@@ -1439,7 +1437,6 @@ msgstr "letzter"
 msgid "later"
 msgstr "später"
 
-#, fuzzy
 msgid "media"
 msgstr "Medien"
 

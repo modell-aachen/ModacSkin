@@ -156,9 +156,8 @@ msgstr "对此组增加用户或组"
 msgid "Administration"
 msgstr "管理"
 
-#, fuzzy
 msgid "Advanced options..."
-msgstr "更多主题功能..."
+msgstr ""
 
 #: data/System/ModacSkinSolrSearchViewTemplate.txt:59
 msgid "Application"
@@ -345,9 +344,8 @@ msgstr "在%1页面的评论模板"
 msgid "Content templates"
 msgstr "评论模板"
 
-#, fuzzy
 msgid "Context"
-msgstr "语境"
+msgstr ""
 
 #: templates/oopshistory.modac.tmpl:71
 msgid "Context:"
@@ -395,9 +393,8 @@ msgstr "创建新主题模板"
 msgid "Create new content template..."
 msgstr "创建新主题模板……"
 
-#, fuzzy
 msgid "Create new topic"
-msgstr "创建新主题"
+msgstr ""
 
 #: data/System/ModacSkinCommonWords.txt:30
 msgid "Create this topic"
@@ -415,14 +412,12 @@ msgid "Current parent:"
 msgstr "目前父主题:"
 
 #: templates/renamebase.modac.tmpl
-#, fuzzy
 msgid "Current topic:"
-msgstr "目前位置:"
+msgstr ""
 
 #: templates/renamebase.modac.tmpl
-#, fuzzy
 msgid "Current web:"
-msgstr "目前父主题:"
+msgstr ""
 
 #: data/System/ModacSkinSolrSearchViewTemplate.txt:85
 msgid "Danish"
@@ -494,9 +489,8 @@ msgstr ""
 msgid "Document Control"
 msgstr "文档控制"
 
-#, fuzzy
 msgid "Document type"
-msgstr "文档格式"
+msgstr ""
 
 #: data/System/ModacSkinCommonWords.txt:7
 msgid "Draft"
@@ -596,18 +590,16 @@ msgstr ""
 msgid "Hide help"
 msgstr "隐藏说明"
 
-#, fuzzy
 msgid "Hide menu"
-msgstr "隐藏说明"
+msgstr ""
 
 #: templates/oopshistory.modac.tmpl:16
 msgid "History"
 msgstr "历史记录"
 
 #: templates/attachagain.modac.tmpl:8
-#, fuzzy
 msgid "History of %1"
-msgstr "%1 的版本历史"
+msgstr ""
 
 msgid "ISO norm"
 msgstr ""
@@ -647,9 +639,8 @@ msgstr "关键字"
 msgid "Language"
 msgstr "语言"
 
-#, fuzzy
 msgid "Last changed"
-msgstr "通过最后更改"
+msgstr ""
 
 #: templates/foswiki.modac.tmpl:11
 msgid "Log In"
@@ -699,9 +690,8 @@ msgid "Move"
 msgstr "移动"
 
 #: templates/rename.modac.tmpl
-#, fuzzy
 msgid "Move %1"
-msgstr "移动"
+msgstr ""
 
 #: templates/attachtables.modac.tmpl:45
 msgid "Move attachment"
@@ -712,19 +702,16 @@ msgid "Move to web:"
 msgstr "移动到子网:"
 
 #: templates/more.modac.tmpl
-#, fuzzy
 msgid "Move topic"
-msgstr "复制主题 "
+msgstr ""
 
 #: core/templates/renamedelete.tmpl:15
-#, fuzzy
 msgid "Move topic to web:"
-msgstr "移动到子网:"
+msgstr ""
 
 #: templates/more.modac.tmpl:87
-#, fuzzy
 msgid "Move topic..."
-msgstr "拷贝主题……"
+msgstr ""
 
 msgid "My bookmarks"
 msgstr "我的书签"
@@ -758,9 +745,8 @@ msgstr "无子主题"
 msgid "No matches"
 msgstr "不匹配"
 
-#, fuzzy
 msgid "No members"
-msgstr "无成员"
+msgstr ""
 
 #: templates/more.modac.tmpl:195
 msgid "No previous revision exists."
@@ -811,9 +797,8 @@ msgid "Open tasks"
 msgstr "打开任务"
 
 #: core/templates/renamedelete.tmpl:18
-#, fuzzy
 msgid "Optionally change topic name:"
-msgstr "输入不同的主题名称（非必要）:"
+msgstr ""
 
 #: templates/renameattachmentdelete.modac.tmpl:34
 msgid "Optionally enter a different attachment name:"
@@ -1098,9 +1083,8 @@ msgid "Templates"
 msgstr "模板"
 
 #: templates/moredialog.modac.tmpl:56 templates/moredialog.modac.tmpl:68
-#, fuzzy
 msgid "Text:"
-msgstr "语境"
+msgstr ""
 
 #: templates/renameattachmentdelete.modac.tmpl:43
 msgid ""
@@ -1145,9 +1129,8 @@ msgstr "时间间隔"
 msgid "Title"
 msgstr "标题"
 
-#, fuzzy
 msgid "Title of copy"
-msgstr "对拷贝命名"
+msgstr ""
 
 msgid "Title: "
 msgstr "标题："
@@ -1161,14 +1144,12 @@ msgid "To see if %1 has finished editing yet, click "
 msgstr "检查 %1 是否已编辑完毕，请按"
 
 #: templates/renamebase.modac.tmpl
-#, fuzzy
 msgid "To topic:"
-msgstr "复制主题 "
+msgstr ""
 
 #: templates/renamebase.modac.tmpl
-#, fuzzy
 msgid "To web:"
-msgstr "移动到子网:"
+msgstr ""
 
 #: data/System/WebLeftBarDefault.txt:15 data/System/WebLeftBarDefault.txt:16
 msgid "Tools"
@@ -1196,7 +1177,6 @@ msgid "Topic name:"
 msgstr "主题名称:"
 
 #: data/System/ModacSkinTopicMenuTemplate.txt
-#, fuzzy
 msgid "Topic parent"
 msgstr "父主题:"
 
@@ -1205,26 +1185,22 @@ msgid "Topic parent:"
 msgstr "父主题:"
 
 #: data/System/ModacSkinTopicMenuTemplate.txt
-#, fuzzy
 msgid "Topic preferences"
-msgstr "(设定属性)"
+msgstr ""
 
 #: templates/rdiff.modac.tmpl:17 templates/view.modac.tmpl:71
 msgid "Topic revision:"
 msgstr "主题版本:"
 
-#, fuzzy
 msgid "Topic title"
-msgstr "主题历史记录"
+msgstr ""
 
 #: templates/moredialog.modac.tmpl:52
-#, fuzzy
 msgid "Topic:"
-msgstr "主题"
+msgstr ""
 
-#, fuzzy
 msgid "Topics"
-msgstr "主题"
+msgstr ""
 
 #: templates/oopsleaseconflict.modac.tmpl:23
 msgid "Try Again"
@@ -1278,9 +1254,8 @@ msgstr "使用范本:"
 msgid "Username"
 msgstr "用户名"
 
-#, fuzzy
 msgid "Version"
-msgstr "查看版次"
+msgstr ""
 
 #: templates/attachagain.modac.tmpl:10
 msgid "Version history"
@@ -1299,9 +1274,8 @@ msgid "View previous topic revision"
 msgstr "检视主题的前一个版本"
 
 #: templates/oopsleaseconflict.modac.tmpl:34
-#, fuzzy
 msgid "View raw text without formatting"
-msgstr "源码模式"
+msgstr ""
 
 #: templates/more.modac.tmpl:156
 msgid "View revision"
@@ -1327,9 +1301,8 @@ msgstr "等待QM"
 msgid "Warning! Confirmation required"
 msgstr "要求确认"
 
-#, fuzzy
 msgid "Web"
-msgstr "子网"
+msgstr ""
 
 #: templates/moredialog.modac.tmpl:48
 msgid "Web:"
@@ -1419,13 +1392,11 @@ msgstr "源码模式"
 msgid "indicates mandatory fields"
 msgstr "指出必填栏位"
 
-#, fuzzy
 msgid "keyword"
-msgstr "关键字"
+msgstr ""
 
-#, fuzzy
 msgid "language"
-msgstr "语言"
+msgstr ""
 
 #: templates/oopshistory.modac.tmpl:47
 msgid "last"
@@ -1435,9 +1406,8 @@ msgstr "最后"
 msgid "later"
 msgstr ""
 
-#, fuzzy
 msgid "media"
-msgstr "多媒体"
+msgstr ""
 
 #: templates/metacomments.modac.tmpl:16
 msgid "needs approval"
@@ -1467,16 +1437,14 @@ msgid "restore"
 msgstr "复原"
 
 #: templates/oopshistory.modac.tmpl:92
-#, fuzzy
 msgid "revisions up to"
-msgstr "修订版"
+msgstr ""
 
 msgid "submit the query"
 msgstr ""
 
-#, fuzzy
 msgid "tag"
-msgstr "标签"
+msgstr ""
 
 msgid "tagged %1"
 msgstr ""
@@ -1521,9 +1489,8 @@ msgstr "标题='Interwoven' 快捷键='i'>&interwoven"
 
 #: templates/viewtopicactionbuttons.modac.tmpl:63
 #: templates/viewtopicactionbuttons.modac.tmpl:64
-#, fuzzy
 msgid "title='More actions for this topic' accesskey='m'>&More topic actions"
-msgstr "title='列印本主题' accesskey='p' >列印(&P)"
+msgstr ""
 
 msgid "title='My Page' >My Page"
 msgstr "标题='我的页面' >我的页面"
@@ -1582,9 +1549,8 @@ msgstr ""
 msgid "topic"
 msgstr "主题"
 
-#, fuzzy
 msgid "topic type"
-msgstr "主题"
+msgstr ""
 
 #: templates/oopshistory.modac.tmpl:76
 msgid "unchanged sections before and after each change"
