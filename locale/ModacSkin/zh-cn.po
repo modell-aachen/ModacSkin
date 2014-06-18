@@ -779,9 +779,6 @@ msgstr "旧版本:"
 msgid "One comment"
 msgstr "一条评论"
 
-msgid "Only members or admins may update group."
-msgstr "仅成员或管理员可以更改组"
-
 #: templates/more.modac.tmpl:66 templates/more.modac.tmpl:83
 msgid "Only update linked topics in %1 web"
 msgstr "在%1中仅更新链接的主题"
@@ -881,15 +878,6 @@ msgstr "相关主题:"
 
 msgid "Remove bookmark"
 msgstr "移除标签"
-
-msgid "Remove members from this group"
-msgstr "从此组中移除所有成员"
-
-msgid "Remove members..."
-msgstr "移除成员……"
-
-msgid "Remove selected members"
-msgstr "移除选中的成员"
 
 #: data/System/ModacSkinTopicMenuTemplate.txt:11 templates/more.modac.tmpl:79
 msgid "Rename or move topic"
@@ -1596,3 +1584,15 @@ msgstr "为何您被要求确认"
 
 #~ msgid "%maketext%"
 #~ msgstr "%maketext%"
+
+#~ msgid "Only members or admins may update group."
+#~ msgstr "仅成员或管理员可以更改组"
+
+#~ msgid "Remove members from this group"
+#~ msgstr "从此组中移除所有成员"
+
+#~ msgid "Remove members..."
+#~ msgstr "移除成员……"
+
+#~ msgid "Remove selected members"
+#~ msgstr "移除选中的成员"

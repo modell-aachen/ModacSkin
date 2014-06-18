@@ -789,9 +789,6 @@ msgstr "Ancienne version :"
 msgid "One comment"
 msgstr "un Commentaire"
 
-msgid "Only members or admins may update group."
-msgstr "Seuls les membres ou les administrateurs peuvent modifier le groupe."
-
 #: templates/more.modac.tmpl:66 templates/more.modac.tmpl:83
 msgid "Only update linked topics in %1 web"
 msgstr "Mettre à jour uniquement les pages liées dans le web %1"
@@ -893,15 +890,6 @@ msgstr "Pages liées :"
 
 msgid "Remove bookmark"
 msgstr "Supprimer le signet"
-
-msgid "Remove members from this group"
-msgstr "Retirer les membres du groupe"
-
-msgid "Remove members..."
-msgstr "Supprimer membres..."
-
-msgid "Remove selected members"
-msgstr "Supprimer les membres sélectionnés"
 
 #: data/System/ModacSkinTopicMenuTemplate.txt:11 templates/more.modac.tmpl:79
 msgid "Rename or move topic"
@@ -1640,8 +1628,21 @@ msgstr "pourquoi il vous est demandé de confirmer"
 #~ msgid "Environment (14000)"
 #~ msgstr "Envionnement (14000)"
 
+#~ msgid "Only members or admins may update group."
+#~ msgstr ""
+#~ "Seuls les membres ou les administrateurs peuvent modifier le groupe."
+
 #~ msgid "Quality (9000)"
 #~ msgstr "Qualité (9000)"
+
+#~ msgid "Remove members from this group"
+#~ msgstr "Retirer les membres du groupe"
+
+#~ msgid "Remove members..."
+#~ msgstr "Supprimer membres..."
+
+#~ msgid "Remove selected members"
+#~ msgstr "Supprimer les membres sélectionnés"
 
 #~ msgid "Update links"
 #~ msgstr "Mettre à jour les liens"

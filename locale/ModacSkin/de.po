@@ -792,9 +792,6 @@ msgstr "Ältere Revision:"
 msgid "One comment"
 msgstr "Ein Kommentar"
 
-msgid "Only members or admins may update group."
-msgstr ""
-
 #: templates/more.modac.tmpl:66 templates/more.modac.tmpl:83
 msgid "Only update linked topics in %1 web"
 msgstr "Nur verlinkte Seiten im %1 Bereich aktualisieren"
@@ -894,15 +891,6 @@ msgstr "Verwandte Seiten:"
 
 msgid "Remove bookmark"
 msgstr "Favorit entfernen"
-
-msgid "Remove members from this group"
-msgstr "Entferne Mitglieder aus dieser Gruppe"
-
-msgid "Remove members..."
-msgstr ""
-
-msgid "Remove selected members"
-msgstr ""
 
 #: data/System/ModacSkinTopicMenuTemplate.txt:11 templates/more.modac.tmpl:79
 msgid "Rename or move topic"
@@ -1630,3 +1618,6 @@ msgstr "Woche"
 #: templates/validate.modac.tmpl:44
 msgid "why you are being asked to confirm"
 msgstr "warum Sie zur Bestätigung aufgefordert werden"
+
+#~ msgid "Remove members from this group"
+#~ msgstr "Entferne Mitglieder aus dieser Gruppe"
