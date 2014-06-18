@@ -1237,13 +1237,6 @@ msgstr ""
 msgid "Use template:"
 msgstr ""
 
-#: templates/oopshistory.modac.tmpl:44 templates/oopshistory.modac.tmpl:55
-msgid "Username"
-msgstr ""
-
-msgid "Version"
-msgstr ""
-
 #: templates/attachagain.modac.tmpl:10
 msgid "Version history"
 msgstr ""
@@ -1264,10 +1257,6 @@ msgstr ""
 msgid "View raw text without formatting"
 msgstr ""
 
-#: templates/more.modac.tmpl:156
-msgid "View revision"
-msgstr ""
-
 #: templates/more.modac.tmpl:153
 msgid "View revision:"
 msgstr ""
@@ -1282,10 +1271,6 @@ msgstr ""
 
 #: data/System/ModacSkinCommonWords.txt:9
 msgid "Waiting for QM"
-msgstr ""
-
-#: templates/validate.modac.tmpl:23
-msgid "Warning! Confirmation required"
 msgstr ""
 
 msgid "Web"
