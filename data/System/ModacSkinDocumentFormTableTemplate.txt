@@ -1,7 +1,8 @@
 %TMPL:DEF{"modacformtable"}%
 %RENDERFOREDIT{
-form="%QUERY{"form.name" topic="%BASETOPIC%"}%" 
-format="<tr><td>$title</td><td>$edit</td></tr>" 
+form="%QUERY{"form.name" topic="%BASETOPIC%"}%"
+format="<tr><td>$title$mandatory</td><td>$edit</td></tr>"
 map="DocumentType=%MAKETEXT{Document type}%,TopicTitle=%MAKETEXT{Topic title}%,Responsible=%MAKETEXT{Responsible}%,AreaOfApplication=%MAKETEXT{Area of application}%,ISO9001=%MAKETEXT{ISO 9001}%,ISO14001=%MAKETEXT{ISO 14001}%"
+mandatory="&nbsp;<span class='foswikiAlert'>*</span>"
 }%
 %TMPL:END%
