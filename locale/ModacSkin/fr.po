@@ -1265,13 +1265,6 @@ msgstr ""
 msgid "Use template:"
 msgstr "Modèles de formulaires disponibles :"
 
-#: templates/oopshistory.modac.tmpl:44 templates/oopshistory.modac.tmpl:55
-msgid "Username"
-msgstr "Nom de connexion"
-
-msgid "Version"
-msgstr ""
-
 #: templates/attachagain.modac.tmpl:10
 msgid "Version history"
 msgstr ""
@@ -1292,10 +1285,6 @@ msgstr "Afficher la version précédente de la page"
 msgid "View raw text without formatting"
 msgstr ""
 
-#: templates/more.modac.tmpl:156
-msgid "View revision"
-msgstr "Afficher version"
-
 #: templates/more.modac.tmpl:153
 msgid "View revision:"
 msgstr "Afficher la version :"
@@ -1311,10 +1300,6 @@ msgstr "Attente du PO"
 #: data/System/ModacSkinCommonWords.txt:9
 msgid "Waiting for QM"
 msgstr "Attente du QM"
-
-#: templates/validate.modac.tmpl:23
-msgid "Warning! Confirmation required"
-msgstr "Confirmation nécessaire"
 
 msgid "Web"
 msgstr "Web"
@@ -1646,3 +1631,12 @@ msgstr "pourquoi il vous est demandé de confirmer"
 
 #~ msgid "Update links"
 #~ msgstr "Mettre à jour les liens"
+
+#~ msgid "Username"
+#~ msgstr "Nom de connexion"
+
+#~ msgid "View revision"
+#~ msgstr "Afficher version"
+
+#~ msgid "Warning! Confirmation required"
+#~ msgstr "Confirmation nécessaire"

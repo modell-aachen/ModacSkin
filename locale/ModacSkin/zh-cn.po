@@ -1238,13 +1238,6 @@ msgstr ""
 msgid "Use template:"
 msgstr "使用范本:"
 
-#: templates/oopshistory.modac.tmpl:44 templates/oopshistory.modac.tmpl:55
-msgid "Username"
-msgstr "用户名"
-
-msgid "Version"
-msgstr ""
-
 #: templates/attachagain.modac.tmpl:10
 msgid "Version history"
 msgstr "版本历史"
@@ -1265,10 +1258,6 @@ msgstr "检视主题的前一个版本"
 msgid "View raw text without formatting"
 msgstr ""
 
-#: templates/more.modac.tmpl:156
-msgid "View revision"
-msgstr "查看版次"
-
 #: templates/more.modac.tmpl:153
 msgid "View revision:"
 msgstr "检视修订版:"
@@ -1284,10 +1273,6 @@ msgstr "等待采购单"
 #: data/System/ModacSkinCommonWords.txt:9
 msgid "Waiting for QM"
 msgstr "等待QM"
-
-#: templates/validate.modac.tmpl:23
-msgid "Warning! Confirmation required"
-msgstr "要求确认"
 
 msgid "Web"
 msgstr ""
@@ -1596,3 +1581,12 @@ msgstr "为何您被要求确认"
 
 #~ msgid "Remove selected members"
 #~ msgstr "移除选中的成员"
+
+#~ msgid "Username"
+#~ msgstr "用户名"
+
+#~ msgid "View revision"
+#~ msgstr "查看版次"
+
+#~ msgid "Warning! Confirmation required"
+#~ msgstr "要求确认"

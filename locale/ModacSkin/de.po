@@ -1267,13 +1267,6 @@ msgstr "Url:"
 msgid "Use template:"
 msgstr "Vorlagen benutzen:"
 
-#: templates/oopshistory.modac.tmpl:44 templates/oopshistory.modac.tmpl:55
-msgid "Username"
-msgstr "Benutzername"
-
-msgid "Version"
-msgstr "Version"
-
 #: templates/attachagain.modac.tmpl:10
 msgid "Version history"
 msgstr "Historie"
@@ -1294,10 +1287,6 @@ msgstr "Vorherige Revisionen ansehen"
 msgid "View raw text without formatting"
 msgstr "Quelltext ohne Formatierung ansehen"
 
-#: templates/more.modac.tmpl:156
-msgid "View revision"
-msgstr "Version ansehen"
-
 #: templates/more.modac.tmpl:153
 msgid "View revision:"
 msgstr "Revision ansehen:"
@@ -1313,10 +1302,6 @@ msgstr "Warten auf PO"
 #: data/System/ModacSkinCommonWords.txt:9
 msgid "Waiting for QM"
 msgstr "Warten auf QM"
-
-#: templates/validate.modac.tmpl:23
-msgid "Warning! Confirmation required"
-msgstr "Achtung! Bestätigung erforderlich"
 
 msgid "Web"
 msgstr "Bereich"
@@ -1621,3 +1606,15 @@ msgstr "warum Sie zur Bestätigung aufgefordert werden"
 
 #~ msgid "Remove members from this group"
 #~ msgstr "Entferne Mitglieder aus dieser Gruppe"
+
+#~ msgid "Username"
+#~ msgstr "Benutzername"
+
+#~ msgid "Version"
+#~ msgstr "Version"
+
+#~ msgid "View revision"
+#~ msgstr "Version ansehen"
+
+#~ msgid "Warning! Confirmation required"
+#~ msgstr "Achtung! Bestätigung erforderlich"
