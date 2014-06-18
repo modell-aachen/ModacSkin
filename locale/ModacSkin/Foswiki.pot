@@ -779,9 +779,6 @@ msgstr ""
 msgid "One comment"
 msgstr ""
 
-msgid "Only members or admins may update group."
-msgstr ""
-
 #: templates/more.modac.tmpl:66 templates/more.modac.tmpl:83
 msgid "Only update linked topics in %1 web"
 msgstr ""
@@ -880,15 +877,6 @@ msgid "Related topics:"
 msgstr ""
 
 msgid "Remove bookmark"
-msgstr ""
-
-msgid "Remove members from this group"
-msgstr ""
-
-msgid "Remove members..."
-msgstr ""
-
-msgid "Remove selected members"
 msgstr ""
 
 #: data/System/ModacSkinTopicMenuTemplate.txt:11 templates/more.modac.tmpl:79
