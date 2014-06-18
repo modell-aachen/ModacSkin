@@ -1408,6 +1408,8 @@ msgid "image"
 msgstr "image"
 
 #: data/System/ModacSkinSolrSearchBaseTemplate.txt:14
+#: data/System/ModacSkinSolrSearchBaseTemplate.txt:35
+#: data/System/ModacSkinSolrSearchBaseTemplate.txt:51
 msgid "in %1"
 msgstr ""
 

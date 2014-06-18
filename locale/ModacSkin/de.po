@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Foswiki $Id\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2014-06-02 14:45+0200\n"
+"PO-Revision-Date: 2014-06-18 14:37+0200\n"
 "Last-Translator: Maik Glatki <glatki@modell-aachen.de>\n"
 "Language-Team: Foswiki German Translation Team <none>\n"
 "Language: de\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Pootle 2.5.1\n"
-"X-POOTLE-MTIME: 1401716721.000000\n"
+"X-POOTLE-MTIME: 1403098625.000000\n"
 
 #: templates/foswiki.modac.tmpl:100
 msgid "%1 Web"
@@ -154,7 +154,7 @@ msgid "Add members..."
 msgstr "Mitglied hinzufügen..."
 
 msgid "Add user management options to this topic."
-msgstr ""
+msgstr "Einstellungen für die Benutzerverwaltung zu dieser Seite hinzufügen."
 
 msgid "Add users or groups to this group"
 msgstr ""
@@ -1630,16 +1630,3 @@ msgstr "Woche"
 #: templates/validate.modac.tmpl:44
 msgid "why you are being asked to confirm"
 msgstr "warum Sie zur Bestätigung aufgefordert werden"
-
-# overwrite foswiki core stuff:
-#~ msgid "'Create New Topic' page has moved"
-#~ msgstr "'Neue Seite anleten anlegen'-Seite wurde verschoben"
-
-#~ msgid "Create new topic in %1 Web"
-#~ msgstr "Neue Seite im Bereich \"%1\" anlegen"
-
-#~ msgid "Select destination web"
-#~ msgstr "Ziel Bereich auswählen"
-
-#~ msgid "Update links"
-#~ msgstr "Verweise aktualisieren"
