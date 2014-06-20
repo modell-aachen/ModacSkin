@@ -329,6 +329,7 @@ msgstr "Alles abwählen"
 
 #: templates/attach.modac.tmpl:57 templates/attachtables.modac.tmpl:8
 #: templates/oopshistory.modac.tmpl:45
+#: data/System/ModacSkinUserViewTemplate.txt
 msgid "Comment"
 msgstr "Kommentar"
 
@@ -352,6 +353,7 @@ msgstr "Content-Templates im Bereich \"%1\""
 msgid "Content templates"
 msgstr "Content-Templates"
 
+#: data/System/ModacSkinUserViewTemplate.txt
 msgid "Context"
 msgstr "Kontext"
 
@@ -408,6 +410,7 @@ msgstr "Neue Seite anlegen"
 msgid "Create this topic"
 msgstr "Diese Seite anlegen"
 
+#: data/System/ModacSkinUserViewTemplate.txt
 msgid "Created"
 msgstr "Erstellt"
 
@@ -1605,6 +1608,10 @@ msgid "why you are being asked to confirm"
 msgstr "warum Sie zur Bestätigung aufgefordert werden"
 
 #: data/System/ModacSkinUserViewTemplate.txt
+msgid "Comments for me"
+msgstr "Kommentare für mich"
+
+#: data/System/ModacSkinUserViewTemplate.txt
 msgid "Not your personal page"
 msgstr "Nicht Ihre persönliche Seite"
 
@@ -1618,12 +1625,15 @@ msgid "To see your tasks, bookmarks and notes, please go to %1."
 msgstr ""
 "Um Ihre Aufgaben, Lesezeichen und Notizen zu sehen, gehen Sie bitte auf %1."
 
+#: data/System/ModacSkinUserViewTemplate.txt
+msgid "Mark read"
+msgstr "Als gelesen markieren"
+
 #~ msgid "Remove members from this group"
 #~ msgstr "Entferne Mitglieder aus dieser Gruppe"
 
 #~ msgid "Username"
 #~ msgstr "Benutzername"
-
 
 #~ msgid "Version"
 #~ msgstr "Version"

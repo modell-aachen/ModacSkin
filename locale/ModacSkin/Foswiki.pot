@@ -321,6 +321,7 @@ msgstr ""
 
 #: templates/attach.modac.tmpl:57 templates/attachtables.modac.tmpl:8
 #: templates/oopshistory.modac.tmpl:45
+#: data/System/ModacSkinUserViewTemplate.txt
 msgid "Comment"
 msgstr ""
 
@@ -344,6 +345,7 @@ msgstr ""
 msgid "Content templates"
 msgstr ""
 
+#: data/System/ModacSkinUserViewTemplate.txt
 msgid "Context"
 msgstr ""
 
@@ -400,6 +402,7 @@ msgstr ""
 msgid "Create this topic"
 msgstr ""
 
+#: data/System/ModacSkinUserViewTemplate.txt
 msgid "Created"
 msgstr ""
 
@@ -1571,4 +1574,12 @@ msgstr ""
 
 #: data/System/ModacSkinUserViewTemplate.txt
 msgid "To see your tasks, bookmarks and notes, please go to %1."
+msgstr ""
+
+#: data/System/ModacSkinUserViewTemplate.txt
+msgid "Mark read"
+msgstr ""
+
+#: data/System/ModacSkinUserViewTemplate.txt
+msgid "Comments for me"
 msgstr ""
