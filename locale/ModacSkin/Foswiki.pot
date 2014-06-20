@@ -1560,3 +1560,15 @@ msgstr ""
 #: templates/validate.modac.tmpl:44
 msgid "why you are being asked to confirm"
 msgstr ""
+
+#: data/System/ModacSkinUserViewTemplate.txt
+msgid "Not your personal page"
+msgstr ""
+
+#: data/System/ModacSkinUserViewTemplate.txt
+msgid "This is not your personal page, so you can not see anything here."
+msgstr ""
+
+#: data/System/ModacSkinUserViewTemplate.txt
+msgid "To see your tasks, bookmarks and notes, please go to %1."
+msgstr ""

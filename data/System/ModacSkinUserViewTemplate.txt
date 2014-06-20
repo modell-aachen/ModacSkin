@@ -123,9 +123,22 @@
 
 %TMPL:DEF{"content"}%
 %TMPL:P{"perspage:scripts"}%
-%TMPL:P{"perspage:bookmarks"}%
-%TMPL:P{"perspage:tasks"}%
-%TMPL:P{"perspage:mynotes"}%
+%IF{"$WIKINAME = $TOPIC"
+ then="$percentTMPL:P{perspage:bookmarks}$percent
+$percentTMPL:P{perspage:tasks}$percent
+<div>"
+ else="$percentTMPL:P{perspage:other}$percent
+<div style='display: none'>"
+}%%TMPL:P{perspage:mynotes}%
+</div>
+%TMPL:END%
+
+%TMPL:DEF{"perspage:other"}%
+<div class="perspageBlockTitle">%MAKETEXT{"Not your personal page"}%</div>
+<div class="perspageBlock">%MAKETEXT{"This is not your personal page, so you can not see anything here."}%
+
+%MAKETEXT{"To see your tasks, bookmarks and notes, please go to [_1]." args="[[%WIKINAME%]]"}%
+</div>
 %TMPL:END%
 
 %TMPL:DEF{"perspage:dummy:rendertasks"}%

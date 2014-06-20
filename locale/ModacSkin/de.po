@@ -1604,11 +1604,26 @@ msgstr "Woche"
 msgid "why you are being asked to confirm"
 msgstr "warum Sie zur Bestätigung aufgefordert werden"
 
+#: data/System/ModacSkinUserViewTemplate.txt
+msgid "Not your personal page"
+msgstr "Nicht Ihre persönliche Seite"
+
+#: data/System/ModacSkinUserViewTemplate.txt
+msgid "This is not your personal page, so you can not see anything here."
+msgstr ""
+"Das ist nicht Ihre persönliche Seite, daher können Sie hier nichts sehen."
+
+#: data/System/ModacSkinUserViewTemplate.txt
+msgid "To see your tasks, bookmarks and notes, please go to %1."
+msgstr ""
+"Um Ihre Aufgaben, Lesezeichen und Notizen zu sehen, gehen Sie bitte auf %1."
+
 #~ msgid "Remove members from this group"
 #~ msgstr "Entferne Mitglieder aus dieser Gruppe"
 
 #~ msgid "Username"
 #~ msgstr "Benutzername"
+
 
 #~ msgid "Version"
 #~ msgstr "Version"
