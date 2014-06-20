@@ -226,6 +226,19 @@ For example, if you want to allow _minuses_ =-= in topic names put this into you
 
 %X% Do not use quotes ="=!
 
+---+++ Translating document control
+It is possible to translate the field names in document control (or make them more readable in general) by creating a !DocumentFormTableTemplate for your [[%TOPIC%#Customization][CustomSkin]]. Usually it is sufficient to add to =modacformtable_mappings= like this:
+<pre>
+%<nop>TMPL:INCLUDE{"DocumentFormTable"}%
+
+%<nop>{ adding a readable display name for MyField }%
+%<nop>TMPL:DEF{"modacformtable_mappings"}%%<nop>TMPL:PREV%,MyField=%<nop>MAKETEXT{"My Field"}%%<nop>TMPL:END%
+</pre>
+The format always is:
+<pre>
+Fieldname=Display name for field,OtherField=Display name for other field...
+</pre>
+
 ---++ Installation Instructions
 
 To enable ModacSkin you have set the following variables either in =WebPreferences= (to enable ModacSkin within a single web) or
