@@ -1,10 +1,14 @@
-// this will deal with browsers that do not understand the hashtag in links
+// Manipulating the hashtag for solr filters.
+// Execute this before solr's js does it's thing -> do not use jQuery.
+// This will deal with browsers that do not understand the hashtag in links.
 if(window.location.hash == '') {
     var ht=/\?htag=(.*)/.exec(window.location.href);
     if(ht && ht[1]) window.location.hash=ht[1];
 }
+
+// Helper functions on search page:
 jQuery(function($){
-    // for displaying language flags on SolrSearch pages
+    // For displaying language flags on SolrSearch pages.
     modacSolr = {
         lang: function(language){
             if(typeof(language)==='undefined') return '';
