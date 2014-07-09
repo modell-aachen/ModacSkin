@@ -8,19 +8,20 @@ msgstr ""
 "Project-Id-Version: Foswiki $Id\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2013-07-26 13:35+0200\n"
-"Last-Translator: Modell Aachen\n"
-"Language-Team: Foswiki German Translation Team <none>\n"
+"PO-Revision-Date: 2014-07-09 10:25+0200\n"
+"Last-Translator: Weblate Admin <user@example.com>\n"
+"Language-Team: German "
+"<http://example.com/weblate/projects/modacskin/modacskinbarcelona/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Pootle 2.0.5\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 1.9\n"
 
 #: templates/foswiki.modac.tmpl:100
 msgid "%1 Web"
-msgstr "%1 Bereich"
+msgstr "%1-Bereich"
 
 #: templates/metacomments.modac.tmpl:33
 msgid "%1 comments"
@@ -1432,5 +1433,3 @@ msgstr "Verweise in Seiten ändern, die auf %1 zeigen (alle Webs):"
 #: core/templates/renamebase.tmpl:53
 msgid "Change links in topics that refer to %1 in the %2 Web:"
 msgstr "Verweise in Seiten ändern, die auf %1 zeigen (nur im %2 Web):"
-
-
