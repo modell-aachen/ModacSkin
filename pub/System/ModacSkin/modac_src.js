@@ -893,6 +893,21 @@ jQuery(function($){
         return false;
     });
 
+    // update timestamp of edit links (ticket: #5306)
+    $('.modacChanging').mousedown( function( e ) {
+      var btn = e.which;
+
+      if ( btn == 1 || btn == 2 ) {
+      var href = $(this).attr('href');
+      if ( ! /t=\d{10}/.test( href ) )
+        return;
+
+      var t = Math.floor( (new Date).getTime() / 1000 );
+      href = href.replace( /t=\d{10}/, 't=' + t );
+      $(this).attr( 'href', href );
+      }
+    });
+
     // preload spinner
     $('.foswikiPage').append('<div style="height:0; width:0;" class="ajaxspinner"></div>');
 });
