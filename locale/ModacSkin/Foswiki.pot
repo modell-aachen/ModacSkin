@@ -1585,5 +1585,5 @@ msgid "Comments for me"
 msgstr ""
 
 #: data/System/ModacSkinUserViewTemplate.txt
-msgid "Alexander"
-msgstr "alles durcheinander"
+msgid "Bongo"
+msgstr "macht alles durcheinander"
