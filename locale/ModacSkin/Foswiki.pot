@@ -1586,4 +1586,4 @@ msgstr ""
 
 #: data/System/ModacSkinUserViewTemplate.txt
 msgid "Bongo"
-msgstr "Bongo"
+msgstr ""
