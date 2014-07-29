@@ -35,14 +35,6 @@ msgstr ""
 msgid "%1 weeks"
 msgstr ""
 
-#: data/System/ModacSkinUserViewTemplate.txt:136
-msgid "%URLPARAM{"
-msgstr ""
-
-#: templates/metamaketext.modac.tmpl:3
-msgid "%maketext%"
-msgstr ""
-
 #: templates/foswiki.modac.tmpl:14
 msgid "&Cancel"
 msgstr ""
