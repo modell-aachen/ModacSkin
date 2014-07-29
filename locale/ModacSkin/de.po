@@ -8,10 +8,10 @@ msgstr ""
 "Project-Id-Version: Foswiki $Id\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2014-07-09 10:25+0200\n"
-"Last-Translator: Weblate Admin <user@example.com>\n"
-"Language-Team: German "
-"<http://example.com/weblate/projects/modacskin/modacskinbarcelona/de/>\n"
+"PO-Revision-Date: 2014-07-29 17:16+0200\n"
+"Last-Translator: Modell Aachen <access@modell-aachen.de>\n"
+"Language-Team: German <http://translate.modell-"
+"aachen.de/projects/modacskin/releasebarcelona/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -59,7 +59,7 @@ msgstr "(Anhänge)"
 
 #: templates/backlinksweb.modac.tmpl:2
 msgid "(backlinks in %1 Web)"
-msgstr "(Links im %1 Bereich)"
+msgstr "(Links im %1-Bereich)"
 
 #: templates/backlinksallwebs.modac.tmpl:2
 msgid "(backlinks in all Webs)"
