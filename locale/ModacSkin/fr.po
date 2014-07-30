@@ -6,15 +6,16 @@ msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: support@modell-aachen.de\n"
 "POT-Creation-Date: 2013-03-12 10:42+0200\n"
-"PO-Revision-Date: 2012-03-15 23:41+0200\n"
-"Last-Translator: Islem Haddar <haddar@modell-aachen.de>\n"
-"Language-Team: <support@modell-aachen.de>\n"
+"PO-Revision-Date: 2014-07-30 15:59+0200\n"
+"Last-Translator: Modell Aachen <access@modell-aachen.de>\n"
+"Language-Team: French <http://translate.modell-"
+"aachen.de/projects/modacskin/releasebarcelona/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Pootle 2.1.6\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 1.9\n"
 
 #: templates/foswiki.modac.tmpl:96
 msgid "%1 Web"
@@ -271,7 +272,7 @@ msgstr "Modèles de contenu"
 
 #: templates/oopshistory.modac.tmpl:73
 msgid "Context:"
-msgstr "Contexte"
+msgstr "Contexte:"
 
 #: data/System/ModacSkinSolrSearchViewTemplate.txt:84
 msgid "Contributor"
@@ -314,7 +315,7 @@ msgstr "Créer un nouveau modéle de conteu"
 
 #: data/System/ModacSkinContentTemplatesViewTemplate.txt:38
 msgid "Create new content template..."
-msgstr "Créer un nouveau modèle de contenu"
+msgstr "Créer un nouveau modèle de contenu…"
 
 #: data/System/ModacSkinCommonWords.txt:30
 msgid "Create this topic"
@@ -366,7 +367,7 @@ msgstr ""
 
 #: templates/compare.modac.tmpl:12 templates/rdiff.modac.tmpl:11
 msgid "Difference:"
-msgstr "différence"
+msgstr "Page de comparaison:"
 
 #: data/System/ModacSkinCommonWords.txt:15
 msgid "Discard discussion"
@@ -434,7 +435,7 @@ msgstr "Anglais"
 
 #: templates/foswiki.modac.tmpl:71
 msgid "Enlarge edit box"
-msgstr "Agrandir le cadre d'édition."
+msgstr "Agrandir le cadre d'édition"
 
 #: templates/attachtables.modac.tmpl:8
 msgid "Filename"
@@ -622,7 +623,7 @@ msgstr "OK"
 
 #: templates/more.modac.tmpl:171
 msgid "Older revision:"
-msgstr "ancienne révision:"
+msgstr "Ancienne version:"
 
 #: templates/metacomments.modac.tmpl:64
 msgid "One comment"
@@ -711,7 +712,7 @@ msgstr "Renommer ou déplacer la page..."
 
 #: templates/oopshistory.modac.tmpl:68
 msgid "Render style:"
-msgstr "Style d'affichage"
+msgstr "Style d'affichage:"
 
 #: templates/form.modac.tmpl:1
 msgid "Replace form..."
@@ -747,7 +748,7 @@ msgstr "Restaurer cette version de la page"
 
 #: templates/more.modac.tmpl:191
 msgid "Restore..."
-msgstr "Restaurer"
+msgstr "Restaurer…"
 
 #: templates/oopshistory.modac.tmpl:44 templates/oopshistory.modac.tmpl:55
 #: templates/rdiff.modac.tmpl:17
@@ -756,7 +757,7 @@ msgstr "Version"
 
 #: templates/oopshistory.modac.tmpl:27
 msgid "Revision history of "
-msgstr "Historique des versions de " 
+msgstr "Historique des versions de "
 
 #: templates/more.modac.tmpl:151
 msgid "Revisions"
@@ -768,7 +769,7 @@ msgstr "Versions %1 - %2 (sur un total de %3)sont à voir"
 
 #: templates/oopshistory.modac.tmpl:94
 msgid "Revisions."
-msgstr "Versions"
+msgstr "Versions."
 
 #: data/System/ModacSkinSolrSearchViewTemplate.txt:97
 msgid "Russian"
@@ -809,7 +810,7 @@ msgstr "Chercher, dans le Web %1, les liens pointant ici"
 
 #: data/System/ModacAjaxHelper.txt:30
 msgid "Searching..."
-msgstr "recherche"
+msgstr "recherche…"
 
 #: templates/attachagain.modac.tmpl:19
 msgid "Select a new local file to update attachment"
@@ -903,7 +904,9 @@ msgstr ""
 msgid ""
 "The following content template are available for newly created topic in the "
 "%1 Web:"
-msgstr "Le modèle de contenu suivants sont disponibles pour le sujet nouvellement créé dans le %1 web"
+msgstr ""
+"Le modèle de contenu suivants sont disponibles pour le sujet nouvellement "
+"créé dans le %1 web:"
 
 #: templates/validate.modac.tmpl:36
 msgid ""
@@ -970,7 +973,7 @@ msgstr "Version de la page :"
 # OlivierRaginel proposait la traduction "Cette page", toutefois nous n'avons pas pu vérifier le contexte exact d'affichage de cette chaîne. En l'absence de cette référence, nous avons décidé de garder une traduction littérale.
 #: templates/moredialog.modac.tmpl:52
 msgid "Topic:"
-msgstr "Page"
+msgstr "Page:"
 
 #: templates/oopsleaseconflict.modac.tmpl:17
 msgid "Try Again"
@@ -1002,7 +1005,7 @@ msgstr "Taille limite d'un fichier attaché : %1 Ko."
 
 #: templates/attach.modac.tmpl:39
 msgid "Uploading file..."
-msgstr "telecharger le fichier"
+msgstr "telecharger le fichier…"
 
 #: templates/moredialog.modac.tmpl:64
 msgid "Url:"
@@ -1010,7 +1013,7 @@ msgstr "Url"
 
 #: data/System/ModacSkinWebCreateNewTopicTemplate.txt:148
 msgid "Use template:"
-msgstr "Utiliser le formulaire :"
+msgstr "Modèles de formulaires disponibles:"
 
 #: templates/oopshistory.modac.tmpl:46 templates/oopshistory.modac.tmpl:57
 msgid "Username"
@@ -1197,7 +1200,7 @@ msgstr ""
 
 #: templates/viewtopicactionbuttons.modac.tmpl:38
 msgid "title='Create new topic' accesskey='c'>&Create"
-msgstr "value='Créer une nouvelle page' accesskey='c'>&Créer"
+msgstr "title='Créer une page' accesskey='c'>&Créer"
 
 #: templates/viewtopicactionbuttons.modac.tmpl:48
 msgid ""
@@ -1325,4 +1328,3 @@ msgstr "visualiser"
 #: templates/validate.modac.tmpl:48
 msgid "why you are being asked to confirm"
 msgstr "pourquoi il vous est demandé de confirmer"
-
