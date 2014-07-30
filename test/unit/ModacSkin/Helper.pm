@@ -99,7 +99,7 @@ sub set_up_webs {
         Foswiki::Func::saveTopic( $ps, NOFAV, undef, "   * Set VIEW_TEMPLATE = ".NOFAVVIEW );
         Foswiki::Func::saveTopic( $ps, DEADLINKS, undef, "   * [[DoesNotExist]]\n   * [[%WEB%.DoesNotExistAsWell][DoesNotExistAsWell]]" );
         Foswiki::Func::saveTopic( $ps, MEASURE, undef, "   * 11em: <div style=\"background-color:red; width: 11em; height: 1em;\" id=\"fixedWidthElevenem\"></div>\n   * 1em: <div style=\"background-color:red; width: 1em; height: 1em;\" id=\"fixedWidthOneem\"></div>\n   * 0.4em: <div style=\"background-color:red; width: 0.4em; height: 1em;\" id=\"fixedWidthOFourem\"></div>\n" );
-        Foswiki::Func::saveTopic( $ps, BLOGOUT, undef, "<a href='%SCRIPTURLPATH{view}%/%WEB%/%TOPIC%' target='_blank'>new window</a>" );
+        Foswiki::Func::saveTopic( $ps, BLOGOUT, undef, '<a href="%SCRIPTURL{view}%/%WEB%/%TOPIC%?logout=1" class="ajaxLink">Logout</a>' );
         Foswiki::Func::saveTopic( $ps, TRANSLATIONS, undef, '<span id="Attach">%TMPL:P{modacAttach}%</span><br/><span id="UploadFile">%MAKETEXT{"Upload file"}%</span><br/><span id="Cancel">%MAKETEXT{"Cancel"}%</span>' );
 
         $ps = TRASH;

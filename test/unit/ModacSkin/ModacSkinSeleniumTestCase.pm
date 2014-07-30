@@ -257,7 +257,8 @@ sub verify_loginBoxRenameMove {
 
     # check UI is not blocked
     # XXX no published api
-    $this->assert( $this->{selenium}->execute_script('return jQuery("div.blockUI:visible").length') == 0 );
+    # XXX Might take a while for scripts to finish
+    $this->waitFor( sub { $this->{selenium}->execute_script('return jQuery("div.blockUI:visible").length') == 0 }, 'Screen is still blocked.' );
 }
 
 # Test if...
@@ -286,7 +287,8 @@ sub verify_loginBoxAttachment {
 
     # check UI is not blocked
     # XXX no published api
-    $this->assert( $this->{selenium}->execute_script('return jQuery("div.blockUI:visible").length') == 0 );
+    # XXX Might take a while for scripts to finish
+    $this->waitFor( sub { $this->{selenium}->execute_script('return jQuery("div.blockUI:visible").length') == 0 }, 'Screen is still blocked.' );
 }
 
 # Test if...
@@ -417,27 +419,29 @@ sub loginDialog {
 sub backgroundLogout {
     my ( $this ) = @_; # One could pass a url to which to navigate after opening the popup - or return to current url
 
-    my $handles = $this->{selenium}->get_window_handles();
-    $this->assert(scalar @$handles == 1); # we must only have one window, or we can't determine the id of the popup
-    my $currentWindow = @$handles[0];
     $this->{selenium}->get(
         Foswiki::Func::getScriptUrl(
             Helper::WEB, Helper::BLOGOUT, 'view'
         )
     );
-    $this->{selenium}->find_element('new window', 'link')->click();
-    # get the popup, it is NOT the selected window
-    $handles = $this->{selenium}->get_window_handles();
-    $this->assert(scalar @$handles == 2, 'No popup appeared (handles: '. scalar @$handles.')');
-    my $popup;
-    foreach my $w (@$handles) {
-        $popup = $w unless $w eq $currentWindow;
-    }
-    $this->{selenium}->switch_to_window($popup);
-    my $logoutURL = Foswiki::Func::getScriptUrl( Helper::WEB, $webhome, 'view' ).'?logout=1&t='.time();
-    $this->{selenium}->get($logoutURL);
-    $this->{selenium}->close();
-    $this->{selenium}->switch_to_window($currentWindow);
+
+    $this->{selenium}->execute_script(<<'AJAX');
+jQuery(function($) {
+    $('.ajaxLink').click(function(){
+        var $this = $(this);
+        $.ajax({
+            url: $this.attr('href'),
+            context: $this
+        }).done(function() {
+            $(this).addClass('ajaxFinished');
+        });
+        return false;
+    });
+});
+AJAX
+
+    $this->{selenium}->find_element('Logout', 'link')->click();
+    $this->waitFor( sub { $this->{selenium}->execute_script('return jQuery(".ajaxFinished").length') }, 'Ajax logout did not succeed' );
 }
 
 # 'hovers' the mouse over 'More topic actions' and waits for the menue to appear.
