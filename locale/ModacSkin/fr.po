@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2014-07-18 10:43+0200\n"
+"PO-Revision-Date: 2014-07-30 15:59+0200\n"
 "Last-Translator: Modell Aachen <access@modell-aachen.de>\n"
 "Language-Team: French <http://translate.modell-aachen.de/projects/modacskin"
 "/releasenew-york/fr/>\n"
@@ -162,7 +162,7 @@ msgid "Administration"
 msgstr "Administration"
 
 msgid "Advanced options..."
-msgstr "options avancées"
+msgstr "options avancées…"
 
 #: data/System/ModacSkinSolrSearchViewTemplate.txt:59
 msgid "Application"
@@ -335,7 +335,7 @@ msgstr "Commentaires :"
 
 #: templates/more.modac.tmpl:162 templates/oopshistory.modac.tmpl:99
 msgid "Compare revisions"
-msgstr "Comparer les versions"
+msgstr "Comparer les révisions"
 
 msgid "Comparison"
 msgstr "Comparaison"
@@ -354,7 +354,7 @@ msgstr "Contexte"
 
 #: templates/oopshistory.modac.tmpl:71
 msgid "Context:"
-msgstr "Contexte"
+msgstr "Contexte:"
 
 #: data/System/ModacSkinSolrSearchViewTemplate.txt:79
 msgid "Contributor"
@@ -397,7 +397,7 @@ msgstr "Créer un nouveau modéle de conteu"
 
 #: data/System/ModacSkinContentTemplatesViewTemplate.txt:38
 msgid "Create new content template..."
-msgstr "Créer un nouveau modèle de contenu"
+msgstr "Créer un nouveau modèle de contenu…"
 
 msgid "Create new topic"
 msgstr "Créer nouvelle page"
@@ -419,11 +419,11 @@ msgstr ""
 
 #: templates/renamebase.modac.tmpl
 msgid "Current topic:"
-msgstr "Sujet actuel"
+msgstr "Sujet actuel:"
 
 #: templates/renamebase.modac.tmpl
 msgid "Current web:"
-msgstr "Web actuel"
+msgstr "Web actuel:"
 
 #: data/System/ModacSkinSolrSearchViewTemplate.txt:85
 msgid "Danish"
@@ -463,7 +463,7 @@ msgstr ""
 
 #: templates/compare.modac.tmpl:10 templates/rdiff.modac.tmpl:11
 msgid "Difference:"
-msgstr "Page de comparaison :"
+msgstr "Page de comparaison:"
 
 #: data/System/ModacSkinCommonWords.txt:15
 msgid "Discard discussion"
@@ -490,7 +490,7 @@ msgstr "Ne pas afficher dans la liste des fichiers attachés"
 
 #: templates/renamedelete.modac.tmpl
 msgid "Do you really want to delete %1?"
-msgstr "Voulez-vous vraiment supprimer% 1?"
+msgstr "Voulez-vous vraiment supprimer %1?"
 
 #: templates/form.modac.tmpl:10 templates/form.modac.tmpl:11
 msgid "Document Control"
@@ -543,7 +543,7 @@ msgstr "Anglais"
 
 #: templates/foswiki.modac.tmpl:75
 msgid "Enlarge edit box"
-msgstr "Agrandir le cadre d'édition."
+msgstr "Agrandir le cadre d'édition"
 
 #: templates/attachtables.modac.tmpl:8
 msgid "Filename"
@@ -743,7 +743,7 @@ msgstr "Nom de la copie"
 
 #: templates/more.modac.tmpl:168
 msgid "Newer revision:"
-msgstr "Nouvelle version :"
+msgstr "Nouvelle version:"
 
 #: data/System/WebLeftBarDefault.txt:4
 msgid "News"
@@ -784,7 +784,7 @@ msgstr "OK"
 
 #: templates/more.modac.tmpl:168
 msgid "Older revision:"
-msgstr "Ancienne version :"
+msgstr "Ancienne version:"
 
 #: templates/metacomments.modac.tmpl:32
 msgid "One comment"
@@ -901,7 +901,7 @@ msgstr ""
 
 #: templates/oopshistory.modac.tmpl:66
 msgid "Render style:"
-msgstr "Style d'affichage"
+msgstr "Style d'affichage:"
 
 #: templates/form.modac.tmpl:1
 msgid "Replace form..."
@@ -936,7 +936,7 @@ msgstr "Restaurer cette version de la page"
 
 #: templates/more.modac.tmpl:188
 msgid "Restore..."
-msgstr "Restaurer"
+msgstr "Restaurer…"
 
 #: templates/attachtables.modac.tmpl:34 templates/oopshistory.modac.tmpl:42
 #: templates/oopshistory.modac.tmpl:53 templates/rdiff.modac.tmpl:17
@@ -957,7 +957,7 @@ msgstr "Versions %1 - %2 (sur un total de %3)sont à voir"
 
 #: templates/oopshistory.modac.tmpl:92
 msgid "Revisions."
-msgstr "Versions"
+msgstr "Versions."
 
 #: data/System/ModacSkinSolrSearchViewTemplate.txt:92
 msgid "Russian"
@@ -997,7 +997,7 @@ msgid "Search the %1 Web for topics that link to here"
 msgstr "Chercher, dans le Web %1, les liens pointant ici"
 
 msgid "Searching..."
-msgstr "recherche"
+msgstr "recherche…"
 
 #: templates/attachagain.modac.tmpl:19
 msgid "Select a new local file to update attachment"
@@ -1108,10 +1108,10 @@ msgid ""
 "%1 Web:"
 msgstr ""
 "Le modèle de contenu suivants sont disponibles pour le sujet nouvellement "
-"créé dans le %1 web"
+"créé dans le %1 web:"
 
 msgid "The name of the topic is preset and cannot be changed."
-msgstr "Le nom du sujet est prédéfinie et ne peut être modifié"
+msgstr "Le nom du sujet est prédéfinie et ne peut être modifié."
 
 #: templates/validate.modac.tmpl:32
 msgid ""
@@ -1123,7 +1123,7 @@ msgstr ""
 
 #: data/System/ModacSkinTopicMenueTemplates.txt
 msgid "These actions are not available while editing."
-msgstr "Ces actions ne sont pas disponibles lors de l'édition"
+msgstr "Ces actions ne sont pas disponibles lors de l'édition."
 
 msgid "This group should not have members."
 msgstr "Ce groupe ne devrait avoir aucun membre."
@@ -1136,7 +1136,7 @@ msgstr ""
 
 #: data/System/ModacSkinSolrSearchViewTemplate.txt:80
 msgid "Timespan"
-msgstr "Timespan"
+msgstr ""
 
 #: data/System/ModacSkinWebCreateNewTopicTemplate.txt:106
 msgid "Title"
@@ -1188,7 +1188,7 @@ msgstr "Nom du sujet que le sujet nouvellement créé sera un sujet fils de."
 #: data/System/ModacSkinContentTemplatesViewTemplate.txt:85
 #: data/System/ModacSkinWebCreateNewTopicTemplate.txt:115
 msgid "Topic name:"
-msgstr "Nom de page :"
+msgstr "Nom de page:"
 
 #: data/System/ModacSkinTopicMenuTemplate.txt
 msgid "Topic parent"
@@ -1256,7 +1256,7 @@ msgid "Upload up to %1 KB."
 msgstr "Taille limite d'un fichier attaché : %1 Ko."
 
 msgid "Uploading file..."
-msgstr "telecharger le fichier"
+msgstr "telecharger le fichier…"
 
 #: templates/moredialog.modac.tmpl:64
 msgid "Url:"
@@ -1264,7 +1264,7 @@ msgstr ""
 
 #: data/System/ModacSkinWebCreateNewTopicTemplate.txt:146
 msgid "Use template:"
-msgstr "Modèles de formulaires disponibles :"
+msgstr "Modèles de formulaires disponibles:"
 
 #: templates/attachagain.modac.tmpl:10
 msgid "Version history"
@@ -1460,7 +1460,7 @@ msgstr ""
 
 #: templates/viewtopicactionbuttons.modac.tmpl:79
 msgid "title='Create new topic' accesskey='c'>&Create"
-msgstr "value='Créer une page' accesskey='c'>&Créer"
+msgstr "title='Créer une page' accesskey='c'>&Créer"
 
 #: templates/viewtopicactionbuttons.modac.tmpl:89
 msgid ""
