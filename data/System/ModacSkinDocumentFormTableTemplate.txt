@@ -1,7 +1,10 @@
+%{
+The span.title string will be picked up by the "You have not filled out the mandatory form field '...'." message as the formfields name.
+}%
 %TMPL:DEF{"modacformtable"}%
 %RENDERFOREDIT{
 form="%QUERY{"form.name" topic="%BASETOPIC%"}%"
-format="<tr><td>$title$mandatory</td><td>$edit</td></tr>"
+format="<tr class='modacForm'><td><span class='title'>$title</span>$mandatory</td><td>$edit</td></tr>"
 map="%TMPL:P{"modacformtable_mappings"}%"
 mandatory="&nbsp;<span class='foswikiAlert'>*</span>"
 topic="%IF{"istopic '%WEB%.%TOPIC%'" then="%WEB%.%TOPIC%" else="%URLPARAM{"templatetopic" encode="quote"}%"}%"

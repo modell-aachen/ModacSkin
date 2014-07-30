@@ -719,7 +719,10 @@ jQuery(function($){
         var alerts = [];
         jQuery('select.foswikiMandatory, input.foswikiMandatory, textarea.foswikiMandatory').each(function(i,e) {
           if (jQuery(e).val()) return;
-          alerts.push(jsi18n.get('edit', "You have not filled out the mandatory form field '[_1]'.", jQuery(e).attr('name')));
+          var $form = jQuery(e).closest('tr.modacForm');
+          var title = $form.find('span.title').text();
+          if(!title) title = jQuery(e).attr('name');
+          alerts.push(jsi18n.get('edit', "You have not filled out the mandatory form field '[_1]'.", title));
         });
         if (alerts.length) {
           alerts.push(jsi18n.get('edit', 'Please check your input.'));
