@@ -329,6 +329,10 @@ msgstr ""
 msgid "Comments"
 msgstr ""
 
+#: data/System/ModacSkinUserViewTemplate.txt
+msgid "Comments for me"
+msgstr ""
+
 #: templates/more.modac.tmpl:162 templates/oopshistory.modac.tmpl:99
 msgid "Compare revisions"
 msgstr ""
@@ -668,6 +672,10 @@ msgstr ""
 msgid "Manual"
 msgstr ""
 
+#: data/System/ModacSkinUserViewTemplate.txt
+msgid "Mark read"
+msgstr ""
+
 #: data/System/ModacSkinSolrSearchViewTemplate.txt:56
 msgid "Media"
 msgstr ""
@@ -764,6 +772,10 @@ msgstr ""
 
 #: core/templates/renamedelete.tmpl:34
 msgid "Not recommended when deleting a topic."
+msgstr ""
+
+#: data/System/ModacSkinUserViewTemplate.txt
+msgid "Not your personal page"
 msgstr ""
 
 #: templates/foswiki.modac.tmpl:44
@@ -1105,6 +1117,10 @@ msgstr ""
 msgid "This group should not have members."
 msgstr ""
 
+#: data/System/ModacSkinUserViewTemplate.txt
+msgid "This is not your personal page, so you can not see anything here."
+msgstr ""
+
 #: core/templates/renamedelete.tmpl:28
 msgid ""
 "This name has been chosen so it doesn't conflict with any other topics "
@@ -1131,6 +1147,10 @@ msgstr ""
 
 #: templates/oopsleaseconflict.modac.tmpl:22
 msgid "To see if %1 has finished editing yet, click "
+msgstr ""
+
+#: data/System/ModacSkinUserViewTemplate.txt
+msgid "To see your tasks, bookmarks and notes, please go to %1."
 msgstr ""
 
 #: templates/renamebase.modac.tmpl
@@ -1562,24 +1582,4 @@ msgstr ""
 
 #: templates/validate.modac.tmpl:44
 msgid "why you are being asked to confirm"
-msgstr ""
-
-#: data/System/ModacSkinUserViewTemplate.txt
-msgid "Not your personal page"
-msgstr ""
-
-#: data/System/ModacSkinUserViewTemplate.txt
-msgid "This is not your personal page, so you can not see anything here."
-msgstr ""
-
-#: data/System/ModacSkinUserViewTemplate.txt
-msgid "To see your tasks, bookmarks and notes, please go to %1."
-msgstr ""
-
-#: data/System/ModacSkinUserViewTemplate.txt
-msgid "Mark read"
-msgstr ""
-
-#: data/System/ModacSkinUserViewTemplate.txt
-msgid "Comments for me"
 msgstr ""

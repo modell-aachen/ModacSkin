@@ -8,8 +8,8 @@ msgstr ""
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "PO-Revision-Date: 2014-07-30 15:59+0200\n"
 "Last-Translator: Modell Aachen <access@modell-aachen.de>\n"
-"Language-Team: French <http://translate.modell-aachen.de/projects/modacskin"
-"/releasenew-york/fr/>\n"
+"Language-Team: French <http://translate.modell-aachen.de/projects/modacskin/"
+"releasenew-york/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -326,12 +326,17 @@ msgstr "Désélectionner toutes"
 
 #: templates/attach.modac.tmpl:57 templates/attachtables.modac.tmpl:8
 #: templates/oopshistory.modac.tmpl:45
+#: data/System/ModacSkinUserViewTemplate.txt
 msgid "Comment"
 msgstr "Commentaire"
 
 #: templates/metacomments.modac.tmpl:40
 msgid "Comments"
 msgstr "Commentaires :"
+
+#: data/System/ModacSkinUserViewTemplate.txt
+msgid "Comments for me"
+msgstr ""
 
 #: templates/more.modac.tmpl:162 templates/oopshistory.modac.tmpl:99
 msgid "Compare revisions"
@@ -349,6 +354,7 @@ msgstr "Modèles (templates) de contenu dans le web %1"
 msgid "Content templates"
 msgstr "Modèles de contenu"
 
+#: data/System/ModacSkinUserViewTemplate.txt
 msgid "Context"
 msgstr "Contexte"
 
@@ -406,6 +412,7 @@ msgstr "Créer nouvelle page"
 msgid "Create this topic"
 msgstr "Créer cette page"
 
+#: data/System/ModacSkinUserViewTemplate.txt
 msgid "Created"
 msgstr "Créé"
 
@@ -676,6 +683,10 @@ msgstr "gérer la page"
 msgid "Manual"
 msgstr "manuel"
 
+#: data/System/ModacSkinUserViewTemplate.txt
+msgid "Mark read"
+msgstr ""
+
 #: data/System/ModacSkinSolrSearchViewTemplate.txt:56
 msgid "Media"
 msgstr "médias"
@@ -772,6 +783,10 @@ msgstr "Normchapter"
 
 #: core/templates/renamedelete.tmpl:34
 msgid "Not recommended when deleting a topic."
+msgstr ""
+
+#: data/System/ModacSkinUserViewTemplate.txt
+msgid "Not your personal page"
 msgstr ""
 
 #: templates/foswiki.modac.tmpl:44
@@ -1128,6 +1143,10 @@ msgstr "Ces actions ne sont pas disponibles lors de l'édition."
 msgid "This group should not have members."
 msgstr "Ce groupe ne devrait avoir aucun membre."
 
+#: data/System/ModacSkinUserViewTemplate.txt
+msgid "This is not your personal page, so you can not see anything here."
+msgstr ""
+
 #: core/templates/renamedelete.tmpl:28
 msgid ""
 "This name has been chosen so it doesn't conflict with any other topics "
@@ -1155,6 +1174,10 @@ msgstr "Pour modifier la page tout de même, cliquez "
 #: templates/oopsleaseconflict.modac.tmpl:22
 msgid "To see if %1 has finished editing yet, click "
 msgstr "Pour savoir si %1 a terminé ses modifications, cliquez "
+
+#: data/System/ModacSkinUserViewTemplate.txt
+msgid "To see your tasks, bookmarks and notes, please go to %1."
+msgstr ""
 
 #: templates/renamebase.modac.tmpl
 msgid "To topic:"
