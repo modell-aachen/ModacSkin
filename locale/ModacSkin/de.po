@@ -10,8 +10,8 @@ msgstr ""
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "PO-Revision-Date: 2014-07-31 17:22+0200\n"
 "Last-Translator: Modell Aachen <access@modell-aachen.de>\n"
-"Language-Team: German <http://translate.modell-aachen.de/projects/modacskin"
-"/releasenew-york/de/>\n"
+"Language-Team: German <http://translate.modell-aachen.de/projects/modacskin/"
+"releasenew-york/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -337,6 +337,10 @@ msgstr "Kommentar"
 #: templates/metacomments.modac.tmpl:40
 msgid "Comments"
 msgstr "Kommentare"
+
+#: data/System/ModacSkinUserViewTemplate.txt
+msgid "Comments for me"
+msgstr "Kommentare für mich"
 
 #: templates/more.modac.tmpl:162 templates/oopshistory.modac.tmpl:99
 msgid "Compare revisions"
@@ -682,6 +686,10 @@ msgstr "Seite verwalten"
 msgid "Manual"
 msgstr "Anleitungen"
 
+#: data/System/ModacSkinUserViewTemplate.txt
+msgid "Mark read"
+msgstr "Als gelesen markieren"
+
 #: data/System/ModacSkinSolrSearchViewTemplate.txt:56
 msgid "Media"
 msgstr "Medien"
@@ -779,6 +787,10 @@ msgstr "Normkapitel"
 #: core/templates/renamedelete.tmpl:34
 msgid "Not recommended when deleting a topic."
 msgstr "Nicht empfohlen, wenn Sie die Seite löschen."
+
+#: data/System/ModacSkinUserViewTemplate.txt
+msgid "Not your personal page"
+msgstr "Nicht Ihre persönliche Seite"
 
 #: templates/foswiki.modac.tmpl:44
 msgid "Number of topics:"
@@ -1132,6 +1144,11 @@ msgstr "Diese Aktionen stehen während der Bearbeitung nicht zur Verfügung."
 msgid "This group should not have members."
 msgstr "Diese Gruppe sollte keine Mitglieder haben."
 
+#: data/System/ModacSkinUserViewTemplate.txt
+msgid "This is not your personal page, so you can not see anything here."
+msgstr ""
+"Das ist nicht Ihre persönliche Seite, daher können Sie hier nichts sehen."
+
 #: core/templates/renamedelete.tmpl:28
 msgid ""
 "This name has been chosen so it doesn't conflict with any other topics "
@@ -1161,6 +1178,11 @@ msgstr "Um die Seite trotzdem zu bearbeiten drücken Sie "
 #: templates/oopsleaseconflict.modac.tmpl:22
 msgid "To see if %1 has finished editing yet, click "
 msgstr "Um zu sehen, ob %1 die Bearbeitung abgeschlossen hat drücken Sie "
+
+#: data/System/ModacSkinUserViewTemplate.txt
+msgid "To see your tasks, bookmarks and notes, please go to %1."
+msgstr ""
+"Um Ihre Aufgaben, Lesezeichen und Notizen zu sehen, gehen Sie bitte auf %1."
 
 #: templates/renamebase.modac.tmpl
 msgid "To topic:"
@@ -1607,28 +1629,6 @@ msgstr "Woche"
 #: templates/validate.modac.tmpl:44
 msgid "why you are being asked to confirm"
 msgstr "warum Sie zur Bestätigung aufgefordert werden"
-
-#: data/System/ModacSkinUserViewTemplate.txt
-msgid "Comments for me"
-msgstr "Kommentare für mich"
-
-#: data/System/ModacSkinUserViewTemplate.txt
-msgid "Not your personal page"
-msgstr "Nicht Ihre persönliche Seite"
-
-#: data/System/ModacSkinUserViewTemplate.txt
-msgid "This is not your personal page, so you can not see anything here."
-msgstr ""
-"Das ist nicht Ihre persönliche Seite, daher können Sie hier nichts sehen."
-
-#: data/System/ModacSkinUserViewTemplate.txt
-msgid "To see your tasks, bookmarks and notes, please go to %1."
-msgstr ""
-"Um Ihre Aufgaben, Lesezeichen und Notizen zu sehen, gehen Sie bitte auf %1."
-
-#: data/System/ModacSkinUserViewTemplate.txt
-msgid "Mark read"
-msgstr "Als gelesen markieren"
 
 #~ msgid "Remove members from this group"
 #~ msgstr "Entferne Mitglieder aus dieser Gruppe"
