@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Foswiki $Id\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2014-08-01 15:19+0200\n"
+"PO-Revision-Date: 2014-08-01 17:58+0200\n"
 "Last-Translator: Modell Aachen <access@modell-aachen.de>\n"
 "Language-Team: German <http://translate.modell-"
 "aachen.de/projects/modacskin/releasebarcelona/de/>\n"
@@ -205,7 +205,7 @@ msgstr "Links"
 
 #: templates/backlinksweb.modac.tmpl:4
 msgid "Backlinks to %1 in %2 Web"
-msgstr "Links auf %1 im %2 Bereich"
+msgstr "Links auf %1 im %2-Bereich"
 
 #: templates/backlinksallwebs.modac.tmpl:4
 msgid "Backlinks to %1 in all Webs"
@@ -237,7 +237,7 @@ msgstr "Status ändern"
 
 #: templates/more.modac.tmpl:199
 msgid "Child topics in %1 web"
-msgstr "untergeordnete Seiten im %1 Bereich"
+msgstr "untergeordnete Seiten im %1-Bereich"
 
 #: data/System/ModacSkinSolrSearchViewTemplate.txt:84
 msgid "Chinese/Japanese/Korean"
@@ -301,7 +301,7 @@ msgstr "Neue Seite anlegen"
 #: data/System/ModacSkinWebCreateNewTopicTemplate.txt:40
 #: data/System/ModacSkinWebCreateNewTopicTemplate.txt:87
 msgid "Create New Topic in %1 Web"
-msgstr "Neue Seite im Bereich \"%1\" anlegen"
+msgstr "Neue Seite im %1-Bereich anlegen"
 
 #: templates/attach.modac.tmpl:67
 msgid "Create a link to the attached file"
@@ -485,7 +485,7 @@ msgstr "Hilfe verstecken"
 
 #: templates/oopshistory.modac.tmpl:16
 msgid "History"
-msgstr "Versionsgeschichte"
+msgstr "Historie"
 
 #: templates/validate.modac.tmpl:44
 msgid "If you are unsure what this means, read: %1"
@@ -693,7 +693,7 @@ msgstr "Seite umbenennen oder verschieben"
 
 #: templates/more.modac.tmpl:87
 msgid "Rename or move topic..."
-msgstr "Seite umbenennen oder verschieben"
+msgstr "Seite umbenennen oder verschieben..."
 
 #: templates/oopshistory.modac.tmpl:66
 msgid "Render style:"
@@ -701,7 +701,7 @@ msgstr "Anzeige-Stil:"
 
 #: templates/form.modac.tmpl:1
 msgid "Replace form..."
-msgstr "Formular auswechseln"
+msgstr "Formular auswechseln…"
 
 #: templates/validate.modac.tmpl:6 templates/validate.modac.tmpl:7
 msgid "Request Validation"
@@ -729,7 +729,7 @@ msgstr "Vorherige Revision wiederherstellen"
 
 #: templates/more.modac.tmpl:188
 msgid "Restore..."
-msgstr "Wiederherstellen"
+msgstr "Wiederherstellen…"
 
 #: templates/attachtables.modac.tmpl:34
 #: templates/oopshistory.modac.tmpl:42 templates/oopshistory.modac.tmpl:53
@@ -739,7 +739,7 @@ msgstr "Revision"
 
 #: templates/oopshistory.modac.tmpl:25
 msgid "Revision history of "
-msgstr "Versionsgeschichte von "
+msgstr "Historie von "
 
 #: templates/more.modac.tmpl:148
 msgid "Revisions"
@@ -749,7 +749,7 @@ msgstr "Revisionen"
 msgid "Revisions %1 - %2 (out of %3) are shown"
 msgstr ""
 "Aktuell werden die Revisionen <b>%1</b> bis <b>%2</b> von <b>%3</b> "
-"angezeigt."
+"angezeigt"
 
 #: templates/oopshistory.modac.tmpl:92
 msgid "Revisions."
@@ -794,7 +794,7 @@ msgstr "Der %1 Bereich nach Seiten durchsuchen, die hierher verweisen"
 #: templates/attachagain.modac.tmpl:19
 msgid "Select a new local file to update attachment"
 msgstr ""
-"Wählen Sie eine neue Datei auf Ihrem Rechner, um den Anhang zu aktualisieren."
+"Wählen Sie eine neue Datei auf Ihrem Rechner, um den Anhang zu aktualisieren"
 
 #: templates/renamebase.modac.tmpl:26
 msgid "Select all"
@@ -806,7 +806,7 @@ msgstr "übergeordnete Seite auswählen"
 
 #: templates/edit.modac.tmpl:62
 msgid "Select, copy and paste your signature text to the bottom of your entry"
-msgstr "Fügen Sie Ihre Signatur unter dem Text ein, indem Sie sie kopieren."
+msgstr "Fügen Sie Ihre Signatur unter dem Text ein, indem Sie sie kopieren"
 
 #: templates/more.modac.tmpl:171
 msgid "Sequential"
@@ -922,7 +922,7 @@ msgstr "Anhänge"
 
 #: templates/oopshistory.modac.tmpl:40 templates/oopshistory.modac.tmpl:51
 msgid "Topic history"
-msgstr "Versionsgeschichte der Seite"
+msgstr "Historie der Seite"
 
 #: data/System/ModacSkinWebCreateNewTopicTemplate.txt:202
 msgid "Topic name that the newly created topic will be a child of."
@@ -945,7 +945,7 @@ msgstr "Revision:"
 
 #: templates/moredialog.modac.tmpl:52
 msgid "Topic:"
-msgstr "Topic:"
+msgstr "Seite:"
 
 #: templates/oopsleaseconflict.modac.tmpl:23
 msgid "Try Again"
@@ -989,7 +989,7 @@ msgstr "Benutzername"
 
 #: templates/attachagain.modac.tmpl:10
 msgid "Version history"
-msgstr "Versionsgeschichte"
+msgstr "Historie"
 
 #: templates/attachagain.modac.tmpl:8
 msgid "Version history of %1"
@@ -1420,15 +1420,15 @@ msgstr "Nicht empfohlen, wenn Sie die Seite löschen."
 
 #: core/templates/renamewebbase.tmpl:43
 msgid "Change links in topics that refer to !%1 in any Web:"
-msgstr "Verweise in Seiten ändern, die auf !%1 zeigen (alle Webs):"
+msgstr "Verweise in Seiten ändern, die auf !%1 zeigen (alle Bereiche):"
 
 #: core/templates/renamewebbase.tmpl:40
 msgid "Change links in topics that refer to !%1 in the %2 Web:"
-msgstr "Verweise in Seiten ändern, die auf !%1 zeigen (nur im %2 Web):"
+msgstr "Verweise in Seiten ändern, die auf !%1 zeigen (nur im %2-Bereich):"
 
 #: core/templates/renamebase.tmpl:57
 msgid "Change links in topics that refer to %1 in any Web:"
-msgstr "Verweise in Seiten ändern, die auf %1 zeigen (alle Webs):"
+msgstr "Verweise in Seiten ändern, die auf %1 zeigen (alle Bereiche):"
 
 #: core/templates/renamebase.tmpl:53
 msgid "Change links in topics that refer to %1 in the %2 Web:"
