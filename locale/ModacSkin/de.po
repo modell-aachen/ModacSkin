@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Foswiki $Id\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2014-07-29 17:16+0200\n"
+"PO-Revision-Date: 2014-08-01 15:19+0200\n"
 "Last-Translator: Modell Aachen <access@modell-aachen.de>\n"
 "Language-Team: German <http://translate.modell-"
 "aachen.de/projects/modacskin/releasebarcelona/de/>\n"
@@ -100,7 +100,7 @@ msgstr "(Einstellungen ändern)"
 
 #: templates/more.modac.tmpl:100
 msgid "<em>in %1 web</em> only"
-msgstr "nur <em>im %1 Bereich</em>"
+msgstr "nur <em>im %1-Bereich</em>"
 
 #: templates/more.modac.tmpl:98
 msgid "<em>in all public webs</em>"
@@ -170,7 +170,7 @@ msgstr "Neue Datei anhängen"
 
 #: templates/attachtables.modac.tmpl:33
 msgid "Attachment history"
-msgstr "Anhangs-Versionsgeschichte"
+msgstr "Anhangs-Historie"
 
 #: templates/attachtables.modac.tmpl:6
 msgid "Attachments"
@@ -292,7 +292,7 @@ msgstr "Seite kopieren"
 
 #: templates/more.modac.tmpl:46 templates/moredialog.modac.tmpl:18
 msgid "Copy topic..."
-msgstr "Seite kopieren"
+msgstr "Seite kopieren…"
 
 #: data/System/WebLeftBarDefault.txt:21
 msgid "Create New Topic"
@@ -360,7 +360,7 @@ msgstr "Seite löschen"
 
 #: templates/more.modac.tmpl:70
 msgid "Delete topic..."
-msgstr "Seite löschen"
+msgstr "Seite löschen…"
 
 #: templates/attach.modac.tmpl:59
 msgid "Describe the file so other people know what it is."
@@ -421,7 +421,7 @@ msgstr "Hilfe fürs Bearbeiten"
 
 #: templates/more.modac.tmpl:27
 msgid "Edit settings for this topic..."
-msgstr "Einstellungen bearbeiten"
+msgstr "Einstellungen bearbeiten…"
 
 #: data/System/ModacSkinTopicMenuTemplate.txt:8 templates/more.modac.tmpl:23
 msgid "Edit topic preference settings"
@@ -441,7 +441,7 @@ msgstr "Dateiname"
 
 #: templates/more.modac.tmpl:97 templates/more.modac.tmpl:99
 msgid "Find topics that link to %1 ..."
-msgstr "Seiten finden die auf %1 verweisen"
+msgstr "Seiten finden, die auf %1 verweisen…"
 
 #: data/System/ModacSkinSolrSearchViewTemplate.txt:87
 msgid "Finnish"
@@ -556,7 +556,7 @@ msgstr "Weitere Aktionen für Seite %1"
 #: templates/rdiff.modac.tmpl:24
 #: templates/viewtopicactionbuttons.modac.tmpl:143
 msgid "More topic actions..."
-msgstr "Weitere Aktionen"
+msgstr "Weitere Aktionen…"
 
 #: templates/attachagain.modac.tmpl:23
 msgid "Move"
