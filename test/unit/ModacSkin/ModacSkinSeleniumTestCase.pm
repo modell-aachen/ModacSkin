@@ -361,7 +361,7 @@ sub waitForPopup {
     #    $this->waitFor( sub { try { return shift->{selenium}->is_visible('css=div.modacAjaxDialog'); } otherwise {return 0; }; }, 'Popup did not appear', undef, 8000 );
 
     my $n = $this->{selenium}->execute_script('return jQuery("div.modacLoadingDialog:visible, div.modacAjaxDialog:visible").length');
-    $this->waitFor( sub { $this->{selenium}->execute_script('return jQuery("div.modacAjaxDialog:visible").length') }, 'Popup did not appear' );
+    $this->waitFor( sub { $this->{selenium}->execute_script('return jQuery("div.modacAjaxDialog:visible").length') }, 'Popup did not appear', undef, 5_000 );
 }
 
 # Login and open the $web.$topic (defaults to TestWeb.WebHome)
@@ -427,7 +427,7 @@ jQuery(function($) {
 AJAX
 
     $this->{selenium}->find_element('Logout', 'link')->click();
-    $this->waitFor( sub { $this->{selenium}->execute_script('return jQuery(".ajaxFinished").length') }, 'Ajax logout did not succeed' );
+    $this->waitFor( sub { $this->{selenium}->execute_script('return jQuery(".ajaxFinished").length') }, 'Ajax logout did not succeed', undef, 10_000 );
 }
 
 # 'hovers' the mouse over 'More topic actions' and waits for the menue to appear.
