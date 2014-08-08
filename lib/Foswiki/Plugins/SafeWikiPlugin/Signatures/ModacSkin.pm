@@ -18,4 +18,5 @@
     'P7GnRZZJ5bDCdmPN/xeYo1sY2JjVF7PcvDvT5EQmMxc', # solrSpellCorrectionTemplate
     'vMe5cb3AfOZywpyj+fQqpCI8kW3+HfaXitbqRJ8QmgQ', # solrSpellCorrectionTemplate
     'HTZRl5vFFS4VEvIbTuvEWj1hJG5cdHfD9swiZ+36qE8', # solrHierarchyTemplate
+    'nLREjh2CpHb6tA4jE0/kLndwT7rFXYcViUOVaIe78wg', # history.go(-1); return false;
 ];
