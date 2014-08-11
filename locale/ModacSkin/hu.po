@@ -169,11 +169,11 @@ msgstr ""
 
 #: data/System/ModacSkinCommonWords.txt:20
 msgid "Approve contentual aspects of draft"
-msgstr ""
+msgstr "Schválit obsahové aspekty návrhu"
 
 #: data/System/ModacSkinCommonWords.txt:22
 msgid "Approve formal aspects of discussion"
-msgstr ""
+msgstr "Schválit formální aspekty diskuse"
 
 #: data/System/ModacSkinCommonWords.txt:19
 msgid "Approve formal aspects of draft"
@@ -467,18 +467,18 @@ msgstr ""
 
 #: data/System/ModacSkinCommonWords.txt:15
 msgid "Discard discussion"
-msgstr ""
+msgstr "Zlikvidujte diskusi"
 
 #: data/System/ModacSkinCommonWords.txt:14
 msgid "Discard draft"
-msgstr ""
+msgstr "Zlikvidujte návrh"
 
 msgid "Discarded tasks"
 msgstr ""
 
 #: data/System/ModacSkinCommonWords.txt:16
 msgid "Discuss"
-msgstr ""
+msgstr "Projednat"
 
 #: data/System/ModacSkinCommonWords.txt:8
 msgid "Discussion"
@@ -915,11 +915,11 @@ msgstr ""
 
 #: data/System/ModacSkinCommonWords.txt:13
 msgid "Request approval"
-msgstr ""
+msgstr "Požadavek na schválení"
 
 #: data/System/ModacSkinCommonWords.txt:17
 msgid "Request further revision"
-msgstr ""
+msgstr "Žádost o další revizi"
 
 msgid "Responsible"
 msgstr ""
