@@ -731,7 +731,7 @@ msgid "My notes"
 msgstr ""
 
 msgid "My tasks"
-msgstr ""
+msgstr "Moje úkoly"
 
 #: data/System/WebTopBarDefault.txt:1
 msgid "MyPage"
@@ -1058,7 +1058,7 @@ msgid "Start discussion"
 msgstr ""
 
 msgid "Status"
-msgstr ""
+msgstr "Status"
 
 #: data/System/ModacSkinSolrSearchViewTemplate.txt:93
 msgid "Swedish"
@@ -1133,7 +1133,7 @@ msgstr ""
 
 #: data/System/ModacSkinWebCreateNewTopicTemplate.txt:106
 msgid "Title"
-msgstr ""
+msgstr "Název"
 
 msgid "Title of copy"
 msgstr ""
@@ -1578,7 +1578,7 @@ msgid "view"
 msgstr ""
 
 msgid "week"
-msgstr ""
+msgstr "Týden"
 
 #: templates/validate.modac.tmpl:44
 msgid "why you are being asked to confirm"
