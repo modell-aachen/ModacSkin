@@ -433,7 +433,7 @@ msgstr ""
 #: templates/attachtables.modac.tmpl:34 templates/attachtables.modac.tmpl:8
 #: templates/oopshistory.modac.tmpl:43 templates/oopshistory.modac.tmpl:54
 msgid "Date"
-msgstr ""
+msgstr "Datum"
 
 #: templates/more.modac.tmpl:171
 msgid "Debug"
@@ -512,7 +512,7 @@ msgstr ""
 
 #: templates/viewtopicactionbuttons.modac.tmpl:113
 msgid "Edit"
-msgstr ""
+msgstr "Editovat"
 
 #: templates/oopsleaseconflict.modac.tmpl:31
 msgid "Edit Anyway"
@@ -547,7 +547,7 @@ msgstr ""
 
 #: templates/attachtables.modac.tmpl:8
 msgid "Filename"
-msgstr ""
+msgstr "Název souboru"
 
 #: templates/more.modac.tmpl:97 templates/more.modac.tmpl:99
 msgid "Find topics that link to %1 ..."
@@ -625,7 +625,7 @@ msgstr ""
 
 #: data/System/WebLeftBarDefault.txt:6
 msgid "Index"
-msgstr ""
+msgstr "Index"
 
 #: data/System/ModacSkinWebCreateNewTopicTemplate.txt:216
 msgid "Initialize the new topic using a template."
@@ -670,7 +670,7 @@ msgstr ""
 
 #: data/System/WebLeftBarDefault.txt:5
 msgid "Manual"
-msgstr ""
+msgstr "Příručka"
 
 #: data/System/ModacSkinUserViewTemplate.txt
 msgid "Mark read"
@@ -826,7 +826,7 @@ msgstr ""
 
 #: data/System/WebLeftBarDefault.txt:24
 msgid "PDF-Print"
-msgstr ""
+msgstr "PDF-tisk"
 
 #: data/System/ModacSkinSolrSearchViewTemplate.txt:62
 msgid "Person in charge of page"
@@ -879,7 +879,7 @@ msgstr ""
 
 #: data/System/WebLeftBarDefault.txt:22
 msgid "Recently changed"
-msgstr ""
+msgstr "V poslední době změněno"
 
 msgid "Recently finished tasks"
 msgstr ""
@@ -1051,7 +1051,7 @@ msgstr ""
 
 #: data/System/WebLeftBarDefault.txt:3
 msgid "Start"
-msgstr ""
+msgstr "Start"
 
 #: data/System/ModacSkinCommonWords.txt:18
 msgid "Start discussion"
@@ -1083,7 +1083,7 @@ msgstr ""
 
 #: data/System/WebLeftBarDefault.txt:23
 msgid "Templates"
-msgstr ""
+msgstr "Šablony"
 
 #: templates/moredialog.modac.tmpl:56 templates/moredialog.modac.tmpl:68
 msgid "Text:"
@@ -1425,7 +1425,7 @@ msgid "or"
 msgstr ""
 
 msgid "recently"
-msgstr ""
+msgstr "Nedávno"
 
 #: templates/attachtables.modac.tmpl:39 templates/oopshistory.modac.tmpl:58
 msgid "restore"
