@@ -6,10 +6,10 @@ msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2014-07-30 15:59+0200\n"
+"PO-Revision-Date: 2014-08-11 16:46+0200\n"
 "Last-Translator: Modell Aachen <access@modell-aachen.de>\n"
-"Language-Team: French <http://translate.modell-aachen.de/projects/modacskin/"
-"releasenew-york/fr/>\n"
+"Language-Team: French <http://translate.modell-aachen.de/projects/modacskin"
+"/releasenew-york/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -53,7 +53,7 @@ msgstr "(%1 vs. %2)"
 
 #: templates/oopsaccessdenied.modac.tmpl:7
 msgid "(access denied)"
-msgstr ""
+msgstr "accès refusé"
 
 #: templates/attach.modac.tmpl:10 templates/attachagain.modac.tmpl:4
 msgid "(attachments)"
@@ -94,7 +94,7 @@ msgstr "(code source)"
 #: templates/edit.modac.tmpl:22 templates/foswiki.modac.tmpl:102
 #: templates/foswiki.modac.tmpl:82
 msgid "(revision %1)"
-msgstr "(version %1)"
+msgstr "(revision %1)"
 
 #: templates/settings.modac.tmpl:10
 msgid "(set preferences)"
@@ -287,10 +287,13 @@ msgstr "Modifier seulement le commentaire"
 #: core/templates/renamewebbase.tmpl:43
 msgid "Change links in topics that refer to !%1 in any Web:"
 msgstr ""
+"Modifier les liens dans le contenu qui fait référence à !%1 dans tout le "
+"Web:"
 
 #: core/templates/renamewebbase.tmpl:40
 msgid "Change links in topics that refer to !%1 in the %2 Web:"
 msgstr ""
+"Modifier les liens dans le contenu qui fait référence à !%1 dans le %2 Web:"
 
 #: core/templates/renamebase.tmpl:57
 msgid "Change links in topics that refer to %1 in any Web:"
@@ -307,6 +310,8 @@ msgstr "Modifier le statut"
 #: core/templates/renamebase.tmpl:45 core/templates/renamedelete.tmpl:34
 msgid "Checked topics will be updated to point to the new topic location."
 msgstr ""
+"Contenu verifié sera mettre à jour pour pointer le nouveau endroit du "
+"contenu."
 
 #: templates/more.modac.tmpl:199
 msgid "Child topics in %1 web"
@@ -336,7 +341,7 @@ msgstr "Commentaires :"
 
 #: data/System/ModacSkinUserViewTemplate.txt
 msgid "Comments for me"
-msgstr ""
+msgstr "Commentaires pour moi"
 
 #: templates/more.modac.tmpl:162 templates/oopshistory.modac.tmpl:99
 msgid "Compare revisions"
@@ -422,7 +427,7 @@ msgstr "Emplacement actuel :"
 
 #: templates/more.modac.tmpl:110
 msgid "Current parent:"
-msgstr ""
+msgstr "La page maître actuellement:"
 
 #: templates/renamebase.modac.tmpl
 msgid "Current topic:"
@@ -644,7 +649,7 @@ msgstr "Initialiser la nouvelle page à l'aide d'un modèle."
 
 #: templates/moredialog.modac.tmpl:43
 msgid "Insert link:"
-msgstr ""
+msgstr "Insérer un lien:"
 
 #: data/System/ModacSkinSolrSearchViewTemplate.txt:89
 msgid "Italian"
@@ -658,7 +663,7 @@ msgid "Language"
 msgstr "Langue"
 
 msgid "Last changed"
-msgstr ""
+msgstr "Dernière modification"
 
 #: templates/foswiki.modac.tmpl:11
 msgid "Log In"
@@ -685,7 +690,7 @@ msgstr "manuel"
 
 #: data/System/ModacSkinUserViewTemplate.txt
 msgid "Mark read"
-msgstr ""
+msgstr "Marquer comme lu"
 
 #: data/System/ModacSkinSolrSearchViewTemplate.txt:56
 msgid "Media"
@@ -729,7 +734,7 @@ msgstr "Déplacer le sujet"
 
 #: core/templates/renamedelete.tmpl:15
 msgid "Move topic to web:"
-msgstr ""
+msgstr "Déplacer le contenu au Web:"
 
 #: templates/more.modac.tmpl:87
 msgid "Move topic..."
@@ -754,11 +759,11 @@ msgstr "Nom de la copie"
 
 #: templates/more.modac.tmpl:168
 msgid "Newer revision:"
-msgstr "Nouvelle version:"
+msgstr "Nouvelle révision:"
 
 #: data/System/WebLeftBarDefault.txt:4
 msgid "News"
-msgstr ""
+msgstr "Les nouvelles"
 
 #: templates/more.modac.tmpl:200
 msgid "No child topics"
@@ -783,11 +788,11 @@ msgstr "Normchapter"
 
 #: core/templates/renamedelete.tmpl:34
 msgid "Not recommended when deleting a topic."
-msgstr ""
+msgstr "Pas recommandé pendant l'effacement du contenu."
 
 #: data/System/ModacSkinUserViewTemplate.txt
 msgid "Not your personal page"
-msgstr ""
+msgstr "Ce n'est pas votre page personnelle"
 
 #: templates/foswiki.modac.tmpl:44
 msgid "Number of topics:"
@@ -799,7 +804,7 @@ msgstr "OK"
 
 #: templates/more.modac.tmpl:168
 msgid "Older revision:"
-msgstr "Ancienne version:"
+msgstr "Ancienne révision:"
 
 #: templates/metacomments.modac.tmpl:32
 msgid "One comment"
@@ -823,7 +828,7 @@ msgstr "Tâches ouvertes"
 
 #: core/templates/renamedelete.tmpl:18
 msgid "Optionally change topic name:"
-msgstr ""
+msgstr "Optionnellement modifier le nom du contenu:"
 
 #: templates/renameattachmentdelete.modac.tmpl:34
 msgid "Optionally enter a different attachment name:"
@@ -847,7 +852,7 @@ msgstr "Responsable de la page"
 
 #: templates/more.modac.tmpl:114
 msgid "Pick from a list"
-msgstr ""
+msgstr "Choisir à partir d'une liste"
 
 #: data/System/ModacSkinContentTemplatesViewTemplate.txt:114
 #: data/System/ModacSkinWebCreateNewTopicTemplate.txt:183
@@ -856,7 +861,7 @@ msgstr "S'il vous plaît entrez le nom de l'article, sans caractères spéciaux.
 
 #: templates/metatext.modac.tmpl
 msgid "Please wait..."
-msgstr ""
+msgstr "Patientez, s'il vous plaît..."
 
 #: data/System/ModacSkinSolrSearchViewTemplate.txt:91
 msgid "Portuguese"
@@ -876,7 +881,7 @@ msgstr "Pressez OK pour confirmer que ce changement était intentionnel."
 
 #: data/System/ModacSkinSolrSearchViewTemplate.txt:61
 msgid "Process State"
-msgstr ""
+msgstr "Statut du processus"
 
 #: templates/attach.modac.tmpl:65
 msgid "Properties"
@@ -909,10 +914,10 @@ msgstr "Supprimer le signet"
 
 #: data/System/ModacSkinTopicMenuTemplate.txt:11 templates/more.modac.tmpl:79
 msgid "Rename or move topic"
-msgstr ""
+msgstr "Renommer ou déplacer la page"
 
 msgid "Rename or move topic..."
-msgstr ""
+msgstr "Renommer ou déplacer la page..."
 
 #: templates/oopshistory.modac.tmpl:66
 msgid "Render style:"
@@ -935,7 +940,7 @@ msgid "Request further revision"
 msgstr "Demander d´autre version"
 
 msgid "Responsible"
-msgstr ""
+msgstr "Responsable"
 
 #: templates/more.modac.tmpl:180
 msgid "Restore topic"
@@ -956,7 +961,7 @@ msgstr "Restaurer…"
 #: templates/attachtables.modac.tmpl:34 templates/oopshistory.modac.tmpl:42
 #: templates/oopshistory.modac.tmpl:53 templates/rdiff.modac.tmpl:17
 msgid "Revision"
-msgstr "Version"
+msgstr "Révision"
 
 #: templates/oopshistory.modac.tmpl:25
 msgid "Revision history of "
@@ -1107,7 +1112,7 @@ msgstr "formulaires"
 
 #: templates/moredialog.modac.tmpl:56 templates/moredialog.modac.tmpl:68
 msgid "Text:"
-msgstr ""
+msgstr "Le texte:"
 
 #: templates/renameattachmentdelete.modac.tmpl:43
 msgid ""
@@ -1145,17 +1150,19 @@ msgstr "Ce groupe ne devrait avoir aucun membre."
 
 #: data/System/ModacSkinUserViewTemplate.txt
 msgid "This is not your personal page, so you can not see anything here."
-msgstr ""
+msgstr "Ce n'est pas votre page personnelle, donc vous ne pouvez rien voir."
 
 #: core/templates/renamedelete.tmpl:28
 msgid ""
 "This name has been chosen so it doesn't conflict with any other topics "
 "already in the %1 web."
 msgstr ""
+"Ce nom a été choisi pour ne pas être en conflit avec d'autres pages déjà "
+"dans le %1 web."
 
 #: data/System/ModacSkinSolrSearchViewTemplate.txt:80
 msgid "Timespan"
-msgstr ""
+msgstr "Laps de temps"
 
 #: data/System/ModacSkinWebCreateNewTopicTemplate.txt:106
 msgid "Title"
@@ -1178,6 +1185,7 @@ msgstr "Pour savoir si %1 a terminé ses modifications, cliquez "
 #: data/System/ModacSkinUserViewTemplate.txt
 msgid "To see your tasks, bookmarks and notes, please go to %1."
 msgstr ""
+"Pour voir vos devoirs, marque-pages et notes, s'il vous plaît allez sur %1."
 
 #: templates/renamebase.modac.tmpl
 msgid "To topic:"
@@ -1223,14 +1231,14 @@ msgstr "Page mère :"
 
 #: data/System/ModacSkinTopicMenuTemplate.txt
 msgid "Topic preferences"
-msgstr ""
+msgstr "Paramètres de la page"
 
 #: templates/rdiff.modac.tmpl:17 templates/view.modac.tmpl:71
 msgid "Topic revision:"
 msgstr "Version de la page :"
 
 msgid "Topic title"
-msgstr ""
+msgstr "Titre de la page"
 
 # OlivierRaginel proposait la traduction "Cette page", toutefois nous n'avons pas pu vérifier le contexte exact d'affichage de cette chaîne. En l'absence de cette référence, nous avons décidé de garder une traduction littérale.
 #: templates/moredialog.modac.tmpl:52
@@ -1239,7 +1247,7 @@ msgstr "Page:"
 
 # OlivierRaginel proposait la traduction "Cette page", toutefois nous n'avons pas pu vérifier le contexte exact d'affichage de cette chaîne. En l'absence de cette référence, nous avons décidé de garder une traduction littérale.
 msgid "Topics"
-msgstr ""
+msgstr "Pages"
 
 #: templates/oopsleaseconflict.modac.tmpl:23
 msgid "Try Again"
@@ -1283,7 +1291,7 @@ msgstr "telecharger le fichier…"
 
 #: templates/moredialog.modac.tmpl:64
 msgid "Url:"
-msgstr ""
+msgstr "adresse URL:"
 
 #: data/System/ModacSkinWebCreateNewTopicTemplate.txt:146
 msgid "Use template:"
@@ -1291,7 +1299,7 @@ msgstr "Modèles de formulaires disponibles:"
 
 #: templates/attachagain.modac.tmpl:10
 msgid "Version history"
-msgstr ""
+msgstr "Version historique"
 
 #: templates/compare.modac.tmpl:71
 msgid "View difference"
@@ -1307,11 +1315,11 @@ msgstr "Afficher la version précédente de la page"
 
 #: templates/oopsleaseconflict.modac.tmpl:34
 msgid "View raw text without formatting"
-msgstr ""
+msgstr "Voir le texte sans formatage"
 
 #: templates/more.modac.tmpl:153
 msgid "View revision:"
-msgstr "Afficher la version :"
+msgstr "Afficher la révision:"
 
 #: templates/oopsleaseconflict.modac.tmpl:34 templates/rdiff.modac.tmpl:24
 msgid "View topic"
@@ -1330,7 +1338,7 @@ msgstr "Web"
 
 #: templates/moredialog.modac.tmpl:48
 msgid "Web:"
-msgstr ""
+msgstr "Web:"
 
 #: data/System/WebLeftBarDefault.txt:35 data/System/WebLeftBarDefault.txt:36
 msgid "Webs"
@@ -1408,7 +1416,7 @@ msgstr "image"
 #: data/System/ModacSkinSolrSearchBaseTemplate.txt:35
 #: data/System/ModacSkinSolrSearchBaseTemplate.txt:51
 msgid "in %1"
-msgstr ""
+msgstr "dans %1"
 
 #: templates/more.modac.tmpl:153
 msgid "in raw text format"
@@ -1441,7 +1449,7 @@ msgstr "besoin d´approbation"
 
 #: templates/more.modac.tmpl:110
 msgid "no current parent"
-msgstr ""
+msgstr "Pas de page maître actuellement:"
 
 #: data/System/ModacSkinSolrSearchViewTemplate.txt:78
 msgid "none"
@@ -1521,6 +1529,8 @@ msgstr "title='Différences entrelacées' accesskey='i'>D&ifférences entrelacé
 #: templates/viewtopicactionbuttons.modac.tmpl:64
 msgid "title='More actions for this topic' accesskey='m'>&More topic actions"
 msgstr ""
+"title='Il y a plus d'actions pour cette page='m'>&Plus d'actions pour cette "
+"page"
 
 msgid "title='My Page' >My Page"
 msgstr "title='Ma Page' >Ma Page"
