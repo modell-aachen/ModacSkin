@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2014-08-11 16:46+0200\n"
+"PO-Revision-Date: 2014-08-11 17:07+0200\n"
 "Last-Translator: Modell Aachen <access@modell-aachen.de>\n"
 "Language-Team: French <http://translate.modell-aachen.de/projects/modacskin"
 "/releasenew-york/fr/>\n"
@@ -94,7 +94,7 @@ msgstr "(code source)"
 #: templates/edit.modac.tmpl:22 templates/foswiki.modac.tmpl:102
 #: templates/foswiki.modac.tmpl:82
 msgid "(revision %1)"
-msgstr "(revision %1)"
+msgstr "(révision %1)"
 
 #: templates/settings.modac.tmpl:10
 msgid "(set preferences)"
@@ -1031,7 +1031,7 @@ msgstr "Tout sélectionner"
 
 #: data/System/ModacSkinTopicMenuTemplate.txt:9 templates/more.modac.tmpl:113
 msgid "Select topic parent"
-msgstr "Choisissez la page mère"
+msgstr "Selectionnez la page mère"
 
 #: templates/edit.modac.tmpl:62
 msgid "Select, copy and paste your signature text to the bottom of your entry"
@@ -1041,7 +1041,7 @@ msgstr ""
 
 #: templates/more.modac.tmpl:171
 msgid "Sequential"
-msgstr "À la suite"
+msgstr "séquentiel"
 
 #: templates/more.modac.tmpl:117
 msgid "Set new parent"
@@ -1176,7 +1176,7 @@ msgstr "Titre: "
 
 #: templates/oopsleaseconflict.modac.tmpl:26
 msgid "To edit the topic anyway, click "
-msgstr "Pour modifier la page tout de même, cliquez "
+msgstr "Pour modifier la page de toute façon, cliquez "
 
 #: templates/oopsleaseconflict.modac.tmpl:22
 msgid "To see if %1 has finished editing yet, click "
@@ -1280,7 +1280,7 @@ msgstr "Migrer la page de groupe..."
 
 #: templates/attachagain.modac.tmpl:25 templates/attachnew.modac.tmpl:5
 msgid "Upload file"
-msgstr "Envoyer le fichier"
+msgstr "telecharger le fichier"
 
 #: templates/attach.modac.tmpl:50 templates/attachagain.modac.tmpl:31
 msgid "Upload up to %1 KB."
