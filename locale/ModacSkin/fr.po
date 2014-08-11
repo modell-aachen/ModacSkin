@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2014-08-11 17:07+0200\n"
+"PO-Revision-Date: 2014-08-11 17:13+0200\n"
 "Last-Translator: Modell Aachen <access@modell-aachen.de>\n"
 "Language-Team: French <http://translate.modell-aachen.de/projects/modacskin"
 "/releasenew-york/fr/>\n"
@@ -784,7 +784,7 @@ msgstr "pas de page mère :"
 
 #: data/System/ModacSkinSolrSearchViewTemplate.txt:64
 msgid "Normchapter"
-msgstr "Normchapter"
+msgstr "Chapitre du norm"
 
 #: core/templates/renamedelete.tmpl:34
 msgid "Not recommended when deleting a topic."
