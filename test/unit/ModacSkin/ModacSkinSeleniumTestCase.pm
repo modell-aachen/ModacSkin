@@ -95,7 +95,7 @@ sub login {
         $postLoginLocation = $this->{selenium}->get_current_url();
         my $attempt = shift || 0;
         if(not $postLoginLocation=~m/$urlTest/ && $attempt < 5) {
-            return $this->login($attempt++);
+            return $this->login(++$attempt);
         }
     }
     $this->assert_matches( $urlTest, $postLoginLocation );
@@ -144,24 +144,20 @@ sub verify_CopyTopicItem {
 sub verify_attachItem {
     my ( $this ) = @_;
 
-    $this->loginto(Helper::WEB, Helper::TRANSLATIONS);
-
-    my $attachLink = $this->{selenium}->find_element('Attach', 'id')->get_text();
-    my $uploadLink = $this->{selenium}->find_element('UploadFile', 'id')->get_text();
-    my $cancelLink = $this->{selenium}->find_element('Cancel', 'id')->get_text();
+    my $translations = $this->getTranslations();
 
     $this->assertNoPopup();
 
     $this->openTopicMenue();
-    $this->{selenium}->find_element($attachLink, 'link')->click();
+    $this->{selenium}->find_element($translations->{attachLink}, 'link')->click();
     $this->waitForPopup();
 
     # check if buttons were created correctly
 #    $this->assert( $this->{selenium}->find_element('button.ui-button span.ui-icon-circle-check', 'css') );
     my $accept = $this->{selenium}->execute_script('return jQuery("div.ui-dialog button.ui-button span.ui-icon-circle-check").parent().text()');
-    $this->assert_equals($uploadLink, $accept);
+    $this->assert_equals($translations->{uploadLink}, $accept);
     my $cancel = $this->{selenium}->execute_script('return jQuery("div.ui-dialog button.ui-button span.ui-icon-cancel").parent().text()');
-    $this->assert_equals($cancelLink, $cancel);
+    $this->assert_equals($translations->{cancelLink}, $cancel);
     my $submit= $this->{selenium}->execute_script('return jQuery(".modacDialogContents input[type=\'submit\']").length');
     $this->assert_equals(0, $submit, "Additional submit buttons found!");
 }
@@ -171,22 +167,20 @@ sub verify_attachItem {
 sub verify_attachItemCancelFunction {
     my ( $this ) = @_;
 
-    $this->loginto(Helper::WEB, Helper::TRANSLATIONS);
-
-    my $attachLink = $this->{selenium}->find_element('Attach', 'id')->get_text();
+    my $translations = $this->getTranslations();
 
     $this->assertNoPopup();
 
     # press 'Cancel' button
     $this->openTopicMenue();
-    $this->{selenium}->find_element($attachLink, 'link')->click();
+    $this->{selenium}->find_element($translations->{attachLink}, 'link')->click();
     $this->waitForPopup();
     $this->{selenium}->find_element('span.ui-icon-cancel', 'css')->click();
     $this->assertNoPopup();
 
     # reopening it
     $this->openTopicMenue();
-    $this->{selenium}->find_element($attachLink, 'link')->click();
+    $this->{selenium}->find_element($translations->{attachLink}, 'link')->click();
     $this->waitForPopup();
 }
 
@@ -195,19 +189,17 @@ sub verify_attachItemCancelFunction {
 sub verify_attachItemAttachFunction {
     my ( $this ) = @_;
 
-    $this->loginto( Helper::WEB, Helper::TRANSLATIONS );
-
-    my $attachLink = $this->{selenium}->find_element('Attach', 'id')->get_text();
+    my $translations = $this->getTranslations();
 
     $this->assertNoPopup();
 
     # press 'Attach file' button
     # XXX unfortunately there is no way to upload a file since I can't know which file I could upload.
     $this->openTopicMenue();
-    $this->{selenium}->find_element($attachLink, 'link')->click();
+    $this->{selenium}->find_element($translations->{attachLink}, 'link')->click();
     $this->waitForPopup();
     $this->{selenium}->find_element('span.ui-icon-circle-check', 'css')->click();
-    my $uploadUrl = Foswiki::Func::getScriptUrl( Helper::WEB, Helper::TRANSLATIONS, 'upload' );
+    my $uploadUrl = Foswiki::Func::getScriptUrl( Helper::WEB, 'WebHome', 'upload' );
     $this->waitFor( sub { $this->{selenium}->get_current_url() eq $uploadUrl }, 'Failed upload did not lead to oops page' ); # This should be an oops page saying the file has no content XXX this is not a strong test
 }
 
@@ -216,11 +208,7 @@ sub verify_attachItemAttachFunction {
 sub verify_strikeOne {
     my ( $this ) = @_;
 
-    $this->loginto( Helper::WEB, Helper::TRANSLATIONS );
-
-    my $attachLink = $this->{selenium}->find_element('Attach', 'id')->get_text();
-
-    $this->{selenium}->get( Foswiki::Func::getScriptUrl( Helper::WEB, Helper::NOFAV, 'view' ) );
+    my $translations = $this->getTranslations( Helper::WEB, Helper::NOFAV );
 
     # check if there is no StrikeOne
     my $strikeone = $this->{selenium}->execute_script('return typeof StrikeOne');
@@ -228,7 +216,7 @@ sub verify_strikeOne {
 
     # now open any menue item and see if this enables StrikeOne
     $this->openTopicMenue();
-    $this->{selenium}->find_element($attachLink, 'link')->click();
+    $this->{selenium}->find_element($translations->{attachLink}, 'link')->click();
     $this->waitForPopup();
     # check StrikeOne
     $strikeone = $this->{selenium}->execute_script('return typeof StrikeOne');
@@ -269,16 +257,14 @@ sub verify_loginBoxAttachment {
     # approach: Login to a page, logout in another window, press the attach-button, a login-box should appear
 
     # Login as user with change acls
-    $this->loginto( Helper::WEB, Helper::TRANSLATIONS );
-
-    my $attachLink = $this->{selenium}->find_element('Attach', 'id')->get_text();
+    my $translations = $this->getTranslations();
 
     # Logout in background
     $this->backgroundLogout();
 
     # open attach item
     $this->openTopicMenue();
-    $this->{selenium}->find_element($attachLink, 'link')->click();
+    $this->{selenium}->find_element($translations->{attachLink}, 'link')->click();
     $this->waitForPopup();
 
     # check for login box and login
@@ -375,7 +361,7 @@ sub waitForPopup {
     #    $this->waitFor( sub { try { return shift->{selenium}->is_visible('css=div.modacAjaxDialog'); } otherwise {return 0; }; }, 'Popup did not appear', undef, 8000 );
 
     my $n = $this->{selenium}->execute_script('return jQuery("div.modacLoadingDialog:visible, div.modacAjaxDialog:visible").length');
-    $this->waitFor( sub { $this->{selenium}->execute_script('return jQuery("div.modacAjaxDialog:visible").length') }, 'Popup did not appear' );
+    $this->waitFor( sub { $this->{selenium}->execute_script('return jQuery("div.modacAjaxDialog:visible").length') }, 'Popup did not appear', undef, 5_000 );
 }
 
 # Login and open the $web.$topic (defaults to TestWeb.WebHome)
@@ -388,7 +374,8 @@ sub loginto {
     $this->login();
     $this->selenium->get(
         Foswiki::Func::getScriptUrl(
-            $web, $topic, 'view'
+            $web, $topic, 'view',
+            'SeleniumTest' => '1'
         )
     );
 }
@@ -441,7 +428,7 @@ jQuery(function($) {
 AJAX
 
     $this->{selenium}->find_element('Logout', 'link')->click();
-    $this->waitFor( sub { $this->{selenium}->execute_script('return jQuery(".ajaxFinished").length') }, 'Ajax logout did not succeed' );
+    $this->waitFor( sub { $this->{selenium}->execute_script('return jQuery(".ajaxFinished").length') }, 'Ajax logout did not succeed', undef, 10_000 );
 }
 
 # 'hovers' the mouse over 'More topic actions' and waits for the menue to appear.
@@ -463,6 +450,36 @@ sub openTopicSubMenue {
     $this->{selenium}->mouse_move_to_location(element => $element);
     my $submenue = $this->{selenium}->find_element('li.modacMoreDynamic ul li ul li', 'css');
     $this->waitFor( sub { $submenue->is_displayed() }, 'sub-menue did not appear' );
+}
+
+# Will return a hash with common translataion and open the given topic.
+# Parameters:
+#    * goToWeb: Web to open after translations are fetched
+#    * goToTopic : Topic to open after translations are fetched
+# Returns:
+#    * Hash with translations
+sub getTranslations {
+    my ( $this, $goToWeb, $goToTopic ) = @_;
+
+    $goToWeb ||= Helper::WEB;
+    $goToTopic ||= 'WebHome';
+
+    my $translations = {};
+
+    $this->loginto(Helper::WEB, Helper::TRANSLATIONS);
+
+    $translations->{attachLink} = $this->{selenium}->find_element('Attach', 'id')->get_text();
+    $translations->{uploadLink} = $this->{selenium}->find_element('UploadFile', 'id')->get_text();
+    $translations->{cancelLink} = $this->{selenium}->find_element('Cancel', 'id')->get_text();
+
+    $this->selenium->get(
+        Foswiki::Func::getScriptUrl(
+            $goToWeb, $goToTopic, 'view',
+            'SeleniumTest' => '1'
+        )
+    );
+
+    return $translations;
 }
 
 1;

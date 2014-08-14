@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Foswiki $Id\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2014-08-01 17:58+0200\n"
+"PO-Revision-Date: 2014-08-14 14:14+0200\n"
 "Last-Translator: Modell Aachen <access@modell-aachen.de>\n"
 "Language-Team: German <http://translate.modell-aachen.de/projects/modacskin"
 "/releasenew-york/de/>\n"
@@ -1198,7 +1198,7 @@ msgstr "Werkzeuge"
 
 #: templates/viewtopicactionbuttons.modac.tmpl:69
 msgid "Topic"
-msgstr "Artikel"
+msgstr "Seite"
 
 #: templates/attachtables.modac.tmpl:18
 msgid "Topic attachments"
