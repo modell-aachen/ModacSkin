@@ -362,6 +362,7 @@ sub waitForPopup {
 
     my $n = $this->{selenium}->execute_script('return jQuery("div.modacLoadingDialog:visible, div.modacAjaxDialog:visible").length');
     $this->waitFor( sub { $this->{selenium}->execute_script('return jQuery("div.modacAjaxDialog:visible").length') }, 'Popup did not appear', undef, 5_000 );
+    $this->waitFor( sub { $this->{selenium}->execute_script('return (jQuery("blockOverlay:visible").length == 0)') }, 'Popup did not unblock', undef, 5_000 );
 }
 
 # Login and open the $web.$topic (defaults to TestWeb.WebHome)
