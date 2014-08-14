@@ -374,7 +374,8 @@ sub loginto {
     $this->login();
     $this->selenium->get(
         Foswiki::Func::getScriptUrl(
-            $web, $topic, 'view'
+            $web, $topic, 'view',
+            'SeleniumTest' => '1'
         )
     );
 }
@@ -473,7 +474,8 @@ sub getTranslations {
 
     $this->selenium->get(
         Foswiki::Func::getScriptUrl(
-            $goToWeb, $goToTopic, 'view'
+            $goToWeb, $goToTopic, 'view',
+            'SeleniumTest' => '1'
         )
     );
 
