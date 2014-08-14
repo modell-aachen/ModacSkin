@@ -913,5 +913,26 @@ jQuery(function($){
 
     // preload spinner
     $('.foswikiPage').append('<div style="height:0; width:0;" class="ajaxspinner"></div>');
+
+    $('.modacSolrAutocomplete').each(function(){
+        var $search = $(this);
+        var options = $search.metadata();
+        var source = options.source;
+        delete options.source;
+        $search.autocomplete({
+            source: function(request, response) {
+                var data = $.extend({ term: request.term }, options);
+                if(options.filter) data.filter = options.filter;
+                $.ajax({
+                    url: source,
+                    dataType: "json",
+                    data: data,
+                    success: function(data) {
+                        response(data);
+                    }
+                });
+            }
+        });
+    });
 });
 

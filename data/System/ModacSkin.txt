@@ -180,6 +180,16 @@ It has some mappings for easier names (=solr::extramapping=) and you can select 
 %%NOP%{&lt;/verbatim>}%
 </pre>
 
+---++++ customizing the autocomplete for search boxes
+If you want to customize the autocomplete for the box in the top-right and on the solr page, set the =MODAC_SOLR_AUTOCOMPLETE= setting in your =WebPreferences=/=SitePreferences= to the following:
+   * it must be a JavaScript class containing
+      * source: most likely =%%NOP%SCRIPTURL%/rest/SolrPlugin/autocomplete=
+      * your filters/boost/qf/...
+   * you must not use double quotes
+
+Example: You only want to search in the current web and only in the topic titles:
+<verbatim class="tml">   * Set MODAC_SOLR_AUTOCOMPLETE = {source:'%SCRIPTURL%/rest/SolrPlugin/autocomplete', filter:'web:%WEB%', field:'title_search' }</verbatim>
+
 ---+++ =FOSWIKI_PROJECT_URL=
 Here you can define a custom css-file that can be used to customize css-rules.%BR%
 Usually those will have to be marked with =!important=.
