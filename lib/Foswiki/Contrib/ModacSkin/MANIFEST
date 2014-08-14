@@ -154,3 +154,7 @@ templates/viewplain.modac.tmpl 0664
 templates/viewsidebar.modac.tmpl 0664
 templates/viewtopbar.modac.tmpl 0664
 templates/viewtopicactionbuttons.modac.tmpl 0664
+test/unit/ModacSkin/Helper.pm 0644
+test/unit/ModacSkin/ModacSkinSeleniumTestCase.pm 0644
+test/unit/ModacSkin/ModacSkinSuite.pm 0644
+test/unit/ModacSkin/qwikitest 0644
