@@ -1644,3 +1644,6 @@ msgstr "warum Sie zur Bestätigung aufgefordert werden"
 
 #~ msgid "Warning! Confirmation required"
 #~ msgstr "Achtung! Bestätigung erforderlich"
+
+msgid "title='Edit users data' accesskey='e'>&Edit users data"
+msgstr "title='Bearbeite Benutzerdaten'accesskey='e'>&Bearbeite Benutzerdaten"
