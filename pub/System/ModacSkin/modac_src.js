@@ -934,5 +934,13 @@ jQuery(function($){
             }
         });
     });
+
+    // MetaComments: move counter into the twisty
+    $('.cmtCounter').livequery(function(){
+        var $this = $(this);
+        $this.remove();
+        var modacCounter = $('.modacCmtCounter');
+        if(modacCounter.length) modacCounter.text($this.text());
+    });
 });
 
