@@ -767,7 +767,12 @@ jQuery(function($){
     $('.modacSubmitMessage').livequery(function() {
         var $message = $(this);
         $message.closest('form').submit(function() {
-            if($.blockUI) $.blockUI({message: $message.text()});
+            var text = $message.text();
+            if(text.length) {
+                if($.blockUI) $.blockUI({message: $message.text()});
+            } else {
+                ModacSkin.blockUI();
+            }
         });
     });
 
