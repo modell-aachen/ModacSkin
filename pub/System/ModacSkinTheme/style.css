@@ -1627,3 +1627,10 @@ div#comments div.cmtCommentContainer:last-child {
 #modacComments .cmtCommentOdd .cmtControls {
 	background-color: #FFF;
 }
+#modacSolrRightBar ul,
+#modacWraper #modacSolrRightBar ul {
+	list-style:none;
+}
+#modacSolrRightBar input, div.solrCheckboxContainer input {
+	background-color: transparent;
+}

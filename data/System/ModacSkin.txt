@@ -190,6 +190,39 @@ If you want to customize the autocomplete for the box in the top-right and on th
 Example: You only want to search in the current web and only in the topic titles:
 <verbatim class="tml">   * Set MODAC_SOLR_AUTOCOMPLETE = {source:'%SCRIPTURL%/rest/SolrPlugin/autocomplete', filter:'web:%WEB%', field:'title_search' }</verbatim>
 
+---++++ adding pseudo facets
+%X% Note: This is considerably slower than regular facets.
+
+Sometimes you'll want options to modify the search without falling back to facets. For example if you want an option to exclude all topics starting with =Web...= you can do the following:
+<pre>
+%%NOP%{ Define the checkbox: }%
+%%NOP%{&lt;verbatim class="tml"&gt;}%
+%%NOP%TMPL:DEF{"solr::input::checkboxes"}%...&lt;!-- other checkboxes --&gt;
+&lt;input type="checkbox" class="modacPseudoFacet" name="filtertopics" value="web"%%NOP%IF{"$'URLPARAM{filtertopics}' = 'web'" then=" checked='checked'"}% /&gt;&nbsp;%%NOP%MAKETEXT{"Omit Web* topics"}%
+%TMPL:END%
+%%NOP%{&lt;/verbatim&gt;}%
+
+%%NOP%{ Now react to the URLPARAM: }%
+%%NOP%{&lt;verbatim class="tml"&gt;}%
+%%NOP%TMPL:DEF{"solr::extrafilter"}%%%NOP%TMPL:PREV%%%NOP%IF{"$'URLPARAM{filtertopics}' = 'web'" then=" -topic:Web* "}%%%NOP%TMPL:END%
+%%NOP%{&lt;/verbatim&gt;}%
+</pre>
+
+The same would be possible with radio buttons:
+<pre>
+%%NOP%{ Define the checkbox: }%
+%%NOP%{&lt;verbatim class="tml"&gt;}%
+%%NOP%TMPL:DEF{"solr::input::checkboxes"}%...&lt;!-- other checkboxes --&gt;
+&lt;input type="radio" class="modacPseudoFacet" name="filtertopics" value="all"%%NOP%IF{"not defined filtertopics or $'URLPARAM{filtertopics}' = 'all'" then=" checked='checked'"}% /&gt;&nbsp;%%NOP%MAKETEXT{"Show all topics"}%&lt;input type="radio" class="modacPseudoFacet" name="filtertopics" value="web"%%NOP%IF{"$'URLPARAM{filtertopics}' = 'web'" then=" checked='checked'"}% /&gt;&nbsp;%%NOP%MAKETEXT{"Omit Web* topics"}%
+%TMPL:END%
+%%NOP%{&lt;/verbatim&gt;}%
+
+%%NOP%{ Now react to the URLPARAM: }%
+%%NOP%{&lt;verbatim class="tml"gt;}%
+%%NOP%TMPL:DEF{"solr::extrafilter"}%%%NOP%TMPL:PREV%%%NOP%IF{"$'URLPARAM{filtertopics}' = 'web'" then=" -topic:Web* "}%%%NOP%TMPL:END%
+%%NOP%{&lt;/verbatim&gt;}%
+</pre>
+
 ---+++ =FOSWIKI_PROJECT_URL=
 Here you can define a custom css-file that can be used to customize css-rules.%BR%
 Usually those will have to be marked with =!important=.
