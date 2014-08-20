@@ -1627,3 +1627,6 @@ div#comments div.cmtCommentContainer:last-child {
 #modacComments .cmtCommentOdd .cmtControls {
 	background-color: #FFF;
 }
+#modacSolrRightBar input, div.solrCheckboxContainer input {
+	background-color: transparent;
+}
