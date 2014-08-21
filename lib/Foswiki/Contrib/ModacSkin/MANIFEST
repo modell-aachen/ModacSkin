@@ -11,6 +11,7 @@ data/System/ModacSkinContentTemplateStub.txt 0644
 data/System/ModacSkinDocumentFormTableTemplate.txt 0644
 data/System/ModacSkinFlexWebList.txt 0664
 data/System/ModacSkinLanguageSelector.txt 0664
+data/System/ModacSkinPrintOnlyViewTemplate.txt 0664
 data/System/ModacSkinSolrSearchViewTemplate.txt 0664
 data/System/ModacSkinSolrSearchBaseTemplate.txt 0664
 data/System/ModacSkinSystemViewTemplate.txt 0664
@@ -18,6 +19,7 @@ data/System/ModacSkinSystemTabsTemplate.txt 0664
 data/System/ModacSkinTopHeadTemplate.txt 0664
 data/System/ModacSkinTopicMenuTemplate.txt 0664
 data/System/ModacSkinUserEditTemplate.txt 0664
+data/System/ModacSkinUserFormEditTemplate.txt 0664
 data/System/ModacSkinUserViewTemplate.txt 0664
 data/System/ModacSkinUserAutocompleteTemplate.txt 0664
 data/System/ModacSkinWebChangesViewTemplate.txt 0664
@@ -32,6 +34,8 @@ lib/Foswiki/Contrib/ModacSkin.pm 0664
 lib/Foswiki/Plugins/SafeWikiPlugin/Signatures/ModacSkin.pm 0664
 locale/ModacSkin/de.po 0664
 locale/ModacSkin/fr.po 0664
+locale/ModacSkin/it.po 0664
+locale/ModacSkin/zh-cn.po 0664
 pub/System/DocumentGraphics/arrow-down.png 0664
 pub/System/DocumentGraphics/arrow-right.png 0664
 pub/System/ModacSkin/atp_comment.js 0664

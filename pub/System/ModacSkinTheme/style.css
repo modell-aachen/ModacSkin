@@ -1607,3 +1607,30 @@ div.ajaxspinner {
 * html .foswikiClearFix {
   height: 1%;
 }
+div#comments div.cmtCommentContainer > div.foswikiFormSteps,
+div#comments div.cmtCommentContainer:last-child {
+	margin-bottom: 0px;
+	border-bottom: none;
+}
+#modacComments .cmtCommentEven {
+	border-top: 1px #ddd solid;
+	border-bottom: 1px #ddd solid;
+}
+#modacComments .cmtCommentOdd {
+	border: none;
+}
+#modacComments .cmtCommentEven,
+#modacComments .cmtCommentEven .cmtControls {
+	background-color: #F9F9F9;
+}
+#modacComments .cmtCommentOdd,
+#modacComments .cmtCommentOdd .cmtControls {
+	background-color: #FFF;
+}
+#modacSolrRightBar ul,
+#modacWraper #modacSolrRightBar ul {
+	list-style:none;
+}
+#modacSolrRightBar input, div.solrCheckboxContainer input {
+	background-color: transparent;
+}

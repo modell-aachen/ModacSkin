@@ -4,6 +4,19 @@
 
 %TMPL:DEF{"modacSystemTab"}%<div class="modacActionButtonACTIVE"><a href='%SCRIPTURLPATH{"view"}%/%WEB%/%TOPIC%' rel='nofollow' %MAKETEXT{"title='My Page' >My Page"}%</a></div>%TMPL:END%
 
+%TMPL:DEF{"modacActionButtons"}%
+<ul id="modacButtonsLEFT" class="modacTabs">
+<li>%TMPL:P{"modacSystemTab"}%</li>
+</ul>
+<ul id="modacButtonsRIGHT" class="modacTabs">
+<li id="modacMore">%TMPL:P{"modacMore"}%</li>
+<li id="modacSearchBox">%TMPL:P{"SearchBox"}%</li>
+</ul>
+%TMPL:END%
+
+%TMPL:DEF{"modacMore"}%<div class="foswikiRequiresChangePermission requireModacChangePermission %IF{"context edit" then="modacActionButtonACTIVE"}%"><a href='%SCRIPTURL{"edit"}%/%BASEWEB%/%BASETOPIC%?template=UserFormEdit;t=%GMTIME{"$epoch"}%%TMPL:P{"url_param_editaction"}%%IF{"context CKEditorPluginEnabled" then="" else=";nowysiwyg=1"}%' class='modacChanging' rel='nofollow' %MAKETEXT{"title='Edit users data' accesskey='e'>&Edit users data"}%</a></div>%TMPL:END%
+
+
 %TMPL:DEF{"top"}%%TMPL:END%
 
 %TMPL:DEF{"perspage:scripts"}%

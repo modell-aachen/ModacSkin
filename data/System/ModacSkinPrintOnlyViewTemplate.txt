@@ -1,0 +1,9 @@
+%TMPL:INCLUDE{"view"}%
+
+%TMPL:DEF{modacEdit}%%TMPL:END%
+
+%TMPL:DEF{"modacMoreSubmenuView"}%
+<ul>
+<!-- PDF-EXPORT -->%IF{"context MAPrinceModPluginEnabled" then="<li><span class='moremenue-print'>$percentTMPL:P{pdfexport}$percent</li></span>"}%
+</ul>
+%TMPL:END%

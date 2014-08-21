@@ -68,11 +68,13 @@ sub login {
     my $this = shift;
 
     #SMELL: Assumes TemplateLogin
+    $this->setMarker();
     $this->{selenium}->get(
         Foswiki::Func::getScriptUrl(
             $this->{test_web}, $this->{test_topic}, 'login'
         )
     );
+    $this->waitForPageToLoad();
     my $usernameInputFieldLocator = 'input[name="username"]';
     $this->{selenium}->find_element($usernameInputFieldLocator, 'css')->send_keys($Foswiki::cfg{UnitTestContrib}{SeleniumRc}{Username});
     my $passwordInputFieldLocator = 'input[name="password"]';
@@ -373,12 +375,14 @@ sub loginto {
     $topic ||= $webhome;
 
     $this->login();
+    $this->setMarker();
     $this->selenium->get(
         Foswiki::Func::getScriptUrl(
             $web, $topic, 'view',
             'SeleniumTest' => '1'
         )
     );
+    $this->waitForPageToLoad();
 }
 
 # Fills out the login popup and presses the login button.
@@ -473,14 +477,29 @@ sub getTranslations {
     $translations->{uploadLink} = $this->{selenium}->find_element('UploadFile', 'id')->get_text();
     $translations->{cancelLink} = $this->{selenium}->find_element('Cancel', 'id')->get_text();
 
+    $this->setMarker();
     $this->selenium->get(
         Foswiki::Func::getScriptUrl(
             $goToWeb, $goToTopic, 'view',
             'SeleniumTest' => '1'
         )
     );
+    $this->waitForPageToLoad();
 
     return $translations;
+}
+
+# XXX Make sure new page loaded before continueing.
+# This should not be required, but seems to be buggy on ff atm.
+# Note: Updating Selenium::Remote::Driver to 0.2102 did not redeem this
+sub waitForPageToLoad {
+    my $this = shift;
+    $this->waitFor( sub { $this->{selenium}->execute_script('if(window.SeleniumMarker) return 0; return jQuery("#modacContentsWrapper").length'); }, 'Page did not load', undef, 10_000 );
+}
+# Sets a marker for waitForPageToLoad to listen to.
+sub setMarker {
+    my ( $this) = @_;
+    $this->{selenium}->execute_script("window.SeleniumMarker = 1");
 }
 
 1;
