@@ -32,6 +32,7 @@ data/System/WebLeftBarDefault.txt 0664
 data/System/WebTopBarDefault.txt 0664
 lib/Foswiki/Contrib/ModacSkin.pm 0664
 lib/Foswiki/Plugins/SafeWikiPlugin/Signatures/ModacSkin.pm 0664
+locale/ModacSkin/cs.po 0664
 locale/ModacSkin/de.po 0664
 locale/ModacSkin/fr.po 0664
 locale/ModacSkin/it.po 0664
