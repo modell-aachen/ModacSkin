@@ -59,7 +59,7 @@
 <ul class="modacBookmarks">
 %SOLRSEARCH{"type:topic webtopic:(%FAVORITELIST{format="$swebtopic" separator=" OR " default="NOT *"}%)"
   rows="999999" sort="webtopic"
-  format="<li>$percntFAVORITEBUTTON{web=\"$web\" topic=\"$topic\" redirectto=\"%WEB%.%TOPIC%\" format=\"$formstart$linkstart<img src=\\"%PUBURLPATH%/%SYSTEMWEB%/FamFamFamSilkCompanion1Icons/decline.png\\" alt=\\"%MAKETEXT{"Remove bookmark"}%\\" title=\\"%MAKETEXT{"Remove bookmark"}%\\" />$linkend$formend\"}$percnt <a href=\"%SCRIPTURL{view}%/$web/$topic\" title=\"$web.$topic\"><strong>$title</strong></a>%BR%<span class=\"bmsubinfo\">[[$web.WebHome][$web]]</span></li>"
+  format="<li>$percntFAVORITEBUTTON{web=\"$web\" topic=\"$topic\" redirectto=\"%WEB%.%TOPIC%\" format=\"$formstart$linkstart<img src=\\"%PUBURLPATH%/%SYSTEMWEB%/FamFamFamSilkCompanion1Icons/decline.png\\" alt=\\"%MAKETEXT{"Remove bookmark"}%\\" title=\\"%MAKETEXT{"Remove bookmark"}%\\" />$linkend$formend\"}$percnt <a href=\"%SCRIPTURL{view}%/$web/$topic\" title=\"$web.$topic\"><strong>$title</strong></a>&nbsp; $percntIF{\"istopic '$web.$topic$percntDUMMY{default=\"\"}$percntTALK'\" then=\"&nbsp;&nbsp;|&nbsp;&nbsp;<a href='$percntSCRIPTURL{view}$percnt/$web/$topic$percntDUMMY{default=\"\"}$percntTALK'><span class=\\"bmsubinfo\\">$dollarpercntICON{comments}$dollarpercnt&nbsp;$percntMAKETEXT{\"Discussion available\"}$percnt</span></a>\"}$percnt%BR%<span class=\"bmsubinfo\">[[$web.WebHome][$web]]</span></li>"
 }%
 </ul></td>
 <td class="splitright"><div class="splittitle">%ICON{attachfile}% %MAKETEXT{Attachments}%</div>

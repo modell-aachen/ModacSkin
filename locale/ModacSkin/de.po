@@ -1720,3 +1720,7 @@ msgstr "warum Sie zur Bestätigung aufgefordert werden"
 
 #~ msgid "title='More actions for this topic' accesskey='m'>&More topic actions"
 #~ msgstr "title='Weitere Aktionen für diese Seite' accesskey='w'>&Weitere Aktionen"
+
+msgid "Discussion available"
+msgstr "Diskussion verfügbar"
+
