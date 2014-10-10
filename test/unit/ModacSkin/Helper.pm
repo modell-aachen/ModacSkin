@@ -31,7 +31,7 @@ sub set_up_attachments {
     my $other = shift;
 
     my $attachment1 = {};
-    my $stream = File::Temp->new( UNLINK => 0 );
+    my $stream = File::Temp->new( UNLINK => 1 );
     print $stream ATTACHMENTTEXT1;
     $other->assert( $stream->close() );
     $attachment1->{filename} = $stream->filename;
@@ -39,7 +39,7 @@ sub set_up_attachments {
     $attachment1->{text} = ATTACHMENTTEXT1;
 
     my $attachment2 = {};
-    $stream = File::Temp->new( UNLINK => 0 );
+    $stream = File::Temp->new( UNLINK => 1 );
     print $stream Helper::ATTACHMENTTEXT2;
     $other->assert( $stream->close() );
     $attachment2->{filename} = $stream->filename;
