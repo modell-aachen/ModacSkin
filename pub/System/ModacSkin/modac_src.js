@@ -56,6 +56,14 @@ jQuery(function($){
         showDialog : function(data, beforeInit, $loadingDialog, options) {
             var $data = $('<div ></div>').append(data);
 
+            // deal with modacDisplayOnlyInputs
+            var $displayonly = $data.find('.modacDisplayOnlyInputs');
+            if($displayonly.length) {
+                $displayonly.find('input[type="checkbox"]').remove();
+                $displayonly.find('input[type="text"],input[type="hidden"]').attr('name', '').val('');
+                $displayonly.show();
+            }
+
             var $contents = $data.find('.modacDialogContents');
             if($contents.length) {
                 var escTitle = $data.find('.modacDialogTitle').remove().html();
