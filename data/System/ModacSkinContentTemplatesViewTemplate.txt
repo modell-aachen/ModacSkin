@@ -57,7 +57,7 @@ $(function() {
 		var val = $('#topic').val();
 		if (! val.match(/Template$/)) val += 'Template';
 		if (val.match(/[.\/]/)) val = val.replace(/^.+\./, '');
-		val = '%CONTENTTEMPLATEWEB{default="%BASEWEB%"}%.' + val;
+		val = '%SUBST{text="%CONTENTTEMPLATEWEB{default="%BASEWEB%"}%" pattern="\s*,.*" format=""}%.' + val;
 		$('#topic').val(val);
 	});
 });
