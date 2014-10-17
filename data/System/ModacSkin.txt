@@ -96,7 +96,7 @@ A typical configuration might look like this:
    &#42 Set CONTENTTEMPLATESTUB = System.ModacSkinContentTemplateStub
 </pre>
 | *Setting* | *Effect* | *Remarks* |
-| =CONTENTTEMPLATEWEB= | All topics with =Template= suffix in this web will be offered as template when creating a new topic.%BR%Exceptions can be defined unsing =CONTENTTEMPLATEFILTER=. | Set to exactly one web, eg. <pre>   * Set CONTENTTEMPLATEWEB = Processes</pre>. |
+| =CONTENTTEMPLATEWEB= | All topics with =Template= suffix in this web will be offered as template when creating a new topic.%BR%Exceptions can be defined unsing =CONTENTTEMPLATEFILTER=. | Comma separated list, eg. <pre>   * Set CONTENTTEMPLATEWEB = Processes,Information</pre>. |
 | =CONTENTTEMPLATEFILTER= | These topics will not be offered as template. | Comma-separated list.%BR%Use * as wildcard.%BR%Some topics will always be excluded:<pre>*EditTemplate, *WebCreateNewTopicTemplate, *ViewTemplate, GroupTemplate, CustomSkin*Template</pre>Example:<pre>   * Set CONTENTTEMPLATEFILTER = SpacingTemplate, *WeldingTemplate</pre> |
 | =CONTENTTEMPLATESTUB= | This topic will be used as a template for creating new templates with =WebContentTemplates=. | This template should contain a _templateonly-section_ with ACLs etc.%BR%It will default to [[%SYSTEMWEB%.ModacSkinContentTemplateStub]] |
 
