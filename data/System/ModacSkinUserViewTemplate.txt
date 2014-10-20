@@ -108,7 +108,7 @@
 </tbody>
 </table>
 </div>
-%AMPEL{"ampel_open" WARN="%AMPELWARN{default="3"}%" DATE="%MAKETEXT{"Due"}%" DST="%MAKETEXT{"Status"}%" DONE="%MAKETEXT{"Status"}%" COND="closed"}%
+%AMPEL{"ampel_open" WARN="%SIGNAL_PREWARNTIME{default="7"}%" DATE="%MAKETEXT{"Due"}%" DST="%MAKETEXT{"Status"}%" DONE="%MAKETEXT{"Status"}%" COND="closed"}%
 %ENDTAB%
 %TAB{"%MAKETEXT{"Finished tasks"}%" url="%SCRIPTURL{rest}%/RenderPlugin/tag?name=INCLUDE;render=on;param=%PERSPAGEHELPER{default="%SYSTEMWEB%.ModacSkinUserViewTemplate"}%;section=perspage_tasks;tasksfilter=%ENCODE{"state:closed" type="url"}%;datefield=closed;icon=tick"}%
 <span class="jqAjaxLoader">&nbsp;</span>
