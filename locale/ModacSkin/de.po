@@ -1652,14 +1652,14 @@ msgstr "warum Sie zur Bestätigung aufgefordert werden"
 #~ msgid "Last changed"
 #~ msgstr "Zuletzt geändert"
 
-#~ msgid "Manual"
-#~ msgstr "Anleitungen"
+msgid "Manual"
+msgstr "Anleitung"
 
 #~ msgid "Move topic to web:"
 #~ msgstr "Seite in folgenden Bereich verschieben:"
 
-#~ msgid "News"
-#~ msgstr "Aktuelles"
+msgid "News"
+msgstr "Aktuelles"
 
 #~ msgid "Not recommended when deleting a topic."
 #~ msgstr "Nicht empfohlen, wenn Sie die Seite löschen."
@@ -1723,4 +1723,3 @@ msgstr "warum Sie zur Bestätigung aufgefordert werden"
 
 msgid "Discussion available"
 msgstr "Diskussion verfügbar"
-
