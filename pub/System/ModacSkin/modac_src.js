@@ -6,6 +6,17 @@ jQuery(function($){
         return;
     }
 
+    // IE Hack: allows mailto-links larger then approx. 500 chars
+    // See MA #6429
+    $('a[href^="mailto:"]').on('click', function() {
+      var $a = $(this);
+      var target = $a.attr('href');
+      $('body').append( $('<iframe id="ma-mailto" src="' + target + '"/>') );
+      $('#ma-mailto').remove();
+
+      return false;
+    });
+
     var ModacSkin = foswiki.ModacSkin = {
         // Creates a string to use with jQuery's UI Dialog widget.
         // Just add this string to the dom and you'll get a dialog.
