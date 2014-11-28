@@ -5,11 +5,15 @@ Das Q.Wiki ist eine Entwicklung der Modell Aachen GmbH.<br />
 <br /> Geschäftsführung: Dr.-Ing. Carsten Behrens<br /> Amtsgericht Aachen, HRB 15622<br />
 <br /> Stand: 26.08.2013
 
-%META:FORM{name="Prozesse.DokumentenForm"}%
-%META:FIELD{name="Dokumententyp" attributes="" title="Dokumententyp" value="Infoseite"}%
+%META:FORM{name="Processes.DocumentForm"}%
+%META:FIELD{name="DocumentType" attributes="" title="DocumentType" value="Info page"}%
 %META:FIELD{name="TopicTitle" attributes="" title="TopicTitle" value="Über Q.Wiki"}%
-%META:FIELD{name="Seitenverantwortlicher" attributes="M" title="Seitenverantwortlicher" value="Modell-Aachen"}%
-%META:FIELD{name="Geltungsbereich" attributes="" title="Geltungsbereich" value=""}%
+%META:FIELD{name="Responsible" attributes="M" title="Responsible" value=""}%
+%META:FIELD{name="AreaOfApplication" attributes="" title="AreaOfApplication" value="corporation-wide"}%
 %META:FIELD{name="ISO9001" attributes="" title="ISO9001" value=""}%
+%META:FIELD{name="ISO14001" attributes="" title="ISO14001" value=""}%
+%META:FIELD{name="ISOTS16949" attributes="" title="ISOTS16949" value=""}%
+%META:FIELD{name="OHSAS18001" attributes="" title="OHSAS18001" value=""}%
+%META:FIELD{name="ISO50001" attributes="" title="ISO50001" value=""}%
 %META:PREFERENCE{name="DISPLAYCOMMENTS" value="off"}%
 %META:PREFERENCE{name="ALLOWTOPICCOMMENT" value="QMGroup, Main.KeyUserGroup"}%
