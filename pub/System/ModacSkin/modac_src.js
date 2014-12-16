@@ -515,6 +515,7 @@ jQuery(function($){
                             var ajaxArea = $('<div class="modacAjaxDialog"><div style="height: 150px; width: 200 px;"></div></div>');
                             ajax.before(ajaxArea);
                             ajax.append($('<input type="hidden" name="skin" value="' + skin + '" />'));
+                            ajax.attr('action', encodeURI(ajax.attr('action'))); // IE does mess up otherwise
                             ajax.ajaxForm({
                                 error: handleOops,
                                 success: function(jqXHR, s, errorThrown) {(ModacSkin.handleLogin(handleSuccess, d))(jqXHR,s,errorThrown)}
@@ -562,6 +563,7 @@ jQuery(function($){
             ModacSkin.blockUI();
             var href = $this.find('a:first').attr('href');
             href += (href.indexOf('?') > 0?';':'?') + 'skin=modacdialog,'+foswiki.getPreference('SKIN');
+            href = encodeURI(href); // IE messes up otherwise
             $.ajax({
                 url: href,
                 success: ModacSkin.handleLogin(function(data, st, jq, $data){
