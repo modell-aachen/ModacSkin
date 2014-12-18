@@ -1,9 +1,6 @@
 %TMPL:INCLUDE{"renamedelete"}%
 %TMPL:DEF{"script:skintemplate"}%%TMPL:END%
 
-%{ Do not update links on delete }%
-%TMPL:DEF{"searchresultsstep"}%%TMPL:END%
-
 %TMPL:DEF{"wikiword"}%
 <input type="hidden" name="nonwikiword" value="on" />
 %TMPL:END%
@@ -15,5 +12,20 @@
 ---+++ %MAKETEXT{"Do you really want to delete [_1]?" args="%WEB%.%TOPIC%"}%
 %TMPL:P{"newtopic"}%
 %TMPL:P{"newweb"}%
-%TMPL:P{"wikiword"}%
+%TMPL:P{"wikiword"}%<!-- wikiword -->
+%TMPL:P{"searchresultsstep"}%
 </div></div>%TMPL:END%
+
+%TMPL:DEF{"searchresultsstep"}%<div class="foswikiFormSteps modacDisplayOnlyInputs" style="display: none;">
+%IF{"'%SEARCH_COUNT%'=0" then="<div class=\"foswikiFormStep foswikiLast\">
+---+++ %MAKETEXT{"No references to [_1] found." args="<nop>%WEB%.%TOPIC%"}%
+</div><!-- "}%
+<div class="foswikiFormStep">
+---+++ %MAKETEXT{"References to [_1] in the [_2] Web:" args="<nop>%TOPIC%, <nop>%WEB%"}%
+%LOCAL_SEARCH%
+</div>
+<div class="foswikiFormStep foswikiLast">
+---+++ %MAKETEXT{"References to [_1] in any Web:" args="<nop>%WEB%.%TOPIC%"}%
+%GLOBAL_SEARCH%
+</div>
+%IF{"'%SEARCH_COUNT%'=0" then=" -->"}%</div>%TMPL:END%
