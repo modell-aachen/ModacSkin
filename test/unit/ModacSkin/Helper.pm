@@ -121,7 +121,7 @@ sub set_up_webs {
 sub tear_down_webs {
     my ( $other, $webs ) = @_;
 
-    foreach my $web ( keys($webs) ) {
+    foreach my $web ( keys(%$webs) ) {
         $other->removeWebFixture( $other->{session}, $web );
     }
 }
