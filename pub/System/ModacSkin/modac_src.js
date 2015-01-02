@@ -526,7 +526,23 @@ jQuery(function($){
                             ajax.attr('action', encodeURI(ajax.attr('action'))); // IE does mess up otherwise
                             ajax.ajaxForm({
                                 error: handleOops,
-                                success: function(jqXHR, s, errorThrown) {(ModacSkin.handleLogin(handleSuccess, d))(jqXHR,s,errorThrown)}
+                                success: function(jqXHR, s, errorThrown) {(ModacSkin.handleLogin(handleSuccess, d))(jqXHR,s,errorThrown)},
+                                beforeSerialize: function($form, options) {
+                                    // transmit data marked with modacAjaxPreserve along with a 'Preserved' suffix
+                                    var $dialogContents = $form.closest('.modacDialogContents');
+                                    $dialogContents.find('input.modacAjaxPreserve, select.modacAjaxPreserve').each(function() {
+                                        var $this = $(this);
+                                        var name = $this.attr('name');
+                                        if(!name) return;
+                                        // I need to rename newtopic and newweb or otherwise the rename will take place
+                                        var $input = $form.find('input[name="' + name + 'Preserved"]');
+                                        if(!$input.length) {
+                                            $input = $('<input type="hidden" />').attr('name', name + 'Preserved');
+                                            $form.append($input);
+                                        }
+                                        $input.val($this.val());
+                                    });
+                                }
                             });
                             ajax.submit(function(){
                                 // Only block the dialog, not the whole page.
