@@ -163,5 +163,5 @@ table.atpSearch {
 }
 
 .atpSearch .ui-icon { 
-	background-image: url('%PUBURLPATH%/System/JQueryPlugin/themes/foswiki/images/ui-icons-famfamfam.png') <nop>!important; 
+	background-image: url('../JQueryPlugin/themes/foswiki/images/ui-icons-famfamfam.png'); 
 }
