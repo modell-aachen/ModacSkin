@@ -20,9 +20,11 @@ jQuery(function($){
         $('body').append($data);
     }
 
-    foswiki.ModacContextMenuPlugin.addEntry({
+    var entry = {
         name: 'Search for references',
         icon: 'zoom',
+        lockable: false,
+        honorsKVP: false,
         disabled: false,
         callback: function(key, opts) {
             var filename = getFilename(opts);
@@ -47,5 +49,6 @@ jQuery(function($){
                 }
             });
         }
-    });
+    };
+    foswiki.ModacContextMenuPlugin.addEntry(entry, entry);
 });
