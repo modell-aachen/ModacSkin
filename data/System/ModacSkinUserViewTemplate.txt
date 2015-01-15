@@ -76,7 +76,7 @@
 <ul class="modacBookmarks">
 %SOLRSEARCH{"type:topic webtopic:(%FAVORITELIST{format="\\"$swebtopic\\"" separator=" OR " default="NOT *"}%)"
   rows="5" sort="date desc"
-  format="<li><div class=\"date\">$date%BR%$author</div><a href=\"%SCRIPTURL{view}%/$web/$topic\" title=\"$web.$topic\"><strong>$percntIF{\"'$title'='WebHome'\" then=\"$web\" else=\"$title\"}$percnt</strong></a>%BR%<span class=\"bmsubinfo\">[[$web.WebHome][$web]]</span></li>"
+  format="<li><div class=\"date\">$date%BR%$author</div><a href=\"%SCRIPTURL{view}%/$web/$topic\" title=\"$web.$topic\"><strong>$percntIF{\"'$title'='WebHome'\" then=\"$web\" else=\"$title\"}$percnt</strong></a>$percntIF{\"istopic '$web.$topic$percntDUMMY{default=\"\"}$percntTALK'\" then=\"&nbsp;&nbsp;|&nbsp;&nbsp;<a href='$percntSCRIPTURL{view}$percnt/$web/$topic$percntDUMMY{default=\"\"}$percntTALK'><span class=\\"bmsubinfo\\">$dollarpercntICON{comments}$dollarpercnt&nbsp;$percntMAKETEXT{\"Discussion available\"}$percnt</span></a>\"}$percnt%BR%<span class=\"bmsubinfo\">[[$web.WebHome][$web]]</span></li>"
 }%
 </ul>
 </td><td class="splitright"><div class="splittitle">%ICON{attachfile}% %MAKETEXT{Attachments}%</div>
