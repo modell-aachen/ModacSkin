@@ -755,7 +755,7 @@ jQuery(function($){
         if (foswiki.Edit.validateSuppressed) return true;
         var alerts = [];
         jQuery('select.foswikiMandatory, input.foswikiMandatory, textarea.foswikiMandatory').each(function(i,e) {
-          if (jQuery(e).val()) return;
+          if (jQuery(e).val() && !/^[\s\n]*$/.test( jQuery(e).val() ) ) return;
           var $form = jQuery(e).closest('tr.modacForm');
           var title = $form.find('span.title').text();
           if(!title) title = jQuery(e).attr('name');
