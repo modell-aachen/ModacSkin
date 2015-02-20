@@ -6,9 +6,10 @@ msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2014-08-11 17:14+0200\n"
+"PO-Revision-Date: 2015-02-20 13:53+0200\n"
 "Last-Translator: Modell Aachen <access@modell-aachen.de>\n"
-"Language-Team: French <http://translate.modell-aachen.de/projects/modacskin/releasenew-york/fr/>\n"
+"Language-Team: French <http://translate.modell-aachen.de/projects/modacskin"
+"/releasenew-york/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -398,7 +399,7 @@ msgstr "Créer nouvelle page"
 
 #: data/System/ModacSkinWebCreateNewTopicTemplate.txt
 msgid "Create new topic in %1 Web"
-msgstr ""
+msgstr "Créer une nouvelle page dans le Web %1"
 
 #: data/System/ModacSkinCommonWords.txt
 msgid "Create this topic"
@@ -414,11 +415,11 @@ msgstr "Emplacement actuel :"
 
 #: templates/renamebase.modac.tmpl
 msgid "Current topic:"
-msgstr "Sujet actuel:"
+msgstr "Sujet actuel :"
 
 #: templates/renamebase.modac.tmpl
 msgid "Current web:"
-msgstr "Web actuel:"
+msgstr "Web actuel :"
 
 #: data/System/ModacSkinSolrSearchViewTemplate.txt
 msgid "Danish"
@@ -456,7 +457,7 @@ msgstr "Décrivez ce fichier, afin que les autres personnes sachent de quoi il s
 
 #: templates/compare.modac.tmpl templates/rdiff.modac.tmpl
 msgid "Difference:"
-msgstr "Page de comparaison:"
+msgstr "Différence :"
 
 #: data/System/ModacSkinCommonWords.txt
 msgid "Discard discussion"
@@ -763,7 +764,7 @@ msgstr "Nom de la copie"
 
 #: templates/more.modac.tmpl
 msgid "Newer revision:"
-msgstr "Nouvelle révision:"
+msgstr "Nouvelle révision :"
 
 #: templates/more.modac.tmpl
 msgid "No child topics"
@@ -804,7 +805,7 @@ msgstr "OK"
 
 #: templates/more.modac.tmpl
 msgid "Older revision:"
-msgstr "Ancienne révision:"
+msgstr "Ancienne révision :"
 
 #: templates/metacomments.modac.tmpl
 msgid "One comment"
@@ -1204,7 +1205,7 @@ msgstr "Nom du sujet que le sujet nouvellement créé sera un sujet fils de."
 #: data/System/ModacSkinContentTemplatesViewTemplate.txt
 #: data/System/ModacSkinWebCreateNewTopicTemplate.txt
 msgid "Topic name:"
-msgstr "Nom de page:"
+msgstr "Nom de page :"
 
 #: data/System/ModacSkinTopicMenuTemplate.txt
 msgid "Topic parent"
@@ -1276,11 +1277,11 @@ msgstr "telecharger le fichier…"
 
 #: data/System/ModacSkinWebCreateNewTopicTemplate.txt
 msgid "Use template:"
-msgstr "Modèles de formulaires disponibles:"
+msgstr "Modèles de formulaires disponibles :"
 
 #: templates/oopshistory.modac.tmpl
 msgid "Username"
-msgstr "Nom de connexion"
+msgstr "Nom d´utilisateur"
 
 #: templates/compare.modac.tmpl
 msgid "View difference"
@@ -1300,7 +1301,7 @@ msgstr "Afficher version"
 
 #: templates/more.modac.tmpl
 msgid "View revision:"
-msgstr "Afficher la révision:"
+msgstr "Afficher la révision :"
 
 #: templates/rdiff.modac.tmpl
 msgid "View topic"
@@ -1316,7 +1317,7 @@ msgstr "Attente du QM"
 
 #: templates/validate.modac.tmpl
 msgid "Warning! Confirmation required"
-msgstr "Confirmation nécessaire"
+msgstr "Attention! Confirmation nécessaire"
 
 #: data/System/ModacSkinSolrSearchViewTemplate.txt
 msgid "Web"
@@ -1509,7 +1510,7 @@ msgstr "title='Modifier la source de cette page au format Wiki text' accesskey='
 
 #: templates/viewtopicactionbuttons.modac.tmpl
 msgid "title='Edit this topic text' accesskey='e'>&Edit"
-msgstr "title='Modifier cette page' accesskey='e'>Modifi&er"
+msgstr "title='Modifier le texte de cette page' accesskey='e'>Modifi&er"
 
 #: templates/viewtopicactionbuttons.modac.tmpl
 msgid "title='Edit this topic' accesskey='e'>&Edit"
