@@ -1634,3 +1634,8 @@ div#comments div.cmtCommentContainer:last-child {
 #modacSolrRightBar input, div.solrCheckboxContainer input {
 	background-color: transparent;
 }
+
+/* MA #7931 */
+table tr {
+	height: 1em;
+}
