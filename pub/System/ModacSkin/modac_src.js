@@ -984,5 +984,10 @@ jQuery(function($){
         var modacCounter = $('.modacCmtCounter');
         if(modacCounter.length) modacCounter.text($this.text());
     });
+
+    // ModacLanguageSelector
+    $('form.ModacLanguageSelector [name="language"]').change(function(){
+        $(this).closest('form').ajaxSubmit(function(){window.location.reload();});
+    });
 });
 
