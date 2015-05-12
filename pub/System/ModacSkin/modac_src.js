@@ -905,7 +905,7 @@ jQuery(function($){
         //    copy terms to solrSearchField and submit that instead
         // If on a normal wiki page
         //    Proper browser: rewrite query to link with solr4 style hashtag
-        //    IE7,8: rewrite query to query to link with hashtag stored in 'htag' parameter - some script on solr page will decode it
+        //    IE7,8,9: rewrite query to query to link with hashtag stored in 'htag' parameter - some script on solr page will decode it
         var $searchbox = $('#quickSearchBox');
         var $searchfield = $('.solrSearchField');
         var $forms = $('.solrSearchForm');
@@ -932,7 +932,7 @@ jQuery(function($){
             // construct the hashtag (eventually deal with browsers feeling special)
             if(params.length) {
                 var htag = params.join('&');
-                if(navigator && navigator.appName === 'Microsoft Internet Explorer' && /MSIE [7,8]/.exec(navigator.userAgent)) {
+                if(navigator && navigator.appName === 'Microsoft Internet Explorer' && /MSIE [7,8,9]/.exec(navigator.userAgent)) {
                     href += '?htag='+htag;
                 }
                 href += '#'+htag;
