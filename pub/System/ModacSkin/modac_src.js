@@ -754,12 +754,25 @@ jQuery(function($){
       foswiki.Edit.validateMandatoryFields = function() {
         if (foswiki.Edit.validateSuppressed) return true;
         var alerts = [];
-        jQuery('select.foswikiMandatory, input.foswikiMandatory, textarea.foswikiMandatory').each(function(i,e) {
-          if (jQuery(e).val() && !/^[\s\n]*$/.test( jQuery(e).val() ) ) return;
-          var $form = jQuery(e).closest('tr.modacForm');
+        $('select.foswikiMandatory, input.foswikiMandatory, textarea.foswikiMandatory').each(function(i,e) {
+          if ($(e).val() && !/^[\s\n]*$/.test( $(e).val() ) ) return;
+          var $form = $(e).closest('tr.modacForm');
           var title = $form.find('span.title').text();
-          if(!title) title = jQuery(e).attr('name');
+          if(!title) title = $(e).attr('name');
           alerts.push(jsi18n.get('edit', "You have not filled out the mandatory form field '[_1]'.", title));
+        });
+        // check checkboxes
+        var checkboxNames = {};
+        $('input[type="checkbox"].foswikiMandatory').each(function(i,e) {
+          checkboxNames[$(this).attr('name')] = 1;
+        });
+        $.each(checkboxNames, function(i, e) {
+          if(!$('input[name="' + i + '"]:checked').length) {
+            var $form = $('input[name="' + i + '"]:first').closest('tr.modacForm');
+            var title = $form.find('span.title').text();
+            if(!title) title = i;
+            alerts.push(jsi18n.get('edit', "You have not selected at least one out of the mandatory form field '[_1]'.", title));
+          }
         });
         if (alerts.length) {
           alerts.push(jsi18n.get('edit', 'Please check your input.'));
