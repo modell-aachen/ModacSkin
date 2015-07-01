@@ -69,7 +69,7 @@
   %IF{"$COMMENTMODERATION='on'" then="moderation=\"on\"" else="moderation=\"off\""}%
 }%<!-- -->%TMPL:END%
 
-%TMPL:DEF{"metacomments"}%%IF{"context view" then="<div id='modacComments' class='modacBorder'><div class='foswikiFormSteps'><div class='foswikiFormStep'>$percentTWISTY{id=$quotcommentlist$quot mode=$quotdiv$quot remember=$quoton$quot showimgleft=$quot%ICONURLPATH{toggleopen}%$quot hideimgleft=$quot%ICONURLPATH{toggleclose}%$quot showlink=$quot<span class='modacCmtCounter'>%MAKETEXT{"Comments"}%</span>$quot hidelink=$quot<span class='modacCmtCounter'>%MAKETEXT{"Comments"}%</span>$quot linkclass=$quotpatternTwistyButton patternAttachmentHeader MetaCommentTwisty$quot}$percent"}%%TMPL:PREV%%IF{"context view" then="$percentENDTWISTY$percent</div></div></div>"}%%TMPL:END%
+%TMPL:DEF{"metacomments"}%%IF{"context view" then="<div id='modacComments' class='modacBorder'><div class='foswikiFormSteps'><div class='foswikiFormStep'>$percentTWISTY{id=$quotcommentlist$quot mode=$quotdiv$quot remember=$quoton$quot showimgleft=$quot%ICONURLPATH{toggleopen}%$quot hideimgleft=$quot%ICONURLPATH{toggleclose}%$quot showlink=$quot<span class='modacCmtCounter'>%MAKETEXT{"Comments"}%</span>$quot hidelink=$quot<span class='modacCmtCounter'>%MAKETEXT{"Comments"}%</span>$quot linkclass=$quotpatternTwistyButton patternAttachmentHeader$quot}$percent"}%%TMPL:PREV%%IF{"context view" then="$percentENDTWISTY$percent</div></div></div>"}%%TMPL:END%
 
 %{ ################################################################################ }%
 %TMPL:DEF{"comments::titlestep"}%<!-- -->
