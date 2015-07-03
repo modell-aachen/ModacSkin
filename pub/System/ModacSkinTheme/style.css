@@ -429,7 +429,7 @@ html>body #modacLogoIE {
 
 /*-------- Modac_Standard = MA_table --------*/
 .Modac_Standard {
-	margin: 1em 0;
+	margin: 1em auto;
 	background: #f9f9f9;
 	border-collapse: collapse;
 	empty-cells:show;
@@ -449,7 +449,7 @@ html>body #modacLogoIE {
 
 /*-------- Modac_Standard_Ohne --------*/
 .Modac_Standard_Ohne {
-	margin: 1em 0;
+	margin: 1em auto;
 	background: #f9f9f9;
 	border-collapse: collapse;
 	empty-cells:show;
@@ -463,7 +463,7 @@ html>body #modacLogoIE {
 
 /*-------- Modac_Standard_Leer --------*/
 .Modac_Standard_Leer {
-	margin: 1em 0;
+	margin: 1em auto;
 	border-width: 0px;
 	border-collapse: collapse;
 	empty-cells:show;
