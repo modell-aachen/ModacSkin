@@ -877,19 +877,22 @@ jQuery(function($){
     // TopicMenue
 
     // initialize superfish menue
-    $('.jqmenu').supersubs({
-        minWidth: 13, /* minimum width of sub-menus in em units */
-        maxWidth: 13, /* maximum width of sub-menus in em units */
-        extraWidth: 1 /* extra width can ensure lines don't sometimes turn over
-                         due to slight rounding differences and font-family */
-    });
-    $('.jqmenu').superfish({
-        autoArrows: false, /* Default arrow color is bad anyway */
-        dropShadows: false, /* Those muck up our borders */
-        delay: /SeleniumTest/.exec(window.location)?10000:500,
-        disableHI: true
-    });
-    $('.jqmenu').bgIframe({opacity:false});
+    var $jqmenu = $('.jqmenu');
+    if($jqmenu.length) {
+        $jqmenu.supersubs({
+            minWidth: 13, /* minimum width of sub-menus in em units */
+            maxWidth: 13, /* maximum width of sub-menus in em units */
+            extraWidth: 1 /* extra width can ensure lines don't sometimes turn over
+                             due to slight rounding differences and font-family */
+        });
+        $jqmenu.superfish({
+            autoArrows: false, /* Default arrow color is bad anyway */
+            dropShadows: false, /* Those muck up our borders */
+            delay: /SeleniumTest/.exec(window.location)?10000:500,
+            disableHI: true
+        });
+        $jqmenu.bgIframe({opacity:false});
+    }
 
     // Inhibit clicks on MoreMenue und submenues
     $('.modacMoreDynamicLink a').click(function() { return false; });
