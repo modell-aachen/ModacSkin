@@ -1,6 +1,10 @@
 # vim:set ft=perl:
 my $this = shift;
 return "ModacSkin: postinstall: not in correct environment\n" if (!$this);
+
+# don´t perform postinstall to test the integration with Foswiki 2.0
+return;
+
 my $map = \&Foswiki::Configure::Util::mapTarget;
 my $root = $this->{_rootdir};
 
