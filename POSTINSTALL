@@ -1,7 +1,7 @@
 # vim:set ft=perl:
 my $this = shift;
 return "ModacSkin: postinstall: not in correct environment\n" if (!$this);
-my $map = \&Foswiki::Configure::Util::mapTarget;
+my $map = \&Foswiki::Configure::Util::mapTarget || \&Foswiki::Package::_mapTarget;
 my $root = $this->{_rootdir};
 
 my @msgs = ();
