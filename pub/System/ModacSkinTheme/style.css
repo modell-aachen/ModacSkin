@@ -445,6 +445,18 @@ html>body #modacLogoIE {
 	color: #f9f9f9;
 	background: #003c89;
 }
+
+.Modac_Standard.autonumbered tbody {
+	counter-reset: rowNumber;
+}
+.Modac_Standard.autonumbered tbody tr {
+	counter-increment: rowNumber;
+}
+.Modac_Standard.autonumbered tbody tr td:first-child::before {
+	content: counter(rowNumber);
+	min-width: 1em;
+	margin-right: 0.5em;
+}
 /*-------- /Modac_Standard = MA_table --------*/
 
 /*-------- Modac_Standard_Ohne --------*/
@@ -459,6 +471,18 @@ html>body #modacLogoIE {
 	padding-left: 3px;
 	padding-right: 3px;
 }
+
+.Modac_Standard_Ohne.autonumbered tbody {
+	counter-reset: rowNumber;
+}
+.Modac_Standard_Ohne.autonumbered tbody tr {
+	counter-increment: rowNumber;
+}
+.Modac_Standard_Ohne.autonumbered tbody tr td:first-child::before {
+	content: counter(rowNumber);
+	min-width: 1em;
+	margin-right: 0.5em;
+}
 /*-------- /Modac_Standard_Ohne --------*/
 
 /*-------- Modac_Standard_Leer --------*/
@@ -471,6 +495,18 @@ html>body #modacLogoIE {
 .Modac_Standard_Leer td, .Modac_Standard_Leer th {
 	padding-left: 3px;
 	padding-right: 3px;
+}
+
+.Modac_Standard_Leer.autonumbered tbody {
+	counter-reset: rowNumber;
+}
+.Modac_Standard_Leer.autonumbered tbody tr {
+	counter-increment: rowNumber;
+}
+.Modac_Standard_Leer.autonumbered tbody tr td:first-child::before {
+	content: counter(rowNumber);
+	min-width: 1em;
+	margin-right: 0.5em;
 }
 /*-------- /Modac_Standard_Leer --------*/
 
@@ -493,6 +529,20 @@ html>body #modacLogoIE {
 	text-align: center;
 }
 
+.Grey_Standard.autonumbered tbody,
+.Grey_Standard_Ohne.autonumbered tbody {
+	counter-reset: rowNumber;
+}
+.Grey_Standard.autonumbered tbody tr,
+.Grey_Standard_Ohne.autonumbered tbody tr {
+	counter-increment: rowNumber;
+}
+.Grey_Standard.autonumbered tbody tr td:first-child::before,
+.Grey_Standard_Ohne.autonumbered tbody tr td:first-child::before {
+	content: counter(rowNumber);
+	min-width: 1em;
+	margin-right: 0.5em;
+}
 /*-------- /Grey_Standard* -------------*/
 
 /*-------- deprecated: MA_table --------*/
