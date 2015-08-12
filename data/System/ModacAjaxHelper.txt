@@ -6,7 +6,7 @@ The below section is used within WebCreateNewTopic to render the select box for 
 
 <verbatim>
 %STARTSECTION{"topicsinweb"}%
-[%SOLRSEARCH{"type:topic web:%SUBST{text="%URLPARAM{"web"}%" pattern="/" format="."}% -topic:*%WORKFLOWSUFFIX% -topic:*Template -topic:*Form (topic_search:*%SUBST{text="%URLPARAM{query}%" pattern="\s+" format=""}%* OR %FORMATLIST{"%URLPARAM{query}%" split="\s+" separator=" " null="*" format="title_search:*$1*"}%)" format="{\"label\":\"$percentENCODE{\"$title\" type=\"quote\"}$percent\",\"sublabel\":\"$web.$topic\",\"id\":\"$web.$topic\"}" separator="," rows="%URLPARAM{"count" default="20"}%" start="%URLPARAM{"offset" default="0"}%" sort="topic"}%]
+[%IF{"$offset = 0 and $clearable=1" then="{\"id\":\"%HOMETOPIC%\",\"label\":\"%MAKETEXT{"No topic parent"}%\",\"sublabel\":\"%HOMETOPIC%\"}"}%%SOLRSEARCH{"type:topic web:%SUBST{text="%URLPARAM{"web"}%" pattern="/" format="."}% -topic:*%WORKFLOWSUFFIX% -topic:*Template -topic:*Form (topic_search:*%SUBST{text="%URLPARAM{query}%" pattern="\s+" format=""}%* OR %FORMATLIST{"%URLPARAM{query}%" split="\s+" separator=" " null="*" format="title_search:*$1*"}%)" format="{\"label\":\"$percentENCODE{\"$title\" type=\"quote\"}$percent\",\"sublabel\":\"$web.$topic\",\"id\":\"$web.$topic\"}" separator="," rows="%URLPARAM{"count" default="20"}%" start="%URLPARAM{"offset" default="0"}%" sort="topic" header="%IF{"$offset = 0 and $clearable=1" then=","}%"}%]
 %ENDSECTION{"topicsinweb"}%
 </verbatim>
 
