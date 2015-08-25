@@ -759,7 +759,7 @@ jQuery(function($){
           var $form = $(e).closest('tr.modacForm');
           var title = $form.find('span.title').text();
           if(!title) title = $(e).attr('name');
-          alerts.push(jsi18n.get('edit', "You have not selected any option of the mandatory form field '[_1]'.", title));
+          alerts.push(jsi18n.get('edit', "You have not filled out the mandatory form field '[_1]'.", title));
         });
         // check checkboxes
         var checkboxNames = {};
@@ -771,7 +771,7 @@ jQuery(function($){
             var $form = $('input[name="' + i + '"]:first').closest('tr.modacForm');
             var title = $form.find('span.title').text();
             if(!title) title = i;
-            alerts.push(jsi18n.get('edit', "You have not selected at least one out of the mandatory form field '[_1]'.", title));
+            alerts.push(jsi18n.get('edit', "You have not selected any option of the mandatory form field '[_1]'.", title));
           }
         });
         if (alerts.length) {
