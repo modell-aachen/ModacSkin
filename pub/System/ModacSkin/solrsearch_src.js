@@ -9,7 +9,7 @@ if(window.location.hash == '') {
 // Helper functions on search page:
 jQuery(function($){
     // For displaying language flags on SolrSearch pages.
-    modacSolr = {
+    foswiki.modacSolr = {
         lang: function(language){
             if(typeof(language)==='undefined') return '';
             var flag, name;
