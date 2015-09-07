@@ -9,6 +9,7 @@ map="%TMPL:P{"modacformtable_mappings"}%"
 mandatory="&nbsp;<span class='foswikiAlert'>*</span>"
 topic="%IF{"istopic '%WEB%.%TOPIC%'" then="%WEB%.%TOPIC%" else="%URLPARAM{"templatetopic" encode="quote"}%"}%"
 %IF{"defined rev" then=" revision=\"$percentURLPARAM{\"rev\" default=\"%rev%\"}$percent\""}%
+%TMPL:P{"modacformtable:extraparams"}%
 }%
 %TMPL:END%
 
