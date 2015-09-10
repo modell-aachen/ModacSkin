@@ -1005,5 +1005,8 @@ jQuery(function($){
     $('form.ModacLanguageSelector [name="language"]').change(function(){
         $(this).closest('form').ajaxSubmit(function(){window.location.reload();});
     });
+
+    // inhibit clicks on active tabs
+    $('div.modacActionButtonACTIVE a').click(function() {return false;});
 });
 

@@ -22,7 +22,7 @@
 }%%TMPL:END%
 
 %TMPL:DEF{"modacEdit"}%%IF{"defined rev or defined rev1" then="" else="$percntTMPL:P{modacEditLATEST}$percnt"}%%TMPL:END%
-%TMPL:DEF{"modacEditLATEST"}%<div class="foswikiRequiresChangePermission requireModacChangePermission %IF{"context edit" then="modacActionButtonACTIVE"}%"><a href='%SCRIPTURL{"edit"}%/%BASEWEB%/%BASETOPIC%?t=%GMTIME{"$epoch"}%%TMPL:P{"url_param_editaction"}%%IF{"context CKEditorPluginEnabled" then="" else=";nowysiwyg=1"}%' class='modacChanging' rel='nofollow' %MAKETEXT{"title='Edit this topic' accesskey='e'>&Edit"}%</a></div>%TMPL:END%
+%TMPL:DEF{"modacEditLATEST"}%<div class="foswikiRequiresChangePermission requireModacChangePermission %IF{"context edit" then="modacActionButtonACTIVE"}%"><a %IF{"not context edit" then="href='%SCRIPTURL{"edit"}%/%BASEWEB%/%BASETOPIC%?t=%GMTIME{"$epoch"}%%TMPL:P{"url_param_editaction"}%%IF{"context CKEditorPluginEnabled" then="" else=";nowysiwyg=1"}%'"}% class='modacChanging' rel='nofollow' %MAKETEXT{"title='Edit this topic' accesskey='e'>&Edit"}%</a></div>%TMPL:END%
 
 %TMPL:DEF{"modacAttach"}%<div class="foswikiRequiresChangePermission requireModacChangePermission %IF{"context attach" then="modacActionButtonACTIVE"}%"><a href='%SCRIPTURLPATH{"attach"}%/%BASEWEB%/%BASETOPIC%' class='modacChanging' rel='nofollow' %MAKETEXT{"title='Attach an image or document to this topic' accesskey='a'>&Attach"}%</a></div>%TMPL:END%
 
