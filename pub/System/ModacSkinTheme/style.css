@@ -1696,3 +1696,7 @@ table tr {
 div.modacActionButtonACTIVE a {
 	cursor: default;
 }
+div.modacMoreDynamicLink > span > a,
+span.modacMoreDynamicLink > a {
+	cursor: context-menu;
+}
