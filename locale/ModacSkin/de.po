@@ -132,8 +132,8 @@ msgid "<em>in all public webs</em>"
 msgstr "<em>in allen öffentlichen Bereichen</em>"
 
 #: data/System/WebBottomBarDefault.txt
-msgid "About Q.Wiki"
-msgstr "Über Q.Wiki"
+msgid "About Q.wiki"
+msgstr "Über Q.wiki"
 
 #: templates/edit.modac.tmpl
 msgid "Access keys"
@@ -1628,6 +1628,9 @@ msgstr "warum Sie zur Bestätigung aufgefordert werden"
 #~ msgid "(access denied)"
 #~ msgstr "(Zugriff verweigert)"
 
+#~ msgid "About Q.Wiki"
+#~ msgstr "Über Q.Wiki"
+
 #~ msgid "Change links in topics that refer to !%1 in any Web:"
 #~ msgstr "Verweise in Seiten ändern, die auf !%1 zeigen (alle Bereiche):"
 
@@ -1646,20 +1649,23 @@ msgstr "warum Sie zur Bestätigung aufgefordert werden"
 #~ msgid "Current parent:"
 #~ msgstr "Aktuelle übergeordnete Seite:"
 
+#~ msgid "Discussion available"
+#~ msgstr "Diskussion verfügbar"
+
 #~ msgid "Insert link:"
 #~ msgstr "Link einfügen:"
 
 #~ msgid "Last changed"
 #~ msgstr "Zuletzt geändert"
 
-msgid "Manual"
-msgstr "Anleitung"
+#~ msgid "Manual"
+#~ msgstr "Anleitung"
 
 #~ msgid "Move topic to web:"
 #~ msgstr "Seite in folgenden Bereich verschieben:"
 
-msgid "News"
-msgstr "Aktuelles"
+#~ msgid "News"
+#~ msgstr "Aktuelles"
 
 #~ msgid "Not recommended when deleting a topic."
 #~ msgstr "Nicht empfohlen, wenn Sie die Seite löschen."

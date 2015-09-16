@@ -10,8 +10,7 @@ msgstr ""
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "PO-Revision-Date: 2014-11-07 13:36+0200\n"
 "Last-Translator: Modell Aachen <access@modell-aachen.de>\n"
-"Language-Team: Italian <http://translate.modell-aachen.de/projects/modacskin"
-"/releasenew-york/it/>\n"
+"Language-Team: Italian <http://translate.modell-aachen.de/projects/modacskin/releasenew-york/it/>\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -132,8 +131,8 @@ msgid "<em>in all public webs</em>"
 msgstr "<em>in tutti i web pubblici</em>"
 
 #: data/System/WebBottomBarDefault.txt
-msgid "About Q.Wiki"
-msgstr "Riguardo Q. Wiki"
+msgid "About Q.wiki"
+msgstr "Riguardo Q.wiki"
 
 #: templates/edit.modac.tmpl
 msgid "Access keys"
@@ -604,9 +603,7 @@ msgstr "Tedesco"
 
 #: templates/validate.modac.tmpl
 msgid "Go back to the previous page, and enable Cookies and Javascript before trying again"
-msgstr ""
-"Ritornare alla pagina precedente e abilitare Cookies e Javascript prima di "
-"riprovare"
+msgstr "Ritornare alla pagina precedente e abilitare Cookies e Javascript prima di riprovare"
 
 #: data/System/ModacSkinWebCreateNewTopicTemplate.txt
 #: templates/more.modac.tmpl
@@ -1122,9 +1119,7 @@ msgstr ""
 
 #: templates/renameattachmentdelete.modac.tmpl
 msgid "The attachment may have to be renamed if an attachment with the same name already exists in the target topic."
-msgstr ""
-"L'allegato deve essere rinominato se un allegato con lo stesso nome esiste "
-"già nell'argomento di destinazione."
+msgstr "L'allegato deve essere rinominato se un allegato con lo stesso nome esiste già nell'argomento di destinazione."
 
 #: data/System/ModacSkinContentTemplatesViewTemplate.txt
 msgid "The following content template are available for newly created topic in the %1 Web:"
@@ -1148,9 +1143,7 @@ msgstr "Questo gruppo non deve avere membri."
 
 #: data/System/ModacSkinUserViewTemplate.txt
 msgid "This is not your personal page, so you can not see anything here."
-msgstr ""
-"Questa non è la tua pagina personale, non sei abilitato alla "
-"visualizzazione."
+msgstr "Questa non è la tua pagina personale, non sei abilitato alla visualizzazione."
 
 #: data/System/ModacSkinSolrSearchViewTemplate.txt
 msgid "Timespan"
@@ -1351,9 +1344,7 @@ msgstr "È anche possibile scegliere di vedere "
 
 #: templates/validate.modac.tmpl
 msgid "You cannot manually confirm this change because either Cookies or Javascript are disabled in your browser."
-msgstr ""
-"Non è possibile confermare manualmente questa modifica perchè  Cookies o "
-"Javascript sono disabilitati nel tuo browser."
+msgstr "Non è possibile confermare manualmente questa modifica perchè  Cookies o Javascript sono disabilitati nel tuo browser."
 
 #: templates/edit.modac.tmpl
 msgid "Your signature to copy/paste"
@@ -1635,6 +1626,9 @@ msgstr "perchè si sta richiedendo di confermare"
 
 #~ msgid "(access denied)"
 #~ msgstr "(Accesso negato)"
+
+#~ msgid "About Q.Wiki"
+#~ msgstr "Riguardo Q. Wiki"
 
 #~ msgid "Change links in topics that refer to !%1 in any Web:"
 #~ msgstr "Cambia i collegamenti nella pagina che fanno riferimento a !%1 in ogni Web:"

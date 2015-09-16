@@ -8,8 +8,7 @@ msgstr ""
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "PO-Revision-Date: 2015-02-20 13:53+0200\n"
 "Last-Translator: Modell Aachen <access@modell-aachen.de>\n"
-"Language-Team: French <http://translate.modell-aachen.de/projects/modacskin"
-"/releasenew-york/fr/>\n"
+"Language-Team: French <http://translate.modell-aachen.de/projects/modacskin/releasenew-york/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -131,7 +130,7 @@ msgid "<em>in all public webs</em>"
 msgstr "<em> dans tous les webs publics</em>"
 
 #: data/System/WebBottomBarDefault.txt
-msgid "About Q.Wiki"
+msgid "About Q.wiki"
 msgstr "à propos de Q.wiki"
 
 #: templates/edit.modac.tmpl
@@ -1628,6 +1627,9 @@ msgstr "pourquoi il vous est demandé de confirmer"
 
 #~ msgid "(access denied)"
 #~ msgstr "accès refusé"
+
+#~ msgid "About Q.Wiki"
+#~ msgstr "à propos de Q.wiki"
 
 #~ msgid "Change links in topics that refer to !%1 in any Web:"
 #~ msgstr "Modifier les liens dans le contenu qui fait référence à !%1 dans tout le Web :"

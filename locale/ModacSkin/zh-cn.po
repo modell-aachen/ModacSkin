@@ -128,7 +128,7 @@ msgid "<em>in all public webs</em>"
 msgstr "<em>在所有公开的子网</em>"
 
 #: data/System/WebBottomBarDefault.txt
-msgid "About Q.Wiki"
+msgid "About Q.wiki"
 msgstr "关于Q.Wiki"
 
 #: templates/edit.modac.tmpl
@@ -1626,6 +1626,9 @@ msgstr "为何您被要求确认"
 
 #~ msgid "%maketext%"
 #~ msgstr "%maketext%"
+
+#~ msgid "About Q.Wiki"
+#~ msgstr "关于Q.Wiki"
 
 #~ msgid "Create New Topic"
 #~ msgstr "建立新主题"
