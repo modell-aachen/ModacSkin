@@ -1,4 +1,5 @@
 %TMPL:INCLUDE{"foswiki"}%%{
+}%%TMPL:INCLUDE{"DisplayUser"}%%{
 ---------------------------------------------------
 }%%TMPL:DEF{"PatternSkin/pattern_edit"}%%{
 }%%TMPL:P{"JavascriptFiles/foswiki_edit"}%%TMPL:P{"LIBJS" id="PatternSkin/pattern_edit" requires="JavascriptFiles/foswiki_edit"}%%TMPL:END%%{
@@ -104,4 +105,3 @@
 %TMPL:DEF{"breadcrumb:currenttopic"}%%IF{"'%TOPIC%' != 'WebHome'" then="%TMPL:P{"breadcrumb:separator"}%[[%TOPIC%][%TOPIC%]]" else=" "}%%TMPL:END%
 
 %{ ---------------------------- /pagetitle and breadcrumb ---------------------------- }%
-

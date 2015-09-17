@@ -1,16 +1,10 @@
 <verbatim class="tml">
 %STARTSECTION{"user"}%
 <literal>
-%LDAPUSERS{
-  include="%URLPARAM{"term"}%.*"
-  hideunknown="off"
-  casesensitive="off"
-  header="["
-  format="{\"value\":\"$wikiName\"}"
-  footer="]"
-  sep=","
-  limit="%URLPARAM{"limit" default="20"}%" 
-}%
+[%QUERYUSERS{
+  urlparam="term"
+  format="{\"value\":\"$cUID\",\"label\":\"$displayName<br/><small>%MAKETEXT{"User"}%: $loginName</small>\"}"
+}%]
 </literal>
 %ENDSECTION{"user"}%
 </verbatim>
@@ -18,17 +12,11 @@
 <verbatim>
 %STARTSECTION{"group"}%
 <literal>
-%LDAP{
-"(%QUERY{"{Ldap}{GroupFilter}"}%)"
-base="%QUERY{"{Ldap}{GroupBase}"}%"
-format="{\"value\":\"$%QUERY{"{Ldap}{GroupAttribute}"}%\"}"
-include="%URLPARAM{"term"}%.*"
-casesensitive="off"
-header="["
-footer="]"
-sep=","
-limit="%URLPARAM{"limit" default="20"}%
-}%
+[%QUERYUSERS{
+  urlparam="term"
+  type="group"
+  format="{\"value\":\"$wikiName\",\"label\":\"$wikiName<br/><small>%MAKETEXT{"Group"}%</small>\"}"
+}%]
 </literal>
 %ENDSECTION{"group"}%
 </verbatim>
@@ -36,27 +24,12 @@ limit="%URLPARAM{"limit" default="20"}%
 <verbatim>
 %STARTSECTION{"all"}%
 <literal>
-%FORMATLIST{
-"%LDAPUSERS{
-  include="%URLPARAM{"term"}%.*"
-  hideunknown="off"
-  casesensitive="off"
-  format="$wikiName "
-  limit="%URLPARAM{"limit" default="20"}%" 
-}%
-%LDAP{
-"(%QUERY{"{Ldap}{GroupFilter}"}%)"
-base="%QUERY{"{Ldap}{GroupBase}"}%"
-format="$%QUERY{"{Ldap}{GroupAttribute}"}% "
-include="%URLPARAM{"term"}%.*"
-casesensitive="off"
-limit="%URLPARAM{"limit" default="20"}%
-}%"
-split = " "
-header="["
-footer="]"
- format="{\"value\":\"$1\"}"
-}%
+[%QUERYUSERS{
+  urlparam="term"
+  type="any"
+  userformat="{\"value\":\"$cUID\",\"label\":\"$displayName<br/><small>%MAKETEXT{"User"}%: $loginName</small>\"}"
+  groupformat="{\"value\":\"$wikiName\",\"label\":\"$wikiName<br/><small>%MAKETEXT{"Group"}%</small>\"}"
+}%]
 </literal>
 %ENDSECTION{"all"}%
 </verbatim>
