@@ -22,7 +22,8 @@ jQuery(function($) {
 						web: opts.web,
 						query: term.toLowerCase(),
 						'offset': offset,
-						count: opts.pagesize
+						count: opts.pagesize,
+						clearable: 1
 					};
 				},
 				results: function(data, page) {
@@ -36,7 +37,6 @@ jQuery(function($) {
 					};
 				}
 			},
-			placeholder: foswiki.getMetaTag('l10n_modac_selecttopic_noparent'),
 			formatResult: function(object, container, query) {
 				return '<div class=\"topicselect_label\">'+object.label+'</div><div class=\"topicselect_sublabel\">'+object.sublabel+'</div>';
 			},
@@ -50,7 +50,7 @@ jQuery(function($) {
 				var val = $(element).val();
 				callback({id: val, label: val, sublabel: val});
 			},
-			allowClear: true,
+			allowClear: false,
 			width: 'element'
 		});
 	});

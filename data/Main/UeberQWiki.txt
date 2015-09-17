@@ -1,13 +1,14 @@
 %META:TOPICINFO{author="BaseUserMapping_333" comment="reprev" date="1350307544" format="1.1" reprev="1" version="1"}%
-Das Q.Wiki ist eine Entwicklung der Modell Aachen GmbH.<br />
+Das Q.wiki ist eine Entwicklung der Modell Aachen GmbH.<br />
 <br /> <strong>Support:</strong><br /> [[mailto:support@modell-aachen.de?subject=Support-Anfrage][support@modell-aachen.de]]<br /> fon: +49 (0)241 538 08 720<br />
+<br />Den Teamviewer-Client erreichen Sie [[http://wartung.modell-aachen.de][hier]].<br />
 <br /> <strong>Kontaktdaten:</strong><br /> Modell Aachen GmbH - Interaktive Managementsysteme<br /> Dennewartstr. 25-27<br /> 52068 Aachen<br /> fon +49 (0)173 35 22 333<br /> fax +49 (0)241 9148 8653<br /> [[http://www.modell-aachen.de]]<br />
 <br /> Geschäftsführung: Dr.-Ing. Carsten Behrens<br /> Amtsgericht Aachen, HRB 15622<br />
 <br /> Stand: 26.08.2013
 
 %META:FORM{name="Processes.DocumentForm"}%
 %META:FIELD{name="DocumentType" attributes="" title="DocumentType" value="Info page"}%
-%META:FIELD{name="TopicTitle" attributes="" title="TopicTitle" value="Über Q.Wiki"}%
+%META:FIELD{name="TopicTitle" attributes="" title="TopicTitle" value="Über Q.wiki"}%
 %META:FIELD{name="Responsible" attributes="M" title="Responsible" value=""}%
 %META:FIELD{name="AreaOfApplication" attributes="" title="AreaOfApplication" value="corporation-wide"}%
 %META:FIELD{name="ISO9001" attributes="" title="ISO9001" value=""}%

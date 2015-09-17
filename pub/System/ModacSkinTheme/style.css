@@ -427,6 +427,10 @@ html>body #modacLogoIE {
 
 /* -------------------------- Modac Tables ----------------------------*/
 
+table[align="center"] {
+	margin: 1em auto;
+}
+
 /*-------- Modac_Standard = MA_table --------*/
 .Modac_Standard {
 	margin: 1em 0;

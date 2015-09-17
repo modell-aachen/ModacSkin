@@ -771,7 +771,7 @@ jQuery(function($){
             var $form = $('input[name="' + i + '"]:first').closest('tr.modacForm');
             var title = $form.find('span.title').text();
             if(!title) title = i;
-            alerts.push(jsi18n.get('edit', "You have not selected at least one out of the mandatory form field '[_1]'.", title));
+            alerts.push(jsi18n.get('edit', "You have not selected any option of the mandatory form field '[_1]'.", title));
           }
         });
         if (alerts.length) {
@@ -877,19 +877,22 @@ jQuery(function($){
     // TopicMenue
 
     // initialize superfish menue
-    $('.jqmenu').supersubs({
-        minWidth: 13, /* minimum width of sub-menus in em units */
-        maxWidth: 13, /* maximum width of sub-menus in em units */
-        extraWidth: 1 /* extra width can ensure lines don't sometimes turn over
-                         due to slight rounding differences and font-family */
-    });
-    $('.jqmenu').superfish({
-        autoArrows: false, /* Default arrow color is bad anyway */
-        dropShadows: false, /* Those muck up our borders */
-        delay: /SeleniumTest/.exec(window.location)?10000:500,
-        disableHI: true
-    });
-    $('.jqmenu').bgIframe({opacity:false});
+    var $jqmenu = $('.jqmenu');
+    if($jqmenu.length) {
+        $jqmenu.supersubs({
+            minWidth: 13, /* minimum width of sub-menus in em units */
+            maxWidth: 13, /* maximum width of sub-menus in em units */
+            extraWidth: 1 /* extra width can ensure lines don't sometimes turn over
+                             due to slight rounding differences and font-family */
+        });
+        $jqmenu.superfish({
+            autoArrows: false, /* Default arrow color is bad anyway */
+            dropShadows: false, /* Those muck up our borders */
+            delay: /SeleniumTest/.exec(window.location)?10000:500,
+            disableHI: true
+        });
+        $jqmenu.bgIframe({opacity:false});
+    }
 
     // Inhibit clicks on MoreMenue und submenues
     $('.modacMoreDynamicLink a').click(function() { return false; });
@@ -905,7 +908,7 @@ jQuery(function($){
         //    copy terms to solrSearchField and submit that instead
         // If on a normal wiki page
         //    Proper browser: rewrite query to link with solr4 style hashtag
-        //    IE7,8: rewrite query to query to link with hashtag stored in 'htag' parameter - some script on solr page will decode it
+        //    IE7,8,9: rewrite query to query to link with hashtag stored in 'htag' parameter - some script on solr page will decode it
         var $searchbox = $('#quickSearchBox');
         var $searchfield = $('.solrSearchField');
         var $forms = $('.solrSearchForm');
@@ -932,7 +935,7 @@ jQuery(function($){
             // construct the hashtag (eventually deal with browsers feeling special)
             if(params.length) {
                 var htag = params.join('&');
-                if(navigator && navigator.appName === 'Microsoft Internet Explorer' && /MSIE [7,8]/.exec(navigator.userAgent)) {
+                if(navigator && navigator.appName === 'Microsoft Internet Explorer' && /MSIE [7,8,9]/.exec(navigator.userAgent)) {
                     href += '?htag='+htag;
                 }
                 href += '#'+htag;

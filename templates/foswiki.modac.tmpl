@@ -1,4 +1,5 @@
 %TMPL:INCLUDE{"foswiki"}%%{
+}%%TMPL:INCLUDE{"DisplayUser"}%%{
 ---------------------------------------------------
 Requires for each of the foswiki library JS components. These are not used by
 the base templates, but are provided for fancier skins.
@@ -126,4 +127,3 @@ JQUERYPLUGIN is not a hard requirement, but it must sort earlier.
 %TMPL:DEF{"breadcrumb:currenttopic"}%%IF{"'%TOPIC%' != 'WebHome'" then="%TMPL:P{"breadcrumb:separator"}%[[%TOPIC%][%TOPIC%]]" else=" "}%%TMPL:END%
 
 %{ ---------------------------- /pagetitle and breadcrumb ---------------------------- }%
-
