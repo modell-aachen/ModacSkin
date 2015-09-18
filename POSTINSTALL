@@ -2,7 +2,7 @@
 my $this = shift;
 return "ModacSkin: postinstall: not in correct environment\n" if (!$this);
 my $map = \&Foswiki::Configure::Util::mapTarget;
-$map = \&Foswiki::Configure::Package::_mapTarget unless defined *Foswiki::Configure::Util::mapTarget{CODE};
+$map = \&Foswiki::Configure::Package::_mapTarget if defined *Foswiki::Configure::Package::_mapTarget{CODE};
 my $root = $this->{_rootdir};
 
 my @msgs = ();
