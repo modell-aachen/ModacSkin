@@ -6,6 +6,7 @@ $map = \&Foswiki::Configure::Package::_mapTarget unless defined *Foswiki::Config
 my $root = $this->{_rootdir};
 
 my @msgs = ();
+Foswiki->new() if !defined $Foswiki::Plugins::SESSION;
 my @webs = grep { ! /^Trash|System|Custom|Sandbox|Main$/ } Foswiki::Func::getListOfWebs('public');
 my $source = $map->($root, "data/_default/WebContentTemplates.txt");
 use File::Copy;
