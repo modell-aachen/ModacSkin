@@ -1,2 +1,0 @@
-%TMPL:DEF{"displayuser"}%%RENDERUSER{"%id%"
-}%%TMPL:END%
