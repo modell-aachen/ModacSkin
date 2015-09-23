@@ -62,64 +62,16 @@ Please keep the comments near START-/ENDSECTION to avoid insertion of additional
 
 ---+++ User selector for Select2
 
-%STARTSECTION{"select2::user"}%%IF{"context LdapNgPluginEnabled"
-  then="$percntINCLUDE{\"%TOPIC%\" section=\"select2::user::ldap\"}$percnt"
-  else="$percntINCLUDE{\"%TOPIC%\" section=\"select2::user::dbquery\"}$percnt"
-}%%ENDSECTION{"select2::user"}%
-
-%STARTSECTION{"select2::user::ldap"}%<literal>%LDAPUSERS{
-  include="%URLPARAM{"q"}%.*"
-  hideunknown="off"
-  casesensitive="off"
-  header="{\"results\":["
-  format="{\"id\":\"$wikiName\",\"text\":\"$wikiName\",\"thumbnail\":\"$percntATTACHMENTS{\"%USERSWEB%.$wikiName\"
-         name=\".*\.(jpe?g|gif|png|JE?PG|GIF|PNG)\"
-         warn=\"off\"
-         limit=\"1\"
-         sort=\"comment:name\"
-         hidenull=\"off\"
-         format=\"%SCRIPTURLPATH{"rest"}%/ImagePlugin/resize?topic=%USERSWEB%.$wikiName&file=$dollarname&size=32x32>\"
-         nullformat=\"%SCRIPTURLPATH{"rest"}%/ImagePlugin/resize?topic=%SYSTEMWEB%.MetaCommentPlugin&file=nobody.gif&size=32x32>\"
-    }$percnt\"
-  }"
-  footer="], \"total\":$count}"
-  sep=","
-  limit="%URLPARAM{"limit" default="20"}%"
-  skip="%CALCULATE{"$EVAL(%URLPARAM{"limit" default="20"}%*(%URLPARAM{"page" default="1"}%-1))"}%"
-}%</literal>%ENDSECTION{"select2::user::ldap"}%
-
-%STARTSECTION{"select2::user::dbquery"}%<literal>%DBQUERY{
-   "form='\b%IF{
-      "defined form"
-      then="%URLPARAM{"form"}%"
-      else="UserForm"
-    }%\b' AND %FORMATLIST{
-      "%IF{
-        "'%URLPARAM{"q"}%'=''"
-        then="."
-        else="%URLPARAM{"q"}%"
-      }%"
-      split="\s+"
-      format="lc(%URLPARAM{"property" default="topictitle"}%)=~lc('$1')" separator=" AND "
-   }%"
-   web="%USERSWEB%"
-   skip="%CALCULATE{"$EVAL(%URLPARAM{"limit" default="10"}%*(%URLPARAM{"page" default="1"}%-1))"}%"
-   limit="%URLPARAM{"limit" default="10"}%"
-   format="  {
-    \"id\":\"$topic\",
-    \"text\":\"$expand(topictitle)\",
-    \"thumbnail\":\"$percntATTACHMENTS{\"$web.$topic\"
-         name=\".*\.(jpe?g|gif|png|JE?PG|GIF|PNG)\"
-         warn=\"off\"
-         limit=\"1\"
-         sort=\"comment:name\"
-         hidenull=\"off\"
-         format=\"%SCRIPTURLPATH{"rest"}%/ImagePlugin/resize?topic=$web.$topic&file=$dollarname&size=32x32>\"
-         nullformat=\"%SCRIPTURLPATH{"rest"}%/ImagePlugin/resize?topic=%SYSTEMWEB%.MetaCommentPlugin&file=nobody.gif&size=32x32>\"
-    }$percnt\"
-   }"
-   separator=",$n"
-   header="{\"results\":[$n"
-   footer="$n], \"total\":$count}"
-}%</literal>%ENDSECTION{"select2::user::dbquery"}%
+%STARTSECTION{"select2::user"}%{"results":[%QUERYUSERS{
+  urlparam="q"
+  urlparamfields="loginName,wikiName,displayName"
+  urlparaminfix="1"
+  type="user"
+  format="$pref(USERAUTOCOMPLETEFORMAT,{\"id\":\"$json:cUID\",\"text\":\"$json:displayName\"})"
+}%]}%ENDSECTION{"select2::user"}%
+%STARTSECTION{"select2::user::display"}%%RENDERUSER{
+  "%id%"
+  type="user"
+  format="$pref(USERDISPLAYFORMAT,$displayName)"
+}%%ENDSECTION{"select2::user::display:}%
 
