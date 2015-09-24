@@ -66,7 +66,7 @@ Please keep the comments near START-/ENDSECTION to avoid insertion of additional
   urlparam="q"
   urlparamfields="loginName,wikiName,displayName"
   urlparaminfix="1"
-  type="user"
+  type="users"
   format="$pref(USERAUTOCOMPLETEFORMAT,{\"id\":\"$json:cUID\",\"text\":\"$json:displayName\"})"
 }%]}%ENDSECTION{"select2::user"}%
 %STARTSECTION{"select2::user::display"}%%RENDERUSER{
