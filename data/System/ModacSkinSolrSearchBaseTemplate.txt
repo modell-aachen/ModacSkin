@@ -6,9 +6,18 @@
 %{</verbatim>}%
 
 %{<verbatim class="tml">}%
+%TMPL:DEF{"defaultstyle"}%%TMPL:PREV%%{
+}%%ADDTOZONE{"head" text="<link rel='stylesheet' type='text/css' media='all' href='%PUBURLPATH%/%SYSTEMWEB%/FontAwesomeContrib/css/font-awesome.min.css' />"}%%{
+}%%ADDTOZONE{"head" text="<link rel='stylesheet' type='text/css' media='all' href='%PUBURLPATH%/%SYSTEMWEB%/TasksAPIPlugin/css/tasktracker.min.css' />"}%%{
+}%%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim class="tml">}%
 %TMPL:DEF{"script:skinbase"}%%TMPL:PREV%%{
-}%%JQREQUIRE{tooltip}%%{
+}%%JQREQUIRE{tooltip,tasksapi,jqp::readmore}%%{
 }%%ADDTOZONE{"script" id="jsi18n::solr" requires="%JSI18NID%" text="<script src='%PUBURLPATH%/%SYSTEMWEB%/ModacSkin/jsi18n.solr.%IF{"$LANGUAGE=~'de|fr'" then="%LANGUAGE%" else="en"}%.js'></script>"}%%{
+}%%ADDTOZONE{"script" id="jsi18n::tasksapi" requires="%JSI18NID%" text="<script type='text/javascript' src='%PUBURLPATH%/%SYSTEMWEB%/TasksAPIPlugin/js/i18n/jsi18n.%IF{"$LANGUAGE=~'de'" then="%LANGUAGE%" else="en"}%.min.js'></script>"}%%{
+}%%ADDTOZONE{"script" id="tasksapi::solr" requires="JQUERYPLUGIN::TASKSAPI" text="<script type='text/javascript' src='%PUBURLPATH%/%SYSTEMWEB%/TasksAPIPlugin/js/tasksapi.solr.js'></script>"}%%{
 }%%ADDTOZONE{"script" id="solr:dateformat" text="<script>solrDateformat='%TMPL:P{"solr::dateformat"}%';</script>"}%%{
 }%%ADDTOZONE{"script" requires="JQUERYPLUGIN" id="ModacSolrHelper" text="<script type='text/javascript' src='%PUBURLPATH%/%SYSTEMWEB%/ModacSkin/solrsearch.js'></script>"}%%{
 }%%JQREQUIRE{"livequery,focus, serialpager, scrollto, prettyphoto, tmpl, jqtwisty, moment, blockui, imagetooltip"}%%{
@@ -97,6 +106,28 @@
       {{:~formatDate(date,solrDateformat)}}, {{:author}}
     </div>
   </div>
+</script>%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim>}%
+%TMPL:DEF{"solr::fields::append"}%%TMPL:PREV%,container_id,container_url,task_state_s,task_type_s,task_id_s%TMPL:END%
+%TMPL:DEF{"solr::templates::hits::task"}%<script id="solrHitTemplate_task" type="text/x-jquery-tmpl">
+  <div class='solrSearchHit clearfix'>
+    %TMPL:P{"solr::thumbnail"}%
+    <h3 title='${jsi18n.get('tasksapi', task_type_s)}'>
+      <img src='{{if icon}}${icon}{{else}}${foswiki.getPreference('PUBURLPATH')+'/'+foswiki.getPreference('SYSTEMWEB')+'/DocumentGraphics/target.png'}{{/if}}' width='16' height='16' class='solrHitIcon' />
+      <a class="task-solr-hit" data-id="${task_id_s}" href='#'>${title}</a>
+      <span class='foswikiGrayText'><em>(${jsi18n.get('tasksapi', task_type_s)}, ${jsi18n.get('solr', task_state_s)})</em>
+        {{html jsi18n.get('solr', 'in [_1]', "<a href='"+container_url+"'>"+container_id+"</a>")}}
+      </span>
+    </h3>
+  <div class='solrHilite'>
+    {{html $item.getHilite(id)}}
+  </div>
+  <div class='solrRevision'>
+    ${$item.formatDate(date,solrDateformat)}, ${author}
+  </div>
+</div>
 </script>%TMPL:END%
 %{</verbatim>}%
 
@@ -273,6 +304,8 @@
 %TMPL:P{"solr::templates::hits::action"}%<!-- -->
 %TMPL:P{"solr::templates::topic::title"}%<!-- -->
 %TMPL:P{"solr::templates::thumbnail"}%<!-- -->
+%TMPL:P{"solr::templates::hits::task"}%<!-- -->
+%TMPL:END%
 %{</verbatim>}%
 
 %{<verbatim>}%
