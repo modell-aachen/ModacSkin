@@ -18,21 +18,31 @@ jQuery(function($){
     });
 
     var ModacSkin = foswiki.ModacSkin = {
+
+        // These are the default options for dialogs
+        dialogDefaultOptions : {
+            width: 600,
+            modal: true,
+            draggable: true,
+            autoOpen: true,
+            resizable: true,
+            closeOnEscape: true,
+        },
+
         // Creates a string to use with jQuery's UI Dialog widget.
         // Just add this string to the dom and you'll get a dialog.
         //
         // Parameters:
         //    * options: overrides the default options used for ModacSkin
         makeDialogString : function(options) {
-            if(options === undefined) {
-                options = {};
-            }
-            return '<div class="jqUIDialog {width:' + ((options.width!==undefined)?options.width:'600') +
-                ', modal:' + ((options.modal!==undefined)?options.modal:'true') +
-                ',draggable:' + ((options.draggable!==undefined)?options.draggable:'true') +
-                ',autoOpen:' + ((options.autoOpen!==undefined)?options.autoOpen:'true') +
-                ',resizable:' + ((options.resizable!==undefined)?options.resizable:'true') +
-                ',closeOnEscape:' + ((options.closeOnEscape!==undefined)?options.closeOnEscape:'true') +
+            var extendedOptions = {};
+            $.extend(extendedOptions, ModacSkin.dialogDefaultOptions, options);
+            return '<div class="jqUIDialogDis {width:' + extendedOptions.width +
+                ', modal:' + extendedOptions.modal +
+                ',draggable:' + extendedOptions.draggable +
+                ',autoOpen:' + extendedOptions.autoOpen +
+                ',resizable:' + extendedOptions.resizable +
+                ',closeOnEscape:' + extendedOptions.closeOnEscape +
                 ((options.title!==undefined)?(',title:\''+options.title.replace("'","\\'")+'\''):'') +
                 '} '+((options.dialogClass!==undefined)?options.dialogClass:'modacAjaxDialog')+'"></div>';
         },
@@ -67,7 +77,6 @@ jQuery(function($){
             var $contents = $data.find('.modacDialogContents');
             if($contents.length) {
                 var escTitle = $data.find('.modacDialogTitle').remove().html();
-                escTitle = escTitle.replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&prime;').replace(/&/g, '&amp;');
                 options.title = escTitle;
             } else {
                 options.title = $data.find('h2:first').remove().text();
@@ -91,17 +100,19 @@ jQuery(function($){
                 }
                 $loadingDialog.remove();
             }
-            var $dialog = $(ModacSkin.makeDialogString(options)).hide();
+            $.extend(options, ModacSkin.dialogDefaultOptions);
+            var $dialog = $('<div></div>').hide();
             $dialog.append($contents);
             var inited = false;
             $dialog.on('dialogopen', function(){
                 if(inited) return;
                 inited = true;
                 if(typeof beforeInit === 'function') beforeInit($contents, $dialog);
-                ModacSkin.ajaxSubmitButtons($contents,$dialog);
             });
+            options.buttons = ModacSkin.ajaxSubmitButtons($contents,$dialog);
             $dialog.find('.modacHideDialog').hide();
             $('body').append($dialog);
+            $dialog.dialog(options);
             ModacSkin.unblockUI();
             return $dialog;
         },
@@ -133,8 +144,7 @@ jQuery(function($){
             //    * a jqUIDialogSubmit button will submit $form
             //    * if a input:submit has the name action_cancel or action_save
             //      the submitted form will receive a correspondig input.
-            var buttons = $dialog.dialog('option', 'buttons');
-            if(!buttons || !buttons.push) buttons = [];
+            var buttons = [];
             var closable = buttons.length; // is there a button with cancel/close function
                                            // XXX assuming if there are already buttons, they can close the dialog
             $data.find('.jqUIDialogButton, .modacDialogButton input:submit, .patternTopicAction input:submit, #foswikiLogin input:submit').each(function(){
@@ -175,7 +185,7 @@ jQuery(function($){
                             });
                             $dialog.on('dialogclose', function() {
                                 // submit to clear the lease - unless we're already submitting
-                                if(!$dialog.hasClass('submitting')) $formClosure.submit();
+                                if(!$dialog.hasClass('submitting')) {$formClosure.submit();}
                                 return true;
                             });
                             button.click = function(){
@@ -224,10 +234,12 @@ jQuery(function($){
                 }
                 buttons.push(button);
             }
-            // Add buttons
-            if(buttons.length) {
-                $dialog.dialog('option', 'buttons', buttons);
-            }
+
+            // convert icons:
+            $.each(buttons, function(idx, button) {
+                if(button.icon) button.icons = {"primary": button.icon};
+            });
+            return buttons;
         },
 
         // Default 'Message' for blocking with jQuery block.
@@ -465,7 +477,7 @@ jQuery(function($){
                             d.dialog('option', 'buttons', []);
                             d.load(restUri +'/RenderPlugin/template' + param[1], function(){
                                 var $form = d.find('form:first');
-                                ModacSkin.ajaxSubmitButtons(d, d, $form);
+                                d.dialog('option', 'buttons', ModacSkin.ajaxSubmitButtons(d, d, $form));
                                 $form.submit(function(){
                                     // if !modacSubmitMessage blockUI
                                     // better do a handler for succesfull ajax
