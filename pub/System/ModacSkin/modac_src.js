@@ -27,6 +27,7 @@ jQuery(function($){
             autoOpen: true,
             resizable: true,
             closeOnEscape: true,
+            dialogClass: 'modacAjaxDialog'
         },
 
         // Creates a string to use with jQuery's UI Dialog widget.
@@ -37,14 +38,14 @@ jQuery(function($){
         makeDialogString : function(options) {
             var extendedOptions = {};
             $.extend(extendedOptions, ModacSkin.dialogDefaultOptions, options);
-            return '<div class="jqUIDialogDis {width:' + extendedOptions.width +
+            return '<div class="jqUIDialog {width:' + extendedOptions.width +
                 ', modal:' + extendedOptions.modal +
                 ',draggable:' + extendedOptions.draggable +
                 ',autoOpen:' + extendedOptions.autoOpen +
                 ',resizable:' + extendedOptions.resizable +
                 ',closeOnEscape:' + extendedOptions.closeOnEscape +
                 ((options.title!==undefined)?(',title:\''+options.title.replace("'","\\'")+'\''):'') +
-                '} '+((options.dialogClass!==undefined)?options.dialogClass:'modacAjaxDialog')+'"></div>';
+                '} '+options.dialogClass+'"></div>';
         },
 
         // Display data with forms as a dialog.
