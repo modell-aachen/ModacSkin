@@ -287,7 +287,13 @@ jQuery(function($){
                 var $logindialog = ModacSkin.showDialog($login, function($data,$dialog){
                     $form.ajaxForm({
                         beforeSubmit: function(){
-                            $dialog.dialog('close');
+                            try {
+                                if($dialog.dialog('isOpen')) {
+                                    $dialog.dialog('close');
+                                }
+                            } catch(err) {
+                                // dialog not yet initialized
+                            }
                             if($loading) {
                                 $loading.dialog('open');
                             } else {
