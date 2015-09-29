@@ -15,7 +15,7 @@
 %{<verbatim class="tml">}%
 %TMPL:DEF{"script:skinbase"}%%TMPL:PREV%%{
 }%%JQREQUIRE{tooltip,tasksapi,jqp::readmore}%%{
-}%%ADDTOZONE{"script" id="jsi18n::solr" requires="%JSI18NID%" text="<script src='%PUBURLPATH%/%SYSTEMWEB%/ModacSkin/jsi18n.solr.%IF{"$LANGUAGE=~'de|fr'" then="%LANGUAGE%" else="en"}%.js'></script>"}%%{
+}%%JSI18N{"ModacSkin" id="solr"}%%{
 }%%ADDTOZONE{"script" id="jsi18n::tasksapi" requires="%JSI18NID%" text="<script type='text/javascript' src='%PUBURLPATH%/%SYSTEMWEB%/TasksAPIPlugin/js/i18n/jsi18n.%IF{"$LANGUAGE=~'de'" then="%LANGUAGE%" else="en"}%.min.js'></script>"}%%{
 }%%ADDTOZONE{"script" id="tasksapi::solr" requires="JQUERYPLUGIN::TASKSAPI" text="<script type='text/javascript' src='%PUBURLPATH%/%SYSTEMWEB%/TasksAPIPlugin/js/tasksapi.solr.js'></script>"}%%{
 }%%ADDTOZONE{"script" id="solr:dateformat" text="<script>solrDateformat='%TMPL:P{"solr::dateformat"}%';</script>"}%%{
