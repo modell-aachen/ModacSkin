@@ -607,19 +607,24 @@ jQuery(function($){
             var href = $this.find('a:first').attr('href');
             href += (href.indexOf('?') > 0?';':'?') + 'skin=modacdialog,'+foswiki.getPreference('SKIN');
             href = encodeURI(href); // IE messes up otherwise
+            var handleLogin = ModacSkin.handleLogin(function(data, st, jq, $data){
+                var title = $data.find('div.modacDialogTitle').remove().text();
+                var $form = $data.find('form:first');
+                ModacSkin.showDialog($data, undefined, $loading, {
+                    width:($data.find('.contentsWidth').length?$('#modacContents').width():undefined),
+                    title: title,
+                    closeOnEscape: (href.match('^(?:'+foswiki.getPreference('SCRIPTURLPATH')+'|'+foswiki.getPreference('SCRIPTURL')+')'+foswiki.getPreference('SCRIPTSUFFIX')+'/edit/'))?false:true
+                });
+            }, $loading);
             $.ajax({
                 url: href,
-                success: ModacSkin.handleLogin(function(data, st, jq, $data){
-                    var title = $data.find('div.modacDialogTitle').remove().text();
-                    var $form = $data.find('form:first');
-                    ModacSkin.showDialog($data, undefined, $loading, {
-                        width:($data.find('.contentsWidth').length?$('#modacContents').width():undefined),
-                        title: title,
-                        closeOnEscape: (href.match('^(?:'+foswiki.getPreference('SCRIPTURLPATH')+'|'+foswiki.getPreference('SCRIPTURL')+')'+foswiki.getPreference('SCRIPTSUFFIX')+'/edit/'))?false:true
-                    });
-                }, $loading),
+                success: handleLogin,
                 error: function(jqXHR, statusmsg) {
-                    ModacSkin.showDialog('<span class="foswikiAlert">' + statusmsg + " fetching " + href + '</span>', undefined, $loading, {});
+                    if(jqXHR.status === 401) {
+                        handleLogin.call(this, jqXHR.responseText, statusmsg, jqXHR);
+                    } else {
+                        ModacSkin.showDialog('<span class="foswikiAlert">' + statusmsg + " fetching " + href + '</span>', undefined, $loading, {});
+                    }
                 }
             });
             return false;
