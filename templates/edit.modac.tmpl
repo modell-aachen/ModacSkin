@@ -5,12 +5,7 @@
 %{ don't show these elements to make best use of screen estate: }%
 %TMPL:DEF{"logo"}%%TMPL:END%
 
-%TMPL:DEF{"script:skinbase"}%%TMPL:PREV%%ADDTOZONE{
-  "script"
-  id="jsi18n::edit"
-  requires="%JSI18NID%"
-  text="<script src='%PUBURLPATH%/%SYSTEMWEB%/ModacSkin/jsi18n.edit.%IF{"$LANGUAGE=~'de|fr'" then="%LANGUAGE%" else="en"}%.js'></script>"
-}%%TMPL:END%
+%TMPL:DEF{"script:skinbase"}%%TMPL:PREV%%JSI18N{"ModacSkin" id="edit"}%%TMPL:END%
 
 %TMPL:DEF{"script:skintemplate"}%%TMPL:P{"script:skintemplate:edit"}%%TMPL:END%
 
