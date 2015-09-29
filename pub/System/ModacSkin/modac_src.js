@@ -619,7 +619,7 @@ jQuery(function($){
                     });
                 }, $loading),
                 error: function(jqXHR, statusmsg) {
-                    ModacSkin.showDialog('<span class="foswikiAlert">' + statusmsg + " fetching " + $this.attr('href') + '</span>', undefined, $loading, {});
+                    ModacSkin.showDialog('<span class="foswikiAlert">' + statusmsg + " fetching " + href + '</span>', undefined, $loading, {});
                 }
             });
             return false;
