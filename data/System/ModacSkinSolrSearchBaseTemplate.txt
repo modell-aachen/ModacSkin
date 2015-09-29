@@ -113,19 +113,19 @@
 %TMPL:DEF{"solr::fields::append"}%%TMPL:PREV%,container_id,container_url,task_state_s,task_type_s,task_id_s%TMPL:END%
 %TMPL:DEF{"solr::templates::hits::task"}%<script id="solrHitTemplate_task" type="text/x-jquery-tmpl">
   <div class='solrSearchHit clearfix'>
-    %TMPL:P{"solr::thumbnail"}%
-    <h3 title='${jsi18n.get('tasksapi', task_type_s)}'>
-      <img src='{{if icon}}${icon}{{else}}${foswiki.getPreference('PUBURLPATH')+'/'+foswiki.getPreference('SYSTEMWEB')+'/DocumentGraphics/target.png'}{{/if}}' width='16' height='16' class='solrHitIcon' />
-      <a class="task-solr-hit" data-id="${task_id_s}" href='#'>${title}</a>
-      <span class='foswikiGrayText'><em>(${jsi18n.get('tasksapi', task_type_s)}, ${jsi18n.get('solr', task_state_s)})</em>
-        {{html jsi18n.get('solr', 'in [_1]', "<a href='"+container_url+"'>"+container_id+"</a>")}}
+    {{include tmpl="#solrTemplate_thumbnail" /}}
+    <h3 title='{{:~foswiki.jsi18n.get('tasksapi', task_type_s)}}'>
+      <img src='{{if icon}}{{:icon}}{{else}}{{:~foswiki.getPreference('PUBURLPATH')+'/'+~foswiki.getPreference('SYSTEMWEB')+'/DocumentGraphics/target.png'}}{{/if}}' width='16' height='16' class='solrHitIcon' />
+      <a class="task-solr-hit" data-id="{{:task_id_s}}" href='#'>{{:title}}</a>
+      <span class='foswikiGrayText'><em>({{:~foswiki.jsi18n.get('tasksapi', task_type_s) }}, {{:~foswiki.jsi18n.get('solr', task_state_s)}})</em>
+        {{:~foswiki.jsi18n.get('solr', 'in [_1]', "<a href='"+container_url+"'>"+container_id+"</a>")}}}
       </span>
     </h3>
   <div class='solrHilite'>
-    {{html $item.getHilite(id)}}
+    {{:~getHilite(id)}}
   </div>
   <div class='solrRevision'>
-    ${$item.formatDate(date,solrDateformat)}, ${author}
+    {{:~formatDate(date,solrDateformat)}}, {{:author}}
   </div>
 </div>
 </script>%TMPL:END%
