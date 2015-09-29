@@ -432,7 +432,7 @@ jQuery(function($) {
 });
 AJAX
 
-    $this->{selenium}->find_element('Logout', 'link')->click();
+    $this->{selenium}->find_element('Ajax Logout', 'link')->click();
     $this->waitFor( sub { $this->{selenium}->execute_script('return jQuery(".ajaxFinished").length') }, 'Ajax logout did not succeed', undef, 10_000 );
 }
 
