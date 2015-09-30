@@ -1032,5 +1032,25 @@ jQuery(function($){
 
     // inhibit clicks on active tabs
     $('div.modacActionButtonACTIVE a').click(function() {return false;});
+
+    // load modacAjaxContent
+    $('div.modacAjaxContent:not(.loaded,.loading)').each(function() {
+        var $this = $(this);
+        $this.addClass('loading');
+        var url = $this.attr('data-url');
+        if(!url) {
+            $this.removeClass('loading').addClass('missingUrl loaded');
+            return;
+        }
+        // we add the spinner after a short while, so it doesn't show at all when data comes from the cache
+        if($this.spin) setTimeout(function() {
+            if($this.is('.loading')) {
+                $('<div></div>').css('min-height', '100px').css('position','relative').appendTo($this).spin().spin('show');
+            }
+        }, 500);
+        $this.load(url, function() {
+            $this.removeClass('loading').addClass('loaded');
+        });
+    });
 });
 

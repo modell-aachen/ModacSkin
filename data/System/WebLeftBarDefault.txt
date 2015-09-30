@@ -40,8 +40,7 @@
 	hideimgleft="%ICONURLPATH{arrow-down}%" 
 	linkclass="patternTwistyButton" 
 }% 
-<div id="modacSidebarTwisty_webs">
-%IF{ "context FlexWebListPluginEnabled" then="$percntINCLUDE{ $quot$percntSYSTEMWEB$percnt.ModacSkinFlexWebList$quot }$percnt" else="$percntINCLUDE{$quot$percntSYSTEMWEB$percnt.ModacSkinWebList$quot }$percnt" }%
+<div id="modacSidebarTwisty_webs" class="modacAjaxContent" data-url="%SCRIPTURL{rest}%/RenderPlugin/tag?name=INCLUDE;render=1;MaxAge=600;param=%IF{ "context FlexWebListPluginEnabled" then="$percntSYSTEMWEB$percnt.ModacSkinFlexWebList" else="percntSYSTEMWEB$percnt.ModacSkinWebList" }%;web=%ENCODE{"%BASEWEB%"}%;topic=%ENCODE{"%BASEWEB%.%BASETOPIC%"}%">%JQREQUIRE{"jqp::spin"}%
 </div>
 %ENDTWISTY% 
 </div>
