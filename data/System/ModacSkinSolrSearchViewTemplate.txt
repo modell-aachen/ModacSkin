@@ -45,6 +45,7 @@
 </div>
 %TMPL:P{"solr::templates"}%<!-- -->
 %TMPL:P{"solr::dictionary"}%<!-- -->
+%TMPL:P{"solr::webmappings"}%<!-- -->
 %TMPL:P{"solr::css"}%<!-- -->
 %JQREQUIRE{"focus, serialpager"}%<!-- -->
 %IF{"context PrettyPhotoEnabled"
@@ -77,6 +78,15 @@
 
 %{<verbatim class="tml">}%
 %TMPL:DEF{"solr::disjunctivefacets"}%web, type, field_Dokumententyp_lst, field_Freigegeben_durch, field_Geltungsbereich_s, field_Normkaptiel_s, language%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim class="tml">}%
+%TMPL:DEF{"solr::webmappings"}%<div class="solrDictionary solrJsonData" data-id="webmappings">{%FORMATLIST{
+  "%MODAC_WEBMAPPINGS{default=""}%"
+  pattern="^\s*(.*?)=(.*?)\s*$"
+  format="\"$1\":\"$2\""
+}%}</div>
+%TMPL:END%
 %{</verbatim>}%
 
 %{<verbatim class="tml">}%
@@ -124,7 +134,6 @@
 </noautolink>
 %TMPL:P{"solr::facet"
   id="web"
-  format="$percntWEBLINK{\\"$key\\" format=\\"<span style='display: none'>$key </span><div style='margin-left: $percentCALC{\\"$dollarEVAL($dollarLENGTH($percentSUBST{text=\\"$key\\" pattern=\\"[^.]\\" format=\\"\\"}$percent)*7)\\"}$percentpx;'>$dollartitle\\"}$percnt&nbsp;($count)</div>"
   class="solrWebFacetField"
   title="%MAKETEXT{"Web"}%"
   include="%TMPL:P{"solr::facet::include::web"}%"

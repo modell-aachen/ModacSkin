@@ -64,6 +64,14 @@ Explaination:
 | BottomBar | =%CUSTOMIZINGWEB{default="Custom"}%.WebBottomBarDefault= | =WebBottomBar= | This defines the BottomBar for additional logos and company information. |
 %X% You must define a customizing-web for wiki-wide customizations, see [[%TOPIC%#CustomWeb][CustomWeb]]!
 
+---++++ Mapping web-names
+
+Web-names can be mapped by setting the =MODAC_WEBMAPPINGS= variable. It should have the format =WEB=Name to display=. Set this on your =WebPreferences= or =SitePreferences=.%BR%
+Example:
+<pre>
+   &#42; Set MODAC_WEBMAPPINGS = Processes=%MAKETEXT{"Processes"}%, InternalStuff=%MAKETEXT{"Internal stuff"}%
+</pre>
+
 ---++++ Hiding webs from standard WebLeftBar
 In order to hide a web from the =WebLeftBar=, set =MODAC_HIDEWEBS= to a regex matching those webs. Set this on your =WebPreferences= or =SitePreferences=.%BR%
 %I% The regular expression is build like this: <pre>(SomeStuff|%%NOP%MODAC_HIDEWEBS%).*</pre>%BR%
