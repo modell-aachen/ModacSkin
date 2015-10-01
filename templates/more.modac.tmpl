@@ -51,7 +51,7 @@
 <div class="foswikiFormSteps">
 <div class="foswikiFormStep">
 <h3>%MAKETEXT{"Select destination web"}%</h3>
-<select class="foswikiSelect modacjqWikiWordWeb">%FORMATLIST{"%WEBLIST{"$name$marker" separator=";" webs="public,%WEB%" marker=" selected='selected'" selection="%WEB%"}%" pattern="(\S*)( selected='selected')?" format="$percentIF{\"'$1' allows 'CHANGE'\" then=\"<option value='$1'$2>$map($1)</option>\"}$percent" separator=" " split=";" unique="on" map="%MODAC_WEBMAPPINGS{default=""}%"}%</select>
+<select class="foswikiSelect modacjqWikiWordWeb">%FORMATLIST{"%WEBLIST{"$name$marker" separator=";" webs="public,%WEB%" marker=" selected='selected'" selection="%WEB%"}%" pattern="(\S*)( selected='selected')?" format="$percentIF{\"'$1' allows 'CHANGE'\" then=\"<option value='$1'$2>$map($1)</option>\"}$percent" separator=" " split=";" unique="on" map="%MODAC_WEBMAPPINGS{default=""}%" exclude="^(?:%MODAC_HIDEWEBS{default="dummy"}%)$"}%</select>
 </div>
 <div class="foswikiFormStep">
 <h3>%MAKETEXT{"Title of copy"}%</h3>
