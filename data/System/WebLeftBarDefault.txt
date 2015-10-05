@@ -22,11 +22,27 @@
 	hideimgleft="%ICONURLPATH{arrow-down}%" 
 	linkclass="patternTwistyButton" 
 }% 
-   * [[%BASEWEB%.WebChanges][%MAKETEXT{"Recently changed"}%]]
-%IF{ "$CONTENTTEMPLATEWEB=''" else="   * [[%SUBST{text="%CONTENTTEMPLATEWEB%" pattern="\s*,.*"}%.Templates][Templates]]
+%INCLUDE{"%IF{"istopic '%BASEWEB%/WebTools'" then="%BASEWEB%/WebTools" else="%IF{"istopic '%CUSTOMIZINGWEB{default="Custom"}%/WebToolsDefault'" then="%CUSTOMIZINGWEB{default="Custom"}%/WebToolsDefault" else="%SYSTEMWEB%/WebToolsDefault"}%"}%"}%
 "}%%ENDTWISTY%
 </div>
 
+%IF{"'%USERNAME%' ingroup 'KeyUserGroup'" then="" else="<!--"}%
+<div class="modacSidebarTwisty">
+%TWISTY{ 
+    id="modacSidebarMASDINHKXY" 
+    firststart="hide" 
+    remember="on" 
+	noscript="show"
+    showlink="%MAKETEXT{"Key user tools"}%" 
+    hidelink="%MAKETEXT{"Key user tools"}%" 
+	showimgleft="%ICONURLPATH{arrow-right}%"
+	hideimgleft="%ICONURLPATH{arrow-down}%" 
+	linkclass="patternTwistyButton" 
+}% 
+%INCLUDE{"%IF{"istopic '%BASEWEB/WebKeyUserTools'" then="%BASEWEB%/WebKeyUserToolsTools" else="%IF{"istopic '%CUSTOMIZINGWEB{default="Custom"}%/WebKeyUserToolsDefault'" then="%CUSTOMIZINGWEB{default="Custom"}%/WebKeyUserToolsDefault" else="%SYSTEMWEB%/WebKeyUserToolsDefault"}%"}%"}%
+%ENDTWISTY%
+</div>
+%IF{"'%USERNAME%' ingroup 'KeyUserGroup'" then="" else="-->"}%
 
 <div class="modacSidebarTwisty">
 %TWISTY{ 
