@@ -155,7 +155,6 @@
 }%
 %ENDTAB%
 %ENDTABPANE%
-
 </div>
 %TMPL:END%
 
@@ -171,12 +170,6 @@ Let´s rock the approvals
 </div>
 %TMPL:END%
 
-%TMPL:DEF{"perspage:comments"}%
-<div class="perspageBlockTitle">%MAKETEXT{"My comments"}%</div><div class="perspageBlock">
-Let´s rock the comments
-</div>
-%TMPL:END%
-
 %TMPL:DEF{"perspage:mynotes"}%
 <div class="perspageBlockTitle">%MAKETEXT{"My notes"}% <a href="%SCRIPTURLPATH{"edit"}%/%WEB%/%TOPIC%?t=%GMTIME{"$epoch"}%" title="%MAKETEXT{Edit}%">%ICON{pencil}%</a></div><div class="perspageBlock">
 %TEXT%
@@ -188,6 +181,7 @@ Let´s rock the comments
 %IF{"$WIKINAME = $TOPIC"
  then="$percentTMPL:P{perspage:bookmarks}$percent
 $percentTMPL:P{perspage:tasks}$percent
+$percentTMPL:P{perspage:approvals}$percent
 $percentTMPL:P{perspage:comments}$percent
 <div>"
  else="$percentTMPL:P{perspage:other}$percent
@@ -202,26 +196,6 @@ $percentTMPL:P{perspage:comments}$percent
 
 %MAKETEXT{"To see your tasks, bookmarks and notes, please go to [_1]." args="[[%WIKINAME%]]"}%
 </div>
-%TMPL:END%
-
-%TMPL:DEF{"perspage:dummy:rendertasks"}%
-%STARTSECTION{"perspage_recently"}%
-%MAKETEXT{"Show tasks finished in the past [_1]" args="<select class=\"modacPersPageDaysFinishedSelect {url: '%SCRIPTURL{rest}%/RenderPlugin/tag?%SUBST{text="%QUERYSTRING%" pattern="(;days=\d+)?(;t=\d+)?$" format=""}%;days='}\" size=\"1\"><option value=\"7\"%IF{"$'URLPARAM{days}'='7'" then=" selected=\\"selected\\""}%%IF{"$'URLPARAM{days}'=''" then=" selected=\\"selected\\""}%>%MAKETEXT{"week"}%</option><option value=\"14\"%IF{"$'URLPARAM{days}'='14'" then=" selected=\\"selected\\""}%>%MAKETEXT{"[_1] weeks" args="2"}%</option><option value=\"21\"%IF{"$'URLPARAM{days}'='21'" then=" selected=\\"selected\\""}%>%MAKETEXT{"[_1] weeks" args="3"}%</option><option value=\"28\"%IF{"$'URLPARAM{days}'='28'" then=" selected=\\"selected\\""}%>%MAKETEXT{"[_1] weeks" args="4"}%</option></select>"}%
-%ENDSECTION{"perspage_recently"}%
-%STARTSECTION{"perspage_tasks"}%
-%IF{"'%URLPARAM{"extrasection"}%'" then="$percntINCLUDE{\"%WEB%.%TOPIC%\" section=\"%URLPARAM{"extrasection"}%\"}$percnt"}%
-<table class="atpSearch atpOrientCols tablesorter {widgets: ['zebra'], sortList: [[0,1],[0,1]], headers: { 2: { sorter: 'qwikiDate' }, 3: { sorter: false }, 4: { sorter: false }}}">
-<thead>
-<tr><th>%MAKETEXT{"Created"}%</th><th>%MAKETEXT{"Task"}%</th><th>%MAKETEXT{"Due"}%</th><th>%MAKETEXT{"Status"}%</th><th>&nbsp;</th></tr>
-</thead>
-<tbody>
-%SOLRSEARCH{"type:action -topic:*Template action_who_lst:(%USERNAME% OR %WIKINAME% OR %WIKIUSERNAME%) %URLPARAM{"tasksfilter"}%"
-  format="<tr><td style=\"white-space:nowrap;\" class=\"secondary bmsubinfo\">$createdate%BR%$percntSUBST{text=\"$author\" pattern=\"^Main\.\" format=\"\"}$percnt%BR%<a href=\"%SCRIPTURL{view}%/$web/WebHome\" title=\"$web\">$percntMAKETEXT{\"$web\"}$percnt</a> - [[$web.$topic]]</td><td class=\"taskmain\"><span class=\"tasktitle\">$title</span>$n$n$action_text_s</td><td class=\"taskdue taskdate secondary\">$percntIF{\"'$action_due_dt'~'$*'\" else=\"$action_due_dt\"}$percnt</td><td><img src=\"%PUBURLPATH%/%SYSTEMWEB%/FamFamFamSilkIcons/%URLPARAM{"icon"}%.png\" alt=\"%MAKETEXT{"%URLPARAM{"status"}%"}%\" /> $action_%URLPARAM{"datefield"}%_dt</td><td class=\"ops\">$percntACTIONEDIT{web=\"$web\" topic=\"$topic\" uid=\"$action_uid_s\"}$percnt</td></tr>"
-  rows="1000" sort="action_%URLPARAM{"datefield"}%_dt" reverse="on"
-}%
-</tbody>
-</table>
-%ENDSECTION{"perspage_tasks"}%
 %TMPL:END%
 
 %{<verbatim>}%
