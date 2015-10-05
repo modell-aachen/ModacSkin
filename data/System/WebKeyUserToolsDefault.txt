@@ -1,0 +1,6 @@
+   * [[%SYSTEMWEB%.WebHome][%MAKETEXT{"System web"}%]]
+   * [[Trash.WebHome][%MAKETEXT{"Trash"}%]]
+   * [[%MAINWEB%.WikiGroups][%MAKETEXT{"Wikigroups"}%]]
+   * [[%BASEWEB%.WebStatistics][%MAKETEXT{"Statistics"}%]]
+   * [[%BASEWEB%.WebPreferences][%MAKETEXT{"Web settings"}%]]
+   * [[%MAINWEB%.SitePreferences][%MAKETEXT{"Wiki settings"}%]]
