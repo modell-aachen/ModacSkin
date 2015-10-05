@@ -1685,7 +1685,7 @@ div#comments div.cmtCommentContainer:last-child {
 #modacWraper #modacSolrRightBar ul {
 	list-style:none;
 }
-#modacSolrRightBar input, div.solrCheckboxContainer input {
+#modacSolrRightBar input:not(.solrTextInput), div.solrCheckboxContainer input {
 	background-color: transparent;
 }
 
