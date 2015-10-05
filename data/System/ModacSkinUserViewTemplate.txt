@@ -93,38 +93,87 @@
 %TMPL:END%
 
 %TMPL:DEF{"perspage:tasks_content"}%
-%TABPANE{class="simple"}%
-%TAB{"%MAKETEXT{"Open tasks"}%"}%
-<div id="ampel_open">
-<table class="atpSearch atpOrientCols tablesorter {widgets: ['zebra'], sortList: [[0,1],[0,1]], headers: { 2: { sorter: 'qwikiDate' }, 3: { sorter: false }, 4: { sorter: false }}}" style="width: 100%;">
-<thead>
-<tr><th>%MAKETEXT{"Created"}%</th><th>%MAKETEXT{"Task"}%</th><th>%MAKETEXT{"Due"}%</th><th>%MAKETEXT{"Status"}%</th><th>&nbsp;</th></tr>
-</thead>
-<tbody>
-%SOLRSEARCH{"type:action -topic:*Template action_who_lst:(%USERNAME% OR %WIKINAME% OR %WIKIUSERNAME%) -action_closed_dt:?* -action_state_s:(closed OR discarded)"
-  format="<tr><td style=\"white-space:nowrap;\" class=\"secondary bmsubinfo\">$createdate%BR%$percntSUBST{text=\"$author\" pattern=\"^Main\.\" format=\"\"}$percnt%BR%<a href=\"%SCRIPTURL{view}%/$web/WebHome\" title=\"$topic\">$percntMAKETEXT{\"$web\"}$percnt</a> - [[$web.$topic]]</td><td class=\"taskmain\"><span class=\"tasktitle\">$title</span>$n$n$action_text_s<span class=\"bmsubinfo\"></span></td><td class=\"taskdue taskdate secondary\">$percntIF{\"'$action_due_dt'~'$*'\" else=\"$action_due_dt\"}$percnt</td><td><span style=\"display:none;\">$action_state_s</span></td><td class=\"ops\">$percntACTIONEDIT{web=\"$web\" topic=\"$topic\" uid=\"$action_uid_s\"}$percnt</td></tr>"
-  rows="1000" sort="createdate" reverse="on"
+<div class="perspageBlockTitle">%MAKETEXT{"My tasks"}%</div><div class="perspageBlock">
+%TABPANE{class="simple" select="%URLPARAM{"tab" default="tasks_open"}%"}%
+%TAB{"%MAKETEXT{"My open tasks"}%" id="tasks_open"}%
+<br>
+%TASKSGRID{
+  context="any"
+  parent="any"
+  allowcreate="0"
+  allowupload="1"
+  sortable="1"
+  flavor="perspage"
+  paging="1"
+  pagesize="5"
+  title=""
+  keepclosed="1"
+  stateless="1"
+  order="Created"
+  desc="1"
+  query="{\"Status\": \"open\", \"AssignedTo\": [\"%USERNAME%\", \"%WIKINAME%\", \"%WIKIUSERNAME%\"]}"
+  captiontemplate="tasksapi::grid::caption_perspage"
 }%
-</tbody>
-</table>
-</div>
-%AMPEL{"ampel_open" WARN="%SIGNAL_PREWARNTIME{default="7"}%" DATE="%MAKETEXT{"Due"}%" DST="%MAKETEXT{"Status"}%" DONE="%MAKETEXT{"Status"}%" COND="closed"}%
 %ENDTAB%
-%TAB{"%MAKETEXT{"Finished tasks"}%" url="%SCRIPTURL{rest}%/RenderPlugin/tag?name=INCLUDE;render=on;param=%PERSPAGEHELPER{default="%SYSTEMWEB%.ModacSkinUserViewTemplate"}%;section=perspage_tasks;tasksfilter=%ENCODE{"state:closed" type="url"}%;datefield=closed;icon=tick"}%
-<span class="jqAjaxLoader">&nbsp;</span>
+%TAB{"%MAKETEXT{"My closed tasks"}%" id="tasks_closed"}%
+<br>
+%TASKSGRID{
+  context="any"
+  parent="any"
+  allowcreate="0"
+  allowupload="1"
+  sortable="1"
+  flavor="perspage"
+  pagesize="5"
+  paging="1"
+  title=""
+  keepclosed="1"
+  stateless="1"
+  order="Created"
+  desc="1"
+  query="{\"Status\": \"closed\", \"AssignedTo\": [\"%USERNAME%\", \"%WIKINAME%\", \"%WIKIUSERNAME%\"]}"
+  captiontemplate="tasksapi::grid::caption_perspage"
+}%
 %ENDTAB%
-%TAB{"%MAKETEXT{"Recently finished tasks"}%" id="tab_tasks_recently" url="%SCRIPTURL{rest}%/RenderPlugin/tag?name=INCLUDE;render=on;param=%PERSPAGEHELPER{default="%SYSTEMWEB%.ModacSkinUserViewTemplate"}%;section=perspage_tasks;tasksfilter=%ENCODE{"state:closed action_closed_dt:[NOW/DAY-7DAYS TO *]" type="url"}%;datefield=closed;icon=tick;extrasection=perspage_recently"}%
-<span class="jqAjaxLoader">&nbsp;</span>
-%ENDTAB%
-%TAB{"%MAKETEXT{"Discarded tasks"}%" url="%SCRIPTURL{rest}%/RenderPlugin/tag?name=INCLUDE;render=on;param=%PERSPAGEHELPER{default="%SYSTEMWEB%.ModacSkinUserViewTemplate"}%;section=perspage_tasks;tasksfilter=%ENCODE{"state:discarded" type="url"}%;datefield=closed;icon=cross"}%
-<span class="jqAjaxLoader">&nbsp;</span>
+%TAB{"%MAKETEXT{"Created by me"}%" id="tasks_own"}%
+<br>
+%TASKSGRID{
+  context="any"
+  parent="any"
+  allowcreate="0"
+  allowupload="1"
+  sortable="1"
+  flavor="perspage"
+  paging="1"
+  pagesize="25"
+  title=""
+  keepclosed="1"
+  order="Created"
+  desc="1"
+  query="{\"Author\": [\"%USERNAME%\", \"%WIKINAME%\", \"%WIKIUSERNAME%\"]}"
+  captiontemplate="tasksapi::grid::caption_perspage"
+}%
 %ENDTAB%
 %ENDTABPANE%
+
+</div>
 %TMPL:END%
 
 %TMPL:DEF{"perspage:tasks"}%
 <div class="perspageBlockTitle">%MAKETEXT{"My tasks"}%</div><div class="perspageBlock">
 %TMPL:P{"perspage:tasks_content"}%
+</div>
+%TMPL:END%
+
+%TMPL:DEF{"perspage:approvals"}%
+<div class="perspageBlockTitle">%MAKETEXT{"My approvals"}%</div><div class="perspageBlock">
+Let´s rock the approvals
+</div>
+%TMPL:END%
+
+%TMPL:DEF{"perspage:comments"}%
+<div class="perspageBlockTitle">%MAKETEXT{"My comments"}%</div><div class="perspageBlock">
+Let´s rock the comments
 </div>
 %TMPL:END%
 
