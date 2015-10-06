@@ -39,7 +39,7 @@
 	hideimgleft="%ICONURLPATH{arrow-down}%" 
 	linkclass="patternTwistyButton" 
 }% 
-%INCLUDE{"%IF{"istopic '%BASEWEB/WebKeyUserTools'" then="%BASEWEB%/WebKeyUserToolsTools" else="%IF{"istopic '%CUSTOMIZINGWEB{default="Custom"}%/WebKeyUserToolsDefault'" then="%CUSTOMIZINGWEB{default="Custom"}%/WebKeyUserToolsDefault" else="%SYSTEMWEB%/WebKeyUserToolsDefault"}%"}%
+%INCLUDE{"%IF{"istopic '%BASEWEB/WebKeyUserTools'" then="%BASEWEB%/WebKeyUserToolsTools" else="%IF{"istopic '%CUSTOMIZINGWEB{default="Custom"}%/WebKeyUserToolsDefault'" then="%CUSTOMIZINGWEB{default="Custom"}%/WebKeyUserToolsDefault" else="%SYSTEMWEB%/WebKeyUserToolsDefault"}%"}%"%
 %ENDTWISTY%
 </div>
 %IF{"'%USERNAME%' ingroup 'KeyUserGroup'" then="" else="-->"}%
