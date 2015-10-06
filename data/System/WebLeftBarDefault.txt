@@ -23,7 +23,7 @@
 	linkclass="patternTwistyButton" 
 }% 
 %INCLUDE{"%IF{"istopic '%BASEWEB%/WebTools'" then="%BASEWEB%/WebTools" else="%IF{"istopic '%CUSTOMIZINGWEB{default="Custom"}%/WebToolsDefault'" then="%CUSTOMIZINGWEB{default="Custom"}%/WebToolsDefault" else="%SYSTEMWEB%/WebToolsDefault"}%"}%"}%
-"}%%ENDTWISTY%
+%ENDTWISTY%
 </div>
 
 %IF{"'%USERNAME%' ingroup 'KeyUserGroup'" then="" else="<!--"}%
