@@ -58,21 +58,6 @@
 %{</verbatim>}%
 
 %{<verbatim class="tml">}%
-%TMPL:DEF{"solr::facets"}%
-  %MAKETEXT{"Recent changes"}%=facetquery,
-  %MAKETEXT{"Media"}%=type,
-  %MAKETEXT{"Category"}%=category,
-  %MAKETEXT{"Language"}%=language,
-  %MAKETEXT{"Tag"}%=tag,
-  %MAKETEXT{"Application"}%=field_TopicType_lst,
-  %MAKETEXT{"document type"}%=field_Dokumententyp_s,
-  %MAKETEXT{"Person in charge of page"}%=field_Freigegeben_durch_s,
-  %MAKETEXT{"Area of application"}%=field_Geltungsbereich_s,
-  %MAKETEXT{"Normchapter"}%=field_Normkapitel_s
-%TMPL:END%
-%{</verbatim>}%
-
-%{<verbatim class="tml">}%
 %TMPL:DEF{"solr::hidesinglefacets"}%web, type, collection, language, contributor, field_TopicType_lst, facetquery, field_Dokumententyp_lst, field_Prozesseigner_s, field_Geltungsbereich_s, field_Autor_s%TMPL:END%
 %{</verbatim>}%
 
@@ -86,31 +71,6 @@
   pattern="^\s*(.*?)=(.*?)\s*$"
   format="\"$1\":\"$2\""
 }%}</div>
-%TMPL:END%
-%{</verbatim>}%
-
-%{<verbatim class="tml">}%
-%TMPL:DEF{"solr::extramapping"}%
-  %MAKETEXT{"none"}%=-,
-  %MAKETEXT{"Contributor"}%=contributor,
-  %MAKETEXT{"Timespan"}%=date,
-  %MAKETEXT{"Keyword"}%=keyword,
-  %MAKETEXT{"English"}%=en,
-  %MAKETEXT{"German"}%=de,
-  %MAKETEXT{"Chinese/Japanese/Korean"}%=cjk,
-  %MAKETEXT{"Danish"}%=da,
-  %MAKETEXT{"Spanish"}%=es,
-  %MAKETEXT{"Finnish"}%=fi,
-  %MAKETEXT{"French"}%=fr,
-  %MAKETEXT{"Italian"}%=it,
-  %MAKETEXT{"Dutch"}%=nl,
-  %MAKETEXT{"Portuguese"}%=pt,
-  %MAKETEXT{"Russian"}%=ru,
-  %MAKETEXT{"Swedish"}%=se,
-  %MAKETEXT{"Turkish"}%=tr,
-  %MAKETEXT{"image"}%=image,
-  %MAKETEXT{"topic"}%=topic,
-  %MAKETEXT{"comment"}%=comment
 %TMPL:END%
 %{</verbatim>}%
 
