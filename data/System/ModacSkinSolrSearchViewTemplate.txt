@@ -76,6 +76,7 @@
 
 %{<verbatim class="tml">}%
 %TMPL:DEF{"solr::facet::exclude::type"}%aqm|map%TMPL:END%
+%TMPL:DEF{"solr::facet::exclude::language"}%detect|^$%TMPL:END%
 %{</verbatim>}%
 
 %{<verbatim class="tml">}%
@@ -103,6 +104,8 @@
 %TMPL:P{"solr::facet"
   id="language"
   title="%MAKETEXT{"Language"}%"
+  include="%TMPL:P{"solr::facet::include::language"}%"
+  exclude="%TMPL:P{"solr::facet::exclude::language"}%"
 }%
 %TMPL:P{"modacExtraFacets"}%<!-- -->
 %TMPL:END%
