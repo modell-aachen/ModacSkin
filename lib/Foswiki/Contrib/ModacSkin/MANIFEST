@@ -30,6 +30,7 @@ data/System/ModacSkinWebList.txt 0664
 data/System/WebActionsDefault.txt 0644
 data/System/WebBottomBarDefault.txt 0664
 data/System/WebLeftBarDefault.txt 0664
+data/System/WebToolsDefault.txt 0664
 data/System/WebTopBarDefault.txt 0664
 lib/Foswiki/Contrib/ModacSkin.pm 0664
 lib/Foswiki/Plugins/SafeWikiPlugin/Signatures/ModacSkin.pm 0664
