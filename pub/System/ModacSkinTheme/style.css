@@ -204,6 +204,7 @@ html>body #modacLogoIE {
 }
 #modacWrapper .select2 ul, .foswikiTopic .select2 ul {
 	list-style: none;
+	padding: 0px 5px 5px;
 }
 #modacSecondWrapper {
 	float: right;
