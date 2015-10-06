@@ -109,22 +109,6 @@
   exclude="%TMPL:P{"solr::facet::exclude::type"}%"
   title="%MAKETEXT{"Media"}%"
 }%
-%TMPL:P{"solr::facetquery"
-  id="date"
-  exclusion="true" 
-  title="%MAKETEXT{"Recent changes"}%"
-  queries="[
-      { \"key\": \"%MAKETEXT{"1 hour"}%\", \"value\": \"date:[NOW-1HOUR TO NOW]\" }, 
-      { \"key\": \"%MAKETEXT{"4 hours"}%\", \"value\": \"date:[NOW-4HOUR TO NOW]\" },
-      { \"key\": \"%MAKETEXT{"today"}%\", \"value\": \"date:[NOW/DAY TO NOW]\" },
-      { \"key\": \"%MAKETEXT{"2 days"}%\", \"value\": \"date:[NOW/DAY-1DAY TO NOW]\" },
-      { \"key\": \"%MAKETEXT{"7 days"}%\", \"value\": \"date:[NOW/DAY-7DAY TO NOW]\" },
-      { \"key\": \"%MAKETEXT{"1 month"}%\", \"value\": \"date:[NOW-1MONTH TO NOW]\" },
-      { \"key\": \"%MAKETEXT{"2 months"}%\", \"value\": \"date:[NOW-2MONTH TO NOW]\" },
-      { \"key\": \"%MAKETEXT{"1 year"}%\", \"value\": \"date:[NOW-1YEAR TO NOW]\" },
-      { \"key\": \"%MAKETEXT{"older"}%\", \"value\": \"date:[* TO NOW/YEAR]\" }
-    ]"
-}%
 %TMPL:P{"solr::facet"
   id="language"
   title="%MAKETEXT{"Language"}%"
