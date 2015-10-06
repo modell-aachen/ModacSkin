@@ -75,15 +75,6 @@
 %{</verbatim>}%
 
 %{<verbatim class="tml">}%
-%TMPL:DEF{"solr::facet::include::field_Dokumententyp_s"}%%TMPL:END%
-%TMPL:DEF{"solr::facet::include::field_Freigegeben_durch_s"}%%TMPL:END%
-%TMPL:DEF{"solr::facet::include::field_Geltungsbereich_s"}%%TMPL:END%
-%TMPL:DEF{"solr::facet::include::field_Normkapitel_s"}%%TMPL:END%
-
-%TMPL:DEF{"solr::facet::exclude::field_Dokumententyp_s"}%%TMPL:END%
-%TMPL:DEF{"solr::facet::exclude::field_Freigegeben_durch_s"}%%TMPL:END%
-%TMPL:DEF{"solr::facet::exclude::field_Geltungsbereich_s"}%%TMPL:END%
-%TMPL:DEF{"solr::facet::exclude::field_Normkapitel_s"}%%TMPL:END%
 %TMPL:DEF{"solr::facet::exclude::type"}%aqm|map%TMPL:END%
 %{</verbatim>}%
 
@@ -113,50 +104,6 @@
   id="language"
   title="%MAKETEXT{"Language"}%"
 }%
-  %TMPL:P{"solr::facet"
-    id="field_Dokumententyp_s"
-    title="%MAKETEXT{"document type"}%"
-    format="$key&nbsp;($count)"
-    value="$id:$key"
-    input="checkbox"
-    include="%TMPL:P{"solr::facet::include::field_Dokumententyp_s"}%"
-    exclude="%TMPL:P{"solr::facet::exclude::field_Dokumententyp_s"}%"
-    extraclass=""
-    pageropts=""
-  }%
-  %TMPL:P{"solr::facet"
-    id="field_Freigegeben_durch_s"
-    title="%MAKETEXT{"Person in charge of page"}%"
-    format="$key&nbsp;($count)"
-    value="$id:$key"
-    input="checkbox"
-    include="%TMPL:P{"solr::facet::include::field_Freigegeben_durch_s"}%"
-    exclude="%TMPL:P{"solr::facet::exclude::field_Freigegeben_durch_s"}%"
-    extraclass=""
-    pageropts=""
-  }%
-  %TMPL:P{"solr::facet"
-    id="field_Geltungsbereich_s"
-    title="%MAKETEXT{"Area of application"}%"
-    format="$key&nbsp;($count)"
-    value="$id:$key"
-    input="checkbox"
-    include="%TMPL:P{"solr::facet::include::field_Geltungsbereich_s"}%"
-    exclude="%TMPL:P{"solr::facet::exclude::field_Geltungsbereich_s"}%"
-    extraclass=""
-    pageropts=""
-  }%
-  %TMPL:P{"solr::facet"
-    id="field_Normkapitel_s"
-    title="%MAKETEXT{"Normchapter"}%"
-    format="$key&nbsp;($count)"
-    value="$id:$key"
-    input="checkbox"
-    include="%TMPL:P{"solr::facet::include::field_Normkapitel_s"}%"
-    exclude="%TMPL:P{"solr::facet::exclude::field_Normkapitel_s"}%"
-    extraclass="solrSort"
-    pageropts=""
-  }%
 %TMPL:P{"modacExtraFacets"}%<!-- -->
 %TMPL:END%
 %{</verbatim>}%
