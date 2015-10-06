@@ -362,17 +362,25 @@ $percentTMPL:DEF{"solr::fields::append"}$percent$percentTMPL:PREF$percent,your_s
 %TMPL:DEF{"solr::dictionary"}%<literal>
 <div class="solrDictionary solrJsonData" data-id="default">
 {
-  "Filed in": "%MAKETEXT{"Filed in [_1]"}%",
-  "Tagged": "%MAKETEXT{"Tagged [_1]"}%",
-  "tagged": "%MAKETEXT{"tagged [_1]"}%",
-  "field_TopicType_lst": "%MAKETEXT{"topic type"}%",
-  "type": "%MAKETEXT{"media"}%",
-  "date": "%MAKETEXT{"recently"}%",
-  "en": "%MAKETEXT{"English"}%",
   "de": "%MAKETEXT{"German"}%",
-  "language": "%MAKETEXT{"language"}%",
-  "keyword": "%MAKETEXT{"keyword"}%",
-  "tag": "%MAKETEXT{"tag"}%"
+  "en": "%MAKETEXT{"English"}%",
+  "cjk": "%MAKETEXT{"Chinese/Japanese/Korean"}%",
+  "da": "%MAKETEXT{"Danish"}%",
+  "es": "%MAKETEXT{"Spanish"}%",
+  "fi": "%MAKETEXT{"Finnish"}%",
+  "fr": "%MAKETEXT{"French"}%",
+  "it": "%MAKETEXT{"Italian"}%",
+  "nl": "%MAKETEXT{"Dutch"}%",
+  "pt": "%MAKETEXT{"Portuguese"}%",
+  "ru": "%MAKETEXT{"Russian"}%",
+  "se": "%MAKETEXT{"Swedish"}%",
+  "tr": "%MAKETEXT{"Turkish"}%",
+  "image": "%MAKETEXT{"image"}%",
+  "topic": "%MAKETEXT{"topic"}%",
+  "comment": "%MAKETEXT{"comment"}%",
+  "task": "%MAKETEXT{"Task"}%",
+  "Tagged": "%MAKETEXT{"Tagged"}%",
+  "tagged": "%MAKETEXT{"tagged"}%"
 %TMPL:P{"modac::solr::dictionary"}%
 }
 </div>
