@@ -108,6 +108,12 @@
   include="%TMPL:P{"solr::facet::include::language"}%"
   exclude="%TMPL:P{"solr::facet::exclude::language"}%"
 }%
+%TMPL:P{"solr::facet"
+  id="task_type_s"
+  title="%MAKETEXT{"Task type"}%"
+  input="checkbox"
+  union="true"
+}%
 %TMPL:P{"modacExtraFacets"}%<!-- -->
 %TMPL:END%
 %{</verbatim>}%
