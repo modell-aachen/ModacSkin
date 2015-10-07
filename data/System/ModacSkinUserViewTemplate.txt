@@ -92,7 +92,7 @@
 </div>
 %TMPL:END%
 
-%TMPL:DEF{"perspage:taskss"}%
+%TMPL:DEF{"perspage:tasks"}%
 <div class="perspageBlockTitle">%MAKETEXT{"My tasks"}%</div><div class="perspageBlock">
 %TABPANE{class="simple" select="%URLPARAM{"tab" default="tasks_open"}%"}%
 %TAB{"%MAKETEXT{"My open tasks"}%" id="tasks_open"}%
@@ -159,7 +159,7 @@
 %TMPL:END%
 
 %TMPL:DEF{"perspage:ciptask"}%
-<div class="perspageBlockTitle">%MAKETEXT{"Pages waiting for approval"}% <a href="%SCRIPTURLPATH{"edit"}%/%WEB%/%TOPIC%?template=UserDataEdit;t=%GMTIME{"$epoch"}%" title="%MAKETEXT{Edit}%">%ICON{pencil}%</a></div>
+<div class="perspageBlockTitle">%MAKETEXT{"Pages waiting for approval"}% </div>
 <div class="perspageBlock">
 <table class="tablesorter">
 <thead>
@@ -177,7 +177,7 @@
 %TMPL:END%
 
 %TMPL:DEF{"perspage:qmciptask"}%
-<div class="perspageBlockTitle">%MAKETEXT{"Pages waitiong for approval"}% <a href="%SCRIPTURLPATH{"edit"}%/%WEB%/%TOPIC%?template=UserDataEdit;t=%GMTIME{"$epoch"}%" title="%MAKETEXT{Edit}%">%ICON{pencil}%</a></div>
+<div class="perspageBlockTitle">%MAKETEXT{"Pages waiting for formal approval by quality management"}% </div>
 <div class="perspageBlock">
 <table class="tablesorter">
 <thead>
@@ -205,8 +205,8 @@
 %IF{"$WIKINAME = $TOPIC"
  then="$percentTMPL:P{perspage:bookmarks}$percent
 $percentTMPL:P{perspage:tasks}$percent
-$percentTMPL:P{"perspage:ciptask"}$percnt
-%IF{"$USERNAME ingroup '%QMGROUP%'" then="$percentTMPL:P{"perspage:qmciptask"}$percent"}%
+$percentTMPL:P{perspage:ciptask}$percnt
+$percentIF{\"$USERNAME ingroup '%QMGROUP%'\" then=\"$dollarpercentTMPL:P{perspage:qmciptask}$dollarpercent\"}$percent
 $percentTMPL:P{perspage:approvals}$percent
 $percentTMPL:P{perspage:comments}$percent
 <div>"
