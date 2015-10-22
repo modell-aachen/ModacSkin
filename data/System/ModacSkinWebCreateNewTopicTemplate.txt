@@ -230,7 +230,7 @@ var URL_TEMPLATE = '$percntURLPARAM{template}$percnt';
 
 %{<verbatim class="tml">}%
 %TMPL:DEF{"topicparent"}%<!-- -->
-%TMPL:P{context="Select2Enabled" then="topicparent_select2" else="topicparent_select"}%
+%TMPL:P{context="Select2Registered" then="topicparent_select2" else="topicparent_select"}%
 <div class="foswikiFormDescription">
 %MAKETEXT{"Topic name that the newly created topic will be a child of."}%
 </div>

@@ -72,7 +72,7 @@ JQUERYPLUGIN is not a hard requirement, but it must sort earlier.
 %TMPL:P{"script"}%%TMPL:P{"defaultstyle"}%</head>%TMPL:END%
 
 %TMPL:DEF{"script:skinbase"}%%{
-}%%JQREQUIRE{"wikiword, focus, form, cookie%IF{"context Select2Enabled" then=", select2"}%"}%%{
+}%%JQREQUIRE{"wikiword, focus, form, cookie%IF{"context Select2Registered" then=", select2"}%"}%%{
 }%%TMPL:P{"JavascriptFiles/foswikiString"}%%{
 }%%TMPL:P{"JavascriptFiles/foswikiPref"}%%{
 }%%TMPL:P{"JavascriptFiles/foswikiForm"}%%{
