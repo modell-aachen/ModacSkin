@@ -6,7 +6,7 @@ The below section is used within WebCreateNewTopic to render the select box for 
 
 <verbatim>
 %STARTSECTION{"topicsinweb"}%
-[%IF{"$offset = 0 and $clearable=1" then="{\"id\":\"%HOMETOPIC%\",\"label\":\"%MAKETEXT{"No topic parent"}%\",\"sublabel\":\"%HOMETOPIC%\"}"}%%SOLRSEARCH{"type:topic web:%SUBST{text="%URLPARAM{"web"}%" pattern="/" format="."}% -topic:*%WORKFLOWSUFFIX% -topic:*Template -topic:*Form (topic_search:*%SUBST{text="%URLPARAM{query}%" pattern="\s+" format=""}%* OR %FORMATLIST{"%URLPARAM{query}%" split="\s+" separator=" " null="*" format="title_search:*$1*"}%)" format="{\"label\":\"$percentENCODE{\"$title\" type=\"quote\"}$percent\",\"sublabel\":\"$web.$topic\",\"id\":\"$web.$topic\"}" separator="," rows="%URLPARAM{"count" default="20"}%" start="%URLPARAM{"offset" default="0"}%" sort="topic" header="%IF{"$offset = 0 and $clearable=1" then=","}%"}%]
+{"results":[%IF{"$offset = 0 and $clearable=1" then="{\"id\":\"%HOMETOPIC%\",\"label\":\"%MAKETEXT{"No topic parent"}%\",\"text\":\"%MAKETEXT{"No topic parent"}%\",\"sublabel\":\"%HOMETOPIC%\"}"}%%SOLRSEARCH{"type:topic web:%SUBST{text="%URLPARAM{"web"}%" pattern="/" format="."}% -topic:*%WORKFLOWSUFFIX% -topic:*Template -topic:*Form (topic_search:*%SUBST{text="%URLPARAM{query}%" pattern="\s+" format=""}%* OR %FORMATLIST{"%URLPARAM{query}%" split="\s+" separator=" " null="*" format="title_search:*$1*"}%)" format="{\"label\":\"$percentENCODE{\"$title\" type=\"quote\"}$percent\",\"sublabel\":\"$web.$topic\",\"id\":\"$web.$topic\"}" separator="," rows="%URLPARAM{"count" default="20"}%" start="%URLPARAM{"offset" default="0"}%" sort="topic" header="%IF{"$offset = 0 and $clearable=1" then=","}%"}%]}
 %ENDSECTION{"topicsinweb"}%
 </verbatim>
 
@@ -14,7 +14,7 @@ Alternative selector for selecting from 'most' webs:
 
 <verbatim>
 %STARTSECTION{"topics_exceptwebs"}%
-[%SOLRSEARCH{"type:topic -web:(%FORMATLIST{"%SUBST{text="%URLPARAM{"web"}%" pattern="/" format="."}%" split="," separator=" OR "}%) -topic:*%WORKFLOWSUFFIX% -topic:*Template -topic:*Form (topic_search:*%SUBST{text="%URLPARAM{query}%" pattern="\s+" format=""}%* OR %FORMATLIST{"%URLPARAM{query}%" split="\s+" separator=" " null="*" format="title_search:*$1*"}%)" format="{\"label\":\"$title\",\"sublabel\":\"$web.$topic\",\"id\":\"$web.$topic\"}" separator="," rows="%URLPARAM{"count" default="20"}%" start="%URLPARAM{"offset" default="0"}%" sort="webtopic"}%]
+{"results":[%SOLRSEARCH{"type:topic -web:(%FORMATLIST{"%SUBST{text="%URLPARAM{"web"}%" pattern="/" format="."}%" split="," separator=" OR "}%) -topic:*%WORKFLOWSUFFIX% -topic:*Template -topic:*Form (topic_search:*%SUBST{text="%URLPARAM{query}%" pattern="\s+" format=""}%* OR %FORMATLIST{"%URLPARAM{query}%" split="\s+" separator=" " null="*" format="title_search:*$1*"}%)" format="{\"label\":\"$title\",\"sublabel\":\"$web.$topic\",\"id\":\"$web.$topic\"}" separator="," rows="%URLPARAM{"count" default="20"}%" start="%URLPARAM{"offset" default="0"}%" sort="webtopic"}%]}
 %ENDSECTION{"topics_exceptwebs"}%
 </verbatim>
 
