@@ -207,7 +207,7 @@ var URL_TEMPLATE = '$percntURLPARAM{template}$percnt';
 %{<verbatim class="tml">}%
 %TMPL:DEF{"topicparent_select2"}%<!-- -->
 %INCLUDE{"%SYSTEMWEB%.ModacAjaxHelper" section="selecttopic"}%
-<select class="jqTopicSelect {include_web: false}" style="width: 98%;" name="topicparent" id="topicparent_select"><option value="%SUBST{text="%URLPARAM{"topicparent"}%" pattern="%WORKFLOWSUFFIX%$" format=""}%">%GETTOPICTITLE{"%SUBST{text="%URLPARAM{"topicparent"}%" pattern="%WORKFLOWSUFFIX%$" format=""}%"}%</option>
+<select class="jqTopicSelect {include_web: false}" style="width: 98%;" name="topicparent" id="topicparent_select"><option value="%SUBST{text="%URLPARAM{"topicparent"}%" pattern="%WORKFLOWSUFFIX%$" format=""}%">%IF{"$'URLPARAM{topicparent}'=~'^%HOMETOPIC%(?:-[A-Z]2)?(?:%WORKFLOWSUFFIX%)?$'" then="%MAKETEXT{"No topic parent"}%" else="$percntGETTOPICTITLE{\"%SUBST{text="%URLPARAM{"topicparent"}%" pattern="%WORKFLOWSUFFIX%$" format=""}%\"}$percnt"}%</option>
 </select>
 <!-- -->%TMPL:END%
 %{</verbatim>}%

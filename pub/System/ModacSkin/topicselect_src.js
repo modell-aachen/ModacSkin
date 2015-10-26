@@ -15,12 +15,12 @@ jQuery(function($) {
 
 		var formatEntry = function(d) {
 			var $e = $('<div class="topicselect_container"><div class="topicselect_label"></div><div class="topicselect_sublabel"></div></div>');
-			$e.find('.topicselect_label').text(d.label);
+			$e.find('.topicselect_label').text(d.label || d.text);
 			$e.find('.topicselect_sublabel').text(d.sublabel);
 			return $e;
 		};
 		var formatEntryShort = function(d) {
-			return $('<div class="topicselect_label"></div>').text(d.label);
+			return $('<div class="topicselect_label"></div>').text(d.label || d.text);
 		};
 		$(this).select2({
 			ajax: {
@@ -57,7 +57,7 @@ jQuery(function($) {
 			formatNoMatches: function() { return foswiki.getMetaTag('l10n_modac_selecttopic_nomatches'); },
 			formatSearching: function() { return '<div class=\"jqAjaxLoader\" style=\"padding-left: 20px;\">'+ foswiki.getMetaTag('l10n_modac_selecttopic_searching') +'</div>'; },
 			formatResultCssClass: function() { return 'topicselect_container'; },
-			allowClear: false,
+			allowClear: true,
 			minimumInputLength: 0,
 			width: 'resolve'
 		});
