@@ -54,7 +54,7 @@ jQuery(function($) {
 			formatResultCssClass: function() { return 'topicselect_container'; },
 			allowClear: false,
 			minimumInputLength: 0,
-			width: 'element'
+			width: 'resolve'
 		});
 		$(this).addClass('jqTopicSelectInited');
 	});
