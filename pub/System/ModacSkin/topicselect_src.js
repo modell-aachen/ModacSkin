@@ -1,4 +1,9 @@
 jQuery(function($) {
+	var prevAllowInteraction = $.ui.dialog.prototype._allowInteraction;
+	$.ui.dialog.prototype._allowInteraction = function(event) {
+		if ($(event.target).closest('.select2-container--open').length) { return true; }
+		return prevAllowInteraction.apply(this, arguments);
+	};
 	$('.jqTopicSelect:not(div):not(.jqTopicSelectInited)').livequery(function(i) {
 		var opts = {
 			pagesize: 20,
