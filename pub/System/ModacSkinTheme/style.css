@@ -899,7 +899,8 @@ table.foswikiFormTable th.foswikiFormTableHRow {
 	vertical-align:middle;
 }
 .foswikiFormTableFooter {}
-table.foswikiFormTable td {
+table.foswikiFormTable > tr > td,
+table.foswikiFormTable > tbody > tr > td {
 	padding:3px 2em 3px 1em;
 	height:1.5em; /*S1*/
 	text-align:left;
