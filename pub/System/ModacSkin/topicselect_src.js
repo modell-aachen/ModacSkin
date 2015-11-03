@@ -14,6 +14,10 @@ jQuery(function($) {
 		$.extend(opts, $(this).metadata());
 
 		var formatEntry = function(d) {
+			if (d instanceof jQuery) { return d; }
+			if (d.loading) {
+				return $('<div class="jqAjaxLoader" style="padding-left: 20px;">').text(foswiki.getMetaTag('l10n_modac_selecttopic_searching'));
+			}
 			var $e = $('<div class="topicselect_container"><div class="topicselect_label"></div><div class="topicselect_sublabel"></div></div>');
 			$e.find('.topicselect_label').text(d.label || d.text);
 			$e.find('.topicselect_sublabel').text(d.sublabel);
@@ -22,7 +26,7 @@ jQuery(function($) {
 		var formatEntryShort = function(d) {
 			return $('<div class="topicselect_label"></div>').text(d.label || d.text);
 		};
-		$(this).select2({
+		var s2args = {
 			ajax: {
 				dataType: 'json',
 				url: foswiki.getPreference('SCRIPTURLPATH') +'/view'+ foswiki.getPreference('SCRIPTSUFFIX') +'/System/ModacAjaxHelper',
@@ -37,7 +41,7 @@ jQuery(function($) {
 						query: (params.term||'').toLowerCase(),
 						'offset': offset,
 						count: opts.pagesize,
-						clearable: 1
+						clearable: opts.clearable || 0
 					};
 				},
 				results: function(data, page) {
@@ -53,14 +57,10 @@ jQuery(function($) {
 			},
 			templateResult: formatEntry,
 			templateSelection: formatEntryShort,
-			// TODO
-			formatNoMatches: function() { return foswiki.getMetaTag('l10n_modac_selecttopic_nomatches'); },
-			formatSearching: function() { return '<div class=\"jqAjaxLoader\" style=\"padding-left: 20px;\">'+ foswiki.getMetaTag('l10n_modac_selecttopic_searching') +'</div>'; },
-			formatResultCssClass: function() { return 'topicselect_container'; },
-			allowClear: true,
 			minimumInputLength: 0,
 			width: 'resolve'
-		});
+		};
+		$(this).select2(s2args);
 		$(this).addClass('jqTopicSelectInited');
 	});
 });
