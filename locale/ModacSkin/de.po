@@ -1661,6 +1661,9 @@ msgstr "Anleitung"
 msgid "News"
 msgstr "Aktuelles"
 
+msgid "Topics"
+msgstr "Seiten"
+
 #~ msgid "Not recommended when deleting a topic."
 #~ msgstr "Nicht empfohlen, wenn Sie die Seite löschen."
 
@@ -1693,9 +1696,6 @@ msgstr "Aktuelles"
 
 #~ msgid "Topic:"
 #~ msgstr "Seite:"
-
-#~ msgid "Topics"
-#~ msgstr "Seiten"
 
 #~ msgid "Url:"
 #~ msgstr "Url:"
