@@ -1625,6 +1625,12 @@ msgstr "Woche"
 msgid "why you are being asked to confirm"
 msgstr "warum Sie zur Bestätigung aufgefordert werden"
 
+msgid "Status since"
+msgstr "Status seit"
+
+msgid "Pages waiting for approval"
+msgstr "Auf Freigabe wartende Seiten"
+
 #~ msgid "(access denied)"
 #~ msgstr "(Zugriff verweigert)"
 
