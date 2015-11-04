@@ -3,7 +3,7 @@
 <literal>
 [%QUERYUSERS{
   urlparam="term"
-  format="{\"value\":\"$cUID\",\"label\":\"$displayName<br/><small>%MAKETEXT{"User"}%: $loginName</small>\"}"
+  format="{\"value\":\"$loginName\",\"label\":\"$displayName<br/><small>%MAKETEXT{"User"}%: $loginName</small>\"}"
 }%]
 </literal>
 %ENDSECTION{"user"}%
@@ -27,7 +27,7 @@
 [%QUERYUSERS{
   urlparam="term"
   type="any"
-  userformat="{\"value\":\"$cUID\",\"label\":\"$displayName<br/><small>%MAKETEXT{"User"}%: $loginName</small>\"}"
+  userformat="{\"value\":\"$loginName\",\"label\":\"$displayName<br/><small>%MAKETEXT{"User"}%: $loginName</small>\"}"
   groupformat="{\"value\":\"$wikiName\",\"label\":\"$wikiName<br/><small>%MAKETEXT{"Group"}%</small>\"}"
 }%]
 </literal>
