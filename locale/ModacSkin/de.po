@@ -1553,8 +1553,8 @@ msgid "title='Side by side' accesskey='s'>&side by side"
 msgstr "title='Seite-an-Seite' accesskey='s'>&seite-an-seite"
 
 #: data/System/ModacSkinUserFormEditTemplate.txt
-msgid "title='Upload foto' accesskey='a'>&Upload photo"
-msgstr ""
+msgid "title='Upload foto' accesskey='u'>&Upload photo"
+msgstr "title='Foto hochladen' accesskey='u'>Foto hochladen"
 
 #: data/System/ModacSkinTopicMenuTemplate.txt
 #: templates/viewtopicactionbuttons.modac.tmpl

@@ -12,7 +12,7 @@
 <div class="widgetBlockContent">
 <table class="metaDataHead">
 <tr><td align="center"></td><td><img src='%ATTACHURL%/%ATTACHMENTLIST{topic="%BASETOPIC%" format="$fileName" limit="1" extenstion="gif,jpg,png" sort="$fileDate" sortorder="descending"}%' width='150px;'/><br/>
-<a href='%SCRIPTURLPATH{"attach"}%/%BASEWEB%/%BASETOPIC%' class='modacChanging' rel='nofollow' %MAKETEXT{"title='Upload foto' accesskey='a'>&Upload photo"}%</a></td></tr>
+<a href='%SCRIPTURLPATH{"attach"}%/%BASEWEB%/%BASETOPIC%' class='modacChanging' rel='nofollow' %MAKETEXT{"title='Upload foto' accesskey='u'>&Upload photo"}%</a></td></tr>
 %RENDERFOREDIT{header="<tr>" footer="</tr>" separator="</tr><tr>" format="<td width=\"200px;\">$title:</td><td>$edit</td>"}%
 </table>
 </div>
