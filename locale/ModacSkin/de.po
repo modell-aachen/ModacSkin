@@ -933,7 +933,7 @@ msgstr "Formular auswechseln…"
 
 #: templates/metacomments.modac.tmpl
 msgid "Reply to comment"
-msgstr ""
+msgstr "Auf Kommentar antworten"
 
 #: templates/validate.modac.tmpl
 msgid "Request Validation"
