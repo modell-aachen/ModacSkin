@@ -1631,6 +1631,54 @@ msgstr "Status seit"
 msgid "Pages waiting for approval"
 msgstr "Auf Freigabe wartende Seiten"
 
+msgid "First name"
+msgstr "Vorname"
+
+msgid "Last name"
+msgstr "Nachname"
+
+msgid "Organisation name"
+msgstr "Organisation"
+
+msgid "Organsisation URL"
+msgstr "Organisations URL"
+
+msgid "Profession"
+msgstr "Beruf"
+
+msgid "Country"
+msgstr "Land"
+
+msgid "<span data-plugin=\"ModacSkin\">State</span>"
+msgstr "Bundesland"
+
+msgid "Address"
+msgstr "Adresse"
+
+msgid "Location"
+msgstr "Ort"
+
+msgid "Telephone"
+msgstr "Telefon"
+
+msgid "VoIP"
+msgstr "VoIP"
+
+msgid "Instant Messaging (IM)"
+msgstr "Chat (IM)"
+
+msgid "Email"
+msgstr "E-Mail"
+
+msgid "Homepage"
+msgstr "Homepage"
+
+msgid "Comment"
+msgstr "Kommentar"
+
+msgid "Edit users form"
+msgstr "Benutzer bearbeiten"
+
 #~ msgid "(access denied)"
 #~ msgstr "(Zugriff verweigert)"
 
