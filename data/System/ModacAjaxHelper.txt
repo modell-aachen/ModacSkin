@@ -72,7 +72,7 @@ Please keep the comments near START-/ENDSECTION to avoid insertion of additional
   "%id%"
   type="user"
   format="$pref(USERDISPLAYFORMAT,$displayName)"
-}%%ENDSECTION{"select2::user::display:}%
+}%%ENDSECTION{"select2::user::display"}%
 
 ---+++ User selector for textboxlist (legacy)
 
