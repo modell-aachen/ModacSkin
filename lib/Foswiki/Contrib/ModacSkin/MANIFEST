@@ -122,6 +122,7 @@ templates/attachagain.modac.tmpl 0664
 templates/attachnew.modac.tmpl 0664
 templates/attachnew.modacdialog.tmpl 0664
 templates/attachtables.modac.tmpl 0664
+templates/attachtables.modaccompare.tmpl 0664
 templates/backlinks.modac.tmpl 0664
 templates/backlinksallwebs.modac.tmpl 0664
 templates/backlinksweb.modac.tmpl 0664
