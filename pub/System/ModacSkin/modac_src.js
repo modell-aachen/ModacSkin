@@ -375,6 +375,13 @@ jQuery(function($){
             }
 
             var $target = $(ev.target);
+            if(!$target.is('a')) {
+                $target = $target.closest('a');
+                if(!$target.is('a')) {
+                    window.console && console.log('WCNT: could not find target link');
+                    return;
+                }
+            }
             var $dialogID = $('#modacWCNTDialog');
 
             // Extract data from link
