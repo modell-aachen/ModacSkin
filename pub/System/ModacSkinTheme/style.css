@@ -1705,3 +1705,8 @@ div.modacMoreDynamicLink > span > a,
 span.modacMoreDynamicLink > a {
 	cursor: context-menu;
 }
+
+.ModacInlineButtons.jqButton,
+.ModacInlineButtons .jqButton {
+	font-size: inherit;
+}
