@@ -1705,9 +1705,3 @@ div.modacMoreDynamicLink > span > a,
 span.modacMoreDynamicLink > a {
 	cursor: context-menu;
 }
-
-/* Adjustment of JQ button style */
-.jqbutton {
-    line-height: 23px;
-    font-size: "";
-}
