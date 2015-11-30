@@ -12,8 +12,8 @@
 <div class="widgetBlockContent">
 <table class="metaDataHead">
 <tr><td align="center"></td><td><img src='%ATTACHURL%/%ATTACHMENTLIST{topic="%BASETOPIC%" format="$fileName" limit="1" extenstion="gif,jpg,png" sort="$fileDate" sortorder="descending"}%' width='150px;'/><br/>
-<a href='%SCRIPTURLPATH{"attach"}%/%BASEWEB%/%BASETOPIC%' class='modacChanging' rel='nofollow' %MAKETEXT{"title='Upload foto' accesskey='a'>&Upload photo"}%</a></td></tr>
-%RENDERFOREDIT{header="<tr>" footer="</tr>" separator="</tr><tr>" format="<td width=\"200px;\">$title:</td><td>$edit</td>"}%
+<a href='%SCRIPTURLPATH{"attach"}%/%BASEWEB%/%BASETOPIC%' class='modacChanging' rel='nofollow' %MAKETEXT{"title='Upload foto' accesskey='u'>&Upload photo"}%</a></td></tr>
+%RENDERFOREDIT{map="FirstName=%MAKETEXT{First name}%, LastName=%MAKETEXT{Last name}%, OrganisationName=%MAKETEXT{Organisation name}%, OrganisationURL=%MAKETEXT{Organisation URL}%, Profession=%MAKETEXT{Profession}%, Country=%MAKETEXT{Country}%, State=%MAKETEXT{<span data-plugin=\"ModacSkin\">State</span>}%, Address=%MAKETEXT{Address}%, Location=%MAKETEXT{Location}%, Telephone=%MAKETEXT{Telephone}%, VoIP=%MAKETEXT{VoIP}%, InstantMessaging (IM)=%MAKETEXT{Instant Messaging (IM)}%, Email=%MAKETEXT{Email}%, HomePage=%MAKETEXT{Homepage}%, Comment=%MAKETEXT{Comment}%" header="<tr>" footer="</tr>" separator="</tr><tr>" format="<td width=\"200px;\">$title:</td><td>$edit</td>"}%
 </table>
 </div>
 %TMPL:END%

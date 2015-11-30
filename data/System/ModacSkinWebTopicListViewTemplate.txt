@@ -1,0 +1,20 @@
+%{<verbatim class="tml">}%
+%TMPL:INCLUDE{"SystemView"}%
+%TMPL:INCLUDE{"WebTopicListView"}%
+%{</verbatim>}%
+
+%TMPL:DEF{"breadcrumb:currenttopic"}%
+%TMPL:P{"breadcrumb:separator"}%[[%TOPIC%][%MAKETEXT{"Index"}%]]
+%TMPL:END%
+
+%TMPL:DEF{"top"}%
+<div class="patternTop"><div id="modacHeading">%MAKETEXT{"Index"}%</div>
+<span class="patternHomePath">%TMPL:P{"breadcrumb"}%</span><br></div><!--/patternTop-->
+%TMPL:END%
+
+%{<verbatim class="tml">}%
+%TMPL:DEF{"content"}%
+%TOPICLIST{"   * [[%BASEWEB%.$name][$name]]"}%
+%TMPL:END%
+%{</verbatim>}%
+

@@ -16,7 +16,7 @@
       then="<div class='foswikiRight foswikiAlert cmtAlert'>(%MAKETEXT{"needs approval"}%)</div>"
     }$percnt<!-- -->
     <span class='foswikiSmallish foswikiGrayText'>
-      <span class='cmtAuthor'>[[%USERINFO{"$author" format="$wikiusername"}%]]</span>
+      <span class='cmtAuthor'>%RENDERUSER{"$author"}%</span>
       &#124;
       <span class='cmtDate'>$date</span>
     </span>
@@ -48,7 +48,7 @@
       then="<div class='foswikiRight foswikiAlert cmtAlert'>(%MAKETEXT{"needs approval"}%)</div>"
     }$percnt<!-- -->
     <span class='foswikiSmallish foswikiGrayText'>
-      <span class='cmtAuthor'>%IF{"istopic '%USERSWEB%.$author'" then="[[%USERSWEB%.$author]]" else="<nop>$author"}%</span>
+      <span class='cmtAuthor'>%RENDERUSER{"$author"}%</span>
       &#124;
       <span class='cmtDate'>$date</span>
     </span>

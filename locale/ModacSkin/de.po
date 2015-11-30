@@ -933,7 +933,7 @@ msgstr "Formular auswechseln…"
 
 #: templates/metacomments.modac.tmpl
 msgid "Reply to comment"
-msgstr ""
+msgstr "Auf Kommentar antworten"
 
 #: templates/validate.modac.tmpl
 msgid "Request Validation"
@@ -1553,8 +1553,8 @@ msgid "title='Side by side' accesskey='s'>&side by side"
 msgstr "title='Seite-an-Seite' accesskey='s'>&seite-an-seite"
 
 #: data/System/ModacSkinUserFormEditTemplate.txt
-msgid "title='Upload foto' accesskey='a'>&Upload photo"
-msgstr ""
+msgid "title='Upload foto' accesskey='u'>&Upload photo"
+msgstr "title='Foto hochladen' accesskey='u'>Foto hochladen"
 
 #: data/System/ModacSkinTopicMenuTemplate.txt
 #: templates/viewtopicactionbuttons.modac.tmpl
@@ -1625,6 +1625,60 @@ msgstr "Woche"
 msgid "why you are being asked to confirm"
 msgstr "warum Sie zur Bestätigung aufgefordert werden"
 
+msgid "Status since"
+msgstr "Status seit"
+
+msgid "Pages waiting for approval"
+msgstr "Auf Freigabe wartende Seiten"
+
+msgid "First name"
+msgstr "Vorname"
+
+msgid "Last name"
+msgstr "Nachname"
+
+msgid "Organisation name"
+msgstr "Organisation"
+
+msgid "Organsisation URL"
+msgstr "Organisations URL"
+
+msgid "Profession"
+msgstr "Beruf"
+
+msgid "Country"
+msgstr "Land"
+
+msgid "<span data-plugin=\"ModacSkin\">State</span>"
+msgstr "Bundesland"
+
+msgid "Address"
+msgstr "Adresse"
+
+msgid "Location"
+msgstr "Ort"
+
+msgid "Telephone"
+msgstr "Telefon"
+
+msgid "VoIP"
+msgstr "VoIP"
+
+msgid "Instant Messaging (IM)"
+msgstr "Chat (IM)"
+
+msgid "Email"
+msgstr "E-Mail"
+
+msgid "Homepage"
+msgstr "Homepage"
+
+msgid "Comment"
+msgstr "Kommentar"
+
+msgid "Edit users form"
+msgstr "Benutzer bearbeiten"
+
 #~ msgid "(access denied)"
 #~ msgstr "(Zugriff verweigert)"
 
@@ -1661,6 +1715,9 @@ msgstr "Anleitung"
 msgid "News"
 msgstr "Aktuelles"
 
+msgid "Topics"
+msgstr "Seiten"
+
 #~ msgid "Not recommended when deleting a topic."
 #~ msgstr "Nicht empfohlen, wenn Sie die Seite löschen."
 
@@ -1693,9 +1750,6 @@ msgstr "Aktuelles"
 
 #~ msgid "Topic:"
 #~ msgstr "Seite:"
-
-#~ msgid "Topics"
-#~ msgstr "Seiten"
 
 #~ msgid "Url:"
 #~ msgstr "Url:"

@@ -14,7 +14,7 @@
 
 %{<verbatim class="tml">}%
 %TMPL:DEF{"script:skinbase"}%%TMPL:PREV%%{
-}%%JQREQUIRE{tasksapi,jqp::readmore}%%{
+}%%JQREQUIRE{tabpane,tasksapi,jqp::readmore}%%{
 }%%JSI18N{"ModacSkin" id="solr"}%%{
 }%%ADDTOZONE{"script" id="jsi18n::tasksapi" requires="%JSI18NID%" text="<script type='text/javascript' src='%PUBURLPATH%/%SYSTEMWEB%/TasksAPIPlugin/js/i18n/jsi18n.%IF{"$LANGUAGE=~'de'" then="%LANGUAGE%" else="en"}%.min.js'></script>"}%%{
 }%%ADDTOZONE{"script" id="tasksapi::solr" requires="JQUERYPLUGIN::TASKSAPI" text="<script type='text/javascript' src='%PUBURLPATH%/%SYSTEMWEB%/TasksAPIPlugin/js/tasksapi.solr.js'></script>"}%%{
@@ -253,7 +253,7 @@
 
 %{<verbatim class="tml">}%
 %TMPL:DEF{"solr::templates::webfacetfield"}%<script id="solrWebFacetFieldTemplate" type="text/x-jquery-tmpl"> 
-  <div class="jqSerialPager"><!-- data-prev-text="{{: ~foswiki.jsi18n.get('solr', 'prev') }}" data-next-text="{{: ~foswiki.jsi18n.get('solr', 'next') }}" data-pagesize="10"-->
+  <div class="jqSerialPager" data-prev-text="{{: ~foswiki.jsi18n.get('solr', 'prev') }}" data-next-text="{{: ~foswiki.jsi18n.get('solr', 'next') }}" data-pagesize="10">
     <ul>
       {{for widget.facetCounts ~widget=widget}}
         <li>
@@ -274,7 +274,7 @@
 
 %{<verbatim class="tml">}%
 %TMPL:DEF{"solr::templates::facetfield"}%<script id="solrFacetFieldTemplate" type="text/x-jquery-tmpl"> 
-  <div class="jqSerialPager"><!-- data-prev-text="{{: ~foswiki.jsi18n.get('solr', 'prev') }}" data-next-text="{{: ~foswiki.jsi18n.get('solr', 'next') }}" data-pagesize="10"-->
+  <div class="jqSerialPager" data-prev-text="{{: ~foswiki.jsi18n.get('solr', 'prev') }}" data-next-text="{{: ~foswiki.jsi18n.get('solr', 'next') }}" data-pagesize="10">
     <ul>
       {{for widget.facetCounts ~widget=widget}}
         <li>

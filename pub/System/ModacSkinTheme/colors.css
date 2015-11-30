@@ -264,11 +264,14 @@ a:hover.twistyTrigger {
 	background-color:#fff;
 }
 table.foswikiFormTable,
+div.foswikiAttachments table.foswikiTable td,
+div.foswikiAttachments table.foswikiTable th,
+div.foswikiAttachments table.foswikiTable,
 .foswikiAttachments table,
 .foswikiAttachments th,
 .foswikiAttachments td {
 	border-color:#eee;
-	background-color:#fcfcfc !important;
+	background-color:#fcfcfc;
 }
 .foswikiForm td,
 .foswikiForm th,

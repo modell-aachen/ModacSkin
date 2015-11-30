@@ -1,21 +1,30 @@
 %{ These templates define the form attached at the bottom of viewed page. }%
-
+%{ This template will cause %META...% to render nothing and instead use %RENDERFOREDIT...% }%
+%TMPL:INCLUDE{"DocumentFormTable"}%
 
 %{ Start of form table }%
-%TMPL:DEF{FORM:display:header}%<div class="foswikiForm foswikiFormStep">%IF{"context preview" then="%TMPL:P{FORM:display:titlename}%" else="%TMPL:P{FORM:display:titlelink}%"}%<table class='foswikiFormTable' border='1' summary='%MAKETEXT{"Form data"}%'>%TMPL:P{FORM:display:header:headerrow}%%TMPL:END%
+%{ Note: We need to protect the $title from being expanded by %META...%, so it will be passed to %RENDERFOREDIT...%. }%
+%TMPL:DEF{FORM:display:header}%<div class="foswikiForm foswikiFormStep">%IF{"context preview" then="%TMPL:P{FORM:display:titlename}%" else="%TMPL:P{FORM:display:titlelink}%"}%<table class='foswikiFormTable' border='1' summary='%MAKETEXT{"Form data"}%'>%TMPL:P{FORM:display:header:headerrow}%
+%RENDERFORDISPLAY{
+format="<tr class='modacForm'><td><span class='title'>$%PROTECT{default=""}%title</span></td><td>$value</td></tr>"
+map="%TMPL:P{"modacformtable_mappings"}%"
+topic="%IF{"istopic '%WEB%.%TOPIC%'" then="%WEB%.%TOPIC%" else="%URLPARAM{"templatetopic" encode="quote"}%"}%"
+%IF{"defined rev" then=" revision=\"$percentURLPARAM{\"rev\" default=\"%rev%\"}$percent\""}%
+%TMPL:P{"modacformtable:extraparams"}%
+}%
+%TMPL:END%
 
 
-%{ Header }%
 %TMPL:DEF{FORM:display:header:headerrow}%%TMPL:END%
 
 
-%{ Each row }%
-%TMPL:DEF{FORM:display:row}%%IF{"context preview" then="<noautolink>"}%<tr valign='top'><td class='foswikiFormTableRow foswikiFirstCol' align='right'> %A_TITLE% </td><td> %A_VALUE% </td></tr>%IF{"context preview" then="</noautolink>"}%%TMPL:END%
+%{ Each row, set do to nothing and leave the work to %RENDERFOREDISPLAY...% }%
+%TMPL:DEF{FORM:display:row}%%TMPL:END%
 
 
 %TMPL:DEF{FORM:display:rowcontents}%%TMPL:END%
 
-%{ Footer }%
+
 %TMPL:DEF{FORM:display:footer}%</table></div>%TMPL:END%
 
 

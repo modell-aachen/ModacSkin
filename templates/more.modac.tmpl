@@ -256,8 +256,8 @@ id="cssFoswikiDiffOptions"}%%TMPL:END%
 }%
 %{<verbatim class="tml">}%
 %TMPL:DEF{"topicparent_select2"}%<!-- -->
-%INCLUDE{"%SYSTEMWEB%.ModacAjaxHelper" section="selecttopic"}%
-<div class="select2minheight"><input type="hidden" class="jqTopicSelect {include_web: false}" name="topicparent" value="%SUBST{text="%SEARCH{ "name = '%TOPIC%'" scope="topic" type="query" nosearch="on" nototal="on" format="$parent"}%" pattern="%WORKFLOWSUFFIX%$" format=""}%" /></div>
+%INCLUDE{"%SYSTEMWEB%.ModacAjaxHelper" section="selecttopic"}%<!-- -->
+<select class="jqTopicSelect {include_web: false, clearable: 1}" style="width: 98%;" name="topicparent" id="topicparent_select"><option value="%QUERY{"parent.name"}%">%IF{"parent.name=~'%HOMETOPIC%(?:-[A-Z]2)?$'" then="%MAKETEXT{"No topic parent"}%" else="$percntGETTOPICTITLE{\"%QUERY{"parent.name"}%\"}$percnt"}%</option></select>
 <!-- -->%TMPL:END%
 %{</verbatim>}%
 
@@ -281,6 +281,6 @@ id="cssFoswikiDiffOptions"}%%TMPL:END%
 
 %{<verbatim class="tml">}%
 %TMPL:DEF{"topicparent"}%<!-- -->
-%TMPL:P{context="Select2Enabled" then="topicparent_select2" else="topicparent_select"}%
+%TMPL:P{context="Select2Registered" then="topicparent_select2" else="topicparent_select"}%
 <!-- -->%TMPL:END%
 %{</verbatim>}%

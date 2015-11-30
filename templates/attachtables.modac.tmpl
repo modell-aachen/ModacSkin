@@ -50,5 +50,5 @@
 
 %{ A basic row definition, for attachment table and attach screen }%
 %{ Use %A_URL% instead of %PUBURLPATH%/%WEB%/%TOPIC%/%A_FILE% to get a viewfile link }%
-%TMPL:DEF{ATTACH:files:row(basic)}%| %A_ICON%<span class="foswikiHidden">%A_EXT%</span> | <a href="%ATTACHURLPATH%/%ENCODE{%A_FILE%}%"><noautolink>%A_FILE%</noautolink></a> | %TMPL:P{"ATTACH:files:row(basic):buttons"}% |  %A_SIZE%|<span class="foswikiNoBreak">%A_DATE%</span> | %A_USER%  | %A_COMMENT% |%TMPL:END%
+%TMPL:DEF{ATTACH:files:row(basic)}%| %A_ICON%<span class="foswikiHidden">%A_EXT%</span> | <a href="%ATTACHURLPATH%/%ENCODE{%A_FILE%}%"><noautolink>%A_FILE%</noautolink></a> | %TMPL:P{"ATTACH:files:row(basic):buttons"}% | %A_SIZE% |<span class="foswikiNoBreak">%A_DATE%</span> | %A_USER%  | %A_COMMENT% |%TMPL:END%
 

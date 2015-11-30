@@ -1553,7 +1553,7 @@ msgid "title='Side by side' accesskey='s'>&side by side"
 msgstr "title='Côte-à-côte' accesskey='s'>Différence&s côte-à-côte"
 
 #: data/System/ModacSkinUserFormEditTemplate.txt
-msgid "title='Upload foto' accesskey='a'>&Upload photo"
+msgid "title='Upload foto' accesskey='u'>&Upload photo"
 msgstr ""
 
 #: data/System/ModacSkinTopicMenuTemplate.txt
