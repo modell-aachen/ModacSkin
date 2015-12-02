@@ -135,6 +135,7 @@ templates/edit.modac.tmpl 0664
 templates/editform.modac.tmpl 0664
 templates/form.modac.tmpl 0664
 templates/formtables.modac.tmpl 0664
+templates/formtables.modaccompare.tmpl 0664
 templates/foswiki.modac.tmpl 0664
 templates/foswiki.modacdialog.tmpl 0664
 templates/login.modac.tmpl 0664
