@@ -78,16 +78,16 @@
 <ul class="modacBookmarks">
 %SOLRSEARCH{"type:topic webtopic:(%FAVORITELIST{format="\\"$swebtopic\\"" separator=" OR " default="NOT *"}%)"
   rows="5" sort="date desc"
-  format="<li><div class=\"date\">$date%BR%$author</div><a href=\"%SCRIPTURL{view}%/$web/$topic\" title=\"$web.$topic\"><strong>$percntIF{\"'$title'='WebHome'\" then=\"$dollarpercentFORMATLIST{\\"$dollarmap($web)\\" map=\\"%MODAC_WEBMAPPINGS{default=""}%\\"}$dollarpercent\" else=\"$title\"}$percnt</strong></a>$percntIF{\"$workflow_hasdiscussion_b\" then=\"&nbsp;&nbsp;|&nbsp;&nbsp;<a href='$percntSCRIPTURL{view}$percnt/$web/$topic$percntWORKFLOWSUFFIX$percnt'><span class=\\"bmsubinfo\\">$dollarpercntICON{comments}$dollarpercnt&nbsp;$percntMAKETEXT{\"Discussion available\"}$percnt</span></a>\"}$percnt%BR%<span class=\"bmsubinfo\">[[$web.WebHome][$percentFORMATLIST{\"$dollarmap($web)\" map=\"%MODAC_WEBMAPPINGS{default=""}%\"}$percent]]</span></li>"
-  fields="date,web,topic,title"
+  format="<li><div class=\"date\">$date%BR%$percentRENDERUSER{\"$author\" convert=\"on\"}$percent</div><a href=\"%SCRIPTURL{view}%/$web/$topic\" title=\"$web.$topic\"><strong>$percntIF{\"'$title'='WebHome'\" then=\"$dollarpercentFORMATLIST{\\"$dollarmap($web)\\" map=\\"%MODAC_WEBMAPPINGS{default=""}%\\"}$dollarpercent\" else=\"$title\"}$percnt</strong></a>$percntIF{\"$workflow_hasdiscussion_b\" then=\"&nbsp;&nbsp;|&nbsp;&nbsp;<a href='$percntSCRIPTURL{view}$percnt/$web/$topic$percntWORKFLOWSUFFIX$percnt'><span class=\\"bmsubinfo\\">$dollarpercntICON{comments}$dollarpercnt&nbsp;$percntMAKETEXT{\"Discussion available\"}$percnt</span></a>\"}$percnt%BR%<span class=\"bmsubinfo\">[[$web.WebHome][$percentFORMATLIST{\"$dollarmap($web)\" map=\"%MODAC_WEBMAPPINGS{default=""}%\"}$percent]]</span></li>"
+  fields="date,web,topic,title,author"
 }%
 </ul>
 </td><td class="splitright"><div class="splittitle">%ICON{attachfile}% %MAKETEXT{"Attachments"}%</div>
 <ul class="modacBookmarks">
 %SOLRSEARCH{"-type:(topic OR comment OR action) (%FAVORITELIST{type="files" format="(webtopic:\\"$swebtopic\\" name:\"$file\")" separator=" OR " default="NOT *"}%)"
   rows="5" sort="date desc"
-  format="<li><div class=\"date\">$date%BR%$author</div>[[%PUBURLPATH%/$web/$topic/$name][<strong>$title</strong>]]%BR%<span class=\"bmsubinfo\">[[$web.WebHome][$percentFORMATLIST{\"$dollarmap($web)\" map=\"%MODAC_WEBMAPPINGS{default=""}%\"}$percent]] &raquo; [[$web.$topic][$container_title]]</span></li>"
-  fields="web,topic,container_title,author,date,name,title"
+  format="<li><div class=\"date\">$date%BR%$percentRENDERUSER{\"$author\" convert=\"on\"}$percent</div>[[%PUBURLPATH%/$web/$topic/$name][<strong>$title</strong>]]%BR%<span class=\"bmsubinfo\">[[$web.WebHome][$percentFORMATLIST{\"$dollarmap($web)\" map=\"%MODAC_WEBMAPPINGS{default=""}%\"}$percent]] &raquo; [[$web.$topic][$container_title]]</span></li>"
+  fields="web,topic,container_title,author,date,name,title,author"
 }%
 </ul>
 </td></tr></table>
@@ -235,7 +235,7 @@ $percentTMPL:P{perspage:comments}$percent
 %TMPL:DEF{"perspage:comments"}%
 %JQREQUIRE{"form"}%%TMPL:P{"LIBJS" id="ModacSkin/comment_form" requires="JQUERYPLUGIN::FOSWIKI"}%
 %SOLRSEARCH{"type: comment notified_lst: %WIKINAME% -read_lst: %WIKINAME%"
-format="<tr class='modac_comment'><td>$author</td><td>[[$web.$topic]]</td><td><b>$title</b>%BR%$text</td><td><div class='modac_comment_ctl'><form class='tick' action='%SCRIPTURLPATH{jsonrpc}%/MetaCommentPlugin/markRead' method='post'><input type='hidden' name='topic' value='$web.$topic' /><input type='hidden' name='comment_id' value='$name' /><button type='submit' value='tick' >$percentJQICON{tick}$percent</button></form></div></td></tr>$n"
+format="<tr class='modac_comment'><td>$percentRENDERUSER{\"$author\" convert=\"on\"}$percent</td><td>[[$web.$topic]]</td><td><b>$title</b>%BR%$text</td><td><div class='modac_comment_ctl'><form class='tick' action='%SCRIPTURLPATH{jsonrpc}%/MetaCommentPlugin/markRead' method='post'><input type='hidden' name='topic' value='$web.$topic' /><input type='hidden' name='comment_id' value='$name' /><button type='submit' value='tick' >$percentJQICON{tick}$percent</button></form></div></td></tr>$n"
 rows="999"
 sort="webtopic,name"
 header="<div class='perspageBlockTitle'>%MAKETEXT{"Comments for me"}%</div><div class='perspageBlock'>
