@@ -1,0 +1,10 @@
+%TMPL:INCLUDE{"SystemView"}%
+
+%TMPL:DEF{"top_simple"}%
+  <div class="patternTop"><div id="modacHeading">%MAKETEXT{%TOPICTITLE%}%</div>
+  <span class="patternHomePath">%TMPL:P{"breadcrumb"}%</span><br></div><!--/patternTop-->
+%TMPL:END% 
+
+%TMPL:DEF{"breadcrumb:currenttopic"}%
+  %TMPL:P{"breadcrumb:separator"}%[[%TOPIC%][%MAKETEXT{%TOPICTITLE%}%]]
+%TMPL:END%
