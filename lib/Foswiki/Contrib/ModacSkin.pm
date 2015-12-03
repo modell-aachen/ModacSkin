@@ -7,6 +7,27 @@ our $VERSION = '1.4';
 our $RELEASE = "1.4";
 our $SHORTDESCRIPTION = 'Modell Aachen Skin (Mediawiki New Skin)';
 
+sub maintenanceHandler {
+    Foswiki::Plugins::MaintenancePlugin::registerCheck("ModacSkin:Compare:skinorder", {
+        name => "ModacSkin: Skin order when comparing",
+        description => "ModacSkin's modaccompare should appear before contextmenue.",
+        check => sub {
+            my $skin = $Foswiki::cfg{Extensions}{CompareRevisionsAddOn}{skin} || '';
+            if($skin =~ m#\bcontextmenu\b.*,\s*modaccompare\b#) {
+                $skin =~ s#,\s*modaccompare\b##;
+                $skin =~ s#,\s*contextmenu\b#,modaccompare,contextmenu#;
+                return {
+                    result => 1,
+                    priority => $Foswiki::Plugins::MaintenancePlugin::WARN,
+                    solution => "Please put modaccompare before contextmenue, ie: {Extensions}{CompareRevisionsAddOn}{skin} = $skin"
+                };
+            } else {
+                return { result => 0 };
+            }
+        }
+    });
+}
+
 1;
 __END__
 Foswiki - The Free and Open Source Wiki, http://foswiki.org/
