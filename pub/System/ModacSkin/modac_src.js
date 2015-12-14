@@ -250,6 +250,14 @@ jQuery(function($){
             css: {width: 'auto', height: 'auto'}
         },
 
+        // Getter for default options.
+        // Parameters:
+        //     * options: overwrites / additional parameters
+        getBlockDefaultOptions: function(options) {
+            if(!options) options = {};
+            return $.extend(true, {}, options, ModacSkin.blockDefaultOptions);
+        },
+
         // Use this function to signal a busy-state.
         // Usually simply blocks the screen.
         blockUI : function() {
