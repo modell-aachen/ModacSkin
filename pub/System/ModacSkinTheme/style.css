@@ -239,6 +239,10 @@ html>body #modacLogoIE {
 	border: solid 1px #dddddd;
 }
 
+.modacBox {
+	margin-bottom: 3px;
+}
+
 .foswikiRight
 #modacLanguageSelector,
 .modacMorePage .patternBorder,
