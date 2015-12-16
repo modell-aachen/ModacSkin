@@ -464,6 +464,9 @@ table[align="center"] {
 .Modac_Standard.autonumbered tbody tr {
 	counter-increment: rowNumber;
 }
+.Modac_Standard.autonumbered tbody tr td:first-child {
+  width: 20px;
+}
 .Modac_Standard.autonumbered tbody tr td:first-child::before {
 	content: counter(rowNumber);
 	min-width: 1em;
