@@ -103,14 +103,14 @@
       {{: ~getHilite(id)}}
     </div>
     <div class='solrRevision'>
-      {{:~formatDate(date,solrDateformat)}}, {{:author}}
+      {{:~formatDate(date,solrDateformat)}}, {{if author_s}}{{:author_s}}{{else}}{{:author}}{{/if}}
     </div>
   </div>
 </script>%TMPL:END%
 %{</verbatim>}%
 
 %{<verbatim>}%
-%TMPL:DEF{"solr::fields::append"}%%TMPL:PREV%,container_id,container_url,task_state_s,task_type_s,task_id_s%TMPL:END%
+%TMPL:DEF{"solr::fields::append"}%%TMPL:PREV%,author_s,container_id,container_url,task_state_s,task_type_s,task_id_s%TMPL:END%
 %TMPL:DEF{"solr::templates::hits::task"}%<script id="solrHitTemplate_task" type="text/x-jquery-tmpl">
   <div class='solrSearchHit clearfix'>
     {{include tmpl="#solrTemplate_thumbnail" /}}
@@ -125,7 +125,7 @@
     {{:~getHilite(id)}}
   </div>
   <div class='solrRevision'>
-    {{:~formatDate(date,solrDateformat)}}, {{:author}}
+    {{:~formatDate(date,solrDateformat)}}, {{if author_s}}{{:author_s}}{{else}}{{:author}}{{/if}}
   </div>
 </div>
 </script>%TMPL:END%
@@ -146,7 +146,7 @@
     {{:~getHilite(id)}}
   </div>
   <div class='solrRevision'>
-    {{:~formatDate(date,solrDateformat)}}, {{:author}}
+    {{:~formatDate(date,solrDateformat)}}, {{if author_s}}{{:author_s}}{{else}}{{:author}}{{/if}}
   </div>
 </div>
 </script>%TMPL:END%
@@ -167,7 +167,7 @@
       {{: ~getHilite(id)}}
     </div>
     <div class='solrRevision'> 
-      {{:~formatDate(date, solrDateformat)}}, {{:author}}
+      {{:~formatDate(date, solrDateformat)}}, {{if author_s}}{{:author_s}}{{else}}{{:author}}{{/if}}
     </div>
   </div>
 </script>%TMPL:END%
@@ -199,7 +199,7 @@
       {{: ~getHilite(id)}}
     </div>
     <div class='solrRevision'> 
-      {{:~formatDate(date,solrDateformat)}}, {{:author}}
+      {{:~formatDate(date,solrDateformat)}}, {{if author_s}}{{:author_s}}{{else}}{{:author}}{{/if}}
     </div>
     %CLEAR%
   </div>
@@ -228,7 +228,7 @@
       {{: ~getHilite(id)}}
     </div>
     <div class='solrRevision'> 
-      {{:~formatDate(date,solrDateformat)}}, {{:author}}
+      {{:~formatDate(date,solrDateformat)}}, {{if author_s}}{{:author_s}}{{else}}{{:author}}{{/if}}
     </div>
   </div>
 </script>%TMPL:END%
