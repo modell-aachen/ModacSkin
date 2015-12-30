@@ -16,7 +16,7 @@
 			<td colspan='3' style='text-align: center;'>
 				<strong><font size='3'>%QUERY{"TopicTitle"}%</font></strong></td>
 			<td colspan='2' style='text-align: center;'>
-				Geltungsbereich&#58; <strong><br />%QUERY{"Geltungsbereich"}%</strong></td>
+				Geltungsbereich&#58; <strong><br />%QUERY{"AreaOfApplication"}%</strong></td>
 		</tr>
 	</tbody>
 </table>
@@ -41,7 +41,7 @@
 			<td colspan='3' style='text-align: center;'>
 				<strong><font size='3'>%QUERY{"TopicTitle"}%</font></strong></td>
 			<td colspan='2' style='text-align: center;'>
-				Area of application&#58; <strong><br />%QUERY{"Geltungsbereich"}%</strong></td>
+				Area of application&#58; <strong><br />%QUERY{"AreaOfApplication"}%</strong></td>
 		</tr>
 	</tbody>
 </table>
@@ -66,7 +66,7 @@
 			<td colspan='3' style='text-align: center;'>
 				<strong><font size='3'>%QUERY{"TopicTitle"}%</font></strong></td>
 			<td colspan='2' style='text-align: center;'>
-				%MAKETEXT{"Area of application"}%&#58; <strong><br />%QUERY{"Geltungsbereich"}%</strong></td>
+				%MAKETEXT{"Area of application"}%&#58; <strong><br />%QUERY{"AreaOfApplication"}%</strong></td>
 		</tr>
 	</tbody>
 </table>
