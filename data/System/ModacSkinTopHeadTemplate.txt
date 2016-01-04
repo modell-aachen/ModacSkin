@@ -4,9 +4,9 @@
 	<tbody>
 		<tr style="height: 24px;">
 			<td colspan='3' width='50%' style='text-align: center;'>
-				<strong><font size='4'>%QUERY{"Dokumententyp"}% </font></strong></td>
+				<strong><font size='4'>%MAKETEXT{"%QUERY{"DocumentType"}%"}% </font></strong></td>
 			<td width='35%' style='text-align: center;'>
-				%{Nummer:<strong><br />#QUERY{"Nummer"}#</strong>}%</td>
+				</td>
 			<td width='12%' style='text-align: center;'>
 				Rev.:<strong><br /> %REVINFO{format="$rev"}%</strong></td>
 			<td rowspan='2' width='12%'>
@@ -16,7 +16,7 @@
 			<td colspan='3' style='text-align: center;'>
 				<strong><font size='3'>%QUERY{"TopicTitle"}%</font></strong></td>
 			<td colspan='2' style='text-align: center;'>
-				Geltungsbereich&#58; <strong><br />%QUERY{"AreaOfApplication"}%</strong></td>
+				Geltungsbereich&#58; <strong><br />%MAKETEXT{"%QUERY{"AreaOfApplication"}%"}%</strong></td>
 		</tr>
 	</tbody>
 </table>
@@ -29,9 +29,9 @@
 	<tbody>
 		<tr style="height: 24px;">
 			<td colspan='3' width='50%' style='text-align: center;'>
-				<strong><font size='4'>%QUERY{"Dokumententyp"}% </font></strong></td>
+				<strong><font size='4'>%QUERY{"DocumentType"}% </font></strong></td>
 			<td width='35%' style='text-align: center;'>
-				%{Number:<strong><br />#QUERY{"Nummer"}#</strong>}%</td>
+				</td>
 			<td width='12%' style='text-align: center;'>
 				Rev.:<strong><br /> %REVINFO{format="$rev"}%</strong></td>
 			<td rowspan='2' width='12%'>
@@ -54,9 +54,9 @@
 	<tbody>
 		<tr style="height: 24px;">
 			<td colspan='3' width='50%' style='text-align: center;'>
-				<strong><font size='4'>%QUERY{"Dokumententyp"}% </font></strong></td>
+				<strong><font size='4'>%MAKETEXT{"%QUERY{"DocumentType"}%"}% </font></strong></td>
 			<td width='35%' style='text-align: center;'>
-				%{#MAKETEXT{"Number"}#:<strong><br />#QUERY{"Nummer"}#</strong>}%</td>
+				</td>
 			<td width='12%' style='text-align: center;'>
 				Rev.:<strong><br /> %REVINFO{format="$rev"}%</strong></td>
 			<td rowspan='2' width='12%'>
@@ -66,7 +66,7 @@
 			<td colspan='3' style='text-align: center;'>
 				<strong><font size='3'>%QUERY{"TopicTitle"}%</font></strong></td>
 			<td colspan='2' style='text-align: center;'>
-				%MAKETEXT{"Area of application"}%&#58; <strong><br />%QUERY{"AreaOfApplication"}%</strong></td>
+				%MAKETEXT{"Area of application"}%&#58; <strong><br />%MAKETEXT{"%QUERY{"AreaOfApplication"}%"}%</strong></td>
 		</tr>
 	</tbody>
 </table>
