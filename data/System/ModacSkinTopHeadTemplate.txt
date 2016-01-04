@@ -6,7 +6,7 @@
 			<td colspan='3' width='50%' style='text-align: center;'>
 				<strong><font size='4'>%MAKETEXT{"%QUERY{"DocumentType"}%"}% </font></strong></td>
 			<td width='35%' style='text-align: center;'>
-				</td>
+				%{Number:<strong><br />#QUERY{"Nummer"}#</strong>}%</td>
 			<td width='12%' style='text-align: center;'>
 				Rev.:<strong><br /> %REVINFO{format="$rev"}%</strong></td>
 			<td rowspan='2' width='12%'>
@@ -31,7 +31,7 @@
 			<td colspan='3' width='50%' style='text-align: center;'>
 				<strong><font size='4'>%QUERY{"DocumentType"}% </font></strong></td>
 			<td width='35%' style='text-align: center;'>
-				</td>
+				%{Number:<strong><br />#QUERY{"Nummer"}#</strong>}%</td>
 			<td width='12%' style='text-align: center;'>
 				Rev.:<strong><br /> %REVINFO{format="$rev"}%</strong></td>
 			<td rowspan='2' width='12%'>
@@ -56,7 +56,7 @@
 			<td colspan='3' width='50%' style='text-align: center;'>
 				<strong><font size='4'>%MAKETEXT{"%QUERY{"DocumentType"}%"}% </font></strong></td>
 			<td width='35%' style='text-align: center;'>
-				</td>
+				%{#MAKETEXT{"Number"}#:<strong><br />#QUERY{"Nummer"}#</strong>}%</td>
 			<td width='12%' style='text-align: center;'>
 				Rev.:<strong><br /> %REVINFO{format="$rev"}%</strong></td>
 			<td rowspan='2' width='12%'>
