@@ -23,5 +23,5 @@
 %{</verbatim>}%
 
 %{<verbatim class="tml">}%
-%TMPL:DEF{"solr::title"}%%TMPL:END%
+%TMPL:DEF{"solr::title"}%<input type="hidden" id='solrSorting' data-default-sort="%TMPL:P{"solr::defaultsort"}%" />%TMPL:END%
 %{</verbatim>}%

@@ -17,6 +17,25 @@ jQuery(function($){
       return false;
     });
 
+    // from http://stackoverflow.com/questions/901115/how-can-i-get-query-string-values
+    var getParameterByName = function(href, name) {
+        name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+        var regex = new RegExp("[\\?&;]" + name + "=([^&#;]*)"),
+            results = regex.exec(href);
+        return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+    };
+
+    // get string with ;MODAC_HIDEWEBS=... url parameter
+    var getHidewebs = function() {
+        var hidewebs = getParameterByName(window.location.search, 'MODAC_HIDEWEBS');
+        if(hidewebs) {
+            hidewebs = ';MODAC_HIDEWEBS=' + hidewebs;
+        } else {
+            hidewebs = '';
+        }
+        return hidewebs;
+    };
+
     var ModacSkin = foswiki.ModacSkin = {
 
         // These are the default options for dialogs
@@ -250,6 +269,14 @@ jQuery(function($){
             css: {width: 'auto', height: 'auto'}
         },
 
+        // Getter for default options.
+        // Parameters:
+        //     * options: overwrites / additional parameters
+        getBlockDefaultOptions: function(options) {
+            if(!options) options = {};
+            return $.extend(true, {}, options, ModacSkin.blockDefaultOptions);
+        },
+
         // Use this function to signal a busy-state.
         // Usually simply blocks the screen.
         blockUI : function() {
@@ -313,14 +340,6 @@ jQuery(function($){
 
         // WebCreateNewTopic-Links
         wcntHandler : function(ev) {
-            // from http://stackoverflow.com/questions/901115/how-can-i-get-query-string-values
-            function getParameterByName(href, name) {
-                name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
-                var regex = new RegExp("[\\?&;]" + name + "=([^&#;]*)"),
-                    results = regex.exec(href);
-                return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
-            }
-
             // prepare the input fields
             //    * hide non-used fields
             //    * set values
@@ -414,7 +433,8 @@ jQuery(function($){
 
                 ModacSkin.blockUI();
                 var restUri = foswiki.getPreference('SCRIPTURL') +'/rest'+ foswiki.getPreference('SCRIPTSUFFIX');
-                $.ajax(restUri + '/RenderPlugin/template?name=WebCreateNewTopicDialog;render=on;expand=dialog;topic=' + baseWebTopic + ';topicparent='+infodata.topicparent+';newtopictitle='+infodata.newtopictitle, {
+                var hidewebs = getHidewebs();
+                $.ajax(restUri + '/RenderPlugin/template?name=WebCreateNewTopicDialog;render=on;expand=dialog;topic=' + baseWebTopic + ';topicparent='+infodata.topicparent+';newtopictitle='+infodata.newtopictitle + hidewebs, {
                     success: function(data) {
                         ModacSkin.showDialog(data, function($data, $dialog) {
                                 var $form = $dialog.find('form');
@@ -475,12 +495,13 @@ jQuery(function($){
             var skin = 'modacdialog,'+foswiki.getPreference('SKIN');
             var d;
             ModacSkin.blockUI();
+            var hidewebs = getHidewebs();
             $.ajax(
-                restUri +'/RenderPlugin/template?name=more;expand='+type+';render=1;topic='+baseWeb+'.'+encodeURIComponent(baseTopic) + ';skin=' + skin,
+                restUri +'/RenderPlugin/template?name=more;expand='+type+';render=1;topic='+baseWeb+'.'+encodeURIComponent(baseTopic) + ';skin=' + skin + hidewebs,
                 {
                     success: ModacSkin.handleLogin(function(data, textStatus, jqXHR, $data) {
                         var d;
-                        $data.find('a').click(function(ev){
+                        $data.find('a').click(function(ev){ // TODO: MODAC_HIDEWEBS
                             var $target = $(ev.target);
                             var param = /[^?]*(\?.*name=more;expand=.*)/.exec($target.attr('href'));
                             if(!param || param.length != 2) return true;
@@ -549,6 +570,9 @@ jQuery(function($){
                             var ajaxArea = $('<div class="modacAjaxDialog"><div style="height: 150px; width: 200 px;"></div></div>');
                             ajax.before(ajaxArea);
                             ajax.append($('<input type="hidden" name="skin" value="' + skin + '" />'));
+                            if(hidewebs && !ajax.find('input[name="MODAC_HIDEWEBS"]').length) {
+                                ajax.append($('<input type="hidden" name="MODAC_HIDEWEBS" value="" />').val(getParameterByName(window.location.search, 'MODAC_HIDEWEBS')));
+                            }
                             ajax.attr('action', encodeURI(ajax.attr('action'))); // IE does mess up otherwise
                             ajax.ajaxForm({
                                 error: handleOops,
@@ -613,6 +637,7 @@ jQuery(function($){
             ModacSkin.blockUI();
             var href = $this.find('a:first').attr('href');
             href += (href.indexOf('?') > 0?';':'?') + 'skin=modacdialog,'+foswiki.getPreference('SKIN');
+            href += getHidewebs();
             href = encodeURI(href); // IE messes up otherwise
             var handleLogin = ModacSkin.handleLogin(function(data, st, jq, $data){
                 var title = $data.find('div.modacDialogTitle').remove().text();

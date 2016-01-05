@@ -1718,6 +1718,15 @@ msgstr "Aktuelles"
 msgid "Topics"
 msgstr "Seiten"
 
+msgid "No references to %1 found."
+msgstr "Keine Verweise auf %1 gefunden."
+
+msgid "References to %1 in the %2 Web:"
+msgstr "Verweise auf %1 im %2 Web gefunden:"
+
+msgid "References to %1 in any Web:"
+msgstr "Verweise auf %1 in jedem Web:"
+
 #~ msgid "Not recommended when deleting a topic."
 #~ msgstr "Nicht empfohlen, wenn Sie die Seite löschen."
 

@@ -239,6 +239,10 @@ html>body #modacLogoIE {
 	border: solid 1px #dddddd;
 }
 
+.modacBox {
+	margin-bottom: 3px;
+}
+
 .foswikiRight
 #modacLanguageSelector,
 .modacMorePage .patternBorder,
@@ -459,6 +463,9 @@ table[align="center"] {
 }
 .Modac_Standard.autonumbered tbody tr {
 	counter-increment: rowNumber;
+}
+.Modac_Standard.autonumbered tbody tr td:first-child {
+  width: 20px;
 }
 .Modac_Standard.autonumbered tbody tr td:first-child::before {
 	content: counter(rowNumber);

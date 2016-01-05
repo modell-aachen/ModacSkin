@@ -27,6 +27,7 @@ data/System/ModacSkinWebChangesViewTemplate.txt 0664
 data/System/ModacSkinWebCreateNewTopicDialogTemplate.txt 0664
 data/System/ModacSkinWebCreateNewTopicTemplate.txt 0664
 data/System/ModacSkinWebList.txt 0664
+data/System/ModacSkinHeadingViewTemplate.txt 0664
 data/System/ModacSkinWebTopicListViewTemplate.txt 0664
 data/System/WebActionsDefault.txt 0644
 data/System/WebBottomBarDefault.txt 0664
@@ -135,6 +136,7 @@ templates/edit.modac.tmpl 0664
 templates/editform.modac.tmpl 0664
 templates/form.modac.tmpl 0664
 templates/formtables.modac.tmpl 0664
+templates/formtables.modaccompare.tmpl 0664
 templates/foswiki.modac.tmpl 0664
 templates/foswiki.modacdialog.tmpl 0664
 templates/login.modac.tmpl 0664
