@@ -99,31 +99,30 @@
 %TMPL:DEF{"perspage:tasks"}%
 <div class="perspageBlockTitle">%MAKETEXT{"My tasks"}%</div><div class="perspageBlock">
 %TABPANE{class="simple" select="%URLPARAM{"tab" default="tasks_open"}%"}%
-%TAB{"%MAKETEXT{"My open tasks"}%" id="tasks_open"}%
-<br>
-%TASKSGRID{
+%TAB{"%MAKETEXT{"My open tasks"}%" id="tasks_open"}%%{
+}%%TASKSGRID{
   context="any"
   parent="any"
   allowcreate="0"
   flavor="perspage"
   query="{\"Status\": \"open\", \"AssignedTo\": \"%RENDERUSER{format="$cUID"}%\"}"
   captiontemplate="tasksapi::grid::caption_perspage"
-}%
-%ENDTAB%
-%TAB{"%MAKETEXT{"My closed tasks"}%" id="tasks_closed"}%
-<br>
-%TASKSGRID{
+  filtertemplate="tasksapi::grid::filter_perspage"
+}%%{
+}%%ENDTAB%
+%TAB{"%MAKETEXT{"My closed tasks"}%" id="tasks_closed"}%%{
+}%%TASKSGRID{
   context="any"
   parent="any"
   allowcreate="0"
   flavor="perspage"
   query="{\"Status\": \"closed\", \"AssignedTo\": \"%RENDERUSER{format="$cUID"}%\"}"
   captiontemplate="tasksapi::grid::caption_perspage"
-}%
-%ENDTAB%
-%TAB{"%MAKETEXT{"Created by me"}%" id="tasks_own"}%
-<br>
-%TASKSGRID{
+  filtertemplate="tasksapi::grid::filter_perspage"
+}%%{
+}%%ENDTAB%
+%TAB{"%MAKETEXT{"Created by me"}%" id="tasks_own"}%%{
+}%%TASKSGRID{
   context="any"
   parent="any"
   allowcreate="0"
@@ -131,8 +130,9 @@
   flavor="perspage"
   query="{\"Author\": \"%RENDERUSER{format="$cUID"}%\"}"
   captiontemplate="tasksapi::grid::caption_perspage"
-}%
-%ENDTAB%
+  filtertemplate="tasksapi::grid::filter_perspage"
+}%%{
+}%%ENDTAB%
 %ENDTABPANE%
 </div>
 %TMPL:END%
