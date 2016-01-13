@@ -356,6 +356,15 @@ $percentTMPL:DEF{"solr::fields::append"}$percent$percentTMPL:PREF$percent,your_s
 %{</verbatim>}%
 
 %{<verbatim class="tml">}%
+%TMPL:DEF{"solr::webmappings"}%<div class="solrDictionary solrJsonData" data-id="webmappings">{%FORMATLIST{
+  "%MODAC_WEBMAPPINGS{default=""}%"
+  pattern="^\s*(.*?)=(.*?)\s*$"
+  format="\"$1\":\"$2\""
+}%}</div>
+%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim class="tml">}%
 %{ ###########################################################################
    solr::dictionary - defines a set of keys to be displayed using a different lable
 }%
@@ -384,5 +393,5 @@ $percentTMPL:DEF{"solr::fields::append"}$percent$percentTMPL:PREF$percent,your_s
 %TMPL:P{"modac::solr::dictionary"}%
 }
 </div>
-</literal>%TMPL:END%
+</literal>%TMPL:P{"solr::webmappings"}%%TMPL:END%
 %{</verbatim>}%
