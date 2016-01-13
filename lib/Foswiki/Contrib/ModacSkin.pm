@@ -26,6 +26,57 @@ sub maintenanceHandler {
             }
         }
     });
+    Foswiki::Plugins::MaintenancePlugin::registerCheck("ModacSkin:Solr:Version", {
+        name => "ModacSkin: Solr version",
+        description => "Check if SolrPlugin needs to be updated.",
+        check => sub {
+            require Foswiki::Plugins::SolrPlugin;
+            my $solrRelease = $Foswiki::Plugins::SolrPlugin::RELEASE;
+            my @minRequired = (4, 0, 10);
+
+            unless( $solrRelease =~ m#(\d+)\.(\d+)(?:\.(\d+))?$#) {
+                return {
+                    result => 1,
+                    priority => $Foswiki::Plugins::MaintenancePlugin::ERROR,
+                    solution => "Could not parse your SolrPlugin version (ticket branch?), please check manually."
+                };
+            }
+            my ($major, $minor, $build) = ($1, $2, $3);
+
+            my $ok = { result => 0 };
+            my $error = {
+                result => 1,
+                priority => $Foswiki::Plugins::MaintenancePlugin::ERROR,
+                solution => "Your SolrPlugin version ($solrRelease) does not meet the minimum requirements (".join('.', @minRequired)."), please update SolrPlugin."
+            };
+
+            return $ok if( $major > $minRequired[0] );
+            return $error if( $major < $minRequired[0] );
+            return $ok if( $minor > $minRequired[1] );
+            return $error if( $minor < $minRequired[1] );
+            return $ok if ( not defined $build ) || $build >= $minRequired[2]; # $build not defined most likely means git repo.
+            return $error;
+
+        }
+    });
+    Foswiki::Plugins::MaintenancePlugin::registerCheck("ModacSkin:Solr:Autocomplete", {
+        name => "ModacSkin: =MODAC_SOLR_AC_FILTER=",
+        description => "Set ModacSkin's =MODAC_SOLR_AC_FILTER= for autocomplete.",
+        check => sub {
+            my ($web, $topic) = Foswiki::Func::normalizeWebTopicName(undef, $Foswiki::cfg{LocalSitePreferences});
+            my ($meta, $text) = Foswiki::Func::readTopic($web, $topic);
+
+            if($text =~ m#$Foswiki::regex{bulletRegex}\s+Set\s+MODAC_SOLR_AC_FILTER\s*=#m) {
+                return { result => 0 };
+            } else {
+                return {
+                    result => 1,
+                    priority => $Foswiki::Plugins::MaintenancePlugin::WARN,
+                    solution => "Please make sure =MODAC_SOLR_AC_FILTER= is set on [[$Foswiki::cfg{LocalSitePreferences}]], a reasonable value is <verbatim>   * Set MODAC_SOLR_AC_FILTER = -web:(System OR Main OR Custom OR Sandbox OR Manuals OR Tasks)</verbatim>" # XXX Duplicated in qdeploy
+                };
+            }
+        }
+    });
 }
 
 1;

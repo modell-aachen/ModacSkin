@@ -1717,3 +1717,8 @@ span.modacMoreDynamicLink > a {
 .ModacInlineButtons .jqButton {
 	font-size: inherit;
 }
+
+/* Make placeholder goes away on focus */
+input.hidePlaceholder:focus::-webkit-input-placeholder { color:transparent; }
+input.hidePlaceholder:focus::-moz-placeholder { color:transparent; } /* FF 19+ */
+input.hidePlaceholder:focus:-ms-input-placeholder { color:transparent; } /* IE 10+ */
