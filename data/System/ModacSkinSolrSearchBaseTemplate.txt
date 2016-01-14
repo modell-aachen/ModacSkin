@@ -110,15 +110,16 @@
 %{</verbatim>}%
 
 %{<verbatim>}%
-%TMPL:DEF{"solr::fields::append"}%%TMPL:PREV%,author_s,container_id,container_url,task_state_s,task_type_s,task_id_s%TMPL:END%
+%TMPL:DEF{"solr::fields::append"}%%TMPL:PREV%,author_s,container_id,container_url,task_state_s,task_type_s,task_id_s,task_context_s%TMPL:END%
 %TMPL:DEF{"solr::templates::hits::task"}%<script id="solrHitTemplate_task" type="text/x-jquery-tmpl">
   <div class='solrSearchHit clearfix'>
     {{include tmpl="#solrTemplate_thumbnail" /}}
     <h3 title='{{:~foswiki.jsi18n.get('tasksapi', task_type_s)}}'>
       <img src='{{if icon}}{{:icon}}{{else}}{{:~foswiki.getPreference('PUBURLPATH')+'/'+~foswiki.getPreference('SYSTEMWEB')+'/DocumentGraphics/target.png'}}{{/if}}' width='16' height='16' class='solrHitIcon' />
       <a class="task-solr-hit" data-id="{{:task_id_s}}" href='#'>{{:title}}</a>
-      <span class='foswikiGrayText'><em>({{:~foswiki.jsi18n.get('tasksapi', task_type_s) }}, {{:~foswiki.jsi18n.get('solr', task_state_s)}})</em>
-        {{:~foswiki.jsi18n.get('solr', 'in [_1]', "<a href='"+container_url+"'>"+container_id+"</a>")}}}
+      <span class='foswikiGrayText'>
+        {{:~foswiki.jsi18n.get('solr', 'in [_1]', "<a href='"+container_url+"'>"+~getWebMapping(web)+"</a>")}}
+        <em>({{:~foswiki.jsi18n.get('tasksapi', task_type_s) }}, {{:~foswiki.jsi18n.get('solr', task_state_s)}})</em>
       </span>
     </h3>
   <div class='solrHilite'>
@@ -182,13 +183,18 @@
   <div class='solrSearchHit solrImageHit clearfix'>
     <div class='solrImageFrame'>
       <a class='imageHref imageSimple jqImageTooltip {web:"{{:web}}", topic:"{{:topic}}", image:"{{:name}}"}' href='{{:url}}' title='{{:name}}'>
-        <img src='{{:~foswiki.getPreference('SCRIPTURLPATH')+'/rest'+~foswiki.getPreference('SCRIPTSUFFIX')}}/ImagePlugin/resize?topic={{:web}}.{{:topic}};file={{:~encodeURIComponent(name)}};size=64>;crop=northwest' alt='{{:name}}' />
+        <img src='{{if task_id_s}}{{:icon}}{{else}}{{:~foswiki.getPreference('SCRIPTURLPATH')+'/rest'+~foswiki.getPreference('SCRIPTSUFFIX')}}/ImagePlugin/resize?topic={{:web}}.{{:topic}};file={{:~encodeURIComponent(name)}};size=64>;crop=northwest{{/if}}' alt='{{:name}}' />
       </a>
     </div>
     <h3 title='{{: ~foswiki.jsi18n.get('solr', 'image') }}'>
       <a href='{{:url}}'>{{:name}}</a>
       <span class='foswikiGrayText foswikiSmallish solrContainerLink'>
-        {{: ~foswiki.jsi18n.get('solr', 'in [_1]', "<a href='"+container_url+"'>"+container_title+"</a>") }}
+        {{if task_id_s}}
+        {{: ~foswiki.jsi18n.get('solr', "in [_1]" ,"<a class='task-solr-hit' data-id='"+task_id_s+"' data-attachment='"+name+"' href='#'>"+container_title+"</a>") }}
+        {{if task_type_s && task_state_s}}<em>({{:~foswiki.jsi18n.get('tasksapi', task_type_s) }}, {{:~foswiki.jsi18n.get('solr', task_state_s)}})</em>{{/if}}
+        {{else}}
+        {{: ~foswiki.jsi18n.get('solr', "in [_1]" ,"<a href='"+container_url+"'>"+container_title+"</a>") }}
+        {{/if}}
       %TMPL:P{"image_title"}%
       </span>
       {{if comment}}
@@ -217,7 +223,12 @@
       <img src='{{if icon}}{{:icon}}{{else}}{{:~foswiki.getPreference('PUBURLPATH')+'/'+~foswiki.getPreference('SYSTEMWEB')}}/FamFamFamSilkIcons/page_white.png{{/if}}'>
       <a href='{{:url}}'>{{:name}}</a>
       <span class='foswikiGrayText foswikiSmallish solrContainerLink' >
+        {{if task_id_s}}
+        {{: ~foswiki.jsi18n.get('solr', "in [_1]" ,"<a class='task-solr-hit' data-id='"+task_id_s+"' data-attachment='"+name+"' href='#'>"+container_title+"</a>") }}
+        {{if task_type_s && task_state_s}}<em>({{:~foswiki.jsi18n.get('tasksapi', task_type_s) }}, {{:~foswiki.jsi18n.get('solr', task_state_s)}})</em>{{/if}}
+        {{else}}
         {{: ~foswiki.jsi18n.get('solr', "in [_1]" ,"<a href='"+container_url+"'>"+container_title+"</a>") }}
+        {{/if}}
       %TMPL:P{"misc_title"}%
       </span>
       {{if comment}}
