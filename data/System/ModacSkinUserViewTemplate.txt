@@ -101,6 +101,7 @@
 %TABPANE{class="simple" select="%URLPARAM{"tab" default="tasks_open"}%"}%
 %TAB{"%MAKETEXT{"My open tasks"}%" id="tasks_open"}%%{
 }%%TASKSGRID{
+  id="taskgrid_open"
   context="any"
   parent="any"
   allowcreate="0"
@@ -112,6 +113,7 @@
 }%%ENDTAB%
 %TAB{"%MAKETEXT{"My closed tasks"}%" id="tasks_closed"}%%{
 }%%TASKSGRID{
+  id="taskgrid_closed"
   context="any"
   parent="any"
   allowcreate="0"
@@ -121,8 +123,28 @@
   filtertemplate="tasksapi::grid::filter_perspage"
 }%%{
 }%%ENDTAB%
+%TAB{"%MAKETEXT{"My watched tasks"}%" id="tasks_inform"}%%{
+}%%TASKSGRID{
+  id="taskgrid_inform"
+  context="any"
+  parent="any"
+  allowcreate="0"
+  allowupload="1"
+  sortable="1"
+  flavor="perspage"
+  paging="1"
+  pagesize="10"
+  title=""
+  keepclosed="1"
+  order="Created"
+  desc="1"
+  query="{\"Informees\": \"%RENDERUSER{format="$cUID"}%\"}"
+  captiontemplate="tasksapi::grid::caption_perspage"
+}%
+%ENDTAB%
 %TAB{"%MAKETEXT{"Created by me"}%" id="tasks_own"}%%{
 }%%TASKSGRID{
+  id="taskgrid_own"
   context="any"
   parent="any"
   allowcreate="0"
