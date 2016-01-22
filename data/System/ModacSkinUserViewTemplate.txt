@@ -107,8 +107,8 @@
   allowcreate="0"
   flavor="perspage"
   query="{\"Status\": \"open\", \"AssignedTo\": \"%RENDERUSER{format="$cUID"}%\"}"
-  captiontemplate="tasksapi::grid::caption_perspage"
-  filtertemplate="tasksapi::grid::filter_perspage"
+  captiontemplate="perspage::tasks::caption"
+  filtertemplate="perspage::tasks::filter"
 }%%{
 }%%ENDTAB%
 %TAB{"%MAKETEXT{"My closed tasks"}%" id="tasks_closed"}%%{
@@ -119,8 +119,8 @@
   allowcreate="0"
   flavor="perspage"
   query="{\"Status\": \"closed\", \"AssignedTo\": \"%RENDERUSER{format="$cUID"}%\"}"
-  captiontemplate="tasksapi::grid::caption_perspage"
-  filtertemplate="tasksapi::grid::filter_perspage"
+  captiontemplate="perspage::tasks::caption"
+  filtertemplate="perspage::tasks::filter"
 }%%{
 }%%ENDTAB%
 %TAB{"%MAKETEXT{"My watched tasks"}%" id="tasks_inform"}%%{
@@ -129,17 +129,10 @@
   context="any"
   parent="any"
   allowcreate="0"
-  allowupload="1"
-  sortable="1"
   flavor="perspage"
-  paging="1"
-  pagesize="10"
-  title=""
-  keepclosed="1"
-  order="Created"
-  desc="1"
   query="{\"Informees\": \"%RENDERUSER{format="$cUID"}%\"}"
-  captiontemplate="tasksapi::grid::caption_perspage"
+  captiontemplate="perspage::tasks::caption"
+  filtertemplate="perspage::tasks::filter"
 }%
 %ENDTAB%
 %TAB{"%MAKETEXT{"Created by me"}%" id="tasks_own"}%%{
@@ -148,16 +141,33 @@
   context="any"
   parent="any"
   allowcreate="0"
-  sortable="1"
   flavor="perspage"
   query="{\"Author\": \"%RENDERUSER{format="$cUID"}%\"}"
-  captiontemplate="tasksapi::grid::caption_perspage"
-  filtertemplate="tasksapi::grid::filter_perspage"
+  captiontemplate="perspage::tasks::caption"
+  filtertemplate="perspage::tasks::filter"
 }%%{
 }%%ENDTAB%
 %ENDTABPANE%
 </div>
 %TMPL:END%
+
+%TMPL:DEF{"perspage::tasks::filter"}%%{
+}%%TASKSFILTER{"Created" range="1" max="true"}%%{
+}%%TASKSFILTER{"Changed" range="1" max="true"}%%{
+}%%TMPL:END%
+
+%TMPL:DEF{"perspage::tasks::caption"}%<tr>%{
+}%<th data-sort="Created">%MAKETEXT{"Created"}%</th>
+  <th>%MAKETEXT{"Type"}%</th>
+  <th data-sort="Title">%MAKETEXT{"Title"}%</th>
+  <th data-sort="DueDate">%MAKETEXT{"Due date"}%</th>
+  <th>%MAKETEXT{"Status"}%</th>%{
+  }%%IF{"not context task_readonly" then="<td class=\"no-print\"></td>"}%%{
+  }%<th class="hidden"></th>
+  <th class="hidden"></th>
+  <th class="hidden"></th>
+</tr>%TMPL:END%
+
 
 %TMPL:DEF{"perspage:ciptask"}%
 <div class="perspageBlockTitle">%MAKETEXT{"Pages waiting for approval"}% </div>
