@@ -32,6 +32,12 @@
 </div>
 %TMPL:END%
 
+%{<verbatim class="tml">}%
+%TMPL:DEF{"hidewebsOption"}%<div>%IF{"$'URLPARAM{MODAC_HIDEWEBS}'=''" then="
+<a href='%SCRIPTURL{"%SCRIPTNAME%"}%/%WEB%/%TOPIC%?$percentQUERYPARAMS{format=\"$name=$value\" separator=\";\"}$percent;MODAC_HIDEWEBS=none'>%MAKETEXT{"List all webs I may write to"}%</a>
+"}%
+</div>%TMPL:END%
+%{</verbatim>}%
 
 %{<verbatim class="tml">}%
 %TMPL:DEF{"topicname"}%<!-- -->
@@ -52,7 +58,7 @@
 <div class="foswikiFormStep">
 <h3>%MAKETEXT{"Select destination web"}%</h3>
 <select class="foswikiSelect modacjqWikiWordWeb">%FORMATLIST{"%WEBLIST{"$name$marker" separator=";" webs="public,%WEB%" marker=" selected='selected'" selection="%WEB%"}%" pattern="(\S*)( selected='selected')?" format="$percentIF{\"'$1' allows 'CHANGE'\" then=\"<option value='$1'$2>$map($1)</option>\"}$percent" separator=" " split=";" unique="on" map="%MODAC_WEBMAPPINGS{default=""}%" exclude="^(?:%URLPARAM{"MODAC_HIDEWEBS" default="%MODAC_HIDEWEBS{default="dummy"}%"}%)$"}%</select>
-</div>
+%IF{"context 'isadmin' or $USERNAME ingroup '%MODAC_SHOWALLWEBSGROUP%'" then="$percentTMPL:P{hidewebsOption}$percent"}%</div>
 <div class="foswikiFormStep">
 <h3>%MAKETEXT{"Title of copy"}%</h3>
 <p><input type="text" name="TopicTitle" class="foswikiInputField" value="%TOPICTITLE% Copy" size="30" /></p>

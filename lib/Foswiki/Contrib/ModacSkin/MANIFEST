@@ -156,6 +156,7 @@ templates/rdiff.modac.tmpl 0664
 templates/rename.modac.tmpl 0664
 templates/renameattachmentdelete.modac.tmpl 0664
 templates/renamebase.modac.tmpl 0664
+templates/renamebase.modacdialog.tmpl 0664
 templates/renamedelete.modac.tmpl 0664
 templates/renamewebbase.modac.tmpl 0664
 templates/search.modac.tmpl 0664

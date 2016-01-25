@@ -56,6 +56,11 @@
 %TMPL:P{"newweb"}%%TMPL:P{"newwebhelp"}%
 </td></tr>%TMPL:END%
 
+%TMPL:DEF{"hidewebsOption"}%<div>%IF{"$'URLPARAM{MODAC_HIDEWEBS}'=''" then="
+<a href='%SCRIPTURL{"%SCRIPTNAME%"}%/%WEB%/%TOPIC%?$percentQUERYPARAMS{format=\"$name=$value\" separator=\";\"}$percent;MODAC_HIDEWEBS=none'>%MAKETEXT{"List all webs I may write to"}%</a>
+"}%
+</div>%TMPL:END%
+
 %TMPL:DEF{"totopic"}%
 <tr><td>
 %TMPL:P{"totopictitle"}%

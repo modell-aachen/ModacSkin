@@ -1679,6 +1679,9 @@ msgstr "Kommentar"
 msgid "Edit users form"
 msgstr "Benutzer bearbeiten"
 
+msgid "List all webs I may write to"
+msgstr "Alle Bereiche mit Schreibzugriff auflisten"
+
 #~ msgid "(access denied)"
 #~ msgstr "(Zugriff verweigert)"
 
