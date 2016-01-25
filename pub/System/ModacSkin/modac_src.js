@@ -592,10 +592,11 @@ jQuery(function($){
                                             val = undefined;
                                         }
 
+                                        var suffix = $this.hasClass('modacAjaxNoRename') ? '': 'Preserved';
                                         // I need to rename newtopic and newweb or otherwise the rename will take place
-                                        var $input = $form.find('input[name="' + name + 'Preserved"]');
+                                        var $input = $form.find('input[name="' + name + suffix + '"]');
                                         if(!$input.length) {
-                                            $input = $('<input type="hidden" />').attr('name', name + 'Preserved');
+                                            $input = $('<input type="hidden" />').attr('name', name + suffix);
                                             $form.append($input);
                                         }
                                         $input.val(val);
