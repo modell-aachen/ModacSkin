@@ -587,13 +587,18 @@ jQuery(function($){
                                         var $this = $(this);
                                         var name = $this.attr('name');
                                         if(!name) return;
+                                        var val = $this.val();
+                                        if($this.is('[type="checkbox"]') && !$this.attr('checked')) {
+                                            val = undefined;
+                                        }
+
                                         // I need to rename newtopic and newweb or otherwise the rename will take place
                                         var $input = $form.find('input[name="' + name + 'Preserved"]');
                                         if(!$input.length) {
                                             $input = $('<input type="hidden" />').attr('name', name + 'Preserved');
                                             $form.append($input);
                                         }
-                                        $input.val($this.val());
+                                        $input.val(val);
                                     });
                                 }
                             });
