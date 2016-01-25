@@ -529,6 +529,19 @@ jQuery(function($){
                                 });
                                 return false;
                             });
+                            $data.find('.modacDialogReload').change(function() {
+                                var $hidewebs = $data.find('input[name="MODAC_HIDEWEBS"]');
+                                if($hidewebs.prop('checked')) {
+                                    hidewebs = ';MODAC_HIDEWEBS=' + $hidewebs.val();
+                                } else {
+                                    hidewebs = getHidewebs();
+                                }
+                                ModacSkin.blockUI();
+                                if(d.dialog('isOpen')) {
+                                    d.dialog('close');
+                                }
+                                getDialog();
+                            });
                             var ajax = $data.find('.modacDialogAppendable');
                             if(ajax.length) {
                                 var handleOops = function(jqXHR, status, errorThrown){
