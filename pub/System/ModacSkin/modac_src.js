@@ -626,7 +626,7 @@ jQuery(function($){
                                 }
                             });
                             ajax.submit();
-                            $data.find('.modacDialogFire').change(function(){ajax.submit();});
+                            $data.find('.modacDialogFire').change(function(){ajax.submit();})
                         } else {
                             d = ModacSkin.menuDialogs[type] = ModacSkin.showDialog($data, undefined, undefined, {});
                         }
