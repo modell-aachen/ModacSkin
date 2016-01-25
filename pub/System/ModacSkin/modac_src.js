@@ -542,6 +542,10 @@ jQuery(function($){
 
                                 $adata.find('.modacDialogFire').change(function(){ajax.submit();});
 
+                                // We already have a MODAC_HIDEWEBS in our form...
+                                // This will be handled in the beforeSerialize handler below
+                                $adata.find('input[name="MODAC_HIDEWEBS"]').attr('name', 'MODAC_HIDEWEBSAjax');
+
                                 var $contents = $adata.find(".modacDialogContents");
                                 if($contents.length) {
                                     $contents.removeClass('modacDialogContents');
@@ -590,6 +594,16 @@ jQuery(function($){
                                         var val = $this.val();
                                         if($this.is('[type="checkbox"]') && !$this.attr('checked')) {
                                             val = undefined;
+                                        }
+
+                                        // This will be created when parts of the dialog are fetched by ajax (see above)
+                                        if(name == 'MODAC_HIDEWEBSAjax') {
+                                            name="MODAC_HIDEWEBS";
+                                            if(!val) val = getParameterByName(window.location.search, 'MODAC_HIDEWEBS');
+                                            if(!val) {
+                                                $form.find('[name="MODAC_HIDEWEBS"]').attr('name', 'MODAC_HIDEWEBSDisabled');
+                                                return;
+                                            }
                                         }
 
                                         var suffix = $this.hasClass('modacAjaxNoRename') ? '': 'Preserved';
