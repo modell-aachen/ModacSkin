@@ -539,6 +539,9 @@ jQuery(function($){
                             };
                             var handleSuccess = function(adata, status, jqXHR){
                                 var $adata = $(adata);
+
+                                $adata.find('.modacDialogFire').change(function(){ajax.submit();});
+
                                 var $contents = $adata.find(".modacDialogContents");
                                 if($contents.length) {
                                     $contents.removeClass('modacDialogContents');
