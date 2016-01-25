@@ -1036,7 +1036,7 @@ msgstr "Alles auswählen"
 
 #: templates/more.modac.tmpl
 msgid "Select destination web"
-msgstr ""
+msgstr "Zielbereich auswählen"
 
 #: templates/more.modac.tmpl
 msgid "Select topic parent"
