@@ -1,0 +1,6 @@
+%TMPL:INCLUDE{"TasksAPIDefaultMail"}%
+
+%TMPL:DEF{"tasksapi_maillink"}%%{
+}%%MAKETEXT{"Direct link"}%:
+%SCRIPTURL{rest}%/TasksAPIPlugin/link?id=%TASKINFO{meta="id"}%%{
+}%%TMPL:END%
