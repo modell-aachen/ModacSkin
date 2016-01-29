@@ -5,7 +5,7 @@
 
 %TMPL:DEF{"topicattachmentwisty"}%%TWISTY{id="topicattachmentslist" mode="div" remember="on" showimgleft="%ICONURLPATH{toggleopen}%" hideimgleft="%ICONURLPATH{toggleclose}%" showlink="%MAKETEXT{"Attachments"}%" hidelink="%MAKETEXT{"Attachments"}%" linkclass="patternTwistyButton patternAttachmentHeader"}%%TMPL:END%
 
-%TMPL:DEF{ATTACH:files:header(toprow)}%| *I* | *%MAKETEXT{"Filename"}%* | *%MAKETEXT{"Action"}%* | *%MAKETEXT{"Size"}%* | *%MAKETEXT{"Date"}%* | *%MAKETEXT{"Who"}%* | *%MAKETEXT{"Comment"}%* |%TMPL:END%
+%TMPL:DEF{ATTACH:files:header(toprow)}%| *I* | *%MAKETEXT{"Filename"}%* | *%MAKETEXT{"Action"}%* | *%MAKETEXT{"Size"}%* | *%MAKETEXT{"Date"}%* | *%MAKETEXT{"Uploaded by"}%* | *%MAKETEXT{"Comment"}%* |%TMPL:END%
 
 
 
@@ -31,7 +31,7 @@
 %{ Header for versions table in attach screen }%
 %TMPL:DEF{ATTACH:versions:header}%%TMPL:P{"settmltablesummary"
    SUMMARY="%MAKETEXT{"Attachment history"}%"
-}%|  *%MAKETEXT{"Revision"}%*  |  *%MAKETEXT{"Action"}%*   |  *%MAKETEXT{"Date"}%*  |  *%MAKETEXT{"Who"}%*  |
+}%|  *%MAKETEXT{"Revision"}%*  |  *%MAKETEXT{"Action"}%*   |  *%MAKETEXT{"Date"}%*  |  *%MAKETEXT{"Uploaded by"}%*  |
 %TMPL:END%
 
 %{ Row for versions table in attach screen }%

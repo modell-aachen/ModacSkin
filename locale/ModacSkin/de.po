@@ -1328,7 +1328,7 @@ msgid "Webs"
 msgstr "Bereiche"
 
 #: templates/attachtables.modac.tmpl
-msgid "Who"
+msgid "Uploaded by"
 msgstr "Hochgeladen durch"
 
 #: templates/oopshistory.modac.tmpl
