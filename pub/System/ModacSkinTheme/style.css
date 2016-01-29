@@ -894,34 +894,58 @@ table.foswikiFormTable {
 * html .foswikiAttachments table {
 	width:99%;
 }
+.foswikiAttachments table.tablesorter > thead > tr th,
 .foswikiAttachments .foswikiTable th {
-	border-style:none none solid solid;
-	border-width:1px;
+	border-style:none;
 	text-align: left;
+	color: #555;
 }
 .foswikiAttachments .foswikiTable th,
+.foswikiAttachments table.tablesorter > thead > tr th,
 table.foswikiFormTable th.foswikiFormTableHRow {
-	padding:3px 6px;
+	padding:3px 17px;
 	height:2.5em;
 	vertical-align:middle;
 }
-.foswikiFormTableFooter {}
+.foswikiAttachments table.tablesorter > tbody > tr.even:hover td,
+.foswikiAttachments table.tablesorter > tbody > tr.even td,
+.foswikiAttachments table.tablesorter > tbody > tr.odd:hover td,
+.foswikiAttachments table.tablesorter > tbody > tr.odd td,
 table.foswikiFormTable > tr > td,
 table.foswikiFormTable > tbody > tr > td {
-	padding:3px 2em 3px 1em;
+	padding:0.2em 0.5em;
 	height:1.5em; /*S1*/
 	text-align:left;
 	vertical-align:top;
 }
+.foswikiAttachments td,
 .foswikiAttachments .foswikiTable td {
 	height:1.5em; /*S1*/
 	text-align:left;
 	vertical-align:top;
 }
+.foswikiAttachments table.tablesorter > thead > tr th.iconCol {
+        padding-right: 17px;
+        padding-left: 0px;
+}
+.foswikiAttachments table.tablesorter > tbody > tr.odd td.iconCol,
+.foswikiAttachments table.tablesorter > tbody > tr.odd:hover td.iconCol,
+.foswikiAttachments table.tablesorter > tbody > tr.even td.iconCol,
+.foswikiAttachments table.tablesorter > tbody > tr.even:hover td.iconCol {
+	padding-left: 0px;
+	width:1%;
+	text-align: right;
+}
+.foswikiAttachments table.tablesorter > thead > tr th.foswikiFirstCol,
+.foswikiAttachments table.tablesorter > tbody > tr.even td.foswikiFirstCol,
+.foswikiAttachments table.tablesorter > tbody > tr.even:hover td.foswikiFirstCol,
+.foswikiAttachments table.tablesorter > tbody > tr.odd td.foswikiFirstCol,
+.foswikiAttachments table.tablesorter > tbody > tr.odd:hover td.foswikiFirstCol,
 .foswikiAttachments .foswikiTable th.foswikiFirstCol,
 .foswikiAttachments .foswikiTable td.foswikiFirstCol {
 	/* make more width for the icon column */
-	width:26px;
+	width: 24px;
+	padding-right: 0px;
 	text-align:center;
 }
 .foswikiAttachments .foswikiTable caption {
@@ -1722,3 +1746,18 @@ span.modacMoreDynamicLink > a {
 input.hidePlaceholder:focus::-webkit-input-placeholder { color:transparent; }
 input.hidePlaceholder:focus::-moz-placeholder { color:transparent; } /* FF 19+ */
 input.hidePlaceholder:focus:-ms-input-placeholder { color:transparent; } /* IE 10+ */
+
+/* Attachment list (undo tablesorter styles) */
+.foswikiAttachments table.tablesorter > tbody > tr.odd td,
+.foswikiAttachments table.tablesorter > tbody > tr.odd:hover td {
+	background-color: #F7F7F6;
+}
+.foswikiAttachments table.tablesorter > tbody > tr.even td,
+.foswikiAttachments table.tablesorter > tbody > tr.even:hover td {
+	background-color: #FCFCFC;
+}
+.foswikiAttachments table.tablesorter {
+	border-spacing: 0px;
+	border-style: solid;
+	border-width: 1px;
+}

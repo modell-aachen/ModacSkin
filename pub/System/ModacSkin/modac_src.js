@@ -805,7 +805,7 @@ jQuery(function($){
         .each(
             function(index, el) {
                 // Fixed version of what's in pattern.js
-                var count = $(el).find('table.foswikiTable tr').length - 1;
+                var count = $(el).find('table tr').length - 1;
                 var countStr = " <span class='foswikiSmall'>"
                     + count + "<\/span>";
                 $(el).find('.patternAttachmentHeader').each(
