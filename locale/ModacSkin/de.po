@@ -1789,3 +1789,21 @@ msgstr "Verweise auf %1 in jedem Web:"
 
 msgid "Discussion available"
 msgstr "Diskussion verfügbar"
+
+msgid "Key user tools"
+msgstr "KeyUser Werkzeuge"
+
+msgid "System web"
+msgstr "Systembereich"
+
+msgid "Trash"
+msgstr "Mülleimer"
+
+msgid "Wikigroups"
+msgstr "Wikigruppen"
+
+msgid "Web settings"
+msgstr "Web-Einstellungen"
+
+msgid "Wiki settings"
+msgstr "Wiki-Einstellungen"
