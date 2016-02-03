@@ -17,7 +17,6 @@
 }%%JQREQUIRE{tabpane,tasksapi,jqp::readmore}%%{
 }%%JSI18N{"ModacSkin" id="solr"}%%{
 }%%ADDTOZONE{"script" id="jsi18n::tasksapi" requires="%JSI18NID%" text="<script type='text/javascript' src='%PUBURLPATH%/%SYSTEMWEB%/TasksAPIPlugin/js/i18n/jsi18n.%IF{"$LANGUAGE=~'de'" then="%LANGUAGE%" else="en"}%.min.js'></script>"}%%{
-}%%ADDTOZONE{"script" id="tasksapi::solr" requires="JQUERYPLUGIN::TASKSAPI" text="<script type='text/javascript' src='%PUBURLPATH%/%SYSTEMWEB%/TasksAPIPlugin/js/tasksapi.solr.js'></script>"}%%{
 }%%ADDTOZONE{"script" id="solr:dateformat" text="<script>solrDateformat='%TMPL:P{"solr::dateformat"}%';</script>"}%%{
 }%%ADDTOZONE{"script" requires="JQUERYPLUGIN" id="ModacSolrHelper" text="<script type='text/javascript' src='%PUBURLPATH%/%SYSTEMWEB%/ModacSkin/solrsearch.js'></script>"}%%{
 }%%JQREQUIRE{"livequery,focus, serialpager, scrollto, prettyphoto, jqtwisty, moment, blockui, imagetooltip"}%%{
@@ -116,7 +115,7 @@
     {{include tmpl="#solrTemplate_thumbnail" /}}
     <h3 title='{{:~foswiki.jsi18n.get('tasksapi', task_type_s)}}'>
       <img src='{{if icon}}{{:icon}}{{else}}{{:~foswiki.getPreference('PUBURLPATH')+'/'+~foswiki.getPreference('SYSTEMWEB')+'/DocumentGraphics/target.png'}}{{/if}}' width='16' height='16' class='solrHitIcon' />
-      <a class="task-solr-hit" data-id="{{:task_id_s}}" href='#'>{{:title}}</a>
+      <a class="task-solr-hit" href="{{:container_url}}?id={{:task_id_s}}&tid={{:task_state_s}}&tab={{:task_state_s}}">{{:title}}</a>
       <span class='foswikiGrayText'>
         {{:~foswiki.jsi18n.get('solr', 'in [_1]', "<a href='"+container_url+"'>"+~getWebMapping(web)+"</a>")}}
         <em>({{:~foswiki.jsi18n.get('tasksapi', task_type_s) }}, {{:~foswiki.jsi18n.get('solr', task_state_s)}})</em>
