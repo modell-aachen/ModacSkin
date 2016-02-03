@@ -960,11 +960,11 @@ jQuery(function($){
 
       if ( btn == 1 || btn == 2 ) {
       var href = $(this).attr('href');
-      if ( ! /t=\d{10}/.test( href ) )
+      if ( ! /[?&;]t=\d{10}/.test( href ) )
         return;
 
       var t = Math.floor( (new Date).getTime() / 1000 );
-      href = href.replace( /t=\d{10}/, 't=' + t );
+      href = href.replace( /[?&;]t=\d{10}/, 't=' + t );
       $(this).attr( 'href', href );
       }
     });
