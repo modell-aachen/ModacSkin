@@ -1059,7 +1059,7 @@ jQuery(function($){
         return;
 
       var t = Math.floor( (new Date).getTime() / 1000 );
-      href = href.replace( /[?&;]t=\d{10}/, 't=' + t );
+      href = href.replace( /([?&;])t=\d{10}/, '$1t=' + t );
       $(this).attr( 'href', href );
       }
     });
