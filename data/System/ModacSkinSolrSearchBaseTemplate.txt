@@ -189,7 +189,7 @@
       <a href='{{:url}}'>{{:name}}</a>
       <span class='foswikiGrayText foswikiSmallish solrContainerLink'>
         {{if task_id_s}}
-        {{: ~foswiki.jsi18n.get('solr', "in [_1]" ,"<a class='task-solr-hit' data-id='"+task_id_s+"' data-attachment='"+name+"' href='#'>"+container_title+"</a>") }}
+        {{: ~foswiki.jsi18n.get('solr', "in [_1]" ,"<a class='task-solr-hit' href='"+container_url+"?id="+task_id_s+"&tid="+task_state_s+"&tab="+task_state_s+"&attachment="+name+"'>"+container_title+"</a>") }}
         {{if task_type_s && task_state_s}}<em>({{:~foswiki.jsi18n.get('tasksapi', task_type_s) }}, {{:~foswiki.jsi18n.get('solr', task_state_s)}})</em>{{/if}}
         {{else}}
         {{: ~foswiki.jsi18n.get('solr', "in [_1]" ,"<a href='"+container_url+"'>"+container_title+"</a>") }}
@@ -223,7 +223,7 @@
       <a href='{{:url}}'>{{:name}}</a>
       <span class='foswikiGrayText foswikiSmallish solrContainerLink' >
         {{if task_id_s}}
-        {{: ~foswiki.jsi18n.get('solr', "in [_1]" ,"<a class='task-solr-hit' data-id='"+task_id_s+"' data-attachment='"+name+"' href='#'>"+container_title+"</a>") }}
+        {{: ~foswiki.jsi18n.get('solr', "in [_1]" ,"<a class='task-solr-hit' href='"+container_url+"?id="+task_id_s+"&tid="+task_state_s+"&tab="+task_state_s+"&attachment="+name+"'>"+container_title+"</a>") }}
         {{if task_type_s && task_state_s}}<em>({{:~foswiki.jsi18n.get('tasksapi', task_type_s) }}, {{:~foswiki.jsi18n.get('solr', task_state_s)}})</em>{{/if}}
         {{else}}
         {{: ~foswiki.jsi18n.get('solr', "in [_1]" ,"<a href='"+container_url+"'>"+container_title+"</a>") }}
