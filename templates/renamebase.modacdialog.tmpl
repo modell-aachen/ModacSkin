@@ -1,5 +1,5 @@
 %TMPL:INCLUDE{"renamebase"}%
 
 %TMPL:DEF{"hidewebsOption"}%<div>
-<input class="foswikiCheckbox modacDialogFire modacAjaxPreserve modacAjaxNoRename" type="checkbox" name="MODAC_HIDEWEBS" value="none" %IF{"$'URLPARAM{MODAC_HIDEWEBS}'='none'" then="checked='checked'"}% /><label for="MODAC_HIDEWEBS">%MAKETEXT{"List all webs I may write to"}%</label>
+<input class="foswikiCheckbox modacDialogFire modacAjaxPreserve modacAjaxNoRename" type="checkbox" id="MODAC_HIDEWEBS" name="MODAC_HIDEWEBS" value="none" %IF{"$'URLPARAM{MODAC_HIDEWEBS}'='none'" then="checked='checked'"}% /><label for="MODAC_HIDEWEBS">%MAKETEXT{"List all webs I may write to"}%</label>
 </div>%TMPL:END%
