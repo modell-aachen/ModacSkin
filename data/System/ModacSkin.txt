@@ -292,6 +292,16 @@ The format always is:
 Fieldname=Display name for field,OtherField=Display name for other field...
 </pre>
 
+---++ Application Development
+
+---+++ Transient Url Parameters
+
+This feature allows you to easily pass parameters from an edit page to the actual save. For example, if you want to pass =myparam= to the save script, but you do not want to create an extra =EDIT_TEMPLATE= for that, you can call the default edit page like this:
+<verbatim>[[%SCRIPTURL{edit}%/%WEB%/MyNewTopic?t=%GMTIME{"$epoch"}%&modactransientparams=myparam&myparam=MyValue]]</verbatim>
+When pressing =save=, the parameter =myparam=MyValue= will be passed to the =save= script.
+
+If you have redefined =%<nop>TMPL:DEF{"formstart"}%= and want to use this feature, do a =%<nop>TMPL:P{"modacTransientParam"}%= inside your form.
+
 ---++ Installation Instructions
 
 To enable ModacSkin you have set the following variables either in =WebPreferences= (to enable ModacSkin within a single web) or
