@@ -6,4 +6,4 @@
 %TMPL:P{"nonwikiword"}%%TMPL:END%
 
 %TMPL:DEF{"newweb"}%<select name="newweb" class="foswikiSelect modacAjaxPreserve">%FORMATLIST{"%WEBLIST{"$name" separator="," webs="%URLPARAM{"newwebPreserved" default="%NEW_WEB%"}%,public" selection="%URLPARAM{"newwebPreserved" default="%NEW_WEB%"}%"}%" map="%MODAC_WEBMAPPINGS{default=""}%" selection="^%URLPARAM{"newwebPreserved" default="%NEW_WEB%"}%$" separator=" " exclude="^(%URLPARAM{"MODAC_HIDEWEBS" default="%MODAC_HIDEWEBS{default="dummy"}%"}%)$" format="" marker="selected='selected'"
- format="$percentIF{\"'$1' allows 'CHANGE'\" then=\"<option $marker value='$1'>$map($1)</option>\"}$percent"}%</select>%TMPL:END%
+ format="$percentIF{\"'$1' allows 'CHANGE'\" then=\"<option $marker value='$1'>$map($1)</option>\"}$percent"}%</select>%IF{"context 'isadmin' or $USERNAME ingroup '%MODAC_SHOWALLWEBSGROUP%'" then="$percentTMPL:P{hidewebsOption}$percent"}%%TMPL:END%

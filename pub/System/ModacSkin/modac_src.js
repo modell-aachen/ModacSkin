@@ -496,120 +496,159 @@ jQuery(function($){
             var d;
             ModacSkin.blockUI();
             var hidewebs = getHidewebs();
-            $.ajax(
-                restUri +'/RenderPlugin/template?name=more;expand='+type+';render=1;topic='+baseWeb+'.'+encodeURIComponent(baseTopic) + ';skin=' + skin + hidewebs,
-                {
-                    success: ModacSkin.handleLogin(function(data, textStatus, jqXHR, $data) {
-                        var d;
-                        $data.find('a').click(function(ev){ // TODO: MODAC_HIDEWEBS
-                            var $target = $(ev.target);
-                            var param = /[^?]*(\?.*name=more;expand=.*)/.exec($target.attr('href'));
-                            if(!param || param.length != 2) return true;
-                            if(d.block) {
-                                d.block();
-                                d.siblings('.ui-dialog-buttonpane').block({message: ''});
-                            }
-                            d.dialog('option', 'buttons', []);
-                            d.load(restUri +'/RenderPlugin/template' + param[1], function(){
-                                var $form = d.find('form:first');
-                                d.dialog('option', 'buttons', ModacSkin.ajaxSubmitButtons(d, d, $form));
-                                $form.submit(function(){
-                                    // if !modacSubmitMessage blockUI
-                                    // better do a handler for succesfull ajax
-                                    if(d.block) {
-                                        d.block();
-                                        d.siblings('.ui-dialog-buttonpane').block(ModacSkin.blockDefaultOptions);
-                                    }
-                                });
-                                if(d.dialog('isOpen')) {
-                                    d.dialog('close');
-                                    d.dialog('open');
-                                }
-                            });
-                            return false;
-                        });
-                        var ajax = $data.find('.modacDialogAppendable');
-                        if(ajax.length) {
-                            var handleOops = function(jqXHR, status, errorThrown){
-                                var response = $(jqXHR.responseText).find('.modacDialogContents');
-                                if(response.length == 0) response = $(jqXHR.responseText).find('.foswikiTopic');
-                                ModacSkin.menuDialogs[type] = $loadingDialog = ModacSkin.showDialog(response, function($data,$dialog){
-                                    $data.find('form').ajaxForm({success: handleSuccess, error: handleOops});
-                                }, undefined, {});
-                            };
-                            var handleSuccess = function(adata, status, jqXHR){
-                                var $adata = $(adata);
-                                var $contents = $adata.find(".modacDialogContents");
-                                if($contents.length) {
-                                    $contents.removeClass('modacDialogContents');
-                                } else {
-                                    $contents = $adata.find(".foswikiTopic");
-                                    if(!$contents.length) {
-                                        $contents = 'error...'; // XXX
-                                    }
-                                }
-                                ajaxArea.replaceWith($contents);
-                                ajaxArea = $contents;
-
-                                // Copying select all/none from foswikiForm, because it only binds on document.ready
-                                ajaxArea.find('.foswikiCheckAllOn').click(
-                                    function(e) {
-                                        var form = $(this).parents('form:first');
-                                        $('.foswikiCheckBox', form).attr('checked', true);
-                                    }
-                                );
-                                ajaxArea.find('.foswikiCheckAllOff').click(
-                                    function(e) {
-                                        var form = $(this).parents('form:first');
-                                        $('.foswikiCheckBox', form).attr('checked', false);
-                                    }
-                                );
-
-                                d = ModacSkin.menuDialogs[type] = ModacSkin.showDialog($data, undefined, ModacSkin.menuDialogs[type], {});
-                            };
-                            var ajaxArea = $('<div class="modacAjaxDialog"><div style="height: 150px; width: 200 px;"></div></div>');
-                            ajax.before(ajaxArea);
-                            ajax.append($('<input type="hidden" name="skin" value="' + skin + '" />'));
-                            if(hidewebs && !ajax.find('input[name="MODAC_HIDEWEBS"]').length) {
-                                ajax.append($('<input type="hidden" name="MODAC_HIDEWEBS" value="" />').val(getParameterByName(window.location.search, 'MODAC_HIDEWEBS')));
-                            }
-                            ajax.attr('action', encodeURI(ajax.attr('action'))); // IE does mess up otherwise
-                            ajax.ajaxForm({
-                                error: handleOops,
-                                success: function(jqXHR, s, errorThrown) {(ModacSkin.handleLogin(handleSuccess, d))(jqXHR,s,errorThrown)},
-                                beforeSerialize: function($form, options) {
-                                    // transmit data marked with modacAjaxPreserve along with a 'Preserved' suffix
-                                    var $dialogContents = $form.closest('.modacDialogContents');
-                                    $dialogContents.find('input.modacAjaxPreserve, select.modacAjaxPreserve').each(function() {
-                                        var $this = $(this);
-                                        var name = $this.attr('name');
-                                        if(!name) return;
-                                        // I need to rename newtopic and newweb or otherwise the rename will take place
-                                        var $input = $form.find('input[name="' + name + 'Preserved"]');
-                                        if(!$input.length) {
-                                            $input = $('<input type="hidden" />').attr('name', name + 'Preserved');
-                                            $form.append($input);
-                                        }
-                                        $input.val($this.val());
-                                    });
-                                }
-                            });
-                            ajax.submit(function(){
-                                // Only block the dialog, not the whole page.
-                                // It won't need unblocking, since a new dialog will be created.
-                                if(d && d.block) {
-                                    d.block(ModacSkin.blockDefaultOptions);
+            var getDialog = function() {
+                $.ajax(
+                    restUri +'/RenderPlugin/template?name=more;expand='+type+';render=1;topic='+baseWeb+'.'+encodeURIComponent(baseTopic) + ';skin=' + skin + hidewebs,
+                    {
+                        success: ModacSkin.handleLogin(function(data, textStatus, jqXHR, $data) {
+                            var d;
+                            $data.find('a').click(function(ev){ // TODO: MODAC_HIDEWEBS
+                                var $target = $(ev.target);
+                                var param = /[^?]*(\?.*name=more;expand=.*)/.exec($target.attr('href'));
+                                if(!param || param.length != 2) return true;
+                                if(d.block) {
+                                    d.block();
                                     d.siblings('.ui-dialog-buttonpane').block({message: ''});
                                 }
+                                d.dialog('option', 'buttons', []);
+                                d.load(restUri +'/RenderPlugin/template' + param[1], function(){
+                                    var $form = d.find('form:first');
+                                    d.dialog('option', 'buttons', ModacSkin.ajaxSubmitButtons(d, d, $form));
+                                    $form.submit(function(){
+                                        // if !modacSubmitMessage blockUI
+                                        // better do a handler for succesfull ajax
+                                        if(d.block) {
+                                            d.block();
+                                            d.siblings('.ui-dialog-buttonpane').block(ModacSkin.blockDefaultOptions);
+                                        }
+                                    });
+                                    if(d.dialog('isOpen')) {
+                                        d.dialog('close');
+                                        d.dialog('open');
+                                    }
+                                });
+                                return false;
                             });
-                            ajax.submit();
-                            $data.find('.modacDialogFire').change(function(){ajax.submit();});
-                        } else {
-                            d = ModacSkin.menuDialogs[type] = ModacSkin.showDialog($data, undefined, undefined, {});
-                        }
-                    })
-                }
-            );
+                            $data.find('.modacDialogReload').change(function() {
+                                var $hidewebs = $data.find('input[name="MODAC_HIDEWEBS"]');
+                                if($hidewebs.prop('checked')) {
+                                    hidewebs = ';MODAC_HIDEWEBS=' + $hidewebs.val();
+                                } else {
+                                    hidewebs = getHidewebs();
+                                }
+                                ModacSkin.blockUI();
+                                if(d.dialog('isOpen')) {
+                                    d.dialog('close');
+                                }
+                                getDialog();
+                            });
+                            var ajax = $data.find('.modacDialogAppendable');
+                            if(ajax.length) {
+                                var handleOops = function(jqXHR, status, errorThrown){
+                                    var response = $(jqXHR.responseText).find('.modacDialogContents');
+                                    if(response.length == 0) response = $(jqXHR.responseText).find('.foswikiTopic');
+                                    ModacSkin.menuDialogs[type] = $loadingDialog = ModacSkin.showDialog(response, function($data,$dialog){
+                                        $data.find('form').ajaxForm({success: handleSuccess, error: handleOops});
+                                    }, undefined, {});
+                                };
+                                var handleSuccess = function(adata, status, jqXHR){
+                                    var $adata = $(adata);
+
+                                    $adata.find('.modacDialogFire').change(function(){ajax.submit();});
+
+                                    // We already have a MODAC_HIDEWEBS in our form...
+                                    // This will be handled in the beforeSerialize handler below
+                                    $adata.find('input[name="MODAC_HIDEWEBS"]').attr('name', 'MODAC_HIDEWEBSAjax');
+
+                                    var $contents = $adata.find(".modacDialogContents");
+                                    if($contents.length) {
+                                        $contents.removeClass('modacDialogContents');
+                                    } else {
+                                        $contents = $adata.find(".foswikiTopic");
+                                        if(!$contents.length) {
+                                            $contents = 'error...'; // XXX
+                                        }
+                                    }
+                                    ajaxArea.replaceWith($contents);
+                                    ajaxArea = $contents;
+
+                                    // Copying select all/none from foswikiForm, because it only binds on document.ready
+                                    ajaxArea.find('.foswikiCheckAllOn').click(
+                                        function(e) {
+                                            var form = $(this).parents('form:first');
+                                            $('.foswikiCheckBox', form).attr('checked', true);
+                                        }
+                                    );
+                                    ajaxArea.find('.foswikiCheckAllOff').click(
+                                        function(e) {
+                                            var form = $(this).parents('form:first');
+                                            $('.foswikiCheckBox', form).attr('checked', false);
+                                        }
+                                    );
+
+                                    d = ModacSkin.menuDialogs[type] = ModacSkin.showDialog($data, undefined, ModacSkin.menuDialogs[type], {});
+                                };
+                                var ajaxArea = $('<div class="modacAjaxDialog"><div style="height: 150px; width: 200 px;"></div></div>');
+                                ajax.before(ajaxArea);
+                                ajax.append($('<input type="hidden" name="skin" value="' + skin + '" />'));
+                                if(hidewebs && !ajax.find('input[name="MODAC_HIDEWEBS"]').length) {
+                                    ajax.append($('<input type="hidden" name="MODAC_HIDEWEBS" value="" />').val(getParameterByName(window.location.search, 'MODAC_HIDEWEBS')));
+                                }
+                                ajax.attr('action', encodeURI(ajax.attr('action'))); // IE does mess up otherwise
+                                ajax.ajaxForm({
+                                    error: handleOops,
+                                    success: function(jqXHR, s, errorThrown) {(ModacSkin.handleLogin(handleSuccess, d))(jqXHR,s,errorThrown)},
+                                    beforeSerialize: function($form, options) {
+                                        // transmit data marked with modacAjaxPreserve along with a 'Preserved' suffix
+                                        var $dialogContents = $form.closest('.modacDialogContents');
+                                        $dialogContents.find('input.modacAjaxPreserve, select.modacAjaxPreserve').each(function() {
+                                            var $this = $(this);
+                                            var name = $this.attr('name');
+                                            if(!name) return;
+                                            var val = $this.val();
+                                            if($this.is('[type="checkbox"]') && !$this.attr('checked')) {
+                                                val = undefined;
+                                            }
+
+                                            // This will be created when parts of the dialog are fetched by ajax (see above)
+                                            if(name == 'MODAC_HIDEWEBSAjax') {
+                                                name="MODAC_HIDEWEBS";
+                                                if(!val) val = getParameterByName(window.location.search, 'MODAC_HIDEWEBS');
+                                                if(!val) {
+                                                    $form.find('[name="MODAC_HIDEWEBS"]').attr('name', 'MODAC_HIDEWEBSDisabled');
+                                                    return;
+                                                }
+                                            }
+
+                                            var suffix = $this.hasClass('modacAjaxNoRename') ? '': 'Preserved';
+                                            // I need to rename newtopic and newweb or otherwise the rename will take place
+                                            var $input = $form.find('input[name="' + name + suffix + '"]');
+                                            if(!$input.length) {
+                                                $input = $('<input type="hidden" />').attr('name', name + suffix);
+                                                $form.append($input);
+                                            }
+                                            $input.val(val);
+                                        });
+                                    }
+                                });
+                                ajax.submit(function(){
+                                    // Only block the dialog, not the whole page.
+                                    // It won't need unblocking, since a new dialog will be created.
+                                    if(d && d.block) {
+                                        d.block(ModacSkin.blockDefaultOptions);
+                                        d.siblings('.ui-dialog-buttonpane').block({message: ''});
+                                    }
+                                });
+                                ajax.submit();
+                                $data.find('.modacDialogFire').change(function(){ajax.submit();})
+                            } else {
+                                d = ModacSkin.menuDialogs[type] = ModacSkin.showDialog($data, undefined, undefined, {});
+                            }
+                        })
+                    }
+                );
+            };
+            getDialog();
 
             return false;
         },
@@ -766,7 +805,7 @@ jQuery(function($){
         .each(
             function(index, el) {
                 // Fixed version of what's in pattern.js
-                var count = $(el).find('table.foswikiTable tr').length - 1;
+                var count = $(el).find('table tr').length - 1;
                 var countStr = " <span class='foswikiSmall'>"
                     + count + "<\/span>";
                 $(el).find('.patternAttachmentHeader').each(
@@ -1016,11 +1055,11 @@ jQuery(function($){
 
       if ( btn == 1 || btn == 2 ) {
       var href = $(this).attr('href');
-      if ( ! /t=\d{10}/.test( href ) )
+      if ( ! /[?&;]t=\d{10}/.test( href ) )
         return;
 
       var t = Math.floor( (new Date).getTime() / 1000 );
-      href = href.replace( /t=\d{10}/, 't=' + t );
+      href = href.replace( /([?&;])t=\d{10}/, '$1t=' + t );
       $(this).attr( 'href', href );
       }
     });

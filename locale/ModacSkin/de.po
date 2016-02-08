@@ -1036,7 +1036,7 @@ msgstr "Alles auswählen"
 
 #: templates/more.modac.tmpl
 msgid "Select destination web"
-msgstr ""
+msgstr "Zielbereich auswählen"
 
 #: templates/more.modac.tmpl
 msgid "Select topic parent"
@@ -1328,7 +1328,7 @@ msgid "Webs"
 msgstr "Bereiche"
 
 #: templates/attachtables.modac.tmpl
-msgid "Who"
+msgid "Uploaded by"
 msgstr "Hochgeladen durch"
 
 #: templates/oopshistory.modac.tmpl
@@ -1679,6 +1679,9 @@ msgstr "Kommentar"
 msgid "Edit users form"
 msgstr "Benutzer bearbeiten"
 
+msgid "List all webs I may write to"
+msgstr "Alle Bereiche mit Schreibzugriff auflisten"
+
 #~ msgid "(access denied)"
 #~ msgstr "(Zugriff verweigert)"
 
@@ -1786,3 +1789,21 @@ msgstr "Verweise auf %1 in jedem Web:"
 
 msgid "Discussion available"
 msgstr "Diskussion verfügbar"
+
+msgid "Key user tools"
+msgstr "KeyUser Werkzeuge"
+
+msgid "System web"
+msgstr "Systembereich"
+
+msgid "Trash"
+msgstr "Mülleimer"
+
+msgid "Wikigroups"
+msgstr "Wikigruppen"
+
+msgid "Web settings"
+msgstr "Web-Einstellungen"
+
+msgid "Wiki settings"
+msgstr "Wiki-Einstellungen"

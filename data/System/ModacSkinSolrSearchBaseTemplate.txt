@@ -17,7 +17,6 @@
 }%%JQREQUIRE{tabpane,tasksapi,jqp::readmore}%%{
 }%%JSI18N{"ModacSkin" id="solr"}%%{
 }%%ADDTOZONE{"script" id="jsi18n::tasksapi" requires="%JSI18NID%" text="<script type='text/javascript' src='%PUBURLPATH%/%SYSTEMWEB%/TasksAPIPlugin/js/i18n/jsi18n.%IF{"$LANGUAGE=~'de'" then="%LANGUAGE%" else="en"}%.min.js'></script>"}%%{
-}%%ADDTOZONE{"script" id="tasksapi::solr" requires="JQUERYPLUGIN::TASKSAPI" text="<script type='text/javascript' src='%PUBURLPATH%/%SYSTEMWEB%/TasksAPIPlugin/js/tasksapi.solr.js'></script>"}%%{
 }%%ADDTOZONE{"script" id="solr:dateformat" text="<script>solrDateformat='%TMPL:P{"solr::dateformat"}%';</script>"}%%{
 }%%ADDTOZONE{"script" requires="JQUERYPLUGIN" id="ModacSolrHelper" text="<script type='text/javascript' src='%PUBURLPATH%/%SYSTEMWEB%/ModacSkin/solrsearch.js'></script>"}%%{
 }%%JQREQUIRE{"livequery,focus, serialpager, scrollto, prettyphoto, jqtwisty, moment, blockui, imagetooltip"}%%{
@@ -43,7 +42,7 @@
 <table class='foswikiNullTable'>
   <tr>
     <td>
-      <input type="text" autocomplete="off" class="foswikiInputField jqFocus solrSearchField %IF{"defined MODAC_SOLR_AUTOCOMPLETE" then="modacSolrAutocomplete $percentMODAC_SOLR_AUTOCOMPLETE$percent" else="jqUIAutocomplete {source:'%SCRIPTURL%/rest/SolrPlugin/autocomplete'}"}%" size="50" style="margin-right:8px;" value="%URLPARAM{"search"}%" />
+      <input type="text" autocomplete="off" class="foswikiInputField jqFocus solrSearchField %IF{"defined MODAC_SOLR_AUTOCOMPLETE" then="modacSolrAutocomplete $percentMODAC_SOLR_AUTOCOMPLETE$percent" else="jqUIAutocomplete {source:'%SCRIPTURL%/rest/SolrPlugin/autocomplete', extraParams:{field:'catchall_autocomplete', filter:'%MODAC_SOLR_AC_FILTER{default=""}%'}}"}%" size="50" style="margin-right:8px;" value="%URLPARAM{"search"}%" />
     </td>
     <td>
       %BUTTON{"%MAKETEXT{"Search"}%" type="submit" title="%MAKETEXT{"submit the query"}%" icon="find" class="solrSubmitButton"}%
@@ -110,15 +109,16 @@
 %{</verbatim>}%
 
 %{<verbatim>}%
-%TMPL:DEF{"solr::fields::append"}%%TMPL:PREV%,author_s,container_id,container_url,task_state_s,task_type_s,task_id_s%TMPL:END%
+%TMPL:DEF{"solr::fields::append"}%%TMPL:PREV%,author_s,container_id,container_url,task_state_s,task_type_s,task_id_s,task_context_s%TMPL:END%
 %TMPL:DEF{"solr::templates::hits::task"}%<script id="solrHitTemplate_task" type="text/x-jquery-tmpl">
   <div class='solrSearchHit clearfix'>
     {{include tmpl="#solrTemplate_thumbnail" /}}
     <h3 title='{{:~foswiki.jsi18n.get('tasksapi', task_type_s)}}'>
       <img src='{{if icon}}{{:icon}}{{else}}{{:~foswiki.getPreference('PUBURLPATH')+'/'+~foswiki.getPreference('SYSTEMWEB')+'/DocumentGraphics/target.png'}}{{/if}}' width='16' height='16' class='solrHitIcon' />
-      <a class="task-solr-hit" data-id="{{:task_id_s}}" href='#'>{{:title}}</a>
-      <span class='foswikiGrayText'><em>({{:~foswiki.jsi18n.get('tasksapi', task_type_s) }}, {{:~foswiki.jsi18n.get('solr', task_state_s)}})</em>
-        {{:~foswiki.jsi18n.get('solr', 'in [_1]', "<a href='"+container_url+"'>"+container_id+"</a>")}}}
+      <a class="task-solr-hit" href="{{:container_url}}?id={{:task_id_s}}&tid={{:task_state_s}}&tab={{:task_state_s}}">{{:title}}</a>
+      <span class='foswikiGrayText'>
+        {{:~foswiki.jsi18n.get('solr', 'in [_1]', "<a href='"+container_url+"'>"+~getWebMapping(web)+"</a>")}}
+        <em>({{:~foswiki.jsi18n.get('tasksapi', task_type_s) }}, {{:~foswiki.jsi18n.get('solr', task_state_s)}})</em>
       </span>
     </h3>
   <div class='solrHilite'>
@@ -182,13 +182,18 @@
   <div class='solrSearchHit solrImageHit clearfix'>
     <div class='solrImageFrame'>
       <a class='imageHref imageSimple jqImageTooltip {web:"{{:web}}", topic:"{{:topic}}", image:"{{:name}}"}' href='{{:url}}' title='{{:name}}'>
-        <img src='{{:~foswiki.getPreference('SCRIPTURLPATH')+'/rest'+~foswiki.getPreference('SCRIPTSUFFIX')}}/ImagePlugin/resize?topic={{:web}}.{{:topic}};file={{:~encodeURIComponent(name)}};size=64>;crop=northwest' alt='{{:name}}' />
+        <img src='{{if task_id_s}}{{:icon}}{{else}}{{:~foswiki.getPreference('SCRIPTURLPATH')+'/rest'+~foswiki.getPreference('SCRIPTSUFFIX')}}/ImagePlugin/resize?topic={{:web}}.{{:topic}};file={{:~encodeURIComponent(name)}};size=64>;crop=northwest{{/if}}' alt='{{:name}}' />
       </a>
     </div>
     <h3 title='{{: ~foswiki.jsi18n.get('solr', 'image') }}'>
       <a href='{{:url}}'>{{:name}}</a>
       <span class='foswikiGrayText foswikiSmallish solrContainerLink'>
-        {{: ~foswiki.jsi18n.get('solr', 'in [_1]', "<a href='"+container_url+"'>"+container_title+"</a>") }}
+        {{if task_id_s}}
+        {{: ~foswiki.jsi18n.get('solr', "in [_1]" ,"<a class='task-solr-hit' href='"+container_url+"?id="+task_id_s+"&tid="+task_state_s+"&tab="+task_state_s+"&attachment="+name+"'>"+container_title+"</a>") }}
+        {{if task_type_s && task_state_s}}<em>({{:~foswiki.jsi18n.get('tasksapi', task_type_s) }}, {{:~foswiki.jsi18n.get('solr', task_state_s)}})</em>{{/if}}
+        {{else}}
+        {{: ~foswiki.jsi18n.get('solr', "in [_1]" ,"<a href='"+container_url+"'>"+container_title+"</a>") }}
+        {{/if}}
       %TMPL:P{"image_title"}%
       </span>
       {{if comment}}
@@ -217,7 +222,12 @@
       <img src='{{if icon}}{{:icon}}{{else}}{{:~foswiki.getPreference('PUBURLPATH')+'/'+~foswiki.getPreference('SYSTEMWEB')}}/FamFamFamSilkIcons/page_white.png{{/if}}'>
       <a href='{{:url}}'>{{:name}}</a>
       <span class='foswikiGrayText foswikiSmallish solrContainerLink' >
+        {{if task_id_s}}
+        {{: ~foswiki.jsi18n.get('solr', "in [_1]" ,"<a class='task-solr-hit' href='"+container_url+"?id="+task_id_s+"&tid="+task_state_s+"&tab="+task_state_s+"&attachment="+name+"'>"+container_title+"</a>") }}
+        {{if task_type_s && task_state_s}}<em>({{:~foswiki.jsi18n.get('tasksapi', task_type_s) }}, {{:~foswiki.jsi18n.get('solr', task_state_s)}})</em>{{/if}}
+        {{else}}
         {{: ~foswiki.jsi18n.get('solr', "in [_1]" ,"<a href='"+container_url+"'>"+container_title+"</a>") }}
+        {{/if}}
       %TMPL:P{"misc_title"}%
       </span>
       {{if comment}}
@@ -356,6 +366,15 @@ $percentTMPL:DEF{"solr::fields::append"}$percent$percentTMPL:PREF$percent,your_s
 %{</verbatim>}%
 
 %{<verbatim class="tml">}%
+%TMPL:DEF{"solr::webmappings"}%<div class="solrDictionary solrJsonData" data-id="webmappings">{%FORMATLIST{
+  "%MODAC_WEBMAPPINGS{default=""}%"
+  pattern="^\s*(.*?)=(.*?)\s*$"
+  format="\"$1\":\"$2\""
+}%}</div>
+%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim class="tml">}%
 %{ ###########################################################################
    solr::dictionary - defines a set of keys to be displayed using a different lable
 }%
@@ -384,5 +403,5 @@ $percentTMPL:DEF{"solr::fields::append"}$percent$percentTMPL:PREF$percent,your_s
 %TMPL:P{"modac::solr::dictionary"}%
 }
 </div>
-</literal>%TMPL:END%
+</literal>%TMPL:P{"solr::webmappings"}%%TMPL:END%
 %{</verbatim>}%

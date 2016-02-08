@@ -88,7 +88,7 @@ Further examples:
 | Secret\b | Secret, Secret.SubWeb | MySecret, MySecretWeb, SecretLair, OtherWeb.Secret | Secret and subwebs. Use this if you want to hide a web, but not another starting similarly. |
 | .*\bSecret\b | Secret, Secret.SubWeb, OtherWeb.Secret | MySecret, MySecretWeb, SecretLair | Hide web 'Secret' and any subweb called 'Secret'. |
 
-You can override this setting on your personal page or by appending =MODAC_HIDEWEBS= as URL-parameter.
+You can override this setting on your personal page or by appending =MODAC_HIDEWEBS= as URL-parameter. You can also set =MODAC_SHOWALLWEBSGROUP= to any group and members of this group will have an option to "un-hide" webs when copying/moving topics. Administrators will always have this option.
 
 ---+++ TopMenue
 By default _ModacSkin_ uses pop-up window for _More topic actions_, history and attachments. You can deactivate this behaviour and switch back to single tabs for each of these items with a setting in your =WebPreferences=, =SitePreferences= or topic preferences:
@@ -291,6 +291,16 @@ The format always is:
 <pre>
 Fieldname=Display name for field,OtherField=Display name for other field...
 </pre>
+
+---++ Application Development
+
+---+++ Transient Url Parameters
+
+This feature allows you to easily pass parameters from an edit page to the actual save. For example, if you want to pass =myparam= to the save script, but you do not want to create an extra =EDIT_TEMPLATE= for that, you can call the default edit page like this:
+<verbatim>[[%SCRIPTURL{edit}%/%WEB%/MyNewTopic?t=%GMTIME{"$epoch"}%&modactransientparams=myparam&myparam=MyValue]]</verbatim>
+When pressing =save=, the parameter =myparam=MyValue= will be passed to the =save= script.
+
+If you have redefined =%<nop>TMPL:DEF{"formstart"}%= and want to use this feature, do a =%<nop>TMPL:P{"modacTransientParam"}%= inside your form.
 
 ---++ Installation Instructions
 

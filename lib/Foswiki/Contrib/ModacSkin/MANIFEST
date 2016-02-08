@@ -17,6 +17,7 @@ data/System/ModacSkinSolrSearchViewTemplate.txt 0664
 data/System/ModacSkinSolrSearchBaseTemplate.txt 0664
 data/System/ModacSkinSystemViewTemplate.txt 0664
 data/System/ModacSkinSystemTabsTemplate.txt 0664
+data/System/ModacSkinTasksAPIDefaultMailTemplate.txt 0664
 data/System/ModacSkinTopHeadTemplate.txt 0664
 data/System/ModacSkinTopicMenuTemplate.txt 0664
 data/System/ModacSkinUserEditTemplate.txt 0664
@@ -156,6 +157,7 @@ templates/rdiff.modac.tmpl 0664
 templates/rename.modac.tmpl 0664
 templates/renameattachmentdelete.modac.tmpl 0664
 templates/renamebase.modac.tmpl 0664
+templates/renamebase.modacdialog.tmpl 0664
 templates/renamedelete.modac.tmpl 0664
 templates/renamewebbase.modac.tmpl 0664
 templates/search.modac.tmpl 0664
