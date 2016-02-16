@@ -109,6 +109,7 @@ A typical configuration might look like this:
 | =CONTENTTEMPLATEWEB= | All topics with =Template= suffix in this web will be offered as template when creating a new topic.%BR%Exceptions can be defined unsing =CONTENTTEMPLATEFILTER=. | Comma separated list, eg. <pre>   * Set CONTENTTEMPLATEWEB = Processes,Information</pre>. |
 | =CONTENTTEMPLATEFILTER= | These topics will not be offered as template. | Comma-separated list.%BR%Use * as wildcard.%BR%Some topics will always be excluded:<pre>*EditTemplate, *WebCreateNewTopicTemplate, *ViewTemplate, GroupTemplate, CustomSkin*Template</pre>Example:<pre>   * Set CONTENTTEMPLATEFILTER = SpacingTemplate, *WeldingTemplate</pre> |
 | =CONTENTTEMPLATESTUB= | This topic will be used as a template for creating new templates with =WebContentTemplates=. | This template should contain a _templateonly-section_ with ACLs etc.%BR%It will default to [[%SYSTEMWEB%.ModacSkinContentTemplateStub]] |
+| =CONTENTTEMPLATESTATES= | _Standard search only!_ Content templates must be in one of these states, if they are to be available when creating a new topic. | Comma separated list.%BR%You will want to set this, if your templates are under a workflow. If not set, all states are allowed.%BR%Example:<pre>   * Set CONTENTTEMPLATESTATES = APPROVED, FREIGEGEBEN</pre> |
 
 You can get an index for all available content templates in each web at =Web.WebContentTemplates=. With the appropriate permissions you can also create new templates there.
 
