@@ -254,13 +254,13 @@ var URL_TEMPLATE = '$percntURLPARAM{template}$percnt';
 
 %{<verbatim class="tml">}%
 %TMPL:DEF{"templatesearch::default"}%%SEARCH{
-  "name~'*Template'" 
-  scope="topic" 
-  web="%CONTENTTEMPLATEWEB{default="%BASEWEB%"}%" 
+  "name~'*Template'"
+  scope="topic"
+  web="%CONTENTTEMPLATEWEB{default="%BASEWEB%"}%"
   excludetopic="*EditTemplate,*WebCreateNewTopicTemplate,*ViewTemplate,ChecklisteTemplate,GroupTemplate,CustomSkin*Template%IF{"defined CONTENTTEMPLATEFILTER" then=",%CONTENTTEMPLATEFILTER%"}%"
-  type="query" 
-  nonoise="on" 
-  format="<option value=\"$web.$topic\">$topic</option>"
+  type="query"
+  nonoise="on"
+  format="<option value=\"$web.$topic\">$percentQUERY{\"'$web.$topic'/TopicTitle\" default=\"$topic\"}$percent</option>"
 }%%TMPL:END%
 %{</verbatim>}%
 
@@ -275,7 +275,7 @@ var URL_TEMPLATE = '$percntURLPARAM{template}$percnt';
   \"topic=~'.*Template$'\"
   web=\"$1\"
   exclude=\"^.*(Edit|View|WebCreateNewTopic|Group|Checkliste)Template$|^CustomSkin.*Template$%IF{"defined CONTENTTEMPLATEFILTER and $CONTENTTEMPLATEFILTER != ''" then="|^($percentSUBST{text=$quot$percentSUBST{text=$quot%CONTENTTEMPLATEFILTER%$quot pattern=$quot\*$quot format=$quot.*$quot}$percent$quot pattern=$quot(\s|,)+$quot format=$quot|$quot}$percent)$dollar"}%\"
-  format=\"<option value=\\"$web.$topic\\">$topic</option>\"
+  format=\"<option value=\\"$web.$topic\\">$dollarpercentTOPICTITLE{\\"$web.$topic\\"}$dollarpercent</option>\"
 }$percent"}%%TMPL:END%
 %{</verbatim>}%
 
