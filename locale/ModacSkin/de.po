@@ -1631,6 +1631,9 @@ msgstr "Status seit"
 msgid "Pages waiting for approval"
 msgstr "Auf Freigabe wartende Seiten"
 
+msgid "Pages waiting for formal approval by quality management"
+msgstr "Seiten, die auf formale Freigabe durch QM warten"
+
 msgid "First name"
 msgstr "Vorname"
 
