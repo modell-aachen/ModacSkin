@@ -22,5 +22,5 @@
 </ul>
 %TMPL:END%
 
-%TMPL:DEF{"modacMoreSubmenu"}%%TMPL:P{context="edit" then="modacMoreSubmenuEdit" else="modacMoreSubmenuView"}%%TMPL:END%
+%TMPL:DEF{"modacMoreSubmenu"}%%IF{"context manage or context edit" then="$percentTMPL:P{modacMoreSubmenuEdit}$percent" else="$percentTMPL:P{modacMoreSubmenuView}$percent"}%%TMPL:END%
 %{</verbatim>}%
