@@ -10,6 +10,11 @@ The below section is used within WebCreateNewTopic to render the select box for 
 %ENDSECTION{"topicsinweb"}%
 </verbatim>
 
+<verbatim>
+%STARTSECTION{"topicsinweb_select2"}%
+{"results":[%IF{"$offset = 0 and $clearable=1" then="{\"id\":\"%HOMETOPIC%\",\"text\":\"%MAKETEXT{"No topic parent"}%\",\"text\":\"%MAKETEXT{"No topic parent"}%\",\"}"}%%SOLRSEARCH{"type:topic web:%SUBST{text="%URLPARAM{"web"}%" pattern="/" format="."}% -topic:*%WORKFLOWSUFFIX% -topic:*Template -topic:*Form (topic_search:*%SUBST{text="%URLPARAM{q}%" pattern="\s+" format=""}%* OR %FORMATLIST{"%URLPARAM{q}%" split="\s+" separator=" " null="*" format="title_search:*$1*"}%)" format="{\"text\":\"$percentENCODE{\"$title\" type=\"quote\"}$percent\",\"id\":\"$web.$topic\"}" separator="," rows="%URLPARAM{"count" default="20"}%" start="%URLPARAM{"offset" default="0"}%" sort="topic" header="%IF{"$offset = 0 and $clearable=1" then=","}%"}%]}
+%ENDSECTION{"topicsinweb_select2"}%
+</verbatim>
 Alternative selector for selecting from 'most' webs:
 
 <verbatim>
