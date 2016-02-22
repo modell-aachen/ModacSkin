@@ -22,13 +22,13 @@ Many things can be customized using various settings. If everything fails you ca
 
 ---+++ General Advice
    * %I% Please attach logos and other oftenly viewed pictures without access-restrictions on a =WebPreferences= topic (_not_ =SitePreferences=!). Most likely your webserver is configured to provide files quicker when they come from those topics.
-   * %I% Do not modify skin files in your SystemWeb, as those will be overwritten on the next update. See [[%TOPIC%#CustomWeb][CustomWeb]].
+   * %I% Do not modify skin files in your !SystemWeb, as those will be overwritten on the next update. See [[%TOPIC%#CustomWeb][CustomWeb]].
    * %I% Prefer using macros like =%%NOP%PUBURL%= and =%%NOP%SYSTEMWEB%= to directly entering the path. You will be safer against configuration changes.
 
----+++ CustomWeb
+---+++ !CustomWeb
 Wiki-wide customizations should reside in a web specially reserved for that purpose. This makes migration and updating much easier. Usually this web will contain some templates, [[%TOPIC%#LeftBar_44_TopBar_44_BottomBar][left/top/bottom bars]] and skin customizations.
 
-If you do create a CustomWeb set the =%%NOP%CUSTOMIZINGWEB%= variable in your [[%USERSWEB%.SitePreferences][SitePreferences]]. For example
+If you do create a [[%TOPIC%#CustomWeb][CustomWeb]] set the =%%NOP%CUSTOMIZINGWEB%= variable in your [[%USERSWEB%.SitePreferences][SitePreferences]]. For example
 <pre>
    &#42 Set CUSTOMIZINGWEB = Custom
 </pre>
@@ -46,22 +46,22 @@ A typical configuration might look like this:
 %I% Prefer using macros like =%%NOP%PUBURL%= and =%%NOP%SYSTEMWEB%= to directly entering the path (see [[%TOPIC%#General_Advice][general advices]]).%BR%
 Explainations:
 | *Item* | *Function* | *Remark* |
-| =WIKILOGOIMG= | Set the Logo. | The logo is usually displayed on the top-left of the screen.%BR%It should be attached in a =WebPreferences= topic (_not_ =SitePreferences=) or in your SystemWeb ([[%SCRIPTURL{"view"}%/%SYSTEMWEB%][%SYSTEMWEB%]]). |
+| =WIKILOGOIMG= | Set the Logo. | The logo is usually displayed on the top-left of the screen.%BR%It should be attached in a =WebPreferences= topic (_not_ =SitePreferences=) or in your !SystemWeb ([[%SCRIPTURL{"view"}%/%SYSTEMWEB%][%SYSTEMWEB%]]). |
 | =WIKILOGOALT= | Set an altervative text for the logo. | Shown when the logo could not be rendered, or is being processed electronically. |
 | =WIKILOGOURL= | Set the page you are beeing directed to when clicking the logo. | Is also used for some error-messages. |
 | =WIKITOOLNAME= | Give your wiki a name. | This will be displayed in some error-messages and warnings. |
-| =FAVICON= | Set the favicon. | A favicon is the little picture you see next to tabs, or bookmarks.%BR%It should be attached in a =WebPreferences= topic (_not_ =SitePreferences=) or in your SystemWeb ([[%SCRIPTURL{"view"}%/%SYSTEMWEB%][%SYSTEMWEB%]]). |
+| =FAVICON= | Set the favicon. | A favicon is the little picture you see next to tabs, or bookmarks.%BR%It should be attached in a =WebPreferences= topic (_not_ =SitePreferences=) or in your !SystemWeb ([[%SCRIPTURL{"view"}%/%SYSTEMWEB%][%SYSTEMWEB%]]). |
 
----+++ LeftBar, TopBar, BottomBar
-You can customize the LeftBar, TopBar and BottomBar for one web by creating the topic specified in the _Web-wide Customization_ column into that web. Or modify it side-wide by placing the topic from _Wiki-wide Customization_ column into your =CUSTOMIZING= web (see [[%TOPIC%#CustomWeb][CustomWeb]]).%BR%
-For example to customize the WebLeftBar in a web called =Processes= create =Processes.WebLeftBar=.%BR%
+---+++ !LeftBar, !TopBar, !BottomBar
+You can customize the !LeftBar, !TopBar and !BottomBar for one web by creating the topic specified in the _Web-wide Customization_ column into that web. Or modify it side-wide by placing the topic from _Wiki-wide Customization_ column into your =CUSTOMIZING= web (see [[%TOPIC%#CustomWeb][CustomWeb]]).%BR%
+For example to customize the !WebLeftBar in a web called =Processes= create =Processes.WebLeftBar=.%BR%
 To change it for the whole wiki, create =%CUSTOMIZINGWEB{default="Custom"}%.WebLeftBarDefault= (provided your customizing-web is %CUSOMIZINGWEB{default="Custom"}%).%BR%
-If you need a template, the definitions that come with the skin reside in your SystemWeb ([[%SCRIPTURL{"view"}%/%SYSTEMWEB%][%SYSTEMWEB%]]), so the original WebLeftBar is =%SYSTEMWEB%.WebLeftBarDefault=. _Please_ do not modify the skin topics in your SystemWeb.%BR%
+If you need a template, the definitions that come with the skin reside in your !SystemWeb ([[%SCRIPTURL{"view"}%/%SYSTEMWEB%][%SYSTEMWEB%]]), so the original !WebLeftBar is =%SYSTEMWEB%.WebLeftBarDefault=. _Please_ do not modify the skin topics in your !SystemWeb.%BR%
 Explaination:
 | *Item* | *Wiki-wide Customization* | *Web-wide Customization* | *Function* |
-| LeftBar | =%CUSTOMIZINGWEB{default="Custom"}%.WebLeftBarDefault= | =WebLeftBar= | This defines the LeftBar to navigate the wiki. |
-| TopBar | =%CUSTOMIZINGWEB{default="Custom"}%.WebTopBarDefault= | =WebTopBar= | This should contain login-buttons. |
-| BottomBar | =%CUSTOMIZINGWEB{default="Custom"}%.WebBottomBarDefault= | =WebBottomBar= | This defines the BottomBar for additional logos and company information. |
+| !LeftBar | =%CUSTOMIZINGWEB{default="Custom"}%.WebLeftBarDefault= | =WebLeftBar= | This defines the !LeftBar to navigate the wiki. |
+| !TopBar | =%CUSTOMIZINGWEB{default="Custom"}%.WebTopBarDefault= | =WebTopBar= | This should contain login-buttons. |
+| !BottomBar | =%CUSTOMIZINGWEB{default="Custom"}%.WebBottomBarDefault= | =WebBottomBar= | This defines the !BottomBar for additional logos and company information. |
 %X% You must define a customizing-web for wiki-wide customizations, see [[%TOPIC%#CustomWeb][CustomWeb]]!
 
 ---++++ Mapping web-names
@@ -72,7 +72,7 @@ Example:
    &#42; Set MODAC_WEBMAPPINGS = Processes=%MAKETEXT{"Processes"}%, InternalStuff=%MAKETEXT{"Internal stuff"}%
 </pre>
 
----++++ Hiding webs from standard WebLeftBar
+---++++ Hiding webs from standard [[#LeftBar_44_TopBar_44_BottomBar][WebLeftBar]]
 In order to hide a web from the =WebLeftBar=, set =MODAC_HIDEWEBS= to a regex matching those webs. Set this on your =WebPreferences= or =SitePreferences=.%BR%
 %I% The regular expression is build like this: <pre>(SomeStuff|%%NOP%MODAC_HIDEWEBS%).*</pre>%BR%
 Example:
@@ -82,15 +82,15 @@ This will hide the webs MyWeb and Secret but also SecretWeb, however not OtherWe
 </pre>
 Further examples:
 | *%%NOP%MODAC_HIDEWEBS%* | *Hides* | *Shows* | *Comment* |
-| Secret%BR%or%BR%Secret&vbar;MyWeb | Secret, Secret.SubWeb, SecretLair | MySecret, MySecretWeb, OtherWeb.Secret | You want this if you need a simple solution to hide some webs with subwebs. |
-| .*Secret | Secret, Secret.SubWeb, MySecret, MySecretWeb, SecretLair, OtherWeb.Secret | | Hide anything secret. You rarely want this. |
-| .*Secret$ | Secret, OtherWeb.Secret, MySecret | Secret.SubWeb, MySecretWeb, SecretLair | Anything ending with 'Secret'. Your rarely want this. |
-| Secret\b | Secret, Secret.SubWeb | MySecret, MySecretWeb, SecretLair, OtherWeb.Secret | Secret and subwebs. Use this if you want to hide a web, but not another starting similarly. |
-| .*\bSecret\b | Secret, Secret.SubWeb, OtherWeb.Secret | MySecret, MySecretWeb, SecretLair | Hide web 'Secret' and any subweb called 'Secret'. |
+| Secret%BR%or%BR%Secret&vbar;MyWeb | Secret, !Secret.SubWeb, !SecretLair | !MySecret, !MySecretWeb, !OtherWeb.Secret | You want this if you need a simple solution to hide some webs with subwebs. |
+| .*Secret | Secret, !Secret.SubWeb, !MySecret, !MySecretWeb, !SecretLair, !OtherWeb.Secret | | Hide anything secret. You rarely want this. |
+| .*Secret$ | Secret, !OtherWeb.Secret, !MySecret | !Secret.SubWeb, !MySecretWeb, !SecretLair | Anything ending with 'Secret'. Your rarely want this. |
+| Secret\b | Secret, !Secret.SubWeb | !MySecret, !MySecretWeb, !SecretLair, !OtherWeb.Secret | Secret and subwebs. Use this if you want to hide a web, but not another starting similarly. |
+| .*\bSecret\b | Secret, !Secret.SubWeb, !OtherWeb.Secret | !MySecret, !MySecretWeb, !SecretLair | Hide web 'Secret' and any subweb called 'Secret'. |
 
 You can override this setting on your personal page or by appending =MODAC_HIDEWEBS= as URL-parameter. You can also set =MODAC_SHOWALLWEBSGROUP= to any group and members of this group will have an option to "un-hide" webs when copying/moving topics. Administrators will always have this option.
 
----+++ TopMenue
+---+++ !TopMenue
 By default _ModacSkin_ uses pop-up window for _More topic actions_, history and attachments. You can deactivate this behaviour and switch back to single tabs for each of these items with a setting in your =WebPreferences=, =SitePreferences= or topic preferences:
 <pre>
    &#42 Set MODAC_NO_TOPMENU = 1
@@ -117,7 +117,7 @@ You can get an index for all available content templates in each web at =Web.Web
 You can have a table displayed on every page for controll of documents.%BR%
 To activate the header you must set =NO_MODAC_HEADLIST= or =MODAC_TOPHEAD_FORM=.%BR%
 %I% If you want to customize the header you should define a [[#Customization][custom skin]] for that.%BR%
-%I% The head used to be activated by setting a FormField =Dokumententyp= to specific values. However this method has been deprecated.%BR%
+%I% The head used to be activated by setting a [[DataForms][FormField]] =Dokumententyp= to specific values. However this method has been deprecated.%BR%
 A typical configuration might look like this:
 <pre>
    &#42; Set NO_MODAC_HEADLIST =  WebPreferences, SitePreferences, WebSearch, WebSearchAdvanced, WebTopicList, WebIndex, WebHome
@@ -193,7 +193,7 @@ It has some mappings for easier names (=solr::extramapping=) and you can select 
 
 ---++++ customizing the autocomplete for search boxes
 If you want to customize the autocomplete for the box in the top-right and on the solr page, set the =MODAC_SOLR_AUTOCOMPLETE= setting in your =WebPreferences=/=SitePreferences= to the following:
-   * it must be a JavaScript class containing
+   * it must be a !JavaScript class containing
       * source: most likely =%%NOP%SCRIPTURL%/rest/SolrPlugin/autocomplete=
       * your filters/boost/qf/...
    * you must not use double quotes
@@ -238,7 +238,7 @@ The same would be possible with radio buttons:
 Here you can define a custom css-file that can be used to customize css-rules.%BR%
 Usually those will have to be marked with =!important=.
 
-For example, if you want to increase the width of the _RightBar_ for Solr from =14.7em= to =24.7em= you can put this into your SitePreferences:
+For example, if you want to increase the width of the _RightBar_ for Solr from =14.7em= to =24.7em= you can put this into your [[%QUERY{"{LocalSitePreferences}"}%][SitePreferences]]:
 <pre>
    &#42; Set FOSWIKI_PROJECT_URL = %%NOP%PUBURLPATH%/%%NOP%CUSTOMIZINGWEB%/WebPreferences/custom.css
 </pre>
@@ -322,7 +322,7 @@ If you want to make custom modifications you can set FOSWIKI_PROJECT_URL to your
 
 ---+++ Dependencies
 
-| FlexWeblistPlugin |
+| FlexWebListPlugin |
 | FilterPlugin |
 | Many more... TODO |
 
