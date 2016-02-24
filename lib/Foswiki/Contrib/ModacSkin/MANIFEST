@@ -2,6 +2,7 @@ data/_default/WebContentTemplates.txt 0664
 data/Main/ModacSkinGroupViewTemplate.txt 0664
 data/Main/NewUserTemplate.txt 0664
 data/Main/UeberQWiki.txt 0664
+data/System/DummyForm.txt 0664
 data/System/ModacAjaxHelper.txt 0664
 data/System/ModacSkin.txt 0664
 data/System/ModacSkinCommentPluginTemplate.txt 0664
