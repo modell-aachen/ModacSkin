@@ -13,7 +13,7 @@
 <literal>
 %QUERYPARAMS{format="<input type='hidden' name='$name' value='$value' />" encoding="entity"}%
 </literal>
-%MAKETEXT{"To see if [_1] has finished editing yet, click " args="%PARAM1%"}%
+%MAKETEXT{"To see if [_1] has finished editing yet, click " args="%ENCODE{"%RENDERUSER{"%URLPARAM{"param1"}%" format="$displayName" convert="on"}%" old="$comma" new="&#44;"}%"}%
 <input type="submit" class="foswikiButton" value='%MAKETEXT{"Try Again"}%' />
 </form>
 <form action="%SCRIPTURLPATH{"%PARAM4%"}%/%WEB%/%TOPIC%" method="post">
