@@ -539,8 +539,8 @@ jQuery(function($){
                                 ModacSkin.blockUI();
                                 if(d.dialog('isOpen')) {
                                     d.dialog('close');
-                                    d.remove();
                                 }
+                                d.remove();
                                 getDialog();
                             });
                             var ajax = $data.find('.modacDialogAppendable');
