@@ -539,6 +539,7 @@ jQuery(function($){
                                 ModacSkin.blockUI();
                                 if(d.dialog('isOpen')) {
                                     d.dialog('close');
+                                    d.remove();
                                 }
                                 getDialog();
                             });
