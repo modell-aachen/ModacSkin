@@ -540,6 +540,7 @@ jQuery(function($){
                                 if(d.dialog('isOpen')) {
                                     d.dialog('close');
                                 }
+                                d.remove();
                                 getDialog();
                             });
                             var ajax = $data.find('.modacDialogAppendable');
@@ -872,6 +873,7 @@ jQuery(function($){
         if (alerts.length) {
           alerts.push(jsi18n.get('edit', 'Please check your input.'));
           alert(alerts.join("\n"));
+          foswiki.Edit.isValidateMandatoryFieldsFailed = true;
           return false;
         }
         return true;

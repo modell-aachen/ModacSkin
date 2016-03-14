@@ -2,6 +2,7 @@ data/_default/WebContentTemplates.txt 0664
 data/Main/ModacSkinGroupViewTemplate.txt 0664
 data/Main/NewUserTemplate.txt 0664
 data/Main/UeberQWiki.txt 0664
+data/System/DummyForm.txt 0664
 data/System/ModacAjaxHelper.txt 0664
 data/System/ModacSkin.txt 0664
 data/System/ModacSkinCommentPluginTemplate.txt 0664
@@ -141,6 +142,7 @@ templates/formtables.modaccompare.tmpl 0664
 templates/foswiki.modac.tmpl 0664
 templates/foswiki.modacdialog.tmpl 0664
 templates/login.modac.tmpl 0664
+templates/messages.modac.tmpl 0664
 templates/metacomments.modac.tmpl 0664
 templates/metamaketext.modac.tmpl 0664
 templates/more.modac.tmpl 0664

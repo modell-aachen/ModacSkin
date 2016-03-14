@@ -2,5 +2,5 @@
 
 %TMPL:DEF{"tasksapi_maillink"}%%{
 }%%MAKETEXT{"Direct link"}%:
-%SCRIPTURL{restauth}%/TasksAPIPlugin/link?id=%TASKINFO{meta="id"}%%{
+%SCRIPTURL{restauth}%/TasksAPIPlugin/permalink?id=%TASKINFO{meta="id"}%%{
 }%%TMPL:END%

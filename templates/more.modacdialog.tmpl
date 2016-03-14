@@ -10,5 +10,5 @@
 %TMPL:END%
 
 %TMPL:DEF{"hidewebsOption"}%<div>
-<input class="foswikiCheckbox modacDialogReload" type="checkbox" name="MODAC_HIDEWEBS" value="none" %IF{"$'URLPARAM{MODAC_HIDEWEBS}'='none'" then="checked='checked'"}% /><label for="MODAC_HIDEWEBS">%MAKETEXT{"List all webs I may write to"}%</label>
+<label><input class="foswikiCheckbox modacDialogReload" type="checkbox" name="MODAC_HIDEWEBS" value="none" %IF{"$'URLPARAM{MODAC_HIDEWEBS}'='none'" then="checked='checked'"}% />%MAKETEXT{"List all webs I may write to"}%</label>
 </div>%TMPL:END%

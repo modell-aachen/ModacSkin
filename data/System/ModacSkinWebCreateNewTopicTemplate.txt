@@ -244,7 +244,7 @@ var URL_TEMPLATE = '$percntURLPARAM{template}$percnt';
 %IF{"'%URLPARAM{"templatetopic"}%'" 
   then='<option selected="selected">%URLPARAM{"templatetopic"}%</option>'
 }%%{
-}%%TMPL:P{context="DBCachePluginEnabled" then="templatesearch::dbcache" else="templatesearch::default"}%
+}%%TMPL:P{context="SolrPluginEnabled" then="templatesearch::solr" else="templatesearch::default"}%
 </select>
 <div class="foswikiFormDescription">
 %MAKETEXT{"Initialize the new topic using a template."}%
@@ -254,29 +254,23 @@ var URL_TEMPLATE = '$percntURLPARAM{template}$percnt';
 
 %{<verbatim class="tml">}%
 %TMPL:DEF{"templatesearch::default"}%%SEARCH{
-  "name~'*Template'" 
-  scope="topic" 
-  web="%CONTENTTEMPLATEWEB{default="%BASEWEB%"}%" 
+  "name~'*Template' %IF{"defined CONTENTTEMPLATESTATES" then=" AND META:WORKFLOW.name=~'%FORMATLIST{"%CONTENTTEMPLATESTATES%" header="^(?:" footer=")$" separator="|"}%'"}%"
+  scope="topic"
+  web="%CONTENTTEMPLATEWEB{default="%BASEWEB%"}%"
   excludetopic="*EditTemplate,*WebCreateNewTopicTemplate,*ViewTemplate,ChecklisteTemplate,GroupTemplate,CustomSkin*Template%IF{"defined CONTENTTEMPLATEFILTER" then=",%CONTENTTEMPLATEFILTER%"}%"
-  type="query" 
-  nonoise="on" 
-  format="<option value=\"$web.$topic\">$topic</option>"
+  type="query"
+  nonoise="on"
+  format="<option value=\"$web.$topic\">$percentQUERY{\"'$web.$topic'/TopicTitle\" default=\"$topic\"}$percent</option>"
 }%%TMPL:END%
 %{</verbatim>}%
 
 %{<verbatim class="tml">}%
-%{CONTENTTEMPLATEFILTER:
-   * first check if defined and not set to empty, or SUBST will go awry.
-   * make it a RegEx: substitute * with .*
-   * make it a RegEx: turn separating commas into &vbar;
-   * build RegEx around it
-}%
-%TMPL:DEF{"templatesearch::dbcache"}%%FORMATLIST{"%CONTENTTEMPLATEWEB{default="%BASEWEB%"}%" format="$percentDBQUERY{
-  \"topic=~'.*Template$'\"
-  web=\"$1\"
-  exclude=\"^.*(Edit|View|WebCreateNewTopic|Group|Checkliste)Template$|^CustomSkin.*Template$%IF{"defined CONTENTTEMPLATEFILTER and $CONTENTTEMPLATEFILTER != ''" then="|^($percentSUBST{text=$quot$percentSUBST{text=$quot%CONTENTTEMPLATEFILTER%$quot pattern=$quot\*$quot format=$quot.*$quot}$percent$quot pattern=$quot(\s|,)+$quot format=$quot|$quot}$percent)$dollar"}%\"
-  format=\"<option value=\\"$web.$topic\\">$topic</option>\"
-}$percent"}%%TMPL:END%
+%TMPL:DEF{"templatesearch::solr"}%%SOLRSEARCH{
+  "web:(%FORMATLIST{"%CONTENTTEMPLATEWEB{default="%BASEWEB%"}%" separator=" OR "}%) topic:*Template workflow_isapproved_b:true -topic:(*EditTemplate OR *ViewTemplate OR WebCreateNewTopicTemplate OR *GroupTemplate %FORMATLIST{"%CONTENTTEMPLATEFILTER{default=""}%" separator=" OR " header=" OR "}%)"
+  format="<option value='$web.$topic'>$title</option>"
+  fields="web,topic,title"
+  sort="title"
+}%%TMPL:END%
 %{</verbatim>}%
 
 

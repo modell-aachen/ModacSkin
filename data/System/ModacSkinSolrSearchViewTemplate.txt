@@ -29,8 +29,11 @@
   then="%SOLR_EXTRAFILTER%" 
   else="-type:map -type:aqm -field_TopicType_lst:Category"
 }% %IF{
+  "$WEB != $SYSTEMWEB"
+  then="-web:%SYSTEMWEB%"
+}% %IF{
   "not $USERNAME ingroup 'AdminGroup'"
-  then="-web:Applications -web:%SYSTEMWEB% -web:Sandbox* -web:%USERSWEB%"
+  then="-web:Applications -web:Sandbox* -web:%USERSWEB%"
 }%%TMPL:END%
 %{</verbatim>}%
 

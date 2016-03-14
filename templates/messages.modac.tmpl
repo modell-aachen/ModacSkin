@@ -5,3 +5,11 @@
 %{"This must not be empty, or the top-line will not show"}%
 %TMPL:DEF{"modacActionButtons"}%&nbsp;%TMPL:END%
 
+%TMPL:DEF{"lease_active"}%
+%MAKETEXT{"[_1] is editing [[[_2]][[_3]]]." args="%ENCODE{"%RENDERUSER{"%URLPARAM{"param1"}%" format="$displayName" convert="on"}%" old="$comma" new="&#44;"}%, %WEB%.%TOPIC%, %TOPIC%"}%
+
+%MAKETEXT{"[_1] has been editing the topic for [_2] and the lease is still active for another [_3]." args="%ENCODE{"%RENDERUSER{"%URLPARAM{"param1"}%" format="$displayName" convert="on"}%" old="$comma" new="&#44;"}%, %PARAM2%, %PARAM3%"}%
+
+%MAKETEXT{"It is probably OK to go ahead and edit - unless you intend to change data in a form attached to the topic. If [_1] actually _does_ save the topic while you are editing, your changes will be merged, and nothing will be lost. Form data cannot easily be merged though, so in this case you are recommended to check with [_1] first." args="%ENCODE{"%RENDERUSER{"%URLPARAM{"param1"}%" format="$displayName" convert="on"}%" old="$comma" new="&#44;"}%"}%
+
+%TMPL:END%
