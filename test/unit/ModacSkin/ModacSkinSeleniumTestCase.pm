@@ -206,26 +206,6 @@ sub verify_attachItemAttachFunction {
 }
 
 # Test if...
-# ...StrikeOne is beeing loaded when not present
-sub verify_strikeOne {
-    my ( $this ) = @_;
-
-    my $translations = $this->getTranslations( Helper::WEB, Helper::NOFAV );
-
-    # check if there is no StrikeOne
-    my $strikeone = $this->{selenium}->execute_script('return typeof StrikeOne');
-    $this->assert_equals( 'undefined', $strikeone, 'Test impossible, StrikeOne already loaded' );
-
-    # now open any menue item and see if this enables StrikeOne
-    $this->openTopicMenue();
-    $this->{selenium}->find_element($translations->{attachLink}, 'link')->click();
-    $this->waitForPopup();
-    # check StrikeOne
-    $strikeone = $this->{selenium}->execute_script('return typeof StrikeOne');
-    $this->assert_equals( 'object', $strikeone, 'StrikeOne did not load' );
-}
-
-# Test if...
 # ...login box works with MoreTopicAction items (Rename / Move topic)
 sub verify_loginBoxRenameMove {
     my ( $this ) = @_;
