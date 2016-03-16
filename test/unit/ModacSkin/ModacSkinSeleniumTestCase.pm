@@ -424,7 +424,7 @@ jQuery(function($) {
         $.ajax({
             url: $this.attr('href'),
             context: $this
-        }).done(function() {
+        }).always(function() {
             $(this).addClass('ajaxFinished');
         });
         return false;
