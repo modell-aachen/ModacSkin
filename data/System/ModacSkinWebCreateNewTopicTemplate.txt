@@ -242,7 +242,7 @@ var URL_TEMPLATE = '$percntURLPARAM{template}$percnt';
 %TMPL:DEF{"topictemplate"}%<!-- -->
 <select name="templatetopic" class="foswikiSelect">
 %IF{"'%URLPARAM{"templatetopic"}%'" 
-  then='<option selected="selected">%URLPARAM{"templatetopic"}%</option>'
+  then='<option selected="selected" value="%URLPARAM{"templatetopic"}%">%TOPICTITLE{%URLPARAM{"templatetopic"}%}%</option>'
 }%%{
 }%%TMPL:P{context="SolrPluginEnabled" then="templatesearch::solr" else="templatesearch::default"}%
 </select>
