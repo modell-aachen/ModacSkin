@@ -70,7 +70,7 @@ Please keep the comments near START-/ENDSECTION to avoid insertion of additional
 %STARTSECTION{"select2::user"}%{"results":[%QUERYUSERS{
   urlparam="q"
   fields="loginName,wikiName,displayName"
-  type="users"
+  type="user"
   format="$pref(USERAUTOCOMPLETEFORMAT,{\"id\":\"$json:cUID\",\"text\":\"$json:displayName\"})"
 }%]}%ENDSECTION{"select2::user"}%
 %STARTSECTION{"select2::user::display"}%%RENDERUSER{
@@ -84,6 +84,6 @@ Please keep the comments near START-/ENDSECTION to avoid insertion of additional
 %STARTSECTION{"user"}%[%QUERYUSERS{
   urlparam="term"
   fields="loginName,wikiName,displayName"
-  type="users"
+  type="user"
   format="{\"label\":\"$json:displayName\",\"value\":\"$json:cUID\"}"
 }%]%ENDSECTION{"user"}%
