@@ -131,7 +131,7 @@ msgid "<em>in all public webs</em>"
 msgstr "<em> dans tous les webs publics</em>"
 
 #: data/System/WebBottomBarDefault.txt
-msgid "About Q.Wiki"
+msgid "About Q.wiki"
 msgstr "à propos de Q.wiki"
 
 #: templates/edit.modac.tmpl
