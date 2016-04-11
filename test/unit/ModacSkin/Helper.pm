@@ -64,6 +64,13 @@ sub set_up_webs {
 
     my $webs = {};
 
+    # get wikiname of selenium user
+    # unfortunately when I am admin
+    # Foswiki::Func::getWikiName( $Foswiki::cfg{...}{UserName} )
+    # might return nonsense
+    $other->createNewFoswikiSession( $Foswiki::cfg{UnitTestContrib}{SeleniumRc}{Username} );
+    my $wikiName = Foswiki::Func::getWikiName();
+
     # Set up test-webs and workflows
     $Foswiki::cfg{TrashWebName} = TRASH;
     my $query = Unit::Request->new('');
@@ -84,14 +91,14 @@ sub set_up_webs {
             $wtext = "   * Set WORKFLOW =\n$wtext";
         }
         # allow testuser to view/write
-        unless ( $wtext =~ s#(\s{3,}\* Set ALLOWWEBCHANGE\s*=\s*).*#$1$Foswiki::cfg{UnitTestContrib}{SeleniumRc}{Username}#g ) {
-            $wtext = "   * Set ALLOWWEBCHANGE =$Foswiki::cfg{UnitTestContrib}{SeleniumRc}{Username}\n$wtext";
+        unless ( $wtext =~ s#(\s{3,}\* Set ALLOWWEBCHANGE\s*=\s*).*#$1$wikiName#g ) {
+            $wtext = "   * Set ALLOWWEBCHANGE = $wikiName\n$wtext";
         }
-        unless ( $wtext =~ s#(\s{3,}\* Set ALLOWWEBVIEW\s*=\s*).*#$1$Foswiki::cfg{UnitTestContrib}{SeleniumRc}{Username}#g ) {
-            $wtext = "   * Set ALLOWWEBVIEW =$Foswiki::cfg{UnitTestContrib}{SeleniumRc}{Username}\n$wtext";
+        unless ( $wtext =~ s#(\s{3,}\* Set ALLOWWEBVIEW\s*=\s*).*#$1$wikiName#g ) {
+            $wtext = "   * Set ALLOWWEBVIEW =$wikiName\n$wtext";
         }
-        unless ( $wtext =~ s#(\s{3,}\* Set ALLOWWEBRENAME\s*=\s*).*#$1$Foswiki::cfg{UnitTestContrib}{SeleniumRc}{Username}#g ) {
-            $wtext = "   * Set ALLOWWEBRENAME =$Foswiki::cfg{UnitTestContrib}{SeleniumRc}{Username}\n$wtext";
+        unless ( $wtext =~ s#(\s{3,}\* Set ALLOWWEBRENAME\s*=\s*).*#$1$wikiName#g ) {
+            $wtext = "   * Set ALLOWWEBRENAME =$wikiName\n$wtext";
         }
         Foswiki::Func::saveTopic( $ps, $Foswiki::cfg{WebPrefsTopicName}, $wmeta, $wtext );
         # Make a topic without favourites-star

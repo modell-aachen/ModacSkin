@@ -2,8 +2,8 @@
 
 package ModacSkinSeleniumTestCase;
 
-use FoswikiSeleniumWdTestCase();
-our @ISA = qw( FoswikiSeleniumWdTestCase );
+use ModacSeleniumTestCase();
+our @ISA = qw( ModacSeleniumTestCase );
 
 use strict;
 use warnings;
