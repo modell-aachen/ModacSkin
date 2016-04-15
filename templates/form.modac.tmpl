@@ -3,6 +3,15 @@
 
 %TMPL:DEF{"changeform"}%<input type="submit" name="action_replaceform" value='%MAKETEXT{"Replace form..."}%' class="foswikiChangeFormButton foswikiButton" />%TMPL:END%
 
+%TMPL:DEF{"formdefinitionrow"}%
+  %IF{"$USERNAME ingroup 'KeyUserGroup' OR $USERNAME ingroup 'AdminGroup' OR $USERNAME = 'admin'" then="
+    <tr>
+      <td>$percntMAKETEXT{\"Form definition\"}$percnt</td>
+      <td>$percntFORMTITLE$percnt <div class=\"$percntIF{\"not $USERNAME ingroup 'AdminGroup'\" then=\"modacHide\"}$percnt\">$percntTMPL:P{\"changeform\"}$percnt</div></td>
+    </tr>
+  "}%
+%TMPL:END%
+
 %TMPL:DEF{"mandatory"}%<span class="foswikiAlert">*</span> %MAKETEXT{"indicates mandatory fields"}% %TMPL:END%
 
 %{ omitting the REPEATs will cause lots of 'uninitialized values' }%
@@ -13,5 +22,6 @@
 <h2>%MAKETEXT{"Document Control"}%</h2>
 <table class="foswikiFormTable" summary="%MAKETEXT{"Document Control"}%">
 %TMPL:P{"modacformtable"}%
-<tr><td>%MAKETEXT{"Form definition"}%</td><td>%FORMTITLE% <div class="%IF{"not $USERNAME ingroup 'AdminGroup'" then="modacHide"}%">%TMPL:P{"changeform"}%</div></td></tr></table>%TMPL:P{"formtail"}%</div>
+%TMPL:P{"formdefinitionrow"}%
+</table>%TMPL:P{"formtail"}%</div>
 <!-- %TMPL:P{"repeatedformrows"}% -->
