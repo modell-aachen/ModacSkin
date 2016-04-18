@@ -13,12 +13,19 @@ sub maintenanceHandler {
         description => "ModacSkin's modaccompare should appear before contextmenue.",
         check => sub {
             my $skin = $Foswiki::cfg{Extensions}{CompareRevisionsAddOn}{skin} || '';
+            unless($skin =~ m#\bmodaccompare\b#) {
+                return {
+                    result => 1,
+                    priority => $Foswiki::Plugins::MaintenancePlugin::ERROR,
+                    solution => "Please put modaccompare in compare skin, eg: {Extensions}{CompareRevisionsAddOn}{skin} = custom,modaccompare,contextmenu,kvp,modac"
+                };
+            }
             if($skin =~ m#\bcontextmenu\b.*,\s*modaccompare\b#) {
                 $skin =~ s#,\s*modaccompare\b##;
                 $skin =~ s#,\s*contextmenu\b#,modaccompare,contextmenu#;
                 return {
                     result => 1,
-                    priority => $Foswiki::Plugins::MaintenancePlugin::WARN,
+                    priority => $Foswiki::Plugins::MaintenancePlugin::ERROR,
                     solution => "Please put modaccompare before contextmenue, ie: {Extensions}{CompareRevisionsAddOn}{skin} = $skin"
                 };
             } else {
