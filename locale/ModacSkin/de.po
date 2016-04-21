@@ -1810,3 +1810,21 @@ msgstr "Web-Einstellungen"
 
 msgid "Wiki settings"
 msgstr "Wiki-Einstellungen"
+
+msgid "Direct children:"
+msgstr "Direkte Kinder:"
+
+msgid "Links to this topic:"
+msgstr "Verweise auf diese Seite:"
+
+msgid "Links to attachments on this topic:"
+msgstr "Verweise auf Anhänge von dieser Seite:"
+
+msgid "Linked attachments on this topic:"
+msgstr "Verlinkte Anhänge von dieser Seite:"
+
+msgid "Combined references to this topic:"
+msgstr "Alle Referenzen auf diese Seite:"
+
+msgid "Find references"
+msgstr "Referenzen finden"

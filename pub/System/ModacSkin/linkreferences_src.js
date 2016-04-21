@@ -21,7 +21,7 @@ jQuery(function($){
     }
 
     var entry = {
-        name: 'Search for references',
+        name: foswiki.jsi18n.get('ModacSkin', 'Search for references'),
         icon: 'link',
         lockable: false,
         honorsKVP: false,
@@ -40,12 +40,12 @@ jQuery(function($){
                     var list = data.split('\n');
                     var dialog;
                     if(data.length && list.length) {
-                        dialog = '<p>Found references in these topics:</p><p>' + list.join('<br/>') + '</p>';
+                        dialog = '<p>' + foswiki.jsi18n.get('ModacSkin', 'Found references in these topics:') + '</p><p>' + list.join('<br/>') + '</p>';
                     } else {
-                        dialog = 'No references found';
+                        dialog = foswiki.jsi18n.get('ModacSkin', 'No references found');
                     }
                     $.unblockUI && $.unblockUI();
-                    showDialog(dialog, 'References for ' + filename);
+                    showDialog(dialog, foswiki.jsi18n.get('ModacSkin', 'References for [_1]', filename));
                 }
             });
         }

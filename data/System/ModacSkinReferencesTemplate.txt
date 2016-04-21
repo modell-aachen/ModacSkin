@@ -1,19 +1,19 @@
 %TMPL:INCLUDE{"view"}%
 
 %TMPL:DEF{"content"}%
----++ Direct children:
+---++ %MAKETEXT{"Direct children:"}%
 %SOLRSEARCH{"type:topic parent: %SUBST{text="%WEB%" pattern="/" format="."}%.%TOPIC%" format="   * [[$webtopic]]$n" rows="999"}%
 
----++ Links to this topic:
+---++ %MAKETEXT{"Links to this topic:"}%
 %SOLRSEARCH{"type:topic outgoingWiki_lst: %SUBST{text="%WEB%" pattern="/" format="."}%.%TOPIC%" format="   * [[$webtopic]]$n" rows="999"}%
 
----++ Links to attachments on this topic:
+---++ %MAKETEXT{"Links to attachments on this topic:"}%
 %SOLRSEARCH{"type:topic outgoingAttachmentTopic_lst: %SUBST{text="%WEB%" pattern="/" format="."}%.%TOPIC%" id="outgoingAttachments" format="   * [[$webtopic]]$n" rows="999" facets="outgoingAttachment_lst" facetlimit="999"}%
 
----++ Linked attachments on this topic:
+---++ %MAKETEXT{"Linked attachments on this topic:"}%
 %SOLRFORMAT{"outgoingAttachments" format_outgoingAttachment_lst="   * $key$n" format="<nop>$n" rows="0"}%
 
----++ Combined references to this topic:
+---++ %MAKETEXT{"Combined references to this topic:"}%
 %SOLRSEARCH{"type:topic (outgoingAttachmentTopic_lst: %SUBST{text="%WEB%" pattern="/" format="."}%.%TOPIC% OR outgoingWiki_lst: %SUBST{text="%WEB%" pattern="/" format="."}%.%TOPIC% OR parent: %SUBST{text="%WEB%" pattern="/" format="."}%.%TOPIC%)" format="   * [[$webtopic]]$n" rows="999"}%
 %TMPL:END%
 
