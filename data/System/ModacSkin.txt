@@ -96,6 +96,9 @@ By default _ModacSkin_ uses pop-up window for _More topic actions_, history and 
    &#42 Set MODAC_NO_TOPMENU = 1
 </pre>
 
+---+++ References to pages/attachments
+To add a menu to the references of the current topic or it's attachments, set =DISPLAY_INCOMING_LINKS= to =1=.
+
 ---+++ Content Templates
 When you create a new topic using [[WebCreateNewTopic]] you can select a template.%BR%
 You can customize some parameters on a web-level using =WebPreferences=, or for the whole wiki using =SitePreferences=.%BR%
