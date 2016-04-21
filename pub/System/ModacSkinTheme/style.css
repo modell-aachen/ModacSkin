@@ -1626,6 +1626,9 @@ div.ajaxspinner {
 .modacMoreMenu li ul li span.moremenue-wikitext a {
 	background-image: url(../FamFamFamSilkIcons/page_white_code.png);
 }
+.modacMoreMenu li ul li span.moremenue-references a {
+	background-image: url(../FamFamFamSilkIcons/link.png);
+}
 .modacMoreMenu li ul li span.moremenue-managepage a {
 	background-image: url(../FamFamFamSilkIcons/page_white_gear.png);
 }

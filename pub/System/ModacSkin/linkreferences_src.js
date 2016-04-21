@@ -22,7 +22,7 @@ jQuery(function($){
 
     var entry = {
         name: 'Search for references',
-        icon: 'zoom',
+        icon: 'link',
         lockable: false,
         honorsKVP: false,
         disabled: false,
