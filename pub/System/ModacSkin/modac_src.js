@@ -1125,5 +1125,114 @@ jQuery(function($){
             $this.removeClass('loading').addClass('loaded');
         });
     });
+
+    // gets the start/end of the selection, even in IE8
+    // taken from here: http://stackoverflow.com/questions/235411/is-there-an-internet-explorer-approved-substitute-for-selectionstart-and-selecti
+    var getStartEnd = function (el) {
+        var start = 0, end = 0, normalizedValue, range,
+            textInputRange, len, endRange;
+
+        if (typeof el.selectionStart == "number" && typeof el.selectionEnd == "number") {
+            start = el.selectionStart;
+            end = el.selectionEnd;
+        } else {
+            range = document.selection.createRange();
+
+            if (range && range.parentElement() == el) {
+                len = el.value.length;
+                normalizedValue = el.value.replace(/\r\n/g, "\n");
+
+                // Create a working TextRange that lives only in the input
+                textInputRange = el.createTextRange();
+                textInputRange.moveToBookmark(range.getBookmark());
+
+                // Check if the start and end of the selection are at the very end
+                // of the input, since moveStart/moveEnd doesn't return what we want
+                // in those cases
+                endRange = el.createTextRange();
+                endRange.collapse(false);
+
+                if (textInputRange.compareEndPoints("StartToEnd", endRange) > -1) {
+                    start = end = len;
+                } else {
+                    start = -textInputRange.moveStart("character", -len);
+                    start += normalizedValue.slice(0, start).split("\n").length - 1;
+
+                    if (textInputRange.compareEndPoints("EndToEnd", endRange) > -1) {
+                        end = len;
+                    } else {
+                        end = -textInputRange.moveEnd("character", -len);
+                        end += normalizedValue.slice(0, end).split("\n").length - 1;
+                    }
+                }
+            }
+        }
+
+        return {
+            start: start,
+            end: end
+        };
+    };
+    // sets the start/end of the selection,
+    setStartEnd = function (el, start, end) {
+        var range;
+
+        if (typeof el.selectionStart == "number" && typeof el.selectionEnd == "number") {
+            el.selectionStart = start;
+            el.selectionEnd = end;
+        } else {
+            // Most likely IE8 or older
+            var length = $(el).val().length;
+            range = document.selection.createRange();
+            range.collapse(true);
+            range.moveStart('character', -length);
+            range.moveEnd('character', -length);
+            range.moveEnd('character', end);
+            range.moveStart('character', start);
+            range.select();
+        }
+    };
+
+    $('.modacFilterInput').livequery(function() {
+        var $this = $(this);
+
+        var filter = $this.attr('data-filter');
+        if(filter === undefined) filter = '[\\\\*?~^$@%`"\'&|<>/\\[\\]()#\\x00-\\x1f]'; // attachment filter
+        filter = new RegExp(filter, 'g');
+
+        // filter invalid characters
+        $this.keypress(function(ev) {
+            return !filter.test(ev.key);
+        });
+
+        // filter value of $this
+        var filterVal = function(ev) {
+            var text = $this.val();
+            if(!filter.test(text)) return;
+            var startend;
+            try {
+                startend = getStartEnd(this);
+            } catch(e) {
+                // we have to do a try-catch, because accessing selectionStart on an
+                // input of type hidden will throw an exception (on firefox at least)
+                startend = {start: 0, end: 0};
+            }
+            var head = text.substr(0, startend.start).replace(filter, '');
+            var selection = text.substr(startend.start, startend.end - startend.start).replace(filter, '');
+            var tail = text.substr(startend.end).replace(filter, '');
+            $this.val(head + selection + tail);
+            try {
+                setStartEnd(this, head.length, head.length + selection.length);
+            } catch(e) {
+            }
+        };
+
+        // everything that is being overlooked by keypress (eg. paste)
+        $this.on('input', filterVal);
+
+        // filter initial val
+        filterVal();
+
+    });
 });
 

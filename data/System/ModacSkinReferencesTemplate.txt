@@ -1,0 +1,18 @@
+%TMPL:INCLUDE{"view"}%
+
+%TMPL:DEF{"content"}%
+---++ %MAKETEXT{"Direct children:"}%
+%SOLRSEARCH{"type:topic parent: %SUBST{text="%WEB%" pattern="/" format="."}%.%TOPIC%" format="   * [[$webtopic]]$n" rows="999"}%
+
+---++ %MAKETEXT{"Links to this topic:"}%
+%SOLRSEARCH{"type:topic outgoingWiki_lst: %SUBST{text="%WEB%" pattern="/" format="."}%.%TOPIC%" format="   * [[$webtopic]]$n" rows="999"}%
+
+---++ %MAKETEXT{"Links to attachments on this topic:"}%
+%SOLRSEARCH{"type:topic outgoingAttachmentTopic_lst: %SUBST{text="%WEB%" pattern="/" format="."}%.%TOPIC%" id="outgoingAttachments" format="   * [[$webtopic]]$n" rows="999" facets="outgoingAttachment_lst" facetlimit="999"}%
+
+---++ %MAKETEXT{"Combined references to this topic:"}%
+%SOLRSEARCH{"type:topic (outgoingAttachmentTopic_lst: %SUBST{text="%WEB%" pattern="/" format="."}%.%TOPIC% OR outgoingWiki_lst: %SUBST{text="%WEB%" pattern="/" format="."}%.%TOPIC% OR parent: %SUBST{text="%WEB%" pattern="/" format="."}%.%TOPIC%)" format="   * [[$webtopic]]$n" rows="999"}%
+%TMPL:END%
+
+%TMPL:DEF{"attachments"}%%TMPL:END%
+%TMPL:DEF{"risks::content::box"}%%TMPL:END%

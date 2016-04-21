@@ -14,6 +14,7 @@ data/System/ModacSkinFlexWebList.txt 0664
 data/System/ModacSkinLanguageSelector.txt 0664
 data/System/ModacSkinLegacyTranslations.txt 0644
 data/System/ModacSkinPrintOnlyViewTemplate.txt 0664
+data/System/ModacSkinReferencesTemplate.txt 0644
 data/System/ModacSkinSolrSearchViewTemplate.txt 0664
 data/System/ModacSkinSolrSearchBaseTemplate.txt 0664
 data/System/ModacSkinSystemViewTemplate.txt 0664
@@ -62,12 +63,18 @@ pub/System/ModacSkin/jsi18n.solr.fr.js 0664
 pub/System/ModacSkin/jsi18n.solr.fr.js.gz 0664
 pub/System/ModacSkin/jsi18n.solr.en.js 0664
 pub/System/ModacSkin/jsi18n.solr.en.js.gz 0664
+pub/System/ModacSkin/jsi18n.view.de.js 0664
+pub/System/ModacSkin/jsi18n.view.de.js.gz 0664
+pub/System/ModacSkin/jsi18n.view.en.js 0664
+pub/System/ModacSkin/jsi18n.view.en.js.gz 0664
 pub/System/ModacSkin/modac.js 0664
 pub/System/ModacSkin/modac.js.gz 0664
 pub/System/ModacSkin/pattern.js 0664
 pub/System/ModacSkin/pattern.js.gz 0664
 pub/System/ModacSkin/pattern_edit.js 0664
 pub/System/ModacSkin/pattern_edit.js.gz 0664
+pub/System/ModacSkin/linkreferences.js 0664
+pub/System/ModacSkin/linkreferences.js.gz 0664
 pub/System/ModacSkin/superfish.css 0664
 pub/System/ModacSkin/superfish.css.gz 0664
 pub/System/ModacSkin/solrsearch.js 0664

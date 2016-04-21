@@ -132,8 +132,8 @@ msgid "<em>in all public webs</em>"
 msgstr "<em>in allen öffentlichen Bereichen</em>"
 
 #: data/System/WebBottomBarDefault.txt
-msgid "About Q.Wiki"
-msgstr "Über Q.Wiki"
+msgid "About Q.wiki"
+msgstr "Über Q.wiki"
 
 #: templates/edit.modac.tmpl
 msgid "Access keys"
@@ -1810,3 +1810,21 @@ msgstr "Web-Einstellungen"
 
 msgid "Wiki settings"
 msgstr "Wiki-Einstellungen"
+
+msgid "Direct children:"
+msgstr "Direkte Kinder:"
+
+msgid "Links to this topic:"
+msgstr "Verweise auf diese Seite:"
+
+msgid "Links to attachments on this topic:"
+msgstr "Verweise auf Anhänge von dieser Seite:"
+
+msgid "Linked attachments on this topic:"
+msgstr "Verlinkte Anhänge von dieser Seite:"
+
+msgid "Combined references to this topic:"
+msgstr "Alle Referenzen auf diese Seite:"
+
+msgid "Find references"
+msgstr "Referenzen finden"
