@@ -1,0 +1,234 @@
+%TMPL:INCLUDE{"registermessages"}%
+
+%TMPL:DEF{"return_button" topic="%MAINWEB%.WikiGroups"}%
+<form action="%SCRIPTURL{"view" topic="%topic%"}%">
+    <input type="submit" class="foswikiSubmit" value="%MAKETEXT{"OK"}%">
+ </form>
+%TMPL:END%
+%{==============================================================================}%
+%TMPL:DEF{"registration_not_supported"}%
+%TMPL:PREV%
+%TMPL:P{"return_button" topic="%SYSTEMWEB%.DefaultUserRegistration"}%
+%TMPL:END%
+%{==============================================================================}%
+%TMPL:DEF{"registration_disabled"}%
+---+++ %MAKETEXT{"New User Registration disabled"}%
+%TMPL:PREV%
+%TMPL:P{"return_button" topic="%SYSTEMWEB%.DefaultUserRegistration"}%
+%TMPL:END%
+%{==============================================================================}%
+%TMPL:DEF{"registration_invalid"}%
+%TMPL:PREV%
+%TMPL:P{"return_button" topic="%SYSTEMWEB%.DefaultUserRegistration"}%
+%TMPL:END%
+%{==============================================================================}%
+%TMPL:DEF{"rego_not_found"}%
+%TMPL:PREV%
+%TMPL:P{"return_button" topic="%SYSTEMWEB%.DefaultUserRegistration"}%
+%TMPL:END%
+%{==============================================================================}%
+%TMPL:DEF{"rego_approved"}%
+%TMPL:PREV%
+%TMPL:P{"return_button" topic="%SYSTEMWEB%.DefaultUserRegistration"}%
+%TMPL:END%
+%{==============================================================================}%
+%TMPL:DEF{"rego_denial"}%
+%TMPL:P{"return_button" topic="%SYSTEMWEB%.DefaultUserRegistration"}%
+%TMPL:END%
+%{==============================================================================}%
+%TMPL:DEF{"bad_ver_code"}%
+%TMPL:PREV%
+%TMPL:P{"return_button" topic="%SYSTEMWEB%.DefaultUserRegistration"}%
+%TMPL:END%
+%{==============================================================================}%
+%TMPL:DEF{"registration_mail_failed"}%
+%TMPL:PREV%
+%TMPL:P{"return_button" topic="%SYSTEMWEB%.DefaultUserRegistration"}%
+%TMPL:END%
+%{==============================================================================}%
+%TMPL:DEF{"duplicate_activation"}%
+%TMPL:PREV%
+%TMPL:P{"return_button" topic="%SYSTEMWEB%.DefaultUserRegistration"}%
+%TMPL:END%
+%{==============================================================================}%
+%TMPL:DEF{"bad_wikiname"}%
+%TMPL:PREV%
+%TMPL:P{"return_button" topic="%SYSTEMWEB%.DefaultUserRegistration"}%
+%TMPL:END%
+%{==============================================================================}%
+%TMPL:DEF{"passwords_disabled"}%
+%TMPL:PREV%
+%TMPL:P{"return_button" topic="%SYSTEMWEB%.ChangePassword"}%
+%TMPL:END%
+%{==============================================================================}%
+%TMPL:DEF{"thanks"}%
+%TMPL:PREV%
+%TMPL:P{"return_button" topic="%MAINWEB%.DefaultUserRegistration"}%
+%TMPL:END%
+%{==============================================================================}%
+%TMPL:DEF{"no_users_to_reset"}%
+%TMPL:PREV%
+%TMPL:P{"return_button" topic="%SYSTEMWEB%.ChangePassword"}%
+%TMPL:END%
+%{==============================================================================}%
+%TMPL:DEF{"reset_bad"}%
+%TMPL:PREV%
+%TMPL:P{"return_button" topic="%SYSTEMWEB%.ChangePassword"}%
+%TMPL:END%
+%{==============================================================================}%
+%TMPL:DEF{"password_mismatch"}%
+%TMPL:PREV%
+%TMPL:P{"return_button" topic="%SYSTEMWEB%.ChangePassword"}%
+%TMPL:END%
+%{==============================================================================}%
+%TMPL:DEF{"problem_adding"}%
+%TMPL:PREV%
+%TMPL:P{"return_button" topic="%SYSTEMWEB%.DefaultUserRegistration"}%
+%TMPL:END%
+%{==============================================================================}%
+%TMPL:DEF{"already_exists"}%
+%TMPL:PREV%
+%TMPL:P{"return_button" topic="%SYSTEMWEB%.DefaultUserRegistration"}%
+%TMPL:END%
+%{==============================================================================}%
+%TMPL:DEF{"unsupport_loginname"}%
+%TMPL:PREV%
+%TMPL:P{"return_button" topic="%SYSTEMWEB%.DefaultUserRegistration"}%
+%TMPL:END%
+%{==============================================================================}%
+%TMPL:DEF{"miss_loginname"}%
+%TMPL:PREV%
+%TMPL:P{"return_button" topic="%SYSTEMWEB%.DefaultUserRegistration"}%
+%TMPL:END%
+%{==============================================================================}%
+%TMPL:DEF{"bad_loginname"}%
+%TMPL:PREV%
+%TMPL:P{"return_button" topic="%SYSTEMWEB%.DefaultUserRegistration"}%
+%TMPL:END%
+%{==============================================================================}%
+%TMPL:DEF{"bad_password"}%
+%TMPL:PREV%
+%TMPL:P{"return_button" topic="%SYSTEMWEB%.DefaultUserRegistration"}%
+%TMPL:END%
+%{==============================================================================}%
+%TMPL:DEF{"bad_email"}%
+%TMPL:PREV%
+%TMPL:P{"return_button" topic="%SYSTEMWEB%.DefaultUserRegistration"}%
+%TMPL:END%
+%{==============================================================================}%
+%TMPL:DEF{"rej_email"}%
+%TMPL:PREV%
+%TMPL:P{"return_button" topic="%SYSTEMWEB%.DefaultUserRegistration"}%
+%TMPL:END%
+%{==============================================================================}%
+%TMPL:DEF{"dup_email"}%
+%TMPL:PREV%
+%TMPL:P{"return_button" topic="%SYSTEMWEB%.DefaultUserRegistration"}%
+%TMPL:END%
+%{==============================================================================}%
+%TMPL:DEF{"not_a_user"}%
+%TMPL:PREV%
+%TMPL:P{"return_button" topic="%SYSTEMWEB%.DefaultUserRegistration"}%
+%MAKETEXT{"See [_1] for a list of existing users or register as new user in [_2]." args="%USERSWEB%.%WIKIUSERSTOPIC%, %SYSTEMWEB%.UserRegistration"}% %TMPL:END%
+%{==============================================================================}%
+%TMPL:DEF{"in_a_group"}%
+%TMPL:PREV%
+%TMPL:P{"return_button" topic="%SYSTEMWEB%.DefaultUserRegistration"}%
+%TMPL:END%
+%{==============================================================================}%
+%TMPL:DEF{"email_changed"}%
+%TMPL:PREV%
+%TMPL:P{"return_button" topic="%SYSTEMWEB%.ChangeEmailAddress"}%
+%TMPL:END%
+%{==============================================================================}%
+%TMPL:DEF{"wrong_password"}%
+%TMPL:PREV%
+%TMPL:P{"return_button" topic="%SYSTEMWEB%.ChangePassword"}%
+%TMPL:END%
+%{==============================================================================}%
+%TMPL:DEF{"bad_prefix"}%
+%TMPL:PREV%
+%TMPL:P{"return_button" topic="%SYSTEMWEB%.ManagingUsers"}%
+%TMPL:END%
+%{==============================================================================}%
+%TMPL:DEF{"reset_ok"}%
+%TMPL:PREV%
+%TMPL:P{"return_button" topic="%SYSTEMWEB%.ChangePassword"}%
+%TMPL:END%
+%{==============================================================================}%
+%TMPL:DEF{"password_not_changed"}%
+%TMPL:PREV%
+%TMPL:P{"return_button" topic="%SYSTEMWEB%.ChangePassword"}%
+%TMPL:END%
+%{==============================================================================}%
+%TMPL:DEF{"password_changed"}%
+%TMPL:PREV%
+%TMPL:P{"return_button" topic="%SYSTEMWEB%.ChangePassword"}%
+%TMPL:END%
+%{==============================================================================}%
+%TMPL:DEF{"user_param_required"}%
+%TMPL:PREV%
+%TMPL:P{"return_button" topic="%WEB%.%TOPIC%"}%
+%TMPL:END%
+%{==============================================================================}%
+%TMPL:DEF{"not_self"}%
+%TMPL:PREV%
+%TMPL:P{"return_button" topic="%SYSTEMWEB%.%TOPIC%"}%
+%TMPL:END%
+%{==============================================================================}%
+%TMPL:DEF{"remove_user_done"}%
+%TMPL:PREV%
+%TMPL:P{"return_button" topic="%SYSTEMWEB%.ManagingUsers"}%
+%TMPL:END%
+%{==============================================================================}%
+%TMPL:DEF{"no_group_specified_for_add_to_group"}%
+%TMPL:PREV%
+%TMPL:P{"return_button"}%
+%TMPL:END%
+%{==============================================================================}%
+
+%TMPL:DEF{"problem_adding_to_group"}%
+%TMPL:PREV%
+%TMPL:P{"return_button"}%
+%TMPL:END%
+%{==============================================================================}%
+%TMPL:DEF{"added_users_to_group"}%
+%TMPL:PREV%
+%TMPL:P{"return_button"}%
+%TMPL:END%
+
+%{==============================================================================}%
+%TMPL:DEF{"group_upgraded"}%
+%TMPL:PREV%
+%TMPL:P{"return_button"}%
+%TMPL:END%
+%{==============================================================================}%
+%TMPL:DEF{"no_users_to_remove_from_group"}%
+%TMPL:PREV%
+%TMPL:P{"return_button"}%
+%TMPL:END%
+%{==============================================================================}%
+%TMPL:DEF{"no_group_and_no_create"}%
+%TMPL:PREV%
+%TMPL:P{"return_button"}%
+%TMPL:END%
+%{==============================================================================}%
+%TMPL:DEF{"no_group_and_no_create"}%
+%TMPL:PREV%
+%TMPL:P{"return_button"}%
+%TMPL:END%
+%{==============================================================================}%
+%TMPL:DEF{"no_group_specified_for_remove_from_group"}%
+%TMPL:PREV%
+%TMPL:P{"return_button"}%
+%TMPL:END%
+%{==============================================================================}%
+%TMPL:DEF{"problem_removing_from_group"}%
+%TMPL:PREV%
+%TMPL:P{"return_button"}%
+%TMPL:END%
+%{==============================================================================}%
+%TMPL:DEF{"removed_users_from_group"}%
+%TMPL:PREV%
+%TMPL:P{"return_button"}%
+%TMPL:END%
