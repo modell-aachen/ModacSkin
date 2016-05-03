@@ -45,7 +45,7 @@ sub maintenanceHandler {
                 return {
                     result => 1,
                     priority => $Foswiki::Plugins::MaintenancePlugin::ERROR,
-                    solution => "Could not parse your SolrPlugin version (ticket branch?), please check manually."
+                    solution => "Could not parse your SolrPlugin version. Probable cause: non-release branch. Please review version. Version: '$solrRelease'."
                 };
             }
             my ($major, $minor, $build) = ($1, $2, $3);
