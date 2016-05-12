@@ -93,31 +93,31 @@ msgstr "(设定属性)"
 
 #: data/System/ModacSkinSolrSearchViewTemplate.txt
 msgid "1 hour"
-msgstr ""
+msgstr "1小时"
 
 #: data/System/ModacSkinSolrSearchViewTemplate.txt
 msgid "1 month"
-msgstr ""
+msgstr "1个月"
 
 #: data/System/ModacSkinSolrSearchViewTemplate.txt
 msgid "1 year"
-msgstr ""
+msgstr "1年"
 
 #: data/System/ModacSkinSolrSearchViewTemplate.txt
 msgid "2 days"
-msgstr ""
+msgstr "2天"
 
 #: data/System/ModacSkinSolrSearchViewTemplate.txt
 msgid "2 months"
-msgstr ""
+msgstr "2个月"
 
 #: data/System/ModacSkinSolrSearchViewTemplate.txt
 msgid "4 hours"
-msgstr ""
+msgstr "4小时"
 
 #: data/System/ModacSkinSolrSearchViewTemplate.txt
 msgid "7 days"
-msgstr ""
+msgstr "7天"
 
 #: templates/more.modac.tmpl
 msgid "<em>in %1 web</em> only"
@@ -166,7 +166,7 @@ msgstr "管理"
 #: data/System/ModacSkinWebCreateNewTopicTemplate.txt
 #: templates/more.modac.tmpl
 msgid "Advanced options..."
-msgstr ""
+msgstr "高级选项..."
 
 #: data/System/ModacSkinSolrSearchViewTemplate.txt
 msgid "Application"
@@ -294,7 +294,7 @@ msgstr "仅更改评论"
 
 #: templates/renamewebbase.modac.tmpl
 msgid "Change links in topics that refer to %1 in any Web:"
-msgstr ""
+msgstr "改变主题内的连接，"
 
 #: templates/renamewebbase.modac.tmpl
 msgid "Change links in topics that refer to %1 in the %2 Web:"
@@ -331,7 +331,7 @@ msgstr "评论"
 
 #: data/System/ModacSkinUserViewTemplate.txt
 msgid "Comments for me"
-msgstr ""
+msgstr "对我的评论"
 
 #: templates/more.modac.tmpl templates/oopshistory.modac.tmpl
 msgid "Compare revisions"
@@ -351,7 +351,7 @@ msgstr "评论模板"
 
 #: data/System/ModacSkinUserViewTemplate.txt
 msgid "Context"
-msgstr ""
+msgstr "背景环境"
 
 #: templates/oopshistory.modac.tmpl
 msgid "Context:"
@@ -392,11 +392,11 @@ msgstr "创建新主题模板……"
 #: data/System/ModacSkinWebCreateNewTopicDialogTemplate.txt
 #: data/System/WebActionsDefault.txt
 msgid "Create new topic"
-msgstr ""
+msgstr "创建新的主题"
 
 #: data/System/ModacSkinWebCreateNewTopicTemplate.txt
 msgid "Create new topic in %1 Web"
-msgstr ""
+msgstr "在%1网站创建新的主题 "
 
 #: data/System/ModacSkinCommonWords.txt
 msgid "Create this topic"
@@ -412,11 +412,11 @@ msgstr "目前位置:"
 
 #: templates/renamebase.modac.tmpl
 msgid "Current topic:"
-msgstr ""
+msgstr "当前主题:"
 
 #: templates/renamebase.modac.tmpl
 msgid "Current web:"
-msgstr ""
+msgstr "当前网站:"
 
 #: data/System/ModacSkinSolrSearchViewTemplate.txt
 msgid "Danish"
@@ -482,7 +482,7 @@ msgstr "表格内不显示附件"
 
 #: templates/renamedelete.modac.tmpl
 msgid "Do you really want to delete %1?"
-msgstr ""
+msgstr "您确定要删除 %1?"
 
 #: templates/form.modac.tmpl
 msgid "Document Control"
@@ -490,7 +490,7 @@ msgstr "文档控制"
 
 #: data/System/ModacSkinDocumentFormTableTemplate.txt
 msgid "Document type"
-msgstr ""
+msgstr "文件类型"
 
 #: data/System/ModacSkinCommonWords.txt
 msgid "Draft"
@@ -534,11 +534,11 @@ msgstr "编辑主题属性设定"
 
 #: data/System/ModacSkinUserFormEditTemplate.txt
 msgid "Edit users form"
-msgstr ""
+msgstr "编辑用户表格"
 
 #: data/System/ModacSkin.txt
 msgid "Energy (50001)"
-msgstr ""
+msgstr "能源 (50001)"
 
 #: data/System/ModacSkinSolrSearchBaseTemplate.txt
 #: data/System/ModacSkinSolrSearchViewTemplate.txt
@@ -551,11 +551,11 @@ msgstr "放大编辑框"
 
 #: data/System/ModacSkin.txt
 msgid "Environment (14000)"
-msgstr ""
+msgstr "环境 (14000)"
 
 #: data/System/ModacSkinSolrSearchBaseTemplate.txt
 msgid "Filed in %1"
-msgstr ""
+msgstr "文件在%1"
 
 #: templates/attachtables.modac.tmpl
 msgid "Filename"
@@ -605,7 +605,7 @@ msgstr "返回上层页面，并且再次访问前开启缓存及javascript"
 #: data/System/ModacSkinWebCreateNewTopicTemplate.txt
 #: templates/more.modac.tmpl
 msgid "Hide advanced options..."
-msgstr ""
+msgstr "隐藏高级选项"
 
 #: templates/renamebase.modac.tmpl
 msgid "Hide help"
@@ -613,7 +613,7 @@ msgstr "隐藏说明"
 
 #: data/System/WebLeftBarDefault.txt
 msgid "Hide menu"
-msgstr ""
+msgstr "隐藏菜单"
 
 #: templates/attachagain.modac.tmpl templates/oopshistory.modac.tmpl
 msgid "History"
@@ -621,19 +621,19 @@ msgstr "历史记录"
 
 #: templates/attachagain.modac.tmpl
 msgid "History of %1"
-msgstr ""
+msgstr "%1的历史"
 
 #: data/System/ModacSkinDocumentFormTableTemplate.txt
 msgid "ISO 14001"
-msgstr ""
+msgstr "ISO 14001"
 
 #: data/System/ModacSkinDocumentFormTableTemplate.txt
 msgid "ISO 9001"
-msgstr ""
+msgstr "ISO 9001"
 
 #: data/System/ModacSkin.txt
 msgid "ISO norm"
-msgstr ""
+msgstr "ISO标准"
 
 #: templates/validate.modac.tmpl
 msgid "If you are unsure what this means, read: %1"
@@ -689,11 +689,11 @@ msgstr "管理页面"
 
 #: data/System/WebLeftBarDefault.txt
 msgid "Manuals"
-msgstr ""
+msgstr "手册"
 
 #: data/System/ModacSkinUserViewTemplate.txt
 msgid "Mark read"
-msgstr ""
+msgstr "标注为已读"
 
 #: data/System/ModacSkinSolrSearchViewTemplate.txt
 msgid "Media"
@@ -721,7 +721,7 @@ msgstr "移动"
 
 #: templates/renamebase.modac.tmpl
 msgid "Move %1"
-msgstr ""
+msgstr "移动%1"
 
 #: templates/attachtables.modac.tmpl
 msgid "Move attachment"
@@ -733,11 +733,11 @@ msgstr "移动到子网:"
 
 #: data/System/ModacSkinTopicMenuTemplate.txt templates/more.modac.tmpl
 msgid "Move topic"
-msgstr ""
+msgstr "移动主题"
 
 #: templates/more.modac.tmpl
 msgid "Move topic..."
-msgstr ""
+msgstr "移动主题..."
 
 #: data/System/ModacSkinUserViewTemplate.txt
 msgid "My bookmarks"
@@ -773,7 +773,7 @@ msgstr "不匹配"
 
 #: data/Main/ModacSkinGroupViewTemplate.txt
 msgid "No members"
-msgstr ""
+msgstr "没有成员"
 
 #: templates/more.modac.tmpl
 msgid "No previous revision exists."
@@ -789,7 +789,7 @@ msgstr "规范章节"
 
 #: data/System/ModacSkinUserViewTemplate.txt
 msgid "Not your personal page"
-msgstr ""
+msgstr "不是您的个人页"
 
 #: templates/foswiki.modac.tmpl
 msgid "Number of topics:"
@@ -880,7 +880,7 @@ msgstr "放到CIP下"
 
 #: data/System/ModacSkin.txt
 msgid "Quality (9000)"
-msgstr ""
+msgstr "质量 (9000)"
 
 #: data/System/ModacSkinSolrSearchViewTemplate.txt
 msgid "Recent changes"
@@ -929,7 +929,7 @@ msgstr "取代表单..."
 
 #: templates/metacomments.modac.tmpl
 msgid "Reply to comment"
-msgstr ""
+msgstr "回复评论"
 
 #: templates/validate.modac.tmpl
 msgid "Request Validation"
@@ -945,7 +945,7 @@ msgstr "需进一步修改"
 
 #: data/System/ModacSkinDocumentFormTableTemplate.txt
 msgid "Responsible"
-msgstr ""
+msgstr "负责"
 
 #: templates/more.modac.tmpl
 msgid "Restore topic"
@@ -1032,7 +1032,7 @@ msgstr "全选"
 
 #: templates/more.modac.tmpl
 msgid "Select destination web"
-msgstr ""
+msgstr "选择目标网页"
 
 #: templates/more.modac.tmpl
 msgid "Select topic parent"
@@ -1108,7 +1108,7 @@ msgstr "标签"
 
 #: data/System/ModacSkinSolrSearchBaseTemplate.txt
 msgid "Tagged %1"
-msgstr ""
+msgstr "添加标签%1"
 
 #: data/System/ModacSkinUserViewTemplate.txt
 msgid "Task"
@@ -1124,7 +1124,7 @@ msgstr "在%1中新创建的主题中可使用以下内容模板。"
 
 #: data/System/ModacSkinWebCreateNewTopicTemplate.txt
 msgid "The name of the topic is preset and cannot be changed."
-msgstr ""
+msgstr "主题名称是预先设置的，并且不能更改。"
 
 #: templates/validate.modac.tmpl
 msgid "There is a risk that someone may be trying to use your identity to change content on %1 without your knowledge."
@@ -1132,7 +1132,7 @@ msgstr "有个风险，就是在您不知情的情况下，有人可能试着以
 
 #: data/System/ModacSkinTopicMenuTemplate.txt
 msgid "These actions are not available while editing."
-msgstr ""
+msgstr "在编辑的过程中，这些操作是不可用的"
 
 #: data/Main/ModacSkinGroupViewTemplate.txt
 msgid "This group should not have members."
@@ -1140,7 +1140,7 @@ msgstr "此组无组成员。"
 
 #: data/System/ModacSkinUserViewTemplate.txt
 msgid "This is not your personal page, so you can not see anything here."
-msgstr ""
+msgstr "这不是您的个人页，因此您不能浏览此页。"
 
 #: data/System/ModacSkinSolrSearchViewTemplate.txt
 msgid "Timespan"
@@ -1152,7 +1152,7 @@ msgstr "标题"
 
 #: templates/more.modac.tmpl
 msgid "Title of copy"
-msgstr ""
+msgstr "复件的题目"
 
 #: templates/metacomments.modac.tmpl
 msgid "Title: "
@@ -1168,15 +1168,15 @@ msgstr "检查 %1 是否已编辑完毕，请按"
 
 #: data/System/ModacSkinUserViewTemplate.txt
 msgid "To see your tasks, bookmarks and notes, please go to %1."
-msgstr ""
+msgstr "为查询您的任务，书签和便签，请去%1。"
 
 #: templates/renamebase.modac.tmpl
 msgid "To topic:"
-msgstr ""
+msgstr "到主题:"
 
 #: templates/renamebase.modac.tmpl
 msgid "To web:"
-msgstr ""
+msgstr "到网页:"
 
 #: data/System/WebLeftBarDefault.txt
 msgid "Tools"
@@ -1213,7 +1213,7 @@ msgstr "父主题:"
 
 #: data/System/ModacSkinTopicMenuTemplate.txt
 msgid "Topic preferences"
-msgstr ""
+msgstr "主题设置"
 
 #: templates/rdiff.modac.tmpl
 msgid "Topic revision:"
@@ -1221,7 +1221,7 @@ msgstr "主题版本:"
 
 #: data/System/ModacSkinDocumentFormTableTemplate.txt
 msgid "Topic title"
-msgstr ""
+msgstr "主题题目"
 
 #: templates/oopsleaseconflict.modac.tmpl
 msgid "Try Again"
@@ -1245,7 +1245,7 @@ msgstr "更新已存在的附件"
 
 #: templates/renamewebbase.modac.tmpl
 msgid "Update links"
-msgstr ""
+msgstr "刷新链接"
 
 #: data/Main/ModacSkinGroupViewTemplate.txt
 msgid "Upgrade"
@@ -1317,7 +1317,7 @@ msgstr "要求确认"
 
 #: data/System/ModacSkinSolrSearchViewTemplate.txt
 msgid "Web"
-msgstr ""
+msgstr "网页"
 
 #: data/System/WebLeftBarDefault.txt
 msgid "Webs"
@@ -1369,7 +1369,7 @@ msgstr "文档格式"
 
 #: data/System/ModacSkinSolrSearchBaseTemplate.txt
 msgid "each suggestions"
-msgstr ""
+msgstr "每一个建议"
 
 #: templates/oopshistory.modac.tmpl
 msgid "earlier"
@@ -1381,7 +1381,7 @@ msgstr "编辑"
 
 #: data/System/ModacSkinSolrSearchBaseTemplate.txt
 msgid "else"
-msgstr ""
+msgstr "其他"
 
 #: templates/oopshistory.modac.tmpl
 msgid "first"
@@ -1425,11 +1425,11 @@ msgstr "指出必填栏位"
 
 #: data/System/ModacSkinSolrSearchBaseTemplate.txt
 msgid "keyword"
-msgstr ""
+msgstr "关键词"
 
 #: data/System/ModacSkinSolrSearchBaseTemplate.txt
 msgid "language"
-msgstr ""
+msgstr "语言"
 
 #: templates/oopshistory.modac.tmpl
 msgid "last"
@@ -1437,11 +1437,11 @@ msgstr "最后"
 
 #: templates/oopshistory.modac.tmpl
 msgid "later"
-msgstr ""
+msgstr "之后"
 
 #: data/System/ModacSkinSolrSearchBaseTemplate.txt
 msgid "media"
-msgstr ""
+msgstr "媒体"
 
 #: templates/metacomments.modac.tmpl
 msgid "needs approval"
@@ -1453,7 +1453,7 @@ msgstr "无"
 
 #: data/System/ModacSkinSolrSearchViewTemplate.txt
 msgid "older"
-msgstr ""
+msgstr "旧的"
 
 #: templates/attachagain.modac.tmpl templates/rename.modac.tmpl
 #: templates/renameattachmentdelete.modac.tmpl
@@ -1462,7 +1462,7 @@ msgstr "或"
 
 #: data/System/ModacSkinSolrSearchBaseTemplate.txt
 msgid "recently"
-msgstr ""
+msgstr "最近的"
 
 #: templates/attachtables.modac.tmpl templates/oopshistory.modac.tmpl
 msgid "restore"
@@ -1470,19 +1470,19 @@ msgstr "复原"
 
 #: templates/oopshistory.modac.tmpl
 msgid "revisions up to"
-msgstr ""
+msgstr "修订达"
 
 #: data/System/ModacSkinSolrSearchBaseTemplate.txt
 msgid "submit the query"
-msgstr ""
+msgstr "提交询问"
 
 #: data/System/ModacSkinSolrSearchBaseTemplate.txt
 msgid "tag"
-msgstr ""
+msgstr "标签"
 
 #: data/System/ModacSkinSolrSearchBaseTemplate.txt
 msgid "tagged %1"
-msgstr ""
+msgstr "标签的1%"
 
 #: templates/viewtopicactionbuttons.modac.tmpl
 msgid "title='Attach an image or document to this topic' accesskey='a'>&Attach"
@@ -1514,7 +1514,7 @@ msgstr "标题='编辑这个主题' 快捷键='e'>&编辑"
 
 #: data/System/ModacSkinUserViewTemplate.txt
 msgid "title='Edit users data' accesskey='e'>&Edit users data"
-msgstr ""
+msgstr "题目='编辑用户数据' 快捷键='e'>&编辑用户数据"
 
 #: templates/compare.modac.tmpl
 msgid "title='Interwoven' accesskey='i'>&interwoven"
@@ -1550,7 +1550,7 @@ msgstr "标题＝‘并排’快捷键＝‘s>&并排"
 
 #: data/System/ModacSkinUserFormEditTemplate.txt
 msgid "title='Upload foto' accesskey='a'>&Upload photo"
-msgstr ""
+msgstr "题目='上传照片' 关键词='a'>&上传照片"
 
 #: data/System/ModacSkinTopicMenuTemplate.txt
 #: templates/viewtopicactionbuttons.modac.tmpl
@@ -1571,7 +1571,7 @@ msgstr "标题＝‘无格式查看’快捷键＝‘V’>&查看 &wiki 文本"
 
 #: data/System/ModacSkinSolrSearchViewTemplate.txt
 msgid "today"
-msgstr ""
+msgstr "今天"
 
 #: data/System/ModacSkinSolrSearchViewTemplate.txt
 msgid "topic"
@@ -1579,7 +1579,7 @@ msgstr "主题"
 
 #: data/System/ModacSkinSolrSearchBaseTemplate.txt
 msgid "topic type"
-msgstr ""
+msgstr "主题类型"
 
 #: templates/oopshistory.modac.tmpl
 msgid "unchanged sections before and after each change"
