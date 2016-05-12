@@ -4,14 +4,16 @@ msgstr ""
 "Project-Id-Version: Foswiki $Id\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2010-11-09 08:01+0200\n"
-"Language-Team: Modell Aachen\n"
-"Language: zh_CN\n"
+"PO-Revision-Date: 2016-05-12 13:56+0200\n"
+"Last-Translator: Modell Aachen <access@modell-aachen.de>\n"
+"Language-Team: Simplified Chinese <http://translate.modell-"
+"aachen.de/projects/modacskin/releasenew-york/zh_CN/>\n"
+"Language: zh-cn\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Pootle 2.0.5\n"
+"X-Generator: Weblate 1.9\n"
 "X-Poedit-Country: Taiwan\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
@@ -220,7 +222,7 @@ msgstr "附件历史记录"
 
 #: templates/attachtables.modac.tmpl
 msgid "Attachments"
-msgstr "附件 "
+msgstr "附件"
 
 #: templates/attach.modac.tmpl
 msgid "Attachments help"
@@ -367,7 +369,7 @@ msgstr "拷贝主题（和所有附件）到新的主题"
 
 #: data/System/ModacSkinTopicMenuTemplate.txt templates/more.modac.tmpl
 msgid "Copy topic"
-msgstr "复制主题 "
+msgstr "复制主题"
 
 #: templates/more.modac.tmpl
 msgid "Copy topic..."
@@ -396,7 +398,7 @@ msgstr "创建新的主题"
 
 #: data/System/ModacSkinWebCreateNewTopicTemplate.txt
 msgid "Create new topic in %1 Web"
-msgstr "在%1网站创建新的主题 "
+msgstr "在%1网站创建新的主题"
 
 #: data/System/ModacSkinCommonWords.txt
 msgid "Create this topic"
@@ -970,7 +972,7 @@ msgstr "修订版"
 
 #: templates/oopshistory.modac.tmpl
 msgid "Revision history of "
-msgstr "修改记录"
+msgstr "修改记录 "
 
 #: templates/more.modac.tmpl
 msgid "Revisions"
@@ -1007,7 +1009,7 @@ msgstr "只搜寻 %1 子网 "
 
 #: templates/backlinksweb.modac.tmpl
 msgid "Search all webs"
-msgstr "搜寻所有子网 "
+msgstr "搜寻所有子网"
 
 #: templates/backlinksallwebs.modac.tmpl templates/backlinksweb.modac.tmpl
 #: templates/more.modac.tmpl
@@ -1048,7 +1050,7 @@ msgstr "连续的"
 
 #: templates/more.modac.tmpl
 msgid "Set new parent"
-msgstr "设定新父主题 "
+msgstr "设定新父主题"
 
 #: templates/more.modac.tmpl
 msgid "Set new topic parent"
@@ -1156,15 +1158,15 @@ msgstr "复件的题目"
 
 #: templates/metacomments.modac.tmpl
 msgid "Title: "
-msgstr "标题："
+msgstr "标题： "
 
 #: templates/oopsleaseconflict.modac.tmpl
 msgid "To edit the topic anyway, click "
-msgstr "强制编辑本主题，请按"
+msgstr "强制编辑本主题，请按 "
 
 #: templates/oopsleaseconflict.modac.tmpl
 msgid "To see if %1 has finished editing yet, click "
-msgstr "检查 %1 是否已编辑完毕，请按"
+msgstr "检查 %1 是否已编辑完毕，请按 "
 
 #: data/System/ModacSkinUserViewTemplate.txt
 msgid "To see your tasks, bookmarks and notes, please go to %1."
@@ -1337,7 +1339,7 @@ msgstr "您在:"
 
 #: templates/oopshistory.modac.tmpl
 msgid "You can also choose to see "
-msgstr "你也可以选择查看"
+msgstr "你也可以选择查看 "
 
 #: templates/validate.modac.tmpl
 msgid "You cannot manually confirm this change because either Cookies or Javascript are disabled in your browser."
@@ -1353,7 +1355,7 @@ msgstr "快捷键='c'"
 
 #: templates/search.modac.tmpl
 msgid "by %1 "
-msgstr "被%1"
+msgstr "被%1 "
 
 #: templates/renamebase.modac.tmpl
 msgid "checkboxes of referenced topics"
@@ -1396,20 +1398,29 @@ msgid "html jsi18n.get('solr' ,'in %1', \"<a href='\"+container_url+\"'>\"+conta
 msgstr ""
 
 #: data/System/ModacSkinSolrSearchBaseTemplate.txt
+#, fuzzy
 msgid "html jsi18n.get('solr', \"Results %1 - %2 of <b>%3</b>\" ,from, to, count)"
 msgstr ""
+"html jsi18n.get('solr', \"Results %1 - %2 of <b>%3</b>\" ,from, to, count)"
 
 #: data/System/ModacSkinSolrSearchBaseTemplate.txt
 msgid "html jsi18n.get('solr', \"in %1\" ,\"<a href='\"+container_url+\"'>\"+container_title+\"</a>\")"
 msgstr ""
 
 #: data/System/ModacSkinSolrSearchBaseTemplate.txt
+#, fuzzy
 msgid "html jsi18n.get('solr', 'in %1', \"<a href='\"+container_url+\"'>\"+container_title+\"</a>\")"
 msgstr ""
+"html jsi18n.get('solr', 'in %1', \"<a "
+"href='\"+container_url+\"'>\"+container_title+\"</a>\")"
 
 #: data/System/ModacSkinSolrSearchBaseTemplate.txt
+#, fuzzy
 msgid "html jsi18n.get('solr', 'in %1', \"<a href='\"+foswiki.getPreference('SCRIPTURL')+'/view'+foswiki.getPreference('SCRIPTSUFFIX')+'/'+web+'/'+topic+\"'>\"+container_title+\"</a>\")"
 msgstr ""
+"html jsi18n.get('solr', 'in %1', \"<a href='\"+foswiki.getPreference('SCRIPTUR"
+"L')+'/view'+foswiki.getPreference('SCRIPTSUFFIX')+'/'+web+'/'+topic+\"'>\"+con"
+"tainer_title+\"</a>\")"
 
 #: data/System/ModacSkinSolrSearchViewTemplate.txt
 msgid "image"
