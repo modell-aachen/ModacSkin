@@ -1,9 +1,19 @@
 %TMPL:INCLUDE{"registermessages"}%
 
 %TMPL:DEF{"return_button" topic="%MAINWEB%.WikiGroups"}%
-<form action="%SCRIPTURL{"view" topic="%topic%"}%">
-    <input type="submit" class="foswikiSubmit" value="%MAKETEXT{"OK"}%">
- </form>
+<div class="patternBorder">
+   <div class="patternTopicActions">
+      <div class="patternTopicAction">
+         <div class="patternActionButton">
+            <span class="patternActionButtons">
+               <span>
+                  <a href='%SCRIPTURL{"view" topic="%topic%"}%'>%MAKETEXT{"OK"}%</a>
+               </span>
+            </span>
+         </div>
+      </div>
+   </div>
+</div>
 %TMPL:END%
 %{==============================================================================}%
 %TMPL:DEF{"registration_not_supported"}%
