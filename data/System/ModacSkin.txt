@@ -25,6 +25,11 @@ Many things can be customized using various settings. If everything fails you ca
    * %I% Do not modify skin files in your !SystemWeb, as those will be overwritten on the next update. See [[%TOPIC%#CustomWeb][CustomWeb]].
    * %I% Prefer using macros like =%%NOP%PUBURL%= and =%%NOP%SYSTEMWEB%= to directly entering the path. You will be safer against configuration changes.
 
+---+++ Personal Page
+There are some configurations for the personal page. You should set these on your [[%USERSWEB%.SitePreferences][SitePreferences]]:
+   * =OriginalOwnerApproves=: Set this to =1= if the person in the =Responsible= field from the _original topic_ (without the =%WORKFLOWSUFFIX%= - suffix) needs to do the content review (in case the owner changes).
+   * =QMGROUP=: Set this to your local QM-Group. Only people in this group will see the =FORMAL APPROVAL= block. This *must* be exactly *one group*.
+
 ---+++ !CustomWeb
 Wiki-wide customizations should reside in a web specially reserved for that purpose. This makes migration and updating much easier. Usually this web will contain some templates, [[%TOPIC%#LeftBar_44_TopBar_44_BottomBar][left/top/bottom bars]] and skin customizations.
 

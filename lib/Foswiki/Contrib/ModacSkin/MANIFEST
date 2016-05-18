@@ -169,6 +169,7 @@ templates/renamebase.modac.tmpl 0664
 templates/renamebase.modacdialog.tmpl 0664
 templates/renamedelete.modac.tmpl 0664
 templates/renamewebbase.modac.tmpl 0664
+templates/registermessages.modac.tmpl 0664
 templates/search.modac.tmpl 0664
 templates/searchbase.modac.tmpl 0664
 templates/searchbookview.modac.tmpl 0664
