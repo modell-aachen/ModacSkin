@@ -6,3 +6,4 @@ Foswiki::Plugins::JQueryPlugin,>0,perl,Required.
 Foswiki::Plugins::MAPrinceModPlugin,>=1.0.6,perl,Required for PDF generation.
 Foswiki::Plugins::SolrPlugin,>0,perl,Required.
 Foswiki::Plugins::SwitchMacroPlugin,>=1.0,perl,Required.
+Foswiki::Plugins::QueryVersionPlugin,>=1.0,perl,Required.
