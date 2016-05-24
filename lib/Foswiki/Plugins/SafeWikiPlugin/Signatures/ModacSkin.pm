@@ -19,4 +19,7 @@
     'vMe5cb3AfOZywpyj+fQqpCI8kW3+HfaXitbqRJ8QmgQ', # solrSpellCorrectionTemplate
     'HTZRl5vFFS4VEvIbTuvEWj1hJG5cdHfD9swiZ+36qE8', # solrHierarchyTemplate
     'nLREjh2CpHb6tA4jE0/kLndwT7rFXYcViUOVaIe78wg', # history.go(-1); return false;
+    'e4KUPt8ZFRLxf4x0kf8JgYHKcr+Jp1Pdnng2+RTZEeE', # solr autocomplete (empty filter)
+    '0QY0McGEfofpMFwLr0axtI41w8Udqgjpzdk347iTNZw', # solr autocomplete (filter: -web:(System OR Main OR Custom OR Sandbox OR Manuals OR Tasks))
+    '2fG+y/8+6w+zxpWuKYpHCHxVjgqJUklT1AC8ksXkO9Q', # tablesorter opts (attach tables)
 ];
