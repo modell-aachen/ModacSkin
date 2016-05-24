@@ -87,7 +87,7 @@
 
 %{jsi18n, country flags}%
 %{<verbatim class="tml">}%
-%TMPL:DEF{"solr::templates::hits::topic"}%<script id="solrHitTemplate_topic" type="text/x-jquery-tmpl"/>
+%TMPL:DEF{"solr::templates::hits::topic"}%<script id="solrHitTemplate_topic" type="text/x-jquery-tmpl">
   <div class='solrSearchHit solrTopicHit clearfix'>
     {{include tmpl="#solrTemplate_thumbnail" /}}
     <h3 title='{{: ~foswiki.jsi18n.get('solr', 'topic') }}'>
