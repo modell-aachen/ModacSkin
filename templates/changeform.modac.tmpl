@@ -24,3 +24,5 @@
 %TMPL:P{"topicaction"}%
 </div>
 %TMPL:P{"formend"}%%TMPL:END%
+
+%TMPL:DEF{"hiddenformfields"}%%IF{"defined 'templatetopic'" then="<input type=\"hidden\" name=\"templatetopic\" value=\"$percentURLPARAM{\"templatetopic\" encode=\"entity\"}$percent\" />"}%%TMPL:PREV%%TMPL:END%
