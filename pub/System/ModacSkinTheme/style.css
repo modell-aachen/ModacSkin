@@ -1612,6 +1612,26 @@ div.ajaxspinner {
 .modacDialogContents div.select2minheight {
 	min-height: 3em;
 }
+span.select2_labeltag {
+    background-color: grey;
+    border: 2px solid grey;
+    border-radius: 3px;
+    font-weight: bold;
+    color: white;
+    font-size: 80%;
+/*    font-style: italic;*/
+    padding: 1px;
+    margin-right: 4px;
+}
+span.select2discussion {
+    background-color: #B51427;
+    border-color:#B51427;
+}
+span.select2system {
+        background-color: #F7BA0B;
+        border-color: #F7BA0B;
+
+}
 .modacMoreMenu li.modacMoreDynamic ul li span a {
 	padding-left: 25px;
 	background-repeat: no-repeat;

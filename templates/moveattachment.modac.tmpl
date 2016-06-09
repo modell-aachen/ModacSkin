@@ -2,4 +2,4 @@
 
 %TMPL:DEF{"newattachment"}%<p><input name="newattachment" class="foswikiInputField modacFilterInput" value="%URLPARAM{"attachment"}%" size="80" /></p>%TMPL:P{"attachmenthelp"}%%TMPL:END%
 
-%TMPL:DEF{"newtopic"}%<p>%RENDERFOREDIT{field="dummy" form="%SYSTEMWEB%.DummyForm" format="$edit" dummy_type="select2" dummy_size="36" dummy_values="%SCRIPTURL{"view"}%/%SYSTEMWEB%/ModacAjaxHelper?section=topicsinweb_select2&skin=text" dummy_name="newtopic" dummy_attributes="ajaxPassFields=\"web:newweb\"" value="%TOPIC%"}%<input type="hidden" name="nonwikiword" value="on" /></p>%TMPL:P{"namehelp"}%%TMPL:END%
+%TMPL:DEF{"newtopic"}%<p>%INCLUDE{"%SYSTEMWEB%/ModacAjaxHelper" section="script"}%%RENDERFOREDIT{field="dummy" form="%SYSTEMWEB%.DummyForm" format="$edit" dummy_type="select2" dummy_size="36" dummy_values="%SCRIPTURL{"view"}%/%SYSTEMWEB%/ModacAjaxHelper?section=topicsinweb_select2&skin=text&id_withoutweb=1&include_discussions=1&include_templates=1&currentweb=%WEB%" dummy_name="newtopic" dummy_attributes="ajaxPassFields=\"web:newweb\"" value="%TOPIC%"}%<input type="hidden" name="nonwikiword" value="on" /></p>%TMPL:P{"namehelp"}%%TMPL:END%

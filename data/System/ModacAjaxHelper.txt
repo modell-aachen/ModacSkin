@@ -11,10 +11,19 @@ The below section is used within WebCreateNewTopic to render the select box for 
 </verbatim>
 
 <verbatim>
-%STARTSECTION{"topicsinweb_select2"}%
-<literal>{"results":[%SOLRSEARCH{"type:topic web:%SUBST{text="%URLPARAM{"web"}%" pattern="/" format="."}% -topic:*%WORKFLOWSUFFIX% -topic:*Template -topic:*Form (topic_search:*%SUBST{text="%URLPARAM{q}%" pattern="\s+" format=""}%* OR %FORMATLIST{"%URLPARAM{q}%" split="\s+" separator=" " null="*:*" format="title_search:*$1*"}%)" format="{\"text\":\"$percentENCODE{\"$title\" type=\"quote\"}$percent\",\"id\":\"$web.$topic\"}" separator="," rows="%URLPARAM{"limit" default="20"}%" start="%URLPARAM{"page" default="0"}%" sort="topic" footer="], \"total\":$count, \"dummy\":["}%]}</literal>
+%STARTSECTION{"topicsinweb_select2"}%<literal>{"results":[%SOLRSEARCH{
+   "type:topic web:%SUBST{text="%URLPARAM{"web" default="*"}%" pattern="/" format="."}% %IF{"not $include_discussions='1'" then="-topic:*%WORKFLOWSUFFIX%"}% %IF{"not $include_templates='1'" then="-topic:*Template"}% %IF{"not $include_forms='1'" then="-topic:*Form"}% (topic_search:*%SUBST{text="%URLPARAM{q}%" pattern="\s+" format=""}%* OR %FORMATLIST{"%URLPARAM{q}%" split="\s+" separator=" " null="*:*" format="title_search:*$1*"}%)"
+   format="{\"text\":\"$percentENCODE{\"$title\" type=\"quote\"}$percent\",\"class\":\"%IF{"$'URLPARAM{currentweb}'=$'URLPARAM{web}'" then="currentWeb" else="otherWeb"}%\", \"id\":\"%IF{"$id_withoutweb!='1'" then="$web."}%$topic\",\"labeltag\":[{\"dummy\":\"dummy\"}<nop>%IF{"$include_discussions='1'" then="$dollarpercentIF{\\"'$workflowstate_statetype_s'='discussion'\\" then=\\",{\\\"class\\\":\\\"select2discussion\\\",\\\"text\\\":\\\"discussion\\\"}\\"}$dollarpercent"}%%IF{"$include_templates='1'" then="$dollarpercentIF{\\"'$topic'=~'Template(?:%WORKFLOWSUFFIX%)?$'\\" then=\\",{\\\"class\\\":\\\"select2system\\\",\\\"text\\\":\\\"%MAKETEXT{"template"}%\\\"}\\"}$dollarpercent"}%], \"labelamend\":\"($topic)\", \"sublabel\":\"%MAKETEXT{"web:"}%$web\"}"
+   separator=","
+   rows="%URLPARAM{"limit" default="20"}%"
+   start="%URLPARAM{"page" default="0"}%"
+   sort="topic"
+   fields="workflowstate_statetype_s,title,web,topic"
+   footer="], \"total\":\"$count\", \"dummy\":["
+   }%]}</literal>
 %ENDSECTION{"topicsinweb_select2"}%
 </verbatim>
+
 Alternative selector for selecting from 'most' webs:
 
 <verbatim>
@@ -57,11 +66,13 @@ Please keep the comments near START-/ENDSECTION to avoid insertion of additional
   .topicselect_container { padding: 3px; border-top: solid 1px #eee; }
   .topicselect_container:first-child { border-top: none; }
   .topicselect_label { font-weight: bold; margin-bottom: 2px; }
-  .topicselect_sublabel { font-size: 70%; color: #888; }
+  .topicselect_sublabel,.topicselect_amend { font-size: 75%; color: #888; }
+  .topicselect_label .topicselect_amend { margin-left: 4px; font-size: 75%; }
+  .currentWeb .topicselect_amend,.currentWeb .topicselect_sublabel { color: #003C89; }
   .select2-highlighted .topicselect_sublabel { color: #ddd; }
   .jqTopicSelect { min-width: 60ex; }
   .select2-drop { font-family: sans-serif; }
-</style><script type='text/javascript' src='%PUBURLPATH%/System/ModacSkin/topicselect.js'></script>
+</style><script type='text/javascript' src='%PUBURLPATH%/System/ModacSkin/topicselect.js?version=%QUERYVERSION{"ModacSkin" default=""}%'></script>
 <!-- endsection -->%ENDSECTION{"script"}%
 </verbatim>
 
