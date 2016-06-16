@@ -224,7 +224,7 @@ Modified actionTemplate adds action table directly below comment box
 
 %JQREQUIRE{"TextboxList"}%
 %ADDTOZONE{"script" id="ModacSkin::AtpComment" requires="JQUERYPLUGIN::FOSWIKI::PREFERENCES"
-  text="<script type=\"text/javascript\" src=\"%PUBURLPATH%/%SYSTEMWEB%/ModacSkin/atp_comment.js\"></script>"
+  text="<script type=\"text/javascript\" src=\"%PUBURLPATH%/%SYSTEMWEB%/ModacSkin/atp_comment.js?%QUERYVERSION{"ModacSkin" default=""}%\"></script>"
 }%
 
 %TABLE{databg="#ffffff" tableborder="0" cellborder="0"}%

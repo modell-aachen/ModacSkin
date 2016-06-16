@@ -2,4 +2,13 @@
 
 %TMPL:DEF{"newattachment"}%<p><input name="newattachment" class="foswikiInputField modacFilterInput" value="%URLPARAM{"attachment"}%" size="80" /></p>%TMPL:P{"attachmenthelp"}%%TMPL:END%
 
-%TMPL:DEF{"newtopic"}%<p>%RENDERFOREDIT{field="dummy" form="%SYSTEMWEB%.DummyForm" format="$edit" dummy_type="select2" dummy_size="36" dummy_values="%SCRIPTURL{"view"}%/%SYSTEMWEB%/ModacAjaxHelper?section=topicsinweb_select2&skin=text" dummy_name="newtopic" dummy_attributes="ajaxPassFields=\"web:newweb\"" value="%TOPIC%"}%<input type="hidden" name="nonwikiword" value="on" /></p>%TMPL:P{"namehelp"}%%TMPL:END%
+%TMPL:DEF{"newtopic"}%<p>%INCLUDE{"%SYSTEMWEB%/ModacAjaxHelper" section="script"}%%RENDERFOREDIT{field="dummy" form="%SYSTEMWEB%.DummyForm" format="$edit" dummy_type="select2" dummy_size="36" dummy_values="%SCRIPTURL{"view"}%/%SYSTEMWEB%/ModacAjaxHelper?section=topicsinweb_select2&skin=text&id_withoutweb=1&include_discussions=1&include_templates=1&currentweb=%WEB%" dummy_name="newtopic" dummy_attributes="ajaxPassFields=\"web:newweb\"" value="%TOPIC%"}%<input type="hidden" name="nonwikiword" value="on" /></p>%TMPL:P{"namehelp"}%%TMPL:END%
+
+%TMPL:DEF{"newweb"}%<p><select class="foswikiSelect" name="newweb" onchange="if (document.rename.newweb.value == 'Trash') { document.rename.newtopic.value = 'TrashAttachment'; }">%FORMATLIST{"%WEBLIST{"$name$marker" separator=";" webs="public,%WEB%"}%" pattern="(\S*)( selected='selected')?" format="$percentIF{\"'$1' allows 'CHANGE'\" then=\"<option value='$1'$marker>$map($1)</option>\"}$percent" marker="selected='selected' " selection="^%WEB%$" separator=" " split=";" unique="on" map="%MODAC_WEBMAPPINGS{default=""}%" include="%WEB%|(?!%URLPARAM{"MODAC_HIDEWEBS" default="%MODAC_HIDEWEBS{default="dummy"}%"}%$).*"}%</select><input type="hidden" name="attachment" value="%FILENAME%" /></p>%IF{"context 'isadmin' or $USERNAME ingroup '%MODAC_SHOWALLWEBSGROUP%'" then="$percentTMPL:P{hidewebsOption}$percent"}%%TMPL:END%
+
+%{<verbatim class="tml">}%
+%TMPL:DEF{"hidewebsOption"}%<div>%IF{"$'URLPARAM{MODAC_HIDEWEBS}'=''" then="
+<a href='%SCRIPTURL{"%SCRIPTNAME%"}%/%WEB%/%TOPIC%?$percentQUERYPARAMS{format=\"$name=$value\" separator=\";\"}$percent;MODAC_HIDEWEBS=none'>%MAKETEXT{"List all webs I may write to"}%</a>
+"}%
+</div>%TMPL:END%
+%{</verbatim>}%
