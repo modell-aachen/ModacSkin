@@ -17,410 +17,412 @@ msgstr ""
 
 #: templates/foswiki.modac.tmpl
 msgid "%1 Web"
-msgstr ""
+msgstr "%1 web"
 
 #: templates/metacomments.modac.tmpl
 msgid "%1 comments"
-msgstr ""
+msgstr "%1 komentáře"
 
 #: templates/validate.modac.tmpl
 msgid "%1 has received a suspicious change request from your browser."
 msgstr ""
+"%1 obdržel od Vašeho prohlížeče poptávku na změnu, která byla hodnocena jako "
+"podezřelá."
 
 #: templates/renameattachmentdelete.modac.tmpl
 msgid "%1 is the default topic for deleted attachments."
-msgstr ""
+msgstr "%1 je standardní téma pro vymazané přílohy."
 
 #: data/System/ModacSkinUserViewTemplate.txt
 msgid "%1 weeks"
-msgstr ""
+msgstr "%1 týdny/ů"
 
 #: templates/foswiki.modac.tmpl
 msgid "&Cancel"
-msgstr ""
+msgstr "&Storno"
 
 #: templates/validate.modac.tmpl
 msgid "(%1 validation)"
-msgstr ""
+msgstr "(%1 potvrzení)"
 
 #: templates/rdiff.modac.tmpl
 msgid "(%1 vs. %2)"
-msgstr ""
+msgstr "(%1 proti %2)"
 
 #: templates/attach.modac.tmpl templates/attachagain.modac.tmpl
 msgid "(attachments)"
-msgstr ""
+msgstr "(přílohy)"
 
 #: templates/backlinksweb.modac.tmpl
 msgid "(backlinks in %1 Web)"
-msgstr ""
+msgstr "(křížový odkaz v %1 webu)"
 
 #: templates/backlinksallwebs.modac.tmpl
 msgid "(backlinks in all Webs)"
-msgstr ""
+msgstr "(křížové odkazy ve všech webech)"
 
 #: templates/changes.modac.tmpl
 msgid "(changes)"
-msgstr ""
+msgstr "(změny)"
 
 #: templates/compare.modac.tmpl
 msgid "(compare)"
-msgstr ""
+msgstr "(srovnat)"
 
 #: templates/renameattachmentdelete.modac.tmpl
 msgid "(delete attachment)"
-msgstr ""
+msgstr "(přílohu vymazat)"
 
 #: templates/oopshistory.modac.tmpl
 msgid "(history)"
-msgstr ""
+msgstr "(historie)"
 
 #: templates/more.modac.tmpl
 msgid "(more)"
-msgstr ""
+msgstr "(Více)"
 
 #: templates/foswiki.modac.tmpl
 msgid "(raw view)"
-msgstr ""
+msgstr "(náhled zdrojového textu)"
 
 #: templates/edit.modac.tmpl templates/foswiki.modac.tmpl
 msgid "(revision %1)"
-msgstr ""
+msgstr "(revize %1)"
 
 #: templates/settings.modac.tmpl
 msgid "(set preferences)"
-msgstr ""
+msgstr "(nastavení změnit)"
 
 #: data/System/ModacSkinSolrSearchViewTemplate.txt
 msgid "1 hour"
-msgstr ""
+msgstr "1 hodina"
 
 #: data/System/ModacSkinSolrSearchViewTemplate.txt
 msgid "1 month"
-msgstr ""
+msgstr "1 měsíc "
 
 #: data/System/ModacSkinSolrSearchViewTemplate.txt
 msgid "1 year"
-msgstr ""
+msgstr "1 rok"
 
 #: data/System/ModacSkinSolrSearchViewTemplate.txt
 msgid "2 days"
-msgstr ""
+msgstr "2 dny"
 
 #: data/System/ModacSkinSolrSearchViewTemplate.txt
 msgid "2 months"
-msgstr ""
+msgstr "2 měsíce "
 
 #: data/System/ModacSkinSolrSearchViewTemplate.txt
 msgid "4 hours"
-msgstr ""
+msgstr "4 hodiny"
 
 #: data/System/ModacSkinSolrSearchViewTemplate.txt
 msgid "7 days"
-msgstr ""
+msgstr "7 dní"
 
 #: templates/more.modac.tmpl
 msgid "<em>in %1 web</em> only"
-msgstr ""
+msgstr "jen <em>v %1 webu</em>"
 
 #: templates/more.modac.tmpl
 msgid "<em>in all public webs</em>"
-msgstr ""
+msgstr "<em>ve všech veřejných webech</em>"
 
 #: data/System/WebBottomBarDefault.txt
 msgid "About Q.wiki"
-msgstr ""
+msgstr "Přes Q.wiki"
 
 #: templates/edit.modac.tmpl
 msgid "Access keys"
-msgstr ""
+msgstr "Funkční tlačítka "
 
 #: templates/settings.modac.tmpl
 msgid "Access keys:"
-msgstr ""
+msgstr "Funkční tlačítka:"
 
 #: templates/attachtables.modac.tmpl templates/oopshistory.modac.tmpl
 msgid "Action"
-msgstr ""
+msgstr "Akce"
 
 #: data/Main/ModacSkinGroupViewTemplate.txt
 msgid "Add members"
-msgstr ""
+msgstr "Přidat člena"
 
 #: data/Main/ModacSkinGroupViewTemplate.txt
 msgid "Add members..."
-msgstr ""
+msgstr "Přidání člena:"
 
 #: data/Main/ModacSkinGroupViewTemplate.txt
 msgid "Add user management options to this topic."
-msgstr ""
+msgstr "Přidat nastavení pro management uživatelů k tomuto tématu"
 
 #: data/Main/ModacSkinGroupViewTemplate.txt
 msgid "Add users or groups to this group"
-msgstr ""
+msgstr "Přidat uživatele nebo skupiny k této skupině"
 
 #: data/Main/ModacSkinGroupViewTemplate.txt
 msgid "Administration"
-msgstr ""
+msgstr "Správa"
 
 #: data/System/ModacSkinWebCreateNewTopicTemplate.txt
 #: templates/more.modac.tmpl
 msgid "Advanced options..."
-msgstr ""
+msgstr "Rozšířené možnosti..."
 
 #: data/System/ModacSkinSolrSearchViewTemplate.txt
 msgid "Application"
-msgstr ""
+msgstr "Použití "
 
 #: data/System/ModacSkinCommonWords.txt
 msgid "Approve contentual aspects of discussion"
-msgstr ""
+msgstr "Potvrdit obsahové aspekty diskuse"
 
 #: data/System/ModacSkinCommonWords.txt
 msgid "Approve contentual aspects of draft"
-msgstr ""
+msgstr "Potvrdit obsahové aspekty návrhu"
 
 #: data/System/ModacSkinCommonWords.txt
 msgid "Approve formal aspects of discussion"
-msgstr ""
+msgstr "Potvrdit formální aspekty diskuse"
 
 #: data/System/ModacSkinCommonWords.txt
 msgid "Approve formal aspects of draft"
-msgstr ""
+msgstr "Potvrdit formální aspekty návrhu"
 
 #: data/System/ModacSkinCommonWords.txt
 msgid "Approved Page"
-msgstr ""
+msgstr "Potvrzená stránka"
 
 #: data/System/ModacSkinDocumentFormTableTemplate.txt
 #: data/System/ModacSkinSolrSearchViewTemplate.txt
 #: data/System/ModacSkinTopHeadTemplate.txt
 msgid "Area of application"
-msgstr ""
+msgstr "Rozsah použití "
 
 #: templates/viewtopicactionbuttons.modac.tmpl
 msgid "Attach"
-msgstr ""
+msgstr "Přiložit"
 
 #: templates/attachnew.modac.tmpl templates/attachnew.modacdialog.tmpl
 msgid "Attach file to %1"
-msgstr ""
+msgstr "Přiložit soubory k %1 "
 
 #: templates/attach.modac.tmpl
 msgid "Attach image or document on %1"
-msgstr ""
+msgstr "Přiložit obrázek nebo dokument k %1 "
 
 #: templates/attach.modac.tmpl
 msgid "Attach new file"
-msgstr ""
+msgstr "Přiložit nový soubor"
 
 #: templates/attachtables.modac.tmpl
 msgid "Attachment history"
-msgstr ""
+msgstr "Historie přílohy"
 
 #: templates/attachtables.modac.tmpl
 msgid "Attachments"
-msgstr ""
+msgstr "Přílohy"
 
 #: templates/attach.modac.tmpl
 msgid "Attachments help"
-msgstr ""
+msgstr "Nápověda k přílohám"
 
 #: templates/attach.modac.tmpl
 msgid "Attachments will not be shown in topic view page."
-msgstr ""
+msgstr "Přílohy nezobrazit v normálním náhledu"
 
 #: templates/oopsleaseconflict.modac.tmpl
 msgid "Attention"
-msgstr ""
+msgstr "Pozor"
 
 #: templates/changeform.modac.tmpl
 msgid "Available form templates"
-msgstr ""
+msgstr "Přístupné předlohy formulářů"
 
 #: templates/foswiki.modac.tmpl templates/oopshistory.modac.tmpl
 msgid "Back to topic"
-msgstr ""
+msgstr "Zpět k tématu"
 
 #: templates/more.modac.tmpl templates/viewtopicactionbuttons.modac.tmpl
 msgid "Backlinks"
-msgstr ""
+msgstr "Křížové odkazy"
 
 #: templates/backlinksweb.modac.tmpl
 msgid "Backlinks to %1 in %2 Web"
-msgstr ""
+msgstr "Křížové odkazy od %1 v %2 webu"
 
 #: templates/backlinksallwebs.modac.tmpl
 msgid "Backlinks to %1 in all Webs"
-msgstr ""
+msgstr "Křížové odkazy od %1 ve všech webech"
 
 #: templates/attachtables.modac.tmpl
 msgid "Bookmark this file"
-msgstr ""
+msgstr "Tento soubor přidat k záložkám"
 
 #: templates/viewtopicactionbuttons.modac.tmpl
 msgid "Bookmark this page"
-msgstr ""
+msgstr "Tuto stránku přidat k záložkám"
 
 #: data/System/ModacSkinUserViewTemplate.txt
 msgid "By last change"
-msgstr "Podle posledních změn"
+msgstr "po poslední změně "
 
 #: data/System/ModacSkinUserViewTemplate.txt
 msgid "By web"
-msgstr "O webu"
+msgstr "po webu"
 
 #: data/System/ModacSkinWebCreateNewTopicDialogTemplate.txt
 #: templates/dialogbase.modac.tmpl templates/metacomments.modac.tmpl
 #: templates/validate.modac.tmpl
 msgid "Cancel"
-msgstr ""
+msgstr "Storno"
 
 #: templates/edit.modac.tmpl
 msgid "Cancel editing and discard changes"
-msgstr ""
+msgstr "Editaci ukončit a změny zrušit"
 
 #: data/System/ModacSkinSolrSearchViewTemplate.txt
 msgid "Category"
-msgstr ""
+msgstr "Kategorie"
 
 #: templates/validate.modac.tmpl
 msgid "Change cannot be completed"
-msgstr ""
+msgstr "Změna se nedala provést."
 
 #: templates/attachagain.modac.tmpl
 msgid "Change comment only"
-msgstr ""
+msgstr "Změnit jen komentář "
 
 #: templates/renamewebbase.modac.tmpl
 msgid "Change links in topics that refer to %1 in any Web:"
-msgstr ""
+msgstr "Změnit odkazy v tématech ukazující na %1 (všechny weby):"
 
 #: templates/renamewebbase.modac.tmpl
 msgid "Change links in topics that refer to %1 in the %2 Web:"
-msgstr ""
+msgstr "Změnit odkazy v tématech ukazující na %1 (jen v %2 webu):"
 
 #: data/System/ModacSkinCommonWords.txt
 msgid "Change status"
-msgstr ""
+msgstr "Status změny"
 
 #: templates/more.modac.tmpl
 msgid "Child topics in %1 web"
-msgstr ""
+msgstr "Podtémata v %1 webu"
 
 #: data/System/ModacSkinSolrSearchViewTemplate.txt
 msgid "Chinese/Japanese/Korean"
-msgstr ""
+msgstr "Čínština/Japonština/Korejština"
 
 #: templates/changeform.modac.tmpl
 msgid "Choose a new form for %1"
-msgstr ""
+msgstr "Zvolte novou předlohu formuláře pro %1"
 
 #: templates/renamebase.modac.tmpl
 msgid "Clear all"
-msgstr ""
+msgstr "Zrušit všechny volby"
 
 #: data/System/ModacSkinUserViewTemplate.txt templates/attach.modac.tmpl
 #: templates/attachtables.modac.tmpl templates/oopshistory.modac.tmpl
 msgid "Comment"
-msgstr ""
+msgstr "Komentář "
 
 #: templates/metacomments.modac.tmpl
 msgid "Comments"
-msgstr ""
+msgstr "Komentáře"
 
 #: data/System/ModacSkinUserViewTemplate.txt
 msgid "Comments for me"
-msgstr ""
+msgstr "Komentáře pro mě"
 
 #: templates/more.modac.tmpl templates/oopshistory.modac.tmpl
 msgid "Compare revisions"
-msgstr ""
+msgstr "Srovnej revize"
 
 #: templates/compare.modac.tmpl
 msgid "Comparison"
-msgstr ""
+msgstr "Srovnání"
 
 #: data/System/ModacSkinContentTemplatesViewTemplate.txt
 msgid "Content Templates in %1 Web"
-msgstr ""
+msgstr "Předloha v %1 webu"
 
 #: data/System/ModacSkinContentTemplatesViewTemplate.txt
 msgid "Content templates"
-msgstr ""
+msgstr "Předlohy"
 
 #: data/System/ModacSkinUserViewTemplate.txt
 msgid "Context"
-msgstr ""
+msgstr "Kontext"
 
 #: templates/oopshistory.modac.tmpl
 msgid "Context:"
-msgstr ""
+msgstr "Kontext:"
 
 #: data/System/ModacSkinSolrSearchViewTemplate.txt
 msgid "Contributor"
-msgstr ""
+msgstr "Spolupracuje"
 
 #: templates/more.modac.tmpl
 msgid "Copy this topic (and all attachments) to a new topic."
-msgstr ""
+msgstr "Zkopíruj toto téma (a všechny jeho přílohy) do nového tématu."
 
 #: data/System/ModacSkinTopicMenuTemplate.txt templates/more.modac.tmpl
 msgid "Copy topic"
-msgstr ""
+msgstr "Téma zkopírovat"
 
 #: templates/more.modac.tmpl
 msgid "Copy topic..."
-msgstr ""
+msgstr "Kopírování tématu..."
 
 #: templates/attach.modac.tmpl
 msgid "Create a link to the attached file"
-msgstr ""
+msgstr "Vytvořit odkaz na přiložený soubor"
 
 #: data/System/ModacSkinWebCreateNewTopicTemplate.txt
 msgid "Create a new topic"
-msgstr ""
+msgstr "Založit nové téma"
 
 #: data/System/ModacSkinContentTemplatesViewTemplate.txt
 msgid "Create new content template"
-msgstr ""
+msgstr "Založit novou předlohu "
 
 #: data/System/ModacSkinContentTemplatesViewTemplate.txt
 msgid "Create new content template..."
-msgstr ""
+msgstr "Založení nové předlohy..."
 
 #: data/System/ModacSkinWebCreateNewTopicDialogTemplate.txt
 #: data/System/WebActionsDefault.txt
 msgid "Create new topic"
-msgstr ""
+msgstr "Založit nové téma"
 
 #: data/System/ModacSkinWebCreateNewTopicTemplate.txt
 msgid "Create new topic in %1 Web"
-msgstr ""
+msgstr "Založit nové téma v %1 webu"
 
 #: data/System/ModacSkinCommonWords.txt
 msgid "Create this topic"
-msgstr ""
+msgstr "Založit toto téma "
 
 #: data/System/ModacSkinUserViewTemplate.txt
 msgid "Created"
-msgstr ""
+msgstr "založeno"
 
 #: templates/renameattachmentdelete.modac.tmpl
 msgid "Current location:"
-msgstr ""
+msgstr "Aktuální místo:"
 
 #: templates/renamebase.modac.tmpl
 msgid "Current topic:"
-msgstr ""
+msgstr "Aktuální téma:"
 
 #: templates/renamebase.modac.tmpl
 msgid "Current web:"
-msgstr ""
+msgstr "Aktuální web:"
 
 #: data/System/ModacSkinSolrSearchViewTemplate.txt
 msgid "Danish"
-msgstr ""
+msgstr "Dánština"
 
 #: templates/attachtables.modac.tmpl templates/oopshistory.modac.tmpl
 msgid "Date"
@@ -428,81 +430,81 @@ msgstr "Datum"
 
 #: templates/more.modac.tmpl
 msgid "Debug"
-msgstr ""
+msgstr "Chybu odstranit"
 
 #: templates/attachagain.modac.tmpl
 #: templates/renameattachmentdelete.modac.tmpl
 msgid "Delete"
-msgstr ""
+msgstr "Vymazat"
 
 #: templates/attachtables.modac.tmpl
 #: templates/renameattachmentdelete.modac.tmpl
 msgid "Delete attachment"
-msgstr ""
+msgstr "Vymazat přílohu"
 
 #: data/System/ModacSkinTopicMenuTemplate.txt templates/more.modac.tmpl
 msgid "Delete topic"
-msgstr ""
+msgstr "Vymazat téma"
 
 #: templates/more.modac.tmpl
 msgid "Delete topic..."
-msgstr ""
+msgstr "Vymazání tématu+B150..."
 
 #: templates/attach.modac.tmpl
 msgid "Describe the file so other people know what it is."
-msgstr ""
+msgstr "Popište soubor, aby druzí uživatelé věděli, co obsahuje."
 
 #: templates/compare.modac.tmpl templates/rdiff.modac.tmpl
 msgid "Difference:"
-msgstr ""
+msgstr "Rozdíl:"
 
 #: data/System/ModacSkinCommonWords.txt
 msgid "Discard discussion"
-msgstr ""
+msgstr "Diskusi vymazat"
 
 #: data/System/ModacSkinCommonWords.txt
 msgid "Discard draft"
-msgstr ""
+msgstr "Návrh vymazat"
 
 #: data/System/ModacSkinUserViewTemplate.txt
 msgid "Discarded tasks"
-msgstr "Vyřazené úkoly"
+msgstr "Úkoly vymazat"
 
 #: data/System/ModacSkinCommonWords.txt
 msgid "Discuss"
-msgstr ""
+msgstr "Diskutovat"
 
 #: data/System/ModacSkinCommonWords.txt
 msgid "Discussion"
-msgstr ""
+msgstr "Diskuse"
 
 #: templates/attach.modac.tmpl
 msgid "Do not show attachment in table"
-msgstr ""
+msgstr "V tabulce přílohu neukázat  "
 
 #: templates/renamedelete.modac.tmpl
 msgid "Do you really want to delete %1?"
-msgstr ""
+msgstr "Skutečně chcete vymazat %1 ?"
 
 #: templates/form.modac.tmpl
 msgid "Document Control"
-msgstr ""
+msgstr "Řízení dokumentů"
 
 #: data/System/ModacSkinDocumentFormTableTemplate.txt
 msgid "Document type"
-msgstr ""
+msgstr "Druh dokumentu"
 
 #: data/System/ModacSkinCommonWords.txt
 msgid "Draft"
-msgstr ""
+msgstr "Návrh"
 
 #: data/System/ModacSkinUserViewTemplate.txt
 msgid "Due"
-msgstr ""
+msgstr "na základě "
 
 #: data/System/ModacSkinSolrSearchViewTemplate.txt
 msgid "Dutch"
-msgstr ""
+msgstr "Nizozemština"
 
 #: templates/viewtopicactionbuttons.modac.tmpl
 msgid "Edit"
@@ -510,52 +512,52 @@ msgstr "Editovat"
 
 #: templates/oopsleaseconflict.modac.tmpl
 msgid "Edit Anyway"
-msgstr ""
+msgstr "Přesto editovat"
 
 #: templates/viewtopicactionbuttons.modac.tmpl
 msgid "Edit Wiki<nop>Text"
-msgstr ""
+msgstr "Zpracuje Wiki<nop>text"
 
 #: templates/metacomments.modac.tmpl
 msgid "Edit comment"
-msgstr ""
+msgstr "Zpracovat komentář "
 
 #: templates/edit.modac.tmpl
 msgid "Edit help"
-msgstr ""
+msgstr "Nápověda k editování"
 
 #: templates/more.modac.tmpl
 msgid "Edit settings for this topic..."
-msgstr ""
+msgstr "Mění nastavení pro toto téma..."
 
 #: templates/more.modac.tmpl
 msgid "Edit topic preference settings"
-msgstr ""
+msgstr "Editovat nastavení tématu"
 
 #: data/System/ModacSkinUserFormEditTemplate.txt
 msgid "Edit users form"
-msgstr ""
+msgstr "Editovat uživatelský formulář "
 
 #: data/System/ModacSkin.txt
 msgid "Energy (50001)"
-msgstr ""
+msgstr "Energie (50001)"
 
 #: data/System/ModacSkinSolrSearchBaseTemplate.txt
 #: data/System/ModacSkinSolrSearchViewTemplate.txt
 msgid "English"
-msgstr ""
+msgstr "Angličtina"
 
 #: templates/foswiki.modac.tmpl
 msgid "Enlarge edit box"
-msgstr ""
+msgstr "Zvětšit editační box "
 
 #: data/System/ModacSkin.txt
 msgid "Environment (14000)"
-msgstr ""
+msgstr "Životní prostředí (14000)"
 
 #: data/System/ModacSkinSolrSearchBaseTemplate.txt
 msgid "Filed in %1"
-msgstr ""
+msgstr "uloženo v %1 "
 
 #: templates/attachtables.modac.tmpl
 msgid "Filename"
@@ -563,89 +565,91 @@ msgstr "Název souboru"
 
 #: templates/more.modac.tmpl
 msgid "Find topics that link to %1 ..."
-msgstr ""
+msgstr "Najít témata odkazující na %1 ..."
 
 #: data/System/ModacSkinUserViewTemplate.txt
 msgid "Finished tasks"
-msgstr ""
+msgstr "Dokončené úkoly"
 
 #: data/System/ModacSkinSolrSearchViewTemplate.txt
 msgid "Finnish"
-msgstr ""
+msgstr "Finština"
 
 #: templates/edit.modac.tmpl
 msgid "Force new revision"
-msgstr ""
+msgstr "Vynutit novou revizi"
 
 #: templates/formtables.modac.tmpl
 msgid "Form data"
-msgstr ""
+msgstr "Formulářová data"
 
 #: templates/form.modac.tmpl
 msgid "Form definition"
-msgstr ""
+msgstr "Definice formuláře "
 
 #: data/System/ModacSkinWebCreateNewTopicTemplate.txt
 msgid "Free form topic title text."
-msgstr ""
+msgstr "volně formulovaný titulkový text témata"
 
 #: data/System/ModacSkinSolrSearchViewTemplate.txt
 msgid "French"
-msgstr ""
+msgstr "Francouzština"
 
 #: data/System/ModacSkinSolrSearchBaseTemplate.txt
 #: data/System/ModacSkinSolrSearchViewTemplate.txt
 msgid "German"
-msgstr ""
+msgstr "Němčina"
 
 #: templates/validate.modac.tmpl
 msgid "Go back to the previous page, and enable Cookies and Javascript before trying again"
 msgstr ""
+"Vraťte se na předešlou stránku, aktivujte cookies a Javascript, a pak to "
+"zkuste znovu."
 
 #: data/System/ModacSkinWebCreateNewTopicTemplate.txt
 #: templates/more.modac.tmpl
 msgid "Hide advanced options..."
-msgstr ""
+msgstr "Skrýt rozšířené možnosti..."
 
 #: templates/renamebase.modac.tmpl
 msgid "Hide help"
-msgstr ""
+msgstr "Skrýt nápovědu"
 
 #: data/System/WebLeftBarDefault.txt
 msgid "Hide menu"
-msgstr ""
+msgstr "Skrýt menu"
 
 #: templates/attachagain.modac.tmpl templates/oopshistory.modac.tmpl
 msgid "History"
-msgstr ""
+msgstr "Historie"
 
 #: templates/attachagain.modac.tmpl
 msgid "History of %1"
-msgstr ""
+msgstr "Historie %1"
 
 #: data/System/ModacSkinDocumentFormTableTemplate.txt
 msgid "ISO 14001"
-msgstr ""
+msgstr "ISO 14001"
 
 #: data/System/ModacSkinDocumentFormTableTemplate.txt
 msgid "ISO 9001"
-msgstr ""
+msgstr "ISO 9001"
 
 #: data/System/ModacSkin.txt
 msgid "ISO norm"
-msgstr ""
+msgstr "norma ISO "
 
 #: templates/validate.modac.tmpl
 msgid "If you are unsure what this means, read: %1"
-msgstr ""
+msgstr "Při nejasnostech se dozvíte více zde: %1"
 
 #: templates/renameattachmentdelete.modac.tmpl
 msgid "If you enter a different name, make sure the topic exists."
-msgstr ""
+msgstr "Zadáte-li jiný název, ujistěte si, že to téma existuje."
 
 #: templates/attach.modac.tmpl
 msgid "Images will be displayed, for other attachments a link will be created."
-msgstr ""
+msgstr "Obrázky se zobrazují, na jiné přílohy se vytvoří odkaz."
 
 #: data/System/WebLeftBarDefault.txt
 msgid "Index"
@@ -653,430 +657,433 @@ msgstr "Index"
 
 #: data/System/ModacSkinWebCreateNewTopicTemplate.txt
 msgid "Initialize the new topic using a template."
-msgstr ""
+msgstr "Inicializovat nové téma s použitím předlohy"
 
 #: data/System/ModacSkinSolrSearchViewTemplate.txt
 msgid "Italian"
-msgstr ""
+msgstr "Italština"
 
 #: data/System/ModacSkinSolrSearchViewTemplate.txt
 msgid "Keyword"
-msgstr ""
+msgstr "Heslo"
 
 #: data/System/ModacSkinSolrSearchViewTemplate.txt
 msgid "Language"
-msgstr ""
+msgstr "Jazyk"
 
 #: templates/foswiki.modac.tmpl
 msgid "Log In"
-msgstr ""
+msgstr "Přihlásit se "
 
 #: templates/foswiki.modac.tmpl
 msgid "Log Out"
-msgstr ""
+msgstr "Odhlásit se"
 
 #: data/Main/ModacSkinGroupViewTemplate.txt
 msgid "Log in to continue."
-msgstr ""
+msgstr "Přihlásit se k pokračování"
 
 #: templates/oopshistory.modac.tmpl
 msgid "MS-Word-mode"
-msgstr ""
+msgstr "Režim MS-Word"
 
 #: data/System/ModacSkinTopicMenuTemplate.txt
 msgid "Manage page"
-msgstr ""
+msgstr "Stránku spravovat"
 
 #: data/System/WebLeftBarDefault.txt
 msgid "Manuals"
-msgstr ""
+msgstr "Příručky"
 
 #: data/System/ModacSkinUserViewTemplate.txt
 msgid "Mark read"
-msgstr ""
+msgstr "Označit jako přečtené"
 
 #: data/System/ModacSkinSolrSearchViewTemplate.txt
 msgid "Media"
-msgstr ""
+msgstr "Média"
 
 #: data/Main/ModacSkinGroupViewTemplate.txt
 msgid "Members"
-msgstr ""
+msgstr "Členové"
 
 #: templates/foswiki.modac.tmpl
 msgid "Modify search"
-msgstr ""
+msgstr "Upravit vyhledání"
 
 #: templates/more.modac.tmpl
 msgid "More Actions on Topic %1"
-msgstr ""
+msgstr "Další akce pro téma %1"
 
 #: templates/rdiff.modac.tmpl templates/viewtopicactionbuttons.modac.tmpl
 msgid "More topic actions..."
-msgstr ""
+msgstr "Více akcí témat..."
 
 #: templates/attachagain.modac.tmpl templates/rename.modac.tmpl
 msgid "Move"
-msgstr ""
+msgstr "Posunout"
 
 #: templates/renamebase.modac.tmpl
 msgid "Move %1"
-msgstr ""
+msgstr "%1 posunout"
 
 #: templates/attachtables.modac.tmpl
 msgid "Move attachment"
-msgstr ""
+msgstr "Přílohu posunout"
 
 #: templates/renameattachmentdelete.modac.tmpl
 msgid "Move to web:"
-msgstr ""
+msgstr "posunout do tohoto webu:"
 
 #: data/System/ModacSkinTopicMenuTemplate.txt templates/more.modac.tmpl
 msgid "Move topic"
-msgstr ""
+msgstr "Posunout téma"
 
 #: templates/more.modac.tmpl
 msgid "Move topic..."
-msgstr ""
+msgstr "Posunování témata..."
 
 #: data/System/ModacSkinUserViewTemplate.txt
 msgid "My bookmarks"
-msgstr "Moje bookmarks"
+msgstr "Moje záložky"
 
 #: data/System/ModacSkinUserViewTemplate.txt
 msgid "My notes"
-msgstr "Moje notes"
+msgstr "Moje poznámky"
 
 #: data/System/ModacSkinUserViewTemplate.txt
 msgid "My tasks"
-msgstr "Moje tasks"
+msgstr "Moje úkoly"
 
 #: data/System/WebTopBarDefault.txt
 msgid "MyPage"
-msgstr ""
+msgstr "Moje stránka"
 
 #: templates/more.modac.tmpl
 msgid "Name of copy"
-msgstr ""
+msgstr "Název kopie"
 
 #: templates/more.modac.tmpl
 msgid "Newer revision:"
-msgstr ""
+msgstr "Novější revize:"
 
 #: templates/more.modac.tmpl
 msgid "No child topics"
-msgstr ""
+msgstr "Žádná podtémata"
 
 #: data/System/ModacAjaxHelper.txt
 msgid "No matches"
-msgstr ""
+msgstr "Žádné výsledky "
 
 #: data/Main/ModacSkinGroupViewTemplate.txt
 msgid "No members"
-msgstr ""
+msgstr "Žádní členové"
 
 #: templates/more.modac.tmpl
 msgid "No previous revision exists."
-msgstr ""
+msgstr "Neexistuje žádná předchozí revize."
 
 #: data/System/ModacAjaxHelper.txt
 msgid "No topic parent"
-msgstr ""
+msgstr "Žádné nadtéma"
 
 #: data/System/ModacSkinSolrSearchViewTemplate.txt
 msgid "Normchapter"
-msgstr ""
+msgstr "Normovaná kapitola"
 
 #: data/System/ModacSkinUserViewTemplate.txt
 msgid "Not your personal page"
-msgstr ""
+msgstr "Není Vaše osobní stránka"
 
 #: templates/foswiki.modac.tmpl
 msgid "Number of topics:"
-msgstr ""
+msgstr "Počet témat:"
 
 #: templates/metacomments.modac.tmpl templates/oopsattention.modac.tmpl
 #: templates/validate.modac.tmpl
 msgid "OK"
-msgstr ""
+msgstr "OK"
 
 #: templates/more.modac.tmpl
 msgid "Older revision:"
-msgstr ""
+msgstr "Starší revize:"
 
 #: templates/metacomments.modac.tmpl
 msgid "One comment"
-msgstr ""
+msgstr "Komentář "
 
 #: data/Main/ModacSkinGroupViewTemplate.txt
 msgid "Only members or admins may update group."
-msgstr ""
+msgstr "Jen členové a administrátoři mohou zpracovat skupiny."
 
 #: templates/more.modac.tmpl
 msgid "Only update linked topics in %1 web"
-msgstr ""
+msgstr "Aktualizovat jen témata propojená odkazem v %1 webu"
 
 #: templates/login.modac.tmpl
 msgid "Oops: we could not recognize you. Try again or [[%1][reset your password]]."
 msgstr ""
+"Bohužel jsme Vás nedokázali identifikovat. Zkuste to znovu nebo [[%"
+"1][resetujte své heslo]]."
 
 #: templates/login.modac.tmpl
 msgid "Oops: we could not recognize you. Try again."
-msgstr ""
+msgstr "Bohužel jsme Vás nedokázali identifikovat. Zkuste to znovu."
 
 #: data/System/ModacSkinUserViewTemplate.txt
 msgid "Open tasks"
-msgstr ""
+msgstr "Otevřené úkoly"
 
 #: templates/renameattachmentdelete.modac.tmpl
 msgid "Optionally enter a different attachment name:"
-msgstr ""
+msgstr "Můžete zadat i jiný název přílohy:"
 
 #: templates/renameattachmentdelete.modac.tmpl
 msgid "Optionally enter a different topic name:"
-msgstr ""
+msgstr "Můžete zadat i jiný název tématu:"
 
 #: templates/more.modac.tmpl
 msgid "Options"
-msgstr ""
+msgstr "Opce"
 
 #: templates/viewtopicactionbuttons.modac.tmpl
 msgid "PDF-Print"
-msgstr "PDF-tisk"
+msgstr "Tisk PDF"
 
 #: data/System/ModacSkinSolrSearchViewTemplate.txt
 msgid "Person in charge of page"
-msgstr ""
+msgstr "osoba odpovědná za stránku"
 
 #: data/System/ModacSkinContentTemplatesViewTemplate.txt
 #: data/System/ModacSkinWebCreateNewTopicTemplate.txt
 #: templates/more.modac.tmpl
 msgid "Please enter the article name without special characters."
-msgstr ""
+msgstr "Zadejte označení článku bez zvláštních znaků."
 
 #: data/System/ModacSkinSolrSearchViewTemplate.txt
 msgid "Portuguese"
-msgstr ""
+msgstr "Portugalština"
 
 #: templates/settings.modac.tmpl
 msgid "Preferences for"
-msgstr ""
+msgstr "Nastavení pro"
 
 #: templates/validate.modac.tmpl
 msgid "Press Cancel otherwise."
-msgstr ""
+msgstr "Jinak zvolte Storno."
 
 #: templates/validate.modac.tmpl
 msgid "Press OK to confirm that this change was intentional."
-msgstr ""
+msgstr "Potvrďte tlačítkem OK, když si tuto změnu přejete."
 
 #: templates/attach.modac.tmpl
 msgid "Properties"
-msgstr ""
+msgstr "Vlastnosti"
 
 #: data/System/ModacSkinCommonWords.txt
 msgid "Put under CIP"
-msgstr ""
+msgstr "Dát pod CIP"
 
 #: data/System/ModacSkin.txt
 msgid "Quality (9000)"
-msgstr ""
+msgstr "Kvalita (9000)"
 
 #: data/System/ModacSkinSolrSearchViewTemplate.txt
 msgid "Recent changes"
-msgstr ""
+msgstr "Aktuální změny "
 
 #: data/System/WebLeftBarDefault.txt
 msgid "Recently changed"
-msgstr "V poslední době změněno"
+msgstr "Nedávno změněno"
 
 #: data/System/ModacSkinUserViewTemplate.txt
 msgid "Recently finished tasks"
-msgstr ""
+msgstr "Nedávno dokončené úkoly "
 
 #: templates/oopshistory.modac.tmpl
 msgid "Refresh"
-msgstr ""
+msgstr "Nově zavést (načíst)"
 
 #: data/Main/ModacSkinGroupViewTemplate.txt
 msgid "Related topics:"
-msgstr ""
+msgstr "Příbuzná témata:"
 
 #: data/System/ModacSkinUserViewTemplate.txt templates/attachtables.modac.tmpl
 #: templates/viewtopicactionbuttons.modac.tmpl
 msgid "Remove bookmark"
-msgstr ""
+msgstr "Odstranit záložky "
 
 #: data/Main/ModacSkinGroupViewTemplate.txt
 msgid "Remove members from this group"
-msgstr ""
+msgstr "Odstraň členy z této skupiny"
 
 #: data/Main/ModacSkinGroupViewTemplate.txt
 msgid "Remove members..."
-msgstr ""
+msgstr "Odstranění členů..."
 
 #: data/Main/ModacSkinGroupViewTemplate.txt
 msgid "Remove selected members"
-msgstr ""
+msgstr "Odstranit vybrané členy"
 
 #: templates/oopshistory.modac.tmpl
 msgid "Render style:"
-msgstr ""
+msgstr "Styl zobrazení:"
 
 #: templates/form.modac.tmpl
 msgid "Replace form..."
-msgstr ""
+msgstr "Výměna formuláře..."
 
 #: templates/metacomments.modac.tmpl
 msgid "Reply to comment"
-msgstr ""
+msgstr "Odpovědět na komentář "
 
 #: templates/validate.modac.tmpl
 msgid "Request Validation"
-msgstr ""
+msgstr "Potvrzení dotazu"
 
 #: data/System/ModacSkinCommonWords.txt
 msgid "Request approval"
-msgstr ""
+msgstr "Poptat povolení"
 
 #: data/System/ModacSkinCommonWords.txt
 msgid "Request further revision"
-msgstr ""
+msgstr "Poptat další revizi"
 
 #: data/System/ModacSkinDocumentFormTableTemplate.txt
 msgid "Responsible"
-msgstr ""
+msgstr "Odpovídá"
 
 #: templates/more.modac.tmpl
 msgid "Restore topic"
-msgstr ""
+msgstr "Téma obnovit"
 
 #: templates/more.modac.tmpl
 msgid "Restore topic to revision:"
-msgstr ""
+msgstr "Obnovit předchozí revizi tématu:"
 
 #: templates/more.modac.tmpl
 msgid "Restore topic to this revision"
-msgstr ""
+msgstr "Obnovit předchozí revizi tématu"
 
 #: templates/more.modac.tmpl
 msgid "Restore..."
-msgstr ""
+msgstr "Obnovení..."
 
 #: templates/attachtables.modac.tmpl templates/oopshistory.modac.tmpl
 #: templates/rdiff.modac.tmpl
 msgid "Revision"
-msgstr ""
+msgstr "Revize"
 
 #: templates/oopshistory.modac.tmpl
 msgid "Revision history of "
-msgstr ""
+msgstr "Historie verzí "
 
 #: templates/more.modac.tmpl
 msgid "Revisions"
-msgstr ""
+msgstr "Revize"
 
 #: templates/oopshistory.modac.tmpl
 msgid "Revisions %1 - %2 (out of %3) are shown"
-msgstr ""
+msgstr "Zobrazují se revize %1 - %2 (z %3) "
 
 #: templates/oopshistory.modac.tmpl
 msgid "Revisions."
-msgstr ""
+msgstr "revize."
 
 #: data/System/ModacSkinSolrSearchViewTemplate.txt
 msgid "Russian"
-msgstr ""
+msgstr "Ruština"
 
 #: templates/settings.modac.tmpl
 msgid "S = Save, C = Cancel"
-msgstr ""
+msgstr "S = Uložení, C = Storno"
 
 #: templates/edit.modac.tmpl
 msgid "S = Save, Q = Quiet save, K = Save and Continue, P = Preview, C = Cancel"
 msgstr ""
+"S = Uložení, Q = Tiché uložení, K = Dočasné uložení, P = Výhled, C = Storno"
 
 #: data/System/ModacSkinSolrSearchBaseTemplate.txt
 #: templates/viewtopicactionbuttons.modac.tmpl
 msgid "Search"
-msgstr ""
+msgstr "Vyhledání"
 
 #: templates/backlinksallwebs.modac.tmpl
 msgid "Search %1 Web only"
-msgstr ""
+msgstr "Prohlédnout jen %1 web "
 
 #: templates/backlinksweb.modac.tmpl
 msgid "Search all webs"
-msgstr ""
+msgstr "Prohlédnout všechny weby"
 
 #: templates/backlinksallwebs.modac.tmpl templates/backlinksweb.modac.tmpl
 #: templates/more.modac.tmpl
 msgid "Search all webs for topics that link to here"
-msgstr ""
+msgstr "Prohlédnout všechny weby po tématech, která jsem odkazují"
 
 #: templates/more.modac.tmpl
 msgid "Search the %1 Web for topics that link to here"
-msgstr ""
+msgstr "Prohlédnout %1 web po tématech, která jsem odkazují"
 
 #: data/System/ModacAjaxHelper.txt
 msgid "Searching..."
-msgstr ""
+msgstr "Hledání..."
 
 #: templates/attachagain.modac.tmpl
 msgid "Select a new local file to update attachment"
-msgstr ""
+msgstr "Zvolte nový soubor na Vašem počítači, abyste zaktualizoval/a přílohu."
 
 #: templates/renamebase.modac.tmpl
 msgid "Select all"
-msgstr ""
+msgstr "Vybrat všechno"
 
 #: templates/more.modac.tmpl
 msgid "Select destination web"
-msgstr ""
+msgstr "Zvolit cílový web"
 
 #: templates/more.modac.tmpl
 msgid "Select topic parent"
-msgstr ""
+msgstr "Zvolit nadtéma"
 
 #: templates/edit.modac.tmpl
 msgid "Select, copy and paste your signature text to the bottom of your entry"
-msgstr ""
+msgstr "Vložte pod text Vaši signaturu tím, že ji zkopírujete."
 
 #: templates/more.modac.tmpl
 msgid "Sequential"
-msgstr ""
+msgstr "Postupně"
 
 #: templates/more.modac.tmpl
 msgid "Set new parent"
-msgstr ""
+msgstr "Přiřadit nové nadtéma"
 
 #: templates/more.modac.tmpl
 msgid "Set new topic parent"
-msgstr ""
+msgstr "Přiřadit nové nadtéma"
 
 #: templates/renamebase.modac.tmpl
 msgid "Show help"
-msgstr ""
+msgstr "Zobrazit nápovědu"
 
 #: data/System/ModacSkinUserViewTemplate.txt
 msgid "Show tasks finished in the past %1"
-msgstr ""
+msgstr "zobrazit úkoly dokončené v posledním/posledních %1 "
 
 #: templates/foswiki.modac.tmpl
 msgid "Shrink edit box"
-msgstr ""
+msgstr "Zmenšit editační box "
 
 #: templates/more.modac.tmpl templates/oopshistory.modac.tmpl
 msgid "Side by side"
-msgstr ""
+msgstr "Bok po boku "
 
 #: templates/attachtables.modac.tmpl
 msgid "Size"
-msgstr ""
+msgstr "Velikost "
 
 #: data/System/ModacSkinSolrSearchViewTemplate.txt
 msgid "Spanish"
-msgstr ""
+msgstr "Španělština"
 
 #: data/System/WebLeftBarDefault.txt
 msgid "Start"
@@ -1084,312 +1091,320 @@ msgstr "Start"
 
 #: data/System/ModacSkinCommonWords.txt
 msgid "Start discussion"
-msgstr ""
+msgstr "Zahájit diskusi"
 
 #: data/System/ModacSkinUserViewTemplate.txt
 msgid "Status"
-msgstr ""
+msgstr "Status"
 
 #: data/System/ModacSkinSolrSearchViewTemplate.txt
 msgid "Swedish"
-msgstr ""
+msgstr "Švédština"
 
 #: templates/foswiki.modac.tmpl
 msgid "Switch to monotype or propotional font"
 msgstr ""
+"Znakovou sadu změnit na neproporcionální (monotype) nebo proporcionální."
 
 #: data/Main/ModacSkinGroupViewTemplate.txt
 msgid "System user list."
-msgstr ""
+msgstr "Seznam uživatelů systému "
 
 #: data/System/ModacSkinSolrSearchViewTemplate.txt
 msgid "Tag"
-msgstr ""
+msgstr "Značení"
 
 #: data/System/ModacSkinSolrSearchBaseTemplate.txt
 msgid "Tagged %1"
-msgstr ""
+msgstr "%1 označeno"
 
 #: data/System/ModacSkinUserViewTemplate.txt
 msgid "Task"
-msgstr ""
+msgstr "Úkol"
 
 #: templates/renameattachmentdelete.modac.tmpl
 msgid "The attachment may have to be renamed if an attachment with the same name already exists in the target topic."
 msgstr ""
+"Přílohu bude možná nutno přejmenovat, pokud v cílovém tématu již existuje "
+"příloha se stejným názvem."
 
 #: data/System/ModacSkinContentTemplatesViewTemplate.txt
 msgid "The following content template are available for newly created topic in the %1 Web:"
 msgstr ""
+"Níže uvedené předlohy jsou přístupné pro nově vytvořená témata v %1 webu:"
 
 #: data/System/ModacSkinWebCreateNewTopicTemplate.txt
 msgid "The name of the topic is preset and cannot be changed."
-msgstr ""
+msgstr "Název tématu je předem daný a nelze ho resetovat."
 
 #: templates/validate.modac.tmpl
 msgid "There is a risk that someone may be trying to use your identity to change content on %1 without your knowledge."
 msgstr ""
+"Je riziko, že někdo se pokouší zneužit Vaši identitu a bez Vašeho vědomí "
+"změnit obsah %1."
 
 #: data/System/ModacSkinTopicMenuTemplate.txt
 msgid "These actions are not available while editing."
-msgstr ""
+msgstr "Tyto akce nejsou během editace přístupné."
 
 #: data/Main/ModacSkinGroupViewTemplate.txt
 msgid "This group should not have members."
-msgstr ""
+msgstr "Tato skupina by neměla mít žádné členy."
 
 #: data/System/ModacSkinUserViewTemplate.txt
 msgid "This is not your personal page, so you can not see anything here."
-msgstr ""
+msgstr "Toto není Vaše osobní stránka, proto zde nic nevidíte."
 
 #: data/System/ModacSkinSolrSearchViewTemplate.txt
 msgid "Timespan"
-msgstr ""
+msgstr "Doba"
 
 #: data/System/ModacSkinWebCreateNewTopicTemplate.txt
 msgid "Title"
-msgstr ""
+msgstr "Titul"
 
 #: templates/more.modac.tmpl
 msgid "Title of copy"
-msgstr ""
+msgstr "Titul kopie"
 
 #: templates/metacomments.modac.tmpl
 msgid "Title: "
-msgstr ""
+msgstr "Titul: "
 
 #: templates/oopsleaseconflict.modac.tmpl
 msgid "To edit the topic anyway, click "
-msgstr ""
+msgstr "Abyste téma přesto mohl/a zpracovat, klikněte na "
 
 #: templates/oopsleaseconflict.modac.tmpl
 msgid "To see if %1 has finished editing yet, click "
-msgstr ""
+msgstr "Abyste viděli, zda %1 zpracování dokončil, klikněte na "
 
 #: data/System/ModacSkinUserViewTemplate.txt
 msgid "To see your tasks, bookmarks and notes, please go to %1."
-msgstr ""
+msgstr "Abyste viděl/a Vaše úkoly, záložky a poznámky, přejděte na %1."
 
 #: templates/renamebase.modac.tmpl
 msgid "To topic:"
-msgstr ""
+msgstr "Do tématu:"
 
 #: templates/renamebase.modac.tmpl
 msgid "To web:"
-msgstr ""
+msgstr "Do webu:"
 
 #: data/System/WebLeftBarDefault.txt
 msgid "Tools"
-msgstr ""
+msgstr "Nástroje"
 
 #: templates/viewtopicactionbuttons.modac.tmpl
 msgid "Topic"
-msgstr ""
+msgstr "Téma "
 
 #: templates/attachtables.modac.tmpl
 msgid "Topic attachments"
-msgstr ""
+msgstr "Přílohy tématu"
 
 #: templates/oopshistory.modac.tmpl
 msgid "Topic history"
-msgstr ""
+msgstr "Historie tématu"
 
 #: data/System/ModacSkinWebCreateNewTopicTemplate.txt
 msgid "Topic name that the newly created topic will be a child of."
-msgstr ""
+msgstr "Název tématu, jehož podtématem nově vytvořené téma bude."
 
 #: data/System/ModacSkinContentTemplatesViewTemplate.txt
 #: data/System/ModacSkinWebCreateNewTopicTemplate.txt
 msgid "Topic name:"
-msgstr ""
+msgstr "Název tématu:"
 
 #: data/System/ModacSkinTopicMenuTemplate.txt
 msgid "Topic parent"
-msgstr ""
+msgstr "Nadtéma"
 
 #: data/System/ModacSkinWebCreateNewTopicTemplate.txt
 msgid "Topic parent:"
-msgstr ""
+msgstr "Nadtéma:"
 
 #: data/System/ModacSkinTopicMenuTemplate.txt
 msgid "Topic preferences"
-msgstr ""
+msgstr "Nastavení tématu"
 
 #: templates/rdiff.modac.tmpl
 msgid "Topic revision:"
-msgstr ""
+msgstr "Revize tématu:"
 
 #: data/System/ModacSkinDocumentFormTableTemplate.txt
 msgid "Topic title"
-msgstr ""
+msgstr "Titul tématu"
 
 #: templates/oopsleaseconflict.modac.tmpl
 msgid "Try Again"
-msgstr ""
+msgstr "Zkusit znovu"
 
 #: data/System/ModacSkinSolrSearchViewTemplate.txt
 msgid "Turkish"
-msgstr ""
+msgstr "Turečtina"
 
 #: templates/attachtables.modac.tmpl
 msgid "Update attachment"
-msgstr ""
+msgstr "Aktualizovat přílohu"
 
 #: templates/attachagain.modac.tmpl
 msgid "Update attachment %1 on %2"
-msgstr ""
+msgstr "Aktualizovat přílohu %1 k %2 "
 
 #: templates/attachagain.modac.tmpl
 msgid "Update existing attachment"
-msgstr ""
+msgstr "Aktualizovat stávající přílohu"
 
 #: templates/renamewebbase.modac.tmpl
 msgid "Update links"
-msgstr ""
+msgstr "Aktualizovat odkazy"
 
 #: data/Main/ModacSkinGroupViewTemplate.txt
 msgid "Upgrade"
-msgstr ""
+msgstr "Upgradovat (aktualizovat)"
 
 #: data/Main/ModacSkinGroupViewTemplate.txt
 msgid "Upgrade group topic"
-msgstr ""
+msgstr "Optimalizovat skupinové téma"
 
 #: data/Main/ModacSkinGroupViewTemplate.txt
 msgid "Upgrade group topic..."
-msgstr ""
+msgstr "Optimalizování skupinového tématu..."
 
 #: templates/attachagain.modac.tmpl templates/attachnew.modac.tmpl
 msgid "Upload file"
-msgstr ""
+msgstr "Soubor uploadovat"
 
 #: templates/attach.modac.tmpl templates/attachagain.modac.tmpl
 msgid "Upload up to %1 KB."
-msgstr ""
+msgstr "Uploadovat až %1 kB."
 
 #: templates/attach.modac.tmpl
 msgid "Uploading file..."
-msgstr ""
+msgstr "Uploaduje soubor..."
 
 #: data/System/ModacSkinWebCreateNewTopicTemplate.txt
 msgid "Use template:"
-msgstr ""
+msgstr "Používat předlohy:"
 
 #: templates/oopshistory.modac.tmpl
 msgid "Username"
-msgstr ""
+msgstr "Uživatelské jméno "
 
 #: templates/compare.modac.tmpl
 msgid "View difference"
-msgstr ""
+msgstr "Zobrazit rozdíl"
 
 #: templates/more.modac.tmpl
 msgid "View differences"
-msgstr ""
+msgstr "Zobrazit rozdíly"
 
 #: templates/more.modac.tmpl
 msgid "View previous topic revision"
-msgstr ""
+msgstr "Prohlédnout předchozí revizi tématu"
 
 #: templates/more.modac.tmpl
 msgid "View revision"
-msgstr ""
+msgstr "Prohlédnout verzi"
 
 #: templates/more.modac.tmpl
 msgid "View revision:"
-msgstr ""
+msgstr "Prohlédnout verzi:"
 
 #: templates/rdiff.modac.tmpl
 msgid "View topic"
-msgstr ""
+msgstr "Prohlédnout téma"
 
 #: data/System/ModacSkinCommonWords.txt
 msgid "Waiting for PO"
-msgstr ""
+msgstr "Čeká na objednávku"
 
 #: data/System/ModacSkinCommonWords.txt
 msgid "Waiting for QM"
-msgstr ""
+msgstr "Čeká na QM "
 
 #: templates/validate.modac.tmpl
 msgid "Warning! Confirmation required"
-msgstr ""
+msgstr "Pozor! Je nutné potvrzení."
 
 #: data/System/ModacSkinSolrSearchViewTemplate.txt
 msgid "Web"
-msgstr ""
+msgstr "Web"
 
 #: data/System/WebLeftBarDefault.txt
 msgid "Webs"
-msgstr ""
+msgstr "Weby"
 
 #: templates/attachtables.modac.tmpl
 msgid "Who"
-msgstr ""
+msgstr "Kdo"
 
 #: templates/oopshistory.modac.tmpl
 msgid "Whole page"
-msgstr ""
+msgstr "Celá stránka"
 
 #: templates/foswiki.modac.tmpl
 msgid "You are here:"
-msgstr ""
+msgstr "Jste zde:"
 
 #: templates/oopshistory.modac.tmpl
 msgid "You can also choose to see "
-msgstr ""
+msgstr "Můžete zvolit také, abyste viděl/a"
 
 #: templates/validate.modac.tmpl
 msgid "You cannot manually confirm this change because either Cookies or Javascript are disabled in your browser."
 msgstr ""
+"Tuto změnu nemůžete manuálně potvrdit, protože ve Vašem prohlížeči jsou "
+"deaktivovány buď cookies nebo Javascript."
 
 #: templates/edit.modac.tmpl
 msgid "Your signature to copy/paste"
-msgstr ""
+msgstr "Vaše signatura ke kopírování/vložení"
 
 #: templates/foswiki.modac.tmpl
 msgid "accesskey='c'"
-msgstr ""
+msgstr "přístupový klíč (accesskey) = 'c'"
 
 #: templates/search.modac.tmpl
 msgid "by %1 "
-msgstr ""
+msgstr "od %1"
 
 #: templates/renamebase.modac.tmpl
 msgid "checkboxes of referenced topics"
-msgstr ""
+msgstr "zaškrtávací políčka odkazovaných témat "
 
 #: data/System/ModacSkinSolrSearchViewTemplate.txt
 msgid "comment"
-msgstr ""
+msgstr "komentovat/komentář "
 
 #: data/System/ModacSkinSolrSearchViewTemplate.txt
 msgid "document type"
-msgstr ""
+msgstr "druh dokumentu"
 
 #: data/System/ModacSkinSolrSearchBaseTemplate.txt
 msgid "each suggestions"
-msgstr ""
+msgstr "jakékoliv návrhy"
 
 #: templates/oopshistory.modac.tmpl
 msgid "earlier"
-msgstr ""
+msgstr "dříve"
 
 #: templates/formtables.modac.tmpl
 msgid "edit"
-msgstr ""
+msgstr "editovat"
 
 #: data/System/ModacSkinSolrSearchBaseTemplate.txt
 msgid "else"
-msgstr ""
+msgstr "jinak"
 
 #: templates/oopshistory.modac.tmpl
 msgid "first"
-msgstr ""
+msgstr "první"
 
 #: templates/edit.modac.tmpl
 msgid "help"
-msgstr ""
+msgstr "nápověda"
 
 #: data/System/ModacSkinSolrSearchBaseTemplate.txt
 msgid "html jsi18n.get('solr' ,'in %1', \"<a href='\"+container_url+\"'>\"+container_title+\"</a>\")"
@@ -1413,84 +1428,86 @@ msgstr ""
 
 #: data/System/ModacSkinSolrSearchViewTemplate.txt
 msgid "image"
-msgstr ""
+msgstr "obrázek"
 
 #: templates/more.modac.tmpl
 msgid "in raw text format"
-msgstr ""
+msgstr "ve formátu zdrojového textu"
 
 #: templates/form.modac.tmpl
 msgid "indicates mandatory fields"
-msgstr ""
+msgstr "označuje povinné pole"
 
 #: data/System/ModacSkinSolrSearchBaseTemplate.txt
 msgid "keyword"
-msgstr ""
+msgstr "heslo"
 
 #: data/System/ModacSkinSolrSearchBaseTemplate.txt
 msgid "language"
-msgstr ""
+msgstr "jazyk"
 
 #: templates/oopshistory.modac.tmpl
 msgid "last"
-msgstr ""
+msgstr "poslední"
 
 #: templates/oopshistory.modac.tmpl
 msgid "later"
-msgstr ""
+msgstr "později"
 
 #: data/System/ModacSkinSolrSearchBaseTemplate.txt
 msgid "media"
-msgstr ""
+msgstr "média"
 
 #: templates/metacomments.modac.tmpl
 msgid "needs approval"
-msgstr ""
+msgstr "je nutné povolení"
 
 #: data/System/ModacSkinSolrSearchViewTemplate.txt
 msgid "none"
-msgstr ""
+msgstr "žádný/é/á"
 
 #: data/System/ModacSkinSolrSearchViewTemplate.txt
 msgid "older"
-msgstr ""
+msgstr "starší"
 
 #: templates/attachagain.modac.tmpl templates/rename.modac.tmpl
 #: templates/renameattachmentdelete.modac.tmpl
 msgid "or"
-msgstr ""
+msgstr "nebo "
 
 #: data/System/ModacSkinSolrSearchBaseTemplate.txt
 msgid "recently"
-msgstr "Nedávno"
+msgstr "nedávno"
 
 #: templates/attachtables.modac.tmpl templates/oopshistory.modac.tmpl
 msgid "restore"
-msgstr ""
+msgstr "obnovit"
 
 #: templates/oopshistory.modac.tmpl
 msgid "revisions up to"
-msgstr ""
+msgstr "verze až po"
 
 #: data/System/ModacSkinSolrSearchBaseTemplate.txt
 msgid "submit the query"
-msgstr ""
+msgstr "dotaz odeslat"
 
 #: data/System/ModacSkinSolrSearchBaseTemplate.txt
 msgid "tag"
-msgstr ""
+msgstr "tag"
 
 #: data/System/ModacSkinSolrSearchBaseTemplate.txt
 msgid "tagged %1"
-msgstr ""
+msgstr "%1 označen/o"
 
 #: templates/viewtopicactionbuttons.modac.tmpl
 msgid "title='Attach an image or document to this topic' accesskey='a'>&Attach"
 msgstr ""
+"title='K tomuto tématu připojit obrázek nebo dokument' "
+"accesskey='a'>&Příloha"
 
 #: templates/viewtopicactionbuttons.modac.tmpl
 msgid "title='Create new topic' accesskey='c'>&Create"
-msgstr ""
+msgstr "title='Založit nové téma' accesskey='c'>Založit (&c)"
 
 #: templates/viewtopicactionbuttons.modac.tmpl
 msgid "title='Delete or rename this topic; set parent topic; view and compare revisions' accesskey='m'>&More topic actions"
@@ -1498,131 +1515,140 @@ msgstr ""
 
 #: data/System/ModacSkinCommonWords.txt
 msgid "title='Discussion about Improvements' >Start Discussion"
-msgstr ""
+msgstr "title='Diskuse o zlepšeních' >Zahájit diskusi"
 
 #: templates/viewtopicactionbuttons.modac.tmpl
 msgid "title='Edit Wiki text' accesskey='w'>Edit &wiki text"
-msgstr ""
+msgstr "title='Editovat Wiki text' accesskey='w'>Editovat &wikitext"
 
 #: templates/viewtopicactionbuttons.modac.tmpl
 msgid "title='Edit this topic text' accesskey='e'>&Edit"
-msgstr ""
+msgstr "title='Editovat text tématu' accesskey='e'>&Editovat"
 
 #: templates/viewtopicactionbuttons.modac.tmpl
 msgid "title='Edit this topic' accesskey='e'>&Edit"
-msgstr ""
+msgstr "title='Editovat toto téma' accesskey='e'>&Editovat"
 
 #: data/System/ModacSkinUserViewTemplate.txt
 msgid "title='Edit users data' accesskey='e'>&Edit users data"
 msgstr ""
+"title='Editovat uživatelská data' accesskey='e'>&Editovat data uživatelů "
 
 #: templates/compare.modac.tmpl
 msgid "title='Interwoven' accesskey='i'>&interwoven"
-msgstr ""
+msgstr "title='Propletené' accesskey='v'>těsně spojené (&v)"
 
 #: data/System/ModacSkinUserViewTemplate.txt
 msgid "title='My Page' >My Page"
-msgstr "title='Moje stránka' > Moje stránka"
+msgstr "title='Moje stránka' >Moje stránka"
 
 #: templates/viewtopicactionbuttons.modac.tmpl
 msgid "title='Printable version of this topic' accesskey='p'>&Print version"
-msgstr ""
+msgstr "title='Tisková verze tohoto tématu' accesskey='p'>Tisková verze (&p)"
 
 #: templates/viewtopicactionbuttons.modac.tmpl
 msgid "title='Q.Wiki - Special page' >Special page"
-msgstr ""
+msgstr "title='Speciální stránka Q.Wiki' >Speciální stránka "
 
 #: templates/viewtopicactionbuttons.modac.tmpl
 msgid "title='Search all webs for topics that link to here' accesskey='l'>A&ll Webs"
 msgstr ""
+"title='Prohledat všechny weby po tématech, které odkazují sem' "
+"accesskey='l'>&Všechny weby"
 
 #: templates/viewtopicactionbuttons.modac.tmpl
 msgid "title='Search the %1 Web for topics that link to here' accesskey='b'>&Backlinks"
 msgstr ""
+"title='Web %1 prohlédnout po tématech, které odkazují sem' "
+"accesskey='b'>&Křížové odkazy"
 
 #: templates/viewtopicactionbuttons.modac.tmpl
 msgid "title='Search the %1 Web for topics that link to here' accesskey='b'>We&b"
 msgstr ""
+"title='Web %1 prohlédnout po tématech, které odkazují sem' "
+"accesskey='b'>We&B"
 
 #: templates/compare.modac.tmpl
 msgid "title='Side by side' accesskey='s'>&side by side"
-msgstr ""
+msgstr "title='Bok-po-boku' accesskey='s'>&bok-po-boku"
 
 #: data/System/ModacSkinUserFormEditTemplate.txt
 msgid "title='Upload foto' accesskey='a'>&Upload photo"
-msgstr ""
+msgstr "title='Foto uploadovat' accesskey='a'>&Foto uploadovat"
 
 #: data/System/ModacSkinTopicMenuTemplate.txt
 #: templates/viewtopicactionbuttons.modac.tmpl
 msgid "title='View topic history' accesskey='h'>&History"
-msgstr ""
+msgstr "title='Zobrazit historii' accesskey='h'>&Historie"
 
 #: templates/viewtopicactionbuttons.modac.tmpl
 msgid "title='View topic' accesskey='v'>&View topic"
-msgstr ""
+msgstr "title='Zobrazit téma' accesskey='v'>Zobrazit téma (&v)"
 
 #: templates/viewtopicactionbuttons.modac.tmpl
 msgid "title='View total topic history' accesskey='h'>&History"
-msgstr ""
+msgstr "title='Zobrazit historii tématu' accesskey='h'>&Historie"
 
 #: templates/viewtopicactionbuttons.modac.tmpl
 msgid "title='View without formatting' accesskey='v'>&View wiki text"
 msgstr ""
+"title='Zdrojový text prohlížet bez formátování' accesskey='v'>Zdrojový text "
+"(&v)"
 
 #: data/System/ModacSkinSolrSearchViewTemplate.txt
 msgid "today"
-msgstr ""
+msgstr "dnes"
 
 #: data/System/ModacSkinSolrSearchViewTemplate.txt
 msgid "topic"
-msgstr ""
+msgstr "téma"
 
 #: data/System/ModacSkinSolrSearchBaseTemplate.txt
 msgid "topic type"
-msgstr ""
+msgstr "druh tématu"
 
 #: templates/oopshistory.modac.tmpl
 msgid "unchanged sections before and after each change"
-msgstr ""
+msgstr "nezměněné sekce před a po každé změně"
 
 #: templates/edit.modac.tmpl
 msgid "value='Cancel' accesskey='c'"
-msgstr ""
+msgstr "value='Storno' accesskey='c'"
 
 #: templates/preview.modac.tmpl
 msgid "value='Discard' accesskey='d'"
-msgstr ""
+msgstr "value='Vymazat' accesskey='d'"
 
 #: templates/edit.modac.tmpl
 msgid "value='Preview' accesskey='p'"
-msgstr ""
+msgstr "value='Výhled' accesskey='p'"
 
 #: templates/edit.modac.tmpl
 msgid "value='Quiet save' accesskey='q'"
-msgstr ""
+msgstr "value='Tiché uložení' accesskey='q'"
 
 #: templates/edit.modac.tmpl
 msgid "value='Save and Continue' accesskey='k'"
-msgstr ""
+msgstr "value='Dočasné uložení' accesskey='z'"
 
 #: templates/edit.modac.tmpl
 msgid "value='Save' accesskey='s'"
-msgstr ""
+msgstr "value='Uložení' accesskey='s'"
 
 #: templates/attachtables.modac.tmpl templates/oopshistory.modac.tmpl
 msgid "view"
-msgstr ""
+msgstr "prohlížet"
 
 #: data/System/ModacSkinUserViewTemplate.txt
 msgid "week"
-msgstr ""
+msgstr "týden"
 
 #: templates/validate.modac.tmpl
 msgid "why you are being asked to confirm"
-msgstr ""
+msgstr "proč jste vyzván/a k potvrzení "
 
 #~ msgid "Manual"
 #~ msgstr "Příručka"
 
 #~ msgid "Templates"
-#~ msgstr "Šablony"
+#~ msgstr "Předlohy"
