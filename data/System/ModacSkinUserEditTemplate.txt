@@ -1,3 +1,5 @@
 %TMPL:INCLUDE{"edit"}%
 
 %TMPL:DEF{"formbottom"}%%TMPL:END%
+
+%TMPL:DEF{"pagetitle"}%%MAKETEXT{"My notes"}%%TMPL:END%
