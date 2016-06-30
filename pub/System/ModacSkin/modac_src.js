@@ -988,7 +988,6 @@ jQuery(function($){
             delay: /SeleniumTest/.exec(window.location)?10000:500,
             disableHI: true
         });
-        $jqmenu.bgIframe({opacity:false});
     }
 
     // Inhibit clicks on MoreMenue und submenues
