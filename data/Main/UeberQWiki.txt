@@ -2,10 +2,10 @@
 Das Q.wiki ist eine Entwicklung der Modell Aachen GmbH.<br />
 <br /> %MAKETEXT{"Q.wiki version [_1]" args="%QUERYVERSION{"QwikiContrib"}%"}%
 <br />
-<br /> <strong>Support:</strong><br /> [[mailto:support@modell-aachen.de?subject=Support-Anfrage][support@modell-aachen.de]]<br /> fon: +49 (0)241 538 0+8 720<br />
+<br /> <strong>Support:</strong><br /> [[mailto:support@modell-aachen.de?subject=Support-Anfrage][support@modell-aachen.de]]<br /> fon: +49 (0) 241 99 75 31 99<br />
 <br />Den Teamviewer-Client erreichen Sie [[http://wartung.modell-aachen.de][hier]].<br />
-<br /> <strong>Kontaktdaten:</strong><br /> Modell Aachen GmbH - Interaktive Managementsysteme<br /> Dennewartstr. 25-27<br /> 52068 Aachen<br /> fon +49 (0)241 5380 8722<br /> fax +49 (0)241 9148 8653<br /> [[http://www.modell-aachen.de]]<br />[[http://www.q-wiki.com]]<br />
-<br /> Geschäftsführung: Dr.-Ing. Carsten Behrens<br /> Amtsgericht Aachen, HRB 15622<br />
+<br /> <strong>Kontaktdaten:</strong><br /> Modell Aachen GmbH - Interaktive Managementsysteme<br /> Dennewartstr. 25-27<br /> 52068 Aachen<br /> fon +49 (0) 241 9975 310<br /> fax +49 (0) 241 9975 3199<br /> [[http://www.modell-aachen.de]]<br />[[http://www.q-wiki.com]]<br />
+<br /> Gesch&auml;ftsf&uuml;hrung: Dr.-Ing. Carsten Behrens<br /> Amtsgericht Aachen, HRB 15622<br />
 <br /> Stand: 2016
 
 %META:PREFERENCE{name="DISPLAYCOMMENTS" value="off"}%
