@@ -561,6 +561,64 @@ table[align="center"] {
 	min-width: 1em;
 	margin-right: 0.5em;
 }
+
+/*-------- tablesorter* --------------*/
+table.tablesorter {
+  margin:10px 0pt 15px;
+  width: 100%;
+  text-align: left;
+}
+
+table.tablesorter thead tr th, table.tablesorter tfoot tr th {
+  background-color: #fff;
+  color: #999;
+  text-align: left;
+  padding: 4px 20px 8px 4px;
+  vertical-align: middle;
+}
+
+table.tablesorter.Modac_Standard thead tr th, table.tablesorter.Modac_Standard tfoot tr th {
+  background-color: #003c89;
+  color: #fff;
+  padding: 0 3px;
+  text-align: center;
+}
+
+table.tablesorter.Modac_Standard thead tr .header {
+  background-image: url(bg_white.gif);
+}
+
+table.tablesorter tbody td {
+  color: #3d3d3d;
+  background-color: #fff;
+  vertical-align: center;
+  margin: 8px 1px;
+  padding: 8px;
+  background: #f8fcff;
+}
+
+table.tablesorter.Modac_Standard tbody td {
+  background: #f9f9f9;
+  padding: 0 3px;
+}
+
+table.tablesorter tbody tr.odd td {
+  background-color:#f8fcff;
+}
+
+table.tablesorter thead tr .headerSortDown, table.tablesorter thead tr .headerSortUp {
+  background-color: #fff;
+  color: #000;
+  font-weight: bold;
+}
+
+table.tablesorter tr.even:hover td,
+table.tablesorter tr.odd:hover td {
+  background-color: #e8f7ff;
+  margin: 8px 1px;
+  padding: 8px;
+}
+
 /*-------- /Grey_Standard* -------------*/
 
 /*-------- deprecated: MA_table --------*/
