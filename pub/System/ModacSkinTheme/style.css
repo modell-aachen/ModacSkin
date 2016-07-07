@@ -1845,3 +1845,103 @@ input.hidePlaceholder:focus:-ms-input-placeholder { color:transparent; } /* IE 1
 	border-style: solid;
 	border-width: 1px;
 }
+
+/*----------- pager ---------------------*/
+
+.tasks-pagination {
+  height: 32px;
+  background-color: #f8fcff;
+  border: 1px solid #f0f0f0;
+  border-top: none;
+}
+.tasks-pagination > div {
+  padding: 6px 3px;
+}
+.tasks-pagination a {
+  background-color: #fff;
+  background-repeat: no-repeat;
+  border-radius: 4px;
+  color: #222 !important;
+  font-size: 12px;
+  font-weight: bold;
+  margin-right: 10px;
+  padding: 5px;
+  text-align: center;
+}
+.tasks-pagination a:hover {
+  background-color: #f3f3f3;
+  color: #fff;
+  text-decoration: none;
+}
+.tasks-pagination a:active {
+  background-color: #e6e6e6;
+  text-decoration: none;
+}
+.tasks-pagination a.next {
+  background-image: url("../assets/next.png");
+  background-position: center right;
+  padding-right: 18px;
+}
+.tasks-pagination a.prev {
+  background-image: url("../assets/prev.png");
+  background-position: center left;
+  padding-left: 18px;
+}
+
+.clear {
+  clear: both;
+  line-height: 0;
+  height: 0;
+}
+
+.pagination-container {
+  padding-left: 10px;
+}
+
+.pagination {
+  display: inline-block;
+  padding-left: 0;
+  margin: 6px 0;
+  border-radius: 4px;
+}
+.pagination > li {
+  display: inline;
+}
+.pagination > li > a,
+.pagination > li > span {
+  position: relative;
+  float: left;
+  padding: 6px 9px;
+  line-height: 100%;
+  text-decoration: none;
+  color: #337ab7;
+  background-color: transparent;
+  border: none;
+  border-radius: 15px;
+  margin: 0 5px 0 0;
+}
+.pagination > li > a:hover,
+.pagination > li > span:hover {
+  z-index: 2;
+  color: #337ab7;
+  background-color: #c5e6ff;
+  text-decoration: none;
+}
+.pagination > .active > a, .pagination > .active > a:hover,
+.pagination > .active > span,
+.pagination > .active > span:hover {
+  z-index: 3;
+  color: #fff;
+  background-color: #337ab7;
+  cursor: default;
+  text-decoration: none;
+}
+.pagination > .disabled > span,
+.pagination > .disabled > span:hover,
+.pagination > .disabled > span:focus,
+.pagination > .disabled > a,
+.pagination > .disabled > a:hover,
+.pagination > .disabled > a:focus {
+  color: #ccc;
+  cursor: not-allowed;
+}
