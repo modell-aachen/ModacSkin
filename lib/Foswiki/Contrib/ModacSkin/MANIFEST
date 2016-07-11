@@ -22,6 +22,7 @@ data/System/ModacSkinSystemTabsTemplate.txt 0664
 data/System/ModacSkinTasksAPIDefaultMailTemplate.txt 0664
 data/System/ModacSkinTopHeadTemplate.txt 0664
 data/System/ModacSkinTopicMenuTemplate.txt 0664
+data/System/ModacSkinTranslatedViewplainTemplate.txt 0664
 data/System/ModacSkinUserEditTemplate.txt 0664
 data/System/ModacSkinUserFormEditTemplate.txt 0664
 data/System/ModacSkinUserViewTemplate.txt 0664
