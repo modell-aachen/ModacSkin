@@ -1945,3 +1945,10 @@ input.hidePlaceholder:focus:-ms-input-placeholder { color:transparent; } /* IE 1
   color: #ccc;
   cursor: not-allowed;
 }
+
+.pagination .paginationjs-ellipsis a,
+.pagination .paginationjs-ellipsis a:hover,
+.pagination .paginationjs-ellipsis a:focus {
+	background-color: transparent;
+	cursor: default;
+}
