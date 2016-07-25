@@ -165,3 +165,13 @@ table.atpSearch {
 .atpSearch .ui-icon { 
 	background-image: url('../JQueryPlugin/themes/foswiki/images/ui-icons-famfamfam.png'); 
 }
+
+.ma_right_table {
+  float: right;
+  width: 50%;
+}
+
+.ma_left_table {
+  float: left;
+  width: 50%;
+}
