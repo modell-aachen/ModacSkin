@@ -404,19 +404,24 @@ jQuery(function($){
             var $dialogID = $('#modacWCNTDialog');
 
             // Extract data from link
-            var newtopic = getParameterByName($target.attr('href'), 'newtopic');
-            var newweb = /^(.*)\.|\//.exec(newtopic);
+            var infodata = {};
+            var query = $target.attr('href').replace(/^[^?]*\?/, '');
+            var m = /(;|&)/.exec(query);
+            if(m) {
+                $(query.split(m[0])).each(function(idx, item) {
+                    var m = /([^=]+)=(.*)/.exec(item);
+                    if(m) infodata[m[1]] = decodeURIComponent(m[2]);
+                });
+            }
+            var newtopic = infodata.newtopic;
+            var newweb = /^(.*)(?:\.|\/)/.exec(newtopic);
             if(newweb) {
                 newweb=newweb[1];
             } else {
                 newweb = foswiki.getPreference('WEB');
             }
-            var infodata = {
-                newtopic: newtopic,
-                newweb: newweb,
-                newtopictitle: getParameterByName($target.attr('href'), 'newtopictitle'),
-                topicparent: getParameterByName($target.attr('href'), 'topicparent')
-            }
+            newweb = newweb.replace(/\//g, '.');
+            infodata.newweb = newweb;
 
             if($dialogID.length == 0) {
                 if($('#topic').length) {
@@ -433,8 +438,21 @@ jQuery(function($){
 
                 ModacSkin.blockUI();
                 var restUri = foswiki.getPreference('SCRIPTURL') +'/rest'+ foswiki.getPreference('SCRIPTSUFFIX');
-                var hidewebs = getHidewebs();
-                $.ajax(restUri + '/RenderPlugin/template?name=WebCreateNewTopicDialog;render=on;expand=dialog;topic=' + baseWebTopic + ';topicparent='+infodata.topicparent+';newtopictitle='+infodata.newtopictitle + hidewebs, {
+                delete infodata.web;
+                delete infodata.topic;
+                $.extend(infodata, {
+                    name: 'WebCreateNewTopicDialog',
+                    render: 'on',
+                    expand: 'dialog',
+                    topic: baseWebTopic,
+                });
+                var hidewebs = getParameterByName(window.location.search, 'MODAC_HIDEWEBS');
+                if(hidewebs) {
+                    infodata.MODAC_HIDEWEBS = hidewebs;
+                }
+                $.ajax({
+                    url: restUri + '/RenderPlugin/template',
+                    data: infodata,
                     success: function(data) {
                         ModacSkin.showDialog(data, function($data, $dialog) {
                                 var $form = $dialog.find('form');
@@ -1232,6 +1250,37 @@ jQuery(function($){
         // filter initial val
         filterVal();
 
+    });
+
+    $('form[name="newtopicform"] .reloadWCNTOnChange').livequery(function(){
+        $(this).change(function() {
+            var $this = $(this);
+            var $form = $this.closest('form');
+
+            var newweb = $form.find('[name="inputweb"]').val();
+            var newtopic = $form.find('[name="inputtopic"]').val();
+            var title = $form.find('[name="TopicTitle"]').val();
+            var $title = $form.find('[name="newtopictitle"]');
+            if(!$title.length) {
+                $title = $('<input type="hidden" name="newtopictitle" />').appendTo($form);
+            }
+            $title.val(title);
+            if(!newweb) {
+                newweb = foswiki.getPreference('WEB');
+                $form.find('[name="inputweb"]').val(newweb);
+            }
+            var serialized = $form.serialize();
+            var href = foswiki.getScriptUrl('view') + '/' + newweb + '/WebCreateNewTopic?' + serialized;
+            if($this.closest('#modacWCNTDialog').length) {
+                $('#modacWCNTDialog').dialog('close').dialog('destroy').remove();
+
+                var ev = {};
+                ev.target = $('<a></a>').attr('href', href).addClass('modacNewLink');
+                ModacSkin.wcntHandler(ev);
+            } else {
+                window.location = href;
+            }
+        })
     });
 });
 
