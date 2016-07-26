@@ -3,7 +3,7 @@ The span.title string will be picked up by the "You have not filled out the mand
 }%
 %TMPL:DEF{"modacformtable"}%
 %RENDERFOREDIT{
-form="%QUERY{"form.name" topic="%BASETOPIC%"%IF{"defined rev" then=" rev=\"$percentURLPARAM{\"rev\" default=\"%rev%\"}$percent\""}%}%"
+form="%URLPARAM{"formtemplate" default="%QUERY{"form.name" topic="%BASETOPIC%"%IF{"defined rev" then=" rev=\"$percentURLPARAM{\"rev\" default=\"%rev%\"}$percent\""}%}%"}%"
 format="<tr class='modacForm'><td><span class='title'>$title</span>$mandatory</td><td>$edit</td></tr>"
 map="%TMPL:P{"modacformtable_mappings"}%"
 mandatory="&nbsp;<span class='foswikiAlert'>*</span>"
