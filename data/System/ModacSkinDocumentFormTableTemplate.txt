@@ -13,4 +13,4 @@ topic="%IF{"istopic '%WEB%.%TOPIC%'" then="%WEB%.%TOPIC%" else="%URLPARAM{"templ
 }%
 %TMPL:END%
 
-%TMPL:DEF{"modacformtable_mappings"}%DocumentType=%MAKETEXT{"Document type"}%,TopicTitle=%MAKETEXT{"Topic title"}%,Responsible=%MAKETEXT{"Responsible"}%,AreaOfApplication=%MAKETEXT{"Area of application"}%,ISO9001=%MAKETEXT{"ISO 9001"}%,ISO14001=%MAKETEXT{"ISO 14001"}%,ISO50001=%MAKETEXT{"ISO 50001"}%,ISOTS16949=%MAKETEXT{"ISO/TS 16949"}%,OHSAS18001=%MAKETEXT{"OHSAS 18001"}%,ISO90012015=%MAKETEXT{"ISO 9001 : 2015"}%,ISO140012015=%MAKETEXT{"ISO 14001 : 2015"}%%TMPL:END%
+%TMPL:DEF{"modacformtable_mappings"}%DocumentType=%MAKETEXT{"Document type"}%,TopicTitle=%MAKETEXT{"Topic title"}%,Responsible=%MAKETEXT{"Responsible"}%,AreaOfApplication=%MAKETEXT{"Area of application"}%%SOLRSEARCH{"form:(StandardsForm OR %STANDARDSWEB{default="Standards"}%.StandardsForm) web:%STANDARDSWEB{default="Standards"}%" header="," separator="," fields="topic,title" format="$topic=$percentMAKETEXT{\"$title\"}$percent"}%%TMPL:END%
