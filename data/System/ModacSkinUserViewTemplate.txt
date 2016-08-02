@@ -21,7 +21,6 @@
 %TMPL:DEF{"top"}%%TMPL:END%
 
 %TMPL:DEF{"perspage:scripts"}%
-%ADDTOZONE{"script" requires="JQUERYPLUGIN" text="<script type=\"text/javascript\" src=\"%PUBURLPATH%/System/ActionTrackerPlugin/atp.js\"></script>"}%
 %ADDTOZONE{"head" text="<link rel=\"stylesheet\" type=\"text/css\" href=\"%PUBURLPATH%/System/ActionTrackerPlugin/styles_src.css\" /><style type=\"text/css\">
   .atpSearch { width: 100%; border: none; border-collapse: collapse; }
   .atpSearch th { border: none; background: white; color: #999; padding-bottom: 8px; text-align: left; }
