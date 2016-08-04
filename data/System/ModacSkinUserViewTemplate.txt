@@ -204,6 +204,7 @@
   reverse="on"
   rows="999"
   format="<tr><td> [[$web.$topic]] </td><td> $percntIF{\"'$process_state_s'=~'DRAFT'\" then=\"%MAKETEXT{"draft"}%\" else=\"%MAKETEXT{"discussion"}%\"}$percnt </td><td> $percntIF{\"'$process_state_s'=~'DRAFT'\" then=\"$percentCALC{\"$TIMEDIFF($TIME($SUBSTRING($workflowmeta_lasttime_draft_s,7,4)/$SUBSTRING($workflowmeta_lasttime_draft_s,4,2)/$SUBSTRING($workflowmeta_lasttime_draft_s,1,2)), $TODAY(), day)\"}$percent %MAKETEXT{"Day(s)"}%\" else=\"$percentCALC{\"$TIMEDIFF($TIME($SUBSTRING($workflowmeta_lasttime_discussion_s,7,4)/$SUBSTRING($workflowmeta_lasttime_discussion_s,4,2)/$SUBSTRING($workflowmeta_lasttime_discussion_s,1,2)), $TODAY(), day)\"}$percent %MAKETEXT{"Day(s)"}%\"}$percnt </td></tr>"
+  sort="date asc"
   }%
   
 </tbody>
