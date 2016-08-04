@@ -406,13 +406,11 @@ jQuery(function($){
             // Extract data from link
             var infodata = {};
             var query = $target.attr('href').replace(/^[^?]*\?/, '');
-            var m = /(;|&)/.exec(query);
-            if(m) {
-                $(query.split(m[0])).each(function(idx, item) {
-                    var m = /([^=]+)=(.*)/.exec(item);
-                    if(m) infodata[m[1]] = decodeURIComponent(m[2]);
-                });
-            }
+            var m = /(;|&)/.exec(query) || [new RegExp('^')];
+            $(query.split(m[0])).each(function(idx, item) {
+                var m = /([^=]+)=(.*)/.exec(item);
+                if(m) infodata[m[1]] = decodeURIComponent(m[2]);
+            });
             var newtopic = infodata.newtopic;
             var newweb = /^(.*)(?:\.|\/)/.exec(newtopic);
             if(newweb) {
