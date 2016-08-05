@@ -561,6 +561,64 @@ table[align="center"] {
 	min-width: 1em;
 	margin-right: 0.5em;
 }
+
+/*-------- tablesorter* --------------*/
+table.tablesorter {
+  margin:10px 0pt 15px;
+  width: 100%;
+  text-align: left;
+}
+
+table.tablesorter thead tr th, table.tablesorter tfoot tr th {
+  background-color: #fff;
+  color: #999;
+  text-align: left;
+  padding: 4px 20px 8px 4px;
+  vertical-align: middle;
+}
+
+table.tablesorter.Modac_Standard thead tr th, table.tablesorter.Modac_Standard tfoot tr th {
+  background-color: #003c89;
+  color: #fff;
+  padding: 0 3px;
+  text-align: center;
+}
+
+table.tablesorter.Modac_Standard thead tr .header {
+  background-image: url(bg_white.gif);
+}
+
+table.tablesorter tbody td {
+  color: #3d3d3d;
+  background-color: #fff;
+  vertical-align: center;
+  margin: 8px 1px;
+  padding: 8px;
+  background: #f8fcff;
+}
+
+table.tablesorter.Modac_Standard tbody td {
+  background: #f9f9f9;
+  padding: 0 3px;
+}
+
+table.tablesorter tbody tr.odd td {
+  background-color:#f8fcff;
+}
+
+table.tablesorter thead tr .headerSortDown, table.tablesorter thead tr .headerSortUp {
+  background-color: #fff;
+  color: #000;
+  font-weight: bold;
+}
+
+table.tablesorter tr.even:hover td,
+table.tablesorter tr.odd:hover td {
+  background-color: #e8f7ff;
+  margin: 8px 1px;
+  padding: 8px;
+}
+
 /*-------- /Grey_Standard* -------------*/
 
 /*-------- deprecated: MA_table --------*/
@@ -1786,4 +1844,111 @@ input.hidePlaceholder:focus:-ms-input-placeholder { color:transparent; } /* IE 1
 	border-spacing: 0px;
 	border-style: solid;
 	border-width: 1px;
+}
+
+/*----------- pager ---------------------*/
+
+.tasks-pagination {
+  height: 32px;
+  background-color: #f8fcff;
+  border: 1px solid #f0f0f0;
+  border-top: none;
+}
+.tasks-pagination > div {
+  padding: 6px 3px;
+}
+.tasks-pagination a {
+  background-color: #fff;
+  background-repeat: no-repeat;
+  border-radius: 4px;
+  color: #222 !important;
+  font-size: 12px;
+  font-weight: bold;
+  margin-right: 10px;
+  padding: 5px;
+  text-align: center;
+}
+.tasks-pagination a:hover {
+  background-color: #f3f3f3;
+  color: #fff;
+  text-decoration: none;
+}
+.tasks-pagination a:active {
+  background-color: #e6e6e6;
+  text-decoration: none;
+}
+.tasks-pagination a.next {
+  background-image: url("../assets/next.png");
+  background-position: center right;
+  padding-right: 18px;
+}
+.tasks-pagination a.prev {
+  background-image: url("../assets/prev.png");
+  background-position: center left;
+  padding-left: 18px;
+}
+
+.clear {
+  clear: both;
+  line-height: 0;
+  height: 0;
+}
+
+.pagination-container {
+  padding-left: 10px;
+}
+
+.pagination {
+  display: inline-block;
+  padding-left: 0;
+  margin: 6px 0;
+  border-radius: 4px;
+}
+.pagination > li {
+  display: inline;
+}
+.pagination > li > a,
+.pagination > li > span {
+  position: relative;
+  float: left;
+  padding: 6px 9px;
+  line-height: 100%;
+  text-decoration: none;
+  color: #337ab7;
+  background-color: transparent;
+  border: none;
+  border-radius: 15px;
+  margin: 0 5px 0 0;
+}
+.pagination > li > a:hover,
+.pagination > li > span:hover {
+  z-index: 2;
+  color: #337ab7;
+  background-color: #c5e6ff;
+  text-decoration: none;
+}
+.pagination > .active > a, .pagination > .active > a:hover,
+.pagination > .active > span,
+.pagination > .active > span:hover {
+  z-index: 3;
+  color: #fff;
+  background-color: #337ab7;
+  cursor: default;
+  text-decoration: none;
+}
+.pagination > .disabled > span,
+.pagination > .disabled > span:hover,
+.pagination > .disabled > span:focus,
+.pagination > .disabled > a,
+.pagination > .disabled > a:hover,
+.pagination > .disabled > a:focus {
+  color: #ccc;
+  cursor: not-allowed;
+}
+
+.pagination .paginationjs-ellipsis a,
+.pagination .paginationjs-ellipsis a:hover,
+.pagination .paginationjs-ellipsis a:focus {
+	background-color: transparent;
+	cursor: default;
 }

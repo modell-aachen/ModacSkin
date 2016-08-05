@@ -4,7 +4,7 @@
 }%
 %TMPL:DEF{"comments::format::linear"}%<!-- -->
 <div class='cmtCommentContainer cmtComment$evenodd' id='cmtComment$index'>
-  <div class='cmtComment $percntIF{"not('$state'=~'\bapproved\b')" then="cmtCommentNeedsApproval"}$percnt {comment_id:"$id", index:"$index", author:"$percntSPACEOUT{$author}$percnt", date:"$date"}'>
+  <div class='cmtComment $percntIF{"not('$state'=~'\bapproved\b')" then="cmtCommentNeedsApproval"}$percnt %TMPL:P{"metacomments::commentmetajson"}%'>
     <a name='comment$id'></a>
     <h3 class='foswikiRight cmtCommentNr'>$index</h3>
     %IF{"'%ENCODE{"$title" type="entity"}%'!=''" 
@@ -31,7 +31,7 @@
 }%
 %TMPL:DEF{"comments::format::threaded"}%<!-- -->
 <div class='cmtCommentContainer cmtComment$evenodd $percntIF{"$COMMENTMODERATION='on' and not('$state'=~'\bapproved\b')" then="cmtCommentNeedsApproval"}$percnt' id='cmtComment$index'>
-  <div class='cmtComment {comment_id:"$id", index:"$index", author:"$percntSPACEOUT{$author}$percnt", date:"$date"}'>
+  <div class='cmtComment %TMPL:P{"metacomments::commentmetajson"}%'>
     <a name='comment$id'></a>
     <h3 class='foswikiRight cmtCommentNr'>$index</h3>
     %TMPL:P{

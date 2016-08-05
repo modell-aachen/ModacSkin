@@ -21,7 +21,6 @@
 %TMPL:DEF{"top"}%%TMPL:END%
 
 %TMPL:DEF{"perspage:scripts"}%
-%ADDTOZONE{"script" requires="JQUERYPLUGIN" text="<script type=\"text/javascript\" src=\"%PUBURLPATH%/System/ActionTrackerPlugin/atp.js\"></script>"}%
 %ADDTOZONE{"head" text="<link rel=\"stylesheet\" type=\"text/css\" href=\"%PUBURLPATH%/System/ActionTrackerPlugin/styles_src.css\" /><style type=\"text/css\">
   .atpSearch { width: 100%; border: none; border-collapse: collapse; }
   .atpSearch th { border: none; background: white; color: #999; padding-bottom: 8px; text-align: left; }
@@ -59,7 +58,8 @@
 <tr><td class="splitleft"><div class="splittitle">%ICON{viewtopic}% %MAKETEXT{"Topics"}%</div>
 <ul class="modacBookmarks">
 %SOLRSEARCH{"type:topic webtopic:(%FAVORITELIST{format="\\"$swebtopic\\"" separator=" OR " default="NOT *"}%)"
-  rows="999999" sort="webtopic"
+  rows="999999"
+  sort="title asc"
   format="<li data-fav-item=\"$webtopic\">$percntFAVORITEBUTTON{web=\"$web\" topic=\"$topic\" redirectto=\"%WEB%.%TOPIC%\" removeOnUnfav=\"*[data-fav-item='$webtopic']\" format=\"$dollarformstart$dollarlinkstart<img src=\\"%PUBURLPATH%/%SYSTEMWEB%/FamFamFamSilkCompanion1Icons/decline.png\\" alt=\\"%MAKETEXT{"Remove bookmark"}%\\" title=\\"%MAKETEXT{"Remove bookmark"}%\\" />$dollarlinkend$dollarformend\"}$percnt <a href=\"%SCRIPTURL{view}%/$web/$topic\" title=\"$web.$topic\"><strong>$title</strong></a>&nbsp; $percntIF{\"istopic '$webtopic$percntWORKFLOWSUFFIX$percnt'\" then=\"&nbsp;&nbsp;|&nbsp;&nbsp;<a href='$percntSCRIPTURL{view}$percnt/$web/$topic$percntWORKFLOWSUFFIX$percnt'><span class=\\"bmsubinfo\\">$dollarpercntICON{comments}$dollarpercnt&nbsp;$percntMAKETEXT{\"Discussion available\"}$percnt</span></a>\"}$percnt%BR%<span class=\"bmsubinfo\">[[$web.WebHome][$percentFORMATLIST{\"$dollarmap($web)\" map=\"%MODAC_WEBMAPPINGS{default=""}%\"}$percent]]</span></li>"
   fields="web,topic,webtopic,name,url,title,workflow_hasdiscussion_b"
 }%
@@ -67,7 +67,8 @@
 <td class="splitright"><div class="splittitle">%ICON{attachfile}% %MAKETEXT{"Attachments"}%</div>
 <ul class="modacBookmarks">
 %SOLRSEARCH{"-type:(topic OR comment OR action) (%FAVORITELIST{type="files" format="(webtopic:\\"$swebtopic\\" name:\"$file\")" separator=" OR " default="NOT *"}%)"
-  rows="999999" sort="webtopic"
+  rows="999999"
+  sort="title asc,container_title asc"
   format="<li data-fav-item=\"$webtopic-$name\">$percntFAVORITEBUTTON{web=\"$web\" topic=\"$topic\" file=\"$name\" redirectto=\"%WEB%.%TOPIC%\" removeOnUnfav=\"*[data-fav-item='$webtopic-$name']\" format=\"$dollarformstart$dollarlinkstart<img src=\\"%PUBURLPATH%/%SYSTEMWEB%/FamFamFamSilkCompanion1Icons/decline.png\\" alt=\\"%MAKETEXT{"Remove bookmark"}%\\" title=\\"%MAKETEXT{"Remove bookmark"}%\\" />$dollarlinkend$dollarformend\"}$percnt<a href=\"$url\"><strong>$name</strong></a>%BR%<span class=\"bmsubinfo\">[[$web.WebHome][$percentFORMATLIST{\"$dollarmap($web)\" map=\"%MODAC_WEBMAPPINGS{default=""}%\"}$percent]] &raquo; <a href=\"%SCRIPTURL{view}%/$web/$topic\" title=\"$web.$topic\">$container_title</a></span></li>"
   fields="web,topic,name,url,container_title"
 }%
@@ -179,11 +180,10 @@
  </thead>
  <tbody>
  %SOLRSEARCH{"type:topic process_state_s:(CONTENT_REVIEW OR CONTENT_REVIEW_DRAFT) %IF{"%OriginalOwnerApproves{default="0"}%" then="{!join to=workflow_origin_s from=webtopic}"}%field_Responsible_s:%RENDERUSER{format="$cUID"}%"
-  order="modified"
   rows="999"
   format="<tr><td> [[$web.$topic][$title]] </td><td> $percntIF{\"'$process_state_s'=~'DRAFT'\" then=\"%MAKETEXT{"draft"}%\" else=\"%MAKETEXT{"discussion"}%\"}$percnt </td><td> $percntIF{\"'$process_state_s'=~'DRAFT'\" then=\"$percentCALC{\"$TIMEDIFF($TIME($SUBSTRING($workflowmeta_lasttime_draft_s,7,4)/$SUBSTRING($workflowmeta_lasttime_draft_s,4,2)/$SUBSTRING($workflowmeta_lasttime_draft_s,1,2)), $TODAY(), day)\"}$percent %MAKETEXT{"Day(s)"}%\" else=\"$percentCALC{\"$TIMEDIFF($TIME($SUBSTRING($workflowmeta_lasttime_discussion_s,7,4)/$SUBSTRING($workflowmeta_lasttime_discussion_s,4,2)/$SUBSTRING($workflowmeta_lasttime_discussion_s,1,2)), $TODAY(), day)\"}$percent %MAKETEXT{"Day(s)"}%\"}$percnt </td></tr>"
-  reverse="on"
   fields="web,topic,title,process_state_s,workflowmeta_lasttime_draft_s,workflowmeta_lasttime_discussion_s"
+  sort="date asc"
 }%
   </tbody>
   </table>
@@ -200,10 +200,9 @@
 <tbody>
  %SOLRSEARCH{"type:topic web:Processes process_state_s:(FORMAL_REVIEW OR FORMAL_REVIEW_DRAFT)"
   fields="web,topic,title,process_state_s,workflowmeta_lasttime_draft_s,workflowmeta_lasttime_discussion_s"
-  order="modified"
-  reverse="on"
   rows="999"
   format="<tr><td> [[$web.$topic]] </td><td> $percntIF{\"'$process_state_s'=~'DRAFT'\" then=\"%MAKETEXT{"draft"}%\" else=\"%MAKETEXT{"discussion"}%\"}$percnt </td><td> $percntIF{\"'$process_state_s'=~'DRAFT'\" then=\"$percentCALC{\"$TIMEDIFF($TIME($SUBSTRING($workflowmeta_lasttime_draft_s,7,4)/$SUBSTRING($workflowmeta_lasttime_draft_s,4,2)/$SUBSTRING($workflowmeta_lasttime_draft_s,1,2)), $TODAY(), day)\"}$percent %MAKETEXT{"Day(s)"}%\" else=\"$percentCALC{\"$TIMEDIFF($TIME($SUBSTRING($workflowmeta_lasttime_discussion_s,7,4)/$SUBSTRING($workflowmeta_lasttime_discussion_s,4,2)/$SUBSTRING($workflowmeta_lasttime_discussion_s,1,2)), $TODAY(), day)\"}$percent %MAKETEXT{"Day(s)"}%\"}$percnt </td></tr>"
+  sort="date asc"
   }%
   
 </tbody>
@@ -247,7 +246,7 @@ $percentTMPL:P{perspage:comments}$percent
 %SOLRSEARCH{"type:comment notified_lst:%RENDERUSER{format="$cUID"}% -read_lst:%RENDERUSER{format="$cUID"}%"
 format="<tr class='modac_comment'><td>$percntRENDERUSER{\"$author\"}$percnt</td><td>[[$web.$topic]]</td><td><b>$title</b>%BR%$text</td><td><div class='modac_comment_ctl'><form class='tick' action='%SCRIPTURLPATH{jsonrpc}%/MetaCommentPlugin/markRead' method='post'><input type='hidden' name='topic' value='$web.$topic' /><input type='hidden' name='comment_id' value='$name' /><button type='submit' value='tick' >$percentJQICON{tick}$percent</button></form></div></td></tr>$n"
 rows="999"
-sort="webtopic,name"
+sort="container_title asc,name asc"
 header="<div class='perspageBlockTitle'>%MAKETEXT{"Comments for me"}%</div><div class='perspageBlock'>
 <table class=\"atpSearch atpOrientCols tablesorter {widgets: ['zebra'], sortList: [[0,1],[0,1]], headers: { 2: { sorter: 'qwikiDate' }, 3: { sorter: false }, 4: { sorter: false }}}\" style=\"width: 100%;\">
 <thead>
