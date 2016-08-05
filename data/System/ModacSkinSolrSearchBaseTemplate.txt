@@ -78,7 +78,7 @@
 {{if thumbnail}}
       <div class='solrThumbnail'>
         <a class='imageHref imageSimple jqImageTooltip {web:"{{:web}}", topic:"{{:topic}}", image:"{{:thumbnail}}"}' href='{{:url}}' title='{{:name}}'>
-          <img src='{{:~foswiki.getPreference('SCRIPTURLPATH')}}/rest{{:~foswiki.getPreference('SCRIPTSUFFIX')}}/ImagePlugin/resize?topic={{:web}}.{{:topic}};file={{:~encodeURIComponent(thumbnail)}};size=70>;crop=center' alt='{{:thumbnail}}' />
+          <img src='{{:~foswiki.getPreference('SCRIPTURLPATH')}}/rest{{:~foswiki.getPreference('SCRIPTSUFFIX')}}/ImagePlugin/resize?topic={{:web}}.{{:topic}};file={{:~encodeURIComponent(thumbnail)}};size=70&gt;;crop=center' alt='{{:thumbnail}}' />
         </a>
       </div>
 {{/if}}

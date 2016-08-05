@@ -22,6 +22,7 @@ data/System/ModacSkinSystemTabsTemplate.txt 0664
 data/System/ModacSkinTasksAPIDefaultMailTemplate.txt 0664
 data/System/ModacSkinTopHeadTemplate.txt 0664
 data/System/ModacSkinTopicMenuTemplate.txt 0664
+data/System/ModacSkinTranslatedViewplainTemplate.txt 0664
 data/System/ModacSkinUserEditTemplate.txt 0664
 data/System/ModacSkinUserFormEditTemplate.txt 0664
 data/System/ModacSkinUserViewTemplate.txt 0664
@@ -149,12 +150,14 @@ templates/formtables.modaccompare.tmpl 0664
 templates/foswiki.modac.tmpl 0664
 templates/foswiki.modacdialog.tmpl 0664
 templates/login.modac.tmpl 0664
+templates/mailnotify.modac.tmpl 0644 Template that overrides MailerContrib mail notify
 templates/messages.modac.tmpl 0664
 templates/metacomments.modac.tmpl 0664
 templates/metamaketext.modac.tmpl 0664
 templates/more.modac.tmpl 0664
 templates/more.modacdialog.tmpl 0664
 templates/moveattachment.modac.tmpl 0644
+templates/newsletter.modac.tmpl 0644 Template that overrides MailerContrib newsletter
 templates/oops.modac.tmpl 0664
 templates/oops.modacdialog.tmpl 0664
 templates/oopsaccessdenied.modac.tmpl 0664

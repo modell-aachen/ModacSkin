@@ -3,7 +3,7 @@ The span.title string will be picked up by the "You have not filled out the mand
 }%
 %TMPL:DEF{"modacformtable"}%
 %RENDERFOREDIT{
-form="%QUERY{"form.name" topic="%BASETOPIC%"%IF{"defined rev" then=" rev=\"$percentURLPARAM{\"rev\" default=\"%rev%\"}$percent\""}%}%"
+form="%URLPARAM{"formtemplate" default="%QUERY{"form.name" topic="%BASETOPIC%"%IF{"defined rev" then=" rev=\"$percentURLPARAM{\"rev\" default=\"%rev%\"}$percent\""}%}%"}%"
 format="<tr class='modacForm'><td><span class='title'>$title</span>$mandatory</td><td>$edit</td></tr>"
 map="%TMPL:P{"modacformtable_mappings"}%"
 mandatory="&nbsp;<span class='foswikiAlert'>*</span>"
@@ -13,4 +13,5 @@ topic="%IF{"istopic '%WEB%.%TOPIC%'" then="%WEB%.%TOPIC%" else="%URLPARAM{"templ
 }%
 %TMPL:END%
 
-%TMPL:DEF{"modacformtable_mappings"}%DocumentType=%MAKETEXT{"Document type"}%,TopicTitle=%MAKETEXT{"Topic title"}%,Responsible=%MAKETEXT{"Responsible"}%,AreaOfApplication=%MAKETEXT{"Area of application"}%,ISO9001=%MAKETEXT{"ISO 9001"}%,ISO14001=%MAKETEXT{"ISO 14001"}%,ISO50001=%MAKETEXT{"ISO 50001"}%,ISOTS16949=%MAKETEXT{"ISO/TS 16949"}%,OHSAS18001=%MAKETEXT{"OHSAS 18001"}%,ISO90012015=%MAKETEXT{"ISO 9001 : 2015"}%,ISO140012015=%MAKETEXT{"ISO 14001 : 2015"}%%TMPL:END%
+%{ PROTECT macro: see formtables.modac.tmpl }%
+%TMPL:DEF{"modacformtable_mappings"}%DocumentType=%MAKETEXT{"Document type"}%,TopicTitle=%MAKETEXT{"Topic title"}%,Responsible=%MAKETEXT{"Responsible"}%,AreaOfApplication=%MAKETEXT{"Area of application"}%%SOLRSEARCH{"form:(StandardForm OR %STANDARDSWEB{default="Standards"}%.StandardForm) web:%STANDARDSWEB{default="Standards"}%" header="," separator="," fields="topic,title" format="$topic=$percentMAKETEXT{\"$%PROTECT{default=""}%title\"}$percent" rows="999"}%%TMPL:END%

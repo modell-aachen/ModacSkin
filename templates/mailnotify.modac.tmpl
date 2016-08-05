@@ -1,0 +1,34 @@
+%TMPL:INCLUDE{"mailnotify"}%
+%TMPL:INCLUDE{"mailtemplatescontrib"}%
+
+%TMPL:DEF{MailNotifyBody}%From: %TMPL:P{"ModacNoReply"}%
+To: %EMAILTO%
+Subject: %WIKITOOLNAME%.%WEB% - %MAKETEXT{"Automated notification of topic changes"}%
+Auto-Submitted: auto-generated
+MIME-Version: 1.0
+Content-Type: multipart/alternative; boundary="=_=0i0k0i0w0s0o0fXuOi0E0A"
+
+This is a multi-part message in MIME format.
+--=_=0i0k0i0w0s0o0fXuOi0E0A
+Content-Type: text/plain; charset=utf-8; format=flowed
+Content-Transfer-Encoding: 8bit
+
+%MAKETEXT{"This is an automated e-mail from [_1]." args="%WIKITOOLNAME%"}%
+
+%MAKETEXT{"New or changed topics in [_1], since [_2]:" args="%WIKITOOLNAME%.%WEB%,%LASTDATE%"}%
+
+%PLAIN_TEXT%
+%MAKETEXT{"Review recent changes in:"}%
+  %SCRIPTURL{"view"}%/%WEB%/WebChanges
+
+%MAKETEXT{"Subscribe / Unsubscribe in:"}%
+  %SCRIPTURL{"view"}%/%WEB%/%NOTIFYTOPIC%
+
+--=_=0i0k0i0w0s0o0fXuOi0E0A
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+%HTML_TEXT%
+
+--=_=0i0k0i0w0s0o0fXuOi0E0A--
+%TMPL:END%
