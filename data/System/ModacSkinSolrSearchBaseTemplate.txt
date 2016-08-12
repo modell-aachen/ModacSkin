@@ -399,7 +399,13 @@ $percentTMPL:DEF{"solr::fields::append"}$percent$percentTMPL:PREF$percent,your_s
   "comment": "%MAKETEXT{"comment"}%",
   "task": "%MAKETEXT{"Task"}%",
   "Tagged": "%MAKETEXT{"Tagged"}%",
-  "tagged": "%MAKETEXT{"tagged"}%"
+  "tagged": "%MAKETEXT{"tagged"}%",
+  "minute": "%MAKETEXT{"Minute"}%",
+  "iptask": "%MAKETEXT{"Internal project task"}%",
+  "project_task": "%MAKETEXT{"Project task"}%",
+  "risk": "%MAKETEXT{"Risk"}%",
+  "riskmeasure": "%MAKETEXT{"Risk measure"}%",
+  "auditmeasure": "%MAKETEXT{"Audit measure"}%"
 %TMPL:P{"modac::solr::dictionary"}%
 }
 </div>
