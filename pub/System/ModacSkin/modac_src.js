@@ -893,7 +893,7 @@ jQuery(function($){
         $.each(mandatoryCheckers, function(i, checker) {
             var result = checker();
             if(result && result.length){
-                alerts.concat(result);
+                alerts = alerts.concat(result);
             }
         });
         if (alerts.length) {
