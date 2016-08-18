@@ -36,6 +36,7 @@ jQuery(function($){
         return hidewebs;
     };
 
+    var mandatoryCheckers = [];
     var ModacSkin = foswiki.ModacSkin = {
 
         // These are the default options for dialogs
@@ -764,6 +765,9 @@ jQuery(function($){
         },
         hideSidebarHandler: function() {
             ModacSkin.hideSidebar(true);
+        },
+        registerMandatoryChecker: function(checker) {
+            mandatoryCheckers.push(checker);
         }
     };
 
@@ -873,17 +877,6 @@ jQuery(function($){
           if(!title) title = $(e).attr('name');
           alerts.push(jsi18n.get('edit', "You have not filled out the mandatory form field '[_1]'.", title));
         });
-        // check for mandatory group fields
-        var mandatoryFields = $("[data-group][data-group!='']");
-        if (mandatoryFields.length) {
-            if(mandatoryGroupCheck) {
-                var msg = mandatoryGroupCheck(mandatoryFields);
-                if(msg != '') {
-                    alerts.push(msg);
-                }
-            }
-        }
-
         // check checkboxes
         var checkboxNames = {};
         $('input[type="checkbox"].foswikiMandatory').each(function(i,e) {
@@ -896,6 +889,12 @@ jQuery(function($){
             if(!title) title = i;
             alerts.push(jsi18n.get('edit', "You have not selected any option of the mandatory form field '[_1]'.", title));
           }
+        });
+        $.each(mandatoryCheckers, function(i, checker) {
+            var result = checker();
+            if(result && result.length){
+                alerts.concat(result);
+            }
         });
         if (alerts.length) {
           alerts.push(jsi18n.get('edit', 'Please check your input.'));
