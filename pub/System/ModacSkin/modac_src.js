@@ -873,6 +873,17 @@ jQuery(function($){
           if(!title) title = $(e).attr('name');
           alerts.push(jsi18n.get('edit', "You have not filled out the mandatory form field '[_1]'.", title));
         });
+        // check for mandatory group fields
+        var mandatoryFields = $("[data-group][data-group!='']");
+        if (mandatoryFields.length) {
+            if(mandatoryGroupCheck) {
+                var msg = mandatoryGroupCheck(mandatoryFields);
+                if(msg != '') {
+                    alerts.push(msg);
+                }
+            }
+        }
+
         // check checkboxes
         var checkboxNames = {};
         $('input[type="checkbox"].foswikiMandatory').each(function(i,e) {
