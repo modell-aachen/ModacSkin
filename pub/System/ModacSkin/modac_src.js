@@ -36,6 +36,9 @@ jQuery(function($){
         return hidewebs;
     };
 
+    var mandatoryCheckers = [];
+    var noValidateAlert; // for validateMandatoryFieldsNoMessage
+
     var ModacSkin = foswiki.ModacSkin = {
 
         // These are the default options for dialogs
@@ -764,6 +767,22 @@ jQuery(function($){
         },
         hideSidebarHandler: function() {
             ModacSkin.hideSidebar(true);
+        },
+
+        // Register a checker for mandatory form fields.
+        // Parameters:
+        //     checker: callback function, that must return undefined or an array with error messages
+        registerMandatoryChecker: function(checker) {
+            mandatoryCheckers.push(checker);
+        },
+
+        // Check all mandatory fields, but do not show a message
+        // Returns: true if foswiki.Edit.validateMandatoryFields will pass
+        validateMandatoryFieldsNoMessage: function() {
+            noValidateAlert = true;
+            var result = foswiki.Edit.validateMandatoryFields();
+            noValidateAlert = false;
+            return result;
         }
     };
 
@@ -886,7 +905,17 @@ jQuery(function($){
             alerts.push(jsi18n.get('edit', "You have not selected any option of the mandatory form field '[_1]'.", title));
           }
         });
+        $.each(mandatoryCheckers, function(i, checker) {
+            var result = checker();
+            if(result && result.length){
+                alerts = alerts.concat(result);
+            }
+        });
         if (alerts.length) {
+          // is message is suppressed
+          if(noValidateAlert) return false;
+
+          // display message
           alerts.push(jsi18n.get('edit', 'Please check your input.'));
           alert(alerts.join("\n"));
           foswiki.Edit.isValidateMandatoryFieldsFailed = true;
