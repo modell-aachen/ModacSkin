@@ -1851,3 +1851,21 @@ msgid ""
 msgstr ""
 "%1 bearbeitet die Seite seit %2 und die Ausleihung ist noch aktiv für "
 "weitere %3."
+
+msgid "Task type"
+msgstr "Aufgabentyp"
+
+msgid "Audit measure"
+msgstr "Audit-Maßnahme"
+
+msgid "Risk measure"
+msgstr "Risk-Maßnahme"
+
+msgid "Minute"
+msgstr "Protokoll"
+
+msgid "Project task"
+msgstr "Projektaufgabe"
+
+msgid "Internal project task"
+msgstr "Interne Projektaufgabe"
