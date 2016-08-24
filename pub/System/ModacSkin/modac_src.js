@@ -921,6 +921,7 @@ jQuery(function($){
           foswiki.Edit.isValidateMandatoryFieldsFailed = true;
           return false;
         }
+        foswiki.Edit.isValidateMandatoryFieldsFailed = false;
         return true;
       };
     }
