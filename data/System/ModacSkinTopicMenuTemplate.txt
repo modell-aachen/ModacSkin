@@ -6,8 +6,15 @@
 <!-- ATTACHMENTS --><li class='modacDialogable'><span class="moremenue-attach">%TMPL:P{"modacAttach"}%</span></li>
 <!-- PDF-EXPORT -->%IF{"context MAPrinceModPluginEnabled" then="<li><span class='moremenue-print'>$percentTMPL:P{pdfexport}$percent</span></li>"}%
 <!-- REVISION HISTORY --><li class='blockOnClick'><span class="moremenue-history">%IF{"context CompareRevisionsAddonPluginEnabled" then="<a href='%SCRIPTURLPATH{"oops"}%/%BASEWEB%/%BASETOPIC%?template=oopshistory&history=on' rel='nofollow' %MAKETEXT{"title='View topic history' accesskey='h'>&History"}%</a>" else="<a href='%SCRIPTURLPATH{"rdiff"}%/%BASEWEB%/%BASETOPIC%?type=history&history=on' rel='nofollow' %MAKETEXT{"title='View topic history' accesskey='h'>&History"}%</a>"}%</span></li>
-%IF{"context 'isadmin' or $USERNAME ingroup '%MODAC_MORE_SUBMENU_ALL%' or $USERNAME ingroup '%MODAC_MORE_SUBMENU_EDITWIKI%' or $USERNAME ingroup '%MODAC_MORE_SUBMENU_REFERENCES%' or $USERNAME ingroup '%MODAC_MORE_SUBMENU_DELETE%' or $USERNAME ingroup '%MODAC_MORE_SUBMENU_RENAME%' or $USERNAME ingroup '%MODAC_MORE_SUBMENU_COPY%' or $USERNAME ingroup '%MODAC_MORE_SUBMENU_CHANGEPARENT%' or $USERNAME ingroup '%MODAC_MORE_SUBMENU_PREFERENCES%'" then="$percentTMPL:P{modacMoreSubmenuAdditional}$percent"}%
-</ul>
+<!-- EDIT WIKITEXT --><li class='requireModacChangePermission'><span class='moremenue-wikitext'>%TMPL:P{"raw_edit_link"}%</span></li>
+<!-- REFERENCES -->%IF{"$DISPLAY_INCOMING_LINKS='1'" then="<li class='modacDialogable'><span class='moremenue-references'><a href='%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%?template=References'>%MAKETEXT{"Find references"}%</a></span></li>"}%
+<li><span class="modacMoreDynamicLink moremenue-managepage"><a href='%SCRIPTURLPATH{view}%/%WEB%/%TOPIC%?template=more'>%MAKETEXT{"Manage page"}% &raquo;</a></span><ul>
+  <!-- TOPIC PREFERENCES --><li class='requireModacChangePermission'><span class='modacDialogable morelink-settings'><a href='%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%?template=more' class='modacChanging'>%MAKETEXT{"Topic preferences"}%</a></span></li>
+  <!-- CHANGE PARENT --><li class='requireModacChangePermission'><span class='modacDialogable morelink-setparent'><a href='%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%?template=more' class='modacChanging'>%MAKETEXT{"Topic parent"}%</a></span></li>
+  <!-- COPY --><li><span class='modacDialogable morelink-copy'><a href='%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%?template=more'>%MAKETEXT{"Copy topic"}%</a></span></li>
+  <!-- RENAME/MOVE --><li class='requireModacMovePermission'><span class='modacDialogable morelink-rename'><a href='%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%?template=more'>%MAKETEXT{"Move topic"}%</a></span></li>
+  <!-- DELETE --><li class='requireModacMovePermission'><span class='modacDialogable morelink-delete'><a href='%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%?template=more'>%MAKETEXT{"Delete topic"}%</a></span></li>
+</ul></li></ul>
 %TMPL:END%
 
 %TMPL:DEF{"modacMoreSubmenuEdit"}%
@@ -17,46 +24,4 @@
 %TMPL:END%
 
 %TMPL:DEF{"modacMoreSubmenu"}%%IF{"context manage or context edit" then="$percentTMPL:P{modacMoreSubmenuEdit}$percent" else="$percentTMPL:P{modacMoreSubmenuView}$percent"}%%TMPL:END%
-
-%TMPL:DEF{"modacMoreSubmenuAdditional"}%
-  <li><span class="modacMoreDynamicLink moremenue-managepage"><a href='%SCRIPTURLPATH{view}%/%WEB%/%TOPIC%?template=more'>%MAKETEXT{"Manage page"}% &raquo;</a></span>
-    <ul>
-      %IF{"context 'isadmin' or $USERNAME ingroup '%MODAC_MORE_SUBMENU_EDITWIKI%' or $USERNAME ingroup '%MODAC_MORE_SUBMENU_ALL%'" then="$percentTMPL:P{modacMoreSubmenuEditWiki}$percent"}%
-      %IF{"context 'isadmin' or $USERNAME ingroup '%MODAC_MORE_SUBMENU_REFERENCES%' or $USERNAME ingroup '%MODAC_MORE_SUBMENU_ALL%'" then="$percentTMPL:P{modacMoreSubmenuReferences}$percent"}%
-      %IF{"context 'isadmin' or $USERNAME ingroup '%MODAC_MORE_SUBMENU_DELETE%' or $USERNAME ingroup '%MODAC_MORE_SUBMENU_ALL%'" then="$percentTMPL:P{modacMoreSubmenuDelete}$percent"}%
-      %IF{"context 'isadmin' or $USERNAME ingroup '%MODAC_MORE_SUBMENU_RENAME%' or $USERNAME ingroup '%MODAC_MORE_SUBMENU_ALL%'" then="$percentTMPL:P{modacMoreSubmenuRename}$percent"}%
-      %IF{"context 'isadmin' or $USERNAME ingroup '%MODAC_MORE_SUBMENU_COPY%' or $USERNAME ingroup '%MODAC_MORE_SUBMENU_ALL%'" then="$percentTMPL:P{modacMoreSubmenuCopy}$percent"}%
-      %IF{"context 'isadmin' or $USERNAME ingroup '%MODAC_MORE_SUBMENU_CHANGEPARENT%' or $USERNAME ingroup '%MODAC_MORE_SUBMENU_ALL%'" then="$percentTMPL:P{modacMoreSubmenuChangeParent}$percent"}%
-      %IF{"context 'isadmin' or $USERNAME ingroup '%MODAC_MORE_SUBMENU_PREFERENCES%' or $USERNAME ingroup '%MODAC_MORE_SUBMENU_ALL%'" then="$percentTMPL:P{modacMoreSubmenuPreferences}$percent"}%
-    </ul>
-  </li>
-%TMPL:END%
-
-%TMPL:DEF{"modacMoreSubmenuEditWiki"}%
-  <!-- EDIT WIKITEXT --><li class='requireModacChangePermission'><span class='moremenue-wikitext'>%TMPL:P{"raw_edit_link"}%</span></li>
-%TMPL:END%
-
-%TMPL:DEF{"modacMoreSubmenuReferences"}%
-  <!-- REFERENCES -->%IF{"$DISPLAY_INCOMING_LINKS='1'" then="<li class='modacDialogable'><span class='moremenue-references'><a href='%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%?template=References'>%MAKETEXT{"Find references"}%</a></span></li>"}%
-%TMPL:END%
-
-%TMPL:DEF{"modacMoreSubmenuDelete"}%
-  <!-- DELETE --><li class='requireModacMovePermission'><span class='modacDialogable morelink-delete'><a href='%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%?template=more'>%MAKETEXT{"Delete topic"}%</a></span></li>
-%TMPL:END%
-
-%TMPL:DEF{"modacMoreSubmenuRename"}%
-  <!-- RENAME/MOVE --><li class='requireModacMovePermission'><span class='modacDialogable morelink-rename'><a href='%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%?template=more'>%MAKETEXT{"Move topic"}%</a></span></li>
-%TMPL:END%
-
-%TMPL:DEF{"modacMoreSubmenuCopy"}%
-  <!-- COPY --><li><span class='modacDialogable morelink-copy'><a href='%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%?template=more'>%MAKETEXT{"Copy topic"}%</a></span></li>
-%TMPL:END%
-
-%TMPL:DEF{"modacMoreSubmenuChangeParent"}%
-  <!-- CHANGE PARENT --><li class='requireModacChangePermission'><span class='modacDialogable morelink-setparent'><a href='%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%?template=more' class='modacChanging'>%MAKETEXT{"Topic parent"}%</a></span></li>
-%TMPL:END%
-
-%TMPL:DEF{"modacMoreSubmenuPreferences"}%
-  <!-- TOPIC PREFERENCES --><li class='requireModacChangePermission'><span class='modacDialogable morelink-settings'><a href='%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%?template=more' class='modacChanging'>%MAKETEXT{"Topic preferences"}%</a></span></li>
-%TMPL:END%
 %{</verbatim>}%
