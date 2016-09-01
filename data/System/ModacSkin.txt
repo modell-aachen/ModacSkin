@@ -101,6 +101,21 @@ By default _ModacSkin_ uses pop-up window for _More topic actions_, history and 
    &#42 Set MODAC_NO_TOPMENU = 1
 </pre>
 
+The TopMenue contains functions to remove, rename, show references or change the parent of a topic.
+By Default this functions are visible for admins only.
+
+Following settings could be used to show this functions to other groups:
+<pre>
+   &#42 Set MODAC_MORE_SUBMENU_ALL = 
+   &#42 Set MODAC_MORE_SUBMENU_EDITWIKI = 
+   &#42 Set MODAC_MORE_SUBMENU_REFERENCES = 
+   &#42 Set MODAC_MORE_SUBMENU_DELETE = 
+   &#42 Set MODAC_MORE_SUBMENU_RENAME = 
+   &#42 Set MODAC_MORE_SUBMENU_COPY = 
+   &#42 Set MODAC_MORE_SUBMENU_CHANGEPARENT = 
+   &#42 Set MODAC_MORE_SUBMENU_PREFERENCES = 
+</pre>
+
 ---+++ References to pages/attachments
 To add a menu to the references of the current topic or it's attachments, set =DISPLAY_INCOMING_LINKS= to =1=.
 
