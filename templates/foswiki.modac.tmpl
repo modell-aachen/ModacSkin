@@ -90,8 +90,12 @@ LIBJS with added QUERYVERSION support
 %TMPL:DEF{"bodystart"}%<body class="%TMPL:P{"bodyclassname"}%">
 #PageTop%TMPL:END%
 
+%TMPL:DEF{"modacSettings"}%%TMPL:END%
 
 %TMPL:DEF{"main"}%
+<!-- Section to include customized preference values
+%TMPL:P{"modacSettings"}%
+-->
 <div class="foswikiPage">
 	%TMPL:P{"sidebar"}%
 	<div id="modacWrapper"><div id="modacSecondWrapper">

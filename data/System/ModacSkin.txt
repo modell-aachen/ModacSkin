@@ -101,6 +101,51 @@ By default _ModacSkin_ uses pop-up window for _More topic actions_, history and 
    &#42 Set MODAC_NO_TOPMENU = 1
 </pre>
 
+Further customization of the top menu may be achieved by specifying preferences =TOPICMENU_ITEMS=
+and =TOPICMENU_MORE_ITEMS=. Each of those preferences takes a comma separated list
+of id's (see below). Items are rendered in the given order within each list.
+<pre>
+   &#42 Set TOPICMENU_ITEMS = ...
+      &#42 Defaults to: attachments,pdfexport,history,wikitext,references,more
+</pre>
+<pre>
+   &#42 Set TOPICMENU_MORE_ITEMS = ...
+      &#42 Defaults to: preferences,changeparent,copy,move,delete
+</pre>
+
+| *id* | *description* |
+| attachments | The attachment pop-up |
+| pdfexport | The PDF export dialog |
+| history | Displays a topic's revision history |
+| wikitext | Edits a topic's wiki text |
+| references | A pop-up showing a references (incoming links) |
+| more | The _more actions_ submenu. Its items are specified by setting =TOPICMENU_MORE_ITEMS= |
+| preferences | Topic preferences |
+| changeparent | A dialog to change a topic's parent |
+| copy | A dialog to create of copy of the current topic |
+| move | Moves/Renames the currently displayed topic |
+| delete | Deletes the currently displayed topic |
+
+Furthermore you may disable a single entry by setting preference
+=TOPICMENU_HIDE_id= to =1=.
+<pre>
+   &#42 Set TOPICMENU_HIDE_MORE = 1
+      &#42 Hides the submenu _More actions_.
+</pre>
+
+In addition you also may create your own entry templates by following the naming
+convention as shown below (=modacTopicMenu::id=) and include the specified id
+either in =TOPICMENU_ITEMS= or =TOPICMENU_MORE_ITEMS=
+<verbatim class="tml">
+%TMPL:DEF{"modacTopicMenu::myid"}%
+<li>Do magic here</li>
+%TMPL:END%
+</verbatim>
+<pre class="tml">
+   &#42 Set TOPICMENU_ITEMS = ...,myid,...
+</pre>
+
+
 ---+++ References to pages/attachments
 To add a menu to the references of the current topic or it's attachments, set =DISPLAY_INCOMING_LINKS= to =1=.
 
