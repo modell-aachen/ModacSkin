@@ -29,6 +29,7 @@ Many things can be customized using various settings. If everything fails you ca
 There are some configurations for the personal page. You should set these on your [[%USERSWEB%.SitePreferences][SitePreferences]]:
    * =OriginalOwnerApproves=: Set this to =1= if the person in the =Responsible= field from the _original topic_ (without the =%WORKFLOWSUFFIX%= - suffix) needs to do the content review (in case the owner changes).
    * =QMGROUP=: Set this to your local QM-Group. Only people in this group will see the =FORMAL APPROVAL= block. This *must* be exactly *one group*.
+   * =MYPAGE_TASKSGRID_COLUMNS=, =MYPAGE_TASKSGRID_FILTERS=, =MYPAGE_TASKSGRID_HEADERS=: can be used to override display options for the task grids. See the corresponding parameters for [[VarTASKSGRID][TASKSGRID]].
 
 ---+++ !CustomWeb
 Wiki-wide customizations should reside in a web specially reserved for that purpose. This makes migration and updating much easier. Usually this web will contain some templates, [[%TOPIC%#LeftBar_44_TopBar_44_BottomBar][left/top/bottom bars]] and skin customizations.
