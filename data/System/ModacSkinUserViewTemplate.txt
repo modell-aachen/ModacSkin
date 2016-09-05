@@ -104,49 +104,53 @@
 %TAB{"%MAKETEXT{"My open tasks"}%" id="tasks_open"}%%{
 }%%TASKSGRID{
   id="taskgrid_open"
+  form="%SYSTEMWEB%.ModacTaskDisplayForm"
+  columns="assigned=$remove,%MYPAGE_TASKSGRID_COLUMNS{default=""}%"
+  filters="%MYPAGE_TASKSGRID_FILTERS{default=""}%"
+  headers="%MYPAGE_TASKSGRID_HEADERS{default=""}%"
   context="any"
   parent="any"
   allowcreate="0"
-  flavor="perspage"
   query="{\"Status\": \"open\", \"AssignedTo\": \"%RENDERUSER{format="$cUID"}%\"}"
-  captiontemplate="perspage::tasks::caption"
-  filtertemplate="perspage::tasks::filter"
 }%%{
 }%%ENDTAB%
 %TAB{"%MAKETEXT{"My closed tasks"}%" id="tasks_closed"}%%{
 }%%TASKSGRID{
   id="taskgrid_closed"
+  form="%SYSTEMWEB%.ModacTaskDisplayForm"
+  columns="assigned=$remove,%MYPAGE_TASKSGRID_COLUMNS{default=""}%"
+  filters="%MYPAGE_TASKSGRID_FILTERS{default=""}%"
+  headers="%MYPAGE_TASKSGRID_HEADERS{default=""}%"
   context="any"
   parent="any"
   allowcreate="0"
-  flavor="perspage"
   query="{\"Status\": \"closed\", \"AssignedTo\": \"%RENDERUSER{format="$cUID"}%\"}"
-  captiontemplate="perspage::tasks::caption"
-  filtertemplate="perspage::tasks::filter"
 }%%{
 }%%ENDTAB%
 %TAB{"%MAKETEXT{"My watched tasks"}%" id="tasks_inform"}%%{
 }%%TASKSGRID{
   id="taskgrid_inform"
+  form="%SYSTEMWEB%.ModacTaskDisplayForm"
+  columns="%MYPAGE_TASKSGRID_COLUMNS{default=""}%"
+  filters="%MYPAGE_TASKSGRID_FILTERS{default=""}%"
+  headers="%MYPAGE_TASKSGRID_HEADERS{default=""}%"
   context="any"
   parent="any"
   allowcreate="0"
-  flavor="perspage"
   query="{\"Informees\": \"%RENDERUSER{format="$cUID"}%\"}"
-  captiontemplate="perspage::tasks::caption"
-  filtertemplate="perspage::tasks::filter"
 }%
 %ENDTAB%
 %TAB{"%MAKETEXT{"Created by me"}%" id="tasks_own"}%%{
 }%%TASKSGRID{
   id="taskgrid_own"
+  form="%SYSTEMWEB%.ModacTaskDisplayForm"
+  columns="created=Created,%MYPAGE_TASKSGRID_COLUMNS{default=""}%"
+  filters="%MYPAGE_TASKSGRID_FILTERS{default=""}%"
+  headers="%MYPAGE_TASKSGRID_HEADERS{default=""}%"
   context="any"
   parent="any"
   allowcreate="0"
-  flavor="perspage"
   query="{\"Author\": \"%RENDERUSER{format="$cUID"}%\"}"
-  captiontemplate="perspage::tasks::caption"
-  filtertemplate="perspage::tasks::filter"
 }%%{
 }%%ENDTAB%
 %ENDTABPANE%
