@@ -442,7 +442,7 @@ jQuery(function($){
                 delete infodata.web;
                 delete infodata.topic;
                 $.extend(infodata, {
-                    name: 'WebCreateNewTopicDialog',
+                    name: infodata.wcnttemplatename || 'WebCreateNewTopicDialog',
                     render: 'on',
                     expand: 'dialog',
                     topic: baseWebTopic,
