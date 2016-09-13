@@ -21,37 +21,13 @@
 %TMPL:DEF{"top"}%%TMPL:END%
 
 %TMPL:DEF{"perspage:scripts"}%
-%ADDTOZONE{"head" text="<link rel=\"stylesheet\" type=\"text/css\" href=\"%PUBURLPATH%/System/ActionTrackerPlugin/styles_src.css\" /><style type=\"text/css\">
-  .atpSearch { width: 100%; border: none; border-collapse: collapse; }
-  .atpSearch th { border: none; background: white; color: #999; padding-bottom: 8px; text-align: left; }
-  .atpSearch tr:first-child + tr td { border-top: none; }
-  .atpSearch td { border: solid white; border-width: 8px 1px; padding: 8px; background: #f8fcff; color: #333; }
-  .atpSearch td.secondary { color: #666; }
-  .atpSearch .ui-icon { background-image: url('%PUBURLPATH%/System/JQueryPlugin/themes/foswiki/images/ui-icons-famfamfam.png') <nop>!important; }
-  .modacBookmarksSplit { width: 100%; }
-  .modacBookmarksSplit .splittitle { width: 100%; border-bottom: solid 1px #003c89; color: #003c89; font-weight: bold; margin-bottom: 10px; }
-  .modacBookmarksSplit td.splitright { border-left: solid 1px #ccc; padding-left: 10px; vertical-align: top; width: 50%; }
-  .modacBookmarksSplit td.splitleft { padding-right: 10px; vertical-align: top; }
-  hr.splith { border:solid 1px #ccc; }
-  .modacBookmarks { list-style: none; margin: 0; padding: 0; }
-  .modacBookmarks li { list-style: none; border-top: solid 1px #eee; margin: 5px 0 0 0; padding: 5px 0 0 0; line-height: 100%; }
-  .modacBookmarks li:first-child { border-top: none; }
-  .modacBookmarks form { float: right; }
-  .modacBookmarks div.date { float: right; text-align: right; color: #666; font-size: 75%; }
-  .perspageBlock { border: solid 1px #6494c9; padding: 10px; margin-bottom: 2em; }
-  .perspageBlockTitle { background-color: #6494c9; color: white; padding: 5px; font-size: 150%; font-weight: bold; }
-  .bmsubinfo { font-size: 75%; }
-  .disinterest { opacity: 0.5; }
-  .tasktitle { font-weight: bold; font-size: 110%; }
-  .taskdate { white-space: nowrap; }
-  .hackelem { display: none; }
-</style>"}%
+
 %JQREQUIRE{"textboxlist"}%
 %ADDTOZONE{"script" id="JavascriptFiles/strikeone" text="<script type=\"text/javascript\" src=\"%PUBURLPATH%/%SYSTEMWEB%/JavascriptFiles/strikeone.js\"></script>"}%
 %TMPL:END%
 
 %TMPL:DEF{"perspage:bookmarks"}%
-<div class="perspageBlockTitle">%MAKETEXT{"My bookmarks"}%</div><div class="perspageBlock">
+<div class="widgetBlockTitle">%MAKETEXT{"My bookmarks"}%</div><div class="widgetBlockContent">
 %TABPANE{class="simple"}%
 %TAB{"%MAKETEXT{"By web"}%"}%
 <table class="modacBookmarksSplit">
@@ -99,7 +75,7 @@
 %TMPL:END%
 
 %TMPL:DEF{"perspage:tasks"}%
-<div class="perspageBlockTitle">%MAKETEXT{"My tasks"}%</div><div class="perspageBlock">
+<div class="widgetBlockTitle">%MAKETEXT{"My tasks"}%</div><div class="widgetBlockContent">
 %TABPANE{class="simple" select="%URLPARAM{"tab" default="tasks_open"}%"}%
 %TAB{"%MAKETEXT{"My open tasks"}%" id="tasks_open"}%%{
 }%%TASKSGRID{
@@ -176,8 +152,8 @@
 
 
 %TMPL:DEF{"perspage:ciptask"}%
-<div class="perspageBlockTitle">%MAKETEXT{"Pages waiting for approval"}% </div>
-<div class="perspageBlock">
+<div class="widgetBlockTitle">%MAKETEXT{"Pages waiting for approval"}% </div>
+<div class="widgetBlockContent">
 <table class="tablesorter">
 <thead>
  <tr><th>%MAKETEXT{"Title"}%</th><th>%MAKETEXT{"Status"}%</th><th>%MAKETEXT{"Status since"}%</th></tr>
@@ -195,8 +171,8 @@
 %TMPL:END%
 
 %TMPL:DEF{"perspage:qmciptask"}%
-<div class="perspageBlockTitle">%MAKETEXT{"Pages waiting for formal approval by quality management"}% </div>
-<div class="perspageBlock">
+<div class="widgetBlockTitle">%MAKETEXT{"Pages waiting for formal approval by quality management"}% </div>
+<div class="widgetBlockContent">
 <table class="tablesorter">
 <thead>
 <tr><th>%MAKETEXT{"Title"}%</th><th>%MAKETEXT{"Status"}%</th><th>%MAKETEXT{"Status time"}%</th></tr>
@@ -215,7 +191,7 @@
 %TMPL:END%
 
 %TMPL:DEF{"perspage:mynotes"}%
-<div class="perspageBlockTitle">%MAKETEXT{"My notes"}% <a href="%SCRIPTURLPATH{"edit"}%/%WEB%/%TOPIC%?t=%GMTIME{"$epoch"}%" title="%MAKETEXT{Edit}%">%ICON{pencil}%</a></div><div class="perspageBlock">
+<div class="widgetBlockTitle">%MAKETEXT{"My notes"}% <a href="%SCRIPTURLPATH{"edit"}%/%WEB%/%TOPIC%?t=%GMTIME{"$epoch"}%" title="%MAKETEXT{Edit}%">%ICON{pencil}%</a></div><div class="widgetBlockContent">
 %TEXT%
 </div>
 %TMPL:END%
@@ -237,8 +213,8 @@ $percentTMPL:P{perspage:comments}$percent
 %TMPL:END%
 
 %TMPL:DEF{"perspage:other"}%
-<div class="perspageBlockTitle">%MAKETEXT{"Not your personal page"}%</div>
-<div class="perspageBlock">%MAKETEXT{"This is not your personal page, so you can not see anything here."}%
+<div class="widgetBlockTitle">%MAKETEXT{"Not your personal page"}%</div>
+<div class="widgetBlockContent">%MAKETEXT{"This is not your personal page, so you can not see anything here."}%
 
 %MAKETEXT{"To see your tasks, bookmarks and notes, please go to [_1]." args="[[%WIKINAME%]]"}%
 </div>
@@ -251,8 +227,8 @@ $percentTMPL:P{perspage:comments}$percent
 format="<tr class='modac_comment'><td>$percntRENDERUSER{\"$author\"}$percnt</td><td>[[$web.$topic]]</td><td><b>$title</b>%BR%$text</td><td><div class='modac_comment_ctl'><form class='tick' action='%SCRIPTURLPATH{jsonrpc}%/MetaCommentPlugin/markRead' method='post'><input type='hidden' name='topic' value='$web.$topic' /><input type='hidden' name='comment_id' value='$name' /><button type='submit' value='tick' >$percentJQICON{tick}$percent</button></form></div></td></tr>$n"
 rows="999"
 sort="container_title asc,name asc"
-header="<div class='perspageBlockTitle'>%MAKETEXT{"Comments for me"}%</div><div class='perspageBlock'>
-<table class=\"atpSearch atpOrientCols tablesorter {widgets: ['zebra'], sortList: [[0,1],[0,1]], headers: { 2: { sorter: 'qwikiDate' }, 3: { sorter: false }, 4: { sorter: false }}}\" style=\"width: 100%;\">
+header="<div class='widgetBlockTitle'>%MAKETEXT{"Comments for me"}%</div><div class='widgetBlockContent'>
+<table class=\" tablesorter {widgets: ['zebra'], sortList: [[0,1],[0,1]], headers: { 2: { sorter: 'qwikiDate' }, 3: { sorter: false }, 4: { sorter: false }}}\" style=\"width: 100%;\">
 <thead>
 <tr><th>%MAKETEXT{"Created"}%</th><th>%MAKETEXT{"Context"}%</th><th>%MAKETEXT{"Comment"}%</th><th>%MAKETEXT{"Mark read"}%</th></tr>
 </thead>
