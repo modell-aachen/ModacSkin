@@ -2,7 +2,7 @@
 
 %{ ################################################################################ }%
 %TMPL:DEF{"dialog"}%<noautolink>
-<div class="modacDialogTitle">%MAKETEXT{"Create new topic"}%</div>
+<div class="modacDialogTitle">%TMPL:P{"dialogtitle"}%</div>
 <div class="modacDialogContents">
   %TMPL:P{"content"}%<!-- -->
   %TMPL:P{"javascript"}%<!-- -->
@@ -11,9 +11,12 @@
 </div>
 </noautolink>%TMPL:END%
 
+%TMPL:DEF{"dialogtitle"}%%MAKETEXT{"Create new topic"}%%TMPL:END%
+%TMPL:DEF{"submittitle"}%%MAKETEXT{"Create new topic"}%%TMPL:END%
+
 %{ ################################################################################ }%
 %TMPL:DEF{"formbuttons"}%<!-- -->
-  <a class="jqUIDialogButton jqUIDialogSubmit {icon:'ui-icon-circle-check'}">%MAKETEXT{"Create new topic"}%</a>
+  <a class="jqUIDialogButton jqUIDialogSubmit {icon:'ui-icon-circle-check'}">%TMPL:P{"submittitle"}%</a>
   <a class="jqUIDialogButton jqUIDialogClose {icon:'ui-icon-cancel'}">%MAKETEXT{"Cancel"}%</a>
 <!-- -->%TMPL:END%
 
