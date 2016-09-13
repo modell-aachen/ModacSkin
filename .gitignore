@@ -85,3 +85,15 @@ pub/System/ModacSkin/solrsearch.js
 pub/System/ModacSkin/modac.js
 pub/System/ModacSkin/pattern.js.gz
 pub/System/ModacSkin/jsi18n.solr.de.js
+pub/System/ModacSkin/jsi18n.edit.de.js.gz
+pub/System/ModacSkin/jsi18n.edit.en.js.gz
+pub/System/ModacSkin/jsi18n.edit.fr.js.gz
+pub/System/ModacSkin/jsi18n.solr.de.js.gz
+pub/System/ModacSkin/jsi18n.solr.en.js.gz
+pub/System/ModacSkin/jsi18n.solr.fr.js.gz
+pub/System/ModacSkin/jsi18n.view.de.js
+pub/System/ModacSkin/jsi18n.view.de.js.gz
+pub/System/ModacSkin/jsi18n.view.en.js
+pub/System/ModacSkin/jsi18n.view.en.js.gz
+pub/System/ModacSkin/linkreferences.js
+pub/System/ModacSkin/linkreferences.js.gz
