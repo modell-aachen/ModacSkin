@@ -174,82 +174,82 @@ img {
 	padding: .4em 1em ;
 }
 /*Start UserViewTemplate */
-.modacBookmarksSplit { 
-	width: 100%; 
+.modacBookmarksSplit {
+	width: 100%;
 }
 
-.modacBookmarksSplit .splittitle { 
-	width: 100%; 
-	border-bottom: 
-	solid 1px #003c89; 
-	color: #003c89; 
-	font-weight: bold; 
-	margin-bottom: 10px; 
+.modacBookmarksSplit .splittitle {
+	width: 100%;
+	border-bottom:
+	solid 1px #003c89;
+	color: #003c89;
+	font-weight: bold;
+	margin-bottom: 10px;
 }
 
-.modacBookmarksSplit td.splitright { 
-	border-left: solid 1px #ccc; 
-	padding-left: 10px; 
-	vertical-align: top; 
-	width: 50%; 
+.modacBookmarksSplit td.splitright {
+	border-left: solid 1px #ccc;
+	padding-left: 10px;
+	vertical-align: top;
+	width: 50%;
 }
 
-.modacBookmarksSplit td.splitleft { 
-	padding-right: 10px; 
-	vertical-align: top; 
+.modacBookmarksSplit td.splitleft {
+	padding-right: 10px;
+	vertical-align: top;
 }
 
-hr.splith { 
-	border:solid 1px #ccc; 
+hr.splith {
+	border:solid 1px #ccc;
 }
 
-.modacBookmarks { 
-	list-style: none; 
-	margin: 0; padding: 0; 
+.modacBookmarks {
+	list-style: none;
+	margin: 0; padding: 0;
 }
 
-.modacBookmarks li { 
-	list-style: none; 
-	border-top: solid 1px #eee; 
-	margin: 5px 0 0 0; 
-	padding: 5px 0 0 0; 
-	line-height: 100%; 
+.modacBookmarks li {
+	list-style: none;
+	border-top: solid 1px #eee;
+	margin: 5px 0 0 0;
+	padding: 5px 0 0 0;
+	line-height: 100%;
 }
 
-.modacBookmarks li:first-child { 
-	border-top: none; 
+.modacBookmarks li:first-child {
+	border-top: none;
 }
 
-.modacBookmarks form { 
-	float: right; 
+.modacBookmarks form {
+	float: right;
 }
 
-.modacBookmarks div.date { 
-	float: right; 
-	text-align: right; 
-	color: #666; 
-	font-size: 75%; 
+.modacBookmarks div.date {
+	float: right;
+	text-align: right;
+	color: #666;
+	font-size: 75%;
 }
 
-.bmsubinfo { 
-	font-size: 75%; 
+.bmsubinfo {
+	font-size: 75%;
 }
 
-.disinterest { 
-	opacity: 0.5; 
+.disinterest {
+	opacity: 0.5;
 }
 
-.tasktitle { 
-	font-weight: bold; 
-	font-size: 110%; 
+.tasktitle {
+	font-weight: bold;
+	font-size: 110%;
 }
 
-.taskdate { 
-	white-space: nowrap; 
+.taskdate {
+	white-space: nowrap;
 }
 
-.hackelem { 
-	display: none; 
+.hackelem {
+	display: none;
 }
 
 /* Ende UserViewTemplate*/
@@ -1984,6 +1984,7 @@ input.hidePlaceholder:focus:-ms-input-placeholder { color:transparent; } /* IE 1
 }
 .pagination > li {
   display: inline;
+  cursor: pointer;
 }
 .pagination > li > a,
 .pagination > li > span {
