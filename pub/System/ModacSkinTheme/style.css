@@ -253,6 +253,123 @@ hr.splith {
 }
 
 /* Ende UserViewTemplate*/
+/* Begin compare.modac.tmpl*/
+.foswikiAttachments table.tablesorter > tbody > tr.odd td.craCompareAdd,
+.foswikiAttachments table.tablesorter > tbody > tr.odd:hover td.craCompareAdd,
+.foswikiAttachments table.tablesorter > tbody > tr.even td.craCompareAdd,
+.foswikiAttachments table.tablesorter > tbody > tr.even:hover td.craCompareAdd,
+div.foswikiAttachments table.foswikiTable td.craCompareAdd,
+a.craCompareAdd,
+.craCompareAdd {
+    background-color:#cfc;
+}
+.foswikiAttachments table.tablesorter > tbody > tr.odd td.craCompareChange2,
+.foswikiAttachments table.tablesorter > tbody > tr.odd:hover td.craCompareChange2,
+.foswikiAttachments table.tablesorter > tbody > tr.even td.craCompareChange2,
+.foswikiAttachments table.tablesorter > tbody > tr.even:hover td.craCompareChange2,
+div.foswikiAttachments table.foswikiTable td.craCompareChange2,
+a.craCompareChange2,
+.craCompareChange2 {
+    background-color:#cfc;
+}
+.foswikiAttachments table.tablesorter > tbody > tr.odd td.craCompareDelete,
+.foswikiAttachments table.tablesorter > tbody > tr.odd:hover td.craCompareDelete,
+.foswikiAttachments table.tablesorter > tbody > tr.even td.craCompareDelete,
+.foswikiAttachments table.tablesorter > tbody > tr.even:hover td.craCompareDelete,
+div.foswikiAttachments table.foswikiTable td.craCompareDelete,
+a.craCompareDelete,
+.craCompareDelete {
+    background-color:#fcc;
+    text-decoration:line-through;
+}
+.foswikiAttachments table.tablesorter > tbody > tr.odd td.craCompareChange1,
+.foswikiAttachments table.tablesorter > tbody > tr.odd:hover td.craCompareChange1,
+.foswikiAttachments table.tablesorter > tbody > tr.even td.craCompareChange1,
+.foswikiAttachments table.tablesorter > tbody > tr.even:hover td.craCompareChange1,
+div.foswikiAttachments table.foswikiTable td.craCompareChange1,
+a.craCompareChange1,
+.craCompareChange1 {
+    background-color:#fcc;
+    text-decoration:line-through;
+}
+table.craSideBySide {
+	border:none;
+	border-collapse:collapse;
+}
+table.craSideBySide .craCell {
+	vertical-align:top;
+	width:50%;
+	padding:6px;
+}
+.craTableCellSeparator {
+	width:1px;
+	background-color:#666;
+}
+div.craInterweave {
+	padding-left:13px;
+}
+div.craInterweaveDiff {
+	position:relative;
+	left:-13px;
+	border-left:#ccc solid 6px;
+	padding-left:10px;
+}
+svg.craCompareChange1,
+svg.craCompareChange1 .craCompareChange1,
+svg.craCompareChange2,
+svg.craCompareChange2 .craCompareChange2,
+svg.craCompareDelete,
+svg.craCompareAdd {
+   background-color: #fff;
+   text-decoration: none;
+}
+svg.craCompareChange1 {
+   vertical-align: top;
+}
+img.craCompareChange1,
+img.craCompareDelete,
+svg.craCompareChange1,
+svg.craCompareDelete {
+   border: 10px solid #fcc;
+}
+svg.craCompareChange2 {
+   vertical-align: top;
+}
+img.craCompareChange2,
+img.craCompareAdd,
+svg.craCompareChange2,
+svg.craCompareAdd {
+   border: 10px solid #cfc;
+}
+div.foswikiAttachments img.craCompareChange1,
+div.foswikiAttachments img.craCompareChange2,
+div.foswikiAttachments img.craCompareAdd,
+div.foswikiAttachments img.craCompareDelete {
+   border: none;
+}
+/* Ende compare.modac.tmpl*/
+/* Begin more.modac.tmpl*/
+table.foswikiDiffOptions {
+	margin:.5em 0;
+	border:none;
+}
+table.foswikiDiffOptions td {
+	border:none;
+	text-align:center;
+}
+table.foswikiDiffOptions img {
+	padding:0 10px;
+	border-width:1px;
+	border-style:solid;
+	background:#fff;
+}
+table.foswikiDiffOptions input {
+	border:0;
+}
+table.foswikiDiffOptions img {
+	border-color:#ccc;
+}
+/* Ende more.modac.tmpl*/
 .modacBottomKVP {
 	padding: 0 0 1em 1em;
 }
