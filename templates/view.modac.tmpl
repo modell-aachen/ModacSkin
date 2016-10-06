@@ -36,7 +36,7 @@
 %TMPL:DEF{"contentfooter"}%%TMPL:P{"aftertext"}%%TMPL:END%%{
 ---------------------------------------------------
 }%%TMPL:DEF{"patterntopiccontents"}%%TMPL:P{"broadcastmessage"}%%TMPL:P{"contentheaderstylewrapper"}%%TMPL:P{"formtop"}%%TMPL:P{"attachmentstop"}%<div class="patternContent"><div class="foswikiTopic">%TMPL:P{"content"}%</div>
-%TMPL:P{"contentfooterstylewrapper"}%%TMPL:P{"topicaction"}%</div>%TMPL:P{"footernote"}%%TMPL:END%
+%TMPL:P{"contentfooterstylewrapper"}%%TMPL:P{"similartopics"}%%TMPL:P{"topicaction"}%</div>%TMPL:P{"footernote"}%%TMPL:END%
 
 
 %{ --- JQueryMenuSkin Integration --- }%
@@ -66,3 +66,23 @@
 }%%TMPL:DEF{"horizontalnavigation"}%%IF{"istopic '%PATTERNSKIN_NAVIGATION_TOPIC%'" then="$percntINCLUDE{$quot%PATTERNSKIN_NAVIGATION_TOPIC%$quot section=$quotmain$quot warn=$quotoff$quot}$percnt"}%%TMPL:END%%{
 ---------------------------------------------------
 }%%TMPL:DEF{"metanavigation"}%%IF{"istopic '%PATTERNSKIN_NAVIGATION_TOPIC%'" then="$percntINCLUDE{$quot%PATTERNSKIN_NAVIGATION_TOPIC%$quot section=$quotmeta$quot warn=$quotoff$quot}$percnt"}%%TMPL:END%
+%TMPL:DEF{"similartopics"}%
+  %IF{"'%SIMILAR_TOPICS%' = '1' AND '%WORKFLOWORIGIN%'/form[name~'%SIMILAR_TOPICS_FORM%']" then="$percentTMPL:P{\"similartopicsshow\"}$percent" else=""}%
+%TMPL:END%
+
+%TMPL:DEF{"similartopicsshow"}%
+<div class="modacBorder modacBox"><div class="foswikiFormSteps"><div class="foswikiAttachments foswikiFormStep contentsWidth">
+%TWISTY{
+  id="similarTopic"
+  firststart="hide"
+  remember="on"
+  noscript="hide"
+  showlink="%MAKETEXT{"Similar Topics"}%"
+  hidelink="%MAKETEXT{"Similar Topics"}%"
+  showimgleft="%PUBURLPATH%/%SYSTEMWEB%/DocumentGraphics/toggleopen.png"
+  hideimgleft="%PUBURLPATH%/%SYSTEMWEB%/DocumentGraphics/toggleclose.png"
+}%
+<div id="modacSidebarTwisty_webs" class="modacAjaxContent" data-url="%SCRIPTURL{rest}%/RenderPlugin/tag?name=INCLUDE;render=1;param=%SYSTEMWEB%.ModacSkinSolrSimilarTopic;WEB=%ENCODE{"%BASEWEB%"}%;TOPIC=%ENCODE{"%TOPIC%"}%;FORM=%SIMILAR_TOPICS_FORM%">%JQREQUIRE{"jqp::spin"}%</div>
+%ENDTWISTY%
+</div></div></div>
+%TMPL:END%
