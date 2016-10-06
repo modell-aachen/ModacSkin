@@ -355,12 +355,12 @@ You could configure the %<nop>SOLRSIMILAR% by adding following parameters to Web
 
 
 <pre>
-   * Set SIMILAR_TOPICS = "0"
-   * Set SIMILAR_TOPICS_FORM = "*DocumentForm"
-   * Set SIMILAR_TOPICS_LIKE = "title_search,text"
-   * Set SIMILAR_TOPICS_BOOST = "title_search^2,text"
-   * Set SIMILAR_TOPICS_FIELDS = "title,web,topic,field_Responsible_s,score,field_DocumentType_s,date"
-   * Set SIMILAR_TOPICS_ROWS = "5"
+   * Set SIMILAR_TOPICS = 0
+   * Set SIMILAR_TOPICS_FORM = *DocumentForm
+   * Set SIMILAR_TOPICS_LIKE = title_search,text
+   * Set SIMILAR_TOPICS_BOOST = title_search^2,text
+   * Set SIMILAR_TOPICS_FIELDS = title,web,topic,field_Responsible_s,score,field_DocumentType_s,date
+   * Set SIMILAR_TOPICS_ROWS = 5
 </pre>
 (Default configuration)
 
