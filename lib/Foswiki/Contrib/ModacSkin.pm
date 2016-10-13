@@ -14,7 +14,7 @@ our $SITEPREFS = {
   SIMILAR_TOPICS_LIKE => "title_search,text",
   SIMILAR_TOPICS_BOOST => "title_search^2,text",
   SIMILAR_TOPICS_FIELDS => "title,web,topic,field_Responsible_s,score,field_DocumentType_s,date,process_state_s",
-  SIMILAR_TOPICS_FILTER => "-topic:*%WORKFLOWSUFFIX%",
+  SIMILAR_TOPICS_FILTER => "-topic:*%WORKFLOWSUFFIX% -topic:*Template",
   SIMILAR_TOPICS_MARK_AS_DISCUSSION => "DISCUSSION|CONTENT_REVIEW|FORMAL_REVIEW",
   SIMILAR_TOPICS_ROWS => "5",
 };
