@@ -2148,3 +2148,40 @@ input.hidePlaceholder:focus:-ms-input-placeholder { color:transparent; } /* IE 1
 	background-color: transparent;
 	cursor: default;
 }
+
+/*------------Themes for standard applications------------*/
+
+.widgetBlockTitle {
+	background-color: #6494c9;
+	color: white;
+	padding: 5px;
+	font-size: 150%;
+	font-weight: bold;
+}
+
+.widgetBlockContent {
+	border: solid 1px #6494c9;
+	padding: 10px;
+	margin-bottom: 2em;
+}
+
+.searchTable {
+	border: none;
+	border-collapse: collapse;
+}
+
+.searchTable th {
+	border: solid white;
+	background:#EEEEEE ;
+	color: #000000;
+	padding: 8px;
+	text-align: left;
+}
+
+.searchTable td {
+	border: solid white;
+	border-width: 8px 1px;
+	padding: 8px;
+	background: #f8fcff;
+}
+
