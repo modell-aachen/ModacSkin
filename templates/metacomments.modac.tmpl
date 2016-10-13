@@ -118,3 +118,21 @@
 </div>
 <!-- -->%TMPL:END%
 
+%TMPL:DEF{"comment::photo::default"}%<!-- -->
+%web%.%topic%  %IMAGE{
+    "%IF{"'%web%.%topic%'/Photo"
+      then="$percntFORMFIELD{\"Photo\" topic=\"%web%.%topic%\"}$percnt"
+      else="%IF{"'%web%.%topic%'/attachments[name=~'\.(?i:gif|png|jpe?g)$']"
+        then="%QUERY{"'%web%.%topic%'/attachments[name=~'\.(?i:gif|png|jpe?g)'][0].name"}%"
+        else="%PUBURLPATH%/%SYSTEMWEB%/MetaCommentPlugin/nobody.gif"
+      }%"
+    }%"
+    topic="%web%.%topic%"
+    type="plain"
+    align="%IF{"'%align%'=~'^(left|right)$'" then="%align%" else="left"}%"
+    href="%SCRIPTURLPATH{"view"}%/%web%/%topic%"
+    size="48"
+    crop="northwest"
+    title="%SPACEOUT{"%topic%"}%"
+  }%
+<!-- -->%TMPL:END%
