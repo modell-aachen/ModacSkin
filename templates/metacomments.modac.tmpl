@@ -119,7 +119,7 @@
 <!-- -->%TMPL:END%
 
 %TMPL:DEF{"comment::photo::default"}%<!-- -->
-%web%.%topic%  %IMAGE{
+%IMAGE{
     "%IF{"'%web%.%topic%'/Photo"
       then="$percntFORMFIELD{\"Photo\" topic=\"%web%.%topic%\"}$percnt"
       else="%IF{"'%web%.%topic%'/attachments[name=~'\.(?i:gif|png|jpe?g)$']"
