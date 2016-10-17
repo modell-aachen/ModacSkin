@@ -4,7 +4,7 @@
     boost="%SIMILAR_TOPICS_BOOST%"
     fields="%SIMILAR_TOPICS_FIELDS%"
     header="<table class=\"tablesorter\"><thead><tr><th> $percntMAKETEXT{\"Topic\"}$percent </th><th> $percntMAKETEXT{\"Responsible\"}$percent </th><th> $percntMAKETEXT{\"Document type\"}$percent </th><th> $percntMAKETEXT{\"Date\"}$percent </th></thead><tbody>"
-    format="<tr class=\"$percntIF{\"'$percntCALC{\"$ODD($index)\"}$percnt'='0'\" then=\"even\" else=\"odd\"}$percnt\"><td>[[$web.$topic][$title]] $percntIF{\"'%SIMILAR_TOPICS_MARK_AS_DISCUSSION{default=""}%'!='' and '$process_state_s'=~'%SIMILAR_TOPICS_MARK_AS_DISCUSSION{default=""}%'\" then=\"<span class=\\"bmsubinfo\\">$dollarpercntICON{comments}$dollarpercnt&nbsp;$percntMAKETEXT{\"Discussion\"}$percnt</span>\"}$percent </td><td> $percntRENDERUSER{\"$field_Responsible_s\" convert=\"on\"}$percnt </td><td> $percntMAKETEXT{\"$field_DocumentType_s\"}$percent </td><td> $date </td></tr>"
+    format="<tr class=\"$percntIF{\"'$percntCALC{\"$ODD($index)\"}$percnt'='0'\" then=\"even\" else=\"odd\"}$percnt\"><td>[[$web.$topic][$title]] $percntIF{\"'%SIMILAR_TOPICS_MARK_AS_DISCUSSION{default=""}%'!='' and '$process_state_s'=~'%SIMILAR_TOPICS_MARK_AS_DISCUSSION{default=""}%'\" then=\"<span class=\\"bmsubinfo\\">$dollarpercntICON{comments}$dollarpercnt&nbsp;$percntMAKETEXT{\"Discussion\"}$percnt</span>\"}$percent </td><td> $percntRENDERUSER{\"$field_Responsible_s\" convert=\"on\"}$percnt </td><td> $percntMAKETEXT{\"$field_DocumentType_s\"}$percent </td><td> $percntSUBST{text=\"$date\" pattern=\"(\w+)\" format=\"$dollarpercntMAKETEXT{\\"$1\\"}$dollarpercnt\"}$percnt </td></tr>"
     footer="</tbody></table>"
     sort="score desc"
     rows="%SIMILAR_TOPICS_ROWS%"
