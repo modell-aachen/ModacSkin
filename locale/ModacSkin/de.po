@@ -845,7 +845,7 @@ msgid "Options"
 msgstr "Optionen"
 
 #: templates/viewtopicactionbuttons.modac.tmpl
-msgid "PDF-Print"
+msgid "Print to PDF"
 msgstr "PDF-Druck"
 
 #: data/System/ModacSkinSolrSearchViewTemplate.txt
@@ -1520,6 +1520,10 @@ msgstr "title='Diese Seite bearbeiten' >Bearbeiten"
 msgid "title='Edit users data' accesskey='e'>&Edit users data"
 msgstr "title='Bearbeite Benutzerdaten' accesskey='e'>&Bearbeite Benutzerdaten"
 
+#: data/System/ModacSkinUserViewTemplate.txt
+msgid "title='Edit profile' accesskey='e'>&Edit profile"
+msgstr "title='Bearbeite Benutzerdaten' accesskey='e'>&Bearbeite Benutzerdaten"
+
 #: templates/compare.modac.tmpl
 msgid "title='Interwoven' accesskey='i'>&interwoven"
 msgstr "title='verwoben' accesskey='v'>verwoben (&v)"
@@ -1653,6 +1657,9 @@ msgid "Country"
 msgstr "Land"
 
 msgid "<span data-plugin=\"ModacSkin\">State</span>"
+msgstr "Bundesland"
+
+msgid "Federal state"
 msgstr "Bundesland"
 
 msgid "Address"

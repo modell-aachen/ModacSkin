@@ -841,7 +841,7 @@ msgid "Options"
 msgstr "选项"
 
 #: templates/viewtopicactionbuttons.modac.tmpl
-msgid "PDF-Print"
+msgid "Print to PDF"
 msgstr "PDF-打印"
 
 #: data/System/ModacSkinSolrSearchViewTemplate.txt
