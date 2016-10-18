@@ -13,6 +13,13 @@
 %TMPL:P{"formend"}% 
 %TMPL:END%
 
+%ADDTOZONE{
+    "script"
+    id="ModacSkin::ProfileEditPhoto"
+    requires="JQUERYPLUGIN::FOSWIKI::PREFERENCES"
+    text="<script type=\"text/javascript\" src=\"%PUBURLPATH%/%SYSTEMWEB%/ModacSkin/profile_edit_photo.js\"></script>"
+}%
+
 %TMPL:DEF{"userform"}%
 <div class="widgetBlockTitle">%MAKETEXT{"Edit profile"}%</div>
 <div class="widgetBlockContent">
@@ -21,8 +28,10 @@
         <td align="center"></td>
         <td>
             <img src='%ATTACHURL%/%ATTACHMENTLIST{topic="%BASETOPIC%" format="$fileName" limit="1" extenstion="gif,jpg,png" sort="$fileDate" sortorder="descending"}%' width='150px;'/><br/>
-            <a href='%SCRIPTURLPATH{"attach"}%/%BASEWEB%/%BASETOPIC%' class='modacChanging' rel='nofollow' %MAKETEXT{"title='Upload foto' accesskey='u'>&Upload photo"}%
-            </a>
+            %BUTTON{
+              "%MAKETEXT{"Upload photo"}%"
+              id="upload_foto_button"
+            }%
         </td>
     </tr>
 %RENDERFOREDIT{

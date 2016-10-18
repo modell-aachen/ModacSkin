@@ -6,7 +6,7 @@
 
 %TMPL:DEF{"printHeaderHeight"}%2.0cm%TMPL:END%
 %TMPL:DEF{"pdfexport"}%
-<span><a href="%SCRIPTURL{"view"}%/%SYSTEMWEB%/MAPrinceModPrintDialog?skin=text&section=dialog&pweb=%ENCODE{"%INCLUDINGWEB%" type="url"}%&ptopic=%ENCODE{"%INCLUDINGTOPIC%" type="url"}%&landscape=%LANDSCAPE{default="0"}%&printTasks=printTasks" class="jqUIDialogLink">%MAKETEXT{"PDF-Print"}%</a></span>
+<span><a href="%SCRIPTURL{"view"}%/%SYSTEMWEB%/MAPrinceModPrintDialog?skin=text&section=dialog&pweb=%ENCODE{"%INCLUDINGWEB%" type="url"}%&ptopic=%ENCODE{"%INCLUDINGTOPIC%" type="url"}%&landscape=%LANDSCAPE{default="0"}%&printTasks=printTasks" class="jqUIDialogLink">%MAKETEXT{"Print to PDF"}%</a></span>
 %TMPL:END%
 
 %TMPL:DEF{"modacActionButtons"}%
