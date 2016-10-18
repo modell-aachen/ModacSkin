@@ -1560,6 +1560,14 @@ msgstr "title='Seite-an-Seite' accesskey='s'>&seite-an-seite"
 msgid "title='Upload foto' accesskey='u'>&Upload photo"
 msgstr "title='Foto hochladen' accesskey='u'>Foto hochladen"
 
+#: data/System/ModacSkinUserFormEditTemplate.txt
+msgid "Upload photo"
+msgstr "Foto hochladen"
+
+#: data/System/ModacSkinUserFormEditTemplate.txt
+msgid "Edit profile"
+msgstr "Bearbeite Benutzerdaten"
+
 #: data/System/ModacSkinTopicMenuTemplate.txt
 #: templates/viewtopicactionbuttons.modac.tmpl
 msgid "title='View topic history' accesskey='h'>&History"
