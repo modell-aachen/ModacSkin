@@ -1749,8 +1749,8 @@ msgstr "Verweise auf %1 in jedem Web:"
 #~ msgid "Pick from a list"
 #~ msgstr "Von der Liste auswählen"
 
-#~ msgid "Please wait..."
-#~ msgstr "Bitte warten..."
+msgid "Please wait..."
+msgstr "Bitte warten..."
 
 #~ msgid "Process State"
 #~ msgstr "Prozessstatus"

@@ -10,7 +10,11 @@ LIBJS with added QUERYVERSION support
  "script"
  id="%id%"
  text="<script type=\"text/javascript\" src=\"%PUBURLPATH%/%SYSTEMWEB%/%id%%FWSRC%.js?%QUERYVERSION{"%id%" format="version=$version" default=""}%\"></script>"
- requires="%requires%"}%%TMPL:END%%{
+ requires="%requires%"}%%ADDTOZONE{
+ "script"
+ id="blockUI.i18n"
+ text="<script>$.blockUI.defaults.message = '<h1>%MAKETEXT{"Please wait..."}%</h1>';</script>"
+ requires="JQUERYPLUGIN::BLOCKUI"}%%TMPL:END%%{
 ---------------------------------------------------
 }%%TMPL:DEF{"JavascriptFiles/foswikilib"}%%{
 }%<!-- ERROR: foswikilib is deprecated -->%TMPL:END%%{

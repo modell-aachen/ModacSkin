@@ -1671,8 +1671,8 @@ msgstr "pourquoi il vous est demandé de confirmer"
 #~ msgid "Pick from a list"
 #~ msgstr "Choisir à partir d'une liste"
 
-#~ msgid "Please wait..."
-#~ msgstr "Patientez, s'il vous plaît..."
+msgid "Please wait..."
+msgstr "Patientez, s'il vous plaît..."
 
 #~ msgid "Process State"
 #~ msgstr "Statut du processus"
