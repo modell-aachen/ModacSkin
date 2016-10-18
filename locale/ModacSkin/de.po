@@ -1565,6 +1565,10 @@ msgid "Upload photo"
 msgstr "Foto hochladen"
 
 #: data/System/ModacSkinUserFormEditTemplate.txt
+msgid "Upload picture"
+msgstr "Foto hochladen"
+
+#: data/System/ModacSkinUserFormEditTemplate.txt
 msgid "Edit profile"
 msgstr "Bearbeite Benutzerdaten"
 
