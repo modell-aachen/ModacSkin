@@ -254,6 +254,7 @@ hr.splith {
 
 /* Ende UserViewTemplate*/
 /* Begin compare.modac.tmpl*/
+table.tablesorter.Modac_Standard tbody td.craCompareAdd,
 .foswikiAttachments table.tablesorter > tbody > tr.odd td.craCompareAdd,
 .foswikiAttachments table.tablesorter > tbody > tr.odd:hover td.craCompareAdd,
 .foswikiAttachments table.tablesorter > tbody > tr.even td.craCompareAdd,
@@ -263,6 +264,7 @@ a.craCompareAdd,
 .craCompareAdd {
     background-color:#cfc;
 }
+table.tablesorter.Modac_Standard tbody td.craCompareChange2,
 .foswikiAttachments table.tablesorter > tbody > tr.odd td.craCompareChange2,
 .foswikiAttachments table.tablesorter > tbody > tr.odd:hover td.craCompareChange2,
 .foswikiAttachments table.tablesorter > tbody > tr.even td.craCompareChange2,
@@ -272,6 +274,7 @@ a.craCompareChange2,
 .craCompareChange2 {
     background-color:#cfc;
 }
+table.tablesorter.Modac_Standard tbody td.craCompareDelete,
 .foswikiAttachments table.tablesorter > tbody > tr.odd td.craCompareDelete,
 .foswikiAttachments table.tablesorter > tbody > tr.odd:hover td.craCompareDelete,
 .foswikiAttachments table.tablesorter > tbody > tr.even td.craCompareDelete,
@@ -282,6 +285,7 @@ a.craCompareDelete,
     background-color:#fcc;
     text-decoration:line-through;
 }
+table.tablesorter.Modac_Standard tbody td.craCompareChange1,
 .foswikiAttachments table.tablesorter > tbody > tr.odd td.craCompareChange1,
 .foswikiAttachments table.tablesorter > tbody > tr.odd:hover td.craCompareChange1,
 .foswikiAttachments table.tablesorter > tbody > tr.even td.craCompareChange1,
