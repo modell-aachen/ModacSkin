@@ -10,11 +10,7 @@ LIBJS with added QUERYVERSION support
  "script"
  id="%id%"
  text="<script type=\"text/javascript\" src=\"%PUBURLPATH%/%SYSTEMWEB%/%id%%FWSRC%.js?%QUERYVERSION{"%id%" format="version=$version" default=""}%\"></script>"
- requires="%requires%"}%%ADDTOZONE{
- "script"
- id="blockUI.i18n"
- text="<script>$.blockUI.defaults.message = '<h1>%MAKETEXT{"Please wait..."}%</h1>';</script>"
- requires="JQUERYPLUGIN::BLOCKUI"}%%TMPL:END%%{
+ requires="%requires%"}%%TMPL:END%%{
 ---------------------------------------------------
 }%%TMPL:DEF{"JavascriptFiles/foswikilib"}%%{
 }%<!-- ERROR: foswikilib is deprecated -->%TMPL:END%%{
@@ -83,6 +79,12 @@ LIBJS with added QUERYVERSION support
 %TMPL:P{"defaultstyle"}%%RENDERZONE{"head"}%%RENDERZONE{"script"}%%TMPL:P{"script"}%</head>%TMPL:END%
 
 %TMPL:DEF{"script:skinbase"}%%{
+XXX Does not go well with SafeWikiPlugin
+}%%ADDTOZONE{
+ "script"
+ id="blockUI.i18n"
+ text="<script>$.blockUI.defaults.message = \"<h1>%MAKETEXT{"Please wait..."}%</h1>\";</script>"
+ requires="JQUERYPLUGIN::BLOCKUI"}%%{
 }%%JQREQUIRE{"wikiword, focus, form, cookie%IF{"context Select2Registered" then=", select2"}%"}%%{
 }%%TMPL:P{"JavascriptFiles/foswikiString"}%%{
 }%%TMPL:P{"JavascriptFiles/foswikiPref"}%%{
