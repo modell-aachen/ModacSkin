@@ -61,7 +61,7 @@ LIBJS with added QUERYVERSION support
 
 %TMPL:DEF{"topicinfo"}%%TMPL:P{"topicaction"}%%TMPL:END%
 
-%TMPL:DEF{"htmldoctype"}%<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="%LANG%" lang="%LANG%">%TMPL:END%
+%TMPL:DEF{"htmldoctype"}%<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="%LANGUAGE%" lang="%LANGUAGE%">%TMPL:END%
 
 %{IE10's IE7 mode is buggy; so force all browsers to IE9 mode or the newest they have. This seems to work best right now.}%
 %TMPL:DEF{"windowtitle"}%<meta http-equiv="X-UA-Compatible" content="IE=edge" />%TMPL:PREV%%TMPL:END%
@@ -79,6 +79,12 @@ LIBJS with added QUERYVERSION support
 %TMPL:P{"defaultstyle"}%%RENDERZONE{"head"}%%RENDERZONE{"script"}%%TMPL:P{"script"}%</head>%TMPL:END%
 
 %TMPL:DEF{"script:skinbase"}%%{
+XXX Does not go well with SafeWikiPlugin
+}%%ADDTOZONE{
+ "script"
+ id="blockUI.i18n"
+ text="<script>$.blockUI.defaults.message = \"<h1>%MAKETEXT{"Please wait..."}%</h1>\";</script>"
+ requires="JQUERYPLUGIN::BLOCKUI"}%%{
 }%%JQREQUIRE{"wikiword, focus, form, cookie%IF{"context Select2Registered" then=", select2"}%"}%%{
 }%%TMPL:P{"JavascriptFiles/foswikiString"}%%{
 }%%TMPL:P{"JavascriptFiles/foswikiPref"}%%{
@@ -115,7 +121,7 @@ LIBJS with added QUERYVERSION support
 
 %{ ---------------------------- pagetitle and breadcrumb ---------------------------- }%
 
-%TMPL:DEF{"pagetitle"}%%TOPIC% %IF{"defined rev" then="<span class=foswikiGrayText> %MAKETEXT{"(revision [_1])" args="%URLPARAM{"rev"}%"}%</span>" else=""}% %TMPL:END%
+%TMPL:DEF{"pagetitle"}%%TOPICTITLE% %IF{"defined rev" then="<span class=foswikiGrayText> %MAKETEXT{"(revision [_1])" args="%URLPARAM{"rev"}%"}%</span>" else=""}% %TMPL:END%
 
 
 %TMPL:DEF{"top"}%<div class="patternTop"><div id="modacHeading">%TMPL:P{"pagetitle"}%</div><span class="patternHomePath">%TMPL:P{"breadcrumb"}%</span></div>%TMPL:END%
@@ -130,6 +136,10 @@ LIBJS with added QUERYVERSION support
 %TMPL:DEF{"breadcrumb:topic"}%<nop>%TOPIC%%TMPL:END%
 
 %TMPL:DEF{"breadcrumb:title"}%<span class="patternHomePathTitle">%MAKETEXT{"You are here:"}% </span>%TMPL:END%
+
+%TMPL:DEF{"windowtitleconfig"}%%TOPICTITLE%%TMPL:END%
+
+%TMPL:DEF{"windowtitle"}%<title>%TMPL:P{"titleaction"}% <nop>%TMPL:P{"windowtitleconfig"}%%TMPL:P{"titlesep"}%%BASEWEB%%TMPL:P{"titlesep"}%<nop>%WIKITOOLNAME%</title>%TMPL:END%
 
 %TMPL:DEF{"breadcrumb:wikitoolname"}%[[%USERSWEB%.%HOMETOPIC%][%WIKITOOLNAME%]]%TMPL:END%
 

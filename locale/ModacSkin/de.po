@@ -845,7 +845,7 @@ msgid "Options"
 msgstr "Optionen"
 
 #: templates/viewtopicactionbuttons.modac.tmpl
-msgid "PDF-Print"
+msgid "Print to PDF"
 msgstr "PDF-Druck"
 
 #: data/System/ModacSkinSolrSearchViewTemplate.txt
@@ -1520,6 +1520,10 @@ msgstr "title='Diese Seite bearbeiten' >Bearbeiten"
 msgid "title='Edit users data' accesskey='e'>&Edit users data"
 msgstr "title='Bearbeite Benutzerdaten' accesskey='e'>&Bearbeite Benutzerdaten"
 
+#: data/System/ModacSkinUserViewTemplate.txt
+msgid "title='Edit profile' accesskey='e'>&Edit profile"
+msgstr "title='Bearbeite Benutzerdaten' accesskey='e'>&Bearbeite Benutzerdaten"
+
 #: templates/compare.modac.tmpl
 msgid "title='Interwoven' accesskey='i'>&interwoven"
 msgstr "title='verwoben' accesskey='v'>verwoben (&v)"
@@ -1555,6 +1559,18 @@ msgstr "title='Seite-an-Seite' accesskey='s'>&seite-an-seite"
 #: data/System/ModacSkinUserFormEditTemplate.txt
 msgid "title='Upload foto' accesskey='u'>&Upload photo"
 msgstr "title='Foto hochladen' accesskey='u'>Foto hochladen"
+
+#: data/System/ModacSkinUserFormEditTemplate.txt
+msgid "Upload photo"
+msgstr "Foto hochladen"
+
+#: data/System/ModacSkinUserFormEditTemplate.txt
+msgid "Upload picture"
+msgstr "Foto hochladen"
+
+#: data/System/ModacSkinUserFormEditTemplate.txt
+msgid "Edit profile"
+msgstr "Bearbeite Benutzerdaten"
 
 #: data/System/ModacSkinTopicMenuTemplate.txt
 #: templates/viewtopicactionbuttons.modac.tmpl
@@ -1655,6 +1671,9 @@ msgstr "Land"
 msgid "<span data-plugin=\"ModacSkin\">State</span>"
 msgstr "Bundesland"
 
+msgid "Federal state"
+msgstr "Bundesland"
+
 msgid "Address"
 msgstr "Adresse"
 
@@ -1742,8 +1761,8 @@ msgstr "Verweise auf %1 in jedem Web:"
 #~ msgid "Pick from a list"
 #~ msgstr "Von der Liste auswählen"
 
-#~ msgid "Please wait..."
-#~ msgstr "Bitte warten..."
+msgid "Please wait..."
+msgstr "Bitte warten..."
 
 #~ msgid "Process State"
 #~ msgstr "Prozessstatus"
@@ -1869,3 +1888,42 @@ msgstr "Projektaufgabe"
 
 msgid "Internal project task"
 msgstr "Interne Projektaufgabe"
+
+msgid "Similar Topics"
+msgstr "Ähnliche Seiten"
+
+msgid "Jan"
+msgstr "Jan"
+
+msgid "Feb"
+msgstr "Feb"
+
+msgid "Mar"
+msgstr "Mär"
+
+msgid "Apr"
+msgstr "Apr"
+
+msgid "May"
+msgstr "Mai"
+
+msgid "Jun"
+msgstr "Jun"
+
+msgid "Jul"
+msgstr "Jul"
+
+msgid "Aug"
+msgstr "Aug"
+
+msgid "Sep"
+msgstr "Sep"
+
+msgid "Oct"
+msgstr "Okt"
+
+msgid "Nov"
+msgstr "Nov"
+
+msgid "Dec"
+msgstr "Dez"

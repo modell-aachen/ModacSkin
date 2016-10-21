@@ -149,32 +149,6 @@
 </div>
 </form></div>%TMPL:END%
 
-
-
-%TMPL:DEF{"cssFoswikiDiffOptions"}%%ADDTOZONE{"head" text="<style type='text/css' media='all'>
-table.foswikiDiffOptions {
-	margin:.5em 0;
-	border:none;
-}
-table.foswikiDiffOptions td {
-	border:none;
-	text-align:center;
-}
-table.foswikiDiffOptions img {
-	padding:0 10px;
-	border-width:1px;
-	border-style:solid;
-	background:#fff;
-}
-table.foswikiDiffOptions input {
-	border:0;
-}
-table.foswikiDiffOptions img {
-	border-color:#ccc;
-}
-</style>"
-id="cssFoswikiDiffOptions"}%%TMPL:END%
-
 %TMPL:DEF{"revision"}%<h2>%MAKETEXT{"Revisions"}%</h2>
 %IF{"$ maxrev='0'" then="<!--" else="<h3>%MAKETEXT{"View previous topic revision"}% (1 ... %URLPARAM{maxrev}%)" }%</h3>
 <form name="main" action="%SCRIPTURLPATH{"view"}%/%WEB%/%TOPIC%" method="post">

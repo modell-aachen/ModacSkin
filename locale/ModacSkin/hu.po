@@ -825,7 +825,7 @@ msgid "Options"
 msgstr ""
 
 #: data/System/WebLeftBarDefault.txt:24
-msgid "PDF-Print"
+msgid "Print to PDF"
 msgstr "PDF-tisk"
 
 #: data/System/ModacSkinSolrSearchViewTemplate.txt:62

@@ -442,7 +442,7 @@ jQuery(function($){
                 delete infodata.web;
                 delete infodata.topic;
                 $.extend(infodata, {
-                    name: 'WebCreateNewTopicDialog',
+                    name: infodata.wcnttemplatename || 'WebCreateNewTopicDialog',
                     render: 'on',
                     expand: 'dialog',
                     topic: baseWebTopic,
@@ -1242,7 +1242,7 @@ jQuery(function($){
         var $this = $(this);
 
         var filter = $this.attr('data-filter');
-        if(filter === undefined) filter = '[\\\\*?~^$@%`"\'&|<>/\\[\\]()#\\x00-\\x1f]'; // attachment filter
+        if(filter === undefined) filter = '[\\\\*?~^$;@%`"\'&|<>/\\[\\]()#\\x00-\\x1f]'; // attachment filter
         filter = new RegExp(filter, 'g');
 
         // filter invalid characters

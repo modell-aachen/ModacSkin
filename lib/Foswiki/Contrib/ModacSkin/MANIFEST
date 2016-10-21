@@ -20,6 +20,7 @@ data/System/ModacSkinPrintOnlyViewTemplate.txt 0664
 data/System/ModacSkinReferencesTemplate.txt 0644
 data/System/ModacSkinSolrSearchViewTemplate.txt 0664
 data/System/ModacSkinSolrSearchBaseTemplate.txt 0664
+data/System/ModacSkinSolrSimilarTopic.txt 0664
 data/System/ModacSkinSystemViewTemplate.txt 0664
 data/System/ModacSkinSystemTabsTemplate.txt 0664
 data/System/ModacSkinTasksAPIDefaultMailTemplate.txt 0664
@@ -56,6 +57,7 @@ pub/System/ModacSkin/atp_comment.js 0664
 pub/System/ModacSkin/atp_comment.js.gz 0664
 pub/System/ModacSkin/comment_form.js 0664
 pub/System/ModacSkin/comment_form.js.gz 0664
+pub/System/ModacSkin/profile_edit_photo.js 0664
 pub/System/ModacSkin/jsi18n.edit.de.js 0664
 pub/System/ModacSkin/jsi18n.edit.de.js.gz 0664
 pub/System/ModacSkin/jsi18n.edit.fr.js 0664
@@ -111,6 +113,7 @@ pub/System/ModacSkinTheme/ModacSkinLogos/user-icon.png 0664
 pub/System/ModacSkinTheme/bg_button_gradient.gif 0664
 pub/System/ModacSkinTheme/bg_buttoncancel_gradient.gif 0664
 pub/System/ModacSkinTheme/bg_submit_gradient.gif 0664
+pub/System/ModacSkinTheme/bg_white.gif 0664
 pub/System/ModacSkinTheme/bullet-lock.gif 0664
 pub/System/ModacSkinTheme/bullet-personal_sidebar.gif 0664
 pub/System/ModacSkinTheme/bullet-toc.gif 0664

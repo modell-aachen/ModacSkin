@@ -7,6 +7,18 @@ our $VERSION = '1.4';
 our $RELEASE = "1.4";
 our $SHORTDESCRIPTION = 'Modell Aachen Skin (Mediawiki New Skin)';
 
+# Preferences for SIMILAR-TOPICS-Table
+our $SITEPREFS = {
+  SIMILAR_TOPICS => "0",
+  SIMILAR_TOPICS_FORM => "*DocumentForm",
+  SIMILAR_TOPICS_LIKE => "title_search,text",
+  SIMILAR_TOPICS_BOOST => "title_search^2,text",
+  SIMILAR_TOPICS_FIELDS => "title,web,topic,field_Responsible_s,score,field_DocumentType_s,date,process_state_s",
+  SIMILAR_TOPICS_FILTER => "-topic:*%WORKFLOWSUFFIX% -topic:*Template",
+  SIMILAR_TOPICS_MARK_AS_DISCUSSION => "DISCUSSION|CONTENT_REVIEW|FORMAL_REVIEW",
+  SIMILAR_TOPICS_ROWS => "5",
+};
+
 sub maintenanceHandler {
     Foswiki::Plugins::MaintenancePlugin::registerCheck("ModacSkin:Compare:skinorder", {
         name => "ModacSkin: Skin order when comparing",
