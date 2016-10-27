@@ -15,12 +15,12 @@
     id="modacSidebarONE"
     firststart="hide"
     remember="on"
-	noscript="show"
+    noscript="show"
     showlink="%MAKETEXT{"Tools"}%"
     hidelink="%MAKETEXT{"Tools"}%"
-	showimgleft="%ICONURLPATH{arrow-right}%"
-	hideimgleft="%ICONURLPATH{arrow-down}%"
-	linkclass="patternTwistyButton"
+    showimgleft="%ICONURLPATH{arrow-right}%"
+    hideimgleft="%ICONURLPATH{arrow-down}%"
+    linkclass="patternTwistyButton"
 }%
 %INCLUDE{"%IF{"istopic '%BASEWEB%/WebTools'" then="%BASEWEB%/WebTools" else="%IF{"istopic '%CUSTOMIZINGWEB{default="Custom"}%/WebToolsDefault'" then="%CUSTOMIZINGWEB{default="Custom"}%/WebToolsDefault" else="%SYSTEMWEB%/WebToolsDefault"}%"}%"}%
 %ENDTWISTY%
@@ -32,12 +32,12 @@
     id="modacSidebarMASDINHKXY"
     firststart="hide"
     remember="on"
-	noscript="show"
+    noscript="show"
     showlink="%MAKETEXT{"Key user tools"}%"
     hidelink="%MAKETEXT{"Key user tools"}%"
-	showimgleft="%ICONURLPATH{arrow-right}%"
-	hideimgleft="%ICONURLPATH{arrow-down}%"
-	linkclass="patternTwistyButton"
+    showimgleft="%ICONURLPATH{arrow-right}%"
+    hideimgleft="%ICONURLPATH{arrow-down}%"
+    linkclass="patternTwistyButton"
 }%
 %INCLUDE{"%IF{"istopic '%BASEWEB%/WebKeyUserTools'" then="%BASEWEB%/WebKeyUserTools" else="%IF{"istopic '%CUSTOMIZINGWEB{default="Custom"}%/WebKeyUserToolsDefault'" then="%CUSTOMIZINGWEB{default="Custom"}%/WebKeyUserToolsDefault" else="%SYSTEMWEB%/WebKeyUserToolsDefault"}%"}%"}%
 %ENDTWISTY%
@@ -49,12 +49,12 @@
     id="modacSidebarTWO"
     firststart="hide"
     remember="on"
-	noscript="show"
+    noscript="show"
     showlink="%MAKETEXT{"Webs"}%"
     hidelink="%MAKETEXT{"Webs"}%"
-	showimgleft="%ICONURLPATH{arrow-right}%"
-	hideimgleft="%ICONURLPATH{arrow-down}%"
-	linkclass="patternTwistyButton"
+    showimgleft="%ICONURLPATH{arrow-right}%"
+    hideimgleft="%ICONURLPATH{arrow-down}%"
+    linkclass="patternTwistyButton"
 }%
 <div id="modacSidebarTwisty_webs" class="modacAjaxContent" data-url="%SCRIPTURL{rest}%/RenderPlugin/tag?name=INCLUDE;render=1;MaxAge=600;param=%IF{ "context FlexWebListPluginEnabled" then="$percntSYSTEMWEB$percnt.ModacSkinFlexWebList" else="percntSYSTEMWEB$percnt.ModacSkinWebList" }%;web=%ENCODE{"%BASEWEB%"}%;topic=%ENCODE{"%BASEWEB%.%HOMETOPIC%"}%;user=%WIKINAME%%IF{"$'URLPARAM{MODAC_HIDEWEBS}'!=''" then=";MODAC_HIDEWEBS=$percentURLPARAM{MODAC_HIDEWEBS}$percent"}%">%JQREQUIRE{"jqp::spin"}%
 </div>
