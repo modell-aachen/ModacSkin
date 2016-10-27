@@ -231,6 +231,24 @@ hr.splith {
 	font-size: 75%;
 }
 
+.modacBottomBar {
+	width: 99%;
+}
+
+.modacBottomBar td {
+	width: 34%;
+	vertical-align: middle;
+	text-align: center;
+}
+
+.modacBottomBar td:first-child {
+	text-align: left;
+}
+
+.modacBottomBar td:last-child {
+	text-align: right;
+}
+
 .bmsubinfo {
 	font-size: 75%;
 }
