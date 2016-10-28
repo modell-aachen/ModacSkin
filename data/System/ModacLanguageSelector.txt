@@ -19,10 +19,9 @@ Result:
 %SESSION_VARIABLE{"LANGUAGE" set="%URLPARAM{language}%"}%
 
 %JQREQUIRE{"chili"}% <verbatim class="tml">
-%STARTSECTION{"selector"}%%JQREQUIRE{"form"}%<form class="ModacLanguageSelector" name="changeLanguageO"\
-    action="%SCRIPTURLPATH{"oops"}%/%BASEWEB%/%BASETOPIC%" method="post">
+%STARTSECTION{"selector"}%%JQREQUIRE{"form"}%<form class="ModacLanguageSelector" name="language" action="%SCRIPTURLPATH{"oops"}%/%BASEWEB%/%BASETOPIC%" method="post">
     <input type="hidden" name="redirectto" value="%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%?%QUERYPARAMS{encoding="url" separator=";"}%" />
-    <select name="language" class="foswikiSelect"\
+    <select name="language" class="foswikiSelect">
     %LANGUAGES{
          format="<option $marker value=\"$langtag\">$langname</option>"
          selection="%LANGUAGE%"
@@ -31,8 +30,7 @@ Result:
     }%</select>
 <input type="hidden" name="template" value="oopslanguagechanged" />
     <noscript>
-        <input class="foswikiButton" type="submit"\
-            value="%MAKETEXT{"Change language"}%" />
+        <input class="foswikiButton" type="submit" value="%MAKETEXT{"Change language"}%" />
     </noscript>
- </form>%ADDTOZONE{"script" id="languageSelector" requires="JQUERYPLUGIN::FOSWIKI::PREFERENCES" text="<script type='text/javascript'>jQuery(function($){$('[name=\"changeLanguageO\"]').ajaxForm();});</script>"}%%ENDSECTION{"selector"}%
+ </form>%ENDSECTION{"selector"}%
 </verbatim>
