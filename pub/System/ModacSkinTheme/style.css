@@ -1921,6 +1921,9 @@ span.select2system {
 .modacMoreMenu li ul li span.morelink-rename a {
 	background-image: url(../FamFamFamSilkIcons/page_white_go.png);
 }
+.modacMoreMenu li ul li span.morelink-changeurl a {
+	background-image: url(../FamFamFamSilkIcons/world.png);
+}
 .modacMoreMenu li ul li span.morelink-copy a {
 	background-image: url(../FamFamFamSilkIcons/page_white_copy.png);
 }
@@ -2189,3 +2192,86 @@ input.hidePlaceholder:focus:-ms-input-placeholder { color:transparent; } /* IE 1
 	background: #f8fcff;
 }
 
+.foswikiTopRow {
+	display: inline-block;
+	min-width: 150px;
+	max-width: 150px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.changeurl_container {
+	background-repeat: no-repeat;
+	background-position-x: 0;
+	border: 1px solid #f3f3f3;
+	height: 30px;
+}
+
+.changeurl {
+	position: absolute;
+	left:128px;
+	top: 49px;
+	right: 35px;
+	height: 22px;
+	border: 1px solid #b2b2b2;
+	border-left: 0;
+	cursor: not-allowed;
+}
+
+.changeurl_web,
+.changeurl_topic {
+	transition: color .3s ease-in-out;
+}
+
+.changeurl_web.highlight,
+.changeurl_topic.highlight {
+	color: #ff9494;
+}
+
+.changeurl > span:not(.changeurl_web):not(.changeurl_topic) {
+	color: #b2b2b2;
+}
+
+.changeurl > span {
+	float: left;
+	margin-top: 3px;
+}
+
+.newurl {
+	width: 100%;
+}
+
+.newurl tr > td:first-child {
+	display: inline-block;
+	min-width: 100px;
+}
+
+.newurl select {
+	min-width: 290px;
+}
+
+.newurl input[name="newtopic"],
+.newurl select[name="newweb"] {
+	border: 1px solid #b2b2b2;
+}
+
+.newurl_hint_error,
+.newurl_hint_spinner {
+	display: none;
+}
+
+.newurl_hint_error > span {
+	color: red;
+	display: inline-block;
+	font-weight: bold;
+}
+
+.newurl_hint_spinner > span {
+	font-weight: bold;
+}
+
+.newurl_disabled {
+	cursor: not-allowed !important;
+	opacity: .7;
+}

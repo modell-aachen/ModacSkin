@@ -1310,5 +1310,103 @@ jQuery(function($){
             }
         })
     });
+
+    var renameTimer = null;
+    var renameXHR = null;
+    var checkRenameFunc = function(web, topic) {
+        if (renameTimer != null) {
+            clearTimeout(renameTimer);
+            if (renameXHR != null) {
+                renameXHR.abort();
+            }
+        }
+
+        var $btn = $('.ui-dialog-buttonset button:first-child');
+        var $spinner = $('.newurl_hint_spinner');
+        var $hint = $('.newurl_hint_error');
+        $hint.hide();
+
+        var width = $hint.closest('tbody').find('input[name="newtopic"]').width()
+        $hint.children().css('max-width', width + 'px');
+
+        var curweb = $('.changeurl_web').data('orig');
+        var curtopic = $('.changeurl_topic').data('orig');
+
+        if (web === curweb && topic === curtopic) {
+            $btn.attr('disabled', false);
+            $btn.removeClass('newurl_disabled');
+            $spinner.hide();
+            return;
+        }
+
+        renameTimer = setTimeout(function() {
+            $spinner.show();
+            $btn.addClass('newurl_disabled');
+
+            renameXHR = $.ajax({
+                type: 'GET',
+                url: ['/', web, '/', topic, '?noredirect=1&skin=text'].join('')
+            }).done(function() {
+                $btn.attr('disabled', true);
+                $hint.show();
+            }).fail(function(xhr) {
+                if (xhr.status == 404) {
+                    $btn.attr('disabled', false);
+                    $btn.removeClass('newurl_disabled');
+                    $hint.hide();
+                }
+            }).always(function() {
+                renameTimer = null;
+                renameXHR = null;
+                $spinner.hide();
+            });
+        }, 500);
+    };
+
+    $('body').on('change', 'select[name="newweb"]', function() {
+        var web = $(this).val();
+        var topic = $('.changeurl_topic').text();
+        $('.changeurl_web').text(web);
+        checkRenameFunc(web, topic);
+    });
+
+    $('body').on('keyup', 'input[name="newtopic"]', function(evt) {
+        if (evt.keyCode === 37 || evt.keyCode === 39) return;
+
+        var web = $('.changeurl_web').text();
+        var topic = $(this).val();
+        $('.changeurl_topic').text(topic);
+        checkRenameFunc(web, topic);
+    });
+
+    $('body').on('mouseenter', 'select[name="newweb"]', function() {
+        $('.changeurl_web').addClass('highlight');
+    });
+    $('body').on('mouseleave', 'select[name="newweb"]', function() {
+        $('.changeurl_web').removeClass('highlight');
+    });
+
+    $('body').on('mouseenter', 'input[name="newtopic"]', function() {
+        $('.changeurl_topic').addClass('highlight');
+    });
+    $('body').on('mouseleave', 'input[name="newtopic"]', function() {
+        $('.changeurl_topic').removeClass('highlight');
+    });
+
+    $('.changeurl_web').livequery(function() {
+        $(this).text($('select[name="newweb"]').val());
+    });
+
+    $('.changeurl_topic').livequery(function() {
+        $(this).text($('input[name="newtopic"]').val());
+    });
+
+    $('.changeurl_host').livequery(function() {
+        var host = window.location.host;
+        var protocol = window.location.protocol;
+        host = host.length > 5 ? host.substr(0, 5) + '...' : host;
+        var url = [protocol, '//', host, '/'].join('');
+        $(this).text(url);
+    });
 });
 

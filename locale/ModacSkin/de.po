@@ -1927,3 +1927,21 @@ msgstr "Nov"
 
 msgid "Dec"
 msgstr "Dez"
+
+# data/System/ModacSkinTopicMenuTemplate.txt
+# templates/more.modac.tmpl
+msgid "Change address"
+msgstr "Adresse ändern"
+
+# templates/renamebase.modac.tmpl
+msgid "New address"
+msgstr "Neue Adresse"
+
+msgid "New web"
+msgstr "Neuer Bereich"
+
+msgid "New topic name"
+msgstr "Neuer Seitenname"
+
+msgid "This address is already taken by another topic."
+msgstr "Diese Adresse wird bereits von einer anderen Seite verwendet."
