@@ -1,4 +1,4 @@
-/* 
+/*
 Basic layout derived from http://www.positioniseverything.net/articles/pie-maker/pagemaker_form.php.
 I've changed many so things that I won't put a full copyright notice. However all hacks (and comments!) are far beyond my knowledge and this deserves full credits:
 
@@ -62,7 +62,7 @@ body {
 }
 
 #patternClearHeaderLeft {
-	height: 148px!important;	
+	height: 148px!important;
 }
 #patternMain {
 	width:100%;
@@ -77,7 +77,7 @@ body {
 /*------------Themes for standard applications------------*/
 
 .metaDataHead {
-	width:100%;	
+	width:100%;
 	border-collapse: collapsed;
 	border: none;
 }
@@ -91,7 +91,7 @@ body {
 	color: #999;
 }
 
-.metaDataHead td { 
+.metaDataHead td {
         padding: 8px;
 	border-color: #f8fcff;
 	border-width: 8px 1px;
@@ -101,37 +101,37 @@ body {
 	width: 100%;
 }
 
-table.atpSearch { 
-	width: 100%; 
-	border: none; 
-	border-collapse: collapse; 
-}
-
-.atpSearch th { 
+table.atpSearch {
+	width: 100%;
 	border: none;
-	background: white; 
-	color: #999; 
-	padding-bottom: 8px; 
-	text-align: left; 
+	border-collapse: collapse;
 }
 
-.atpSearch tbody tr:first-child td { 
-	border-top: none; 
+.atpSearch th {
+	border: none;
+	background: white;
+	color: #999;
+	padding-bottom: 8px;
+	text-align: left;
 }
 
-.atpSearch td { 
-	border: solid white; 
-	border-width: 8px 1px; 
-	padding: 8px; 
-	background: #f8fcff; 
+.atpSearch tbody tr:first-child td {
+	border-top: none;
+}
+
+.atpSearch td {
+	border: solid white;
+	border-width: 8px 1px;
+	padding: 8px;
+	background: #f8fcff;
 	color: #333; }
 
-.atpSearch td.secondary { 
-	color: #666; 
+.atpSearch td.secondary {
+	color: #666;
 }
 
-.atpSearch .ui-icon { 
-	background-image: url('../JQueryPlugin/themes/foswiki/images/ui-icons-famfamfam.png'); 
+.atpSearch .ui-icon {
+	background-image: url('../JQueryPlugin/themes/foswiki/images/ui-icons-famfamfam.png');
 }
 
 .ma_right_table {
