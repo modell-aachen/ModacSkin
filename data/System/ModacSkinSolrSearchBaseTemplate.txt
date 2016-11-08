@@ -109,6 +109,35 @@
 %{</verbatim>}%
 
 %{<verbatim>}%
+%TMPL:DEF{"solr::templates::employee_thumbnail"}%<script id="solrTemplate_employee_thumbnail" type="text/x-jquery-tmpl">
+  <div class='solrThumbnail' style='min-height: 48px;'>
+    <a class='imageHref imageSimple jqImageTooltip' href='{{:url}}' title='{{:name}}'>
+      <img src='{{:field_avatar_thumbnail_url_s}}' alt='{{:thumbnail}}' width='48' />
+    </a>
+  </div>
+</script>%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim>}%
+%TMPL:DEF{"solr::fields::append"}%%TMPL:PREV%,field_avatar_thumbnail_url_s,%EMPLOYEESAPP_SOLRSEARCH_EXTRA_FIELDS%%TMPL:END%
+%TMPL:DEF{"solr::templates::hits::employee"}%<script id="solrHitTemplate_employee" type="text/x-jquery-tmpl">
+  <div class='solrSearchHit solrEmployeeHit clearfix'>
+    {{include tmpl="#solrTemplate_employee_thumbnail" /}}
+    <h3 title='{{:title}}'>
+      <a class="task-solr-hit" href="{{:url}}">{{:title}}</a>
+      <span class='foswikiGrayText'>
+        {{:~foswiki.jsi18n.get('solr', 'in [_1]', "<a href='"+container_url+"'>"+~getWebMapping(web)+"</a>")}}
+      </span>
+    </h3><!--
+-->%IF{"$EMPLOYEESAPP_SOLRSEARCH_FORMAT!=''" then="<div class='solrHilite'>%EMPLOYEESAPP_SOLRSEARCH_FORMAT%</div>"}%<!--
+  --><div class='solrRevision'>
+    {{:~formatDate(date,solrDateformat)}}, {{if author_s}}{{:author_s}}{{else}}{{:author}}{{/if}}
+  </div>
+</div>
+</script>%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim>}%
 %TMPL:DEF{"solr::fields::append"}%%TMPL:PREV%,author_s,container_id,container_url,task_state_s,task_type_s,task_id_s,task_context_s%TMPL:END%
 %TMPL:DEF{"solr::templates::hits::task"}%<script id="solrHitTemplate_task" type="text/x-jquery-tmpl">
   <div class='solrSearchHit clearfix'>
@@ -353,6 +382,8 @@
 %TMPL:P{"solr::templates::topic::title"}%<!-- -->
 %TMPL:P{"solr::templates::thumbnail"}%<!-- -->
 %TMPL:P{"solr::templates::hits::task"}%<!-- -->
+%TMPL:P{"solr::templates::hits::employee"}%<!-- -->
+%TMPL:P{"solr::templates::employee_thumbnail"}%<!-- -->
 %TMPL:P{"solr::templates::webfacetfield"}%<!-- -->
 %TMPL:END%
 %{</verbatim>}%
@@ -398,6 +429,7 @@ $percentTMPL:DEF{"solr::fields::append"}$percent$percentTMPL:PREF$percent,your_s
   "topic": "%MAKETEXT{"topic"}%",
   "comment": "%MAKETEXT{"comment"}%",
   "task": "%MAKETEXT{"Task"}%",
+  "employee": "%MAKETEXT{"Employee"}%",
   "Tagged": "%MAKETEXT{"Tagged"}%",
   "tagged": "%MAKETEXT{"tagged"}%",
   "minute": "%MAKETEXT{"Minute"}%",
