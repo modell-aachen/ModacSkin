@@ -1,0 +1,9 @@
+%META:TOPICINFO{author="BaseUserMapping_333" date="1472815732" format="1.1" version="1"}%
+| *Name* | *Type* | *Size* | *Values* | *Description* | *Attributes* |
+| Type | select+values | 10 | @DELAYFORMATLIST{"@DELAYTASKSTYPEFILTER@DELAY" split="," separator="," format="$percentMAKETEXT{\"$1\"}$percent=$1"}@DELAY | | |
+| Created | date2 | 10 | | | |
+| Changed | date2 | 10 | | | |
+
+%META:PREFERENCE{name="FormGenerator_TargetFormGroup" title="FormGenerator_TargetFormGroup" type="Set" value="ModacSkin"}%
+%META:PREFERENCE{name="FormGenerator_Priority" title="FormGenerator_Priority" type="Set" value="0"}%
+%META:PREFERENCE{name="FormGenerator_Position" title="FormGenerator_Position" type="Set" value="0"}%

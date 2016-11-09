@@ -1,0 +1,6 @@
+%META:PREFERENCE{name="ALLOWTOPICCHANGE" title="ALLOWTOPICCHANGE" type="Set" value="AdminGroup"}%
+%META:PREFERENCE{name="FormGenerator_AppControlled" title="FormGenerator_AppControlled" type="Set" value="0"}%
+%META:PREFERENCE{name="FormGenerator_Group" title="FormGenerator_Group" type="Set" value="ModacSkin"}%
+%META:PREFERENCE{name="VIEW_TEMPLATE" title="VIEW_TEMPLATE" type="Set" value="FormGeneratorManagerView"}%
+%META:PREFERENCE{name="WORKFLOW" title="WORKFLOW" type="Set" value=""}%
+

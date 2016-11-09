@@ -38,7 +38,8 @@ data/System/ModacSkinWebCreateNewTopicTemplate.txt 0664
 data/System/ModacSkinWebList.txt 0664
 data/System/ModacSkinHeadingViewTemplate.txt 0664
 data/System/ModacSkinWebTopicListViewTemplate.txt 0664
-data/System/ModacTaskDisplayForm.txt 0664
+data/System/ModacTaskDisplayFormManager.txt 0664
+data/System/FormGenerator_ModacSkin.txt 0664
 data/System/WebActionsDefault.txt 0644
 data/System/WebBottomBarDefault.txt 0664
 data/System/WebKeyUserToolsDefault.txt 0664
