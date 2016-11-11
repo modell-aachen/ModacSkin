@@ -2,6 +2,7 @@
 %TMPL:INCLUDE{"viewtopbar"}%
 %TMPL:INCLUDE{"viewsidebar"}%
 %TMPL:INCLUDE{"TopHead"}%
+%TMPL:INCLUDE{"DocumentFormTable"}%
 
 %TMPL:DEF{"logo"}%%TMPL:END%%{
 ---------------------------------------------------
@@ -56,7 +57,7 @@
 ---------------------------------------------------
 }%%TMPL:DEF{"content"}%%TMPL:P{"simpleheader"}%
 %TEXT% 
-%IF{"defined rev" then="$percntRENDERFORDISPLAY{header=\"<table class='foswikiFormTable' border='1'>\" format=\"<tr class='modacForm'><td><span class='title TMLhtml TMLhtml TMLhtml TMLhtml'>$name</span></td><td>$value</td></tr>\" footer=\"</table>\" revision=\"%URLPARAM{"rev"}%\"}$percnt"}% 
+%IF{"defined rev" then="$percntRENDERFORDISPLAY{map=\"%TMPL:P{"modacformtable_mappings"}%\" header=\"<table class='foswikiFormTable' border='1'>\" format=\"<tr class='modacForm'><td><span class='title TMLhtml'>$dollarpercntMAKETEXT{$title}$dollarpercnt</span></td><td>$value</td></tr>\" footer=\"</table>\" revision=\"%URLPARAM{"rev"}%\"}$percnt"}% 
 %IF{"$raw='on'" then='%TMPL:P{"sig_textareabuttons"}%'}%%TMPL:END%%{
 ---------------------------------------------------
 }%%TMPL:DEF{"printaction"}%%TMPL:P{"activatable_printable"}%%TMPL:END%%{
