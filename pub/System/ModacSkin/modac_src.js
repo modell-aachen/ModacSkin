@@ -397,7 +397,7 @@ jQuery(function($){
             }
 
             var $target = $(ev.target);
-            if(!$target.is('a')) {
+            if(!($target.is('a') || $target.is('area'))) {
                 $target = $target.closest('a');
                 if(!$target.is('a')) {
                     window.console && console.log('WCNT: could not find target link');
