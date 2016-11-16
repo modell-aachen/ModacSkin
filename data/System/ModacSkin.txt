@@ -379,6 +379,22 @@ When pressing =save=, the parameter =myparam=MyValue= will be passed to the =sav
 
 If you have redefined =%<nop>TMPL:DEF{"formstart"}%= and want to use this feature, do a =%<nop>TMPL:P{"modacTransientParam"}%= inside your form.
 
+---+++ Opening links in new tabs
+
+If you want to open all links of a certain div in a new tab, add the css class =modacNewTab= and load =System/ModacSkin/linksInNewTab.js=.
+
+Example:
+<pre>
+&lt;div class="modacNewTab"&gt;%%NOP%INCLUDE{"SomePage"}%&lt;/div&gt;
+%%NOP%TMPL:P{"LIBJS" id="ModacSkin/linksInNewTab" requires="JQUERYPLUGIN::FOSWIKI"}%
+</pre>
+
+You can also specify the target in =data-modac-target= (it defaults to !_blank):
+<pre>
+&lt;div class="modacNewTab" data-modac-target="qwiki"&gt;%%NOP%INCLUDE{"SomePage"}%&lt;/div&gt;
+%%NOP%TMPL:P{"LIBJS" id="ModacSkin/linksInNewTab" requires="JQUERYPLUGIN::FOSWIKI"}%
+</pre>
+
 ---++ Installation Instructions
 
 To enable ModacSkin you have set the following variables either in =WebPreferences= (to enable ModacSkin within a single web) or
