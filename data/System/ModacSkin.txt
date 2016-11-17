@@ -381,6 +381,8 @@ If you have redefined =%<nop>TMPL:DEF{"formstart"}%= and want to use this featur
 
 ---+++ Opening links in new tabs
 
+%I% See also [[#View_for_iframes][View for iframes]]
+
 If you want to open all links of a certain div in a new tab, add the css class =modacNewTab= and load =System/ModacSkin/linksInNewTab.js=.
 
 Example:
@@ -394,6 +396,11 @@ You can also specify the target in =data-modac-target= (it defaults to !_blank):
 &lt;div class="modacNewTab" data-modac-target="qwiki"&gt;%%NOP%INCLUDE{"SomePage"}%&lt;/div&gt;
 %%NOP%TMPL:P{"LIBJS" id="ModacSkin/linksInNewTab" requires="JQUERYPLUGIN::FOSWIKI"}%
 </pre>
+
+---+++ View for iframes
+
+If you want to include a page in an iframe on a portal, you might want to use the =ModacIframeViewTemplate=, just open your url like this:
+<pre>%SCRIPTURL{view}%/MyWeb/MyTopic?template=ModacIframeView</pre>
 
 ---++ Installation Instructions
 
