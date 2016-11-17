@@ -57,7 +57,42 @@
 ---------------------------------------------------
 }%%TMPL:DEF{"content"}%%TMPL:P{"simpleheader"}%
 %TEXT% 
-%IF{"defined rev" then="$percntRENDERFORDISPLAY{map=\"%TMPL:P{"modacformtable_mappings"}%\" header=\"<table class='foswikiFormTable' border='1'>\" format=\"<tr class='modacForm'><td><span class='title TMLhtml'>$dollarpercntMAKETEXT{$title}$dollarpercnt</span></td><td>$value</td></tr>\" footer=\"</table>\" revision=\"%URLPARAM{"rev"}%\"}$percnt"}% 
+
+
+%IF{"defined rev" then="$percntTMPL:P{\"metadatatable\"}$percnt"}% 
+
+
+%TMPL:DEF{"metadatatable"}%%{
+}%<div class="modacBorder modacBox">
+  <div class="foswikiFormSteps">
+    <div class="foswikiFormStep">%{
+}%%RENDERFORDISPLAY{map="%TMPL:P{"modacformtable_mappings"}%" header="$percentTMPL:P{\"metadatatable::startTwisty\"}$percent
+ 	<table class='tablesorter'><thead>
+      <tr>
+        <th class=\"header\">%MAKETEXT{"Field"}%</th>
+        <th class=\"header\">%MAKETEXT{"Value"}%</th>
+      </tr>
+    </thead><tbody>" format="
+    <tr>
+    	<td><span class='title TMLhtml'>$percntMAKETEXT{$title}$percnt</span></td>
+    	<td>$value</td>
+	</tr>" 
+	footer="</tbody></table> $percentTMPL:P{metadatatable::endTwisty}$percent" revision="%URLPARAM{"rev"}%"}%%{
+}%</div>
+</div>
+</div>%{
+}%%TMPL:END%
+
+%TMPL:DEF{"metadatatable::startTwisty"}%%{
+}%%TWISTY{
+  showimgleft="%PUBURLPATH%/%SYSTEMWEB%/DocumentGraphics/toggleopen.png"
+  hideimgleft="%PUBURLPATH%/%SYSTEMWEB%/DocumentGraphics/toggleclose.png"
+  link="%MAKETEXT{"Metadata"}%"
+}%%TMPL:END%
+%TMPL:DEF{"metadatatable::endTwisty"}%%{
+}%%ENDTWISTY%%{
+}%%TMPL:END%
+
 %IF{"$raw='on'" then='%TMPL:P{"sig_textareabuttons"}%'}%%TMPL:END%%{
 ---------------------------------------------------
 }%%TMPL:DEF{"printaction"}%%TMPL:P{"activatable_printable"}%%TMPL:END%%{

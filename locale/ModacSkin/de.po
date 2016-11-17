@@ -1613,6 +1613,18 @@ msgstr "value='Abbrechen' accesskey='c'"
 msgid "value='Discard' accesskey='d'"
 msgstr "value='Verwerfen' accesskey='d'"
 
+#: templates/view.modac.tmpl
+msgid "Metadata"
+msgstr "Metadaten"
+
+#: templates/view.modac.tmpl
+msgid "Field"
+msgstr "Feld"
+
+#: templates/view.modac.tmpl
+msgid "Value"
+msgstr "Wert"
+
 #: templates/edit.modac.tmpl
 msgid "value='Preview' accesskey='p'"
 msgstr "value='Vorschau' accesskey='p'"

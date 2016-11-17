@@ -1605,6 +1605,10 @@ msgstr "value='Rinuncia' accesskey='c'"
 msgid "value='Discard' accesskey='d'"
 msgstr "value='Annulla i cambiamenti' accesskey='d'"
 
+#: templates/view.modac.tmpl
+msgid "Metadata"
+msgstr ""
+
 #: templates/edit.modac.tmpl
 msgid "value='Preview' accesskey='p'"
 msgstr "value='Anteprima' accesskey='p'"
