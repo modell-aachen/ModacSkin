@@ -34,9 +34,10 @@
 }%%{ DEPRECATED: beforetext and aftertext }%
 %{ compatibility transition older than 4.2: }%
 %TMPL:DEF{"contentheader"}%%TMPL:P{"beforetext"}%%TMPL:END%
-%TMPL:DEF{"contentfooter"}%%TMPL:P{"aftertext"}%%TMPL:END%%{
+%TMPL:DEF{"contentfooter"}%%TMPL:P{"aftertext"}%%IF{"defined rev" then="$percntTMPL:P{\"metadatatable\"}$percnt"}%%TMPL:END%%{
 ---------------------------------------------------
 }%%TMPL:DEF{"patterntopiccontents"}%%TMPL:P{"broadcastmessage"}%%TMPL:P{"contentheaderstylewrapper"}%%TMPL:P{"formtop"}%%TMPL:P{"attachmentstop"}%<div class="patternContent"><div class="foswikiTopic">%TMPL:P{"content"}%</div>
+
 %TMPL:P{"contentfooterstylewrapper"}%%TMPL:P{"similartopics"}%%TMPL:P{"topicaction"}%</div>%TMPL:P{"footernote"}%%TMPL:END%
 
 
@@ -57,27 +58,24 @@
 ---------------------------------------------------
 }%%TMPL:DEF{"content"}%%TMPL:P{"simpleheader"}%
 %TEXT% 
-
-
-%IF{"defined rev" then="$percntTMPL:P{\"metadatatable\"}$percnt"}% 
-
-
-%TMPL:DEF{"metadatatable"}%%{
+%IF{"$raw='on'" then='%TMPL:P{"sig_textareabuttons"}%'}%%TMPL:END%%{
+---------------------------------------------------
+}%%TMPL:DEF{"metadatatable"}%%{
 }%<div class="modacBorder modacBox">
   <div class="foswikiFormSteps">
     <div class="foswikiFormStep">%{
 }%%RENDERFORDISPLAY{map="%TMPL:P{"modacformtable_mappings"}%" header="$percentTMPL:P{\"metadatatable::startTwisty\"}$percent
- 	<table class='tablesorter'><thead>
+  <table class='tablesorter'><thead>
       <tr>
         <th class=\"header\">%MAKETEXT{"Field"}%</th>
         <th class=\"header\">%MAKETEXT{"Value"}%</th>
       </tr>
     </thead><tbody>" format="
     <tr>
-    	<td><span class='title TMLhtml'>$percntMAKETEXT{$title}$percnt</span></td>
-    	<td>$value</td>
-	</tr>" 
-	footer="</tbody></table> $percentTMPL:P{metadatatable::endTwisty}$percent" revision="%URLPARAM{"rev"}%"}%%{
+      <td><span class='title TMLhtml'>$percntMAKETEXT{$title}$percnt</span></td>
+      <td>$value</td>
+  </tr>"
+  footer="</tbody></table> $percentTMPL:P{metadatatable::endTwisty}$percent" revision="%URLPARAM{"rev"}%"}%%{
 }%</div>
 </div>
 </div>%{
@@ -91,9 +89,7 @@
 }%%TMPL:END%
 %TMPL:DEF{"metadatatable::endTwisty"}%%{
 }%%ENDTWISTY%%{
-}%%TMPL:END%
-
-%IF{"$raw='on'" then='%TMPL:P{"sig_textareabuttons"}%'}%%TMPL:END%%{
+}%%TMPL:END%%{
 ---------------------------------------------------
 }%%TMPL:DEF{"printaction"}%%TMPL:P{"activatable_printable"}%%TMPL:END%%{
 ---------------------------------------------------
