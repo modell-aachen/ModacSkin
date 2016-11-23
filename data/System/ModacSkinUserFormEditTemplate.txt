@@ -27,7 +27,8 @@
     <tr>
         <td align="center"></td>
         <td>
-            <img src='%ATTACHURL%/%ATTACHMENTLIST{topic="%BASETOPIC%" format="$fileName" limit="1" extension="gif,jpg,png" sort="$fileDate" sortorder="descending"}%' width='150px;'/><br/>
+            <img src='%ATTACHURL%/%ATTACHMENTLIST{topic="%BASETOPIC%" format="$fileName" limit="1" extenstion="gif,jpg,png" sort="$fileDate" sortorder="descending"}%' width='150px;'/>
+            <p/>
             %BUTTON{
               "%MAKETEXT{"Upload picture"}%"
               id="upload_foto_button"
@@ -36,7 +37,7 @@
     </tr>
 %RENDERFOREDIT{
     map=
-        "FirstName=%MAKETEXT{First name}%,
+        "FirstName=%MAKETEXT{First }%,
         LastName=%MAKETEXT{Last name}%,
         OrganisationName=%MAKETEXT{Organisation name}%,
         OrganisationURL=%MAKETEXT{Organisation URL}%,
