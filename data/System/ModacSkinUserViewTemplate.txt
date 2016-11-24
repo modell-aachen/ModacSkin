@@ -131,7 +131,7 @@
   context="any"
   parent="any"
   allowcreate="0"
-  query="{\"Author\": \"%RENDERUSER{format="$cUID"}%\"}"
+  query="{\"Author\": \"%RENDERUSER{format="$cUID"}%\",\"Status\":[\"open\",\"closed\"]}"
 }%%{
 }%%ENDTAB%
 %ENDTABPANE%
