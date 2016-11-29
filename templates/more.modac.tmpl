@@ -237,8 +237,8 @@
 %{<verbatim class="tml">}%
 %TMPL:DEF{"topicparent_select2"}%<!-- -->
 %INCLUDE{"%SYSTEMWEB%.ModacAjaxHelper" section="selecttopic"}%<!-- -->
-<select class="jqTopicSelect {include_web: false, clearable: 1}" style="width: 98%;" name="topicparent" id="topicparent_select"><option value="%QUERY{"parent.name"}%">%IF{"parent.name=~'%HOMETOPIC%(?:-[A-Z]2)?$'" then="%MAKETEXT{"No topic parent"}%" else="$percntGETTOPICTITLE{\"%QUERY{"parent.name"}%\"}$percnt"}%</option></select>
-<!-- -->%TMPL:END%
+<select class="jqTopicSelect {include_web: false, clearable: 1}" data-placeholder="" data-allow-clear="1" style="width: 98%;" name="topicparent" id="topicparent_select"><option value="%QUERY{"parent.name"}%">%IF{"parent.name=~'%HOMETOPIC%(?:-[A-Z]2)?$'" then="%MAKETEXT{"No topic parent"}%" else="$percntGETTOPICTITLE{\"%QUERY{"parent.name"}%\"}$percnt"}%</option></select>
+	<!-- -->%TMPL:END%
 %{</verbatim>}%
 
 %{<verbatim class="tml">}%
