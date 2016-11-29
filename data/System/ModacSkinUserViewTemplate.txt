@@ -69,7 +69,7 @@
 <ul class="modacBookmarks">
 %SOLRSEARCH{"-type:(topic OR comment OR action) (%FAVORITELIST{type="files" format="(webtopic:\\"$swebtopic\\" name:\"$file\")" separator=" OR " default="NOT *"}%)"
   rows="5" sort="date desc"
-  format="<li data-fav-item=\"$webtopic-$name\"><div class=\"date\">$date%BR%$percentRENDERUSER{\"$author\" convert=\"on\"}$percent</div>[[%PUBURLPATH%/$web/$topic/$name][<strong>$title</strong>]]%BR%<span class=\"bmsubinfo\">[[$web.WebHome][$percentFORMATLIST{\"$dollarmap($web)\" map=\"%MODAC_WEBMAPPINGS{default=""}%\"}$percent]] &raquo; [[$web.$topic][$container_title]]</span></li>"
+  format="<li data-fav-item=\"$webtopic-$name\"><div class=\"date\">$date%BR%$percentRENDERUSER{\"$author\" convert=\"on\"}$percent</div>[[%PUBURLPATH%/$web/$topic/$name][<strong>$name</strong>]]%BR%<span class=\"bmsubinfo\">[[$web.WebHome][$percentFORMATLIST{\"$dollarmap($web)\" map=\"%MODAC_WEBMAPPINGS{default=""}%\"}$percent]] $percntIF{\"'$topic'!='WebHome'\" then=\" &raquo; <a href=\\"%SCRIPTURL{view}%/$web/$topic\\" title=\\"$web.$topic\\">$container_title</a>\"}$percnt</span></li>"
   fields="web,topic,container_title,author,date,name,title,author"
 }%
 </ul>
