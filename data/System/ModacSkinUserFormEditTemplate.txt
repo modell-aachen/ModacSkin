@@ -27,24 +27,7 @@
     <tr>
         <td align="center"></td>
         <td>
-            %IMAGE{
-                "%IF{"'%USERSWEB%.%USERINFO{format="$wikiname"}%'/Photo"
-                  then="$percntFORMFIELD{\"Photo\" topic=\"%USERSWEB%.%USERINFO{format="$wikiname"}%\"}$percnt"
-                  else="%IF{"'%USERSWEB%.%USERINFO{format="$wikiname"}%'/attachments[name=~'\.(?i:gif|png|jpe?g)$']"
-                    then="%QUERY{"'%USERSWEB%.%USERINFO{format="$wikiname"}%'/attachments[name=~'\.(?i:gif|png|jpe?g)'][0].name"}%"
-                    else="%PUBURLPATH%/%SYSTEMWEB%/MetaCommentPlugin/nobody.gif"
-                  }%"
-                }%"
-                topic="%USERSWEB%.%USERINFO{format="$wikiname"}%"
-                type="plain"
-                href="%SCRIPTURLPATH{"view"}%/%USERSWEB%/%USERINFO{format="$wikiname"}%"
-                size="150"
-                crop="northwest"
-                title="%SPACEOUT{"%USERINFO{format="$wikiname"}%"}%"
-              }%
-            <p/>
-            <!-- <img src='%ATTACHURL%/%ATTACHMENTLIST{topic="%BASETOPIC%" format="$fileName" limit="1" extension="gif,jpg,png" sort="$fileDate" sortorder="descending"}%' width='150px;'/>
-            <p/> -->
+            <img src='%ATTACHURL%/%ATTACHMENTLIST{topic="%BASETOPIC%" format="$fileName" limit="1" extenstion="gif,jpg,png" sort="$fileDate" sortorder="descending"}%' width='150px;'/><br/>
             %BUTTON{
               "%MAKETEXT{"Upload picture"}%"
               id="upload_foto_button"
