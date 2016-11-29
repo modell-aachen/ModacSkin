@@ -180,7 +180,7 @@
 <div class="widgetBlockContent">
 <table class="tablesorter">
 <thead>
-<tr><th>%MAKETEXT{"Title"}%</th><th>%MAKETEXT{"Status"}%</th><th>%MAKETEXT{"Status since"}%</th></tr>
+<tr><th>%MAKETEXT{"Title"}%</th><th>%MAKETEXT{"Status"}%</th><th>%MAKETEXT{"Status time"}%</th></tr>
 </thead>
 <tbody>
  %SOLRSEARCH{"type:topic web:Processes process_state_s:(FORMAL_REVIEW OR FORMAL_REVIEW_DRAFT)"
