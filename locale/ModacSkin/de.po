@@ -153,7 +153,7 @@ msgstr "Mitglieder hinzufügen"
 
 #: data/Main/ModacSkinGroupViewTemplate.txt
 msgid "Add members..."
-msgstr "Mitglied hinzufügen..."
+msgstr "Mitglieder hinzufügen..."
 
 #: data/Main/ModacSkinGroupViewTemplate.txt
 msgid "Add user management options to this topic."
