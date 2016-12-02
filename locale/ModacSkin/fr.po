@@ -169,7 +169,7 @@ msgstr "Administration"
 #: data/System/ModacSkinWebCreateNewTopicTemplate.txt
 #: templates/more.modac.tmpl
 msgid "Advanced options..."
-msgstr "options avancées…"
+msgstr "options avancées..."
 
 #: data/System/ModacSkinSolrSearchViewTemplate.txt
 msgid "Application"
@@ -415,11 +415,11 @@ msgstr "Emplacement actuel :"
 
 #: templates/renamebase.modac.tmpl
 msgid "Current topic:"
-msgstr "Sujet actuel :"
+msgstr "Sujet actuel:"
 
 #: templates/renamebase.modac.tmpl
 msgid "Current web:"
-msgstr "Web actuel :"
+msgstr "Web actuel:"
 
 #: data/System/ModacSkinSolrSearchViewTemplate.txt
 msgid "Danish"
@@ -457,7 +457,7 @@ msgstr "Décrivez ce fichier, afin que les autres personnes sachent de quoi il s
 
 #: templates/compare.modac.tmpl templates/rdiff.modac.tmpl
 msgid "Difference:"
-msgstr "Différence :"
+msgstr "Différence:"
 
 #: data/System/ModacSkinCommonWords.txt
 msgid "Discard discussion"
@@ -640,7 +640,7 @@ msgstr "Norme ISO"
 
 #: templates/validate.modac.tmpl
 msgid "If you are unsure what this means, read: %1"
-msgstr "Si vous n'êtes pas certain de ce que cela signifie, lisez : %1"
+msgstr "Si vous n'êtes pas certain de ce que cela signifie, lisez: %1"
 
 #: templates/renameattachmentdelete.modac.tmpl
 msgid "If you enter a different name, make sure the topic exists."
@@ -764,7 +764,7 @@ msgstr "Nom de la copie"
 
 #: templates/more.modac.tmpl
 msgid "Newer revision:"
-msgstr "Nouvelle révision :"
+msgstr "Nouvelle révision:"
 
 #: templates/more.modac.tmpl
 msgid "No child topics"
@@ -805,7 +805,7 @@ msgstr "OK"
 
 #: templates/more.modac.tmpl
 msgid "Older revision:"
-msgstr "Ancienne révision :"
+msgstr "Ancienne révision:"
 
 #: templates/metacomments.modac.tmpl
 msgid "One comment"
@@ -1205,7 +1205,7 @@ msgstr "Nom du sujet que le sujet nouvellement créé sera un sujet fils de."
 #: data/System/ModacSkinContentTemplatesViewTemplate.txt
 #: data/System/ModacSkinWebCreateNewTopicTemplate.txt
 msgid "Topic name:"
-msgstr "Nom de page :"
+msgstr "Nom de page:"
 
 #: data/System/ModacSkinTopicMenuTemplate.txt
 msgid "Topic parent"
@@ -1277,7 +1277,7 @@ msgstr "telecharger le fichier…"
 
 #: data/System/ModacSkinWebCreateNewTopicTemplate.txt
 msgid "Use template:"
-msgstr "Modèles de formulaires disponibles :"
+msgstr "Modèles de formulaires disponibles:"
 
 #: templates/oopshistory.modac.tmpl
 msgid "Username"
@@ -1301,7 +1301,7 @@ msgstr "Afficher version"
 
 #: templates/more.modac.tmpl
 msgid "View revision:"
-msgstr "Afficher la révision :"
+msgstr "Afficher la révision:"
 
 #: templates/rdiff.modac.tmpl
 msgid "View topic"
@@ -1337,7 +1337,7 @@ msgstr "Page entière"
 
 #: templates/foswiki.modac.tmpl
 msgid "You are here:"
-msgstr "Vous êtes ici :"
+msgstr "Vous êtes ici:"
 
 #: templates/oopshistory.modac.tmpl
 msgid "You can also choose to see "
@@ -1598,6 +1598,10 @@ msgstr "value='Annuler' accesskey='c'"
 msgid "value='Discard' accesskey='d'"
 msgstr "value='Abandonner' accesskey='d'"
 
+#: templates/view.modac.tmpl
+msgid "Metadata"
+msgstr ""
+
 #: templates/edit.modac.tmpl
 msgid "value='Preview' accesskey='p'"
 msgstr "value='Prévisualiser' accesskey='p'"
@@ -1630,7 +1634,7 @@ msgstr "pourquoi il vous est demandé de confirmer"
 #~ msgstr "accès refusé"
 
 #~ msgid "Change links in topics that refer to !%1 in any Web:"
-#~ msgstr "Modifier les liens dans le contenu qui fait référence à !%1 dans tout le Web :"
+#~ msgstr "Modifier les liens dans le contenu qui fait référence à !%1 dans tout le Web:"
 
 #~ msgid "Change links in topics that refer to !%1 in the %2 Web:"
 #~ msgstr "Modifier les liens dans le contenu qui fait référence à !%1 dans le %2 Web:"

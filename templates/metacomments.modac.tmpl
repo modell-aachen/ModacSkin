@@ -10,7 +10,7 @@
     %IF{"'%ENCODE{"$title" type="entity"}%'!=''" 
       then="<h3><noautolink>%ENCODE{"$title" type="entity"}%</noautolink></h3>"
     }%<!-- -->
-    <div class='cmtCommentText'>$n$text</div>
+    <div class='cmtCommentText'><pre class="comment-text">$n$text</pre></div>
     %TMPL:P{"comments::controls"}%<!-- -->
     $percntIF{"$COMMENTMODERATION='on' and not('$state'=~'\bapproved\b')"
       then="<div class='foswikiRight foswikiAlert cmtAlert'>(%MAKETEXT{"needs approval"}%)</div>"
@@ -42,7 +42,7 @@
     %IF{"'%ENCODE{"$title" type="entity"}%'!=''" 
       then="<h3><noautolink>%ENCODE{"$title" type="entity"}%</noautolink></h3>"
     }%<!-- -->
-    <div class='cmtCommentText'>$n$text</div>
+    <div class='cmtCommentText'><pre class="comment-text">$n$text</pre></div>
     %TMPL:P{"comments::controls"}%<!-- -->
     $percntIF{"$COMMENTMODERATION='on' and not('$state'=~'\bapproved\b')"
       then="<div class='foswikiRight foswikiAlert cmtAlert'>(%MAKETEXT{"needs approval"}%)</div>"

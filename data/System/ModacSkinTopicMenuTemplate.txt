@@ -22,7 +22,7 @@ format="$percntIF{\"$dollarTOPICMENU_HIDE_$percntCALC{\"$dollarUPPER($1)\"}$perc
 }%%TMPL:END%
 
 %TMPL:DEF{"modacTopicMenuMoreEntries"}%%{
-}%%IF{"isempty TOPICMENU_MORE_ITEMS" then="preferences,changeparent,copy,move,delete" else="%TOPICMENU_MORE_ITEMS%"}%%{
+}%%IF{"isempty TOPICMENU_MORE_ITEMS" then="preferences,changeparent,changeurl,copy,delete" else="%TOPICMENU_MORE_ITEMS%"}%%{
 }%%TMPL:END%
 
 %{ATTACHMENTS}%
@@ -62,7 +62,7 @@ format="$percntIF{\"$dollarTOPICMENU_HIDE_$percntCALCULATE{\"$dollarUPPER($1)\"}
 %TMPL:DEF{"modacTopicMenu::copy"}%<li><span class='modacDialogable morelink-copy'><a href='%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%?template=more'>%MAKETEXT{"Copy topic"}%</a></span></li>%TMPL:END%
 
 %{RENAME/MOVE}%
-%TMPL:DEF{"modacTopicMenu::move"}%<li class='requireModacMovePermission'><span class='modacDialogable morelink-rename'><a href='%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%?template=more'>%MAKETEXT{"Move topic"}%</a></span></li>%TMPL:END%
+%TMPL:DEF{"modacTopicMenu::changeurl"}%<li class='requireModacMovePermission'><span class='modacDialogable morelink-changeurl'><a href='%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%?template=more&foo=bar'>%MAKETEXT{"Change address"}%</a></span></li>%TMPL:END%
 
 %{DELETE}%
 %TMPL:DEF{"modacTopicMenu::delete"}%<li class='requireModacMovePermission'><span class='modacDialogable morelink-delete'><a href='%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%?template=more'>%MAKETEXT{"Delete topic"}%</a></span></li>%TMPL:END%

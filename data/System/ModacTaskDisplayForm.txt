@@ -1,8 +1,0 @@
-%META:TOPICINFO{author="BaseUserMapping_333" date="1472815732" format="1.1" version="1"}%
-This form is not actually associated with any topics. It is used in the
-UserView skin template so that the task grids know how to display filters for
-standard fields.
-
-| *Name* | *Type* | *Size* | *Values* | *Description* | *Attributes* |
-| Created | date2 | 10 | | | |
-| Changed | date2 | 10 | | | |

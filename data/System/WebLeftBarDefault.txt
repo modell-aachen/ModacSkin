@@ -1,5 +1,5 @@
 %META:TOPICINFO{author="BaseUserMapping_333" comment="reprev" date="1335199636" format="1.1" reprev="9" version="9"}%
-%JQREQUIRE{"ui::dialog"}%
+%JQREQUIRE{"ui::dialog"}%%SET{"IsKeyUser" value="%IF{"$USERNAME ingroup 'KeyUserGroup' OR $USERNAME ingroup 'GlobalKeyUserGroup' OR context 'isadmin'" then="1" else="0"}%"}%
 <div id="modacSidebarIE">
    * [[%MAINWEB%.WebHome][%MAKETEXT{"Start"}%]]
    * [[Manuals.WebHome][%MAKETEXT{"Manuals"}%]]
@@ -15,46 +15,44 @@
     id="modacSidebarONE"
     firststart="hide"
     remember="on"
-	noscript="show"
+    noscript="show"
     showlink="%MAKETEXT{"Tools"}%"
     hidelink="%MAKETEXT{"Tools"}%"
-	showimgleft="%ICONURLPATH{arrow-right}%"
-	hideimgleft="%ICONURLPATH{arrow-down}%"
-	linkclass="patternTwistyButton"
+    showimgleft="%ICONURLPATH{arrow-right}%"
+    hideimgleft="%ICONURLPATH{arrow-down}%"
+    linkclass="patternTwistyButton"
 }%
 %INCLUDE{"%IF{"istopic '%BASEWEB%/WebTools'" then="%BASEWEB%/WebTools" else="%IF{"istopic '%CUSTOMIZINGWEB{default="Custom"}%/WebToolsDefault'" then="%CUSTOMIZINGWEB{default="Custom"}%/WebToolsDefault" else="%SYSTEMWEB%/WebToolsDefault"}%"}%"}%
 %ENDTWISTY%
 </div>
 
-%IF{"$USERNAME ingroup 'KeyUserGroup' OR $USERNAME ingroup 'GlobalKeyUserGroup' OR $USERNAME ingroup 'AdminGroup' OR $USERNAME = 'admin'" else="<!--"}%
-<div class="modacSidebarTwisty">
+<div class="modacSidebarTwisty%IF{"not $IsKeyUser" then=" foswikiHidden"}%">
 %TWISTY{
     id="modacSidebarMASDINHKXY"
     firststart="hide"
     remember="on"
-	noscript="show"
+    noscript="show"
     showlink="%MAKETEXT{"Key user tools"}%"
     hidelink="%MAKETEXT{"Key user tools"}%"
-	showimgleft="%ICONURLPATH{arrow-right}%"
-	hideimgleft="%ICONURLPATH{arrow-down}%"
-	linkclass="patternTwistyButton"
+    showimgleft="%ICONURLPATH{arrow-right}%"
+    hideimgleft="%ICONURLPATH{arrow-down}%"
+    linkclass="patternTwistyButton"
 }%
 %INCLUDE{"%IF{"istopic '%BASEWEB%/WebKeyUserTools'" then="%BASEWEB%/WebKeyUserTools" else="%IF{"istopic '%CUSTOMIZINGWEB{default="Custom"}%/WebKeyUserToolsDefault'" then="%CUSTOMIZINGWEB{default="Custom"}%/WebKeyUserToolsDefault" else="%SYSTEMWEB%/WebKeyUserToolsDefault"}%"}%"}%
 %ENDTWISTY%
 </div>
-%IF{"$USERNAME ingroup 'KeyUserGroup' OR $USERNAME ingroup 'GlobalKeyUserGroup' OR $USERNAME ingroup 'AdminGroup' OR $USERNAME = 'admin'" else="-->"}%
 
 <div class="modacSidebarTwisty">
 %TWISTY{
     id="modacSidebarTWO"
     firststart="hide"
     remember="on"
-	noscript="show"
+    noscript="show"
     showlink="%MAKETEXT{"Webs"}%"
     hidelink="%MAKETEXT{"Webs"}%"
-	showimgleft="%ICONURLPATH{arrow-right}%"
-	hideimgleft="%ICONURLPATH{arrow-down}%"
-	linkclass="patternTwistyButton"
+    showimgleft="%ICONURLPATH{arrow-right}%"
+    hideimgleft="%ICONURLPATH{arrow-down}%"
+    linkclass="patternTwistyButton"
 }%
 <div id="modacSidebarTwisty_webs" class="modacAjaxContent" data-url="%SCRIPTURL{rest}%/RenderPlugin/tag?name=INCLUDE;render=1;MaxAge=600;param=%IF{ "context FlexWebListPluginEnabled" then="$percntSYSTEMWEB$percnt.ModacSkinFlexWebList" else="percntSYSTEMWEB$percnt.ModacSkinWebList" }%;web=%ENCODE{"%BASEWEB%"}%;topic=%ENCODE{"%BASEWEB%.%HOMETOPIC%"}%;user=%WIKINAME%%IF{"$'URLPARAM{MODAC_HIDEWEBS}'!=''" then=";MODAC_HIDEWEBS=$percentURLPARAM{MODAC_HIDEWEBS}$percent"}%">%JQREQUIRE{"jqp::spin"}%
 </div>

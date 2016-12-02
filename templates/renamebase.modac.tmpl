@@ -25,36 +25,45 @@
 }%<div class="foswikiMakeVisibleBlock"><hr />
 <p><input type="button" class="foswikiButton foswikiCheckAllOn" value='%MAKETEXT{"Select all"}%' />&nbsp;<input type="button" class="foswikiButton foswikiCheckAllOff" value='%MAKETEXT{"Clear all"}%' /> %MAKETEXT{"checkboxes of referenced topics"}%</p></div>%TMPL:END%
 
-%TMPL:DEF{"changefrom"}%
-<table class="modacFormatOnly">
-%TMPL:P{"fromweb"}%
-%TMPL:P{"fromtopic"}%
-</table>
-%TMPL:END%
+%TMPL:DEF{"currenturl"}%<h3>%MAKETEXT{"Preview"}%</h3>
+<div class="changeurl_container" style="background-image: url('%PUBURLPATH%/%SYSTEMWEB%/ModacSkinTheme/addressbar.png')">
+  <div class="changeurl">
+    <span class="changeurl_host"></span>
+    <span class="changeurl_web" data-orig="%WEB%">%WEB%</span>
+    <span>/</span>
+    <span class="changeurl_topic" data-orig="%TOPIC%">%TOPIC%</span>
+  </div>
+</div>%BR%%TMPL:END%
 
-%TMPL:DEF{"fromweb"}%<tr><td>
----+++ %MAKETEXT{"Current web:"}%
-</td>
-<td>
-%WEB%
-</td></tr>%TMPL:END%
+%TMPL:DEF{"newurl"}%<h3>%MAKETEXT{"Change address"}%</h3>
+<table class="newurl">
+  <tbody>
+    <tr>
+      <td>%MAKETEXT{"New web"}%:</td>
+      <td>%TMPL:P{"newweb"}%
+%IF{"context 'isadmin' or $USERNAME ingroup '%MODAC_SHOWALLWEBSGROUP%'" then="$percentBR$percent$percentTMPL:P{hidewebsOption}$percent"}%%BR%
+      </td>
+    </tr>
+    <tr>
+      <td>%MAKETEXT{"New topic name"}%:</td>
+      <td>%TMPL:P{"newtopic"}%</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        <div class="newurl_hint_error">
+          <span>%MAKETEXT{"This address is already taken by another topic."}%</span>
+        </div>
+        <div class="newurl_hint_spinner">
+          <img src="%PUBURLPATH%/%SYSTEMWEB%/JQueryPlugin/images/spinner.gif" alt="">
+          <span>%MAKETEXT{"Please wait..."}%</span>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>%TMPL:END%
 
-%TMPL:DEF{"fromtopic"}%
-<tr><td>
----+++ %MAKETEXT{"Current topic:"}%
-</td><td>
-%TOPIC%
-</td></tr>%TMPL:END%
 
-%TMPL:DEF{"towebtitle"}%---+++ %MAKETEXT{"To web:"}% %TMPL:END%
-%TMPL:DEF{"totopictitle"}%---+++ %MAKETEXT{"To topic:"}% %TMPL:END%
-
-%TMPL:DEF{"toweb"}%<tr><td>
-%TMPL:P{"towebtitle"}%
-</td>
-<td>
-%TMPL:P{"newweb"}%%TMPL:P{"newwebhelp"}%
-</td></tr>%TMPL:END%
 
 %TMPL:DEF{"hidewebsOption"}%<div>%IF{"$'URLPARAM{MODAC_HIDEWEBS}'=''" then="
 <a href='%SCRIPTURL{"%SCRIPTNAME%"}%/%WEB%/%TOPIC%?$percentQUERYPARAMS{format=\"$name=$value\" separator=\";\"}$percent;MODAC_HIDEWEBS=none'>%MAKETEXT{"List all webs I may write to"}%</a>
@@ -78,11 +87,8 @@
 
 %TMPL:DEF{"renameformsteps"}%<div class="foswikiFormSteps">
 <div class="foswikiFormStep">
-%TMPL:P{"changefrom"}%
+%TMPL:P{"currenturl"}%
 </div>
 <div class="foswikiFormStep">
-<table class="modacFormatOnly">
-%TMPL:P{"toweb"}%
-%TMPL:P{"totopic"}%
-</table>
+%TMPL:P{"newurl"}%
 </div>%TMPL:P{"searchresultsstep"}%</div>%TMPL:END%

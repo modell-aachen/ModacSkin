@@ -1,3 +1,2 @@
-   * [[%BASEWEB%.WebChanges][%MAKETEXT{"Recently changed"}%]]
-%IF{ "defined CONTENTTEMPLATEWEB and $CONTENTTEMPLATEWEB!=''" then="   * [[%SUBST{text="%CONTENTTEMPLATEWEB%" pattern="\s*,.*"}%.Templates][Templates]]
-"}%
+   * [[%BASEWEB%.WebChanges][%MAKETEXT{"Recently changed"}%]]%IF{ "defined CONTENTTEMPLATEWEB and $CONTENTTEMPLATEWEB!=''" then="
+   * [[%SUBST{text="%CONTENTTEMPLATEWEB%" pattern="\s*,.*"}%.Templates][Templates]]"}%

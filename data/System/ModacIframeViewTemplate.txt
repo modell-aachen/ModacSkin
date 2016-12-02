@@ -1,0 +1,14 @@
+%TMPL:INCLUDE{"viewplain"}%
+
+%TMPL:DEF{"content"}%<div class='modacNewTab'>%TEXT%</div>%TMPL:END%
+
+%TMPL:DEF{"script:skinbase"}%%TMPL:PREV%%TMPL:P{"LIBJS" id="ModacSkin/linksInNewTab" requires="JQUERYPLUGIN::FOSWIKI"}%%TMPL:END%
+
+%TMPL:DEF{"main"}%
+<!-- Section to include customized preference values
+%TMPL:P{"modacSettings"}%
+-->
+<div class="foswikiPage">
+        %TMPL:P{"content"}%
+</div>
+%TMPL:END%

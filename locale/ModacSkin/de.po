@@ -153,7 +153,7 @@ msgstr "Mitglieder hinzufügen"
 
 #: data/Main/ModacSkinGroupViewTemplate.txt
 msgid "Add members..."
-msgstr "Mitglied hinzufügen..."
+msgstr "Mitglieder hinzufügen..."
 
 #: data/Main/ModacSkinGroupViewTemplate.txt
 msgid "Add user management options to this topic."
@@ -1613,6 +1613,18 @@ msgstr "value='Abbrechen' accesskey='c'"
 msgid "value='Discard' accesskey='d'"
 msgstr "value='Verwerfen' accesskey='d'"
 
+#: templates/view.modac.tmpl
+msgid "Metadata"
+msgstr "Metadaten"
+
+#: templates/view.modac.tmpl
+msgid "Field"
+msgstr "Feld"
+
+#: templates/view.modac.tmpl
+msgid "Value"
+msgstr "Wert"
+
 #: templates/edit.modac.tmpl
 msgid "value='Preview' accesskey='p'"
 msgstr "value='Vorschau' accesskey='p'"
@@ -1927,3 +1939,21 @@ msgstr "Nov"
 
 msgid "Dec"
 msgstr "Dez"
+
+# data/System/ModacSkinTopicMenuTemplate.txt
+# templates/more.modac.tmpl
+msgid "Change address"
+msgstr "Adresse ändern"
+
+# templates/renamebase.modac.tmpl
+msgid "New address"
+msgstr "Neue Adresse"
+
+msgid "New web"
+msgstr "Neuer Bereich"
+
+msgid "New topic name"
+msgstr "Neuer Seitenname"
+
+msgid "This address is already taken by another topic."
+msgstr "Diese Adresse wird bereits von einer anderen Seite verwendet."

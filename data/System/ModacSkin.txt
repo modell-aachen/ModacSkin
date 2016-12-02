@@ -353,17 +353,14 @@ It is possible to get a list of similar topics at the bottom of the page. <br/>
 Set SIMILAR_TOPICS in WebPreferences/SitePreferences to "1" to enable similar topics.<br/>
 You could configure the %<nop>SOLRSIMILAR% by adding following parameters to WebPreferences/SitePreferences.
 
-
-<pre>
-    Set SIMILAR_TOPICS = 0
-    Set SIMILAR_TOPICS_FORM = *DocumentForm
-    Set SIMILAR_TOPICS_LIKE = title_search,text
-    Set SIMILAR_TOPICS_BOOST = title_search^2,text
-    Set SIMILAR_TOPICS_FIELDS = title,web,topic,field_Responsible_s,score,field_DocumentType_s,date,process_state_s
-    Set SIMILAR_TOPICS_FILTER = -topic:*%WORKFLOWSUFFIX%
-    Set SIMILAR_TOPICS_MARK_AS_DISCUSSION = DISCUSSION|CONTENT_REVIEW|FORMAL_REVIEW
-    Set SIMILAR_TOPICS_ROWS = 5
-</pre>
+| *Setting* | *Possible values / Syntax* | *Default* | *Comment* |
+| SIMILAR_TOPICS | 0,1 | 0 | Defines if a list of similar topics shoud be shown underneath a topic | 
+| SIMILAR_TOPICS_LIKE | title_seach,text, field_Responsible,lst, ... | title_search,text | Definies the criteria for topics to be similar (e.g. all topics of a certain documenttype) |
+| SIMILAR_TOPICS_BOOST | title_search^2,text, field_Responsible^4,lst, ... | title_search^2,text | Can be used to boost findings depending on certain criteria |
+| SIMILAR_TOPICS_FIELDS | web,topic,field_Responsible_s, ... | title,web,topic,field_Responsible_s,score,field_DocumentType_s,date,process_state_s | List of fields to be returned in the result (see SOLRSEARCH) |
+| SIMILAR_TOPICS_FILTER | -form:*DocumentForm, ... | -topic:*%WORKFLOWSUFFIX% | Criteria to filter to results (see SORLSEARCH) |
+| SIMILAR_TOPIC_ROWS | 10 | 5 | Number of results (see SOLRSEARCH) |
+| SIMILAR_TOPICS_MARK_AS_DISCUSSION | ... | ... | NOT YET IN USE |
 
 (Default configuration)
 
@@ -378,6 +375,29 @@ This feature allows you to easily pass parameters from an edit page to the actua
 When pressing =save=, the parameter =myparam=MyValue= will be passed to the =save= script.
 
 If you have redefined =%<nop>TMPL:DEF{"formstart"}%= and want to use this feature, do a =%<nop>TMPL:P{"modacTransientParam"}%= inside your form.
+
+---+++ Opening links in new tabs
+
+%I% See also [[#View_for_iframes][View for iframes]]
+
+If you want to open all links of a certain div in a new tab, add the css class =modacNewTab= and load =System/ModacSkin/linksInNewTab.js=.
+
+Example:
+<pre>
+&lt;div class="modacNewTab"&gt;%%NOP%INCLUDE{"SomePage"}%&lt;/div&gt;
+%%NOP%TMPL:P{"LIBJS" id="ModacSkin/linksInNewTab" requires="JQUERYPLUGIN::FOSWIKI"}%
+</pre>
+
+You can also specify the target in =data-modac-target= (it defaults to !_blank):
+<pre>
+&lt;div class="modacNewTab" data-modac-target="qwiki"&gt;%%NOP%INCLUDE{"SomePage"}%&lt;/div&gt;
+%%NOP%TMPL:P{"LIBJS" id="ModacSkin/linksInNewTab" requires="JQUERYPLUGIN::FOSWIKI"}%
+</pre>
+
+---+++ View for iframes
+
+If you want to include a page in an iframe on a portal, you might want to use the =ModacIframeViewTemplate=, just open your url like this:
+<pre>%SCRIPTURL{view}%/MyWeb/MyTopic?template=ModacIframeView</pre>
 
 ---++ Installation Instructions
 

@@ -108,7 +108,7 @@
 
 
 
-%TMPL:DEF{"rename"}%<div class="requireModacMovePermission"><h2>%MAKETEXT{"Move topic"}%</h2>
+%TMPL:DEF{"changeurl"}%<div class="requireModacMovePermission"><h2>%MAKETEXT{"Change address"}%</h2>
 <form name="rename" class="modacDialogAppendable" action="%SCRIPTURLPATH{"rename"}%/%WEB%/%TOPIC%" method="post">
 <div class="foswikiFormSteps">
 <div class="foswikiFormStep">
@@ -238,7 +238,7 @@
 %TMPL:DEF{"topicparent_select2"}%<!-- -->
 %INCLUDE{"%SYSTEMWEB%.ModacAjaxHelper" section="selecttopic"}%<!-- -->
 <select class="jqTopicSelect {include_web: false, clearable: 1}" style="width: 98%;" name="topicparent" id="topicparent_select"><option value="%QUERY{"parent.name"}%">%IF{"parent.name=~'%HOMETOPIC%(?:-[A-Z]2)?$'" then="%MAKETEXT{"No topic parent"}%" else="$percntGETTOPICTITLE{\"%QUERY{"parent.name"}%\"}$percnt"}%</option></select>
-<!-- -->%TMPL:END%
+	<!-- -->%TMPL:END%
 %{</verbatim>}%
 
 %{<verbatim class="tml">}%

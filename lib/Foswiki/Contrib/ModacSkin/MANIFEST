@@ -4,6 +4,8 @@ data/Main/NewUserTemplate.txt 0664
 data/Main/UeberQWiki.txt 0664
 data/System/DummyForm.txt 0664
 data/System/ModacAjaxHelper.txt 0664
+data/System/ModacIframeViewTemplate.txt 0664
+data/System/ModacLanguageSelector.txt 0664
 data/System/ModacSkin.txt 0664
 data/System/ModacSkinCommentPluginTemplate.txt 0664
 data/System/ModacSkinCommonWords.txt 0664
@@ -37,7 +39,8 @@ data/System/ModacSkinWebCreateNewTopicTemplate.txt 0664
 data/System/ModacSkinWebList.txt 0664
 data/System/ModacSkinHeadingViewTemplate.txt 0664
 data/System/ModacSkinWebTopicListViewTemplate.txt 0664
-data/System/ModacTaskDisplayForm.txt 0664
+data/System/ModacTaskDisplayFormManager.txt 0664
+data/System/FormGenerator_ModacSkin.txt 0664
 data/System/WebActionsDefault.txt 0644
 data/System/WebBottomBarDefault.txt 0664
 data/System/WebKeyUserToolsDefault.txt 0664
@@ -74,6 +77,8 @@ pub/System/ModacSkin/jsi18n.view.de.js 0664
 pub/System/ModacSkin/jsi18n.view.de.js.gz 0664
 pub/System/ModacSkin/jsi18n.view.en.js 0664
 pub/System/ModacSkin/jsi18n.view.en.js.gz 0664
+pub/System/ModacSkin/linksInNewTab.js 0664
+pub/System/ModacSkin/linksInNewTab.js.gz 0664
 pub/System/ModacSkin/modac.js 0664
 pub/System/ModacSkin/modac.js.gz 0664
 pub/System/ModacSkin/pattern.js 0664
@@ -89,6 +94,7 @@ pub/System/ModacSkin/solrsearch.js.gz 0664
 pub/System/ModacSkin/topicselect.js 0664
 pub/System/ModacSkin/topicselect.js.gz 0664
 pub/System/ModacSkinTheme/ajax-loader.gif 0664
+pub/System/ModacSkinTheme/addressbar.png 0644
 pub/System/ModacSkinTheme/ModacSkinLogos/Footer_Logo_Ausgruendung_WZL.png 0664
 pub/System/ModacSkinTheme/ModacSkinLogos/Footer_Logo_Modell_Aachen.png 0664
 pub/System/ModacSkinTheme/ModacSkinLogos/Footer_Logo_Modell_Aachen_trans.png 0664
@@ -104,6 +110,7 @@ pub/System/ModacSkinTheme/ModacSkinLogos/page-fade_large.png 0664
 pub/System/ModacSkinTheme/ModacSkinLogos/page-fade_xlarge.png 0664
 pub/System/ModacSkinTheme/ModacSkinLogos/portal-break.png 0664
 pub/System/ModacSkinTheme/ModacSkinLogos/qwiki-logo.png 0664
+pub/System/ModacSkinTheme/ModacSkinLogos/qwiki-logo_darkblue.png 0664
 pub/System/ModacSkinTheme/ModacSkinLogos/qwiki-logo_medium.png 0664
 pub/System/ModacSkinTheme/ModacSkinLogos/qwiki-logo_small.png 0664
 pub/System/ModacSkinTheme/ModacSkinLogos/tab-break.png 0664
@@ -121,6 +128,7 @@ pub/System/ModacSkinTheme/button_arrow.gif 0664
 pub/System/ModacSkinTheme/button_font_selector.gif 0664
 pub/System/ModacSkinTheme/colors.css 0664
 pub/System/ModacSkinTheme/colors.css.gz 0664
+pub/System/ModacSkinTheme/colors_src.css 0664
 pub/System/ModacSkinTheme/form_gradient.gif 0664
 pub/System/ModacSkinTheme/ie6_hacks.css 0664
 pub/System/ModacSkinTheme/ie7_hacks.css 0664
@@ -129,12 +137,14 @@ pub/System/ModacSkinTheme/ie8_hacks.css 0664
 pub/System/ModacSkinTheme/ie8_hacks.css.gz 0664
 pub/System/ModacSkinTheme/layout.css 0664
 pub/System/ModacSkinTheme/layout.css.gz 0664
+pub/System/ModacSkinTheme/layout_src.css 0664
 pub/System/ModacSkinTheme/popup.gif 0664
 pub/System/ModacSkinTheme/print.css 0664
 pub/System/ModacSkinTheme/sidebarHide.png 0644
 pub/System/ModacSkinTheme/sidebarShow.png 0644
 pub/System/ModacSkinTheme/style.css 0664
 pub/System/ModacSkinTheme/style.css.gz 0664
+pub/System/ModacSkinTheme/style_src.css 0664
 templates/attach.modac.tmpl 0664
 templates/attachagain.modac.tmpl 0664
 templates/attachnew.modac.tmpl 0664

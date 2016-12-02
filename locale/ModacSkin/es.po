@@ -1622,6 +1622,10 @@ msgstr ""
 msgid "value='Discard' accesskey='d'"
 msgstr ""
 
+#: templates/view.modac.tmpl
+msgid "Metadata"
+msgstr ""
+
 #: templates/edit.modac.tmpl
 msgid "value='Preview' accesskey='p'"
 msgstr ""
