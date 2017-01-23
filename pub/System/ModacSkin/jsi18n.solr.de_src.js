@@ -8,6 +8,8 @@ jsi18n.add('solr', {
     closed: 'geschlossen',
     next: 'weiter',
     prev: 'zurück',
+    topic: 'Seite',
+    image: 'Bild',
     'Results [_1] - [_2] of <b>[_3]</b>': 'Ergebnisse [_1] - [_2] von <b>[_3]</b>',
     'nothing found': 'Keine Ergebnisse gefunden',
     'Results per page': 'Ergebnisse pro Seite',
