@@ -228,7 +228,7 @@ $percentTMPL:P{perspage:comments}$percent
 %{<verbatim>}%
 %TMPL:DEF{"perspage:comments"}%
 %JQREQUIRE{"form"}%%TMPL:P{"LIBJS" id="ModacSkin/comment_form" requires="JQUERYPLUGIN::FOSWIKI"}%
-%SOLRSEARCH{"type:comment (notified_lst:%RENDERUSER{format="$cUID"}% OR notified_lst:\" %RENDERUSER{format="$cUID"}%\") -read_lst:%RENDERUSER{format="$cUID"}% -read_lst:\" %RENDERUSER{format="$cUID"}%\""
+%SOLRSEARCH{"type:comment notified_lst:%RENDERUSER{format="$cUID"}% -read_lst:%RENDERUSER{format="$cUID"}%"
 format="<tr class='modac_comment'><td>$percntRENDERUSER{\"$author\"}$percnt</td><td>[[$web.$topic]]</td><td><b>$title</b>%BR%$text</td><td><div class='modac_comment_ctl'><form class='tick' action='%SCRIPTURLPATH{jsonrpc}%/MetaCommentPlugin/markRead' method='post'><input type='hidden' name='topic' value='$web.$topic' /><input type='hidden' name='comment_id' value='$name' /><button type='submit' value='tick' >$percentJQICON{tick}$percent</button></form></div></td></tr>$n"
 rows="999"
 sort="container_title asc,name asc"
