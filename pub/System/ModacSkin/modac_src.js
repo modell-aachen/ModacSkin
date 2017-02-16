@@ -1167,7 +1167,7 @@ jQuery(function($){
             }
         }, 500);
         $this.load(url, function() {
-            $this.removeClass('loading').addClass('loaded');
+            $this.removeClass('loading').addClass('loaded').trigger('modacAjaxContentLoaded');
         });
     });
 
