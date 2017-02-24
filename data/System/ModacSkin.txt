@@ -399,6 +399,12 @@ You can also specify the target in =data-modac-target= (it defaults to !_blank):
 If you want to include a page in an iframe on a portal, you might want to use the =ModacIframeViewTemplate=, just open your url like this:
 <pre>%SCRIPTURL{view}%/MyWeb/MyTopic?template=ModacIframeView</pre>
 
+---++ Admins / KeyUsers
+
+If you have an element that should be hidden for non-admins, apply the =adminOnly= css class to it (not a security feature!).
+
+If you have an element that should only be visible to KeyUsers, add the =keyUsersOnly= css class.
+
 ---++ Installation Instructions
 
 To enable ModacSkin you have set the following variables either in =WebPreferences= (to enable ModacSkin within a single web) or
