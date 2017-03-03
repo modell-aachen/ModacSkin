@@ -33,7 +33,7 @@
 		%IF{"not context isadmin" then="display: none !important;"}%
 	}
 	.keyUserOnly {
-		%IF{"$USERNAME ingroup 'KeyUserGroup' OR $USERNAME ingroup 'GlobalKeyUserGroup' OR $USERNAME ingroup $LocalKeyUser OR context 'isadmin'" else="display: none !important;"}%
+		%IF{"$USERNAME ingroup 'KeyUserGroup' OR $USERNAME ingroup 'GlobalKeyUserGroup' OR $USERNAME ingroup %LocalKeyUser{default="KeyUserGroup"}% OR context 'isadmin'" else="display: none !important;"}%
 	}
 	%TMPL:P{"styles:deprecated"}%
 </style>%TMPL:END%
