@@ -666,12 +666,12 @@ table[align="center"] {
 	border-collapse: collapse;
 	empty-cells:show;
 }
-.Modac_Standard td, .Modac_Standard th {
+.Modac_Standard > tbody > tr > td, .Modac_Standard th {
 	border: 1px #AAA solid;
 	padding-left: 3px;
 	padding-right: 3px;
 }
-.Modac_Standard tbody:first-child tr:first-child, .Modac_Standard thead tr:first-child {
+.Modac_Standard > tbody:first-child > tr:first-child, .Modac_Standard > thead > tr:first-child {
 	text-align: center;
 	font-weight: bold;
 	color: #f9f9f9;
@@ -687,7 +687,7 @@ table[align="center"] {
 .Modac_Standard.autonumbered tbody tr td:first-child {
   width: 20px;
 }
-.Modac_Standard.autonumbered tbody tr td:first-child::before {
+.Modac_Standard.autonumbered > tbody > tr > td:first-child::before {
 	content: counter(rowNumber);
 	min-width: 1em;
 	margin-right: 0.5em;
