@@ -1326,7 +1326,7 @@ jQuery(function($){
         var $hint = $('.newurl_hint_error');
         $hint.hide();
 
-        var width = $hint.closest('tbody').find('input[name="newtopic"]').width()
+        var width = $hint.closest('tbody').find('input[name="newtopic"].onlyNewTopic:visible').width()
         $hint.children().css('max-width', width + 'px');
 
         var curweb = $('.changeurl_web').data('orig');
