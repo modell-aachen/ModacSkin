@@ -1345,16 +1345,21 @@ jQuery(function($){
 
             renameXHR = $.ajax({
                 type: 'GET',
-                url: ['/', web, '/', topic, '?noredirect=1&skin=text'].join('')
-            }).done(function() {
-                $btn.attr('disabled', true);
-                $hint.show();
-            }).fail(function(xhr) {
-                if (xhr.status == 404) {
+                dataType: 'text',
+                url: foswiki.getScriptUrl('rest') + "/RenderPlugin/tag?name=IF&then=true&else=false&param=" + encodeURIComponent("istopic '"+ web + '.' + topic + "'")
+            }).done(function(data) {
+                if(data == 'false') {
                     $btn.attr('disabled', false);
                     $btn.removeClass('newurl_disabled');
                     $hint.hide();
+                } else {
+                    $btn.attr('disabled', true);
+                    $hint.show();
                 }
+            }).fail(function(xhr) {
+                window.console && console.log(xhr);
+                $btn.attr('disabled', false); // check failed, do not block the interface
+                $btn.removeClass('newurl_disabled');
             }).always(function() {
                 renameTimer = null;
                 renameXHR = null;
