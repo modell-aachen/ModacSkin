@@ -19,6 +19,10 @@ msgstr ""
 "X-Generator: Weblate 1.9\n"
 "X-POOTLE-MTIME: 1403098625.000000\n"
 
+#: templates/viewtopicactionbuttons.modac.tmpl
+msgid "This is a virtual topic"
+msgstr "Das ist eine virtuelle Seite"
+
 #: templates/foswiki.modac.tmpl
 msgid "%1 Web"
 msgstr "%1-Bereich"

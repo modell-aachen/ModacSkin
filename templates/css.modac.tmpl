@@ -24,10 +24,16 @@
 		background-color:%WEBBGCOLOR%;
 	}
 	.requireModacChangePermission {
-		%IF{ "(context modacRevokeChangePermission) OR (not '%BASEWEB%/%BASETOPIC%' allows 'CHANGE')" then="display: none !important;"}%
+		%IF{ "(context modacRevokeChangePermission) OR (not '%BASEWEB%/%BASETOPIC%' allows 'CHANGE') OR %GETVIRTUALWEB{default="0" formatYes="1" formatNo="0"}%" then="display: none !important;"}%
 	}
 	.requireModacMovePermission {
-		%IF{ "(context modacRevokeMovePermission) OR (not '%BASEWEB%/%BASETOPIC%' allows 'RENAME')" then="display: none !important;"}%
+		%IF{ "(context modacRevokeMovePermission) OR (not '%BASEWEB%/%BASETOPIC%' allows 'RENAME') OR %GETVIRTUALWEB{default="0" formatYes="1" formatNo="0"}%" then="display: none !important;"}%
+	}
+	.adminOnly {
+		%IF{"not context isadmin" then="display: none !important;"}%
+	}
+	.keyUserOnly {
+		%IF{"$USERNAME ingroup 'KeyUserGroup' OR $USERNAME ingroup 'GlobalKeyUserGroup' OR $USERNAME ingroup %LocalKeyUser{default="KeyUserGroup"}% OR context 'isadmin'" else="display: none !important;"}%
 	}
 	%TMPL:P{"styles:deprecated"}%
 </style>%TMPL:END%

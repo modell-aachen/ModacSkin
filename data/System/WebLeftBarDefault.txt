@@ -1,5 +1,5 @@
 %META:TOPICINFO{author="BaseUserMapping_333" comment="reprev" date="1335199636" format="1.1" reprev="9" version="9"}%
-%JQREQUIRE{"ui::dialog"}%%SET{"IsKeyUser" value="%IF{"$USERNAME ingroup 'KeyUserGroup' OR $USERNAME ingroup 'GlobalKeyUserGroup' OR context 'isadmin'" then="1" else="0"}%"}%
+%JQREQUIRE{"ui::dialog"}%
 <div id="modacSidebarIE">
    * [[%MAINWEB%.WebHome][%MAKETEXT{"Start"}%]]
    * [[Manuals.WebHome][%MAKETEXT{"Manuals"}%]]
@@ -26,7 +26,7 @@
 %ENDTWISTY%
 </div>
 
-<div class="modacSidebarTwisty%IF{"not $IsKeyUser" then=" foswikiHidden"}%">
+<div class="modacSidebarTwisty keyUserOnly">
 %TWISTY{
     id="modacSidebarMASDINHKXY"
     firststart="hide"
@@ -54,7 +54,7 @@
     hideimgleft="%ICONURLPATH{arrow-down}%"
     linkclass="patternTwistyButton"
 }%
-<div id="modacSidebarTwisty_webs" class="modacAjaxContent" data-url="%SCRIPTURL{rest}%/RenderPlugin/tag?name=INCLUDE;render=1;MaxAge=600;param=%IF{ "context FlexWebListPluginEnabled" then="$percntSYSTEMWEB$percnt.ModacSkinFlexWebList" else="percntSYSTEMWEB$percnt.ModacSkinWebList" }%;web=%ENCODE{"%BASEWEB%"}%;topic=%ENCODE{"%BASEWEB%.%HOMETOPIC%"}%;user=%WIKINAME%%IF{"$'URLPARAM{MODAC_HIDEWEBS}'!=''" then=";MODAC_HIDEWEBS=$percentURLPARAM{MODAC_HIDEWEBS}$percent"}%">%JQREQUIRE{"jqp::spin"}%
+<div id="modacSidebarTwisty_webs" class="modacAjaxContent" data-url="%SCRIPTURL{rest}%/RenderPlugin/tag?name=INCLUDE;render=1;MaxAge=600;param=%IF{ "context FlexWebListPluginEnabled" then="$percntSYSTEMWEB$percnt.ModacSkinFlexWebList" else="$percntSYSTEMWEB$percnt.ModacSkinWebList" }%;web=%ENCODE{"%BASEWEB%"}%;topic=%ENCODE{"%BASEWEB%.%HOMETOPIC%"}%;user=%WIKINAME%%IF{"$'URLPARAM{MODAC_HIDEWEBS}'!=''" then=";MODAC_HIDEWEBS=$percentURLPARAM{MODAC_HIDEWEBS}$percent"}%">%JQREQUIRE{"jqp::spin"}%
 </div>
 %ENDTWISTY%
 </div>

@@ -71,6 +71,8 @@
 %TMPL:DEF{"solr::facet::exclude::type"}%aqm|map%TMPL:END%
 %TMPL:DEF{"solr::facet::exclude::language"}%detect|^$%TMPL:END%
 %TMPL:DEF{"solr::facet::exclude::web"}%^(?:_.*|%SUBST{text="%URLPARAM{"MODAC_HIDEWEBS" default="%MODAC_HIDEWEBS{default="dummy"}%"}%" pattern="/" format="\."}%)$%TMPL:END%
+%TMPL:DEF{"solr::facet::include::field_DocumentType_s"}%%TMPL:END%
+%TMPL:DEF{"solr::facet::exclude::field_DocumentType_s"}%%TMPL:END%
 %{</verbatim>}%
 
 %{<verbatim class="tml">}%
@@ -90,6 +92,19 @@
   sort="title" 
   limit="-1"
 }%
+%IF{"$SOLR_HIDE_DOCUMENTTYPE='1'" else="
+   %TMPL:P{"solr::facet"
+     id="field_DocumentType_s"
+     title="%MAKETEXT{"document type"}%"
+     format="$key&nbsp;($count)"
+     value="$id:$key"
+     input="checkbox"
+     include="%TMPL:P{"solr::facet::include::field_DocumentType_s"}%"
+     exclude="%TMPL:P{"solr::facet::exclude::field_DocumentType_s"}%"
+     extraclass=""
+     pageropts=""
+   }%
+"}%
 %TMPL:P{"solr::facet"
   id="type"
   exclude="%TMPL:P{"solr::facet::exclude::type"}%"
