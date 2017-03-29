@@ -1368,7 +1368,7 @@ jQuery(function($){
         }, 500);
     };
 
-    $('body').on('change', 'select[name="newweb"]', function() {
+    $('body').on('change', 'select[name="newweb"].onlyNewTopic:visible', function() {
         var web = $(this).val();
         var topic = $('.changeurl_topic').text();
         $('.changeurl_web').text(web);
