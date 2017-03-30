@@ -4,3 +4,4 @@
    * [[%BASEWEB%.WebStatistics][%MAKETEXT{"Statistics"}%]]
    * [[%BASEWEB%.WebPreferences][%MAKETEXT{"Web settings"}%]]
    * [[%MAINWEB%.SitePreferences][%MAKETEXT{"Wiki settings"}%]]
+%IF{"istopic '%SYSTEMWEB%.Resubmission'" then="   * [[%SYSTEMWEB%.Resubmission][%MAKETEXT{"Actuality check"}%]]"}%
