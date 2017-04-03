@@ -19,8 +19,12 @@
 </ul>
 %TMPL:END%
 
+%TMPL:DEF{"editProfile"}%%{
+}%<span class="foswikiRequiresChangePermission requireModacChangePermission %IF{"context edit" then="modacActionButtonACTIVE"}%"><a href='%SCRIPTURL{"edit"}%/%BASEWEB%/%BASETOPIC%?template=UserFormEdit;t=%GMTIME{"$epoch"}%%TMPL:P{"url_param_editaction"}%%IF{"context CKEditorPluginEnabled" then="" else=";nowysiwyg=1"}%' class='modacChanging' rel='nofollow' %MAKETEXT{"title='Edit profile' accesskey='e'>&Edit profile"}%</a></span>%{
+}%%TMPL:END%
 
-%TMPL:DEF{"modacMore"}%<div><span>%TMPL:P{"pdfexport"}%</span><span class="foswikiRequiresChangePermission requireModacChangePermission %IF{"context edit" then="modacActionButtonACTIVE"}%"><a href='%SCRIPTURL{"edit"}%/%BASEWEB%/%BASETOPIC%?template=UserFormEdit;t=%GMTIME{"$epoch"}%%TMPL:P{"url_param_editaction"}%%IF{"context CKEditorPluginEnabled" then="" else=";nowysiwyg=1"}%' class='modacChanging' rel='nofollow' %MAKETEXT{"title='Edit profile' accesskey='e'>&Edit profile"}%</a></span></div>%TMPL:END%
++%TMPL:DEF{"modacMore"}%<div><span>%TMPL:P{"pdfexport"}%</span>%IF{"$SHOW_EDIT_PROFILE='1'" then="$percntTMPL:P{\"editProfile\"}$percnt"}%</div>%TMPL:END%
+
 
 
 %TMPL:DEF{"top"}%%TMPL:END%
