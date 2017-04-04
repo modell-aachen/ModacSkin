@@ -359,6 +359,8 @@ You could configure the %<nop>SOLRSIMILAR% by adding following parameters to Web
 | SIMILAR_TOPICS_BOOST | title_search^2,text, field_Responsible^4,lst, ... | title_search^2,text | Can be used to boost findings depending on certain criteria |
 | SIMILAR_TOPICS_FIELDS | web,topic,field_Responsible_s, ... | title,web,topic,field_Responsible_s,score,field_DocumentType_s,date,process_state_s | List of fields to be returned in the result (see SOLRSEARCH) |
 | SIMILAR_TOPICS_FILTER | -form:*DocumentForm, ... | -topic:*%WORKFLOWSUFFIX% | Criteria to filter to results (see SORLSEARCH) |
+| SIMILAR_TOPICS_MIN_TERM_FREQUENCY | 0..n | 2 | The frequency below which terms will be ignored in the source topics |
+| SIMILAR_TOPICS_MIN_DOCUMENT_FREQUENCY | 0..n | 5 | The frequency at which words will be ignored which do not occur in at least this many topics |
 | SIMILAR_TOPIC_ROWS | 10 | 5 | Number of results (see SOLRSEARCH) |
 | SIMILAR_TOPICS_MARK_AS_DISCUSSION | ... | ... | NOT YET IN USE |
 
