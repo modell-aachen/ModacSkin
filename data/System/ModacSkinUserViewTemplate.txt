@@ -201,9 +201,9 @@
 
 %TMPL:DEF{"perspage:myQmWebs"}%%{
 }%(%FORMATLIST{"%FORMATLIST{
-  "%WEBMATCHPREF{"LocalQM"}%"
+  "%WEBMATCHPREF{"MULTISITE_LOCALQM"}%"
   format="$percntIF{
-     \"$USERNAME ingroup '$percntWEBPREF{\"LocalQM\" web=\"$1\"}$percnt' OR $USERNAME ingroup '%QMGROUP%'\"
+     \"$USERNAME ingroup '$percntWEBPREF{\"MULTISITE_LOCALQM\" web=\"$1\"}$percnt' OR $USERNAME ingroup '%QMGROUP%'\"
      then=\"$dollarpercntWEBMATCHPREF{\\"INHERITED_WEB\\" value=\\"Settings/Processes\\" web=\\"$1\\"}$dollarpercnt\"
      }$percnt"
 }%%IF{"$USERNAME ingroup '%QMGROUP%'"
@@ -223,7 +223,7 @@
  then="$percentTMPL:P{perspage:bookmarks}$percent
 $percentTMPL:P{perspage:tasks}$percent
 $percentTMPL:P{perspage:ciptask}$percnt
-$percentIF{\"$USERNAME ingroup '%QMGROUP%' $percntFORMATLIST{\"%WEBMATCHPREF{"LocalQM"}%\" header=\" OR \" format=\"$USERNAME ingroup '$dollarpercntWEBPREF{\\"LocalQM\\" web=\\"$1\\"}$dollarpercnt'\" separator=\" OR \"}$percnt\" then=\"$dollarpercentTMPL:P{perspage:qmciptask}$dollarpercent\"}$percent
+$percentIF{\"$USERNAME ingroup '%QMGROUP%' $percntFORMATLIST{\"%WEBMATCHPREF{"MULTISITE_LOCALQM"}%\" header=\" OR \" format=\"$USERNAME ingroup '$dollarpercntWEBPREF{\\"MULTISITE_LOCALQM\\" web=\\"$1\\"}$dollarpercnt'\" separator=\" OR \"}$percnt\" then=\"$dollarpercentTMPL:P{perspage:qmciptask}$dollarpercent\"}$percent
 $percentTMPL:P{perspage:approvals}$percent
 $percentTMPL:P{perspage:comments}$percent
 <div>"
