@@ -1942,6 +1942,9 @@ span.select2system {
 .modacMoreMenu li ul li span.morelink-changeurl a {
 	background-image: url(../FamFamFamSilkIcons/world.png);
 }
+.modacMoreMenu li ul li span.morelink-changecontext a {
+	background-image: url(../FamFamFamSilkIcons/tag_green.png);
+}
 .modacMoreMenu li ul li span.morelink-copy a {
 	background-image: url(../FamFamFamSilkIcons/page_white_copy.png);
 }
