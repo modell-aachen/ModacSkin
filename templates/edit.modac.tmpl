@@ -98,3 +98,7 @@ noscript="hide"
 %TMPL:P{"formend"}%
 %RENDERZONE{"ckscript"}%
 %TMPL:END%
+
+%TMPL:DEF{"formfieldSublabel"}%%{
+}%%IF{"defined %FORM%_%NAME%_SUBLABEL" then="<p class='foswikiSmall'>($percnt%FORM%_%NAME%_SUBLABEL$percnt)</p>" else=""}%%{
+}%%TMPL:END%
