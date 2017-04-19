@@ -1967,3 +1967,6 @@ msgstr "Diese Adresse wird bereits von einer anderen Seite verwendet."
 
 msgid "Access restriction"
 msgstr "Zugriffsbeschränkung"
+
+msgid "Protect content"
+msgstr "Inhalt schützen"
