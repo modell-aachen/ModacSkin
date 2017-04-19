@@ -2293,3 +2293,10 @@ input.hidePlaceholder:focus:-ms-input-placeholder { color:transparent; } /* IE 1
 	cursor: not-allowed !important;
 	opacity: .7;
 }
+
+.ma-field-sublabel {
+	display: block;
+    padding-top: 10px;
+    font-weight: normal;
+    color: #000;
+}
