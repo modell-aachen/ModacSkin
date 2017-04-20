@@ -1397,7 +1397,7 @@ jQuery(function($){
     $('body').on('mouseleave', 'input[name="newtopic"]', function() {
         $('.changeurl_topic').removeClass('highlight');
     });
-    $('select[name="newprocessesweb"]').livequery(function(){
+    $('#ma_form_changeWeb_multisite > select').livequery(function(){
         $(this).change(function() {
             var template = foswiki.getScriptUrl('rest') + "/RenderPlugin/template?name=more&render=on&expand=%22newform%22%20SEARCHWEB%3D%22" + $('select[name="newprocessesweb"]').val() + "%22";
             $('#ma_newform_select').load(template);
