@@ -1329,8 +1329,8 @@ jQuery(function($){
         var width = $hint.closest('tbody').find('input[name="newtopic"].onlyNewTopic:visible').width()
         $hint.children().css('max-width', width + 'px');
 
-        var curweb = $('.changeurl_web').data('orig');
-        var curtopic = $('.changeurl_topic').data('orig');
+        var curweb = $('.changeurl_web').data('orig') || foswiki.getPreference('WEB');
+        var curtopic = $('.changeurl_topic').data('orig') || foswiki.getPreference('TOPIC');
 
         if (web === curweb && topic === curtopic) {
             $btn.attr('disabled', false);
@@ -1370,7 +1370,7 @@ jQuery(function($){
 
     $('body').on('change', 'select[name="newweb"].onlyNewTopic:visible', function() {
         var web = $(this).val();
-        var topic = $('.changeurl_topic').text();
+        var topic = $('.changeurl_topic').text() || foswiki.getPreference('TOPIC');
         $('.changeurl_web').text(web);
         checkRenameFunc(web, topic);
     });
@@ -1397,7 +1397,12 @@ jQuery(function($){
     $('body').on('mouseleave', 'input[name="newtopic"]', function() {
         $('.changeurl_topic').removeClass('highlight');
     });
-
+    $('#ma_form_changeWeb_multisite > select').livequery(function(){
+        $(this).change(function() {
+            var template = foswiki.getScriptUrl('rest') + "/RenderPlugin/template?name=more&render=on&expand=%22newform%22%20SEARCHWEB%3D%22" + $('select[name="newweb"]').val() + "%22";
+            $('#ma_newform_select').load(template);
+        });
+    });
     $('.changeurl_web').livequery(function() {
         $(this).text($('select[name="newweb"]').val());
     });

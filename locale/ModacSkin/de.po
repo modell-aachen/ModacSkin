@@ -1959,5 +1959,14 @@ msgstr "Neuer Bereich"
 msgid "New topic name"
 msgstr "Neuer Seitenname"
 
+msgid "Actuality check"
+msgstr "Aktualitätsprüfung"
+
 msgid "This address is already taken by another topic."
 msgstr "Diese Adresse wird bereits von einer anderen Seite verwendet."
+
+msgid "Access restriction"
+msgstr "Zugriffsbeschränkung"
+
+msgid "Protect content"
+msgstr "Inhalt schützen"

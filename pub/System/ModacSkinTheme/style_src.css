@@ -1942,6 +1942,9 @@ span.select2system {
 .modacMoreMenu li ul li span.morelink-changeurl a {
 	background-image: url(../FamFamFamSilkIcons/world.png);
 }
+.modacMoreMenu li ul li span.morelink-changecontext a {
+	background-image: url(../FamFamFamSilkIcons/arrow_switch.png);
+}
 .modacMoreMenu li ul li span.morelink-copy a {
 	background-image: url(../FamFamFamSilkIcons/page_white_copy.png);
 }
@@ -2292,4 +2295,11 @@ input.hidePlaceholder:focus:-ms-input-placeholder { color:transparent; } /* IE 1
 .newurl_disabled {
 	cursor: not-allowed !important;
 	opacity: .7;
+}
+
+.ma-field-sublabel {
+	display: block;
+    padding-top: 10px;
+    font-weight: normal;
+    color: #000;
 }

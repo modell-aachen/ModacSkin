@@ -3,4 +3,5 @@
    * [[%MAINWEB%.WikiGroups][%MAKETEXT{"Wikigroups"}%]]
    * [[%BASEWEB%.WebStatistics][%MAKETEXT{"Statistics"}%]]
    * [[%BASEWEB%.WebPreferences][%MAKETEXT{"Web settings"}%]]
-   * [[%MAINWEB%.SitePreferences][%MAKETEXT{"Wiki settings"}%]]
+   * [%IF{"istopic 'Settings.WebHome'" then="[Settings.WebHome]" else="[%MAINWEB%.SitePreferences]"}%[%MAKETEXT{"Wiki settings"}%]]
+%IF{"istopic '%USERSWEB%.Resubmission'" then="   * [[%USERSWEB%.Resubmission][%MAKETEXT{"Actuality check"}%]]"}%
