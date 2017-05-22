@@ -128,8 +128,8 @@ msgid "<em>in all public webs</em>"
 msgstr "<em>在所有公开的子网</em>"
 
 #: data/System/WebBottomBarDefault.txt
-msgid "About Q.wiki"
-msgstr "关于Q.wiki"
+msgid "About iki"
+msgstr "关于%1"
 
 #: templates/edit.modac.tmpl
 msgid "Access keys"
