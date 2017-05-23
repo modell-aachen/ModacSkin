@@ -128,7 +128,7 @@ msgid "<em>in all public webs</em>"
 msgstr "<em>在所有公开的子网</em>"
 
 #: data/System/WebBottomBarDefault.txt
-msgid "About iki"
+msgid "About %1"
 msgstr "关于%1"
 
 #: templates/edit.modac.tmpl
