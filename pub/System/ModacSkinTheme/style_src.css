@@ -314,6 +314,15 @@ a.craCompareChange1,
     background-color:#fcc;
     text-decoration:line-through;
 }
+th.craCompareAdd {
+	color: #000000;
+}
+span.craCompareChange1 {
+	color: #000000;
+}
+span.craCompareChange2 {
+	color: #000000;
+}
 table.craSideBySide {
 	border:none;
 	border-collapse:collapse;
