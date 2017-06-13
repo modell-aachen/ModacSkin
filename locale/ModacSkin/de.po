@@ -1970,3 +1970,6 @@ msgstr "Zugriffsbeschränkung"
 
 msgid "Protect content"
 msgstr "Inhalt schützen"
+
+msgid "all"
+msgstr "alle"
