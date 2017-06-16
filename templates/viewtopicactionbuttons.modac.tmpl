@@ -36,7 +36,7 @@
 
 %TMPL:DEF{"topictabaction"}%<div class='modacActionButtonACTIVE'><a href='%SCRIPTURLPATH{"view"}%/%WEB%/%TOPIC%' rel='nofollow' title='%MAKETEXT{"Topic"}%'>%MAKETEXT{"Topic"}%</a></div>%TMPL:END%
 
-%TMPL:DEF{"pdfexport"}%<span><a href="%SCRIPTURL{"view"}%/%SYSTEMWEB%/MAPrinceModPrintDialog?skin=text&section=dialog&pweb=%ENCODE{"%INCLUDINGWEB%" type="url"}%&ptopic=%ENCODE{"%INCLUDINGTOPIC%" type="url"}%&landscape=%LANDSCAPE{default="0"}%" class="jqUIDialogLink">%MAKETEXT{"Print to PDF"}%</a></span>%TMPL:END%
+%TMPL:DEF{"pdfexport"}%<span><a href="%SCRIPTURL{"view"}%/%SYSTEMWEB%/MAPrinceModPrintDialog?skin=text&section=dialog&pweb=%ENCODE{"%INCLUDINGWEB%" type="url"}%&ptopic=%ENCODE{"%INCLUDINGTOPIC%" type="url"}%&landscape=%LANDSCAPE{default="0"}%&printParams=rev&rev=%URLPARAM{"rev"}%" class="jqUIDialogLink">%MAKETEXT{"Print to PDF"}%</a></span>%TMPL:END%
 
 %{ --- definitions used in "modacActionButtonsSYSTEM" --- }%
 
