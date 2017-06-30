@@ -24,7 +24,7 @@
 
 %{ ATTENTION: The first filter must be one you do not facet on! }%
 %{<verbatim class="tml">}%
-%TMPL:DEF{"solr::extrafilter"}%-id:dummy %IF{
+%TMPL:DEF{"solr::extrafilter"}%-type:(ua_user OR ua_group) -name:__flowchart* %IF{
   "defined 'SOLR_EXTRAFILTER'" 
   then="%SOLR_EXTRAFILTER%" 
   else="-type:map -type:aqm -field_TopicType_lst:Category"

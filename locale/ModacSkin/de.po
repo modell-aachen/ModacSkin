@@ -136,8 +136,8 @@ msgid "<em>in all public webs</em>"
 msgstr "<em>in allen öffentlichen Bereichen</em>"
 
 #: data/System/WebBottomBarDefault.txt
-msgid "About Q.wiki"
-msgstr "Über Q.wiki"
+msgid "About %1"
+msgstr "Über %1"
 
 #: templates/edit.modac.tmpl
 msgid "Access keys"
@@ -1970,3 +1970,6 @@ msgstr "Zugriffsbeschränkung"
 
 msgid "Protect content"
 msgstr "Inhalt schützen"
+
+msgid "all"
+msgstr "alle"

@@ -948,6 +948,21 @@ jQuery(function($){
     // attach WCNThandler
     $('.foswikiNewLink, .modacNewLink').livequery(function() {
         var $this = $(this);
+
+        var topictitle = $this.attr('data-topictitle') || $this.text();
+        if(topictitle.length) {
+            // This will not only take care of the pop-up dialog, but also
+            // affect "open in new tab".
+            // Note: Achieving this with NEWLINKFORMAT may be difficult because
+            // it needs to sanitize newlines etc.
+            // A method to disable this was explicitly not requested.
+            var href = $this.attr('href');
+            if(href) {
+                href = href.replace(/\bnewtopictitle=[^&;]*/g, "newtopictitle=" + encodeURIComponent(topictitle));
+                $this.attr('href', href);
+            }
+        }
+
         $this.click({link: $this}, ModacSkin.wcntHandler);
     });
 
