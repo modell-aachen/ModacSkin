@@ -141,6 +141,7 @@ h2.patternTemplateTitle {
 img {
 	vertical-align:text-bottom;
 	border:0;
+	image-rendering: -webkit-optimize-contrast;
 }
 
 
