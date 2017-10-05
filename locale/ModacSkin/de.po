@@ -20,8 +20,8 @@ msgstr ""
 "X-POOTLE-MTIME: 1403098625.000000\n"
 
 #: templates/viewtopicactionbuttons.modac.tmpl
-msgid "This is a virtual topic"
-msgstr "Das ist eine virtuelle Seite"
+msgid "Topic inherited from global settings web"
+msgstr "Vererbte Seite aus globalem Settings-Bereich"
 
 #: templates/foswiki.modac.tmpl
 msgid "%1 Web"
