@@ -141,6 +141,7 @@ h2.patternTemplateTitle {
 img {
 	vertical-align:text-bottom;
 	border:0;
+	image-rendering: -webkit-optimize-contrast;
 }
 
 
@@ -322,6 +323,10 @@ span.craCompareChange1 {
 }
 span.craCompareChange2 {
 	color: #000000;
+}
+.craTwistyDiff > a,
+.craTwistyDiff > a:hover {
+    background-color: #e6ba30;
 }
 table.craSideBySide {
 	border:none;

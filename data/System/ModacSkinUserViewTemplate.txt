@@ -96,6 +96,7 @@
   context="any"
   parent="any"
   allowcreate="0"
+  pagesize="10"
   query="{\"Status\": \"open\", \"AssignedTo\": \"%RENDERUSER{format="$cUID"}%\"}"
 }%%{
 }%%ENDTAB%
@@ -109,6 +110,7 @@
   context="any"
   parent="any"
   allowcreate="0"
+  pagesize="10"
   query="{\"Status\": \"closed\", \"AssignedTo\": \"%RENDERUSER{format="$cUID"}%\"}"
 }%%{
 }%%ENDTAB%
@@ -122,6 +124,7 @@
   context="any"
   parent="any"
   allowcreate="0"
+  pagesize="10"
   query="{\"Informees\": \"%RENDERUSER{format="$cUID"}%\"}"
 }%
 %ENDTAB%
@@ -135,6 +138,7 @@
   context="any"
   parent="any"
   allowcreate="0"
+  pagesize="10"
   query="{\"Author\": \"%RENDERUSER{format="$cUID"}%\",\"Status\":[\"open\",\"closed\"]}"
 }%%{
 }%%ENDTAB%

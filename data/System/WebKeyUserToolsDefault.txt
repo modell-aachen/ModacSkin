@@ -1,7 +1,7 @@
    * [[%SYSTEMWEB%.WebHome][%MAKETEXT{"System web"}%]]
    * [[Trash.WebHome][%MAKETEXT{"Trash"}%]]
-   * [[%MAINWEB%.WikiGroups][%MAKETEXT{"Wikigroups"}%]]
-   * [[%BASEWEB%.WebStatistics][%MAKETEXT{"Statistics"}%]]
+   * [[%MAINWEB%.WikiGroups][%MAKETEXT{"Wikigroups"}%]] %IF{"$BASEWEB='Main'" then="" else="
+   * [[%BASEWEB%.WebStatistics][%MAKETEXT{"Statistics"}%]]"}%
    * [[%BASEWEB%.WebPreferences][%MAKETEXT{"Web settings"}%]]
    * [%IF{"istopic 'Settings.WebHome'" then="[Settings.WebHome]" else="[%MAINWEB%.SitePreferences]"}%[%MAKETEXT{"Wiki settings"}%]]
 %IF{"istopic '%USERSWEB%.Resubmission'" then="   * [[%USERSWEB%.Resubmission][%MAKETEXT{"Actuality check"}%]]"}%
