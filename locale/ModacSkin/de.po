@@ -1973,3 +1973,6 @@ msgstr "Inhalt schützen"
 
 msgid "all"
 msgstr "alle"
+
+msgid "Custom Apps"
+msgstr "Individuelle Applikationen"
