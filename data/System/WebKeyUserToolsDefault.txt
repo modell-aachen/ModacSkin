@@ -4,5 +4,12 @@
    * [[%BASEWEB%.WebStatistics][%MAKETEXT{"Statistics"}%]]"}%
    * [[%BASEWEB%.WebPreferences][%MAKETEXT{"Web settings"}%]]
    * [%IF{"istopic 'Settings.WebHome'" then="[Settings.WebHome]" else="[%MAINWEB%.SitePreferences]"}%[%MAKETEXT{"Wiki settings"}%]]
-%IF{"context WorkflowAppPluginEnabled" then="   * [[System.WorkflowAppOverview][%MAKETEXT{"Custom Apps"}%]]"}%
-%IF{"istopic '%USERSWEB%.Resubmission'" then="   * [[%USERSWEB%.Resubmission][%MAKETEXT{"Actuality check"}%]]"}%
+%IF{
+    "istopic '%USERSWEB%.Resubmission'"
+    then="   * [[%USERSWEB%.Resubmission][%MAKETEXT{"Actuality check"}%]]
+"
+}%%IF{
+    "context 'WorkflowAppPluginEnabled'"
+    then="   * [[%SYSTEMWEB%.WorkflowAppOverview][%MAKETEXT{"Custom Apps"}%]]
+"
+}%
