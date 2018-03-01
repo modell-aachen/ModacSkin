@@ -77,8 +77,8 @@
 %TMPL:DEF{"solr::thumbnail"}%
 {{if thumbnail}}
       <div class='solrThumbnail'>
-        <a class='imageHref imageSimple jqImageTooltip {web:"{{:web}}", topic:"{{:topic}}", image:"{{:thumbnail}}"}' href='{{:url}}' title='{{:name}}'>
-          <img src='{{:~foswiki.getPreference('SCRIPTURLPATH')}}/rest{{:~foswiki.getPreference('SCRIPTSUFFIX')}}/ImagePlugin/resize?topic={{:web}}.{{:topic}};file={{:~encodeURIComponent(thumbnail)}};size=70&gt;;crop=center' alt='{{:thumbnail}}' />
+        <a class='imageHref imageSimple jqImageTooltip {web:"{{>web}}", topic:"{{>topic}}", image:"{{>thumbnail}}"}' href='{{>url}}' title='{{>name}}'>
+          <img src='{{:~foswiki.getPreference('SCRIPTURLPATH')}}/rest{{:~foswiki.getPreference('SCRIPTSUFFIX')}}/ImagePlugin/resize?topic={{>web}}.{{>topic}};file={{:~encodeURIComponent(thumbnail)}};size=70&gt;;crop=center' alt='{{>thumbnail}}' />
         </a>
       </div>
 {{/if}}
@@ -91,8 +91,8 @@
   <div class='solrSearchHit solrTopicHit clearfix'>
     {{include tmpl="#solrTemplate_thumbnail" /}}
     <h3 title='{{: ~foswiki.jsi18n.get('solr', 'topic') }}'>
-      <img src='{{if icon}}{{:icon}}{{else}}{{:~foswiki.getPreference('PUBURLPATH')+'/'+~foswiki.getPreference('SYSTEMWEB')+'/FamFamFamSilkIcons/page_white.png'}}{{/if}}' width='16' height='16' class='solrHitIcon' />
-      <a href='{{:url}}'>{{:title}}</a>
+      <img src='{{if icon}}{{>icon}}{{else}}{{:~foswiki.getPreference('PUBURLPATH')+'/'+~foswiki.getPreference('SYSTEMWEB')+'/FamFamFamSilkIcons/page_white.png'}}{{/if}}' width='16' height='16' class='solrHitIcon' />
+      <a href='{{>url}}'>{{>title}}</a>
       <span class='foswikiGrayText foswikiSmallish solrContainerLink'>
         {{: ~foswiki.jsi18n.get('solr', 'in [_1]', "<a href='"+container_url+"'>"+~getWebMapping(web)+"</a>") }}
       {{include tmpl="#solrTemplate_topic_title" /}}
@@ -102,7 +102,7 @@
       {{: ~getHilite(id)}}
     </div>
     <div class='solrRevision'>
-      {{:~formatDate(date,solrDateformat)}}, {{if author_s}}{{:author_s}}{{else}}{{:author}}{{/if}}
+      {{:~formatDate(date,solrDateformat)}}, {{if author_s}}{{>author_s}}{{else}}{{>author}}{{/if}}
     </div>
   </div>
 </script>%TMPL:END%
@@ -111,8 +111,8 @@
 %{<verbatim>}%
 %TMPL:DEF{"solr::templates::employee_thumbnail"}%<script id="solrTemplate_employee_thumbnail" type="text/x-jquery-tmpl">
   <div class='solrThumbnail' style='min-height: 48px;'>
-    <a class='imageHref imageSimple jqImageTooltip' href='{{:url}}' title='{{:name}}'>
-      <img src='{{:field_avatar_thumbnail_url_s}}' alt='{{:thumbnail}}' width='48' />
+    <a class='imageHref imageSimple jqImageTooltip' href='{{>url}}' title='{{>name}}'>
+      <img src='{{:field_avatar_thumbnail_url_s}}' alt='{{>thumbnail}}' width='48' />
     </a>
   </div>
 </script>%TMPL:END%
@@ -123,15 +123,15 @@
 %TMPL:DEF{"solr::templates::hits::employee"}%<script id="solrHitTemplate_employee" type="text/x-jquery-tmpl">
   <div class='solrSearchHit solrEmployeeHit clearfix'>
     {{include tmpl="#solrTemplate_employee_thumbnail" /}}
-    <h3 title='{{:title}}'>
-      <a class="task-solr-hit" href="{{:url}}">{{:title}}</a>
+    <h3 title='{{>title}}'>
+      <a class="task-solr-hit" href="{{>url}}">{{>title}}</a>
       <span class='foswikiGrayText'>
         {{:~foswiki.jsi18n.get('solr', 'in [_1]', "<a href='"+container_url+"'>"+~getWebMapping(web)+"</a>")}}
       </span>
     </h3><!--
 -->%IF{"$EMPLOYEESAPP_SOLRSEARCH_FORMAT!=''" then="<div class='solrHilite'>%EMPLOYEESAPP_SOLRSEARCH_FORMAT%</div>"}%<!--
   --><div class='solrRevision'>
-    {{:~formatDate(date,solrDateformat)}}, {{if author_s}}{{:author_s}}{{else}}{{:author}}{{/if}}
+    {{:~formatDate(date,solrDateformat)}}, {{if author_s}}{{>author_s}}{{else}}{{>author}}{{/if}}
   </div>
 </div>
 </script>%TMPL:END%
@@ -143,8 +143,8 @@
   <div class='solrSearchHit clearfix'>
     {{include tmpl="#solrTemplate_thumbnail" /}}
     <h3 title='{{:~foswiki.jsi18n.get('tasksapi', task_type_s)}}'>
-      <img src='{{if icon}}{{:icon}}{{else}}{{:~foswiki.getPreference('PUBURLPATH')+'/'+~foswiki.getPreference('SYSTEMWEB')+'/DocumentGraphics/target.png'}}{{/if}}' width='16' height='16' class='solrHitIcon' />
-      <a class="task-solr-hit" href="{{:container_url}}?id={{:task_id_s}}&tid={{:task_state_s}}&tab={{:task_state_s}}">{{:title}}</a>
+      <img src='{{if icon}}{{>icon}}{{else}}{{:~foswiki.getPreference('PUBURLPATH')+'/'+~foswiki.getPreference('SYSTEMWEB')+'/DocumentGraphics/target.png'}}{{/if}}' width='16' height='16' class='solrHitIcon' />
+      <a class="task-solr-hit" href="{{>container_url}}?id={{>task_id_s}}&tid={{>task_state_s}}&tab={{>task_state_s}}">{{>title}}</a>
       <span class='foswikiGrayText'>
         {{:~foswiki.jsi18n.get('solr', 'in [_1]', "<a href='"+container_url+"'>"+~getWebMapping(web)+"</a>")}}
         <em>({{:~foswiki.jsi18n.get('tasksapi', task_type_s) }}, {{:~foswiki.jsi18n.get('solr', task_state_s)}})</em>
@@ -154,7 +154,7 @@
     {{:~getHilite(id)}}
   </div>
   <div class='solrRevision'>
-    {{:~formatDate(date,solrDateformat)}}, {{if author_s}}{{:author_s}}{{else}}{{:author}}{{/if}}
+    {{:~formatDate(date,solrDateformat)}}, {{if author_s}}{{>author_s}}{{else}}{{>author}}{{/if}}
   </div>
 </div>
 </script>%TMPL:END%
@@ -165,8 +165,8 @@
   <div class='solrSearchHit solrActionHit clearfix'>
     {{include tmpl="#solrTemplate_thumbnail" /}}
     <h3 title='{{: ~foswiki.jsi18n.get('solr', 'action') }}'>
-      <img src='{{if icon}}{{:icon}}{{else}}{{:~foswiki.getPreference('PUBURLPATH')+'/'+~foswiki.getPreference('SYSTEMWEB')+'/DocumentGraphics/target.png'}}{{/if}}' width='16' height='16' class='solrHitIcon' />
-    <a href='{{:url}}'>{{:title}}</a>
+      <img src='{{if icon}}{{>icon}}{{else}}{{:~foswiki.getPreference('PUBURLPATH')+'/'+~foswiki.getPreference('SYSTEMWEB')+'/DocumentGraphics/target.png'}}{{/if}}' width='16' height='16' class='solrHitIcon' />
+    <a href='{{>url}}'>{{>title}}</a>
     <span class='foswikiGrayText'><em>({{: ~foswiki.jsi18n.get('solr', action_state_s) }})</em>
       {{:~foswiki.jsi18n.get('solr', 'in [_1]', "<a href='"+~foswiki.getPreference('SCRIPTURL')+'/view'+~foswiki.getPreference('SCRIPTSUFFIX')+'/'+web+'/'+topic+"'>"+container_title+"</a>")}}
     </span>
@@ -175,7 +175,7 @@
     {{:~getHilite(id)}}
   </div>
   <div class='solrRevision'>
-    {{:~formatDate(date,solrDateformat)}}, {{if author_s}}{{:author_s}}{{else}}{{:author}}{{/if}}
+    {{:~formatDate(date,solrDateformat)}}, {{if author_s}}{{>author_s}}{{else}}{{>author}}{{/if}}
   </div>
 </div>
 </script>%TMPL:END%
@@ -186,8 +186,8 @@
   <div class='solrSearchHit solrCommentHit clearfix'>
     {{include tmpl="#solrTemplate_thumbnail" /}}
     <h3 title='{{: ~foswiki.jsi18n.get('solr', 'comment') }}'>
-      <img src='{{if icon}}{{:icon}}{{else}}{{:~foswiki.getPreference('PUBURLPATH')+'/'+~foswiki.getPreference('SYSTEMWEB')+'/FamFamFamSilkIcons/comment.png'}}{{/if}}' width='16' height='16' class='solrHitIcon' />
-      <a href='{{:url}}'>{{:title}}</a>
+      <img src='{{if icon}}{{>icon}}{{else}}{{:~foswiki.getPreference('PUBURLPATH')+'/'+~foswiki.getPreference('SYSTEMWEB')+'/FamFamFamSilkIcons/comment.png'}}{{/if}}' width='16' height='16' class='solrHitIcon' />
+      <a href='{{>url}}'>{{>title}}</a>
       <span class='foswikiGrayText foswikiSmallish solrContainerLink'>
         {{: ~foswiki.jsi18n.get('solr' ,'in [_1]', "<a href='"+container_url+"'>"+container_title+"</a>") }}
       </span>
@@ -196,7 +196,7 @@
       {{: ~getHilite(id)}}
     </div>
     <div class='solrRevision'> 
-      {{:~formatDate(date, solrDateformat)}}, {{if author_s}}{{:author_s}}{{else}}{{:author}}{{/if}}
+      {{:~formatDate(date, solrDateformat)}}, {{if author_s}}{{>author_s}}{{else}}{{>author}}{{/if}}
     </div>
   </div>
 </script>%TMPL:END%
@@ -210,12 +210,12 @@
 %TMPL:DEF{"solr::templates::hits::image"}%<script id="solrHitTemplate_image" type="text/x-jquery-tmpl">
   <div class='solrSearchHit solrImageHit clearfix'>
     <div class='solrImageFrame'>
-      <a class='imageHref imageSimple jqImageTooltip {web:"{{:web}}", topic:"{{:topic}}", image:"{{:name}}"}' href='{{:url}}' title='{{:name}}'>
-        <img src='{{if task_id_s}}{{:icon}}{{else}}{{:~foswiki.getPreference('SCRIPTURLPATH')+'/rest'+~foswiki.getPreference('SCRIPTSUFFIX')}}/ImagePlugin/resize?topic={{:web}}.{{:topic}};file={{:~encodeURIComponent(name)}};size=64>;crop=northwest{{/if}}' alt='{{:name}}' />
+      <a class='imageHref imageSimple jqImageTooltip {web:"{{>web}}", topic:"{{>topic}}", image:"{{>name}}"}' href='{{>url}}' title='{{>name}}'>
+        <img src='{{if task_id_s}}{{>icon}}{{else}}{{:~foswiki.getPreference('SCRIPTURLPATH')+'/rest'+~foswiki.getPreference('SCRIPTSUFFIX')}}/ImagePlugin/resize?topic={{>web}}.{{>topic}};file={{:~encodeURIComponent(name)}};size=64>;crop=northwest{{/if}}' alt='{{>name}}' />
       </a>
     </div>
     <h3 title='{{: ~foswiki.jsi18n.get('solr', 'image') }}'>
-      <a href='{{:url}}'>{{:name}}</a>
+      <a href='{{>url}}'>{{>name}}</a>
       <span class='foswikiGrayText foswikiSmallish solrContainerLink'>
         {{if task_id_s}}
         {{: ~foswiki.jsi18n.get('solr', "in [_1]" ,"<a class='task-solr-hit' href='"+container_url+"?id="+task_id_s+"&tid="+task_state_s+"&tab="+task_state_s+"&attachment="+name+"'>"+container_title+"</a>") }}
@@ -226,14 +226,14 @@
       %TMPL:P{"image_title"}%
       </span>
       {{if comment}}
-        <div class='foswikiGrayText foswikiSmallish solrSearchHitSummary'>{{:comment}}</div>
+        <div class='foswikiGrayText foswikiSmallish solrSearchHitSummary'>{{>comment}}</div>
       {{/if}}
     </h3>
     <div class='solrHilite'>
       {{: ~getHilite(id)}}
     </div>
     <div class='solrRevision'> 
-      {{:~formatDate(date,solrDateformat)}}, {{if author_s}}{{:author_s}}{{else}}{{:author}}{{/if}}
+      {{:~formatDate(date,solrDateformat)}}, {{if author_s}}{{>author_s}}{{else}}{{>author}}{{/if}}
     </div>
     %CLEAR%
   </div>
@@ -248,8 +248,8 @@
 %TMPL:DEF{"solr::templates::hits::misc"}%<script id="solrHitTemplate_misc" type="text/x-jquery-tmpl">
   <div class='solrSearchHit solrAttachmentHit'>
     <h3>
-      <img src='{{if icon}}{{:icon}}{{else}}{{:~foswiki.getPreference('PUBURLPATH')+'/'+~foswiki.getPreference('SYSTEMWEB')}}/FamFamFamSilkIcons/page_white.png{{/if}}'>
-      <a href='{{:url}}'>{{:name}}</a>
+      <img src='{{if icon}}{{>icon}}{{else}}{{:~foswiki.getPreference('PUBURLPATH')+'/'+~foswiki.getPreference('SYSTEMWEB')}}/FamFamFamSilkIcons/page_white.png{{/if}}'>
+      <a href='{{>url}}'>{{>name}}</a>
       <span class='foswikiGrayText foswikiSmallish solrContainerLink' >
         {{if task_id_s}}
         {{: ~foswiki.jsi18n.get('solr', "in [_1]" ,"<a class='task-solr-hit' href='"+container_url+"?id="+task_id_s+"&tid="+task_state_s+"&tab="+task_state_s+"&attachment="+name+"'>"+container_title+"</a>") }}
@@ -260,14 +260,14 @@
       %TMPL:P{"misc_title"}%
       </span>
       {{if comment}}
-        <div class='foswikiGrayText foswikiSmallish'>{{:comment}}</div>
+        <div class='foswikiGrayText foswikiSmallish'>{{>comment}}</div>
       {{/if}}
     </h3>
     <div class='solrHilite'>
       {{: ~getHilite(id)}}
     </div>
     <div class='solrRevision'> 
-      {{:~formatDate(date,solrDateformat)}}, {{if author_s}}{{:author_s}}{{else}}{{:author}}{{/if}}
+      {{:~formatDate(date,solrDateformat)}}, {{if author_s}}{{>author_s}}{{else}}{{>author}}{{/if}}
     </div>
   </div>
 </script>%TMPL:END%
@@ -279,10 +279,10 @@
     <table class='foswikiLayoutTable' width='100%'>
       <tr>
         <td width='12px'>
-          <input type='checkbox' class='foswikiCheckbox' id='{{:id}}' name='filter' checked='checked'/>
+          <input type='checkbox' class='foswikiCheckbox' id='{{>id}}' name='filter' checked='checked'/>
         </td>
         <td>
-          <label for='{{:id}}' style='display:block'>{{if field==='Web'}}{{:~getWebMapping(facet)}}{{else}}{{:facet}}{{/if}} <nobr>({{:field}})</nobr></label>
+          <label for='{{>id}}' style='display:block'>{{if field==='Web'}}{{:~getWebMapping(facet)}}{{else}}{{>facet}}{{/if}} <nobr>({{>field}})</nobr></label>
         </td>
       </tr>
     </table>
@@ -301,7 +301,7 @@
             <td width='12px'>
               <input type='{{:~widget.inputType}}' name='{{:~widget.field}}' title='{{: ~getWebMapping(~getFacetKey(facet))}}' value='{{: ~getFacetValue(facet)}}' id='{{:~widget.field}}_{{:index}}' autocomplete='off' class='solrFacetValue' {{: ~checked(facet)}} />
             </td>
-            <td><label for='{{:~widget.field}}_{{:#index}}' style='display:block'>{{: ~getWebMapping(~getFacetKey(facet))}} ({{:count}})</label></td>
+            <td><label for='{{:~widget.field}}_{{>#index}}' style='display:block'>{{: ~getWebMapping(~getFacetKey(facet))}} ({{>count}})</label></td>
             </tr>
           </table>
         </li>
@@ -322,7 +322,7 @@
             <td width='12px'>
               <input type='{{:~widget.inputType}}' name='{{:~widget.field}}' title='{{: ~getFacetKey(facet)}}' value='{{: ~getFacetValue(facet)}}' id='{{:~widget.field}}_{{:index}}' autocomplete='off' class='solrFacetValue' {{: ~checked(facet)}} />
             </td>
-            <td><label for='{{:~widget.field}}_{{:#index}}' style='display:block'>{{: ~getFacetKey(facet)}} ({{:count}})</label></td>
+            <td><label for='{{:~widget.field}}_{{>#index}}' style='display:block'>{{: ~getFacetKey(facet)}} ({{>count}})</label></td>
             </tr>
           </table>
         </li>
@@ -338,7 +338,7 @@
   <tr>
     <td>
      {{if count > 0}}
-       {{> ~foswiki.jsi18n.get('solr', "Results [_1] - [_2] of <b>[_3]</b>" ,from, to, count) }}
+       {{: ~foswiki.jsi18n.get('solr', "Results [_1] - [_2] of <b>[_3]</b>" ,from, to, count) }}
      {{else}}
         <span class="foswikiAlert">{{: ~foswiki.jsi18n.get('solr', "nothing found") }}</span>
      {{/if}}
@@ -368,7 +368,7 @@
 
 %{<verbatim class="tml">}%
 %TMPL:DEF{"solr::templates::spellcorrection"}%<script id="solrSpellCorrectionTemplate" type="text/x-jquery-tmpl">
-{{: ~foswiki.jsi18n.get('solr', 'Did you mean ') }}{{for suggestions}}{{if #index > 0}}{{: ~foswiki.jsi18n.get('solr', ' or ') }}{{/if}} <a class='solrCorrection' href='#'>{{:#data}}</a>{{/for}}{{: ~foswiki.jsi18n.get('solr', '?') }}
+{{: ~foswiki.jsi18n.get('solr', 'Did you mean ') }}{{for suggestions}}{{if #index > 0}}{{: ~foswiki.jsi18n.get('solr', ' or ') }}{{/if}} <a class='solrCorrection' href='#'>{{>#data}}</a>{{/for}}{{: ~foswiki.jsi18n.get('solr', '?') }}
 </script>%TMPL:END%
 %{</verbatim>}%
 
