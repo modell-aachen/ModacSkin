@@ -435,6 +435,8 @@ $percentTMPL:DEF{"solr::fields::append"}$percent$percentTMPL:PREF$percent,your_s
   "Work instruction": "%MAKETEXT{"Work instruction"}%",
   "Info page": "%MAKETEXT{"Info page"}%",
   "Process description": "%MAKETEXT{"Process description"}%",
+  "Process overview": "%MAKETEXT{"Process overview"}%",
+  "Knowledge article": "%MAKETEXT{"Knowledge article"}%",
   "minute": "%MAKETEXT{"Minute"}%",
   "iptask": "%MAKETEXT{"Internal project task"}%",
   "project_task": "%MAKETEXT{"Project task"}%",
