@@ -119,7 +119,6 @@
 %{</verbatim>}%
 
 %{<verbatim>}%
-%TMPL:DEF{"solr::fields::append"}%%TMPL:PREV%,field_avatar_thumbnail_url_s,%EMPLOYEESAPP_SOLRSEARCH_EXTRA_FIELDS%%TMPL:END%
 %TMPL:DEF{"solr::templates::hits::employee"}%<script id="solrHitTemplate_employee" type="text/x-jquery-tmpl">
   <div class='solrSearchHit solrEmployeeHit clearfix'>
     {{include tmpl="#solrTemplate_employee_thumbnail" /}}
@@ -138,7 +137,7 @@
 %{</verbatim>}%
 
 %{<verbatim>}%
-%TMPL:DEF{"solr::fields::append"}%%TMPL:PREV%,author_s,container_id,container_url,task_state_s,task_type_s,task_id_s,task_context_s%TMPL:END%
+%TMPL:DEF{"solr::fields::append"}%%TMPL:PREV%,field_avatar_thumbnail_url_s,%EMPLOYEESAPP_SOLRSEARCH_EXTRA_FIELDS{default="dummy_s"}%,author_s,container_id,container_url,task_state_s,task_type_s,task_id_s,task_context_s%TMPL:END%
 %TMPL:DEF{"solr::templates::hits::task"}%<script id="solrHitTemplate_task" type="text/x-jquery-tmpl">
   <div class='solrSearchHit clearfix'>
     {{include tmpl="#solrTemplate_thumbnail" /}}

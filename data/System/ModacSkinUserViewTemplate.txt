@@ -19,8 +19,12 @@
 </ul>
 %TMPL:END%
 
+%TMPL:DEF{"editProfile"}%%{
+}%<span class="foswikiRequiresChangePermission requireModacChangePermission %IF{"context edit" then="modacActionButtonACTIVE"}%"><a href='%SCRIPTURL{"edit"}%/%BASEWEB%/%BASETOPIC%?template=UserFormEdit;t=%GMTIME{"$epoch"}%%TMPL:P{"url_param_editaction"}%%IF{"context CKEditorPluginEnabled" then="" else=";nowysiwyg=1"}%' class='modacChanging' rel='nofollow' %MAKETEXT{"title='Edit profile' accesskey='e'>&Edit profile"}%</a></span>%{
+}%%TMPL:END%
 
-%TMPL:DEF{"modacMore"}%<div><span>%TMPL:P{"pdfexport"}%</span><span class="foswikiRequiresChangePermission requireModacChangePermission %IF{"context edit" then="modacActionButtonACTIVE"}%"><a href='%SCRIPTURL{"edit"}%/%BASEWEB%/%BASETOPIC%?template=UserFormEdit;t=%GMTIME{"$epoch"}%%TMPL:P{"url_param_editaction"}%%IF{"context CKEditorPluginEnabled" then="" else=";nowysiwyg=1"}%' class='modacChanging' rel='nofollow' %MAKETEXT{"title='Edit profile' accesskey='e'>&Edit profile"}%</a></span></div>%TMPL:END%
+%TMPL:DEF{"modacMore"}%<div><span>%TMPL:P{"pdfexport"}%</span>%IF{"$SHOW_EDIT_PROFILE='1'" then="$percntTMPL:P{\"editProfile\"}$percnt"}%</div>%TMPL:END%
+
 
 
 %TMPL:DEF{"top"}%%TMPL:END%
@@ -92,6 +96,7 @@
   context="any"
   parent="any"
   allowcreate="0"
+  pagesize="10"
   query="{\"Status\": \"open\", \"AssignedTo\": \"%RENDERUSER{format="$cUID"}%\"}"
 }%%{
 }%%ENDTAB%
@@ -105,6 +110,7 @@
   context="any"
   parent="any"
   allowcreate="0"
+  pagesize="10"
   query="{\"Status\": \"closed\", \"AssignedTo\": \"%RENDERUSER{format="$cUID"}%\"}"
 }%%{
 }%%ENDTAB%
@@ -118,6 +124,7 @@
   context="any"
   parent="any"
   allowcreate="0"
+  pagesize="10"
   query="{\"Informees\": \"%RENDERUSER{format="$cUID"}%\"}"
 }%
 %ENDTAB%
@@ -131,6 +138,7 @@
   context="any"
   parent="any"
   allowcreate="0"
+  pagesize="10"
   query="{\"Author\": \"%RENDERUSER{format="$cUID"}%\",\"Status\":[\"open\",\"closed\"]}"
 }%%{
 }%%ENDTAB%
@@ -183,17 +191,29 @@
 <tr><th>%MAKETEXT{"Title"}%</th><th>%MAKETEXT{"Status"}%</th><th>%MAKETEXT{"Status since"}%</th></tr>
 </thead>
 <tbody>
- %SOLRSEARCH{"type:topic web:Processes process_state_s:(FORMAL_REVIEW OR FORMAL_REVIEW_DRAFT)"
+ %SOLRSEARCH{"type:topic web:%TMPL:P{"perspage:myQmWebs"}% process_state_s:(FORMAL_REVIEW OR FORMAL_REVIEW_DRAFT)"
   fields="web,topic,title,process_state_s,workflowmeta_lasttime_draft_s,workflowmeta_lasttime_discussion_s"
   rows="999"
   format="<tr><td> [[$web.$topic]] </td><td> $percntIF{\"'$process_state_s'=~'DRAFT'\" then=\"%MAKETEXT{"draft"}%\" else=\"%MAKETEXT{"discussion"}%\"}$percnt </td><td> $percntIF{\"'$process_state_s'=~'DRAFT'\" then=\"$percentCALC{\"$TIMEDIFF($TIME($SUBSTRING($workflowmeta_lasttime_draft_s,7,4)/$SUBSTRING($workflowmeta_lasttime_draft_s,4,2)/$SUBSTRING($workflowmeta_lasttime_draft_s,1,2)), $TODAY(), day)\"}$percent %MAKETEXT{"Day(s)"}%\" else=\"$percentCALC{\"$TIMEDIFF($TIME($SUBSTRING($workflowmeta_lasttime_discussion_s,7,4)/$SUBSTRING($workflowmeta_lasttime_discussion_s,4,2)/$SUBSTRING($workflowmeta_lasttime_discussion_s,1,2)), $TODAY(), day)\"}$percent %MAKETEXT{"Day(s)"}%\"}$percnt </td></tr>"
   sort="date asc"
   }%
-  
+
 </tbody>
 </table>
 </div>
 %TMPL:END%
+
+%TMPL:DEF{"perspage:myQmWebs"}%%{
+}%(%FORMATLIST{"%FORMATLIST{
+  "%WEBMATCHPREF{"MULTISITE_LOCALQM"}%"
+  format="$percntIF{
+     \"$USERNAME ingroup '$percntWEBPREF{\"MULTISITE_LOCALQM\" web=\"$1\"}$percnt' OR $USERNAME ingroup '%QMGROUP%'\"
+     then=\"$dollarpercntWEBMATCHPREF{\\"INHERITED_WEB\\" value=\\"Settings/Processes\\" web=\\"$1\\"}$dollarpercnt\"
+     }$percnt"
+}%%IF{"$USERNAME ingroup '%QMGROUP%'"
+   then="$percntWEBMATCHPREF{\"DEFAULT_SOURCES\" value=\"ProcessesContentContrib\"}$percnt"
+}%" separator=" OR "}%)%{
+}%%TMPL:END%
 
 %TMPL:DEF{"perspage:mynotes"}%
 <div class="widgetBlockTitle">%MAKETEXT{"My notes"}% <a href="%SCRIPTURLPATH{"edit"}%/%WEB%/%TOPIC%?t=%GMTIME{"$epoch"}%" title="%MAKETEXT{Edit}%">%ICON{pencil}%</a></div><div class="widgetBlockContent">
@@ -207,7 +227,7 @@
  then="$percentTMPL:P{perspage:bookmarks}$percent
 $percentTMPL:P{perspage:tasks}$percent
 $percentTMPL:P{perspage:ciptask}$percnt
-$percentIF{\"$USERNAME ingroup '%QMGROUP%'\" then=\"$dollarpercentTMPL:P{perspage:qmciptask}$dollarpercent\"}$percent
+$percentIF{\"$USERNAME ingroup '%QMGROUP%' $percntFORMATLIST{\"%WEBMATCHPREF{"MULTISITE_LOCALQM"}%\" header=\" OR \" format=\"$USERNAME ingroup '$dollarpercntWEBPREF{\\"MULTISITE_LOCALQM\\" web=\\"$1\\"}$dollarpercnt'\" separator=\" OR \"}$percnt\" then=\"$dollarpercentTMPL:P{perspage:qmciptask}$dollarpercent\"}$percent
 $percentTMPL:P{perspage:approvals}$percent
 $percentTMPL:P{perspage:comments}$percent
 <div>"

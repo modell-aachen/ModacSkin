@@ -20,8 +20,8 @@ msgstr ""
 "X-POOTLE-MTIME: 1403098625.000000\n"
 
 #: templates/viewtopicactionbuttons.modac.tmpl
-msgid "This is a virtual topic"
-msgstr "Das ist eine virtuelle Seite"
+msgid "Topic inherited from global settings web"
+msgstr "Vererbte Seite aus globalem Settings-Bereich"
 
 #: templates/foswiki.modac.tmpl
 msgid "%1 Web"
@@ -136,8 +136,8 @@ msgid "<em>in all public webs</em>"
 msgstr "<em>in allen öffentlichen Bereichen</em>"
 
 #: data/System/WebBottomBarDefault.txt
-msgid "About Q.wiki"
-msgstr "Über Q.wiki"
+msgid "About %1"
+msgstr "Über %1"
 
 #: templates/edit.modac.tmpl
 msgid "Access keys"
@@ -1959,5 +1959,17 @@ msgstr "Neuer Bereich"
 msgid "New topic name"
 msgstr "Neuer Seitenname"
 
+msgid "Actuality check"
+msgstr "Aktualitätsprüfung"
+
 msgid "This address is already taken by another topic."
 msgstr "Diese Adresse wird bereits von einer anderen Seite verwendet."
+
+msgid "Access restriction"
+msgstr "Zugriffsbeschränkung"
+
+msgid "Protect content"
+msgstr "Inhalt schützen"
+
+msgid "all"
+msgstr "alle"

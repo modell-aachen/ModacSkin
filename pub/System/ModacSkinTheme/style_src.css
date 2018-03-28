@@ -141,6 +141,7 @@ h2.patternTemplateTitle {
 img {
 	vertical-align:text-bottom;
 	border:0;
+	image-rendering: -webkit-optimize-contrast;
 }
 
 
@@ -313,6 +314,19 @@ a.craCompareChange1,
 .craCompareChange1 {
     background-color:#fcc;
     text-decoration:line-through;
+}
+th.craCompareAdd {
+	color: #000000;
+}
+span.craCompareChange1 {
+	color: #000000;
+}
+span.craCompareChange2 {
+	color: #000000;
+}
+.craTwistyDiff > a,
+.craTwistyDiff > a:hover {
+    background-color: #e6ba30;
 }
 table.craSideBySide {
 	border:none;
@@ -1942,6 +1956,9 @@ span.select2system {
 .modacMoreMenu li ul li span.morelink-changeurl a {
 	background-image: url(../FamFamFamSilkIcons/world.png);
 }
+.modacMoreMenu li ul li span.morelink-changecontext a {
+	background-image: url(../FamFamFamSilkIcons/arrow_switch.png);
+}
 .modacMoreMenu li ul li span.morelink-copy a {
 	background-image: url(../FamFamFamSilkIcons/page_white_copy.png);
 }
@@ -2292,4 +2309,11 @@ input.hidePlaceholder:focus:-ms-input-placeholder { color:transparent; } /* IE 1
 .newurl_disabled {
 	cursor: not-allowed !important;
 	opacity: .7;
+}
+
+.ma-field-sublabel {
+	display: block;
+    padding-top: 10px;
+    font-weight: normal;
+    color: #000;
 }

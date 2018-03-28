@@ -948,6 +948,21 @@ jQuery(function($){
     // attach WCNThandler
     $('.foswikiNewLink, .modacNewLink').livequery(function() {
         var $this = $(this);
+
+        var topictitle = $this.attr('data-topictitle') || $this.text();
+        if(topictitle.length) {
+            // This will not only take care of the pop-up dialog, but also
+            // affect "open in new tab".
+            // Note: Achieving this with NEWLINKFORMAT may be difficult because
+            // it needs to sanitize newlines etc.
+            // A method to disable this was explicitly not requested.
+            var href = $this.attr('href');
+            if(href) {
+                href = href.replace(/\bnewtopictitle=[^&;]*/g, "newtopictitle=" + encodeURIComponent(topictitle));
+                $this.attr('href', href);
+            }
+        }
+
         $this.click({link: $this}, ModacSkin.wcntHandler);
     });
 
@@ -1329,8 +1344,8 @@ jQuery(function($){
         var width = $hint.closest('tbody').find('input[name="newtopic"].onlyNewTopic:visible').width()
         $hint.children().css('max-width', width + 'px');
 
-        var curweb = $('.changeurl_web').data('orig');
-        var curtopic = $('.changeurl_topic').data('orig');
+        var curweb = $('.changeurl_web').data('orig') || foswiki.getPreference('WEB');
+        var curtopic = $('.changeurl_topic').data('orig') || foswiki.getPreference('TOPIC');
 
         if (web === curweb && topic === curtopic) {
             $btn.attr('disabled', false);
@@ -1368,9 +1383,9 @@ jQuery(function($){
         }, 500);
     };
 
-    $('body').on('change', 'select[name="newweb"]', function() {
+    $('body').on('change', 'select[name="newweb"].onlyNewTopic:visible', function() {
         var web = $(this).val();
-        var topic = $('.changeurl_topic').text();
+        var topic = $('.changeurl_topic').text() || foswiki.getPreference('TOPIC');
         $('.changeurl_web').text(web);
         checkRenameFunc(web, topic);
     });
@@ -1397,7 +1412,12 @@ jQuery(function($){
     $('body').on('mouseleave', 'input[name="newtopic"]', function() {
         $('.changeurl_topic').removeClass('highlight');
     });
-
+    $('#ma_form_changeWeb_multisite > select').livequery(function(){
+        $(this).change(function() {
+            var template = foswiki.getScriptUrl('rest') + "/RenderPlugin/template?name=more&render=on&expand=%22newform%22%20SEARCHWEB%3D%22" + $('select[name="newweb"]').val() + "%22";
+            $('#ma_newform_select').load(template);
+        });
+    });
     $('.changeurl_web').livequery(function() {
         $(this).text($('select[name="newweb"]').val());
     });

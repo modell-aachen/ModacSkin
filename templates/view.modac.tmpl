@@ -105,6 +105,22 @@
   %IF{"'%SIMILAR_TOPICS%' = '1' AND '%WORKFLOWORIGIN%'/form[name~'%SIMILAR_TOPICS_FORM%']" then="$percentTMPL:P{\"similartopicsshow\"}$percent" else=""}%
 %TMPL:END%
 
+%TMPL:DEF{"similartopicmacro"}%
+%SOLRSIMILAR{"type:topic topic:%TOPIC% web:%WEB% form:%URLPARAM{"FORM" default="*"}% "
+    filter="type:topic form:%URLPARAM{"FORM" default="*"}% %SIMILAR_TOPICS_FILTER{default=""}%"
+    like="%SIMILAR_TOPICS_LIKE%"
+    boost="%SIMILAR_TOPICS_BOOST%"
+    fields="%SIMILAR_TOPICS_FIELDS%"
+    mintermfrequency="%SIMILAR_TOPICS_MIN_TERM_FREQUENCY%"
+    mindocumentfrequency="%SIMILAR_TOPICS_MIN_DOCUMENT_FREQUENCY%"
+    header="<table class=\"tablesorter\"><thead><tr><th> $percntMAKETEXT{\"Topic\"}$percent </th><th> $percntMAKETEXT{\"Responsible\"}$percent </th><th> $percntMAKETEXT{\"Document type\"}$percent </th><th> $percntMAKETEXT{\"Date\"}$percent </th></thead><tbody>"
+    format="<tr class=\"$percntIF{\"'$percntCALC{\"$ODD($index)\"}$percnt'='0'\" then=\"even\" else=\"odd\"}$percnt\"><td>[[$web.$topic][$title]] $percntIF{\"'%SIMILAR_TOPICS_MARK_AS_DISCUSSION{default=""}%'!='' and '$process_state_s'=~'%SIMILAR_TOPICS_MARK_AS_DISCUSSION{default=""}%'\" then=\"<span class=\\"bmsubinfo\\">$dollarpercntICON{comments}$dollarpercnt&nbsp;$percntMAKETEXT{\"Discussion\"}$percnt</span>\"}$percent </td><td>$percntIF{\"'$field_Responsible_s'=''\" then=\"\" else=\"$percntRENDERUSER{\"$field_Responsible_s\" convert=\"on\"}$percnt\"}$percnt</td><td> $percntMAKETEXT{\"$field_DocumentType_s\"}$percent </td><td> $percntSUBST{text=\"$date\" pattern=\"(\w+)\" format=\"$dollarpercntMAKETEXT{\\"$1\\"}$dollarpercnt\"}$percnt </td></tr>"
+    footer="</tbody></table>"
+    sort="score desc"
+    rows="%SIMILAR_TOPICS_ROWS%"
+}%
+%TMPL:END%
+
 %TMPL:DEF{"similartopicsshow"}%
 <div class="modacBorder modacBox"><div class="foswikiFormSteps"><div class="foswikiAttachments foswikiFormStep contentsWidth">
 %TWISTY{
@@ -117,7 +133,11 @@
   showimgleft="%PUBURLPATH%/%SYSTEMWEB%/DocumentGraphics/toggleopen.png"
   hideimgleft="%PUBURLPATH%/%SYSTEMWEB%/DocumentGraphics/toggleclose.png"
 }%
-<div id="modacSidebarTwisty_similar" class="modacAjaxContent" data-url="%SCRIPTURL{rest}%/RenderPlugin/tag?name=INCLUDE;render=1;param=%SYSTEMWEB%.ModacSkinSolrSimilarTopic;WEB=%ENCODE{"%BASEWEB%"}%;TOPIC=%ENCODE{"%TOPIC%"}%;FORM=%SIMILAR_TOPICS_FORM%">%JQREQUIRE{"jqp::spin"}%</div>
+<div id="modacSidebarTwisty_similar" class="modacAjaxContent" data-url="%SCRIPTURL{rest}%/RenderPlugin/template?name=view;expand=similartopicmacro;topic=%WEB%.%TOPIC%;render=on;FORM=%SIMILAR_TOPICS_FORM%">%JQREQUIRE{"jqp::spin"}%</div>
 %ENDTWISTY%
 </div></div></div>
 %TMPL:END%
+
+%TMPL:DEF{"formfieldSublabel"}%%{
+}%%IF{"defined %FORM%_%NAME%_SUBLABEL" then="<div class='ma-field-sublabel'>$percnt%FORM%_%NAME%_SUBLABEL$percnt</div>" else=""}%%{
+}%%TMPL:END%
