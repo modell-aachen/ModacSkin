@@ -577,6 +577,10 @@ html>body #modacLogoIE {
 #modacButtonsRIGHT {
 	float: right;
 }
+#modacButtonsRIGHT.noActionButtons {
+	margin-bottom: 3px;
+	background-image: none;
+}
 .modacTabs {
 	margin: 0;
 	padding: 0;
