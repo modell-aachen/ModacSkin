@@ -23,6 +23,13 @@ our $SITEPREFS = {
   SHOW_EDIT_PROFILE => "0",
 };
 
+sub solrWhitelist {
+    my $plugin = shift;
+    my $expr = shift;
+
+    return $expr =~ m#^\{!join to=workflow_origin_s from=webtopic whitelisted=ModacSkin v='field_Responsible_s:[a-z0-9A-Z_-]+ host:\$host'\}$#;
+}
+
 sub maintenanceHandler {
     Foswiki::Plugins::MaintenancePlugin::registerCheck("ModacSkin:Compare:skinorder", {
         name => "ModacSkin: Skin order when comparing",
