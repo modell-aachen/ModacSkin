@@ -454,7 +454,7 @@ html>body #modacLogoIE {
 }
 #modacContents {
 	background-color: #ffffff;
-	padding: 1.1em 0.7em 1em 1em;
+	padding: 0 24px;
 }
 #modacBottombar {
 	background-image:url("ModacSkinLogos/border.png");
