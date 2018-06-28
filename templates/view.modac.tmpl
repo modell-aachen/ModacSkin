@@ -51,7 +51,6 @@
   "'%WEB%.%TOPIC%'/attachments"
   then="<div class=\"modacBorder\"><div class=\"foswikiFormSteps\">$percntTMPL:P{\"attachmentsbottom\"}$percnt</div></div>"
 }%
-%TMPL:P{"attachmentsbottom"}%
 %TMPL:END%%{
 ---------------------------------------------------
 }%%TMPL:DEF{"standardheader"}%%TMPL:END%
@@ -64,7 +63,7 @@
 %TMPL:DEF{"flashnote:contents"}%<div class="foswikiNotification"> %FLASHNOTE% </div>%TMPL:END%%{
 ---------------------------------------------------
 }%%TMPL:DEF{"content"}%%TMPL:P{"simpleheader"}%
-%TEXT%
+
 %IF{"$raw='on'" then='%TMPL:P{"sig_textareabuttons"}%'}%%TMPL:END%%{
 ---------------------------------------------------
 }%%TMPL:DEF{"metadatatable"}%%{
