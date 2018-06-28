@@ -45,7 +45,13 @@
 
 %TMPL:DEF{"modacActionButtons"}%%TMPL:P{"modacActionButtonsVIEW"}%%TMPL:END%
 
-%TMPL:DEF{"topicaction"}%<div class="modacBorder"><div class="foswikiFormSteps">%TMPL:P{"attachmentsbottom"}%</div></div>%TMPL:END%%{
+%TMPL:DEF{"topicaction"}%
+%{ attachmentsbottom <- attachmentsatbottom <- attachments -- check if we have any attachments, otherwise hide this block completely }%
+%IF{
+  "'%WEB%.%TOPIC%'/attachments"
+  then="<div class=\"modacBorder\"><div class=\"foswikiFormSteps\">$percntTMPL:P{\"attachmentsbottom\"}$percnt</div></div>"
+}%
+%TMPL:END%%{
 ---------------------------------------------------
 }%%TMPL:DEF{"standardheader"}%%TMPL:END%
 %TMPL:DEF{"simpleheader"}%%TMPL:P{"flashnote"}%%TMPL:P{"standardheader"}%%TMPL:END%%{
@@ -57,7 +63,7 @@
 %TMPL:DEF{"flashnote:contents"}%<div class="foswikiNotification"> %FLASHNOTE% </div>%TMPL:END%%{
 ---------------------------------------------------
 }%%TMPL:DEF{"content"}%%TMPL:P{"simpleheader"}%
-%TEXT% 
+%TEXT%
 %IF{"$raw='on'" then='%TMPL:P{"sig_textareabuttons"}%'}%%TMPL:END%%{
 ---------------------------------------------------
 }%%TMPL:DEF{"metadatatable"}%%{
