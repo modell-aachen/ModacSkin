@@ -46,7 +46,7 @@
 %TMPL:DEF{"modacActionButtons"}%%TMPL:P{"modacActionButtonsVIEW"}%%TMPL:END%
 
 %TMPL:DEF{"topicaction"}%
-%{ attachmentsbottom <- attachmentsatbottom <- attachments, thus we check if we have any, otherwise hide complety block }%
+%{ attachmentsbottom <- attachmentsatbottom <- attachments -- check if we have any attachments, otherwise hide this block completely }%
 %IF{
   "'%WEB%.%TOPIC%'/attachments"
   then="<div class=\"modacBorder\"><div class=\"foswikiFormSteps\">$percntTMPL:P{\"attachmentsbottom\"}$percnt</div></div>"
