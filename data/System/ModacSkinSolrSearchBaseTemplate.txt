@@ -137,7 +137,7 @@
 %{</verbatim>}%
 
 %{<verbatim>}%
-%TMPL:DEF{"solr::fields::append"}%%TMPL:PREV%,field_avatar_thumbnail_url_s,%EMPLOYEESAPP_SOLRSEARCH_EXTRA_FIELDS{default="dummy_s"}%,author_s,container_id,container_url,task_state_s,task_type_s,task_id_s,task_context_s%TMPL:END%
+%TMPL:DEF{"solr::fields::append"}%%TMPL:PREV%,field_avatar_thumbnail_url_s,%EMPLOYEESAPP_SOLRSEARCH_EXTRA_FIELDS{default="dummy_s"}%,author_s,container_id,container_url,task_state_s,task_type_s,task_id_s,task_context_s,presented_name_s%TMPL:END%
 %TMPL:DEF{"solr::templates::hits::task"}%<script id="solrHitTemplate_task" type="text/x-jquery-tmpl">
   <div class='solrSearchHit clearfix'>
     {{include tmpl="#solrTemplate_thumbnail" /}}
@@ -214,7 +214,7 @@
       </a>
     </div>
     <h3 title='{{: ~foswiki.jsi18n.get('solr', 'image') }}'>
-      <a href='{{:url}}'>{{:name}}</a>
+      <a href='{{:url}}'>{{: presented_name_s || name}}</a>
       <span class='foswikiGrayText foswikiSmallish solrContainerLink'>
         {{if task_id_s}}
         {{: ~foswiki.jsi18n.get('solr', "in [_1]" ,"<a class='task-solr-hit' href='"+container_url+"?id="+task_id_s+"&tid="+task_state_s+"&tab="+task_state_s+"&attachment="+name+"'>"+container_title+"</a>") }}
@@ -248,7 +248,7 @@
   <div class='solrSearchHit solrAttachmentHit'>
     <h3>
       <img src='{{if icon}}{{:icon}}{{else}}{{:~foswiki.getPreference('PUBURLPATH')+'/'+~foswiki.getPreference('SYSTEMWEB')}}/FamFamFamSilkIcons/page_white.png{{/if}}'>
-      <a href='{{:url}}'>{{:name}}</a>
+      <a href='{{:url}}'>{{: presented_name_s || name}}</a>
       <span class='foswikiGrayText foswikiSmallish solrContainerLink' >
         {{if task_id_s}}
         {{: ~foswiki.jsi18n.get('solr', "in [_1]" ,"<a class='task-solr-hit' href='"+container_url+"?id="+task_id_s+"&tid="+task_state_s+"&tab="+task_state_s+"&attachment="+name+"'>"+container_title+"</a>") }}
