@@ -1,6 +1,7 @@
 %META:TOPICINFO{author="JanKrueger" comment="reprev" date="1363102083" format="1.1" reprev="6" version="8"}%
 %TMPL:INCLUDE{"view"}%
 %TMPL:INCLUDE{"SystemTabs"}%
+%TMPL:INCLUDE{"WorkflowAppTemplateForPersPage"}%
 
 %TMPL:DEF{"modacSystemTab"}%<div class="modacActionButtonACTIVE"><a href='%SCRIPTURLPATH{"view"}%/%WEB%/%TOPIC%' rel='nofollow' %MAKETEXT{"title='My Page' >My Page"}%</a></div>%TMPL:END%
 
@@ -230,6 +231,7 @@ $percentTMPL:P{perspage:ciptask}$percnt
 $percentIF{\"$USERNAME ingroup '%QMGROUP%' $percntFORMATLIST{\"%WEBMATCHPREF{"MULTISITE_LOCALQM"}%\" header=\" OR \" format=\"$USERNAME ingroup '$dollarpercntWEBPREF{\\"MULTISITE_LOCALQM\\" web=\\"$1\\"}$dollarpercnt'\" separator=\" OR \"}$percnt\" then=\"$dollarpercentTMPL:P{perspage:qmciptask}$dollarpercent\"}$percent
 $percentTMPL:P{perspage:approvals}$percent
 $percentTMPL:P{perspage:comments}$percent
+$percentTMPL:P{perspage:workflowApps}$percent
 <div>"
  else="$percentTMPL:P{perspage:other}$percent
 <div style='display: none'>"
