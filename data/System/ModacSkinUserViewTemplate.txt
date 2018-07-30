@@ -173,7 +173,7 @@
  <tr><th>%MAKETEXT{"Title"}%</th><th>%MAKETEXT{"Status"}%</th><th>%MAKETEXT{"Status since"}%</th></tr>
  </thead>
  <tbody>
- %SOLRSEARCH{"type:topic process_state_s:(CONTENT_REVIEW OR CONTENT_REVIEW_DRAFT) %IF{"%OriginalOwnerApproves{default="0"}%" then="{!join to=workflow_origin_s from=webtopic}"}%field_Responsible_s:%RENDERUSER{format="$cUID"}%"
+ %SOLRSEARCH{"type:topic process_state_s:(CONTENT_REVIEW OR CONTENT_REVIEW_DRAFT) %IF{"%OriginalOwnerApproves{default="0"}%" then="{!join to=workflow_origin_s from=webtopic whitelisted=ModacSkin v='field_Responsible_s:%RENDERUSER{format="$cUID"}% host:$host'}" else="field_Responsible_s:%RENDERUSER{format="$cUID"}%"}%"
   rows="999"
   format="<tr><td> [[$web.$topic][$title]] </td><td> $percntIF{\"'$process_state_s'=~'DRAFT'\" then=\"%MAKETEXT{"draft"}%\" else=\"%MAKETEXT{"discussion"}%\"}$percnt </td><td> $percntIF{\"'$process_state_s'=~'DRAFT'\" then=\"$percentCALC{\"$TIMEDIFF($TIME($SUBSTRING($workflowmeta_lasttime_draft_s,7,4)/$SUBSTRING($workflowmeta_lasttime_draft_s,4,2)/$SUBSTRING($workflowmeta_lasttime_draft_s,1,2)), $TODAY(), day)\"}$percent %MAKETEXT{"Day(s)"}%\" else=\"$percentCALC{\"$TIMEDIFF($TIME($SUBSTRING($workflowmeta_lasttime_discussion_s,7,4)/$SUBSTRING($workflowmeta_lasttime_discussion_s,4,2)/$SUBSTRING($workflowmeta_lasttime_discussion_s,1,2)), $TODAY(), day)\"}$percent %MAKETEXT{"Day(s)"}%\"}$percnt </td></tr>"
   fields="web,topic,title,process_state_s,workflowmeta_lasttime_draft_s,workflowmeta_lasttime_discussion_s"
