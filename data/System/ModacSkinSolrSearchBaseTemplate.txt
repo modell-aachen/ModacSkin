@@ -247,13 +247,8 @@
 %TMPL:DEF{"solr::templates::hits::misc"}%<script id="solrHitTemplate_misc" type="text/x-jquery-tmpl">
   <div class='solrSearchHit solrAttachmentHit'>
     <h3>
-<<<<<<< HEAD
-      <img src='{{if icon}}{{:icon}}{{else}}{{:~foswiki.getPreference('PUBURLPATH')+'/'+~foswiki.getPreference('SYSTEMWEB')}}/FamFamFamSilkIcons/page_white.png{{/if}}'>
-      <a href='{{:url}}'>{{: presented_name_s || name}}</a>
-=======
       <img src='{{if icon}}{{>icon}}{{else}}{{:~foswiki.getPreference('PUBURLPATH')+'/'+~foswiki.getPreference('SYSTEMWEB')}}/FamFamFamSilkIcons/page_white.png{{/if}}'>
-      <a href='{{>url}}'>{{>name}}</a>
->>>>>>> sprint/riga
+      <a href='{{>url}}'>{{> presented_name_s || name}}</a>
       <span class='foswikiGrayText foswikiSmallish solrContainerLink' >
         {{if task_id_s}}
         {{: ~foswiki.jsi18n.get('solr', "in [_1]" ,"<a class='task-solr-hit' href='"+container_url+"?id="+task_id_s+"&tid="+task_state_s+"&tab="+task_state_s+"&attachment="+name+"'>"+container_title+"</a>") }}
