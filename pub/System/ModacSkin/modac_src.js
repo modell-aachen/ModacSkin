@@ -891,7 +891,7 @@ jQuery(function($){
           var title = $form.find('span.title').text();
           if(!title) {
               //try to find label for specific input
-            title = $("label[for=" + $(e).attr("name") + "]").text();
+            title = $("[data-displayname-for=" + $(e).attr("name") + "],label[for=" + $(e).attr("name") + "]").text();
             if(!title) title = $(e).attr('name');
           }
           alerts.push(jsi18n.get('edit', "You have not filled out the mandatory form field '[_1]'.", title));
