@@ -412,7 +412,7 @@ jQuery(function($){
             var m = /(;|&)/.exec(query) || [new RegExp('^')];
             $(query.split(m[0])).each(function(idx, item) {
                 var m = /([^=]+)=(.*)/.exec(item);
-                if(m) infodata[m[1]] = decodeURIComponent(m[2]);
+                if(m) infodata[m[1]] = decodeURIComponent(m[2].replace(/\+/g, ' '));
             });
             var newtopic = infodata.newtopic;
             var newweb = /^(.*)(?:\.|\/)/.exec(newtopic);
