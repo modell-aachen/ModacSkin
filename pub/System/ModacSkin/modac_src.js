@@ -890,9 +890,14 @@ jQuery(function($){
           var $form = $(e).closest('tr.modacForm');
           var title = $form.find('span.title').text();
           if(!title) {
-              //try to find label for specific input
-            title = $("label[for=" + $(e).attr("name") + "]").text();
-            if(!title) title = $(e).attr('name');
+            //try to find label for specific input
+            var name = $(e).attr("name");
+            if(name !== undefined && name !== '') {
+              title = $("[data-displayname-for=" + name + "],label[for=" + $(e).attr("name") + "]").text();
+              if(!title) title = name;
+            } else {
+              title = 'unknown';
+            }
           }
           alerts.push(jsi18n.get('edit', "You have not filled out the mandatory form field '[_1]'.", title));
         });
