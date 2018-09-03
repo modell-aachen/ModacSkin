@@ -125,7 +125,7 @@
   parent="any"
   allowcreate="0"
   pagesize="10"
-  query="{\"Informees\": \"%RENDERUSER{format="$cUID"}%\"}"
+  query="{\"Status\": \"open\", \"Informees\": \"%RENDERUSER{format="$cUID"}%\"}"
 }%
 %ENDTAB%
 %TAB{"%MAKETEXT{"Created by me"}%" id="tasks_own"}%%{
