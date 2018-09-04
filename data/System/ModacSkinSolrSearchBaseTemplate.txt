@@ -41,7 +41,7 @@
 <table class='foswikiNullTable'>
   <tr>
     <td>
-      <input type="text" autocomplete="off" class="foswikiInputField jqFocus solrSearchField %IF{"defined MODAC_SOLR_AUTOCOMPLETE" then="modacSolrAutocomplete $percentMODAC_SOLR_AUTOCOMPLETE$percent" else="jqUIAutocomplete {source:'%SCRIPTURL%/rest/SolrPlugin/autocomplete', extraParams:{field:'catchall_autocomplete', filter:'%MODAC_SOLR_AC_FILTER{default=""}%'}}"}%" size="50" style="margin-right:8px;" value="%URLPARAM{"search"}%" />
+      <input type="text" autocomplete="off" class="foswikiInputField jqFocus solrSearchField %IF{"defined MODAC_SOLR_AUTOCOMPLETE" then="modacSolrAutocomplete $percentMODAC_SOLR_AUTOCOMPLETE$percent" else="jqUIAutocomplete {source:'%SCRIPTURL%/rest/SolrPlugin/autocomplete', extraParams:{field:'catchall_autocomplete', filter:'%MODAC_SOLR_AC_FILTER{default=""}% %IF{"not $USERNAME ingroup 'AdminGroup' AND defined 'MODAC_TESTINGWEB'" then="-web:%MODAC_TESTINGWEB%* "}%'}}"}%" size="50" style="margin-right:8px;" value="%URLPARAM{"search"}%" />
     </td>
     <td>
       %BUTTON{"%MAKETEXT{"Search"}%" type="submit" title="%MAKETEXT{"submit the query"}%" icon="find" class="solrSubmitButton"}%
