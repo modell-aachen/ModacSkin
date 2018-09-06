@@ -98,7 +98,7 @@
   parent="any"
   allowcreate="0"
   pagesize="10"
-  query="{\"Status\": \"open\", \"AssignedTo\": \"%RENDERUSER{format="$cUID"}%\"}"
+  query="{\"Status\": \"open\", \"AssignedTo\": \"%RENDERUSER{format="$cUID"}%\", \"Context\": {\"type\": \"not like\", \"substring\": \"%MODAC_TESTINGWEB%%\"}}"
 }%%{
 }%%ENDTAB%
 %TAB{"%MAKETEXT{"My closed tasks"}%" id="tasks_closed"}%%{
@@ -112,7 +112,7 @@
   parent="any"
   allowcreate="0"
   pagesize="10"
-  query="{\"Status\": \"closed\", \"AssignedTo\": \"%RENDERUSER{format="$cUID"}%\"}"
+  query="{\"Status\": \"closed\", \"AssignedTo\": \"%RENDERUSER{format="$cUID"}%\", \"Context\": {\"type\": \"not like\", \"substring\": \"%MODAC_TESTINGWEB%%\"}}"
 }%%{
 }%%ENDTAB%
 %TAB{"%MAKETEXT{"My watched tasks"}%" id="tasks_inform"}%%{
@@ -126,7 +126,7 @@
   parent="any"
   allowcreate="0"
   pagesize="10"
-  query="{\"Informees\": \"%RENDERUSER{format="$cUID"}%\"}"
+  query="{\"Informees\": \"%RENDERUSER{format="$cUID"}%\", \"Context\": {\"type\": \"not like\", \"substring\": \"%MODAC_TESTINGWEB%%\"}}"
 }%
 %ENDTAB%
 %TAB{"%MAKETEXT{"Created by me"}%" id="tasks_own"}%%{
@@ -140,8 +140,7 @@
   parent="any"
   allowcreate="0"
   pagesize="10"
-  query="{\"Author\": \"%RENDERUSER{format="$cUID"}%\",\"Status\":[\"open\",\"closed\"]}"
-}%%{
+  query="{\"Author\": \"%RENDERUSER{format="$cUID"}%\",\"Status\":[\"open\",\"closed\"], \"Context\": {\"type\": \"not like\", \"substring\": \"%MODAC_TESTINGWEB%%\"} }"}%%{
 }%%ENDTAB%
 %ENDTABPANE%
 </div>
