@@ -34,10 +34,7 @@
 }% %IF{
   "not $USERNAME ingroup 'AdminGroup'"
   then="-web:Applications -web:Sandbox* -web:%USERSWEB%"
-}% %IF{
-  "not $USERNAME ingroup 'AdminGroup' AND defined 'MODAC_TESTINGWEB'"
-  then="-web:%MODAC_TESTINGWEB%* "
-}%%TMPL:END%
+}% %TMPL:P{"solr::exclude::testingweb"}% %TMPL:END%
 %{</verbatim>}%
 
 %{<verbatim class="tml">}%
