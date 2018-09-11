@@ -64,7 +64,7 @@
 <tr><td class="splitleft"><div class="splittitle">%ICON{viewtopic}% %MAKETEXT{"Topics"}%</div>
 <ul class="modacBookmarks">
 %SOLRSEARCH{"type:topic webtopic:(%FAVORITELIST{format="\\"$swebtopic\\"" separator=" OR " default="NOT *"}%)"
-  rows="5" sort="date desc"
+  rows="%WEBPREF{"MYPROFILE_LAST_CHANGED_FAVORITES_MAX_ITEMS"}%" sort="date desc"
   format="<li data-fav-item=\"$webtopic\"><div class=\"date\">$date%BR%$percentRENDERUSER{\"$author\" convert=\"on\"}$percent</div><a href=\"%SCRIPTURL{view}%/$web/$topic\" title=\"$web.$topic\"><strong>$percntIF{\"'$percentENCODE{\"$title\" type=\"safe\"}$percent'='WebHome'\" then=\"$dollarpercentFORMATLIST{\\"$dollarmap($web)\\" map=\\"%MODAC_WEBMAPPINGS{default=""}%\\"}$dollarpercent\" else=\"$percentENCODE{\"$title\" type=\"safe\"}$percent\"}$percnt</strong></a>$percntIF{\"istopic '$webtopic$percntWORKFLOWSUFFIX$percnt'\" then=\"&nbsp;&nbsp;|&nbsp;&nbsp;<a href='$percntSCRIPTURL{view}$percnt/$web/$topic$percntWORKFLOWSUFFIX$percnt'><span class=\\"bmsubinfo\\">$dollarpercntICON{comments}$dollarpercnt&nbsp;$percntMAKETEXT{\"Discussion available\"}$percnt</span></a>\"}$percnt%BR%<span class=\"bmsubinfo\">[[$web.WebHome][$percentFORMATLIST{\"$dollarmap($web)\" map=\"%MODAC_WEBMAPPINGS{default=""}%\"}$percent]]</span></li>"
   fields="date,web,topic,webtopic,title,author,workflow_hasdiscussion_b"
 }%
@@ -72,7 +72,7 @@
 </td><td class="splitright"><div class="splittitle">%ICON{attachfile}% %MAKETEXT{"Attachments"}%</div>
 <ul class="modacBookmarks">
 %SOLRSEARCH{"-type:(topic OR comment OR action) (%FAVORITELIST{type="files" format="(webtopic:\\"$swebtopic\\" name:\"$file\")" separator=" OR " default="NOT *"}%)"
-  rows="5" sort="date desc"
+  rows="%WEBPREF{"MYPROFILE_LAST_CHANGED_FAVORITES_MAX_ITEMS"}%" sort="date desc"
   format="<li data-fav-item=\"$webtopic-$name\"><div class=\"date\">$date%BR%$percentRENDERUSER{\"$author\" convert=\"on\"}$percent</div>[[%PUBURLPATH%/$web/$topic/$name][<strong>$name</strong>]]%BR%<span class=\"bmsubinfo\">[[$web.WebHome][$percentFORMATLIST{\"$dollarmap($web)\" map=\"%MODAC_WEBMAPPINGS{default=""}%\"}$percent]] $percntIF{\"'$topic'!='WebHome'\" then=\" &raquo; <a href=\\"%SCRIPTURL{view}%/$web/$topic\\" title=\\"$web.$topic\\">$container_title</a>\"}$percnt</span></li>"
   fields="web,topic,container_title,author,date,name,title,author"
 }%
