@@ -107,6 +107,24 @@ sub maintenanceHandler {
             }
         }
     });
+    Foswiki::Plugins::MaintenancePlugin::registerCheck("ModacSkin:MyPage:LastChangedMaxItems", {
+        name => "ModacSkin: LastChanged Max Items",
+        description => "Set the WebPref",
+        check => sub {
+            my $key = 'MYPROFILE_LAST_CHANGED_FAVORITES_MAX_ITEMS';
+            my $pref = Foswiki::Func::getPreferencesValue($key, 'Main');
+            if($pref != undef){
+                return { result => 0};
+            }else{
+                return {
+
+                   result => 1,
+                    priority => $Foswiki::Plugins::MaintenancePlugin::WARN,
+                    solution => "Please make sure =MYPROFILE_LAST_CHANGED_MAX_ITEMS= is set on [[$Foswiki::cfg{UsersWebName}.WebPreferences]], a reasonable value is <verbatim>   * Set MYPROFILE_LAST_CHANGED_MAX_ITEMS = 999 </verbatim>"
+                };
+            }
+        }
+    });
 }
 
 1;
