@@ -25,8 +25,8 @@
 %{ ATTENTION: The first filter must be one you do not facet on! }%
 %{<verbatim class="tml">}%
 %TMPL:DEF{"solr::extrafilter"}%-type:(ua_user OR ua_group) -name:__flowchart* %IF{
-  "defined 'SOLR_EXTRAFILTER'" 
-  then="%SOLR_EXTRAFILTER%" 
+  "defined 'SOLR_EXTRAFILTER'"
+  then="%SOLR_EXTRAFILTER%"
   else="-type:map -type:aqm -field_TopicType_lst:Category"
 }% %IF{
   "$WEB != $SYSTEMWEB"
@@ -34,7 +34,7 @@
 }% %IF{
   "not $USERNAME ingroup 'AdminGroup'"
   then="-web:Applications -web:Sandbox* -web:%USERSWEB%"
-}%%TMPL:END%
+}% %TMPL:P{"solr::exclude::testingweb"}% %TMPL:END%
 %{</verbatim>}%
 
 %{<verbatim class="tml">}%
@@ -86,10 +86,10 @@
   title="%MAKETEXT{"Web"}%"
   include="%TMPL:P{"solr::facet::include::web"}%"
   exclude="%TMPL:P{"solr::facet::exclude::web"}%"
-  multivalue="true" 
-  union="true" 
-  exclusion="true" 
-  sort="title" 
+  multivalue="true"
+  union="true"
+  exclusion="true"
+  sort="title"
   limit="-1"
 }%
 %IF{"$SOLR_HIDE_DOCUMENTTYPE='1'" else="

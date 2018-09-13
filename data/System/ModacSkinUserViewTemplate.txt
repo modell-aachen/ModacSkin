@@ -84,6 +84,10 @@
 </div>
 %TMPL:END%
 
+%TMPL:DEF{"prespage:tasks:exclude_testing_webs"}%
+, \"Context\": {\"type\": \"not like\", \"substring\": \"%MODAC_TESTINGWEB%%\"}
+%TMPL:END%
+
 %TMPL:DEF{"perspage:tasks"}%
 <div class="widgetBlockTitle">%MAKETEXT{"My tasks"}%</div><div class="widgetBlockContent">
 %TABPANE{class="simple" select="%URLPARAM{"tab" default="tasks_open"}%"}%
@@ -98,7 +102,7 @@
   parent="any"
   allowcreate="0"
   pagesize="10"
-  query="{\"Status\": \"open\", \"AssignedTo\": \"%RENDERUSER{format="$cUID"}%\"}"
+  query="{\"Status\": \"open\", \"AssignedTo\": \"%RENDERUSER{format="$cUID"}%\" %TMPL:P{"prespage:tasks:exclude_testing_webs"}%}"
 }%%{
 }%%ENDTAB%
 %TAB{"%MAKETEXT{"My closed tasks"}%" id="tasks_closed"}%%{
@@ -112,7 +116,7 @@
   parent="any"
   allowcreate="0"
   pagesize="10"
-  query="{\"Status\": \"closed\", \"AssignedTo\": \"%RENDERUSER{format="$cUID"}%\"}"
+  query="{\"Status\": \"closed\", \"AssignedTo\": \"%RENDERUSER{format="$cUID"}%\" %TMPL:P{"prespage:tasks:exclude_testing_webs"}%}"
 }%%{
 }%%ENDTAB%
 %TAB{"%MAKETEXT{"My watched tasks"}%" id="tasks_inform"}%%{
@@ -126,7 +130,7 @@
   parent="any"
   allowcreate="0"
   pagesize="10"
-  query="{\"Informees\": \"%RENDERUSER{format="$cUID"}%\"}"
+  query="{\"Informees\": \"%RENDERUSER{format="$cUID"}%\" %TMPL:P{"prespage:tasks:exclude_testing_webs"}%}"
 }%
 %ENDTAB%
 %TAB{"%MAKETEXT{"Created by me"}%" id="tasks_own"}%%{
@@ -140,8 +144,7 @@
   parent="any"
   allowcreate="0"
   pagesize="10"
-  query="{\"Author\": \"%RENDERUSER{format="$cUID"}%\",\"Status\":[\"open\",\"closed\"]}"
-}%%{
+  query="{\"Author\": \"%RENDERUSER{format="$cUID"}%\",\"Status\":[\"open\",\"closed\"] %TMPL:P{"prespage:tasks:exclude_testing_webs"}% }"}%%{
 }%%ENDTAB%
 %ENDTABPANE%
 </div>
