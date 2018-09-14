@@ -1,5 +1,9 @@
 %TMPL:INCLUDE{"TopicMenu"}%
-%TMPL:INCLUDE{"SolrSearchBase"}%
+
+%TMPL:DEF{"solr::exclude::testingweb"}%%IF{
+  "not $USERNAME ingroup 'AdminGroup' AND defined 'MODAC_TESTINGWEB'"
+  then="-web:%MODAC_TESTINGWEB%* "
+}%%TMPL:END%
 
 %TMPL:DEF{"modacTabs"}%%JQREQUIRE{"supersubs"}%%JQREQUIRE{"ui::dialog"}%<div id="modacActionButtonsWrapper">%TMPL:P{"modacActionButtons"}%<div class="clear"></div></div> %TMPL:END%
 
