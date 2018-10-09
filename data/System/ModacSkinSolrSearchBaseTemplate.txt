@@ -7,7 +7,6 @@
 
 %{<verbatim class="tml">}%
 %TMPL:DEF{"defaultstyle"}%%TMPL:PREV%%{
-}%%ADDTOZONE{"head" text="<link rel='stylesheet' type='text/css' media='all' href='%PUBURLPATH%/%SYSTEMWEB%/FontAwesomeContrib/css/font-awesome.min.css' />"}%%{
 }%%ADDTOZONE{"head" text="<link rel='stylesheet' type='text/css' media='all' href='%PUBURLPATH%/%SYSTEMWEB%/TasksAPIPlugin/css/tasktracker.min.css' />"}%%{
 }%%TMPL:END%
 %{</verbatim>}%
@@ -28,6 +27,13 @@
 %{</verbatim>}%
 
 %{<verbatim class="tml">}%
+%TMPL:DEF{"solr::exclude::testingweb"}%%IF{
+  "not $USERNAME ingroup 'AdminGroup' AND defined 'MODAC_TESTINGWEB'"
+  then="-web:%MODAC_TESTINGWEB%* "
+}%%TMPL:END%
+%{</verbatim>}%
+
+%{<verbatim class="tml">}%
 %TMPL:DEF{"solr::formend"}%%TMPL:PREV%</div>%TMPL:END%
 %{</verbatim>}%
 
@@ -42,7 +48,7 @@
 <table class='foswikiNullTable'>
   <tr>
     <td>
-      <input type="text" autocomplete="off" class="foswikiInputField jqFocus solrSearchField %IF{"defined MODAC_SOLR_AUTOCOMPLETE" then="modacSolrAutocomplete $percentMODAC_SOLR_AUTOCOMPLETE$percent" else="jqUIAutocomplete {source:'%SCRIPTURL%/rest/SolrPlugin/autocomplete', extraParams:{field:'catchall_autocomplete', filter:'%MODAC_SOLR_AC_FILTER{default=""}%'}}"}%" size="50" style="margin-right:8px;" value="%URLPARAM{"search"}%" />
+      <input type="text" autocomplete="off" class="foswikiInputField jqFocus solrSearchField %IF{"defined MODAC_SOLR_AUTOCOMPLETE" then="modacSolrAutocomplete $percentMODAC_SOLR_AUTOCOMPLETE$percent" else="jqUIAutocomplete {source:'%SCRIPTURL%/rest/SolrPlugin/autocomplete', extraParams:{field:'catchall_autocomplete', filter:'%MODAC_SOLR_AC_FILTER{default=""}% %TMPL:P{"solr::exclude::testingweb"}%'}}"}%" size="50" style="margin-right:8px;" value="%URLPARAM{"search"}%" />
     </td>
     <td>
       %BUTTON{"%MAKETEXT{"Search"}%" type="submit" title="%MAKETEXT{"submit the query"}%" icon="find" class="solrSubmitButton"}%
@@ -102,7 +108,7 @@
       {{: ~getHilite(id)}}
     </div>
     <div class='solrRevision'>
-      {{:~formatDate(date,solrDateformat)}}, {{if author_s}}{{>author_s}}{{else}}{{>author}}{{/if}}
+      {{:~formatDate(date,solrDateformat)}}, {{if author_dv_s}}{{>author_dv_s}}{{else}}{{>author}}{{/if}}
     </div>
   </div>
 </script>%TMPL:END%
@@ -130,14 +136,14 @@
     </h3><!--
 -->%IF{"$EMPLOYEESAPP_SOLRSEARCH_FORMAT!=''" then="<div class='solrHilite'>%EMPLOYEESAPP_SOLRSEARCH_FORMAT%</div>"}%<!--
   --><div class='solrRevision'>
-    {{:~formatDate(date,solrDateformat)}}, {{if author_s}}{{>author_s}}{{else}}{{>author}}{{/if}}
+    {{:~formatDate(date,solrDateformat)}}, {{if author_dv_s}}{{>author_dv_s}}{{else}}{{>author}}{{/if}}
   </div>
 </div>
 </script>%TMPL:END%
 %{</verbatim>}%
 
 %{<verbatim>}%
-%TMPL:DEF{"solr::fields::append"}%%TMPL:PREV%,field_avatar_thumbnail_url_s,%EMPLOYEESAPP_SOLRSEARCH_EXTRA_FIELDS{default="dummy_s"}%,author_s,container_id,container_url,task_state_s,task_type_s,task_id_s,task_context_s%TMPL:END%
+%TMPL:DEF{"solr::fields::append"}%%TMPL:PREV%,field_avatar_thumbnail_url_s,%EMPLOYEESAPP_SOLRSEARCH_EXTRA_FIELDS{default="dummy_s"}%,author_dv_s,container_id,container_url,task_state_s,task_type_s,task_id_s,task_context_s,presented_name_s%TMPL:END%
 %TMPL:DEF{"solr::templates::hits::task"}%<script id="solrHitTemplate_task" type="text/x-jquery-tmpl">
   <div class='solrSearchHit clearfix'>
     {{include tmpl="#solrTemplate_thumbnail" /}}
@@ -153,7 +159,7 @@
     {{:~getHilite(id)}}
   </div>
   <div class='solrRevision'>
-    {{:~formatDate(date,solrDateformat)}}, {{if author_s}}{{>author_s}}{{else}}{{>author}}{{/if}}
+    {{:~formatDate(date,solrDateformat)}}, {{if author_dv_s}}{{>author_dv_s}}{{else}}{{>author}}{{/if}}
   </div>
 </div>
 </script>%TMPL:END%
@@ -174,7 +180,7 @@
     {{:~getHilite(id)}}
   </div>
   <div class='solrRevision'>
-    {{:~formatDate(date,solrDateformat)}}, {{if author_s}}{{>author_s}}{{else}}{{>author}}{{/if}}
+    {{:~formatDate(date,solrDateformat)}}, {{if author_dv_s}}{{>author_dv_s}}{{else}}{{>author}}{{/if}}
   </div>
 </div>
 </script>%TMPL:END%
@@ -195,7 +201,7 @@
       {{: ~getHilite(id)}}
     </div>
     <div class='solrRevision'>
-      {{:~formatDate(date, solrDateformat)}}, {{if author_s}}{{>author_s}}{{else}}{{>author}}{{/if}}
+      {{:~formatDate(date, solrDateformat)}}, {{if author_dv_s}}{{>author_dv_s}}{{else}}{{>author}}{{/if}}
     </div>
   </div>
 </script>%TMPL:END%
@@ -214,7 +220,7 @@
       </a>
     </div>
     <h3 title='{{: ~foswiki.jsi18n.get('solr', 'image') }}'>
-      <a href='{{>url}}'>{{>name}}</a>
+      <a href='{{>url}}'>{{> presented_name_s || name}}</a>
       <span class='foswikiGrayText foswikiSmallish solrContainerLink'>
         {{if task_id_s}}
         {{: ~foswiki.jsi18n.get('solr', "in [_1]" ,"<a class='task-solr-hit' href='"+container_url+"?id="+task_id_s+"&tid="+task_state_s+"&tab="+task_state_s+"&attachment="+name+"'>"+container_title+"</a>") }}
@@ -232,7 +238,7 @@
       {{: ~getHilite(id)}}
     </div>
     <div class='solrRevision'>
-      {{:~formatDate(date,solrDateformat)}}, {{if author_s}}{{>author_s}}{{else}}{{>author}}{{/if}}
+      {{:~formatDate(date,solrDateformat)}}, {{if author_dv_s}}{{>author_dv_s}}{{else}}{{>author}}{{/if}}
     </div>
     %CLEAR%
   </div>
@@ -248,7 +254,7 @@
   <div class='solrSearchHit solrAttachmentHit'>
     <h3>
       <img src='{{if icon}}{{>icon}}{{else}}{{:~foswiki.getPreference('PUBURLPATH')+'/'+~foswiki.getPreference('SYSTEMWEB')}}/FamFamFamSilkIcons/page_white.png{{/if}}'>
-      <a href='{{>url}}'>{{>name}}</a>
+      <a href='{{>url}}'>{{> presented_name_s || name}}</a>
       <span class='foswikiGrayText foswikiSmallish solrContainerLink' >
         {{if task_id_s}}
         {{: ~foswiki.jsi18n.get('solr', "in [_1]" ,"<a class='task-solr-hit' href='"+container_url+"?id="+task_id_s+"&tid="+task_state_s+"&tab="+task_state_s+"&attachment="+name+"'>"+container_title+"</a>") }}
@@ -266,7 +272,7 @@
       {{: ~getHilite(id)}}
     </div>
     <div class='solrRevision'>
-      {{:~formatDate(date,solrDateformat)}}, {{if author_s}}{{>author_s}}{{else}}{{>author}}{{/if}}
+      {{:~formatDate(date,solrDateformat)}}, {{if author_dv_s}}{{>author_dv_s}}{{else}}{{>author}}{{/if}}
     </div>
   </div>
 </script>%TMPL:END%

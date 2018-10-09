@@ -1,0 +1,5 @@
+%TMPL:INCLUDE{"edit"}%
+%TMPL:INCLUDE{"SystemTabs"}%
+
+%TMPL:DEF{"modacActionButtons"}%&nbsp;<ul id="modacButtonsRIGHT" class="modacTabs noActionButtons"><li id="modacSearchBox">%TMPL:P{"SearchBox"}%</li></ul>%TMPL:END%
+

@@ -82,6 +82,11 @@ XXX Does not go well with SafeWikiPlugin
  id="blockUI.i18n"
  text="<script>$.blockUI.defaults.message = \"<h1>%MAKETEXT{"Please wait..."}%</h1>\";</script>"
  requires="JQUERYPLUGIN::BLOCKUI"}%%{
+}%%ADDTOZONE{
+ "head"
+ id="FONTAWESOME"
+ text="<link rel='stylesheet' type='text/css' media='all' href='%PUBURLPATH%/%SYSTEMWEB%/FontAwesomeContrib/css/font-awesome.min.css?%QUERYVERSION{"FontAwesomeContrib" format="version=$version" default=""}%' />"
+}%%{
 }%%JQREQUIRE{"wikiword, focus, form, cookie%IF{"context Select2Registered" then=", select2"}%"}%%{
 }%%TMPL:P{"JavascriptFiles/foswikiString"}%%{
 }%%TMPL:P{"JavascriptFiles/foswikiPref"}%%{

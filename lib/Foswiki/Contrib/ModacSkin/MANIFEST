@@ -23,6 +23,8 @@ data/System/ModacSkinReferencesTemplate.txt 0644
 data/System/ModacSkinSolrSearchViewTemplate.txt 0664
 data/System/ModacSkinSolrSearchBaseTemplate.txt 0664
 data/System/ModacSkinSystemViewTemplate.txt 0664
+data/System/ModacSkinSystemNoActionButtonsEditTemplate.txt 0664
+data/System/ModacSkinSystemNoActionButtonsViewTemplate.txt 0664
 data/System/ModacSkinSystemTabsTemplate.txt 0664
 data/System/ModacSkinTasksAPIDefaultMailTemplate.txt 0664
 data/System/ModacSkinTopHeadTemplate.txt 0664

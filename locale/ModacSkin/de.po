@@ -1986,3 +1986,5 @@ msgstr "Vorschlag für einen [[%1][WikiNamen]]: %2"
 msgid "That [[%1][WikiName]] is already in use."
 msgstr "Dieser [[%1][WikiName]] ist bereits in Benutzung."
 
+msgid "Custom Apps"
+msgstr "Individuelle Applikationen"
