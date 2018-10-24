@@ -85,7 +85,7 @@
 %TMPL:END%
 
 %TMPL:DEF{"prespage:tasks:exclude_testing_webs"}%
-, \"Context\": {\"type\": \"not like\", \"substring\": \"%MODAC_TESTINGWEB%%\"}
+, \"Context\": {\"type\": \"not like\", \"substring\": \"%MODAC_TEMPWEB%%\"}
 %TMPL:END%
 
 %TMPL:DEF{"perspage:tasks"}%

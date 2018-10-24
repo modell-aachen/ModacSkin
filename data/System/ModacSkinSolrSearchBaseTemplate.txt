@@ -28,8 +28,8 @@
 
 %{<verbatim class="tml">}%
 %TMPL:DEF{"solr::exclude::testingweb"}%%IF{
-  "not $USERNAME ingroup 'AdminGroup' AND defined 'MODAC_TESTINGWEB'"
-  then="-web:%MODAC_TESTINGWEB%* "
+  "not $USERNAME ingroup 'AdminGroup' AND defined 'MODAC_TEMPWEB'"
+  then="-web:%MODAC_TEMPWEB%* "
 }%%TMPL:END%
 %{</verbatim>}%
 
