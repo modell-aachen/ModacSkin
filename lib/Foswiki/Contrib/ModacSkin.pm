@@ -22,7 +22,7 @@ our $SITEPREFS = {
   SOLR_HIDE_DOCUMENTTYPE => "0",
   SHOW_EDIT_PROFILE => "0",
   MYPAGE_LAST_CHANGED_FAVORITES_MAX_ITEMS => "999",
-  MODAC_HIDEWEBS => 'Custom|Main|Manuals|Sandbox|System|System.Manuals|System.Standards|TWiki|Tasks|TestCases|Trash%WORKFLOWAPPPREVIEWAPPS{default=""}%',
+  MODAC_HIDEWEBS => 'Custom|Main|Manuals|Sandbox|System|System.Manuals|System.Standards|TWiki|Tasks|TestCases|Trash%WORKFLOWAPPPREVIEWAPPS{default=""}%%MULTISITECONFIGWEBS{default=""}%',
 };
 
 sub solrWhitelist {
