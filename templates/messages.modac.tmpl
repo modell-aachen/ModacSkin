@@ -13,3 +13,12 @@
 %MAKETEXT{"It is probably OK to go ahead and edit - unless you intend to change data in a form attached to the topic. If [_1] actually _does_ save the topic while you are editing, your changes will be merged, and nothing will be lost. Form data cannot easily be merged though, so in this case you are recommended to check with [_1] first." arg1="%RENDERUSER{"%URLPARAM{"param1"}%" format="$displayName" convert="on"}%"}%
 
 %TMPL:END%
+
+%TMPL:DEF{"upload_name_changed"}%
+---+++ %MAKETEXT{"File has been uploaded with different name"}%%MAKETEXT{"The file has been uploaded and attached properly to the [_1] topic." args="<nop>%TOPIC%"}%
+%MAKETEXT{"However, the filename has been changed from [_1] to [_2]. Please make a note of it." args="<b><code>%PARAM1%</code></b>,<b><code>%PARAM2%</code></b>"}%*%MAKETEXT{"Note:"}%*
+%MAKETEXT{"In some cases, Foswiki changes the name of the uploaded file to make it safe and accessible across all platforms:"}%
+   * %MAKETEXT{"A =.txt= extension is appended to some filenames for security reasons"}%
+   * %MAKETEXT{"Some characters such as =&#126;=, =$=, =@=, =%= are removed"}%
+%MAKETEXT{"You may be able to get your Wiki administrator to change the settings if they are inappropriate for your environment."}%
+%TMPL:END%

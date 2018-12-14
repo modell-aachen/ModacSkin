@@ -6,7 +6,7 @@ Das Q.wiki ist eine Entwicklung der Modell Aachen GmbH.<br />
 <br />Den Teamviewer-Client erreichen Sie [[http://wartung.modell-aachen.de][hier]].<br />
 <br /> <strong>Kontaktdaten:</strong><br /> Modell Aachen GmbH - Interaktive Managementsysteme<br /> Dennewartstr. 25-27<br /> 52068 Aachen<br /> fon +49 (0) 241 9975 310<br /> fax +49 (0) 241 9975 3199<br /> [[http://www.modell-aachen.de]]<br />[[http://www.q-wiki.com]]<br />
 <br /> Gesch&auml;ftsf&uuml;hrung: Dr.-Ing. Carsten Behrens<br /> Amtsgericht Aachen, HRB 15622<br />
-<br /> Stand: 2018
+<br /> Stand: %RELEASEYEAR%
 
 %META:PREFERENCE{name="DISPLAYCOMMENTS" value="off"}%
 %META:PREFERENCE{name="ALLOWTOPICCHANGE" value="KeyUserGroup"}%

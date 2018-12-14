@@ -21,6 +21,8 @@ our $SITEPREFS = {
   SIMILAR_TOPICS_ROWS => "5",
   SOLR_HIDE_DOCUMENTTYPE => "0",
   SHOW_EDIT_PROFILE => "0",
+  MYPAGE_LAST_CHANGED_FAVORITES_MAX_ITEMS => "999",
+  MODAC_HIDEWEBS => 'Custom|Main|Manuals|Sandbox|System|System.Manuals|System.Standards|TWiki|Tasks|TestCases|Trash%WORKFLOWAPPPREVIEWAPPS{default=""}%%MULTISITECONFIGWEBS{default=""}%',
 };
 
 sub solrWhitelist {
@@ -107,6 +109,26 @@ sub maintenanceHandler {
             }
         }
     });
+    Foswiki::Plugins::MaintenancePlugin::registerCheck("ModacSkin:HIDE_WEBS:default", {
+        name => "Check for old settings",
+        description => "Check SitePreferences for MODAC_HIDEWEBS default",
+        check => sub {
+            my ($web, $topic) = Foswiki::Func::normalizeWebTopicName(undef, $Foswiki::cfg{LocalSitePreferences});
+            my $text = Foswiki::Func::readTopic($web, $topic);
+            my $sitePrefs = $SITEPREFS->{MODAC_HIDEWEBS};
+            $sitePrefs = quotemeta($sitePrefs);
+            if($text =~ m#$Foswiki::regex{setRegex}MODAC_HIDEWEBS\s*=\s*$sitePrefs\s*$#m) {
+                return {
+                    result => 1,
+                    priority => $Foswiki::Plugins::MaintenancePlugin::WARN,
+                    solution => "Your MODAC_WEBMAPPINGS equal the DefaultPreference; you can remove it from your SitePreferences.",
+                };
+            } else {
+                return { result => 0 };
+            }
+        }
+    });
+
 }
 
 1;

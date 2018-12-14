@@ -451,10 +451,15 @@ html>body #modacLogoIE {
 	background-image:url("ModacSkinLogos/border.png");
 	background-position:left top;
 	padding: 0 1px;
+	margin-bottom: -100px; /* see margin-bottom of #modacContents */
 }
 #modacContents {
 	background-color: #ffffff;
-	padding: 1.1em 0.7em 1em 1em;
+	padding: 24px;
+	margin-bottom: 100px; /* This will collapse with the margins of the children
+				 and is being undone in #modacContentsWrapper. We do
+				 not want to have a margin towards the end of the page.
+				*/
 }
 #modacBottombar {
 	background-image:url("ModacSkinLogos/border.png");
@@ -576,6 +581,10 @@ html>body #modacLogoIE {
 }
 #modacButtonsRIGHT {
 	float: right;
+}
+#modacButtonsRIGHT.noActionButtons {
+	margin-bottom: 3px;
+	background-image: none;
 }
 .modacTabs {
 	margin: 0;

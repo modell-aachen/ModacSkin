@@ -1973,3 +1973,18 @@ msgstr "Inhalt schützen"
 
 msgid "all"
 msgstr "alle"
+
+msgid "Incorrect %1"
+msgstr "Ungültiger %1"
+
+msgid "The [[%1][WikiName]] you chose (%2) is invalid."
+msgstr "Der [[%1][WikiName]], den Sie gewählt haben, ist leider ungültig."
+
+msgid "Suggested [[%1][WikiName]]: %2"
+msgstr "Vorschlag für einen [[%1][WikiNamen]]: %2"
+
+msgid "That [[%1][WikiName]] is already in use."
+msgstr "Dieser [[%1][WikiName]] ist bereits in Benutzung."
+
+msgid "Custom Apps"
+msgstr "Individuelle Applikationen"

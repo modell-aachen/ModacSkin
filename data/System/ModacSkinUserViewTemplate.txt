@@ -1,6 +1,7 @@
 %META:TOPICINFO{author="JanKrueger" comment="reprev" date="1363102083" format="1.1" reprev="6" version="8"}%
 %TMPL:INCLUDE{"view"}%
 %TMPL:INCLUDE{"SystemTabs"}%
+%TMPL:INCLUDE{"WorkflowAppTemplateForPersPage"}%
 
 %TMPL:DEF{"modacSystemTab"}%<div class="modacActionButtonACTIVE"><a href='%SCRIPTURLPATH{"view"}%/%WEB%/%TOPIC%' rel='nofollow' %MAKETEXT{"title='My Page' >My Page"}%</a></div>%TMPL:END%
 
@@ -64,7 +65,7 @@
 <tr><td class="splitleft"><div class="splittitle">%ICON{viewtopic}% %MAKETEXT{"Topics"}%</div>
 <ul class="modacBookmarks">
 %SOLRSEARCH{"type:topic webtopic:(%FAVORITELIST{format="\\"$swebtopic\\"" separator=" OR " default="NOT *"}%)"
-  rows="5" sort="date desc"
+  rows="%MYPAGE_LAST_CHANGED_FAVORITES_MAX_ITEMS%" sort="date desc"
   format="<li data-fav-item=\"$webtopic\"><div class=\"date\">$date%BR%$percentRENDERUSER{\"$author\" convert=\"on\"}$percent</div><a href=\"%SCRIPTURL{view}%/$web/$topic\" title=\"$web.$topic\"><strong>$percntIF{\"'$percentENCODE{\"$title\" type=\"safe\"}$percent'='WebHome'\" then=\"$dollarpercentFORMATLIST{\\"$dollarmap($web)\\" map=\\"%MODAC_WEBMAPPINGS{default=""}%\\"}$dollarpercent\" else=\"$percentENCODE{\"$title\" type=\"safe\"}$percent\"}$percnt</strong></a>$percntIF{\"istopic '$webtopic$percntWORKFLOWSUFFIX$percnt'\" then=\"&nbsp;&nbsp;|&nbsp;&nbsp;<a href='$percntSCRIPTURL{view}$percnt/$web/$topic$percntWORKFLOWSUFFIX$percnt'><span class=\\"bmsubinfo\\">$dollarpercntICON{comments}$dollarpercnt&nbsp;$percntMAKETEXT{\"Discussion available\"}$percnt</span></a>\"}$percnt%BR%<span class=\"bmsubinfo\">[[$web.WebHome][$percentFORMATLIST{\"$dollarmap($web)\" map=\"%MODAC_WEBMAPPINGS{default=""}%\"}$percent]]</span></li>"
   fields="date,web,topic,webtopic,title,author,workflow_hasdiscussion_b"
 }%
@@ -72,7 +73,7 @@
 </td><td class="splitright"><div class="splittitle">%ICON{attachfile}% %MAKETEXT{"Attachments"}%</div>
 <ul class="modacBookmarks">
 %SOLRSEARCH{"-type:(topic OR comment OR action) (%FAVORITELIST{type="files" format="(webtopic:\\"$swebtopic\\" name:\"$file\")" separator=" OR " default="NOT *"}%)"
-  rows="5" sort="date desc"
+  rows="%MYPAGE_LAST_CHANGED_FAVORITES_MAX_ITEMS%" sort="date desc"
   format="<li data-fav-item=\"$webtopic-$name\"><div class=\"date\">$date%BR%$percentRENDERUSER{\"$author\" convert=\"on\"}$percent</div>[[%PUBURLPATH%/$web/$topic/$name][<strong>$name</strong>]]%BR%<span class=\"bmsubinfo\">[[$web.WebHome][$percentFORMATLIST{\"$dollarmap($web)\" map=\"%MODAC_WEBMAPPINGS{default=""}%\"}$percent]] $percntIF{\"'$topic'!='WebHome'\" then=\" &raquo; <a href=\\"%SCRIPTURL{view}%/$web/$topic\\" title=\\"$web.$topic\\">$container_title</a>\"}$percnt</span></li>"
   fields="web,topic,container_title,author,date,name,title,author"
 }%
@@ -81,6 +82,10 @@
 %ENDTAB%
 %ENDTABPANE%
 </div>
+%TMPL:END%
+
+%TMPL:DEF{"prespage:tasks:exclude_testing_webs"}%
+, \"Context\": {\"type\": \"not like\", \"substring\": \"%MODAC_TEMPWEB%%\"}
 %TMPL:END%
 
 %TMPL:DEF{"perspage:tasks"}%
@@ -97,7 +102,7 @@
   parent="any"
   allowcreate="0"
   pagesize="10"
-  query="{\"Status\": \"open\", \"AssignedTo\": \"%RENDERUSER{format="$cUID"}%\"}"
+  query="{\"Status\": \"open\", \"AssignedTo\": \"%RENDERUSER{format="$cUID"}%\" %TMPL:P{"prespage:tasks:exclude_testing_webs"}%}"
 }%%{
 }%%ENDTAB%
 %TAB{"%MAKETEXT{"My closed tasks"}%" id="tasks_closed"}%%{
@@ -111,7 +116,7 @@
   parent="any"
   allowcreate="0"
   pagesize="10"
-  query="{\"Status\": \"closed\", \"AssignedTo\": \"%RENDERUSER{format="$cUID"}%\"}"
+  query="{\"Status\": \"closed\", \"AssignedTo\": \"%RENDERUSER{format="$cUID"}%\" %TMPL:P{"prespage:tasks:exclude_testing_webs"}%}"
 }%%{
 }%%ENDTAB%
 %TAB{"%MAKETEXT{"My watched tasks"}%" id="tasks_inform"}%%{
@@ -125,7 +130,7 @@
   parent="any"
   allowcreate="0"
   pagesize="10"
-  query="{\"Informees\": \"%RENDERUSER{format="$cUID"}%\"}"
+  query="{\"Status\": \"open\", \"Informees\": \"%RENDERUSER{format="$cUID"}%\" %TMPL:P{"prespage:tasks:exclude_testing_webs"}%}"
 }%
 %ENDTAB%
 %TAB{"%MAKETEXT{"Created by me"}%" id="tasks_own"}%%{
@@ -139,8 +144,7 @@
   parent="any"
   allowcreate="0"
   pagesize="10"
-  query="{\"Author\": \"%RENDERUSER{format="$cUID"}%\",\"Status\":[\"open\",\"closed\"]}"
-}%%{
+  query="{\"Author\": \"%RENDERUSER{format="$cUID"}%\",\"Status\":[\"open\",\"closed\"] %TMPL:P{"prespage:tasks:exclude_testing_webs"}% }"}%%{
 }%%ENDTAB%
 %ENDTABPANE%
 </div>
@@ -174,8 +178,8 @@
  <tbody>
  %SOLRSEARCH{"type:topic process_state_s:(CONTENT_REVIEW OR CONTENT_REVIEW_DRAFT) %IF{"%OriginalOwnerApproves{default="0"}%" then="{!join to=workflow_origin_s from=webtopic whitelisted=ModacSkin v='field_Responsible_s:%RENDERUSER{format="$cUID"}% host:$host'}" else="field_Responsible_s:%RENDERUSER{format="$cUID"}%"}%"
   rows="999"
-  format="<tr><td> [[$web.$topic][$title]] </td><td> $percntIF{\"'$process_state_s'=~'DRAFT'\" then=\"%MAKETEXT{"draft"}%\" else=\"%MAKETEXT{"discussion"}%\"}$percnt </td><td> $percntIF{\"'$process_state_s'=~'DRAFT'\" then=\"$percentCALC{\"$TIMEDIFF($TIME($SUBSTRING($workflowmeta_lasttime_draft_s,7,4)/$SUBSTRING($workflowmeta_lasttime_draft_s,4,2)/$SUBSTRING($workflowmeta_lasttime_draft_s,1,2)), $TODAY(), day)\"}$percent %MAKETEXT{"Day(s)"}%\" else=\"$percentCALC{\"$TIMEDIFF($TIME($SUBSTRING($workflowmeta_lasttime_discussion_s,7,4)/$SUBSTRING($workflowmeta_lasttime_discussion_s,4,2)/$SUBSTRING($workflowmeta_lasttime_discussion_s,1,2)), $TODAY(), day)\"}$percent %MAKETEXT{"Day(s)"}%\"}$percnt </td></tr>"
-  fields="web,topic,title,process_state_s,workflowmeta_lasttime_draft_s,workflowmeta_lasttime_discussion_s"
+  format="<tr><td> [[$web.$topic][$title]] </td><td> $percntIF{\"'$process_state_s'=~'DRAFT'\" then=\"%MAKETEXT{"draft"}%\" else=\"%MAKETEXT{"discussion"}%\"}$percnt </td><td> $percentCALC{\"$TIMEDIFF(\$TIME($workflowmeta_lasttime_currentstate_dt), $TODAY(), day)\"}$percent %MAKETEXT{"Day(s)"}% </td></tr>"
+  fields="web,topic,title,process_state_s,workflowmeta_lasttime_currentstate_dt"
   sort="date asc"
 }%
   </tbody>
@@ -192,9 +196,9 @@
 </thead>
 <tbody>
  %SOLRSEARCH{"type:topic web:%TMPL:P{"perspage:myQmWebs"}% process_state_s:(FORMAL_REVIEW OR FORMAL_REVIEW_DRAFT)"
-  fields="web,topic,title,process_state_s,workflowmeta_lasttime_draft_s,workflowmeta_lasttime_discussion_s"
+  format="<tr><td> [[$web.$topic]] </td><td> $percntIF{\"'$process_state_s'=~'DRAFT'\" then=\"%MAKETEXT{"draft"}%\" else=\"%MAKETEXT{"discussion"}%\"}$percnt </td><td> $percentCALC{\"$TIMEDIFF(\$TIME($workflowmeta_lasttime_currentstate_dt), $TODAY(), day)\"}$percent %MAKETEXT{"Day(s)"}% </td></tr>"
+  fields="web,topic,title,process_state_s,workflowmeta_lasttime_currentstate_dt"
   rows="999"
-  format="<tr><td> [[$web.$topic]] </td><td> $percntIF{\"'$process_state_s'=~'DRAFT'\" then=\"%MAKETEXT{"draft"}%\" else=\"%MAKETEXT{"discussion"}%\"}$percnt </td><td> $percntIF{\"'$process_state_s'=~'DRAFT'\" then=\"$percentCALC{\"$TIMEDIFF($TIME($SUBSTRING($workflowmeta_lasttime_draft_s,7,4)/$SUBSTRING($workflowmeta_lasttime_draft_s,4,2)/$SUBSTRING($workflowmeta_lasttime_draft_s,1,2)), $TODAY(), day)\"}$percent %MAKETEXT{"Day(s)"}%\" else=\"$percentCALC{\"$TIMEDIFF($TIME($SUBSTRING($workflowmeta_lasttime_discussion_s,7,4)/$SUBSTRING($workflowmeta_lasttime_discussion_s,4,2)/$SUBSTRING($workflowmeta_lasttime_discussion_s,1,2)), $TODAY(), day)\"}$percent %MAKETEXT{"Day(s)"}%\"}$percnt </td></tr>"
   sort="date asc"
   }%
 
@@ -230,6 +234,7 @@ $percentTMPL:P{perspage:ciptask}$percnt
 $percentIF{\"$USERNAME ingroup '%QMGROUP%' $percntFORMATLIST{\"%WEBMATCHPREF{"MULTISITE_LOCALQM"}%\" header=\" OR \" format=\"$USERNAME ingroup '$dollarpercntWEBPREF{\\"MULTISITE_LOCALQM\\" web=\\"$1\\"}$dollarpercnt'\" separator=\" OR \"}$percnt\" then=\"$dollarpercentTMPL:P{perspage:qmciptask}$dollarpercent\"}$percent
 $percentTMPL:P{perspage:approvals}$percent
 $percentTMPL:P{perspage:comments}$percent
+$percentTMPL:P{perspage:workflowApps}$percent
 <div>"
  else="$percentTMPL:P{perspage:other}$percent
 <div style='display: none'>"
