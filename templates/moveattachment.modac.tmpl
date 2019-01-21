@@ -6,10 +6,6 @@
 
 %TMPL:DEF{"newweb"}%<p><select class="foswikiSelect" name="newweb" onchange="if (document.rename.newweb.value == 'Trash') { document.rename.newtopic.value = 'TrashAttachment'; }">%FORMATLIST{"%WEBLIST{"$name$marker" separator=";" webs="public,%WEB%"}%" pattern="(\S*)( selected='selected')?" format="$percentIF{\"'$1' allows 'CHANGE'\" then=\"<option value='$1'$marker>$map($1)</option>\"}$percent" marker="selected='selected' " selection="^%WEB%$" separator=" " split=";" unique="on" map="%MODAC_WEBMAPPINGS{default=""}%" include="%WEB%|(?!%URLPARAM{"MODAC_HIDEWEBS" default="%MODAC_HIDEWEBS{default="dummy"}%"}%$).*"}%</select><input type="hidden" name="attachment" value="%FILENAME%" /></p>%IF{"context 'isadmin' or $USERNAME ingroup '%MODAC_SHOWALLWEBSGROUP%'" then="$percentTMPL:P{hidewebsOption}$percent"}%%TMPL:END%
 
-%TMPL:DEF{"searchresultsstep"}%%RENAME_ATTACHMENT_LINKS{attachment="%FILENAME%"}%%TMPL:END%
-
-%TMPL:DEF{"updatenote"}%%IF{"'%SEARCH_COUNT%'=0" then='%MAKETEXT{"No topics to update."}%' else='%MAKETEXT{"Checked topics will be updated to point to the new topic location."}%'}%%TMPL:END%
-
 %{<verbatim class="tml">}%
 %TMPL:DEF{"hidewebsOption"}%<div>%IF{"$'URLPARAM{MODAC_HIDEWEBS}'=''" then="
 <a href='%SCRIPTURL{"%SCRIPTNAME%"}%/%WEB%/%TOPIC%?$percentQUERYPARAMS{format=\"$name=$value\" separator=\";\"}$percent;MODAC_HIDEWEBS=none'>%MAKETEXT{"List all webs I may write to"}%</a>
