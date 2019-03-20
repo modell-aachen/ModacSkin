@@ -9,7 +9,7 @@
     then="   * [[%USERSWEB%.Resubmission][%MAKETEXT{"Actuality check"}%]]
 "
 }%%IF{
-    "%WORKFLOWAPPENABLED%"
+    "$WORKFLOWAPPENABLED"
     then="   * [[%SYSTEMWEB%.WorkflowAppOverview][%MAKETEXT{"Custom Apps"}%]]
 "
 }%
