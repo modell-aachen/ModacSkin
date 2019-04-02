@@ -18,7 +18,7 @@
 }%%ADDTOZONE{"script" id="jsi18n::tasksapi" requires="%JSI18NID%" text="<script type='text/javascript' src='%PUBURLPATH%/%SYSTEMWEB%/TasksAPIPlugin/js/i18n/jsi18n.%IF{"$LANGUAGE=~'de'" then="%LANGUAGE%" else="en"}%.min.js'></script>"}%%{
 }%%ADDTOZONE{"script" id="solr:dateformat" text="<script>solrDateformat='%TMPL:P{"solr::dateformat"}%';</script>"}%%{
 }%%ADDTOZONE{"script" requires="JQUERYPLUGIN" id="ModacSolrHelper" text="<script type='text/javascript' src='%PUBURLPATH%/%SYSTEMWEB%/ModacSkin/solrsearch.js'></script>"}%%{
-}%%JQREQUIRE{"livequery,focus, serialpager, scrollto, prettyphoto, jqtwisty, moment, blockui, imagetooltip"}%%{
+}%%JQREQUIRE{"livequery,focus, serialpager, scrollto, prettyphoto, jqtwisty, blockui, imagetooltip"}%%{
 }%%TMPL:END%
 %{</verbatim>}%
 

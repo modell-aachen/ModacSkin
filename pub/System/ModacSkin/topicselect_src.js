@@ -29,29 +29,32 @@ jQuery(function($) {
 		var s2args = {
 			ajax: {
 				dataType: 'json',
-				url: foswiki.getPreference('SCRIPTURLPATH') +'/view'+ foswiki.getPreference('SCRIPTSUFFIX') +'/System/ModacAjaxHelper',
-				data: function(params) {
+				url: foswiki.getScriptUrl('rest', 'ModacHelpersPlugin', 'topics'),
+				data: function(params, page) {
 					var offset = 0;
 					if (params.page > 1) offset = (params.page - 1);
 					return {
-						contenttype: 'text/plain',
-						section: (opts.except ? 'topics_exceptwebs' : 'topicsinweb'),
-						skin: 'text',
-						web: opts.web,
-						query: (params.term||'').toLowerCase(),
-						'offset': offset,
-						count: opts.pagesize,
-						clearable: opts.clearable || 0
+						no_discussions: 1,
+						current_web: opts.web,
+						term: (params.term||'').toLowerCase(),
+						page: offset,
+						limit: opts.pagesize,
+						clearable: opts.clearable || 0,
+						option_for_notopicparent: true,
 					};
 				},
-				results: function(data, page) {
-					if (!opts.include_web) $.each(data, function(_idx, val) {
+				processResults: function(data, pageOpts) {
+					var page = pageOpts.page || 1;
+					if (!opts.include_web) $.each(data.results, function(_idx, val) {
 						val.id = val.id.replace(new RegExp('^'+ foswiki.getPreference('WEB') +'\\.'), '');
 						val.sublabel = val.id;
+					        val.label = val.text;
 					});
 					return {
-						results: data,
-						more: (data.length >= opts.pagesize)
+						results: data.results,
+						pagination: {
+							more: (data.count >= opts.pagesize * page)
+						}
 					};
 				}
 			},

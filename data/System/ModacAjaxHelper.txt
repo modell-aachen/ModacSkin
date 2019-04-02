@@ -2,14 +2,6 @@
 
 ---+++ Topic selector
 
-The below section is used within WebCreateNewTopic to render the select box for the topic's parent, and possibly other topic selection fields.
-
-<verbatim>
-%STARTSECTION{"topicsinweb"}%
-{"results":[%IF{"$offset = 0 and $clearable=1" then="{\"id\":\"%HOMETOPIC%\",\"label\":\"%MAKETEXT{"No topic parent"}%\",\"text\":\"%MAKETEXT{"No topic parent"}%\",\"sublabel\":\"%HOMETOPIC%\"}"}%%SOLRSEARCH{"type:topic web:%SUBST{text="%URLPARAM{"web"}%" pattern="/" format="."}% -topic:*%WORKFLOWSUFFIX% -topic:*Template -topic:*Form (topic_search:*%SUBST{text="%URLPARAM{query}%" pattern="\s+" format=""}%* OR %FORMATLIST{"%URLPARAM{query}%" split="\s+" separator=" " null="*" format="title_search:*$1*"}%)" format="{\"label\":\"$percentENCODE{\"$title\" type=\"quote\"}$percent\",\"sublabel\":\"$web.$topic\",\"id\":\"$web.$topic\"}" separator="," rows="%URLPARAM{"count" default="20"}%" start="%URLPARAM{"offset" default="0"}%" sort="topic" header="%IF{"$offset = 0 and $clearable=1" then=","}%"}%]}
-%ENDSECTION{"topicsinweb"}%
-</verbatim>
-
 <verbatim>
 %STARTSECTION{"topicsinweb_select2"}%<literal>{"results":[%SOLRSEARCH{
    "type:topic web:%SUBST{text="%URLPARAM{"web" default="*"}%" pattern="/" format="."}% %IF{"not $include_discussions='1'" then="-topic:*%WORKFLOWSUFFIX%"}% %IF{"not $include_templates='1'" then="-topic:*Template"}% %IF{"not $include_forms='1'" then="-topic:*Form"}% (topic_search:*%SUBST{text="%URLPARAM{q}%" pattern="\s+" format=""}%* OR %FORMATLIST{"%URLPARAM{q}%" split="\s+" separator=" " null="*:*" format="title_search:*$1*"}%)"
