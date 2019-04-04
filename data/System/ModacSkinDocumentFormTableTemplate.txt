@@ -3,9 +3,9 @@ The span.title string will be picked up by the "You have not filled out the mand
 Note: RENDERFOREDIT has a different way to display $value then RENDERFORDISPLAY, therefore the call to the other macro for denied fields.
 }%
 %TMPL:DEF{"modacformtable"}%
-%SET{"modacformtable_form" value="%TMPL:P{"modacformtable_form"}%"}%%RENDERFOREDIT{
-%FORMATLIST{"%WORKFLOWDENIEDFIELDS%" format="$1_format=\"<tr class='modacForm'><td><span class='title'>$title</span>$mandatory</td><td>$dollarpercentRENDERFORDISPLAY{fields=\\"$dollarname\\" format=\\"$dollardollarvalue\\" form=\\"%modacformtable_form%\\"}$dollarpercent</td></tr>\"" sperator=" " lastseparator=" " }%
-form="%modacformtable_form%"
+%RENDERFOREDIT{
+%FORMATLIST{"%WORKFLOWDENIEDFIELDS%" format="$1_format=\"<tr class='modacForm'><td><span class='title'>$title</span>$mandatory</td><td>$dollarpercentRENDERFORDISPLAY{fields=\\"$dollarname\\" format=\\"$dollardollarvalue\\" form=\\"%FORMWEBTOPIC%\\"}$dollarpercent</td></tr>\"" sperator=" " lastseparator=" " }%
+form="%FORMWEBTOPIC%"
 format="<tr class='modacForm'><td><span class='title'>$title</span>$mandatory</td><td>$edit</td></tr>"
 map="%TMPL:P{"modacformtable_mappings"}%"
 mandatory="&nbsp;<span class='foswikiAlert'>*</span>"
@@ -14,8 +14,6 @@ topic="%IF{"istopic '%WEB%.%TOPIC%'" then="%WEB%.%TOPIC%" else="%URLPARAM{"templ
 %TMPL:P{"modacformtable:extraparams"}%
 }%
 %TMPL:END%
-
-%TMPL:DEF{"modacformtable_form"}%%URLPARAM{"formtemplate" default="%QUERY{"'%URLPARAM{"templatetopic" default="%BASETOPIC%"}%'/form.name" %IF{"defined rev" then=" rev=\"$percentURLPARAM{\"rev\" default=\"%rev%\"}$percent\""}%}%"}%%TMPL:END%
 
 %{ PROTECT macro: see formtables.modac.tmpl }%
 %TMPL:DEF{"modacformtable_mappings"}%DocumentType=%MAKETEXT{"Document type"}%,TopicTitle=%MAKETEXT{"Topic title"}%,Responsible=%MAKETEXT{"Responsible"}%,AreaOfApplication=%MAKETEXT{"Area of application"}%,DocumentNumber=%MAKETEXT{"Document number"}%,Number=%MAKETEXT{"Document number"}%%SOLRSEARCH{"form:(StandardForm OR %STANDARDSWEB{default="Standards"}%.StandardForm) ((web:%SYSTEMWEB%.Standards -{!join from=topic to=topic whitelisted=StandardsAppContrib v='web:%STANDARDSWEB% host:$host'}) OR web:%STANDARDSWEB%)" header="," separator="," fields="topic,title" format="$topic=$percentMAKETEXT{\"$percentENCODE{\"$%PROTECT{default=""}%title\" type=\"entity\"}$percent\"}$percent" rows="999"}%%TMPL:END%
