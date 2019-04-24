@@ -7,7 +7,7 @@
   %IF{"$USERNAME ingroup 'KeyUserGroup' OR $USERNAME ingroup 'AdminGroup' OR $USERNAME = 'admin'" then="
     <tr>
       <td>$percntMAKETEXT{\"Form definition\"}$percnt</td>
-      <td>$percntFORMTITLE$percnt <div class=\"$percntIF{\"not $USERNAME ingroup 'AdminGroup'\" then=\"modacHide\"}$percnt\">$percntTMPL:P{\"changeform\"}$percnt</div></td>
+      <td data-test=\"form-definition\">$percntFORMTITLE$percnt <div class=\"$percntIF{\"not $USERNAME ingroup 'AdminGroup'\" then=\"modacHide\"}$percnt\">$percntTMPL:P{\"changeform\"}$percnt</div></td>
     </tr>
   "}%
 %TMPL:END%
