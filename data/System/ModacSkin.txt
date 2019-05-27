@@ -408,6 +408,22 @@ If you have an element that should be hidden for non-admins, apply the =adminOnl
 
 If you have an element that should only be visible to KeyUsers, add the =keyUsersOnly= css class.
 
+---++ Landing page (Main.WebHome) redirection
+
+It is possible to configure where landing page [[Main.WebHome][Main.WebHome]] should redirect based on group memberships.
+
+The default target (no groups configured or no membership match) can be set (on [[Main.SitePreferences]]) with
+<pre>
+   &#42; Set WEBHOME_DEFAULT_REDIRECTION = Processes.WebHome
+</pre>
+%I% Note: If there is a 'Portal' web, users will be redirected there regardless of this setting.
+
+Special groups can be set using this schema:
+<pre>
+   &#42; Set WEBHOME_GROUP_REDIRECTION = germany=OUGermany.WebHome,usa=OUInternational.WebHome-EN,china=OUInternational-CN
+</pre>
+The first matching group has priority, so if you are in the groups =usa= and =china=, you will be redirected to =OUInternational.WebHome-EN=, because usa is the leftmost match.
+
 ---++ Installation Instructions
 
 To enable ModacSkin you have set the following variables either in =WebPreferences= (to enable ModacSkin within a single web) or
