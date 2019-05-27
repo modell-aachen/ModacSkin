@@ -427,7 +427,7 @@ The first matching group has priority, so if you are in the groups =usa= and =ch
 ---++ Installation Instructions
 
 To enable ModacSkin you have set the following variables either in =WebPreferences= (to enable ModacSkin within a single web) or
-in =SitePreferences= to enable the skin for the whole wiki.  
+in =SitePreferences= to enable the skin for the whole wiki.
 
 <pre>
    &#42; Set SKIN = modac
@@ -441,23 +441,14 @@ in =SitePreferences= to enable the skin for the whole wiki.
 
 If you want to make custom modifications you can set FOSWIKI_PROJECT_URL to your css, otherwise set it to nothing.
 
----+++ Dependencies
-
-| FlexWebListPlugin |
-| FilterPlugin |
-| Many more... TODO |
-
 ---++ Known Issues
 
 | TOC_TITLE (defines the title in a page-toc) cannot be translated using the MAKETEXT-macro: FOSWiki doesn't render the macro and return &#37;MAKETEXT{"xy"}&#37; as an value. |
 
 ---++ Info
 
-Many thanks to the following sponsors for supporting this work:
-   * Acknowledge any sponsors here
-
-|  Author(s): | |
-|  Copyright: | &copy; |
+|  Author(s): | Modell Aachen GmbH |
+|  Copyright: | 2019, Modell Aachen GmbH, All Rights Reserved |
 |  License: | [[http://www.gnu.org/licenses/gpl.html][GPL (Gnu General Public License)]] |
 |  Release: | %$RELEASE% |
 |  Version: | %$VERSION% |
