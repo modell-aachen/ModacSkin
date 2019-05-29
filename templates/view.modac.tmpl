@@ -25,7 +25,7 @@
 ---------------------------------------------------
 }%
 
-%TMPL:DEF{"top_simple"}%<div class="patternTop"><div id="modacHeading">%ENCODE{"%TOPICTITLE%" type="save"}%</div>
+%TMPL:DEF{"top_simple"}%<div class="patternTop"><div id="modacHeading">%TOPICTITLE%</div>
 <span class="patternHomePath">%TMPL:P{"breadcrumb"}%</span><br></div><!--/patternTop-->%TMPL:END%
 
 %TMPL:DEF{"top"}%%IF{"(defined NO_MODAC_HEAD and '%NO_MODAC_HEAD%' != '') or (defined NO_MODAC_HEADLIST and '%NO_MODAC_HEADLIST%' =~ '(?:\s|^|,)%TOPIC%(?:\s|$|,)') or (defined MODAC_TOPHEAD_FORM and not form.name =~ $MODAC_TOPHEAD_FORM)" then="$percntTMPL:P{top_simple}$percnt" else="$percntTMPL:P{top_head}$percnt"}%%TMPL:END%
