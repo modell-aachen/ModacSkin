@@ -1,7 +1,7 @@
 %FLEXWEBLIST{
-   exclude="(?:%URLPARAM{"MODAC_HIDEWEBS" default="%MODAC_HIDEWEBS%"}%).*"
+   exclude="(?:%URLPARAM{"MODAC_HIDEWEBS" default="%MODAC_HIDEWEBS{encode="none"}%"}%).*"
    format="$indent   * [[$web.%HOMETOPIC%][<img src=\"%ICONURL{web-bg}%\" alt=\"\" class=\"modacWebIndicator\" style=\"background-color:#FFFFFF;\"/>$name]]$n"
    markerformat="$indent   * [[$web.%HOMETOPIC%][<img src=\"%ICONURL{web-bg}%\" alt=\"\" class=\"modacWebIndicator\" style=\"background-color:#0066CC;\"/>$name]]$n"
    selection="%BASEWEB%"
-   map="%MODAC_WEBMAPPINGS%"
+   map="%MODAC_WEBMAPPINGS{encode="none"}%"
 }%

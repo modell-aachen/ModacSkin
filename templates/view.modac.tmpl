@@ -57,7 +57,7 @@
 %TMPL:DEF{"simpleheader"}%%TMPL:P{"flashnote"}%%TMPL:P{"standardheader"}%%TMPL:END%%{
 ---------------------------------------------------
 }%%TMPL:DEF{"broadcastmessage"}%%IF{"defined BROADCASTMESSAGE and $BROADCASTMESSAGE != ''" then="$percntTMPL:P{$quotbroadcastmessage:contents$quot}$percnt"}%%TMPL:END%
-%TMPL:DEF{"broadcastmessage:contents"}%<div class="foswikiBroadcastMessage"> %BROADCASTMESSAGE% </div>%TMPL:END%
+%TMPL:DEF{"broadcastmessage:contents"}%<div class="foswikiBroadcastMessage"> %BROADCASTMESSAGE{encode="usercontext"}% </div>%TMPL:END%
 
 %TMPL:DEF{"flashnote"}%%IF{"defined FLASHNOTE and $FLASHNOTE != ''" then="$percntTMPL:P{$quotflashnote:contents$quot}$percnt"}%%TMPL:END%
 %TMPL:DEF{"flashnote:contents"}%<div class="foswikiNotification"> %FLASHNOTE% </div>%TMPL:END%%{
@@ -113,10 +113,10 @@
 
 %TMPL:DEF{"similartopicmacro"}%
 %SOLRSIMILAR{"type:topic topic:%TOPIC% web:%WEB% form:%URLPARAM{"FORM" default="*"}% "
-    filter="type:topic form:%URLPARAM{"FORM" default="*"}% %SIMILAR_TOPICS_FILTER{default=""}%"
-    like="%SIMILAR_TOPICS_LIKE%"
-    boost="%SIMILAR_TOPICS_BOOST%"
-    fields="%SIMILAR_TOPICS_FIELDS%"
+    filter="type:topic form:%URLPARAM{"FORM" default="*"}% %URLPARAM{"FILTER" default="%SIMILAR_TOPICS_FILTER%"}%"
+    like="%URLPARAM{"LIKE" default="%SIMILAR_TOPICS_LIKE%"}%"
+    boost="%URLPARAM{"BOOST" default="%SIMILAR_TOPICS_BOOST%"}%"
+    fields="%URLPARAM{"FIELDS" default="%SIMILAR_TOPICS_FIELDS%"}%"
     mintermfrequency="%SIMILAR_TOPICS_MIN_TERM_FREQUENCY%"
     mindocumentfrequency="%SIMILAR_TOPICS_MIN_DOCUMENT_FREQUENCY%"
     header="<table class=\"tablesorter\"><thead><tr><th> $percntMAKETEXT{\"Topic\"}$percent </th><th> $percntMAKETEXT{\"Responsible\"}$percent </th><th> $percntMAKETEXT{\"Document type\"}$percent </th><th> $percntMAKETEXT{\"Date\"}$percent </th></thead><tbody>"
@@ -139,11 +139,11 @@
   showimgleft="%PUBURLPATH%/%SYSTEMWEB%/DocumentGraphics/toggleopen.png"
   hideimgleft="%PUBURLPATH%/%SYSTEMWEB%/DocumentGraphics/toggleclose.png"
 }%
-<div id="modacSidebarTwisty_similar" class="modacAjaxContent" data-url="%SCRIPTURL{rest}%/RenderPlugin/template?name=view;expand=similartopicmacro;topic=%WEB%.%TOPIC%;render=on;FORM=%SIMILAR_TOPICS_FORM%">%JQREQUIRE{"jqp::spin"}%</div>
+<div id="modacSidebarTwisty_similar" class="modacAjaxContent" data-url="%SCRIPTURL{rest}%/RenderPlugin/template?name=view&expand=similartopicmacro&topic=%WEB%.%TOPIC%&render=on&FORM=%ENCODE{"%SIMILAR_TOPICS_FORM%"}%&FILTER=%ENCODE{"%SIMILAR_TOPICS_FILTER%"}%&LIKE=%ENCODE{"%SIMILAR_TOPICS_LIKE%"}%&BOOST=%ENCODE{"%SIMILAR_TOPICS_BOOST%"}%&FIELDS=%ENCODE{"%SIMILAR_TOPICS_FIELDS%"}%">%JQREQUIRE{"jqp::spin"}%</div>
 %ENDTWISTY%
 </div></div></div>
 %TMPL:END%
 
 %TMPL:DEF{"formfieldSublabel"}%%{
-}%%IF{"defined %FORM%_%NAME%_SUBLABEL" then="<div class='ma-field-sublabel'>$percnt%FORM%_%NAME%_SUBLABEL$percnt</div>" else=""}%%{
+}%%IF{"defined %FORM%_%NAME%_SUBLABEL" then="<div class='ma-field-sublabel'>$percntMAKETEXT{\"$percnt%FORM%_%NAME%_SUBLABEL$percnt\"}$percnt</div>" else=""}%%{
 }%%TMPL:END%

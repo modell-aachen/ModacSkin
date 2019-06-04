@@ -4,10 +4,10 @@
 
 
 %TMPL:DEF{"styles:screen"}%<style type="text/css" media="all">
-%IF{ "defined FOSWIKI_LAYOUT_URL" then="@import url('%FOSWIKI_LAYOUT_URL%?version=%QUERYVERSION{"ModacSkin" default=""}%');"}%
-%IF{ "defined FOSWIKI_STYLE_URL"  then="@import url('%FOSWIKI_STYLE_URL%?version=%QUERYVERSION{"ModacSkin" default=""}%');"}%
-%IF{ "defined FOSWIKI_COLORS_URL" then="@import url('%FOSWIKI_COLORS_URL%?version=%QUERYVERSION{"ModacSkin" default=""}%');"}%
-%IF{ "defined FOSWIKI_PROJECT_URL and $FOSWIKI_PROJECT_URL" then="@import url('%FOSWIKI_PROJECT_URL%?version=%QUERYVERSION{"ModacSkin" default=""}%');"}%
+%IF{ "defined FOSWIKI_LAYOUT_URL" then="@import url('%FOSWIKI_LAYOUT_URL{encode="none"}%?version=%QUERYVERSION{"ModacSkin" default=""}%');"}%
+%IF{ "defined FOSWIKI_STYLE_URL"  then="@import url('%FOSWIKI_STYLE_URL{encode="none"}%?version=%QUERYVERSION{"ModacSkin" default=""}%');"}%
+%IF{ "defined FOSWIKI_COLORS_URL" then="@import url('%FOSWIKI_COLORS_URL{encode="none"}%?version=%QUERYVERSION{"ModacSkin" default=""}%');"}%
+%IF{ "defined FOSWIKI_PROJECT_URL and $FOSWIKI_PROJECT_URL" then="@import url('%FOSWIKI_PROJECT_URL{encode="none"}%?version=%QUERYVERSION{"ModacSkin" default=""}%');"}%
 </style>
 %IF{ "$ USERLAYOUTURL or $ USERSTYLEURL or $ USERCOLORSURL" then="$percntTMPL:P{$quotstyles:user_defined$quot}$percnt"}%%TMPL:P{"styles:dynamic"}%%TMPL:END%
 
@@ -21,7 +21,7 @@
 	.patternBookView .foswikiTopRow,
 	.patternWebIndicator a img,
 	.patternWebIndicator a:hover img {
-		background-color:%WEBBGCOLOR%;
+		background-color:%WEBBGCOLOR{encode="none"}%;
 	}
 	.requireModacChangePermission {
 		%IF{ "(context modacRevokeChangePermission) OR (not '%BASEWEB%/%BASETOPIC%' allows 'CHANGE') OR %GETVIRTUALWEB{default="0" formatYes="1" formatNo="0"}%" then="display: none !important;"}%
@@ -52,10 +52,10 @@
 %TMPL:END%
 
 
-%TMPL:DEF{"styles:deprecated"}%%IF{ "defined WEBHEADERART and $ WEBHEADERART != ''" then='#patternTopBarContents { background-image:url(%WEBHEADERART%); background-repeat:repeat-x;}'}%
-%IF{ '$ WEBHEADERBGCOLOR' then='#patternTopBarContents { background-color:%WEBHEADERBGCOLOR%;}'}%
+%TMPL:DEF{"styles:deprecated"}%%IF{ "defined WEBHEADERART and $ WEBHEADERART != ''" then='#patternTopBarContents { background-image:url(%WEBHEADERART{encode="none"}%); background-repeat:repeat-x;}'}%
+%IF{ '$ WEBHEADERBGCOLOR' then='#patternTopBarContents { background-color:%WEBHEADERBGCOLOR{encode="none"}%;}'}%
 .patternBookView {
-	border-color:%WEBBGCOLOR%;
+	border-color:%WEBBGCOLOR{encode="none"}%;
 }
 .patternPreviewPage #patternMain {
 	/* uncomment to set the preview image */

@@ -188,7 +188,7 @@ Explainations:
 | =MODAC_TOPHEAD_FORM= | Only show header for topics that have a form attached matching this regexp. | Does not require =NO_MODAC_HEADLIST=, but can be combined with it. Set it in =WebPreferences= or =SitePreferences=. |
 
 ---+++ Solr
-%RED%TODO%ENDCOLOR% modacExtraFormat
+%RED{encode="none"}%TODO%ENDCOLOR{encode="none"}% modacExtraFormat
 
 ---++++ Adding facets
 %X% This explaination does not cover the basic principles of facets. You should know how to add facets _the usual way_ before using this guide. %X%
