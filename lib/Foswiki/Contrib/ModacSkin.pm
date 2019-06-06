@@ -23,7 +23,7 @@ our $SITEPREFS = {
   SHOW_EDIT_PROFILE => "0",
   MYPAGE_LAST_CHANGED_FAVORITES_MAX_ITEMS => "999",
   MODAC_HIDEWEBS => 'Custom|Main|Manuals|Sandbox|System|System.Manuals|System.Standards|TWiki|Tasks|TestCases|Trash%WORKFLOWAPPPREVIEWAPPS{default=""}%%MULTISITECONFIGWEBS{default=""}%',
-  WEBHOME_DEFAULT_REDIRECTION => 'Processes.%HOMETOPIC%',
+  WEBHOME_DEFAULT_REDIRECTION => "Processes.$Foswiki::cfg{HomeTopicName}",
   WEBHOME_GROUP_REDIRECTION => '',
 };
 
