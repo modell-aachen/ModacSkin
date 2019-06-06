@@ -266,7 +266,7 @@ var URL_TEMPLATE = '$percntURLPARAM{template}$percnt';
 
 %{<verbatim class="tml">}%
 %TMPL:DEF{"templatesearch::solr"}%%SOLRSEARCH{
-  "type:topic web:(%FORMATLIST{"%CONTENTTEMPLATEWEB{default="%BASEWEB%"}%" separator=" OR "}%) topic:*Template workflow_isapproved_b:true -topic:(*EditTemplate OR *ViewTemplate OR WebCreateNewTopicTemplate OR *GroupTemplate %FORMATLIST{"%CONTENTTEMPLATEFILTER{default=""}%" separator=" OR " header=" OR "}%)"
+  "type:topic web:(%FORMATLIST{"%CONTENTTEMPLATEWEB{default="%BASEWEB%" encode="none"}%" separator=" OR "}%) topic:*Template workflow_isapproved_b:true -topic:(*EditTemplate OR *ViewTemplate OR WebCreateNewTopicTemplate OR *GroupTemplate %FORMATLIST{"%CONTENTTEMPLATEFILTER{default=""}%" separator=" OR " header=" OR "}%)"
   format="<option value='$web.$topic'>$title</option>"
   fields="web,topic,title"
   sort="title"
