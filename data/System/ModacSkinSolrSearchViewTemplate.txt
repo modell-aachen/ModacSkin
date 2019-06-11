@@ -92,6 +92,11 @@
   sort="title"
   limit="-1"
 }%
+%TMPL:P{"solr::facet"
+  id="field_DocumentNumber_s"
+  include="%TMPL:P{"solr::facet::include::field_DocumentNumber_s"}%"
+  exclude="%TMPL:P{"solr::facet::exclude::field_DocumentNumber_s"}%"
+}%
 %IF{"$SOLR_HIDE_DOCUMENTTYPE='1'" else="
    %TMPL:P{"solr::facet"
      id="field_DocumentType_s"
