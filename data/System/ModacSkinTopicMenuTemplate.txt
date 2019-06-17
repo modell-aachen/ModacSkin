@@ -38,7 +38,7 @@ format="$percntIF{\"$dollarTOPICMENU_HIDE_$percntCALC{\"$dollarUPPER($1)\"}$perc
 %TMPL:DEF{"modacTopicMenu::wikitext"}%<li class='requireModacChangePermission'><span class='moremenue-wikitext'>%TMPL:P{"raw_edit_link"}%</span></li>%TMPL:END%
 
 %{REFERENCES}%
-%TMPL:DEF{"modacTopicMenu::references"}%%IF{"$DISPLAY_INCOMING_LINKS='1'" then="<li class='modacDialogable'><span class='moremenue-references'><a href='%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%?template=References'>%MAKETEXT{"Find references"}%</a></span></li>"}%%TMPL:END%
+%TMPL:DEF{"modacTopicMenu::references"}%%IF{"$DISPLAY_INCOMING_LINKS='1'" then="<li class='modacDialogable'><span class='moremenue-references'><a href='%SCRIPTURLPATH{"view"}%/%BASEWEB%/%BASETOPIC%?template=References'>%MAKETEXT{"Dependencies"}%</a></span></li>"}%%TMPL:END%
 
 %{MORE MENU}%
 %TMPL:DEF{"modacTopicMenu::more"}%%{

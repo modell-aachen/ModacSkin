@@ -1,18 +1,32 @@
 %TMPL:INCLUDE{"view"}%
 
 %TMPL:DEF{"content"}%
----++ %MAKETEXT{"Direct children:"}%
-%SOLRSEARCH{"type:topic parent: %SUBST{text="%WEB%" pattern="/" format="."}%.%TOPIC%" format="   * [[$webtopic]]$n" rows="999"}%
-
----++ %MAKETEXT{"Links to this topic:"}%
-%SOLRSEARCH{"type:topic outgoingWiki_lst: %SUBST{text="%WEB%" pattern="/" format="."}%.%TOPIC%" format="   * [[$webtopic]]$n" rows="999"}%
+<style type="text/css">
+	.modacDialogContents {
+        border: 0px solid #000 !important;
+    }
+</style>
+---++ %MAKETEXT{"References to this topic:"}%
+%SOLRSEARCH{"type:topic -webtopic:*TALK (outgoingWiki_lst: %WEB%.%TOPIC% OR parent: %WEB%.%TOPIC%)" 
+sort="webtopic asc" 
+header="<table class=\"tablesorter\"><thead><tr><th>%MAKETEXT{"Web"}%</th><th>%MAKETEXT{"Topic"}%</th><th>%MAKETEXT{"Documenttype"}%</th></tr></thead><tbody>"
+format="<tr><td>$web</td><td>[[$web.$topic][$percntENCODE{\"$title\" type=\"html\"}$percnt]]</td><td>$percntMAKETEXT{\"$field_DocumentType_s\"}$percnt</td></tr>" 
+footer="</tbody></table>"
+rows="999"
+}%
 
 ---++ %MAKETEXT{"Links to attachments on this topic:"}%
-%SOLRSEARCH{"type:topic outgoingAttachmentTopic_lst: %SUBST{text="%WEB%" pattern="/" format="."}%.%TOPIC%" id="outgoingAttachments" format="   * [[$webtopic]]$n" rows="999" facets="outgoingAttachment_lst" facetlimit="999"}%
-
----++ %MAKETEXT{"Combined references to this topic:"}%
-%SOLRSEARCH{"type:topic (outgoingAttachmentTopic_lst: %SUBST{text="%WEB%" pattern="/" format="."}%.%TOPIC% OR outgoingWiki_lst: %SUBST{text="%WEB%" pattern="/" format="."}%.%TOPIC% OR parent: %SUBST{text="%WEB%" pattern="/" format="."}%.%TOPIC%)" format="   * [[$webtopic]]$n" rows="999"}%
+%SOLRSEARCH{"type:topic -webtopic:*TALK outgoingAttachmentTopic_lst: %WEB%.%TOPIC%" 
+id="outgoingAttachments" 
+header="<table class=\"tablesorter\"><thead><tr><th>%MAKETEXT{"Web"}%</th><th>%MAKETEXT{"Topic"}%</th><th>%MAKETEXT{"Documenttype"}%</th></tr></thead><tbody>"
+format="<tr><td>$web</td><td>[[$web.$topic][$percntENCODE{\"$title\" type=\"html\"}$percnt]]</td><td>$percntMAKETEXT{\"$field_DocumentType_s\"}$percnt</td></tr>" 
+footer="</tbody></table>"
+rows="999" 
+facets="outgoingAttachment_lst" 
+facetlimit="999"
+}%
 %TMPL:END%
+
 
 %TMPL:DEF{"attachments"}%%TMPL:END%
 %TMPL:DEF{"risks::content::box"}%%TMPL:END%
