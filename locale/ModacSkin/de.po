@@ -1859,6 +1859,9 @@ msgstr "Verweise auf diese Seite:"
 msgid "Links to attachments on this topic:"
 msgstr "Verweise auf Anhänge von dieser Seite:"
 
+msgid "References to attachments on this topic:"
+msgstr "Verweise auf Anhänge von dieser Seite:"
+
 msgid "Linked attachments on this topic:"
 msgstr "Verlinkte Anhänge von dieser Seite:"
 
