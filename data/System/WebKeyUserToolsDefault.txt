@@ -1,4 +1,3 @@
-   * [[%SYSTEMWEB%.WebHome][%MAKETEXT{"System web"}%]]
    * [[Trash.WebHome][%MAKETEXT{"Trash"}%]]
    * [[%MAINWEB{encode="none"}%.WikiGroups][%MAKETEXT{"Wikigroups"}%]] %IF{"istopic '%BASEWEB%.WebStatistics'" then="
    * [[%BASEWEB%.WebStatistics][%MAKETEXT{"Statistics"}%]]"}%
