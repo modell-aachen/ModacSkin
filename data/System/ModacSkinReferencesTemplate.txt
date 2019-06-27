@@ -10,7 +10,8 @@
 %SOLRSEARCH{"type:topic -webtopic:*TALK (outgoingWiki_lst: %WEB%.%TOPIC% OR parent: %WEB%.%TOPIC%)" 
 sort="webtopic asc"
 header="<table class=\"tablesorter\"><thead><tr><th>%MAKETEXT{"Web"}%</th><th>%MAKETEXT{"Topic"}%</th><th>%MAKETEXT{"Documenttype"}%</th></tr></thead><tbody>"
-format="<tr><td>$web</td><td>[[$web.$topic]]</td><td>%TMPL:P{"documenttype"}%</td></tr>"
+fields="web,topic,field_DocumentNumber_s,field_DocumentType_s"
+format="<tr><td>$web</td><td>[[$web.$topic][%IF{"$USE_PROCESS_DOCUMENT_NUMBER" then="$field_DocumentNumber_s "}%$topic]]</td><td>%TMPL:P{"documenttype"}%</td></tr>"
 footer="</tbody></table>"
 rows="999"
 }%
@@ -19,6 +20,7 @@ rows="999"
 %SOLRSEARCH{"type:topic -webtopic:*TALK outgoingAttachmentTopic_lst: %WEB%.%TOPIC%" 
 sort="webtopic asc"
 header="<table class=\"tablesorter\"><thead><tr><th>%MAKETEXT{"Web"}%</th><th>%MAKETEXT{"Topic"}%</th><th>%MAKETEXT{"Documenttype"}%</th></tr></thead><tbody>"
+fields="web,topic,field_DocumentType_s"
 format="<tr><td>$web</td><td>[[$web.$topic]]</td><td>%TMPL:P{"documenttype"}%</td></tr>" 
 footer="</tbody></table>"
 rows="999" 
@@ -26,9 +28,8 @@ rows="999"
 %TMPL:END%
 
 %TMPL:DEF{"documenttype"}%%{Because there could be topics without a documenttype, we proof if field_DocumentType_s is set.
-}%$percntIF{\"'$field_DocumentType_s' = '$dollarfield_DocumentType_s'\" then=\"$percntMAKETEXT{\"none\"}$percnt\" else=\"$percntMAKETEXT{\"$field_DocumentType_s\"}$percnt\"}$percnt
+}%$percntIF{\"'$field_DocumentType_s' = ''\" then=\"$percntMAKETEXT{\"none\"}$percnt\" else=\"$percntMAKETEXT{\"$field_DocumentType_s\"}$percnt\"}$percnt
 %TMPL:END%
-
 
 
 %TMPL:DEF{"attachments"}%%TMPL:END%
