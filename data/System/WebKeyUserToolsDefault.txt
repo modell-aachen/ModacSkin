@@ -3,7 +3,7 @@
    * [[%MAINWEB{encode="none"}%.WikiGroups][%MAKETEXT{"Wikigroups"}%]] %IF{"istopic '%BASEWEB%.WebStatistics'" then="
    * [[%BASEWEB%.WebStatistics][%MAKETEXT{"Statistics"}%]]"}%
    * [[%BASEWEB%.WebPreferences][%MAKETEXT{"Web settings"}%]]
-   * [%IF{"istopic 'Settings.WebHome'" then="[Settings.WebHome]" else="[%MAINWEB{encode="none"}%.SitePreferences]"}%[%MAKETEXT{"Wiki settings"}%]]
+   * [%IF{"istopic 'Settings.WebPreferences'" then="[System.MultisiteOverview]" else="[%MAINWEB{encode="none"}%.SitePreferences]"}%[%MAKETEXT{"Wiki settings"}%]]
 %IF{
     "istopic '%USERSWEB%.Resubmission'"
     then="   * [[%USERSWEB%.Resubmission][%MAKETEXT{"Actuality check"}%]]
