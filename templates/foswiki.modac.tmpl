@@ -67,11 +67,11 @@ LIBJS with added QUERYVERSION support
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 %TMPL:P{"windowtitle"}%
 %TMPL:P{context="edit" then="ie8compatibilitymode"}%<meta http-equiv="Content-Type" content="text/html; charset=%CHARSET%" />
-<link rel="icon" href="%FAVICON%" type="image/x-icon" />
-<link rel="shortcut icon" href="%FAVICON%" type="image/x-icon" />
+<link rel="icon" href="%FAVICON{encode=\"none\"}%" type="image/x-icon" />
+<link rel="shortcut icon" href="%FAVICON{encode=\"none\"}%" type="image/x-icon" />
 <meta name="TEXT_NUM_TOPICS" content="%MAKETEXT{"Number of topics:"}%" />
 <meta name="TEXT_MODIFY_SEARCH" content="%MAKETEXT{"Modify search"}%" />
-<meta name="robots" content="noindex" />%HTTP_EQUIV_ON_VIEW%
+<meta name="robots" content="noindex" />%HTTP_EQUIV_ON_VIEW{encode="none"}%
 <base href="%SCRIPTURL{%SCRIPTNAME%}%/%WEB%/%TOPIC%" /><!--[if IE]></base><![endif]-->
 %TMPL:P{"defaultstyle"}%%RENDERZONE{"head"}%%RENDERZONE{"script"}%%TMPL:P{"script"}%</head>%TMPL:END%
 
@@ -123,7 +123,7 @@ XXX Does not go well with SafeWikiPlugin
 
 %{ ---------------------------- pagetitle and breadcrumb ---------------------------- }%
 
-%TMPL:DEF{"pagetitle"}%%ENCODE{"%TOPICTITLE%" type="save"}% %IF{"defined rev" then="<span class=foswikiGrayText> %MAKETEXT{"(revision [_1])" args="%URLPARAM{"rev"}%"}%</span>" else=""}% %TMPL:END%
+%TMPL:DEF{"pagetitle"}%%TOPICTITLE% %IF{"defined rev" then="<span class=foswikiGrayText> %MAKETEXT{"(revision [_1])" args="%URLPARAM{"rev"}%"}%</span>" else=""}% %TMPL:END%
 
 
 %TMPL:DEF{"top"}%<div class="patternTop"><div id="modacHeading">%TMPL:P{"pagetitle"}%</div><span class="patternHomePath">%TMPL:P{"breadcrumb"}%</span></div>%TMPL:END%
@@ -139,16 +139,16 @@ XXX Does not go well with SafeWikiPlugin
 
 %TMPL:DEF{"breadcrumb:title"}%<span class="patternHomePathTitle">%MAKETEXT{"You are here:"}% </span>%TMPL:END%
 
-%TMPL:DEF{"windowtitleconfig"}%%ENCODE{"%TOPICTITLE%" type="save"}%%TMPL:END%
+%TMPL:DEF{"windowtitleconfig"}%%TOPICTITLE%%TMPL:END%
 
 %TMPL:DEF{"windowtitle"}%<title>%TMPL:P{"titleaction"}% <nop>%TMPL:P{"windowtitleconfig"}%%TMPL:P{"titlesep"}%%BASEWEB%%TMPL:P{"titlesep"}%<nop>%WIKITOOLNAME%</title>%TMPL:END%
 
 %TMPL:DEF{"breadcrumb:wikitoolname"}%[[%USERSWEB%.%HOMETOPIC%][%WIKITOOLNAME%]]%TMPL:END%
 
-%TMPL:DEF{"breadcrumb:currentweb"}%%TMPL:P{"breadcrumb:separator"}%<a href="%SCRIPTURLPATH{"view"}%/%WEB%/%HOMETOPIC%">%MAKETEXT{"[_1] Web" args="<nop>%FORMATLIST{"$map(%WEB%)" map="%MODAC_WEBMAPPINGS{default=""}%"}%"}%</a>%TMPL:END%
+%TMPL:DEF{"breadcrumb:currentweb"}%%TMPL:P{"breadcrumb:separator"}%<a href="%SCRIPTURLPATH{"view"}%/%WEB%/%HOMETOPIC%">%MAKETEXT{"[_1] Web" args="<nop>%FORMATLIST{"$map(%WEB%)" map="%MODAC_WEBMAPPINGS{default="" encode="none"}%"}%"}%</a>%TMPL:END%
 
 %TMPL:DEF{"breadcrumb:annotation"}%%IF{"defined rev" then=" %MAKETEXT{"(revision [_1])" args="%URLPARAM{"rev"}%"}%" else=" <span class='patternRevInfo'>(%REVINFO{format="$date, $wikiusername"}%)</span>"}%%IF{"defined raw" then=" %MAKETEXT{"(raw view)"}%"}%%TMPL:END%
 
-%TMPL:DEF{"breadcrumb:currenttopic"}%%IF{"$TOPIC != 'WebHome'" then="%TMPL:P{"breadcrumb:separator"}%[[%TOPIC%][$percentENCODE{\"$percntTOPICTITLE$percnt\" type=\"save\"}$percent]]" else=" "}%%TMPL:END%
+%TMPL:DEF{"breadcrumb:currenttopic"}%%IF{"$TOPIC != 'WebHome'" then="%TMPL:P{"breadcrumb:separator"}%[[%TOPIC%][$percntTOPICTITLE$percnt]]" else=" "}%%TMPL:END%
 
 %{ ---------------------------- /pagetitle and breadcrumb ---------------------------- }%

@@ -1,0 +1,20 @@
+%TMPL:INCLUDE{"view"}%
+
+%TMPL:DEF{"content"}%
+%FORMATLIST{
+    "%WEBHOME_GROUP_REDIRECTION%"
+    pattern="\s*(.+?)=(\S+)"
+    format="$percentIF{\"(not defined redirectto) and $USERNAME ingroup '$1'\"
+            then=\"$dollarpercentSET{\\"redirectto\\" value=\\"$2\\"}$dollarpercent\"
+        }$percent"
+}%
+%IF{
+    "(not defined redirectto) and isweb 'Portal'"
+    then="$percentSET{\"redirectto\" value=\"Portal.%HOMETOPIC%\"}$percent"
+}%
+%IF{
+    "not defined redirectto"
+    then="$percentSET{\"redirectto\" value=\"%WEBHOME_DEFAULT_REDIRECTION%\"}$percent"
+}%
+%REDIRECT{"%redirectto%"}%
+%TMPL:END%

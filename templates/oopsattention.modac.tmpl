@@ -2,4 +2,4 @@
 
 %TMPL:DEF{"topicaction"}%<div class="patternBorder"><a name="topic-actions"></a><div class="patternTopicActions"><div class="patternTopicAction"><span class="patternActionButtons">%TMPL:P{"topicactionbuttons"}%</span></div></div></div>%TMPL:END%
 
-%TMPL:DEF{"topicactionbuttons"}% [[%IF{"istopic '%WEB%.%TOPIC%'" then="%WEB%.%TOPIC%" else="%WEBLOGOURL%"}%][%MAKETEXT{"OK"}%]] %TMPL:END%
+%TMPL:DEF{"topicactionbuttons"}% [[%IF{"istopic '%WEB%.%TOPIC%'" then="%WEB%.%TOPIC%" else="%WEBLOGOURL{encode="none"}%"}%][%MAKETEXT{"OK"}%]] %TMPL:END%

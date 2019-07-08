@@ -57,7 +57,7 @@
 <div class="foswikiFormSteps">
 <div class="foswikiFormStep">
 <h3>%MAKETEXT{"Select destination web"}%</h3>
-<select class="foswikiSelect modacjqWikiWordWeb">%FORMATLIST{"%WEBLIST{"$name$marker" separator=";" webs="public,%WEB%"}%" pattern="(\S*)( selected='selected')?" format="$percentIF{\"'$1' allows 'CHANGE'\" then=\"<option value='$1'$marker>$map($1)</option>\"}$percent" marker="selected='selected' " selection="^%WEB%$" separator=" " split=";" unique="on" map="%MODAC_WEBMAPPINGS{default=""}%" include="%WEB%|(?!%URLPARAM{"MODAC_HIDEWEBS" default="%MODAC_HIDEWEBS{default="dummy"}%"}%$).*"}%</select>
+<select class="foswikiSelect modacjqWikiWordWeb">%FORMATLIST{"%WEBLIST{"$name$marker" separator=";" webs="public,%WEB%"}%" pattern="(\S*)( selected='selected')?" format="$percentIF{\"'$1' allows 'CHANGE'\" then=\"<option value='$1'$marker>$map($1)</option>\"}$percent" marker="selected='selected' " selection="^%WEB%$" separator=" " split=";" unique="on" map="%MODAC_WEBMAPPINGS{default="" encode="none"}%" include="%WEB%|(?!%URLPARAM{"MODAC_HIDEWEBS" default="%MODAC_HIDEWEBS{default="dummy" encode="none"}%"}%$).*"}%</select>
 %IF{"context 'isadmin' or $USERNAME ingroup '%MODAC_SHOWALLWEBSGROUP%'" then="$percentTMPL:P{hidewebsOption}$percent"}%</div>
 <div class="foswikiFormStep">
 <h3>%MAKETEXT{"Title of copy"}%</h3>

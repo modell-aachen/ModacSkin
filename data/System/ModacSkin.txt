@@ -188,7 +188,7 @@ Explainations:
 | =MODAC_TOPHEAD_FORM= | Only show header for topics that have a form attached matching this regexp. | Does not require =NO_MODAC_HEADLIST=, but can be combined with it. Set it in =WebPreferences= or =SitePreferences=. |
 
 ---+++ Solr
-%RED%TODO%ENDCOLOR% modacExtraFormat
+%RED{encode="none"}%TODO%ENDCOLOR{encode="none"}% modacExtraFormat
 
 ---++++ Adding facets
 %X% This explaination does not cover the basic principles of facets. You should know how to add facets _the usual way_ before using this guide. %X%
@@ -358,7 +358,7 @@ You could configure the %<nop>SOLRSIMILAR% by adding following parameters to Web
 | SIMILAR_TOPICS | 0,1 | 0 | Defines if a list of similar topics shoud be shown underneath a topic | 
 | SIMILAR_TOPICS_LIKE | title_seach,text, field_Responsible,lst, ... | title_search,text | Definies the criteria for topics to be similar (e.g. all topics of a certain documenttype) |
 | SIMILAR_TOPICS_BOOST | title_search^2,text, field_Responsible^4,lst, ... | title_search^2,text | Can be used to boost findings depending on certain criteria |
-| SIMILAR_TOPICS_FIELDS | web,topic,field_Responsible_s, ... | title,web,topic,field_Responsible_s,score,field_DocumentType_s,date,process_state_s | List of fields to be returned in the result (see SOLRSEARCH) |
+| SIMILAR_TOPICS_FIELDS | web,topic,field_Responsible_s, ... | title,web,topic,field_Responsible_s,score,field_DocumentType_s,date,process_state_s,field_DocumentNumber_s | List of fields to be returned in the result (see SOLRSEARCH) |
 | SIMILAR_TOPICS_FILTER | -form:*DocumentForm, ... | -topic:*%WORKFLOWSUFFIX% | Criteria to filter to results (see SORLSEARCH) |
 | SIMILAR_TOPICS_MIN_TERM_FREQUENCY | 0..n | 2 | The frequency below which terms will be ignored in the source topics |
 | SIMILAR_TOPICS_MIN_DOCUMENT_FREQUENCY | 0..n | 5 | The frequency at which words will be ignored which do not occur in at least this many topics |
@@ -408,10 +408,26 @@ If you have an element that should be hidden for non-admins, apply the =adminOnl
 
 If you have an element that should only be visible to KeyUsers, add the =keyUsersOnly= css class.
 
+---++ Landing page (Main.WebHome) redirection
+
+It is possible to configure where landing page [[Main.WebHome][Main.WebHome]] should redirect based on group memberships.
+
+The default target (no groups configured or no membership match) can be set (on [[Main.SitePreferences]]) with
+<pre>
+   &#42; Set WEBHOME_DEFAULT_REDIRECTION = Processes.WebHome
+</pre>
+%I% Note: If there is a 'Portal' web, users will be redirected there regardless of this setting.
+
+Special groups can be set using this schema:
+<pre>
+   &#42; Set WEBHOME_GROUP_REDIRECTION = germany=OUGermany.WebHome,usa=OUInternational.WebHome-EN,china=OUInternational-CN
+</pre>
+The first matching group has priority, so if you are in the groups =usa= and =china=, you will be redirected to =OUInternational.WebHome-EN=, because usa is the leftmost match.
+
 ---++ Installation Instructions
 
 To enable ModacSkin you have set the following variables either in =WebPreferences= (to enable ModacSkin within a single web) or
-in =SitePreferences= to enable the skin for the whole wiki.  
+in =SitePreferences= to enable the skin for the whole wiki.
 
 <pre>
    &#42; Set SKIN = modac
@@ -425,23 +441,14 @@ in =SitePreferences= to enable the skin for the whole wiki.
 
 If you want to make custom modifications you can set FOSWIKI_PROJECT_URL to your css, otherwise set it to nothing.
 
----+++ Dependencies
-
-| FlexWebListPlugin |
-| FilterPlugin |
-| Many more... TODO |
-
 ---++ Known Issues
 
 | TOC_TITLE (defines the title in a page-toc) cannot be translated using the MAKETEXT-macro: FOSWiki doesn't render the macro and return &#37;MAKETEXT{"xy"}&#37; as an value. |
 
 ---++ Info
 
-Many thanks to the following sponsors for supporting this work:
-   * Acknowledge any sponsors here
-
-|  Author(s): | |
-|  Copyright: | &copy; |
+|  Author(s): | Modell Aachen GmbH |
+|  Copyright: | 2019, Modell Aachen GmbH, All Rights Reserved |
 |  License: | [[http://www.gnu.org/licenses/gpl.html][GPL (Gnu General Public License)]] |
 |  Release: | %$RELEASE% |
 |  Version: | %$VERSION% |

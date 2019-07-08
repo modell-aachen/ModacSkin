@@ -1,6 +1,6 @@
 %TMPL:INCLUDE{"registermessages"}%
 
-%TMPL:DEF{"return_button" topic="%MAINWEB%.WikiGroups"}%
+%TMPL:DEF{"return_button" topic="%MAINWEB{encode="none"}%.WikiGroups"}%
 <div class="patternBorder">
    <div class="patternTopicActions">
       <div class="patternTopicAction">
@@ -95,7 +95,7 @@
 %{==============================================================================}%
 %TMPL:DEF{"thanks"}%
 %TMPL:PREV%
-%TMPL:P{"return_button" topic="%MAINWEB%.WikiGroups"}%
+%TMPL:P{"return_button" topic="%MAINWEB{encode="none"}%.WikiGroups"}%
 %TMPL:END%
 %{==============================================================================}%
 %TMPL:DEF{"no_users_to_reset"}%

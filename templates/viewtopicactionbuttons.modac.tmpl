@@ -42,7 +42,7 @@
 
 %TMPL:DEF{"topictabaction"}%<div class='modacActionButtonACTIVE'><a href='%SCRIPTURLPATH{"view"}%/%WEB%/%TOPIC%' rel='nofollow' title='%IF{"'%TOPIC%'/DocumentType" then="%RENDERFORDISPLAY{include="DocumentType" format="$value"}%" else="%MAKETEXT{"Topic"}%"}%'>%IF{"'%TOPIC%'/DocumentType" then="%RENDERFORDISPLAY{include="DocumentType" format="$value"}%" else="%MAKETEXT{"Topic"}%"}%</a></div>%TMPL:END%
 
-%TMPL:DEF{"pdfexport"}%<span><a href="%SCRIPTURL{"view"}%/%SYSTEMWEB%/MAPrinceModPrintDialog?skin=text&section=dialog&pweb=%ENCODE{"%INCLUDINGWEB%" type="url"}%&ptopic=%ENCODE{"%INCLUDINGTOPIC%" type="url"}%&landscape=%LANDSCAPE{default="0"}%&printParams=rev&rev=%URLPARAM{"rev"}%" class="jqUIDialogLink">%MAKETEXT{"Print to PDF"}%</a></span>%TMPL:END%
+%TMPL:DEF{"pdfexport"}%<span><a href="%SCRIPTURL{"rest"}%/RenderPlugin/template?name=MAPrinceModPrintDialog&expand=content&pweb=%ENCODE{"%INCLUDINGWEB%" type="url"}%&ptopic=%ENCODE{"%INCLUDINGTOPIC%" type="url"}%&landscape=%LANDSCAPE{default="0"}%&printParams=rev&rev=%URLPARAM{"rev"}%&printTasks=%PRINTTASKS{default=""}%" class="jqUIDialogLink">%MAKETEXT{"Print to PDF"}%</a></span>%TMPL:END%
 
 %{ --- definitions used in "modacActionButtonsSYSTEM" --- }%
 

@@ -25,7 +25,7 @@
 ---------------------------------------------------
 }%
 
-%TMPL:DEF{"top_simple"}%<div class="patternTop"><div id="modacHeading">%ENCODE{"%TOPICTITLE%" type="save"}%</div>
+%TMPL:DEF{"top_simple"}%<div class="patternTop"><div id="modacHeading">%TOPICTITLE%</div>
 <span class="patternHomePath">%TMPL:P{"breadcrumb"}%</span><br></div><!--/patternTop-->%TMPL:END%
 
 %TMPL:DEF{"top"}%%IF{"(defined NO_MODAC_HEAD and '%NO_MODAC_HEAD%' != '') or (defined NO_MODAC_HEADLIST and '%NO_MODAC_HEADLIST%' =~ '(?:\s|^|,)%TOPIC%(?:\s|$|,)') or (defined MODAC_TOPHEAD_FORM and not form.name =~ $MODAC_TOPHEAD_FORM)" then="$percntTMPL:P{top_simple}$percnt" else="$percntTMPL:P{top_head}$percnt"}%%TMPL:END%
@@ -34,7 +34,7 @@
 }%%{ DEPRECATED: beforetext and aftertext }%
 %{ compatibility transition older than 4.2: }%
 %TMPL:DEF{"contentheader"}%%TMPL:P{"beforetext"}%%TMPL:END%
-%TMPL:DEF{"contentfooter"}%%TMPL:P{"aftertext"}%%IF{"defined rev" then="$percntTMPL:P{\"metadatatable\"}$percnt"}%%TMPL:END%%{
+%TMPL:DEF{"contentfooter"}%%TMPL:P{"aftertext"}%%IF{"form.name='DocumentForm'" then="$percntTMPL:P{\"metadatatable\"}$percnt"}%%TMPL:END%%{
 ---------------------------------------------------
 }%%TMPL:DEF{"patterntopiccontents"}%%TMPL:P{"broadcastmessage"}%%TMPL:P{"contentheaderstylewrapper"}%%TMPL:P{"formtop"}%%TMPL:P{"attachmentstop"}%<div class="patternContent"><div class="foswikiTopic">%TMPL:P{"content"}%</div>
 
@@ -57,7 +57,7 @@
 %TMPL:DEF{"simpleheader"}%%TMPL:P{"flashnote"}%%TMPL:P{"standardheader"}%%TMPL:END%%{
 ---------------------------------------------------
 }%%TMPL:DEF{"broadcastmessage"}%%IF{"defined BROADCASTMESSAGE and $BROADCASTMESSAGE != ''" then="$percntTMPL:P{$quotbroadcastmessage:contents$quot}$percnt"}%%TMPL:END%
-%TMPL:DEF{"broadcastmessage:contents"}%<div class="foswikiBroadcastMessage"> %BROADCASTMESSAGE% </div>%TMPL:END%
+%TMPL:DEF{"broadcastmessage:contents"}%<div class="foswikiBroadcastMessage"> %BROADCASTMESSAGE{encode="usercontext"}% </div>%TMPL:END%
 
 %TMPL:DEF{"flashnote"}%%IF{"defined FLASHNOTE and $FLASHNOTE != ''" then="$percntTMPL:P{$quotflashnote:contents$quot}$percnt"}%%TMPL:END%
 %TMPL:DEF{"flashnote:contents"}%<div class="foswikiNotification"> %FLASHNOTE% </div>%TMPL:END%%{
@@ -113,10 +113,10 @@
 
 %TMPL:DEF{"similartopicmacro"}%
 %SOLRSIMILAR{"type:topic topic:%TOPIC% web:%WEB% form:%URLPARAM{"FORM" default="*"}% "
-    filter="type:topic form:%URLPARAM{"FORM" default="*"}% %SIMILAR_TOPICS_FILTER{default=""}%"
-    like="%SIMILAR_TOPICS_LIKE%"
-    boost="%SIMILAR_TOPICS_BOOST%"
-    fields="%SIMILAR_TOPICS_FIELDS%"
+    filter="type:topic form:%URLPARAM{"FORM" default="*"}% %URLPARAM{"FILTER" default="%SIMILAR_TOPICS_FILTER%"}%"
+    like="%URLPARAM{"LIKE" default="%SIMILAR_TOPICS_LIKE%"}%"
+    boost="%URLPARAM{"BOOST" default="%SIMILAR_TOPICS_BOOST%"}%"
+    fields="%URLPARAM{"FIELDS" default="%SIMILAR_TOPICS_FIELDS%"}%"
     mintermfrequency="%SIMILAR_TOPICS_MIN_TERM_FREQUENCY%"
     mindocumentfrequency="%SIMILAR_TOPICS_MIN_DOCUMENT_FREQUENCY%"
     header="<table class=\"tablesorter\"><thead><tr><th> $percntMAKETEXT{\"Topic\"}$percent </th><th> $percntMAKETEXT{\"Responsible\"}$percent </th><th> $percntMAKETEXT{\"Document type\"}$percent </th><th> $percntMAKETEXT{\"Date\"}$percent </th></thead><tbody>"
@@ -139,11 +139,11 @@
   showimgleft="%PUBURLPATH%/%SYSTEMWEB%/DocumentGraphics/toggleopen.png"
   hideimgleft="%PUBURLPATH%/%SYSTEMWEB%/DocumentGraphics/toggleclose.png"
 }%
-<div id="modacSidebarTwisty_similar" class="modacAjaxContent" data-url="%SCRIPTURL{rest}%/RenderPlugin/template?name=view;expand=similartopicmacro;topic=%WEB%.%TOPIC%;render=on;FORM=%SIMILAR_TOPICS_FORM%">%JQREQUIRE{"jqp::spin"}%</div>
+<div id="modacSidebarTwisty_similar" class="modacAjaxContent" data-url="%SCRIPTURL{rest}%/RenderPlugin/template?name=view&expand=similartopicmacro&topic=%WEB%.%TOPIC%&render=on&FORM=%ENCODE{"%SIMILAR_TOPICS_FORM%"}%&FILTER=%ENCODE{"%SIMILAR_TOPICS_FILTER%"}%&LIKE=%ENCODE{"%SIMILAR_TOPICS_LIKE%"}%&BOOST=%ENCODE{"%SIMILAR_TOPICS_BOOST%"}%&FIELDS=%ENCODE{"%SIMILAR_TOPICS_FIELDS%"}%">%JQREQUIRE{"jqp::spin"}%</div>
 %ENDTWISTY%
 </div></div></div>
 %TMPL:END%
 
 %TMPL:DEF{"formfieldSublabel"}%%{
-}%%IF{"defined %FORM%_%NAME%_SUBLABEL" then="<div class='ma-field-sublabel'>$percnt%FORM%_%NAME%_SUBLABEL$percnt</div>" else=""}%%{
+}%%IF{"defined %FORM%_%NAME%_SUBLABEL" then="<div class='ma-field-sublabel'>$percntMAKETEXT{\"$percnt%FORM%_%NAME%_SUBLABEL$percnt\"}$percnt</div>" else=""}%%{
 }%%TMPL:END%

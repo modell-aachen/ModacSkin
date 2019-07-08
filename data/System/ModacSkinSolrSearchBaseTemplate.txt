@@ -98,7 +98,7 @@
     {{include tmpl="#solrTemplate_thumbnail" /}}
     <h3 title='{{: ~foswiki.jsi18n.get('solr', 'topic') }}'>
       <img src='{{if icon}}{{>icon}}{{else}}{{:~foswiki.getPreference('PUBURLPATH')+'/'+~foswiki.getPreference('SYSTEMWEB')+'/FamFamFamSilkIcons/page_white.png'}}{{/if}}' width='16' height='16' class='solrHitIcon' />
-      <a href='{{>url}}'>{{>title}}</a>
+      <a href='{{>url}}'>{{>field_DocumentNumber_s}} {{>title}}</a>
       <span class='foswikiGrayText foswikiSmallish solrContainerLink'>
         {{: ~foswiki.jsi18n.get('solr', 'in [_1]', "<a href='"+container_url+"'>"+~getWebMapping(web)+"</a>") }}
       {{include tmpl="#solrTemplate_topic_title" /}}
@@ -134,7 +134,7 @@
         {{:~foswiki.jsi18n.get('solr', 'in [_1]', "<a href='"+container_url+"'>"+~getWebMapping(web)+"</a>")}}
       </span>
     </h3><!--
--->%IF{"$EMPLOYEESAPP_SOLRSEARCH_FORMAT!=''" then="<div class='solrHilite'>%EMPLOYEESAPP_SOLRSEARCH_FORMAT%</div>"}%<!--
+-->%IF{"$EMPLOYEESAPP_SOLRSEARCH_FORMAT!=''" then="<div class='solrHilite'>%EMPLOYEESAPP_SOLRSEARCH_FORMAT{encode="none"}%</div>"}%<!--
   --><div class='solrRevision'>
     {{:~formatDate(date,solrDateformat)}}, {{if author_dv_s}}{{>author_dv_s}}{{else}}{{>author}}{{/if}}
   </div>
@@ -403,7 +403,7 @@ $percentTMPL:DEF{"solr::fields::append"}$percent$percentTMPL:PREF$percent,your_s
 
 %{<verbatim class="tml">}%
 %TMPL:DEF{"solr::webmappings"}%<div class="solrDictionary solrJsonData" data-id="webmappings">{%FORMATLIST{
-  "%MODAC_WEBMAPPINGS{default=""}%"
+  "%MODAC_WEBMAPPINGS{default="" encode="none"}%"
   pattern="^\s*(.*?)=(.*?)\s*$"
   format="\"$1\":\"$2\""
 }%}</div>

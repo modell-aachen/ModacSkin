@@ -241,10 +241,10 @@ var URL_TEMPLATE = '$percntURLPARAM{template}$percnt';
 %{<verbatim class="tml">}%
 %TMPL:DEF{"topictemplate"}%<!-- -->
 <select name="templatetopic" class="foswikiSelect">
-%IF{"'%URLPARAM{"templatetopic"}%'" 
+%IF{"'%URLPARAM{"templatetopic"}%'"
   then='<option selected="selected" value="%URLPARAM{"templatetopic"}%">%TOPICTITLE{%URLPARAM{"templatetopic"}%}%</option>'
 }%%{
-}%%TMPL:P{context="SolrPluginEnabled" then="templatesearch::solr" else="templatesearch::default"}%
+}%%TMPL:P{"templatesearch::solr"}%
 </select>
 <div class="foswikiFormDescription">
 %MAKETEXT{"Initialize the new topic using a template."}%
@@ -253,22 +253,10 @@ var URL_TEMPLATE = '$percntURLPARAM{template}$percnt';
 %{</verbatim>}%
 
 %{<verbatim class="tml">}%
-%TMPL:DEF{"templatesearch::default"}%%SEARCH{
-  "name~'*Template' %IF{"defined CONTENTTEMPLATESTATES" then=" AND META:WORKFLOW.name=~'%FORMATLIST{"%CONTENTTEMPLATESTATES%" header="^(?:" footer=")$" separator="|"}%'"}%"
-  scope="topic"
-  web="%CONTENTTEMPLATEWEB{default="%BASEWEB%"}%"
-  excludetopic="*EditTemplate,*WebCreateNewTopicTemplate,*ViewTemplate,ChecklisteTemplate,GroupTemplate,CustomSkin*Template%IF{"defined CONTENTTEMPLATEFILTER" then=",%CONTENTTEMPLATEFILTER%"}%"
-  type="query"
-  nonoise="on"
-  format="<option value=\"$web.$topic\">$percentQUERY{\"'$web.$topic'/TopicTitle\" default=\"$topic\"}$percent</option>"
-}%%TMPL:END%
-%{</verbatim>}%
-
-%{<verbatim class="tml">}%
 %TMPL:DEF{"templatesearch::solr"}%%SOLRSEARCH{
-  "type:topic web:(%FORMATLIST{"%CONTENTTEMPLATEWEB{default="%BASEWEB%"}%" separator=" OR "}%) topic:*Template workflow_isapproved_b:true -topic:(*EditTemplate OR *ViewTemplate OR WebCreateNewTopicTemplate OR *GroupTemplate %FORMATLIST{"%CONTENTTEMPLATEFILTER{default=""}%" separator=" OR " header=" OR "}%)"
+  "type:topic web:(%FORMATLIST{"%CONTENTTEMPLATEWEB{default="%BASEWEB%" encode="none"}%" separator=" OR "}%) preference_IS_CONTENT_TEMPLATE_s:1 workflow_isapproved_b:true"
   format="<option value='$web.$topic'>$title</option>"
-  fields="web,topic,title"
+  fields="web,topic,title,preference_IS_CONTENT_TEMPLATE_s"
   sort="title"
 }%%TMPL:END%
 %{</verbatim>}%

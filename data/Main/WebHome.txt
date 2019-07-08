@@ -1,0 +1,10 @@
+%META:TOPICINFO{author="3abfa98b-f92b-42ab-986e-872abca52a49" comment="" date="1558705504" format="1.1" version="3"}%
+
+<!--
+   DO NOT MODIFY
+   This file will be overwritten by ModacSkin.
+   For settings, please have a look at System/ModacSkin section "Landing page (Main.WebHome) redirection"
+-->
+
+%META:PREFERENCE{name="ALLOWTOPICCHANGE" title="ALLOWTOPICCHANGE" type="Set" value="KeyUserGroup"}%
+%META:PREFERENCE{name="VIEW_TEMPLATE" title="VIEW_TEMPLATE" type="Set" value="ModacMainWebHomeView"}%

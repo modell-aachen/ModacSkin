@@ -6,9 +6,6 @@
 %TMPL:DEF{"modacSystemTab"}%<div class="modacActionButtonACTIVE"><a href='%SCRIPTURLPATH{"view"}%/%WEB%/%TOPIC%' rel='nofollow' %MAKETEXT{"title='My Page' >My Page"}%</a></div>%TMPL:END%
 
 %TMPL:DEF{"printHeaderHeight"}%2.0cm%TMPL:END%
-%TMPL:DEF{"pdfexport"}%
-<span><a href="%SCRIPTURL{"view"}%/%SYSTEMWEB%/MAPrinceModPrintDialog?skin=text&section=dialog&pweb=%ENCODE{"%INCLUDINGWEB%" type="url"}%&ptopic=%ENCODE{"%INCLUDINGTOPIC%" type="url"}%&landscape=%LANDSCAPE{default="0"}%&printTasks=printTasks" class="jqUIDialogLink">%MAKETEXT{"Print to PDF"}%</a></span>
-%TMPL:END%
 
 %TMPL:DEF{"modacActionButtons"}%
 <ul id="modacButtonsLEFT" class="modacTabs">
@@ -46,8 +43,8 @@
 %SOLRSEARCH{"type:topic webtopic:(%FAVORITELIST{format="\\"$swebtopic\\"" separator=" OR " default="NOT *"}%)"
   rows="999999"
   sort="title asc"
-  format="<li data-fav-item=\"$webtopic\">$percntFAVORITEBUTTON{web=\"$web\" topic=\"$topic\" redirectto=\"%WEB%.%TOPIC%\" removeOnUnfav=\"*[data-fav-item='$webtopic']\" format=\"$dollarformstart$dollarlinkstart<img src=\\"%PUBURLPATH%/%SYSTEMWEB%/FamFamFamSilkCompanion1Icons/decline.png\\" alt=\\"%MAKETEXT{"Remove bookmark"}%\\" title=\\"%MAKETEXT{"Remove bookmark"}%\\" />$dollarlinkend$dollarformend\"}$percnt <a href=\"%SCRIPTURL{view}%/$web/$topic\" title=\"$web.$topic\"><strong>$title</strong></a>&nbsp; $percntIF{\"istopic '$webtopic$percntWORKFLOWSUFFIX$percnt'\" then=\"&nbsp;&nbsp;|&nbsp;&nbsp;<a href='$percntSCRIPTURL{view}$percnt/$web/$topic$percntWORKFLOWSUFFIX$percnt'><span class=\\"bmsubinfo\\">$dollarpercntICON{comments}$dollarpercnt&nbsp;$percntMAKETEXT{\"Discussion available\"}$percnt</span></a>\"}$percnt%BR%<span class=\"bmsubinfo\">[[$web.WebHome][$percentFORMATLIST{\"$dollarmap($web)\" map=\"%MODAC_WEBMAPPINGS{default=""}%\"}$percent]]</span></li>"
-  fields="web,topic,webtopic,name,url,title,workflow_hasdiscussion_b"
+  format="<li data-fav-item=\"$webtopic\">$percntFAVORITEBUTTON{web=\"$web\" topic=\"$topic\" redirectto=\"%WEB%.%TOPIC%\" removeOnUnfav=\"*[data-fav-item='$webtopic']\" format=\"$dollarformstart$dollarlinkstart<img src=\\"%PUBURLPATH%/%SYSTEMWEB%/FamFamFamSilkCompanion1Icons/decline.png\\" alt=\\"%MAKETEXT{"Remove bookmark"}%\\" title=\\"%MAKETEXT{"Remove bookmark"}%\\" />$dollarlinkend$dollarformend\"}$percnt <a href=\"%SCRIPTURL{view}%/$web/$topic\" title=\"$web.$topic\"><strong>$title_escaped_s</strong></a>&nbsp; $percntIF{\"istopic '$webtopic$percntWORKFLOWSUFFIX$percnt'\" then=\"&nbsp;&nbsp;|&nbsp;&nbsp;<a href='$percntSCRIPTURL{view}$percnt/$web/$topic$percntWORKFLOWSUFFIX$percnt'><span class=\\"bmsubinfo\\">$dollarpercntICON{comments}$dollarpercnt&nbsp;$percntMAKETEXT{\"Discussion available\"}$percnt</span></a>\"}$percnt%BR%<span class=\"bmsubinfo\">[[$web.WebHome][$percentFORMATLIST{\"$dollarmap($web)\" map=\"%MODAC_WEBMAPPINGS{default="" encode="none"}%\"}$percent]]</span></li>"
+  fields="web,topic,webtopic,name,url,title_escaped_s,workflow_hasdiscussion_b"
 }%
 </ul></td>
 <td class="splitright"><div class="splittitle">%ICON{attachfile}% %MAKETEXT{"Attachments"}%</div>
@@ -55,7 +52,7 @@
 %SOLRSEARCH{"-type:(topic OR comment OR action) (%FAVORITELIST{type="files" format="(webtopic:\\"$swebtopic\\" name:\"$file\")" separator=" OR " default="NOT *"}%)"
   rows="999999"
   sort="title asc,container_title asc"
-  format="<li data-fav-item=\"$webtopic-$name\">$percntFAVORITEBUTTON{web=\"$web\" topic=\"$topic\" file=\"$name\" redirectto=\"%WEB%.%TOPIC%\" removeOnUnfav=\"*[data-fav-item='$webtopic-$name']\" format=\"$dollarformstart$dollarlinkstart<img src=\\"%PUBURLPATH%/%SYSTEMWEB%/FamFamFamSilkCompanion1Icons/decline.png\\" alt=\\"%MAKETEXT{"Remove bookmark"}%\\" title=\\"%MAKETEXT{"Remove bookmark"}%\\" />$dollarlinkend$dollarformend\"}$percnt<a href=\"$url\"><strong>$name</strong></a>%BR%<span class=\"bmsubinfo\">[[$web.WebHome][$percentFORMATLIST{\"$dollarmap($web)\" map=\"%MODAC_WEBMAPPINGS{default=""}%\"}$percent]] $percntIF{\"'$topic'!='WebHome'\" then=\" &raquo; <a href=\\"%SCRIPTURL{view}%/$web/$topic\\" title=\\"$web.$topic\\">$container_title</a>\"}$percnt</span></li>"
+  format="<li data-fav-item=\"$webtopic-$name\">$percntFAVORITEBUTTON{web=\"$web\" topic=\"$topic\" file=\"$name\" redirectto=\"%WEB%.%TOPIC%\" removeOnUnfav=\"*[data-fav-item='$webtopic-$name']\" format=\"$dollarformstart$dollarlinkstart<img src=\\"%PUBURLPATH%/%SYSTEMWEB%/FamFamFamSilkCompanion1Icons/decline.png\\" alt=\\"%MAKETEXT{"Remove bookmark"}%\\" title=\\"%MAKETEXT{"Remove bookmark"}%\\" />$dollarlinkend$dollarformend\"}$percnt<a href=\"$url\"><strong>$name</strong></a>%BR%<span class=\"bmsubinfo\">[[$web.WebHome][$percentFORMATLIST{\"$dollarmap($web)\" map=\"%MODAC_WEBMAPPINGS{default="" encode="none"}%\"}$percent]] $percntIF{\"'$topic'!='WebHome'\" then=\" &raquo; <a href=\\"%SCRIPTURL{view}%/$web/$topic\\" title=\\"$web.$topic\\">$container_title</a>\"}$percnt</span></li>"
   fields="web,topic,name,url,container_title"
 }%
 </ul></td></tr></table>
@@ -66,15 +63,15 @@
 <ul class="modacBookmarks">
 %SOLRSEARCH{"type:topic webtopic:(%FAVORITELIST{format="\\"$swebtopic\\"" separator=" OR " default="NOT *"}%)"
   rows="%MYPAGE_LAST_CHANGED_FAVORITES_MAX_ITEMS%" sort="date desc"
-  format="<li data-fav-item=\"$webtopic\"><div class=\"date\">$date%BR%$percentRENDERUSER{\"$author\" convert=\"on\"}$percent</div><a href=\"%SCRIPTURL{view}%/$web/$topic\" title=\"$web.$topic\"><strong>$percntIF{\"'$percentENCODE{\"$title\" type=\"safe\"}$percent'='WebHome'\" then=\"$dollarpercentFORMATLIST{\\"$dollarmap($web)\\" map=\\"%MODAC_WEBMAPPINGS{default=""}%\\"}$dollarpercent\" else=\"$percentENCODE{\"$title\" type=\"safe\"}$percent\"}$percnt</strong></a>$percntIF{\"istopic '$webtopic$percntWORKFLOWSUFFIX$percnt'\" then=\"&nbsp;&nbsp;|&nbsp;&nbsp;<a href='$percntSCRIPTURL{view}$percnt/$web/$topic$percntWORKFLOWSUFFIX$percnt'><span class=\\"bmsubinfo\\">$dollarpercntICON{comments}$dollarpercnt&nbsp;$percntMAKETEXT{\"Discussion available\"}$percnt</span></a>\"}$percnt%BR%<span class=\"bmsubinfo\">[[$web.WebHome][$percentFORMATLIST{\"$dollarmap($web)\" map=\"%MODAC_WEBMAPPINGS{default=""}%\"}$percent]]</span></li>"
-  fields="date,web,topic,webtopic,title,author,workflow_hasdiscussion_b"
+  format="<li data-fav-item=\"$webtopic\"><div class=\"date\">$date%BR%$percentRENDERUSER{\"$author\" convert=\"on\"}$percent</div><a href=\"%SCRIPTURL{view}%/$web/$topic\" title=\"$web.$topic\"><strong>$percntIF{\"'$topic'='WebHome'\" then=\"$dollarpercentFORMATLIST{\\"$dollarmap($web)\\" map=\\"%MODAC_WEBMAPPINGS{default="" encode="none"}%\\"}$dollarpercent\" else=\"$title_escaped_s\"}$percnt</strong></a>$percntIF{\"istopic '$webtopic$percntWORKFLOWSUFFIX$percnt'\" then=\"&nbsp;&nbsp;|&nbsp;&nbsp;<a href='$percntSCRIPTURL{view}$percnt/$web/$topic$percntWORKFLOWSUFFIX$percnt'><span class=\\"bmsubinfo\\">$dollarpercntICON{comments}$dollarpercnt&nbsp;$percntMAKETEXT{\"Discussion available\"}$percnt</span></a>\"}$percnt%BR%<span class=\"bmsubinfo\">[[$web.WebHome][$percentFORMATLIST{\"$dollarmap($web)\" map=\"%MODAC_WEBMAPPINGS{default="" encode="none"}%\"}$percent]]</span></li>"
+  fields="date,web,topic,webtopic,title_escaped_s,author,workflow_hasdiscussion_b"
 }%
 </ul>
 </td><td class="splitright"><div class="splittitle">%ICON{attachfile}% %MAKETEXT{"Attachments"}%</div>
 <ul class="modacBookmarks">
 %SOLRSEARCH{"-type:(topic OR comment OR action) (%FAVORITELIST{type="files" format="(webtopic:\\"$swebtopic\\" name:\"$file\")" separator=" OR " default="NOT *"}%)"
   rows="%MYPAGE_LAST_CHANGED_FAVORITES_MAX_ITEMS%" sort="date desc"
-  format="<li data-fav-item=\"$webtopic-$name\"><div class=\"date\">$date%BR%$percentRENDERUSER{\"$author\" convert=\"on\"}$percent</div>[[%PUBURLPATH%/$web/$topic/$name][<strong>$name</strong>]]%BR%<span class=\"bmsubinfo\">[[$web.WebHome][$percentFORMATLIST{\"$dollarmap($web)\" map=\"%MODAC_WEBMAPPINGS{default=""}%\"}$percent]] $percntIF{\"'$topic'!='WebHome'\" then=\" &raquo; <a href=\\"%SCRIPTURL{view}%/$web/$topic\\" title=\\"$web.$topic\\">$container_title</a>\"}$percnt</span></li>"
+  format="<li data-fav-item=\"$webtopic-$name\"><div class=\"date\">$date%BR%$percentRENDERUSER{\"$author\" convert=\"on\"}$percent</div>[[%PUBURLPATH%/$web/$topic/$name][<strong>$name</strong>]]%BR%<span class=\"bmsubinfo\">[[$web.WebHome][$percentFORMATLIST{\"$dollarmap($web)\" map=\"%MODAC_WEBMAPPINGS{default="" encode="none"}%\"}$percent]] $percntIF{\"'$topic'!='WebHome'\" then=\" &raquo; <a href=\\"%SCRIPTURL{view}%/$web/$topic\\" title=\\"$web.$topic\\">$container_title</a>\"}$percnt</span></li>"
   fields="web,topic,container_title,author,date,name,title,author"
 }%
 </ul>

@@ -13,8 +13,8 @@ our $SITEPREFS = {
   SIMILAR_TOPICS_FORM => "*DocumentForm",
   SIMILAR_TOPICS_LIKE => "title_search,text",
   SIMILAR_TOPICS_BOOST => "title_search^2,text",
-  SIMILAR_TOPICS_FIELDS => "title,web,topic,field_Responsible_s,score,field_DocumentType_s,date,process_state_s",
-  SIMILAR_TOPICS_FILTER => "-topic:*%WORKFLOWSUFFIX% -topic:*Template",
+  SIMILAR_TOPICS_FIELDS => "title,web,topic,field_Responsible_s,score,date,process_state_s",
+  SIMILAR_TOPICS_FILTER => "-topic:*TALK -topic:*Template",
   SIMILAR_TOPICS_MIN_TERM_FREQUENCY => "2",
   SIMILAR_TOPICS_MIN_DOCUMENT_FREQUENCY => "5",
   SIMILAR_TOPICS_MARK_AS_DISCUSSION => "DISCUSSION|CONTENT_REVIEW|FORMAL_REVIEW",
@@ -23,6 +23,8 @@ our $SITEPREFS = {
   SHOW_EDIT_PROFILE => "0",
   MYPAGE_LAST_CHANGED_FAVORITES_MAX_ITEMS => "999",
   MODAC_HIDEWEBS => 'Custom|Main|Manuals|Sandbox|System|System.Manuals|System.Standards|TWiki|Tasks|TestCases|Trash%WORKFLOWAPPPREVIEWAPPS{default=""}%%MULTISITECONFIGWEBS{default=""}%',
+  WEBHOME_DEFAULT_REDIRECTION => "Processes.$Foswiki::cfg{HomeTopicName}",
+  WEBHOME_GROUP_REDIRECTION => '',
 };
 
 sub solrWhitelist {
