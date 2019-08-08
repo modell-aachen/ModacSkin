@@ -1,17 +1,34 @@
 %TMPL:INCLUDE{"view"}%
 
 %TMPL:DEF{"content"}%
----++ %MAKETEXT{"Direct children:"}%
-%SOLRSEARCH{"type:topic parent: %SUBST{text="%WEB%" pattern="/" format="."}%.%TOPIC%" format="   * [[$webtopic]]$n" rows="999"}%
+<style type="text/css">
+	.modacDialogContents {
+        border: 0px solid #000 !important;
+    }
+</style>
+---++ %MAKETEXT{"References to this topic:"}%
+%SOLRSEARCH{"type:topic -webtopic:*TALK (outgoingWiki_lst: %WEB%.%TOPIC% OR parent: %WEB%.%TOPIC%)"
+sort="webtopic asc"
+header="<table class=\"tablesorter\"><thead><tr><th>%MAKETEXT{"Web"}%</th><th>%MAKETEXT{"Title"}%</th><th>%MAKETEXT{"Document type"}%</th></tr></thead><tbody>"
+fields="web,topic,title,field_DocumentNumber_s,field_DocumentType_s"
+format="<tr><td>$percntMAKETEXT{\"$web\"}$percnt</td><td>[[$web.$topic][%IF{"$USE_PROCESS_DOCUMENT_NUMBER" then="$field_DocumentNumber_s "}%$title]]</td><td>%TMPL:P{"documenttype"}%</td></tr>"
+footer="</tbody></table>"
+rows="999"
+}%
 
----++ %MAKETEXT{"Links to this topic:"}%
-%SOLRSEARCH{"type:topic outgoingWiki_lst: %SUBST{text="%WEB%" pattern="/" format="."}%.%TOPIC%" format="   * [[$webtopic]]$n" rows="999"}%
+---++ %MAKETEXT{"References to attachments on this topic:"}%
+%SOLRSEARCH{"type:topic -webtopic:*TALK outgoingAttachmentTopic_lst: %WEB%.%TOPIC%"
+sort="webtopic asc"
+header="<table class=\"tablesorter\"><thead><tr><th>%MAKETEXT{"Web"}%</th><th>%MAKETEXT{"Title"}%</th><th>%MAKETEXT{"Document type"}%</th></tr></thead><tbody>"
+fields="web,topic,title,field_DocumentType_s"
+format="<tr><td>$percntMAKETEXT{\"$web\"}$percnt</td><td>[[$web.$topic]]</td><td>%TMPL:P{"documenttype"}%</td></tr>"
+footer="</tbody></table>"
+rows="999"
+}%
+%TMPL:END%
 
----++ %MAKETEXT{"Links to attachments on this topic:"}%
-%SOLRSEARCH{"type:topic outgoingAttachmentTopic_lst: %SUBST{text="%WEB%" pattern="/" format="."}%.%TOPIC%" id="outgoingAttachments" format="   * [[$webtopic]]$n" rows="999" facets="outgoingAttachment_lst" facetlimit="999"}%
-
----++ %MAKETEXT{"Combined references to this topic:"}%
-%SOLRSEARCH{"type:topic (outgoingAttachmentTopic_lst: %SUBST{text="%WEB%" pattern="/" format="."}%.%TOPIC% OR outgoingWiki_lst: %SUBST{text="%WEB%" pattern="/" format="."}%.%TOPIC% OR parent: %SUBST{text="%WEB%" pattern="/" format="."}%.%TOPIC%)" format="   * [[$webtopic]]$n" rows="999"}%
+%TMPL:DEF{"documenttype"}%%{Because there could be topics without a documenttype, we proof if field_DocumentType_s is set.
+}%$percntIF{\"'$field_DocumentType_s' = ''\" then=\"$percntMAKETEXT{\"none\"}$percnt\" else=\"$percntMAKETEXT{\"$field_DocumentType_s\"}$percnt\"}$percnt
 %TMPL:END%
 
 %TMPL:DEF{"attachments"}%%TMPL:END%

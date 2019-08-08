@@ -99,6 +99,10 @@ msgstr "(Revision %1)"
 msgid "(set preferences)"
 msgstr "(Einstellungen ändern)"
 
+#: data/System/ModacSkinReferencesTemplate.txt
+msgid "Documenttype"
+msgstr "Dokumententyp"
+
 #: data/System/ModacSkinSolrSearchViewTemplate.txt
 msgid "1 hour"
 msgstr "1 Stunde"
@@ -1855,14 +1859,17 @@ msgstr "Verweise auf diese Seite:"
 msgid "Links to attachments on this topic:"
 msgstr "Verweise auf Anhänge von dieser Seite:"
 
+msgid "References to attachments on this topic:"
+msgstr "Verweise auf Anhänge von dieser Seite:"
+
 msgid "Linked attachments on this topic:"
 msgstr "Verlinkte Anhänge von dieser Seite:"
 
-msgid "Combined references to this topic:"
-msgstr "Alle Referenzen auf diese Seite:"
+msgid "References to this topic:"
+msgstr "Verweise auf diese Seite:"
 
-msgid "Find references"
-msgstr "Referenzen finden"
+msgid "Dependencies"
+msgstr "Abhängigkeiten"
 
 msgid "Q.wiki version %1"
 msgstr "Q.wiki Version %1"
