@@ -224,7 +224,11 @@
 %TMPL:END%
 %{==============================================================================}%
 %TMPL:DEF{"added_users_to_group"}%
-%TMPL:PREV%
+---+++ %MAKETEXT{"Success adding members to group"}%
+
+%MAKETEXT{"[_1] added to the [_2] group." args="%RENDERUSER{"%URLPARAM{"param1"}%"}%, %PARAM2%"}%
+
+%MAKETEXT{"See %MAINWEB%.WikiGroups to see the result."}%
 %TMPL:P{"return_button"}%
 %TMPL:END%
 
