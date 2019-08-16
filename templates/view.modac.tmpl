@@ -34,7 +34,7 @@
 }%%{ DEPRECATED: beforetext and aftertext }%
 %{ compatibility transition older than 4.2: }%
 %TMPL:DEF{"contentheader"}%%TMPL:P{"beforetext"}%%TMPL:END%
-%TMPL:DEF{"contentfooter"}%%TMPL:P{"aftertext"}%%IF{"form.name='DocumentForm'" then="$percntTMPL:P{\"metadatatable\"}$percnt"}%%TMPL:END%%{
+%TMPL:DEF{"contentfooter"}%%TMPL:P{"aftertext"}%%IF{"form.name~'*DocumentForm' and '%ISPROCESSESWEB%' = '1'" then="$percntTMPL:P{\"metadatatable\"}$percnt"}%%TMPL:END%%{
 ---------------------------------------------------
 }%%TMPL:DEF{"patterntopiccontents"}%%TMPL:P{"broadcastmessage"}%%TMPL:P{"contentheaderstylewrapper"}%%TMPL:P{"formtop"}%%TMPL:P{"attachmentstop"}%<div class="patternContent"><div class="foswikiTopic">%TMPL:P{"content"}%</div>
 
